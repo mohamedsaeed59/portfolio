@@ -1216,6 +1216,205 @@
         opacity: 0.35;
       }
     }
+
+
+    /* Theme Toggle */
+    body.light-mode {
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --surface-2: #F1F5F9;
+      --text: #0F172A;
+      --muted: #475569;
+      --soft: #1E293B;
+      --border: rgba(15, 23, 42, 0.12);
+      --glass: rgba(255,255,255,0.72);
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+      background:
+        radial-gradient(circle at 82% 0%, rgba(236,72,153,0.14), transparent 34%),
+        radial-gradient(circle at 8% 18%, rgba(139,92,246,0.13), transparent 32%),
+        radial-gradient(circle at 72% 86%, rgba(34,197,94,0.10), transparent 30%),
+        var(--bg);
+    }
+
+    body.light-mode .navbar {
+      background: rgba(255,255,255,0.78);
+    }
+
+    body.light-mode .nav-links a:hover,
+    body.light-mode .testimonial strong,
+    body.light-mode .faq-question,
+    body.light-mode .phone-top,
+    body.light-mode .profile-row strong {
+      color: #0F172A;
+    }
+
+    body.light-mode .lead,
+    body.light-mode .testimonial p {
+      color: #334155;
+    }
+
+    body.light-mode .gradient-text {
+      background: linear-gradient(135deg, #0F172A 0%, #DB2777 34%, #7C3AED 70%, #16A34A 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    body.light-mode .btn-secondary,
+    body.light-mode .hero-pills span,
+    body.light-mode .tab-btn,
+    body.light-mode .stat-box,
+    body.light-mode .service-card,
+    body.light-mode .project-metrics div,
+    body.light-mode .testimonial,
+    body.light-mode .process-card,
+    body.light-mode .faq-item,
+    body.light-mode .contact-points div,
+    body.light-mode .post-card {
+      background: rgba(255,255,255,0.78);
+      color: var(--soft);
+    }
+
+    body.light-mode .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,0.92), rgba(255,255,255,0.64));
+    }
+
+    body.light-mode input,
+    body.light-mode select,
+    body.light-mode textarea {
+      background: rgba(255,255,255,0.9);
+      color: #0F172A;
+    }
+
+    body.light-mode input::placeholder,
+    body.light-mode textarea::placeholder {
+      color: #64748B;
+    }
+
+    body.light-mode .phone {
+      background: linear-gradient(145deg, #E2E8F0, #FFFFFF);
+      box-shadow: 0 34px 100px rgba(15,23,42,0.16);
+    }
+
+    body.light-mode .phone-screen,
+    body.light-mode .story div,
+    body.light-mode .growth-card,
+    body.light-mode .project-card,
+    body.light-mode .content-card {
+      background-color: var(--surface);
+    }
+
+    body.light-mode .post-stats div {
+      background: rgba(248,250,252,0.9);
+    }
+
+    body.light-mode .floating-metric {
+      background: rgba(255,255,255,0.86);
+    }
+
+    .theme-toggle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--glass);
+      color: var(--text);
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 20px;
+      transition: var(--transition);
+      backdrop-filter: blur(14px);
+      flex: 0 0 auto;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-3px) rotate(12deg);
+      border-color: rgba(236,72,153,0.45);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+
+    /* Light Mode Readability Fixes */
+    body.light-mode .eyebrow {
+      color: #BE185D;
+      background: rgba(236, 72, 153, 0.12);
+      border-color: rgba(190, 24, 93, 0.28);
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.08);
+    }
+
+    body.light-mode .eyebrow::before {
+      background: #16A34A;
+      box-shadow: 0 0 16px rgba(22, 163, 74, 0.45);
+    }
+
+    body.light-mode .nav-links,
+    body.light-mode .nav-links a,
+    body.light-mode .logo,
+    body.light-mode .navbar {
+      color: #0F172A;
+    }
+
+    body.light-mode .nav-links a:hover {
+      color: #DB2777;
+    }
+
+    body.light-mode h1,
+    body.light-mode h2,
+    body.light-mode h3,
+    body.light-mode .service-card h3,
+    body.light-mode .growth-card h3,
+    body.light-mode .project-info h3,
+    body.light-mode .content-info h3,
+    body.light-mode .process-card h3,
+    body.light-mode .contact-copy h2,
+    body.light-mode .faq-question {
+      color: #0F172A;
+    }
+
+    body.light-mode .project-info span,
+    body.light-mode .content-info span,
+    body.light-mode .testimonial span,
+    body.light-mode .project-metrics small,
+    body.light-mode .post-stats span,
+    body.light-mode .profile-row span,
+    body.light-mode .floating-metric span {
+      color: #475569;
+    }
+
+    body.light-mode .tab-btn {
+      color: #1E293B;
+      background: rgba(255, 255, 255, 0.82);
+      border-color: rgba(15, 23, 42, 0.14);
+    }
+
+    body.light-mode .tab-btn.active,
+    body.light-mode .tab-btn:hover {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #DB2777, #7C3AED);
+      border-color: transparent;
+    }
+
+    body.light-mode .service-icon {
+      color: #7C3AED;
+      background: rgba(124, 58, 237, 0.12);
+    }
+
+    body.light-mode .contact-points div,
+    body.light-mode .hero-pills span {
+      color: #1E293B;
+    }
+
+    body.light-mode .footer {
+      background: rgba(255,255,255,0.82);
+      color: #475569;
+    }
+
   </style>
 </head>
 
@@ -1236,7 +1435,10 @@
         <a href="#contact">تواصل</a>
       </nav>
 
-      <a href="#contact" class="btn btn-primary nav-cta">ابدأ إدارة حسابك</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="تبديل الوضع بين الفاتح والداكن">☀️</button>
+        <a href="#contact" class="btn btn-primary nav-cta">ابدأ إدارة حسابك</a>
+      </div>
     </div>
   </header>
 
@@ -1844,6 +2046,23 @@
   </footer>
 
   <script>
+
+    // Light / Dark Mode
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light-mode");
+      themeToggle.textContent = "🌙";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      themeToggle.textContent = isLight ? "🌙" : "☀️";
+      localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+    });
+
     // Scroll Reveal
     const revealElements = document.querySelectorAll(".reveal");
 

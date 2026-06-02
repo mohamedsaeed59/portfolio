@@ -9,6 +9,14 @@
   <meta name="description" content="بورتفوليو عربي فاخر لكاتب إعلانات محترف متخصص في صفحات البيع، صفحات الهبوط، الرسائل البريدية، نصوص الإعلانات، وصياغة الرسائل التسويقية التي تحول الزوار إلى عملاء." />
   <meta name="keywords" content="كاتب إعلانات, كوبي رايتر, كتابة إعلانية, صفحات بيع, صفحات هبوط, كتابة محتوى تسويقي, إعلانات, رسائل تسويقية" />
 
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.setAttribute("data-theme", savedTheme || (prefersLight ? "light" : "dark"));
+    })();
+  </script>
+
   <style>
     :root {
       --bg: #0A0A0A;
@@ -26,6 +34,30 @@
       --shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
       --radius: 28px;
       --container: min(1120px, 92%);
+      --grid-line: rgba(255, 255, 255, 0.035);
+      --input-bg: rgba(0,0,0,0.42);
+      --card-bg: rgba(255,255,255,0.045);
+      --header-bg: rgba(10, 10, 10, 0.78);
+    }
+
+    html[data-theme="light"] {
+      --bg: #F8F4EA;
+      --surface: #FFFFFF;
+      --surface-soft: #FFF8E7;
+      --deep: #F1E7D0;
+      --gold: #9A6A12;
+      --gold-soft: rgba(154, 106, 18, 0.12);
+      --white: #111111;
+      --text: #1A1A1A;
+      --muted: #66615A;
+      --soft-gray: #3F3A33;
+      --border: rgba(17, 17, 17, 0.12);
+      --gold-border: rgba(154, 106, 18, 0.32);
+      --shadow: 0 24px 70px rgba(84, 58, 18, 0.13);
+      --grid-line: rgba(17, 17, 17, 0.045);
+      --input-bg: rgba(255,255,255,0.82);
+      --card-bg: rgba(255,255,255,0.72);
+      --header-bg: rgba(248, 244, 234, 0.82);
     }
 
     * {
@@ -49,6 +81,14 @@
       text-align: right;
       line-height: 1.9;
       overflow-x: hidden;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    html[data-theme="light"] body {
+      background:
+        radial-gradient(circle at top right, rgba(154, 106, 18, 0.15), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.85), transparent 30%),
+        var(--bg);
     }
 
     a {
@@ -114,7 +154,7 @@
 
     .luxury-card {
       background:
-        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+        linear-gradient(145deg, var(--card-bg), rgba(255,255,255,0.025));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -135,7 +175,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.78);
+      background: var(--header-bg);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(18px);
     }
@@ -198,6 +238,31 @@
       transform: translateY(-2px);
       box-shadow: 0 16px 34px rgba(212, 175, 55, 0.22);
     }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-border);
+      background: var(--gold-soft);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.25s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(212, 175, 55, 0.18);
+    }
+
 
     /* Hero */
     .hero {
@@ -259,7 +324,7 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
       color: var(--white);
       border-color: var(--border);
     }
@@ -279,7 +344,7 @@
       padding: 18px;
       border: 1px solid var(--border);
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.045);
+      background: var(--card-bg);
     }
 
     .metric strong {
@@ -352,7 +417,7 @@
     .sample-line {
       padding: 16px;
       border-radius: 18px;
-      background: rgba(0,0,0,0.36);
+      background: var(--input-bg);
       border: 1px solid var(--border);
       color: var(--soft-gray);
     }
@@ -537,7 +602,7 @@
       padding: 22px;
       border-radius: 22px;
       border: 1px solid var(--border);
-      background: rgba(0,0,0,0.32);
+      background: var(--input-bg);
     }
 
     .ba-box small {
@@ -564,7 +629,7 @@
       padding: 18px;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
     }
 
     .case-result strong {
@@ -766,7 +831,7 @@
       padding: 16px;
       border: 1px solid var(--border);
       border-radius: 18px;
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
       color: var(--soft-gray);
     }
 
@@ -793,7 +858,7 @@
       width: 100%;
       padding: 15px 16px;
       border-radius: 16px;
-      background: rgba(0,0,0,0.42);
+      background: var(--input-bg);
       border: 1px solid var(--border);
       color: var(--white);
       outline: none;
@@ -960,7 +1025,10 @@
         <a href="#contact">تواصل</a>
       </nav>
 
-      <a href="#contact" class="nav-btn">اطلب كتابة مشروعك</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="تبديل الوضع الفاتح والداكن" title="تبديل الوضع">☾</button>
+        <a href="#contact" class="nav-btn">اطلب كتابة مشروعك</a>
+      </div>
     </div>
   </header>
 
@@ -1617,6 +1685,25 @@
   </footer>
 
   <script>
+    // Theme toggle
+    const themeToggle = document.getElementById("themeToggle");
+
+    function updateThemeIcon() {
+      const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+      themeToggle.textContent = currentTheme === "light" ? "☀" : "☾";
+      themeToggle.setAttribute("aria-label", currentTheme === "light" ? "تفعيل الوضع الداكن" : "تفعيل الوضع الفاتح");
+    }
+
+    updateThemeIcon();
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+      const nextTheme = currentTheme === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("portfolio-theme", nextTheme);
+      updateThemeIcon();
+    });
+
     // Scroll animation
     const revealElements = document.querySelectorAll(".reveal");
 
