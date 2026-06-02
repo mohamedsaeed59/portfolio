@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>بورتفوليو مصمم جرافيك محترف | هوية بصرية وتصميمات إبداعية</title>
+
+  <meta name="description" content="بورتفوليو عربي احترافي لمصمم جرافيك متخصص في الهوية البصرية، تصميمات السوشيال ميديا، التغليف، الإعلانات، الطباعة، وتصميم واجهات المستخدم." />
+  <meta name="keywords" content="مصمم جرافيك, بورتفوليو مصمم, هوية بصرية, تصميم سوشيال ميديا, تصميم إعلانات, تصميم تغليف, تصميم عربي" />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --surface: #0B1024;
+      --surface-2: #111936;
+      --primary: #7C3AED;
+      --secondary: #2563EB;
+      --accent: #22C55E;
+      --white: #FFFFFF;
+      --text: #F8FAFC;
+      --muted: #AAB3C5;
+      --soft: #DCE3F2;
+      --border: rgba(255, 255, 255, 0.12);
+      --glass: rgba(255, 255, 255, 0.07);
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+      --container: min(1180px, 92%);
+      --transition: 260ms ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      direction: rtl;
+      text-align: right;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 0%, rgba(124, 58, 237, 0.26), transparent 34%),
+        radial-gradient(circle at 10% 18%, rgba(37, 99, 235, 0.20), transparent 30%),
+        radial-gradient(circle at 70% 82%, rgba(34, 197, 94, 0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: var(--container);
+      margin: auto;
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 58, 237, 0.38);
+      background: rgba(124, 58, 237, 0.13);
+      color: #DDD6FE;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 88px);
+    }
+
+    h2 {
+      font-size: clamp(32px, 5.5vw, 62px);
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      color: #D8E0F0;
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #C4B5FD 42%, #60A5FA 70%, #86EFAC 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      min-height: 54px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 900;
+      cursor: pointer;
+      transition: var(--transition);
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 20px 50px rgba(124, 58, 237, 0.34);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--soft);
+      backdrop-filter: blur(16px);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 8, 22, 0.78);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(from 180deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+      color: white;
+      direction: ltr;
+      box-shadow: 0 16px 36px rgba(124, 58, 237, 0.28);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      padding: 100px 0 78px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 76px 76px;
+      mask-image: radial-gradient(circle at center, black, transparent 74%);
+      pointer-events: none;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      opacity: 0.85;
+      animation: floatShape 7s ease-in-out infinite;
+    }
+
+    .shape-1 {
+      width: 180px;
+      height: 180px;
+      top: 16%;
+      left: 8%;
+      background: linear-gradient(135deg, var(--primary), transparent);
+    }
+
+    .shape-2 {
+      width: 110px;
+      height: 110px;
+      bottom: 14%;
+      right: 10%;
+      background: linear-gradient(135deg, var(--accent), transparent);
+      animation-delay: 1.5s;
+    }
+
+    .shape-3 {
+      width: 80px;
+      height: 80px;
+      top: 64%;
+      left: 22%;
+      background: linear-gradient(135deg, var(--secondary), transparent);
+      animation-delay: 0.8s;
+    }
+
+    @keyframes floatShape {
+      0%, 100% {
+        transform: translateY(0) rotate(0);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(12deg);
+      }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .hero-title {
+      margin-bottom: 22px;
+      max-width: 920px;
+    }
+
+    .hero-desc {
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 720px;
+    }
+
+    .hero-tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--soft);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .visual-board {
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+      transform: rotate(-1deg);
+    }
+
+    .visual-board::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(circle at top right, rgba(124,58,237,0.35), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(34,197,94,0.16), transparent 32%);
+      pointer-events: none;
+    }
+
+    .mockup-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 14px;
+    }
+
+    .mockup-card {
+      border-radius: 24px;
+      min-height: 180px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      background: var(--surface);
+    }
+
+    .mockup-big {
+      min-height: 390px;
+      background:
+        linear-gradient(135deg, rgba(124,58,237,0.45), rgba(37,99,235,0.14)),
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 18%),
+        #151B36;
+      display: flex;
+      align-items: end;
+      padding: 24px;
+    }
+
+    .mockup-big h2 {
+      font-size: 42px;
+      max-width: 340px;
+    }
+
+    .mockup-small-1 {
+      background:
+        linear-gradient(135deg, rgba(34,197,94,0.24), rgba(124,58,237,0.22)),
+        #111936;
+    }
+
+    .mockup-small-2 {
+      background:
+        linear-gradient(135deg, rgba(37,99,235,0.35), rgba(255,255,255,0.05)),
+        #0B1024;
+    }
+
+    .mockup-small-1::after,
+    .mockup-small-2::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 18px;
+    }
+
+    .floating-label {
+      position: absolute;
+      z-index: 4;
+      right: 28px;
+      bottom: 28px;
+      padding: 13px 16px;
+      border-radius: 999px;
+      background: rgba(5,8,22,0.74);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      color: var(--soft);
+      font-weight: 900;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-card {
+      padding: 34px;
+    }
+
+    .about-card p + p {
+      margin-top: 16px;
+    }
+
+    .about-stats {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stat-box {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124,58,237,0.42);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 42px;
+      color: var(--accent);
+      line-height: 1;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      min-height: 250px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      left: -45px;
+      top: -45px;
+      background: rgba(124,58,237,0.18);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(124,58,237,0.48);
+      background: rgba(124,58,237,0.11);
+    }
+
+    .service-card:hover::after {
+      transform: scale(1.4);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(37,99,235,0.16);
+      color: #93C5FD;
+      font-size: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-card h3,
+    .service-card p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+    }
+
+    /* Featured Projects */
+    .featured-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project-showcase {
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: var(--transition);
+    }
+
+    .project-showcase:hover {
+      transform: translateY(-8px);
+      border-color: rgba(34,197,94,0.38);
+      box-shadow: 0 34px 90px rgba(0,0,0,0.36);
+    }
+
+    .project-thumb {
+      min-height: 360px;
+      padding: 28px;
+      display: flex;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 24% 20%, rgba(255,255,255,0.28), transparent 12%),
+        radial-gradient(circle at 76% 22%, rgba(255,255,255,0.16), transparent 14%);
+      opacity: 0.9;
+    }
+
+    .thumb-branding {
+      background:
+        linear-gradient(135deg, rgba(124,58,237,0.85), rgba(37,99,235,0.35)),
+        #111936;
+    }
+
+    .thumb-packaging {
+      background:
+        linear-gradient(135deg, rgba(34,197,94,0.42), rgba(124,58,237,0.55)),
+        #0B1024;
+    }
+
+    .thumb-social {
+      background:
+        linear-gradient(135deg, rgba(245,158,11,0.42), rgba(37,99,235,0.58)),
+        #111936;
+    }
+
+    .project-thumb h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 38px;
+      max-width: 440px;
+    }
+
+    .project-info {
+      padding: 26px;
+    }
+
+    .project-info span {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .project-info h3 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+
+    /* Portfolio Gallery */
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--soft);
+      font-weight: 900;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-color: transparent;
+      color: white;
+    }
+
+    .masonry {
+      columns: 1;
+      column-gap: 18px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-item.hide {
+      display: none;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124,58,237,0.45);
+    }
+
+    .gallery-art {
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-art.tall {
+      min-height: 390px;
+    }
+
+    .gallery-art.short {
+      min-height: 220px;
+    }
+
+    .art-1 { background: linear-gradient(135deg, #7C3AED, #2563EB); }
+    .art-2 { background: linear-gradient(135deg, #22C55E, #2563EB); }
+    .art-3 { background: linear-gradient(135deg, #F97316, #7C3AED); }
+    .art-4 { background: linear-gradient(135deg, #0EA5E9, #22C55E); }
+    .art-5 { background: linear-gradient(135deg, #EC4899, #7C3AED); }
+    .art-6 { background: linear-gradient(135deg, #F59E0B, #2563EB); }
+    .art-7 { background: linear-gradient(135deg, #14B8A6, #7C3AED); }
+    .art-8 { background: linear-gradient(135deg, #6366F1, #22C55E); }
+
+    .gallery-art::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 24px;
+    }
+
+    .gallery-art::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      left: 22px;
+      top: 22px;
+    }
+
+    .gallery-info {
+      padding: 20px;
+    }
+
+    .gallery-info span {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .gallery-info h3 {
+      font-size: 22px;
+      margin-top: 6px;
+    }
+
+    /* Brands */
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .brand-card {
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      color: var(--soft);
+      font-size: 22px;
+      font-weight: 900;
+      transition: var(--transition);
+    }
+
+    .brand-card:hover {
+      transform: translateY(-5px);
+      color: white;
+      border-color: rgba(34,197,94,0.4);
+      background: rgba(34,197,94,0.08);
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      counter-increment: step;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37,99,235,0.48);
+    }
+
+    .process-card::before {
+      content: "0" counter(step);
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 900;
+      direction: ltr;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+    }
+
+    .testimonial p {
+      font-size: 18px;
+      color: #E5E7EB;
+      margin-bottom: 22px;
+    }
+
+    .testimonial strong {
+      display: block;
+      color: white;
+    }
+
+    .testimonial span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 900px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      text-align: right;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .faq-question span {
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      padding: 0 22px;
+      transition: 300ms ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      padding: 0 22px 22px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-copy {
+      padding: 34px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 18px;
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-points div {
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      color: var(--soft);
+    }
+
+    form {
+      padding: 28px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--soft);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(5,8,22,0.68);
+      color: white;
+      outline: none;
+      font-size: 15px;
+      direction: rtl;
+      text-align: right;
+      transition: var(--transition);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #7B8499;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(124,58,237,0.72);
+      box-shadow: 0 0 0 4px rgba(124,58,237,0.13);
+    }
+
+    .submit-btn {
+      min-height: 56px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #86EFAC);
+      color: #04110A;
+      font-weight: 900;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(34,197,94,0.25);
+    }
+
+    .footer {
+      padding: 36px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,0.22);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      width: min(900px, 100%);
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .lightbox-art {
+      min-height: 420px;
+    }
+
+    .lightbox-info {
+      padding: 24px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(5,8,22,0.76);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 750ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 700px) {
+      .nav-links,
+      .nav-cta {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr 0.95fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 0.85fr;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .project-showcase:first-child {
+        grid-column: span 2;
+      }
+
+      .masonry {
+        columns: 3;
+      }
+
+      .brands-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 78px 0 64px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .mockup-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-board {
+        transform: none;
+      }
+
+      .mockup-big {
+        min-height: 310px;
+      }
+
+      .project-thumb {
+        min-height: 300px;
+      }
+
+      .contact-copy,
+      form,
+      .about-card {
+        padding: 22px;
+      }
+
+      .shape {
+        opacity: 0.35;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="العودة إلى بداية الصفحة">
+        <span class="logo-mark">GD</span>
+        <span>مصمم بصري</span>
+      </a>
+
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#gallery">المعرض</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta">ابدأ مشروعك</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <span class="shape shape-1"></span>
+      <span class="shape shape-2"></span>
+      <span class="shape shape-3"></span>
+
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">مصمم جرافيك وهوية بصرية</div>
+
+          <h1 class="hero-title">
+            أصمم هويات وتجارب بصرية
+            <span class="gradient-text">تجعل علامتك لا تُنسى.</span>
+          </h1>
+
+          <p class="lead hero-desc">
+            أساعد العلامات التجارية، المتاجر، والشركات الناشئة على الظهور بشكل احترافي من خلال تصميمات بصرية قوية، هوية متماسكة، ومحتوى يجذب الانتباه من أول نظرة.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">شاهد الأعمال المميزة</a>
+            <a href="#contact" class="btn btn-secondary">اطلب تصميمك الآن</a>
+          </div>
+
+          <div class="hero-tags">
+            <span>هوية بصرية</span>
+            <span>تصميم سوشيال ميديا</span>
+            <span>تصميم تغليف</span>
+            <span>إعلانات</span>
+            <span>واجهات مستخدم</span>
+          </div>
+        </div>
+
+        <aside class="visual-board glass reveal">
+          <div class="mockup-grid">
+            <div class="mockup-card mockup-big">
+              <h2>تصميم بصري يبني الثقة قبل الكلام.</h2>
+            </div>
+
+            <div style="display:grid; gap:14px;">
+              <div class="mockup-card mockup-small-1"></div>
+              <div class="mockup-card mockup-small-2"></div>
+            </div>
+          </div>
+
+          <div class="floating-label">عرض بصري احترافي</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-card glass reveal">
+          <div class="eyebrow">نبذة عني</div>
+
+          <h2>لا أتعامل مع التصميم كزينة، بل كأداة لبناء الانطباع والثقة.</h2>
+
+          <p>
+            أعمل كمصمم جرافيك متخصص في بناء الهويات البصرية والتصميمات التسويقية التي تجمع بين الجمال والوضوح والهدف التجاري.
+          </p>
+
+          <p>
+            أبدأ من فهم شخصية العلامة والجمهور والسوق، ثم أحول هذه المعطيات إلى نظام بصري متكامل: ألوان، خطوط، أسلوب صور، قوالب، إعلانات، وتطبيقات تصميم متناسقة.
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat-box">
+            <strong>80+</strong>
+            <p>مشروع تصميم وهوية تم تطويره</p>
+          </div>
+
+          <div class="stat-box">
+            <strong>35+</strong>
+            <p>علامة تجارية تم تحسين ظهورها البصري</p>
+          </div>
+
+          <div class="stat-box">
+            <strong>7</strong>
+            <p>مجالات تصميم مختلفة بخبرة عملية</p>
+          </div>
+
+          <div class="stat-box">
+            <strong>100%</strong>
+            <p>تركيز على التفاصيل والاتساق البصري</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">خدمات التصميم</div>
+          <h2>حلول بصرية متكاملة للعلامات التي تريد أن تظهر باحتراف.</h2>
+          <p class="lead">
+            من بناء الهوية إلى تصميم الإعلانات والمنشورات، كل خدمة مصممة لتمنح مشروعك حضورًا بصريًا مميزًا.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">◆</div>
+            <h3>تصميم الهوية البصرية</h3>
+            <p>شعار، ألوان، خطوط، نمط بصري، ودليل استخدام يساعد العلامة على الظهور بثبات واحتراف.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">▣</div>
+            <h3>تصميم السوشيال ميديا</h3>
+            <p>قوالب ومنشورات احترافية تعكس شخصية العلامة وتجذب الانتباه داخل المنصات الرقمية.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">⬢</div>
+            <h3>تصميم التغليف</h3>
+            <p>تصميم عبوات ومنتجات يبرز القيمة، يزيد الجاذبية، ويجعل المنتج أقوى على الرف أو المتجر.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">◈</div>
+            <h3>تصميم واجهات المستخدم</h3>
+            <p>تصميم واجهات نظيفة وجذابة لتطبيقات ومواقع تساعد المستخدم على الفهم والتنقل بسهولة.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✦</div>
+            <h3>تصميم الإعلانات</h3>
+            <p>تصميمات إعلانية واضحة وملفتة تخدم الرسالة التسويقية وتزيد فرصة التفاعل والتحويل.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">▧</div>
+            <h3>تصميم المطبوعات</h3>
+            <p>بروشورات، فلايرات، بطاقات، بروفايلات، ومواد مطبوعة بجودة عرض احترافية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">مشاريع مميزة</div>
+          <h2>عرض بصري كبير يضع جودة التصميم في المقدمة.</h2>
+        </div>
+
+        <div class="featured-grid">
+          <article class="project-showcase reveal">
+            <div class="project-thumb thumb-branding">
+              <h3>هوية بصرية لعلامة عصرية في مجال التقنية</h3>
+            </div>
+            <div class="project-info">
+              <span>هوية بصرية</span>
+              <h3>نظام بصري كامل يعكس الابتكار والثقة.</h3>
+              <p>تم تطوير شعار، ألوان، قوالب، ونمط بصري متماسك للاستخدام الرقمي والمطبوع.</p>
+            </div>
+          </article>
+
+          <article class="project-showcase reveal">
+            <div class="project-thumb thumb-packaging">
+              <h3>تصميم تغليف لمنتج طبيعي</h3>
+            </div>
+            <div class="project-info">
+              <span>تغليف منتجات</span>
+              <h3>تصميم نظيف يبرز جودة المنتج.</h3>
+              <p>اعتماد أسلوب بصري بسيط مع ألوان قوية وتفاصيل واضحة على العبوة.</p>
+            </div>
+          </article>
+
+          <article class="project-showcase reveal">
+            <div class="project-thumb thumb-social">
+              <h3>حملة سوشيال ميديا موسمية</h3>
+            </div>
+            <div class="project-info">
+              <span>تصميمات سوشيال</span>
+              <h3>قوالب ملفتة ومتناسقة للحملة.</h3>
+              <p>مجموعة تصميمات متعددة تحافظ على الهوية وتناسب منصات مختلفة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">معرض الأعمال</div>
+          <h2>معرض تفاعلي بأسلوب Masonry قريب من عرض Behance.</h2>
+          <p class="lead">استخدم الأزرار لتصفية الأعمال حسب نوع التصميم، واضغط على أي عمل لعرضه بشكل أكبر.</p>
+        </div>
+
+        <div class="gallery-filters reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="branding">هوية بصرية</button>
+          <button class="filter-btn" data-filter="social">سوشيال ميديا</button>
+          <button class="filter-btn" data-filter="packaging">تغليف</button>
+          <button class="filter-btn" data-filter="ui">واجهات</button>
+          <button class="filter-btn" data-filter="ads">إعلانات</button>
+        </div>
+
+        <div class="masonry reveal">
+          <article class="gallery-item" data-category="branding" data-title="هوية مطعم فاخر" data-type="هوية بصرية">
+            <div class="gallery-art art-1 tall"></div>
+            <div class="gallery-info">
+              <span>هوية بصرية</span>
+              <h3>هوية مطعم فاخر</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="social" data-title="قوالب محتوى لعلامة تجارية" data-type="سوشيال ميديا">
+            <div class="gallery-art art-2"></div>
+            <div class="gallery-info">
+              <span>سوشيال ميديا</span>
+              <h3>قوالب محتوى لعلامة تجارية</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="packaging" data-title="تغليف منتج طبيعي" data-type="تصميم تغليف">
+            <div class="gallery-art art-3 short"></div>
+            <div class="gallery-info">
+              <span>تصميم تغليف</span>
+              <h3>تغليف منتج طبيعي</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="ui" data-title="واجهة تطبيق خدمات" data-type="تصميم واجهات">
+            <div class="gallery-art art-4 tall"></div>
+            <div class="gallery-info">
+              <span>تصميم واجهات</span>
+              <h3>واجهة تطبيق خدمات</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="ads" data-title="تصميم إعلان إطلاق منتج" data-type="تصميم إعلاني">
+            <div class="gallery-art art-5"></div>
+            <div class="gallery-info">
+              <span>تصميم إعلاني</span>
+              <h3>إعلان إطلاق منتج</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="branding" data-title="نظام بصري لشركة ناشئة" data-type="هوية بصرية">
+            <div class="gallery-art art-6"></div>
+            <div class="gallery-info">
+              <span>هوية بصرية</span>
+              <h3>نظام بصري لشركة ناشئة</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="social" data-title="حملة منشورات موسمية" data-type="سوشيال ميديا">
+            <div class="gallery-art art-7 short"></div>
+            <div class="gallery-info">
+              <span>سوشيال ميديا</span>
+              <h3>حملة منشورات موسمية</h3>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="ads" data-title="تصميم إعلان لمتجر إلكتروني" data-type="تصميم إعلاني">
+            <div class="gallery-art art-8 tall"></div>
+            <div class="gallery-info">
+              <span>تصميم إعلاني</span>
+              <h3>إعلان لمتجر إلكتروني</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Brands -->
+    <section class="section" id="brands">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">علامات تم العمل معها</div>
+          <h2>تصميمات تناسب قطاعات مختلفة وتحافظ على شخصية كل علامة.</h2>
+        </div>
+
+        <div class="brands-grid reveal">
+          <div class="brand-card">NOVA</div>
+          <div class="brand-card">RISE</div>
+          <div class="brand-card">MIRA</div>
+          <div class="brand-card">ZEN</div>
+          <div class="brand-card">LUMA</div>
+          <div class="brand-card">ATLAS</div>
+          <div class="brand-card">VITA</div>
+          <div class="brand-card">ORBIT</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">عملية التصميم</div>
+          <h2>من الفكرة الأولى إلى تسليم ملفات جاهزة للاستخدام.</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <h3>فهم المشروع</h3>
+            <p>تحليل العلامة، الجمهور، المنافسين، وأهداف التصميم قبل البدء.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>اتجاه بصري</h3>
+            <p>اختيار Moodboard، ألوان، خطوط، وأسلوب بصري مناسب لشخصية العلامة.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>تنفيذ التصميم</h3>
+            <p>إنتاج التصميمات الأساسية مع مراعاة التفاصيل، التوازن، والوضوح.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>تسليم منظم</h3>
+            <p>تسليم الملفات النهائية بالمقاسات والصيغ المناسبة للاستخدام الرقمي أو الطباعة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">آراء العملاء</div>
+          <h2>تصميمات لا تبدو جميلة فقط، بل ترفع قيمة العلامة.</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial reveal">
+            <p>“التصميمات نقلت شكل البراند لمستوى أعلى. أصبح لدينا حضور بصري واضح ومميز.”</p>
+            <strong>مؤسس علامة تجارية</strong>
+            <span>قطاع المنتجات الاستهلاكية</span>
+          </article>
+
+          <article class="testimonial reveal">
+            <p>“أكثر ما أعجبني هو فهم شخصية المشروع قبل التصميم. النتيجة كانت مناسبة لنا جدًا.”</p>
+            <strong>مدير تسويق</strong>
+            <span>شركة خدمات رقمية</span>
+          </article>
+
+          <article class="testimonial reveal">
+            <p>“القوالب التي تم تصميمها وفرت علينا وقتًا كبيرًا وجعلت المحتوى أكثر احترافية.”</p>
+            <strong>صاحبة مشروع</strong>
+            <span>علامة شخصية وتعليمية</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">الأسئلة الشائعة</div>
+          <h2>أسئلة مهمة قبل بدء مشروع التصميم.</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل يمكن تصميم هوية بصرية كاملة؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم، يمكن تصميم هوية كاملة تشمل الشعار، الألوان، الخطوط، النمط البصري، القوالب، ودليل الاستخدام حسب احتياج المشروع.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل التصميمات مناسبة للسوشيال ميديا؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم، يمكن تصميم قوالب ومنشورات بأحجام مختلفة تناسب إنستجرام، فيسبوك، لينكدإن، وتيك توك.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل يتم تسليم الملفات مفتوحة المصدر؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              يمكن الاتفاق على ذلك حسب نوع المشروع. عادة يتم تسليم الملفات النهائية الجاهزة للاستخدام، ويمكن إضافة الملفات المفتوحة ضمن نطاق العمل.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              ما الذي تحتاجه قبل البدء؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              أحتاج إلى نبذة عن المشروع، الجمهور المستهدف، أمثلة مرجعية إن وجدت، استخدامات التصميم، والمقاسات المطلوبة.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy glass reveal">
+          <div class="eyebrow">تواصل معي</div>
+          <h2>جاهز لتحويل فكرتك إلى تصميم احترافي؟</h2>
+          <p>
+            املأ النموذج التالي وسيتم إرسال كل التفاصيل مباشرة إلى واتساب في رسالة منظمة.
+          </p>
+
+          <div class="contact-points">
+            <div>✓ مناسب للهويات البصرية والسوشيال ميديا والتغليف.</div>
+            <div>✓ رسالة واتساب تلقائية بكل بيانات المشروع.</div>
+            <div>✓ تصميم متجاوب وسريع وبدون أي مكتبات خارجية.</div>
+          </div>
+        </div>
+
+        <form id="whatsappForm" class="glass reveal">
+          <div class="form-group">
+            <label for="name">الاسم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" placeholder="اكتب رقم الهاتف" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" placeholder="اكتب البريد الإلكتروني" required />
+          </div>
+
+          <div class="form-group">
+            <label for="service">نوع التصميم المطلوب</label>
+            <select id="service" required>
+              <option value="">اختر الخدمة</option>
+              <option value="تصميم هوية بصرية">تصميم هوية بصرية</option>
+              <option value="تصميم سوشيال ميديا">تصميم سوشيال ميديا</option>
+              <option value="تصميم تغليف">تصميم تغليف</option>
+              <option value="تصميم واجهات مستخدم">تصميم واجهات مستخدم</option>
+              <option value="تصميم إعلانات">تصميم إعلانات</option>
+              <option value="تصميم مطبوعات">تصميم مطبوعات</option>
+              <option value="تصميم شامل">تصميم شامل</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="projectType">نوع المشروع</label>
+            <select id="projectType" required>
+              <option value="">اختر نوع المشروع</option>
+              <option value="علامة تجارية جديدة">علامة تجارية جديدة</option>
+              <option value="تطوير هوية حالية">تطوير هوية حالية</option>
+              <option value="حملة تسويقية">حملة تسويقية</option>
+              <option value="منتج أو تغليف">منتج أو تغليف</option>
+              <option value="موقع أو تطبيق">موقع أو تطبيق</option>
+              <option value="مشروع آخر">مشروع آخر</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="timeline">موعد التسليم المتوقع</label>
+            <select id="timeline" required>
+              <option value="">اختر المدة</option>
+              <option value="خلال أسبوع">خلال أسبوع</option>
+              <option value="من أسبوع إلى أسبوعين">من أسبوع إلى أسبوعين</option>
+              <option value="من أسبوعين إلى شهر">من أسبوعين إلى شهر</option>
+              <option value="لا يوجد موعد محدد">لا يوجد موعد محدد</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">تفاصيل المشروع</label>
+            <textarea id="message" placeholder="اكتب نبذة عن المشروع، نوع التصميم، المقاسات المطلوبة، وأي أمثلة أو أفكار تريد تنفيذها..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">إرسال الطلب عبر واتساب</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 بورتفوليو مصمم جرافيك محترف — تصميم بصري يترك انطباعًا لا يُنسى.
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="إغلاق">×</button>
+      <div class="lightbox-art" id="lightboxArt"></div>
+      <div class="lightbox-info">
+        <div class="eyebrow" id="lightboxType">نوع المشروع</div>
+        <h3 id="lightboxTitle">عنوان المشروع</h3>
+        <p>
+          هذا عرض بصري تجريبي داخل المعرض. يمكنك استبدال هذه المساحات بصور حقيقية من أعمالك أو روابط مشاريع Behance.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll Reveal
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    // Gallery Filters
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        galleryItems.forEach((item) => {
+          const category = item.getAttribute("data-category");
+
+          if (filter === "all" || filter === category) {
+            item.classList.remove("hide");
+          } else {
+            item.classList.add("hide");
+          }
+        });
+      });
+    });
+
+    // Gallery Lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxArt = document.getElementById("lightboxArt");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxType = document.getElementById("lightboxType");
+
+    galleryItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const title = item.getAttribute("data-title");
+        const type = item.getAttribute("data-type");
+        const art = item.querySelector(".gallery-art");
+        const artClass = Array.from(art.classList).find((className) => className.startsWith("art-"));
+
+        lightboxTitle.textContent = title;
+        lightboxType.textContent = type;
+        lightboxArt.className = "lightbox-art " + artClass;
+
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const icon = question.querySelector("span");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+        icon.textContent = item.classList.contains("active") ? "−" : "+";
+      });
+    });
+
+    // WhatsApp Form
+    const whatsappForm = document.getElementById("whatsappForm");
+
+    whatsappForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const whatsappNumber = "201000000000";
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const projectType = document.getElementById("projectType").value;
+      const timeline = document.getElementById("timeline").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage = `
+طلب جديد من بورتفوليو مصمم الجرافيك
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email}
+
+نوع التصميم المطلوب: ${service}
+نوع المشروع: ${projectType}
+موعد التسليم المتوقع: ${timeline}
+
+تفاصيل المشروع:
+${message}
+      `;
+
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>

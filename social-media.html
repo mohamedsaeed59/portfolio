@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>بورتفوليو أخصائي سوشيال ميديا | إدارة محتوى ونمو حسابات</title>
+
+  <meta name="description" content="بورتفوليو عربي احترافي لأخصائي سوشيال ميديا متخصص في استراتيجية المحتوى، التخطيط الشهري، إدارة المجتمعات، نمو الحسابات، وتحليل الأداء." />
+  <meta name="keywords" content="أخصائي سوشيال ميديا, إدارة سوشيال ميديا, استراتيجية محتوى, نمو حسابات, تقويم محتوى, إدارة مجتمع, محتوى إنستجرام, محتوى تيك توك" />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --surface: #0B1120;
+      --surface-2: #111827;
+      --primary: #EC4899;
+      --secondary: #8B5CF6;
+      --accent: #22C55E;
+      --white: #FFFFFF;
+      --text: #F8FAFC;
+      --muted: #A7B0C2;
+      --soft: #E2E8F0;
+      --border: rgba(255,255,255,0.12);
+      --glass: rgba(255,255,255,0.065);
+      --shadow: 0 30px 90px rgba(0,0,0,0.45);
+      --radius: 28px;
+      --container: min(1160px, 92%);
+      --transition: 260ms ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      direction: rtl;
+      text-align: right;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 82% 0%, rgba(236,72,153,0.24), transparent 34%),
+        radial-gradient(circle at 8% 18%, rgba(139,92,246,0.22), transparent 32%),
+        radial-gradient(circle at 72% 86%, rgba(34,197,94,0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: var(--container);
+      margin: auto;
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(236,72,153,0.36);
+      background: rgba(236,72,153,0.12);
+      color: #FBCFE8;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 86px);
+    }
+
+    h2 {
+      font-size: clamp(32px, 5.5vw, 62px);
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      color: #D8E1F1;
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F9A8D4 34%, #C4B5FD 70%, #86EFAC 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      min-height: 54px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 900;
+      cursor: pointer;
+      transition: var(--transition);
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 20px 50px rgba(236,72,153,0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--soft);
+      backdrop-filter: blur(16px);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,0.085), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(2, 6, 23, 0.78);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(from 160deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+      color: white;
+      direction: ltr;
+      box-shadow: 0 16px 36px rgba(236,72,153,0.26);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      padding: 100px 0 78px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(circle at center, black, transparent 74%);
+      pointer-events: none;
+    }
+
+    .floating-bubble {
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.9;
+      animation: floatBubble 7s ease-in-out infinite;
+      filter: blur(0.5px);
+    }
+
+    .bubble-1 {
+      width: 170px;
+      height: 170px;
+      left: 8%;
+      top: 15%;
+      background: linear-gradient(135deg, rgba(236,72,153,0.55), transparent);
+    }
+
+    .bubble-2 {
+      width: 115px;
+      height: 115px;
+      right: 12%;
+      bottom: 12%;
+      background: linear-gradient(135deg, rgba(34,197,94,0.42), transparent);
+      animation-delay: 1.2s;
+    }
+
+    .bubble-3 {
+      width: 86px;
+      height: 86px;
+      left: 25%;
+      bottom: 26%;
+      background: linear-gradient(135deg, rgba(139,92,246,0.62), transparent);
+      animation-delay: 0.6s;
+    }
+
+    @keyframes floatBubble {
+      0%, 100% {
+        transform: translateY(0) rotate(0);
+      }
+
+      50% {
+        transform: translateY(-22px) rotate(10deg);
+      }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .hero-title {
+      margin-bottom: 22px;
+      max-width: 930px;
+    }
+
+    .hero-desc {
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 720px;
+    }
+
+    .hero-pills span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--soft);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* Phone Mockup */
+    .phone-scene {
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .phone {
+      width: min(360px, 100%);
+      padding: 14px;
+      border-radius: 42px;
+      background: linear-gradient(145deg, #1F2937, #050816);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 34px 100px rgba(0,0,0,0.56);
+      position: relative;
+      transform: rotate(-2deg);
+    }
+
+    .phone-screen {
+      min-height: 620px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at top, rgba(236,72,153,0.18), transparent 28%),
+        var(--surface);
+      border: 1px solid rgba(255,255,255,0.10);
+      overflow: hidden;
+      padding: 18px;
+      position: relative;
+    }
+
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--soft);
+      font-weight: 900;
+    }
+
+    .profile-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .profile-row strong {
+      display: block;
+    }
+
+    .profile-row span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .story-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      direction: ltr;
+    }
+
+    .story {
+      flex: 0 0 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary), var(--secondary), var(--accent), var(--primary));
+      padding: 3px;
+    }
+
+    .story div {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--surface);
+    }
+
+    .post-card {
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+
+    .post-visual {
+      min-height: 210px;
+      background:
+        linear-gradient(135deg, rgba(236,72,153,0.85), rgba(139,92,246,0.55)),
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.2), transparent 16%);
+      padding: 20px;
+      display: flex;
+      align-items: end;
+    }
+
+    .post-visual h3 {
+      font-size: 26px;
+      max-width: 240px;
+    }
+
+    .post-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 12px;
+    }
+
+    .post-stats div {
+      padding: 10px;
+      border-radius: 14px;
+      background: rgba(2,6,23,0.56);
+      text-align: center;
+    }
+
+    .post-stats strong {
+      display: block;
+      color: var(--accent);
+      direction: ltr;
+    }
+
+    .post-stats span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .floating-metric {
+      position: absolute;
+      left: -12px;
+      top: 18%;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(2,6,23,0.76);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      animation: floatBubble 5s ease-in-out infinite;
+    }
+
+    .floating-metric strong {
+      display: block;
+      color: var(--accent);
+      font-size: 30px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .floating-metric span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-card {
+      padding: 34px;
+    }
+
+    .about-card p + p {
+      margin-top: 16px;
+    }
+
+    .about-stats {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stat-box {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(236,72,153,0.42);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 42px;
+      color: var(--accent);
+      line-height: 1;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      min-height: 245px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      left: -45px;
+      top: -45px;
+      background: rgba(236,72,153,0.18);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(236,72,153,0.48);
+      background: rgba(236,72,153,0.10);
+    }
+
+    .service-card:hover::after {
+      transform: scale(1.45);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(139,92,246,0.18);
+      color: #C4B5FD;
+      font-size: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-card h3,
+    .service-card p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+    }
+
+    /* Growth Results */
+    .growth-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .growth-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .growth-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34,197,94,0.42);
+    }
+
+    .growth-card::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(34,197,94,0.11);
+      top: -54px;
+      left: -54px;
+    }
+
+    .growth-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 44px;
+      line-height: 1;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .growth-card h3,
+    .growth-card p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-chart {
+      margin-top: 22px;
+      height: 90px;
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      direction: ltr;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-chart span {
+      flex: 1;
+      border-radius: 999px 999px 0 0;
+      background: linear-gradient(180deg, var(--accent), var(--primary));
+      min-height: 20px;
+      animation: growBar 1.1s ease forwards;
+      transform-origin: bottom;
+    }
+
+    @keyframes growBar {
+      from {
+        transform: scaleY(0.25);
+        opacity: 0.3;
+      }
+
+      to {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    /* Featured Projects */
+    .projects-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project-card {
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(236,72,153,0.42);
+      box-shadow: 0 34px 90px rgba(0,0,0,0.34);
+    }
+
+    .project-visual {
+      min-height: 320px;
+      padding: 26px;
+      display: flex;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-visual::before {
+      content: "";
+      position: absolute;
+      inset: 26px;
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 26px;
+    }
+
+    .visual-1 {
+      background: linear-gradient(135deg, rgba(236,72,153,0.86), rgba(139,92,246,0.55)), #111827;
+    }
+
+    .visual-2 {
+      background: linear-gradient(135deg, rgba(139,92,246,0.75), rgba(37,99,235,0.52)), #111827;
+    }
+
+    .visual-3 {
+      background: linear-gradient(135deg, rgba(34,197,94,0.45), rgba(236,72,153,0.65)), #111827;
+    }
+
+    .project-visual h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 36px;
+      max-width: 420px;
+    }
+
+    .project-info {
+      padding: 26px;
+    }
+
+    .project-info span {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .project-info h3 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+
+    .project-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-metrics div {
+      padding: 13px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+    }
+
+    .project-metrics strong {
+      display: block;
+      color: var(--accent);
+      direction: ltr;
+      text-align: right;
+    }
+
+    .project-metrics small {
+      color: var(--muted);
+    }
+
+    /* Content Samples */
+    .content-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--soft);
+      font-weight: 900;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-color: transparent;
+      color: white;
+    }
+
+    .content-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .content-card {
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .content-card.hide {
+      display: none;
+    }
+
+    .content-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(236,72,153,0.42);
+    }
+
+    .content-preview {
+      min-height: 260px;
+      padding: 22px;
+      display: flex;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-preview::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      left: 20px;
+      top: 20px;
+    }
+
+    .sample-reel {
+      background: linear-gradient(135deg, #EC4899, #8B5CF6);
+    }
+
+    .sample-post {
+      background: linear-gradient(135deg, #2563EB, #8B5CF6);
+    }
+
+    .sample-story {
+      background: linear-gradient(135deg, #22C55E, #EC4899);
+    }
+
+    .sample-plan {
+      background: linear-gradient(135deg, #F59E0B, #8B5CF6);
+    }
+
+    .content-preview h3 {
+      position: relative;
+      z-index: 2;
+      max-width: 300px;
+      font-size: 30px;
+    }
+
+    .content-info {
+      padding: 22px;
+    }
+
+    .content-info span {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .content-info h3 {
+      font-size: 23px;
+      margin: 7px 0;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+    }
+
+    .testimonial p {
+      font-size: 18px;
+      color: #E5E7EB;
+      margin-bottom: 22px;
+    }
+
+    .testimonial strong {
+      display: block;
+      color: white;
+    }
+
+    .testimonial span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      counter-increment: step;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(139,92,246,0.48);
+    }
+
+    .process-card::before {
+      content: "0" counter(step);
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 900;
+      direction: ltr;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 900px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      text-align: right;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .faq-question span {
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      padding: 0 22px;
+      transition: 300ms ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 240px;
+      padding: 0 22px 22px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-copy {
+      padding: 34px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 18px;
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-points div {
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.052);
+      border: 1px solid var(--border);
+      color: var(--soft);
+    }
+
+    form {
+      padding: 28px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--soft);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(2,6,23,0.68);
+      color: white;
+      outline: none;
+      font-size: 15px;
+      direction: rtl;
+      text-align: right;
+      transition: var(--transition);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #7B8499;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(236,72,153,0.72);
+      box-shadow: 0 0 0 4px rgba(236,72,153,0.13);
+    }
+
+    .submit-btn {
+      min-height: 56px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #86EFAC);
+      color: #04110A;
+      font-weight: 900;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(34,197,94,0.25);
+    }
+
+    .footer {
+      padding: 36px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,0.22);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 750ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 720px) {
+      .nav-links,
+      .nav-cta {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr 0.9fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 0.85fr;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .growth-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .project-card:first-child {
+        grid-column: span 2;
+      }
+
+      .content-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 78px 0 64px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .phone {
+        transform: none;
+      }
+
+      .phone-screen {
+        min-height: 560px;
+      }
+
+      .floating-metric {
+        left: 8px;
+        top: auto;
+        bottom: 20px;
+      }
+
+      .project-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-copy,
+      form,
+      .about-card {
+        padding: 22px;
+      }
+
+      .floating-bubble {
+        opacity: 0.35;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="العودة إلى بداية الصفحة">
+        <span class="logo-mark">SM</span>
+        <span>أخصائي سوشيال</span>
+      </a>
+
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#results">النمو</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta">ابدأ إدارة حسابك</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <span class="floating-bubble bubble-1"></span>
+      <span class="floating-bubble bubble-2"></span>
+      <span class="floating-bubble bubble-3"></span>
+
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">أخصائي سوشيال ميديا ونمو محتوى</div>
+
+          <h1 class="hero-title">
+            أحوّل حسابات السوشيال ميديا إلى
+            <span class="gradient-text">حضور قوي ومجتمع متفاعل.</span>
+          </h1>
+
+          <p class="lead hero-desc">
+            أساعد العلامات التجارية وصناع المحتوى على بناء استراتيجية محتوى واضحة، تقويم نشر منظم، أفكار Reels جذابة، وإدارة مجتمع تزيد التفاعل والثقة والطلبات.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">شاهد مشاريع النمو</a>
+            <a href="#contact" class="btn btn-secondary">اطلب خطة محتوى</a>
+          </div>
+
+          <div class="hero-pills">
+            <span>استراتيجية محتوى</span>
+            <span>تقويم شهري</span>
+            <span>إدارة مجتمع</span>
+            <span>Reels وStories</span>
+            <span>تحليل الأداء</span>
+          </div>
+        </div>
+
+        <aside class="phone-scene reveal">
+          <div class="floating-metric">
+            <strong>+186%</strong>
+            <span>نمو التفاعل</span>
+          </div>
+
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-top">
+                <span>Social Studio</span>
+                <span>●</span>
+              </div>
+
+              <div class="profile-row">
+                <div class="avatar">S</div>
+                <div>
+                  <strong>حساب براند نشط</strong>
+                  <span>استراتيجية محتوى شهرية</span>
+                </div>
+              </div>
+
+              <div class="story-row">
+                <div class="story"><div></div></div>
+                <div class="story"><div></div></div>
+                <div class="story"><div></div></div>
+                <div class="story"><div></div></div>
+                <div class="story"><div></div></div>
+              </div>
+
+              <div class="post-card">
+                <div class="post-visual">
+                  <h3>محتوى يلفت الانتباه ويقود للتفاعل.</h3>
+                </div>
+
+                <div class="post-stats">
+                  <div>
+                    <strong>42K</strong>
+                    <span>وصول</span>
+                  </div>
+                  <div>
+                    <strong>8.6%</strong>
+                    <span>تفاعل</span>
+                  </div>
+                  <div>
+                    <strong>320</strong>
+                    <span>رسالة</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="post-card">
+                <div class="post-stats">
+                  <div>
+                    <strong>+74%</strong>
+                    <span>حفظ</span>
+                  </div>
+                  <div>
+                    <strong>+53%</strong>
+                    <span>مشاركة</span>
+                  </div>
+                  <div>
+                    <strong>+39%</strong>
+                    <span>نمو</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-card glass reveal">
+          <div class="eyebrow">نبذة عني</div>
+
+          <h2>لا أدير الحسابات لمجرد النشر، بل لبناء حضور مؤثر ونتائج واضحة.</h2>
+
+          <p>
+            أعمل كأخصائي سوشيال ميديا أساعد المشاريع على تحويل منصاتها من حسابات صامتة إلى قنوات تواصل نشطة تبني ثقة، تفاعل، ومجتمع حول العلامة.
+          </p>
+
+          <p>
+            أبدأ من فهم الجمهور، نبرة البراند، أهداف المحتوى، وأنواع المنشورات المناسبة، ثم أبني خطة محتوى شهرية تجمع بين الوعي، التفاعل، الثقة، والتحويل.
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat-box">
+            <strong>60+</strong>
+            <p>تقويم محتوى تم بناؤه وتنظيمه</p>
+          </div>
+
+          <div class="stat-box">
+            <strong>1200+</strong>
+            <p>فكرة محتوى ومنشور تم تخطيطه</p>
+          </div>
+
+          <div class="stat-box">
+            <strong>35+</strong>
+            <p>حسابًا تم تحسين ظهوره وتفاعله</p>
+          </div>
+
+          <div class="stat-box">
+            <strong>24/7</strong>
+            <p>متابعة للترندات والتفاعل والرسائل</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">خدمات السوشيال ميديا</div>
+          <h2>كل ما يحتاجه حسابك ليصبح أكثر تنظيمًا وتأثيرًا ونموًا.</h2>
+          <p class="lead">
+            خدمات مصممة لبناء محتوى مستمر، تفاعل حقيقي، وحضور متماسك يعبر عن شخصية العلامة.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">#</div>
+            <h3>استراتيجية المحتوى</h3>
+            <p>تحديد محاور المحتوى، نبرة الحساب، نوعية المنشورات، والأهداف التي يخدمها كل محتوى.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">◷</div>
+            <h3>تخطيط المحتوى</h3>
+            <p>تنظيم أفكار المنشورات والريلز والستوري في خطة واضحة ومناسبة للمنصة والجمهور.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">💬</div>
+            <h3>إدارة المجتمع</h3>
+            <p>متابعة التعليقات والرسائل وتحفيز التفاعل بطريقة تحافظ على صوت العلامة وثقة الجمهور.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">↗</div>
+            <h3>نمو الحسابات</h3>
+            <p>تحسين الظهور، معدل التفاعل، جودة المحتوى، وأسلوب تقديم الحساب لجذب جمهور مناسب.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🎬</div>
+            <h3>توجيه صناعة المحتوى</h3>
+            <p>تقديم أفكار Reels، هوكات، سكريبتات قصيرة، وزوايا تصوير تناسب الترند والجمهور.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">📊</div>
+            <h3>التقارير والتحليل</h3>
+            <p>تحليل الأداء شهريًا لمعرفة أفضل أنواع المحتوى، أوقات النشر، ومصادر النمو.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">▦</div>
+            <h3>تقويم محتوى شهري</h3>
+            <p>خطة شهرية منظمة تشمل الأفكار، الصيغ، الأهداف، والمنصات المناسبة لكل منشور.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Growth Results -->
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">نتائج نمو الحسابات</div>
+          <h2>أرقام توضّح أثر المحتوى المنظم على التفاعل والانتشار.</h2>
+        </div>
+
+        <div class="growth-grid">
+          <article class="growth-card reveal">
+            <strong>+186%</strong>
+            <h3>زيادة التفاعل</h3>
+            <p>بعد تطوير محاور المحتوى وتحسين أسلوب العناوين والهوكات.</p>
+            <div class="mini-chart">
+              <span style="height: 34%;"></span>
+              <span style="height: 42%;"></span>
+              <span style="height: 58%;"></span>
+              <span style="height: 74%;"></span>
+              <span style="height: 94%;"></span>
+            </div>
+          </article>
+
+          <article class="growth-card reveal">
+            <strong>+92%</strong>
+            <h3>زيادة الوصول</h3>
+            <p>من خلال Reels قصيرة، محتوى قابل للمشاركة، وتوقيت نشر أفضل.</p>
+            <div class="mini-chart">
+              <span style="height: 28%;"></span>
+              <span style="height: 46%;"></span>
+              <span style="height: 52%;"></span>
+              <span style="height: 79%;"></span>
+              <span style="height: 88%;"></span>
+            </div>
+          </article>
+
+          <article class="growth-card reveal">
+            <strong>+74%</strong>
+            <h3>زيادة الحفظ</h3>
+            <p>بسبب محتوى تعليمي وقابل للرجوع إليه، مصمم حول احتياجات الجمهور.</p>
+            <div class="mini-chart">
+              <span style="height: 30%;"></span>
+              <span style="height: 38%;"></span>
+              <span style="height: 60%;"></span>
+              <span style="height: 70%;"></span>
+              <span style="height: 83%;"></span>
+            </div>
+          </article>
+
+          <article class="growth-card reveal">
+            <strong>+53%</strong>
+            <h3>زيادة الرسائل</h3>
+            <p>بعد إدخال محتوى ثقة ودعوات تفاعل واضحة داخل الخطة الشهرية.</p>
+            <div class="mini-chart">
+              <span style="height: 26%;"></span>
+              <span style="height: 39%;"></span>
+              <span style="height: 48%;"></span>
+              <span style="height: 63%;"></span>
+              <span style="height: 80%;"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">مشاريع سوشيال ميديا مميزة</div>
+          <h2>أمثلة على تحويل الحسابات من نشر عشوائي إلى حضور منظم.</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-visual visual-1">
+              <h3>خطة محتوى كاملة لعلامة تجارية في مجال الجمال</h3>
+            </div>
+
+            <div class="project-info">
+              <span>استراتيجية محتوى + تقويم شهري</span>
+              <h3>تحويل الحساب إلى مجلة بصرية يومية.</h3>
+              <p>تم بناء محاور محتوى تشمل التوعية، المنتج، آراء العملاء، النصائح، والترندات المناسبة.</p>
+
+              <div class="project-metrics">
+                <div><strong>+138%</strong><small>تفاعل</small></div>
+                <div><strong>+81%</strong><small>وصول</small></div>
+                <div><strong>+46%</strong><small>رسائل</small></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual visual-2">
+              <h3>إدارة محتوى لحساب تعليمي</h3>
+            </div>
+
+            <div class="project-info">
+              <span>محتوى تعليمي + مجتمع</span>
+              <h3>زيادة الحفظ والمشاركة عبر محتوى مفيد.</h3>
+              <p>تم تحويل المعرفة إلى بوستات قصيرة وReels سهلة الفهم وقابلة للمشاركة.</p>
+
+              <div class="project-metrics">
+                <div><strong>+74%</strong><small>حفظ</small></div>
+                <div><strong>+59%</strong><small>مشاركة</small></div>
+                <div><strong>+33%</strong><small>متابعين</small></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual visual-3">
+              <h3>حملة Reels لمشروع خدمات</h3>
+            </div>
+
+            <div class="project-info">
+              <span>Reels + هوكات + سكريبتات</span>
+              <h3>تحويل الخبرة إلى فيديوهات قصيرة مؤثرة.</h3>
+              <p>تم بناء أفكار Reels حول مشاكل الجمهور واعتراضاته والأسئلة الشائعة.</p>
+
+              <div class="project-metrics">
+                <div><strong>+92%</strong><small>وصول</small></div>
+                <div><strong>+61%</strong><small>تعليقات</small></div>
+                <div><strong>+39%</strong><small>طلبات</small></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Samples -->
+    <section class="section" id="samples">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">عينات محتوى</div>
+          <h2>أفكار محتوى منظمة حسب الهدف والمنصة.</h2>
+          <p class="lead">استخدم الأزرار لتصفية عينات المحتوى حسب النوع.</p>
+        </div>
+
+        <div class="content-tabs reveal">
+          <button class="tab-btn active" data-filter="all">الكل</button>
+          <button class="tab-btn" data-filter="reels">Reels</button>
+          <button class="tab-btn" data-filter="posts">منشورات</button>
+          <button class="tab-btn" data-filter="stories">Stories</button>
+          <button class="tab-btn" data-filter="plans">خطط محتوى</button>
+        </div>
+
+        <div class="content-grid reveal">
+          <article class="content-card" data-category="reels">
+            <div class="content-preview sample-reel">
+              <h3>3 أخطاء تمنع جمهورك من التفاعل</h3>
+            </div>
+            <div class="content-info">
+              <span>فكرة Reel</span>
+              <h3>هوك تعليمي سريع</h3>
+              <p>مناسب لحسابات الخدمات والتعليم والبراندات الشخصية.</p>
+            </div>
+          </article>
+
+          <article class="content-card" data-category="posts">
+            <div class="content-preview sample-post">
+              <h3>منشور كاروسيل يشرح قيمة الخدمة</h3>
+            </div>
+            <div class="content-info">
+              <span>منشور كاروسيل</span>
+              <h3>محتوى ثقة وتحويل</h3>
+              <p>يعالج اعتراضات الجمهور ويقربه من قرار التواصل.</p>
+            </div>
+          </article>
+
+          <article class="content-card" data-category="stories">
+            <div class="content-preview sample-story">
+              <h3>سلسلة Stories لزيادة الردود</h3>
+            </div>
+            <div class="content-info">
+              <span>Stories</span>
+              <h3>تفاعل يومي</h3>
+              <p>أسئلة، تصويت، كواليس، ودعوة تواصل خفيفة.</p>
+            </div>
+          </article>
+
+          <article class="content-card" data-category="plans">
+            <div class="content-preview sample-plan">
+              <h3>تقويم محتوى لشهر كامل</h3>
+            </div>
+            <div class="content-info">
+              <span>خطة شهرية</span>
+              <h3>محتوى منظم حسب الهدف</h3>
+              <p>تقسيم أسبوعي بين الوعي، الثقة، التفاعل، والتحويل.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">آراء العملاء</div>
+          <h2>الفرق يظهر عندما يصبح الحساب واضحًا ومنظمًا ومتفاعلًا.</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial reveal">
+            <p>“بعد تنظيم المحتوى، أصبح الحساب يعبر عن البراند بشكل أفضل، وزاد التفاعل والرسائل بشكل واضح.”</p>
+            <strong>صاحبة براند تجميل</strong>
+            <span>إدارة محتوى وسوشيال ميديا</span>
+          </article>
+
+          <article class="testimonial reveal">
+            <p>“أكثر شيء فرق معنا هو تقويم المحتوى. أصبح كل منشور له هدف واضح بدل النشر العشوائي.”</p>
+            <strong>مدير مشروع تعليمي</strong>
+            <span>خطة محتوى شهرية</span>
+          </article>
+
+          <article class="testimonial reveal">
+            <p>“أفكار الريلز كانت عملية جدًا وسهلة التنفيذ، وبدأنا نشوف وصول أعلى من أول شهر.”</p>
+            <strong>مؤسس شركة خدمات</strong>
+            <span>Reels وContent Direction</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">طريقة العمل</div>
+          <h2>من تحليل الحساب إلى خطة محتوى قابلة للتنفيذ.</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <h3>تحليل الحساب</h3>
+            <p>مراجعة الهوية، المحتوى الحالي، التفاعل، الجمهور، ونقاط الضعف.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>بناء الاستراتيجية</h3>
+            <p>تحديد محاور المحتوى، النبرة، المنصات، والأهداف الأساسية.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>تقويم المحتوى</h3>
+            <p>تنظيم أفكار شهرية تشمل منشورات، Reels، Stories، ودعوات تفاعل.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>تحليل وتحسين</h3>
+            <p>قراءة النتائج وتحسين الأفكار بناءً على الأداء ورد فعل الجمهور.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">الأسئلة الشائعة</div>
+          <h2>أسئلة مهمة قبل إدارة حسابك.</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل تقدم إدارة كاملة للحساب؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم، يمكن تقديم إدارة كاملة تشمل التخطيط، النشر، المتابعة، إدارة المجتمع، وتحليل الأداء حسب نطاق العمل المتفق عليه.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل تصمم المحتوى أيضًا؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              يمكن العمل على توجيه المحتوى والأفكار والسكريبتات والتقويم، ويمكن إضافة التصميم أو التعاون مع مصمم حسب احتياج المشروع.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل تكتب أفكار Reels؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم، يمكن تقديم أفكار Reels مع الهوكات والسكريبتات القصيرة وزوايا التصوير المناسبة لطبيعة الحساب والجمهور.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              ما الذي تحتاجه قبل البدء؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              أحتاج إلى رابط الحساب، نوع المشروع، الجمهور المستهدف، أهداف الحساب، أمثلة محتوى تحبها، وأي عروض أو خدمات تريد التركيز عليها.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy glass reveal">
+          <div class="eyebrow">تواصل معي</div>
+          <h2>جاهز لتحويل حسابك إلى قناة نمو حقيقية؟</h2>
+          <p>
+            املأ النموذج التالي وسيتم إرسال التفاصيل مباشرة إلى واتساب في رسالة منظمة.
+          </p>
+
+          <div class="contact-points">
+            <div>✓ مناسب لإدارة الحسابات وتقويمات المحتوى الشهرية.</div>
+            <div>✓ رسالة واتساب تلقائية تحتوي على كل بيانات المشروع.</div>
+            <div>✓ تصميم عربي بالكامل ومتجاوب مع الموبايل.</div>
+          </div>
+        </div>
+
+        <form id="whatsappForm" class="glass reveal">
+          <div class="form-group">
+            <label for="name">الاسم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" placeholder="اكتب رقم الهاتف" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" placeholder="اكتب البريد الإلكتروني" required />
+          </div>
+
+          <div class="form-group">
+            <label for="platform">المنصة الأساسية</label>
+            <select id="platform" required>
+              <option value="">اختر المنصة</option>
+              <option value="إنستجرام">إنستجرام</option>
+              <option value="تيك توك">تيك توك</option>
+              <option value="فيسبوك">فيسبوك</option>
+              <option value="لينكدإن">لينكدإن</option>
+              <option value="أكثر من منصة">أكثر من منصة</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service">الخدمة المطلوبة</label>
+            <select id="service" required>
+              <option value="">اختر الخدمة</option>
+              <option value="استراتيجية محتوى">استراتيجية محتوى</option>
+              <option value="تقويم محتوى شهري">تقويم محتوى شهري</option>
+              <option value="إدارة حساب كاملة">إدارة حساب كاملة</option>
+              <option value="إدارة مجتمع">إدارة مجتمع</option>
+              <option value="أفكار Reels وسكريبتات">أفكار Reels وسكريبتات</option>
+              <option value="تحليل حساب وتقرير">تحليل حساب وتقرير</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">هدفك الأساسي</label>
+            <select id="goal" required>
+              <option value="">اختر الهدف</option>
+              <option value="زيادة التفاعل">زيادة التفاعل</option>
+              <option value="زيادة المتابعين">زيادة المتابعين</option>
+              <option value="زيادة الرسائل والطلبات">زيادة الرسائل والطلبات</option>
+              <option value="تنظيم المحتوى">تنظيم المحتوى</option>
+              <option value="تحسين شكل الحساب">تحسين شكل الحساب</option>
+              <option value="بناء مجتمع">بناء مجتمع</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">تفاصيل الحساب أو المشروع</label>
+            <textarea id="message" placeholder="اكتب رابط الحساب إن وجد، طبيعة المشروع، الجمهور المستهدف، وأهم تحدي تواجهه في السوشيال ميديا..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">إرسال الطلب عبر واتساب</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 بورتفوليو أخصائي سوشيال ميديا — محتوى منظم، تفاعل أقوى، وحضور لا يُنسى.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Reveal
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    // Content Tabs
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const contentCards = document.querySelectorAll(".content-card");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        contentCards.forEach((card) => {
+          const category = card.getAttribute("data-category");
+
+          if (filter === "all" || filter === category) {
+            card.classList.remove("hide");
+          } else {
+            card.classList.add("hide");
+          }
+        });
+      });
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const icon = question.querySelector("span");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+        icon.textContent = item.classList.contains("active") ? "−" : "+";
+      });
+    });
+
+    // WhatsApp Form
+    const whatsappForm = document.getElementById("whatsappForm");
+
+    whatsappForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const whatsappNumber = "201000000000";
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const platform = document.getElementById("platform").value;
+      const service = document.getElementById("service").value;
+      const goal = document.getElementById("goal").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage = `
+طلب جديد من بورتفوليو أخصائي السوشيال ميديا
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email}
+
+المنصة الأساسية: ${platform}
+الخدمة المطلوبة: ${service}
+الهدف الأساسي: ${goal}
+
+تفاصيل الحساب أو المشروع:
+${message}
+      `;
+
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>بورتفوليو كاتب إعلانات احترافي | كتابة تبيع بالكلمات</title>
+
+  <meta name="description" content="بورتفوليو عربي فاخر لكاتب إعلانات محترف متخصص في صفحات البيع، صفحات الهبوط، الرسائل البريدية، نصوص الإعلانات، وصياغة الرسائل التسويقية التي تحول الزوار إلى عملاء." />
+  <meta name="keywords" content="كاتب إعلانات, كوبي رايتر, كتابة إعلانية, صفحات بيع, صفحات هبوط, كتابة محتوى تسويقي, إعلانات, رسائل تسويقية" />
+
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #111111;
+      --surface-soft: #161616;
+      --deep: #050505;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212, 175, 55, 0.14);
+      --white: #ffffff;
+      --text: #f5f5f5;
+      --muted: #a3a3a3;
+      --soft-gray: #d4d4d4;
+      --border: rgba(255, 255, 255, 0.11);
+      --gold-border: rgba(212, 175, 55, 0.32);
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+      --radius: 28px;
+      --container: min(1120px, 92%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.13), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: var(--container);
+      margin: auto;
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: 0;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 720px;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .luxury-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .luxury-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 35%);
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.78);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: radial-gradient(circle, rgba(212,175,55,0.18), rgba(255,255,255,0.03));
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 24px;
+      color: var(--soft-gray);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border: 1px solid var(--gold-border);
+      border-radius: 999px;
+      color: var(--deep);
+      background: var(--gold);
+      font-size: 14px;
+      font-weight: 900;
+      transition: 0.25s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(212, 175, 55, 0.22);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 92px 0 78px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(44px, 8vw, 92px);
+      line-height: 1.12;
+      letter-spacing: -2.2px;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      color: var(--soft-gray);
+      font-size: 19px;
+      max-width: 660px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      transition: 0.25s ease;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+      border-color: var(--gold);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      border-color: var(--border);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .metric {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      color: var(--gold);
+      direction: ltr;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .editorial-panel {
+      padding: 28px;
+      min-height: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .magazine-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-quote {
+      position: relative;
+      z-index: 1;
+      padding: 46px 0;
+    }
+
+    .quote-mark {
+      font-size: 92px;
+      line-height: 0.8;
+      color: var(--gold);
+      opacity: 0.9;
+    }
+
+    .feature-quote h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .feature-quote p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .copy-sample {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+    }
+
+    .sample-line {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.36);
+      border: 1px solid var(--border);
+      color: var(--soft-gray);
+    }
+
+    .sample-line span {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .about-letter {
+      padding: 34px;
+    }
+
+    .about-letter p {
+      color: var(--soft-gray);
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .signature {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .quote-box {
+      padding: 34px;
+      border-right: 3px solid var(--gold);
+      background: var(--surface);
+      border-radius: 24px;
+      color: var(--white);
+      font-size: 24px;
+      line-height: 1.6;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      padding: 28px;
+      min-height: 240px;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--gold-border);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 22px;
+      display: block;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .service-card h3 {
+      color: var(--white);
+      font-size: 26px;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Portfolio */
+    .portfolio-layout {
+      margin-top: 42px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .portfolio-card {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      transition: 0.25s ease;
+    }
+
+    .portfolio-card:hover {
+      background: var(--surface-soft);
+      transform: translateY(-5px);
+      border-color: var(--gold-border);
+    }
+
+    .portfolio-meta {
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .portfolio-card h3 {
+      font-size: 30px;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-card p {
+      color: var(--muted);
+    }
+
+    .copy-preview {
+      margin-top: 22px;
+      padding: 20px;
+      background: var(--deep);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--soft-gray);
+      font-size: 17px;
+    }
+
+    .copy-preview strong {
+      color: var(--gold);
+    }
+
+    /* Case Studies */
+    .case-grid {
+      display: grid;
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .case-card {
+      padding: 30px;
+    }
+
+    .case-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-header h3 {
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    .case-tag {
+      align-self: start;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .before-after {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ba-box {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.32);
+    }
+
+    .ba-box small {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .ba-box p {
+      color: var(--soft-gray);
+      font-size: 17px;
+    }
+
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-result {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .case-result strong {
+      display: block;
+      color: var(--gold);
+      font-size: 26px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .case-result span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Results */
+    .results-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .result-card {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+    }
+
+    .result-card strong {
+      display: block;
+      color: var(--gold);
+      font-size: 44px;
+      line-height: 1.1;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 12px;
+    }
+
+    .result-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .result-card p {
+      color: var(--muted);
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .testimonial {
+      padding: 30px;
+    }
+
+    .testimonial p {
+      color: var(--soft-gray);
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    .client {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .client strong {
+      color: var(--white);
+      display: block;
+      font-size: 16px;
+    }
+
+    /* Process */
+    .process-wrap {
+      margin-top: 42px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 26px;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      transition: 0.25s ease;
+    }
+
+    .process-step:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--deep);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      direction: ltr;
+    }
+
+    .process-step h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq-list {
+      margin-top: 42px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: 0;
+      color: var(--white);
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      text-align: right;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .faq-question span {
+      color: var(--gold);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      padding: 0 22px;
+      transition: 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      padding: 0 22px 22px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .contact-note {
+      padding: 30px;
+    }
+
+    .contact-note h3 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .contact-note p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-highlights {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-highlights div {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      color: var(--soft-gray);
+    }
+
+    form {
+      padding: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--soft-gray);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.42);
+      border: 1px solid var(--border);
+      color: var(--white);
+      outline: none;
+      font-size: 15px;
+      direction: rtl;
+      text-align: right;
+      transition: 0.25s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold-border);
+      box-shadow: 0 0 0 4px rgba(212,175,55,0.08);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #737373;
+    }
+
+    textarea {
+      min-height: 136px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      border: 0;
+      padding: 16px 20px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--deep);
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(212,175,55,0.22);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      background: var(--deep);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .portfolio-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .before-after {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .process-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .section {
+        padding: 74px 0;
+      }
+
+      .hero {
+        padding: 72px 0 58px;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
+      .hero-metrics,
+      .case-results {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-panel {
+        min-height: auto;
+        padding: 22px;
+      }
+
+      .feature-quote {
+        padding: 34px 0;
+      }
+
+      .hero-title {
+        letter-spacing: -1px;
+      }
+
+      .service-card,
+      .portfolio-card,
+      .case-card,
+      .testimonial,
+      form,
+      .contact-note {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="العودة إلى بداية الصفحة">
+        <span class="brand-mark">ك</span>
+        <span>كاتب يبيع بالكلمات</span>
+      </a>
+
+      <nav class="nav-links" aria-label="روابط التنقل الرئيسية">
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#portfolio">الأعمال</a>
+        <a href="#cases">دراسات الحالة</a>
+        <a href="#process">المنهجية</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a href="#contact" class="nav-btn">اطلب كتابة مشروعك</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">كاتب إعلانات احترافي</div>
+
+          <h1 class="hero-title">
+            لا أكتب نصوصًا جميلة فقط، بل أكتب كلمات
+            <span>تدفع العميل للشراء.</span>
+          </h1>
+
+          <p class="hero-description">
+            أساعد العلامات التجارية ورواد الأعمال على تحويل أفكارهم إلى رسائل بيعية واضحة، صفحات هبوط مقنعة، إعلانات لا تمر مرور الكرام، وتسلسلات بريدية تحرك القرار.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">ابدأ مشروعك الآن</a>
+            <a href="#portfolio" class="btn btn-secondary">شاهد نماذج الكتابة</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>+68%</strong>
+              <span>تحسن في معدل التحويل</span>
+            </div>
+
+            <div class="metric">
+              <strong>3.4x</strong>
+              <span>زيادة في التفاعل مع الإعلانات</span>
+            </div>
+
+            <div class="metric">
+              <strong>120+</strong>
+              <span>نصًا بيعيًا تم تطويره</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="editorial-panel luxury-card reveal" aria-label="نموذج أسلوب كتابي">
+          <div class="magazine-label">
+            <span>العدد الخاص</span>
+            <span>فن الإقناع بالكلمات</span>
+          </div>
+
+          <div class="feature-quote">
+            <div class="quote-mark">”</div>
+            <h2>
+              النص القوي لا يشرح المنتج فقط، بل يجعل العميل يرى نفسه بعد شرائه.
+            </h2>
+            <p>
+              لذلك أكتب من زاوية القرار، لا من زاوية الوصف. أبحث عن الدافع، الاعتراض، الرغبة، ثم أصنع رسالة تقود القارئ خطوة بخطوة.
+            </p>
+          </div>
+
+          <div class="copy-sample">
+            <div class="sample-line">
+              <span>قبل:</span>
+              نقدم خدمة كتابة محتوى احترافية.
+            </div>
+
+            <div class="sample-line">
+              <span>بعد:</span>
+              امنح مشروعك كلمات تجعل العميل يفهم قيمتك في أول 5 ثوان.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="eyebrow">نبذة عن الكاتب</div>
+
+          <h2 class="section-title">
+            أكتب للعين، لكنني أقنع العقل وأحرّك الرغبة.
+          </h2>
+
+          <p class="section-text">
+            عملي ليس مجرد ترتيب كلمات. أبدأ من فهم الجمهور، السوق، نقاط الألم، الدوافع النفسية، والاعتراضات التي تمنع العميل من اتخاذ القرار. بعدها أصوغ رسالة واضحة، راقية، ومباشرة تجعل العرض يبدو منطقيًا ومرغوبًا في الوقت نفسه.
+          </p>
+        </div>
+
+        <div class="about-letter luxury-card reveal">
+          <p>
+            في عالم مزدحم بالإعلانات، لا ينتصر النص الأعلى صوتًا، بل النص الأكثر وضوحًا واتصالًا برغبة العميل.
+          </p>
+
+          <p>
+            لذلك أتعامل مع كل مشروع كأنه رسالة بيع كاملة: عنوان يوقف التمرير، افتتاحية تخلق اهتمامًا، عرض يوضح القيمة، ودعوة لاتخاذ إجراء لا تبدو مفروضة.
+          </p>
+
+          <div class="quote-box">
+            “الكلمة الصحيحة في المكان الصحيح قد تختصر ميزانية إعلانية كاملة.”
+          </div>
+
+          <div class="signature">كتابة استراتيجية. أسلوب فاخر. نتيجة قابلة للقياس.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="eyebrow reveal">خدمات الكتابة الإعلانية</div>
+
+        <h2 class="section-title reveal">
+          نصوص مصممة لتقود القارئ من الاهتمام إلى القرار.
+        </h2>
+
+        <p class="section-text reveal">
+          سواء كنت تطلق منتجًا، تبني صفحة هبوط، أو تريد إعلانًا يبيع، كل خدمة هنا مبنية على فهم عميق للسوق وسلوك العميل.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">01</span>
+            <h3>صفحات البيع</h3>
+            <p>
+              صفحات طويلة أو مختصرة تشرح العرض، تبني الثقة، تعالج الاعتراضات، وتقود القارئ للشراء أو الحجز.
+            </p>
+          </article>
+
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">02</span>
+            <h3>صفحات الهبوط</h3>
+            <p>
+              نصوص واضحة ومباشرة لصفحات الهبوط تهدف إلى زيادة التسجيل، الطلب، التواصل، أو تحميل العرض.
+            </p>
+          </article>
+
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">03</span>
+            <h3>تسلسلات البريد الإلكتروني</h3>
+            <p>
+              رسائل ترحيب، متابعة، إطلاق، استعادة عملاء، ورحلات بريدية تبني علاقة وتدفع القارئ للتحرك.
+            </p>
+          </article>
+
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">04</span>
+            <h3>نصوص الإعلانات</h3>
+            <p>
+              أفكار وزوايا إعلانية لعناوين، نصوص قصيرة، سكريبتات فيديو، ونسخ متعددة للاختبار.
+            </p>
+          </article>
+
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">05</span>
+            <h3>نصوص المواقع</h3>
+            <p>
+              صياغة صفحات رئيسية، من نحن، خدمات، وأسئلة شائعة بأسلوب يعكس قيمة العلامة التجارية.
+            </p>
+          </article>
+
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">06</span>
+            <h3>سكريبتات فيديو البيع</h3>
+            <p>
+              نصوص فيديو بيعية تفتح بمشكلة قوية، تبني رغبة، تعرض الحل، وتنتهي بدعوة واضحة لاتخاذ إجراء.
+            </p>
+          </article>
+
+          <article class="service-card luxury-card reveal">
+            <span class="service-number">07</span>
+            <h3>صياغة الرسائل التجارية</h3>
+            <p>
+              بناء رسالة العلامة التجارية، عرض القيمة، النبرة، الجمل الرئيسية، والرسائل التي تميزك عن المنافسين.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing Portfolio Section -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="eyebrow reveal">نماذج من الأعمال</div>
+
+        <h2 class="section-title reveal">
+          نماذج كتابية بطابع تحريري فاخر وهدف بيعي واضح.
+        </h2>
+
+        <p class="section-text reveal">
+          هذه أمثلة توضح طريقة التفكير في النصوص: من عنوان يلفت الانتباه إلى رسالة تشرح القيمة وتدفع القارئ للخطوة التالية.
+        </p>
+
+        <div class="portfolio-layout">
+          <article class="portfolio-card reveal">
+            <div class="portfolio-meta">صفحة هبوط لخدمة استشارية</div>
+            <h3>من زائر متردد إلى عميل يحجز مكالمة.</h3>
+            <p>
+              تمت صياغة الصفحة حول مشكلة واضحة: كثرة المحاولات التسويقية بدون نتائج مفهومة. النص ركز على التحليل، الوضوح، وتقليل المخاطرة.
+            </p>
+
+            <div class="copy-preview">
+              <strong>العنوان:</strong>
+              توقف عن إنفاق ميزانية أكبر قبل أن تعرف أين يتسرب عملاؤك.
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal">
+            <div class="portfolio-meta">حملة إعلانات لمنتج رقمي</div>
+            <h3>زوايا إعلانية متعددة لاختبار الدافع الأقوى.</h3>
+            <p>
+              تم تطوير عدة نسخ إعلانية، كل نسخة تستهدف دافعًا مختلفًا: توفير الوقت، تقليل الخطأ، وضوح الخطوات، وتحقيق نتيجة أسرع.
+            </p>
+
+            <div class="copy-preview">
+              <strong>نص إعلاني:</strong>
+              لا تحتاج إلى أفكار أكثر. تحتاج إلى نظام يحوّل أفكارك إلى محتوى قابل للنشر.
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal">
+            <div class="portfolio-meta">تسلسل بريد إلكتروني</div>
+            <h3>رسائل لا تبيع من أول سطر، بل تبني رغبة تدريجية.</h3>
+            <p>
+              تسلسل مكون من رسائل توعية، معالجة اعتراضات، عرض قيمة، ثم دعوة للشراء في الوقت المناسب.
+            </p>
+
+            <div class="copy-preview">
+              <strong>افتتاحية:</strong>
+              أغلب العملاء لا يرفضون عرضك لأنه ضعيف، بل لأنهم لم يفهموا لماذا يناسبهم الآن.
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal">
+            <div class="portfolio-meta">رسائل علامة تجارية</div>
+            <h3>تحويل الكلام العام إلى تموضع واضح ومميز.</h3>
+            <p>
+              تمت إعادة صياغة عرض القيمة من وصف عادي للخدمة إلى رسالة توضح الفرق الحقيقي الذي يحصل عليه العميل.
+            </p>
+
+            <div class="copy-preview">
+              <strong>رسالة العلامة:</strong>
+              نكتب لك حضورًا لا يبدو مثل الجميع، ونصًا يجعل العميل يعرف لماذا يختارك.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="eyebrow reveal">دراسات حالة</div>
+
+        <h2 class="section-title reveal">
+          قبل وبعد: حين تتغير الكلمات، تتغير القرارات.
+        </h2>
+
+        <div class="case-grid">
+          <article class="case-card luxury-card reveal">
+            <div class="case-header">
+              <h3>تحسين صفحة بيع لدورة تدريبية</h3>
+              <span class="case-tag">صفحة بيع</span>
+            </div>
+
+            <p class="section-text">
+              المشكلة كانت أن الصفحة تشرح محتوى الدورة فقط، لكنها لا توضّح لماذا يحتاجها العميل الآن. تمت إعادة بناء الرسالة حول النتيجة، الخوف من التأجيل، وإثبات القيمة.
+            </p>
+
+            <div class="before-after">
+              <div class="ba-box">
+                <small>قبل</small>
+                <p>دورة شاملة تساعدك على تعلم المهارة من الصفر حتى الاحتراف.</p>
+              </div>
+
+              <div class="ba-box">
+                <small>بعد</small>
+                <p>تعلّم المهارة التي تختصر عليك شهورًا من التجربة العشوائية، وابدأ بتطبيق خطوات واضحة من أول أسبوع.</p>
+              </div>
+            </div>
+
+            <div class="case-results">
+              <div class="case-result">
+                <strong>+54%</strong>
+                <span>زيادة في التحويل</span>
+              </div>
+
+              <div class="case-result">
+                <strong>-31%</strong>
+                <span>انخفاض تكلفة التسجيل</span>
+              </div>
+
+              <div class="case-result">
+                <strong>2.2x</strong>
+                <span>تحسن في عائد الحملة</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card luxury-card reveal">
+            <div class="case-header">
+              <h3>إعادة صياغة إعلانات لخدمة B2B</h3>
+              <span class="case-tag">نصوص إعلانية</span>
+            </div>
+
+            <p class="section-text">
+              كانت الإعلانات تركز على المميزات الفنية، بينما الجمهور يهتم بالوقت، المخاطرة، والوضوح. تم تحويل الرسالة من شرح الخدمة إلى توضيح أثرها التجاري.
+            </p>
+
+            <div class="before-after">
+              <div class="ba-box">
+                <small>قبل</small>
+                <p>نقدم حلولًا احترافية لإدارة عمليات شركتك بكفاءة عالية.</p>
+              </div>
+
+              <div class="ba-box">
+                <small>بعد</small>
+                <p>خفّض الوقت الضائع في المتابعة اليومية، واجعل فريقك يرى كل شيء بوضوح من لوحة واحدة.</p>
+              </div>
+            </div>
+
+            <div class="case-results">
+              <div class="case-result">
+                <strong>+71%</strong>
+                <span>زيادة في النقرات</span>
+              </div>
+
+              <div class="case-result">
+                <strong>+39%</strong>
+                <span>زيادة في العملاء المؤهلين</span>
+              </div>
+
+              <div class="case-result">
+                <strong>-26%</strong>
+                <span>انخفاض تكلفة العميل</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Generated Section -->
+    <section class="section" id="results">
+      <div class="container">
+        <div class="eyebrow reveal">نتائج تم تحقيقها</div>
+
+        <h2 class="section-title reveal">
+          الكتابة الجيدة لا تُقاس بالإعجاب فقط، بل بما تحققه من أرقام.
+        </h2>
+
+        <div class="results-grid">
+          <article class="result-card reveal">
+            <strong>+68%</strong>
+            <h3>تحسن معدل التحويل</h3>
+            <p>
+              عبر إعادة ترتيب الرسالة، توضيح العرض، وتقوية الدعوة لاتخاذ إجراء.
+            </p>
+          </article>
+
+          <article class="result-card reveal">
+            <strong>3.4x</strong>
+            <h3>زيادة التفاعل الإعلاني</h3>
+            <p>
+              من خلال زوايا إعلانية أقوى وعناوين أكثر ارتباطًا بدوافع الجمهور.
+            </p>
+          </article>
+
+          <article class="result-card reveal">
+            <strong>-31%</strong>
+            <h3>انخفاض تكلفة العميل</h3>
+            <p>
+              بسبب تحسين وضوح الرسالة وتقليل التردد قبل التواصل أو الشراء.
+            </p>
+          </article>
+
+          <article class="result-card reveal">
+            <strong>+46%</strong>
+            <h3>زيادة حجوزات المكالمات</h3>
+            <p>
+              عبر صفحات هبوط ورسائل متابعة مصممة لبناء الثقة قبل الطلب.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="eyebrow reveal">آراء العملاء</div>
+
+        <h2 class="section-title reveal">
+          كلمات العملاء بعد أن أصبحت رسائلهم أوضح وأكثر إقناعًا.
+        </h2>
+
+        <div class="testimonials-grid">
+          <article class="testimonial luxury-card reveal">
+            <p>
+              “لم يكن النص مجرد تحسين لغوي. كان إعادة بناء كاملة لطريقة عرض الخدمة. أصبح العميل يفهم قيمتنا أسرع.”
+            </p>
+
+            <div class="client">
+              <strong>مؤسس شركة خدمات</strong>
+              قطاع الاستشارات والأعمال
+            </div>
+          </article>
+
+          <article class="testimonial luxury-card reveal">
+            <p>
+              “العناوين الجديدة غيّرت أداء الإعلانات بشكل واضح. لأول مرة شعرنا أن الرسالة تخاطب العميل فعلًا.”
+            </p>
+
+            <div class="client">
+              <strong>مدير تسويق</strong>
+              متجر إلكتروني
+            </div>
+          </article>
+
+          <article class="testimonial luxury-card reveal">
+            <p>
+              “أكثر ما أعجبني هو أن النص لم يكن مبالغًا فيه. كان راقيًا، واضحًا، ومقنعًا دون ضغط على القارئ.”
+            </p>
+
+            <div class="client">
+              <strong>صاحبة علامة شخصية</strong>
+              تدريب وتعليم رقمي
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing Process Section -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="eyebrow reveal">منهجية الكتابة</div>
+
+        <h2 class="section-title reveal">
+          لا أبدأ بالكتابة. أبدأ بالفهم.
+        </h2>
+
+        <p class="section-text reveal">
+          كل نص قوي وراءه بحث، ترتيب، اختبار زوايا، وفهم عميق لما يجعل العميل يقول: هذا ما أحتاجه.
+        </p>
+
+        <div class="process-wrap">
+          <article class="process-step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>فهم المشروع والجمهور</h3>
+              <p>
+                تحليل المنتج، الجمهور، المنافسين، الاعتراضات، والرغبات التي تحرك قرار الشراء.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>استخراج الرسالة الأساسية</h3>
+              <p>
+                تحديد عرض القيمة، الوعد التسويقي، النبرة، والزاوية الأقوى للتواصل مع العميل.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>كتابة النسخة الأولى</h3>
+              <p>
+                بناء النص بمنطق بيعي واضح: جذب الانتباه، بناء الاهتمام، إثبات القيمة، ثم الدعوة للتحرك.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="step-number">4</div>
+            <div>
+              <h3>المراجعة والتحسين</h3>
+              <p>
+                تنقيح العناوين، تقوية الجمل، إزالة الحشو، وتحسين الانسيابية حتى يصبح النص أكثر إقناعًا.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="eyebrow reveal">الأسئلة الشائعة</div>
+
+        <h2 class="section-title reveal">
+          أسئلة قد تدور في ذهنك قبل بدء المشروع.
+        </h2>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل تكتب باللغة العربية فقط؟
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              نعم، هذا القالب مخصص لكاتب إعلانات عربي، وكل النصوص والرسائل مصممة لتناسب الجمهور العربي واتجاه القراءة من اليمين إلى اليسار.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل يمكن كتابة صفحة بيع كاملة؟
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              نعم، يمكن كتابة صفحة بيع كاملة تشمل العنوان الرئيسي، المشكلة، العرض، المميزات، الإثباتات، معالجة الاعتراضات، والأسئلة الشائعة.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل تقدم أكثر من نسخة للإعلانات؟
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              نعم، عادة يتم تقديم أكثر من زاوية ونسخة حتى يمكن اختبار الرسائل المختلفة ومعرفة ما يحقق أفضل أداء.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              ما الذي تحتاجه قبل بدء الكتابة؟
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              أحتاج إلى معلومات عن المنتج أو الخدمة، الجمهور المستهدف، الهدف من النص، المنافسين، وأي نتائج أو شهادات يمكن استخدامها لدعم الرسالة.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل النصوص مناسبة للإعلانات وصفحات الهبوط؟
+              <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+              نعم، يتم تكييف النص حسب مكان استخدامه، سواء إعلان قصير، صفحة هبوط، صفحة بيع، بريد إلكتروني، أو سكريبت فيديو.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-note luxury-card reveal">
+          <div class="eyebrow">تواصل الآن</div>
+
+          <h2 class="section-title">
+            هل تريد نصًا يجعل عرضك أوضح وأكثر إقناعًا؟
+          </h2>
+
+          <p>
+            املأ النموذج التالي، وسيتم إرسال كل البيانات مباشرة إلى واتساب في رسالة منظمة، حتى نبدأ من فهم واضح لمشروعك وهدفك.
+          </p>
+
+          <div class="contact-highlights">
+            <div>✓ مناسب لصفحات البيع وصفحات الهبوط والإعلانات.</div>
+            <div>✓ رسالة واتساب تحتوي على كل بيانات المشروع تلقائيًا.</div>
+            <div>✓ يمكنك تعديل الخدمات والميزانيات بسهولة من الكود.</div>
+          </div>
+        </div>
+
+        <form class="luxury-card reveal" id="whatsappForm">
+          <div class="form-group">
+            <label for="name">الاسم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك هنا" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" placeholder="اكتب رقم الهاتف" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" placeholder="اكتب بريدك الإلكتروني" required />
+          </div>
+
+          <div class="form-group">
+            <label for="service">نوع خدمة الكتابة المطلوبة</label>
+            <select id="service" required>
+              <option value="">اختر الخدمة</option>
+              <option value="صفحة بيع">صفحة بيع</option>
+              <option value="صفحة هبوط">صفحة هبوط</option>
+              <option value="تسلسل بريد إلكتروني">تسلسل بريد إلكتروني</option>
+              <option value="نصوص إعلانات">نصوص إعلانات</option>
+              <option value="نصوص موقع إلكتروني">نصوص موقع إلكتروني</option>
+              <option value="سكريبت فيديو بيع">سكريبت فيديو بيع</option>
+              <option value="صياغة رسائل العلامة التجارية">صياغة رسائل العلامة التجارية</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="projectType">نوع المشروع</label>
+            <select id="projectType" required>
+              <option value="">اختر نوع المشروع</option>
+              <option value="علامة شخصية">علامة شخصية</option>
+              <option value="شركة ناشئة">شركة ناشئة</option>
+              <option value="متجر إلكتروني">متجر إلكتروني</option>
+              <option value="خدمة استشارية">خدمة استشارية</option>
+              <option value="دورة أو منتج رقمي">دورة أو منتج رقمي</option>
+              <option value="مشروع آخر">مشروع آخر</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">الهدف من النص</label>
+            <select id="goal" required>
+              <option value="">اختر الهدف</option>
+              <option value="زيادة المبيعات">زيادة المبيعات</option>
+              <option value="زيادة التسجيلات">زيادة التسجيلات</option>
+              <option value="زيادة الرسائل والاستفسارات">زيادة الرسائل والاستفسارات</option>
+              <option value="تحسين وضوح العرض">تحسين وضوح العرض</option>
+              <option value="إطلاق منتج جديد">إطلاق منتج جديد</option>
+              <option value="تحسين أداء الإعلانات">تحسين أداء الإعلانات</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">تفاصيل إضافية</label>
+            <textarea id="message" placeholder="اكتب نبذة عن مشروعك، جمهورك، الخدمة أو المنتج، وما الذي تريد تحقيقه من النص..." required></textarea>
+          </div>
+
+          <button class="submit-btn" type="submit">
+            إرسال الطلب عبر واتساب
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 بورتفوليو كاتب إعلانات احترافي — كلمات مصممة لتبيع بوضوح وأناقة.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animation
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    // FAQ accordion
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const icon = question.querySelector("span");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+        icon.textContent = item.classList.contains("active") ? "−" : "+";
+      });
+    });
+
+    // WhatsApp form
+    const whatsappForm = document.getElementById("whatsappForm");
+
+    whatsappForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const whatsappNumber = "201000000000";
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const projectType = document.getElementById("projectType").value;
+      const goal = document.getElementById("goal").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage = `
+طلب جديد من بورتفوليو كاتب الإعلانات
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email}
+
+الخدمة المطلوبة: ${service}
+نوع المشروع: ${projectType}
+الهدف من النص: ${goal}
+
+تفاصيل المشروع:
+${message}
+      `;
+
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>

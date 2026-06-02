@@ -3,31 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="موقع بورتفوليو احترافي لمتخصص إعلانات ممولة وميديا باير يساعد العلامات التجارية على النمو من خلال إعلانات ميتا." />
-  <meta name="keywords" content="ميديا باير, إعلانات ممولة, إعلانات ميتا, فيسبوك Ads, انستجرام Ads, توليد عملاء محتملين, إعلانات المتاجر الإلكترونية" />
-  <meta name="author" content="اسمك" />
-  <title>بورتفوليو ميديا باير | متخصص إعلانات ممولة</title>
+
+  <meta
+    name="description"
+    content="نماذج بورتفوليو احترافية جاهزة للميديا بايرز، المسوقين، الكوبي رايترز، المصممين، ومتخصصي السوشيال ميديا."
+  />
+
+  <title>نماذج بورتفوليو احترافية</title>
 
   <style>
     :root {
-      --primary: #2563EB;
-      --primary-dark: #1D4ED8;
-      --secondary: #0F172A;
-      --accent: #22C55E;
-      --background: #020617;
-      --surface: rgba(15, 23, 42, 0.72);
-      --surface-strong: rgba(15, 23, 42, 0.95);
-      --border: rgba(148, 163, 184, 0.18);
+      --bg: #09090B;
+      --surface: #111113;
+      --surface-2: #18181B;
       --text: #FFFFFF;
-      --muted: #CBD5E1;
-      --muted-soft: #94A3B8;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --container: 1180px;
-      --nav-height: 76px;
-      --transition: 260ms ease;
+      --muted: #A1A1AA;
+      --line: rgba(255, 255, 255, 0.1);
+
+      --blue: #2563EB;
+      --green: #22C55E;
+      --gold: #D4AF37;
+      --purple: #8B5CF6;
+      --pink: #EC4899;
+
+      --radius: 24px;
+      --container: 1120px;
+      --transition: 250ms ease;
     }
 
     * {
@@ -38,29 +39,19 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 96px;
     }
 
     body {
       min-height: 100vh;
-      font-family: Tahoma, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
+      font-family: Tahoma, Arial, sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.25), transparent 34%),
-        radial-gradient(circle at 85% 20%, rgba(34, 197, 94, 0.14), transparent 28%),
-        linear-gradient(180deg, #020617 0%, #030712 45%, #020617 100%);
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.14), transparent 30%),
+        var(--bg);
+      color: var(--text);
       line-height: 1.8;
-      overflow-x: hidden;
       text-align: right;
-    }
-
-    body.no-scroll {
-      overflow: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
+      overflow-x: hidden;
     }
 
     a {
@@ -68,960 +59,360 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea,
-    select {
-      font: inherit;
-    }
-
-    button {
-      border: 0;
-      cursor: pointer;
-    }
-
     .container {
       width: min(100% - 32px, var(--container));
       margin-inline: auto;
     }
 
-    .section {
-      padding: 92px 0;
-      position: relative;
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 44px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(37, 99, 235, 0.32);
-      border-radius: 999px;
-      color: #BFDBFE;
-      background: rgba(37, 99, 235, 0.12);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 18px rgba(34, 197, 94, 0.85);
-    }
-
-    h1,
-    h2,
-    h3 {
-      line-height: 1.18;
-      letter-spacing: -0.025em;
-    }
-
-    h1 {
-      font-size: clamp(2.35rem, 8vw, 5.2rem);
-      max-width: 980px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .lead {
-      font-size: clamp(1rem, 2.6vw, 1.22rem);
-      max-width: 780px;
-      color: #DCE7F7;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #FFFFFF 10%, #93C5FD 48%, #86EFAC 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-weight: 800;
-      letter-spacing: 0;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      color: white;
-      background: linear-gradient(135deg, var(--primary), #3B82F6);
-      box-shadow: 0 18px 44px rgba(37, 99, 235, 0.34);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 26px 60px rgba(37, 99, 235, 0.48);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.055);
-      color: #F8FAFC;
-      backdrop-filter: blur(16px);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-3px);
-      border-color: rgba(147, 197, 253, 0.45);
-      background: rgba(37, 99, 235, 0.12);
-    }
-
-    .glass-card {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.48));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(20px);
-      border-radius: var(--radius-xl);
-    }
-
     .nav {
-      position: fixed;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(9, 9, 11, 0.8);
+      backdrop-filter: blur(16px);
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: var(--nav-height);
-      display: flex;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid transparent;
-      transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
-    }
-
-    .nav.scrolled {
-      background: rgba(2, 6, 23, 0.78);
-      border-color: rgba(148, 163, 184, 0.16);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 14px 50px rgba(0, 0, 0, 0.32);
+      z-index: 100;
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
     }
 
-    .logo {
-      display: inline-flex;
+    .brand {
+      display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 1rem;
       font-weight: 900;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
-    .logo-mark {
+    .brand-mark {
       width: 38px;
       height: 38px;
       display: grid;
       place-items: center;
-      border-radius: 13px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+      border-radius: 12px;
+      background: white;
+      color: #09090B;
+      font-weight: 900;
     }
 
     .nav-links {
       display: none;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       font-weight: 700;
     }
 
-    .nav-links a {
-      transition: color var(--transition);
-    }
-
     .nav-links a:hover {
-      color: #FFFFFF;
-    }
-
-    .nav-actions {
-      display: none;
-    }
-
-    .menu-btn {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
       color: white;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid var(--border);
-    }
-
-    .menu-btn span,
-    .menu-btn span::before,
-    .menu-btn span::after {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 2px;
-      border-radius: 99px;
-      background: white;
-      transition: var(--transition);
-    }
-
-    .menu-btn span::before {
-      transform: translateY(-7px);
-    }
-
-    .menu-btn span::after {
-      transform: translateY(5px);
-    }
-
-    .menu-btn.active span {
-      background: transparent;
-    }
-
-    .menu-btn.active span::before {
-      transform: rotate(45deg);
-    }
-
-    .menu-btn.active span::after {
-      transform: translateY(-2px) rotate(-45deg);
-    }
-
-    .mobile-menu {
-      position: fixed;
-      inset: var(--nav-height) 16px auto 16px;
-      padding: 18px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.94);
-      backdrop-filter: blur(22px);
-      transform: translateY(-18px);
-      opacity: 0;
-      pointer-events: none;
-      transition: var(--transition);
-      z-index: 999;
-    }
-
-    .mobile-menu.active {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 13px 12px;
-      border-radius: 14px;
-      color: var(--muted);
-      font-weight: 800;
-    }
-
-    .mobile-menu a:hover {
-      color: white;
-      background: rgba(37, 99, 235, 0.15);
     }
 
     .hero {
-      min-height: 100vh;
-      padding: 136px 0 76px;
-      display: grid;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
-      background-size: 58px 58px;
-      mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
-      pointer-events: none;
+      padding: 92px 0 62px;
     }
 
     .hero-grid {
       display: grid;
-      gap: 48px;
-      position: relative;
-      z-index: 2;
+      gap: 42px;
+      align-items: center;
     }
 
     .hero-content {
-      max-width: 860px;
+      max-width: 780px;
     }
 
-    .hero-title {
-      margin-bottom: 20px;
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #E4E4E7;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.84rem;
+      font-weight: 800;
     }
 
-    .hero-description {
-      margin-top: 18px;
-      margin-bottom: 30px;
+    .label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.7);
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 7vw, 5rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
     }
 
     .hero-actions {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-bottom: 34px;
-    }
-
-    .trust-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-      max-width: 590px;
+      margin-top: 30px;
     }
 
-    .trust-pill {
-      padding: 13px 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.045);
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .trust-pill strong {
-      color: white;
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .profile-card {
-      position: relative;
-      padding: 18px;
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.38), transparent 36%), radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.24), transparent 34%);
-      pointer-events: none;
-    }
-
-    .profile-media {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      border-radius: 24px;
-      overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(34, 197, 94, 0.08)),
-        url("https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80") center/cover;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .profile-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 42%, rgba(2, 6, 23, 0.88) 100%);
-    }
-
-    .profile-info {
-      position: absolute;
-      left: 34px;
-      right: 34px;
-      bottom: 34px;
-      z-index: 2;
-    }
-
-    .profile-info h2 {
-      font-size: clamp(1.7rem, 6vw, 2.5rem);
-      margin-bottom: 8px;
-    }
-
-    .profile-info p {
-      color: #E2E8F0;
-    }
-
-    .floating-metric {
-      position: absolute;
-      z-index: 3;
-      left: -6px;
-      right: auto;
-      top: 16%;
-      width: min(220px, 52vw);
-      padding: 18px;
-      border-radius: 22px;
-      border: 1px solid rgba(34, 197, 94, 0.28);
-      background: rgba(2, 6, 23, 0.76);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
-      animation: float 4.2s ease-in-out infinite;
-    }
-
-    .floating-metric strong {
-      display: block;
-      font-size: 2rem;
-      line-height: 1;
-      color: var(--accent);
-      letter-spacing: -0.04em;
-    }
-
-    .floating-metric span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    .about-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .about-copy {
-      padding: 30px;
-    }
-
-    .about-copy p + p {
-      margin-top: 16px;
-    }
-
-    .about-points {
-      display: grid;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .point {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--muted);
-    }
-
-    .point-icon {
-      flex: 0 0 28px;
-      height: 28px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: rgba(34, 197, 94, 0.14);
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .mini-stat {
-      min-height: 150px;
-      padding: 22px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .mini-stat strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: clamp(1.8rem, 7vw, 2.6rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-
-    .mini-stat span {
-      color: var(--muted-soft);
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .cards-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .service-card,
-    .case-card,
-    .testimonial-card,
-    .process-card,
-    .faq-item,
-    .stat-card {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.76), rgba(15, 23, 42, 0.38));
-      border-radius: var(--radius-lg);
-      transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
-    }
-
-    .service-card:hover,
-    .case-card:hover,
-    .process-card:hover,
-    .stat-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(37, 99, 235, 0.42);
-      background: linear-gradient(180deg, rgba(37, 99, 235, 0.16), rgba(15, 23, 42, 0.44));
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-    }
-
-    .service-card {
-      padding: 26px;
-      min-height: 246px;
-    }
-
-    .icon-box {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 20px;
-      border-radius: 18px;
-      background: rgba(37, 99, 235, 0.16);
-      color: #93C5FD;
-      font-size: 1.45rem;
-    }
-
-    .service-card h3,
-    .case-card h3,
-    .process-card h3 {
-      margin-bottom: 12px;
-    }
-
-    .results-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .stat-card {
-      padding: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      left: -36px;
-      right: auto;
-      top: -36px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.2);
-      filter: blur(4px);
-    }
-
-    .stat-card strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: clamp(2.1rem, 8vw, 3.55rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
-    }
-
-    .stat-card span {
-      color: var(--muted);
-      font-weight: 800;
-    }
-
-    .case-card {
-      padding: 26px;
-    }
-
-    .case-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      padding: 0 12px;
-      border-radius: 999px;
-      color: #BFDBFE;
-      background: rgba(37, 99, 235, 0.14);
-      border: 1px solid rgba(37, 99, 235, 0.28);
-      font-size: 0.82rem;
-      font-weight: 900;
-    }
-
-    .case-list {
-      display: grid;
-      gap: 14px;
-      margin: 18px 0 24px;
-    }
-
-    .case-list div {
-      padding-right: 14px;
-      padding-left: 0;
-      border-right: 2px solid rgba(37, 99, 235, 0.65);
-      border-left: 0;
-    }
-
-    .case-list strong {
-      display: block;
-      margin-bottom: 2px;
-      color: #F8FAFC;
-      font-size: 0.92rem;
-    }
-
-    .case-list p {
-      font-size: 0.95rem;
-    }
-
-    .case-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .case-metric {
-      padding: 15px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid var(--border);
-    }
-
-    .case-metric strong {
-      display: block;
-      font-size: 1.45rem;
-      line-height: 1;
-      color: var(--accent);
-    }
-
-    .case-metric span {
-      color: var(--muted-soft);
-      font-size: 0.82rem;
-      font-weight: 800;
-    }
-
-    .testimonial-shell {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonial-track {
-      display: flex;
-      transition: transform 500ms ease;
-    }
-
-    .testimonial-card {
-      flex: 0 0 100%;
-      padding: 30px;
-    }
-
-    .quote {
-      margin-bottom: 24px;
-      color: #E2E8F0;
-      font-size: clamp(1.05rem, 3vw, 1.28rem);
-    }
-
-    .client {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .avatar {
-      width: 50px;
-      height: 50px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      font-weight: 900;
-    }
-
-    .client strong {
-      display: block;
-    }
-
-    .client span {
-      color: var(--muted-soft);
-      font-size: 0.92rem;
-    }
-
-    .slider-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .slider-btn {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.055);
-      color: white;
-      transition: var(--transition);
-    }
-
-    .slider-btn:hover {
-      background: rgba(37, 99, 235, 0.18);
-      transform: translateY(-2px);
-    }
-
-    .process-grid {
-      display: grid;
-      gap: 18px;
-      counter-reset: process;
-    }
-
-    .process-card {
-      padding: 26px;
-      position: relative;
-      overflow: hidden;
-      counter-increment: process;
-    }
-
-    .process-card::before {
-      content: "0" counter(process);
+    .btn {
+      min-height: 50px;
+      padding: 0 22px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
-      margin-bottom: 22px;
-      border-radius: 18px;
-      color: white;
-      background: linear-gradient(135deg, var(--primary), #60A5FA);
-      font-weight: 900;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 14px;
-      max-width: 900px;
-    }
-
-    .faq-item {
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px;
-      background: transparent;
-      color: white;
-      text-align: right;
-      font-weight: 900;
-    }
-
-    .faq-icon {
-      flex: 0 0 32px;
-      height: 32px;
-      display: grid;
-      place-items: center;
       border-radius: 999px;
-      background: rgba(37, 99, 235, 0.16);
-      transition: transform var(--transition);
+      font-weight: 900;
+      transition: var(--transition);
+      white-space: nowrap;
     }
 
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 320ms ease;
+    .btn-primary {
+      background: #FFFFFF;
+      color: #09090B;
     }
 
-    .faq-answer p {
-      padding: 0 22px 22px;
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 44px rgba(255, 255, 255, 0.16);
     }
 
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      border: 1px solid var(--line);
     }
 
-    .contact-grid {
-      display: grid;
-      gap: 24px;
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.1);
     }
 
-    .contact-card {
-      padding: 30px;
+    .hero-note {
+      padding: 26px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     }
 
-    .contact-list {
-      display: grid;
-      gap: 16px;
-      margin-top: 26px;
+    .hero-note strong {
+      display: block;
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    .hero-note span {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 58px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
       color: var(--muted);
     }
 
-    .contact-item span:first-child {
-      width: 42px;
-      height: 42px;
+    .templates {
+      display: grid;
+      gap: 14px;
+    }
+
+    .template {
+      position: relative;
+      display: grid;
+      gap: 20px;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .template:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .template::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--blue);
+    }
+
+    .template.media::before { background: var(--green); }
+    .template.digital::before { background: var(--blue); }
+    .template.copy::before { background: var(--gold); }
+    .template.design::before { background: var(--purple); }
+    .template.social::before { background: var(--pink); }
+
+    .template-main {
+      display: grid;
+      gap: 10px;
+    }
+
+    .template-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
       border-radius: 14px;
-      background: rgba(37, 99, 235, 0.15);
-      color: #93C5FD;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--line);
+      font-size: 1.35rem;
     }
 
-    .form {
-      display: grid;
-      gap: 16px;
+    .template h3 {
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
     }
 
-    .form-row {
-      display: grid;
-      gap: 16px;
+    .template p {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
-    .field {
-      display: grid;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
       gap: 8px;
+      margin-top: 6px;
     }
 
-    .field label {
-      color: #E2E8F0;
-      font-size: 0.92rem;
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      color: #D4D4D8;
+      font-size: 0.78rem;
       font-weight: 800;
     }
 
-    .field input,
-    .field textarea,
-    .field select {
-      width: 100%;
-      min-height: 52px;
+    .template-action {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .view-link {
+      min-height: 44px;
       padding: 0 16px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.055);
-      color: white;
-      outline: none;
-      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
-      text-align: right;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      color: #09090B;
+      font-size: 0.9rem;
+      font-weight: 900;
+      transition: var(--transition);
     }
 
-    .field textarea {
-      min-height: 140px;
-      padding-top: 14px;
-      resize: vertical;
+    .view-link:hover {
+      transform: translateY(-2px);
     }
 
-    .field select option {
-      background: var(--secondary);
-      color: white;
+    .mini-section {
+      padding: 54px 0 76px;
     }
 
-    .field input:focus,
-    .field textarea:focus,
-    .field select:focus {
-      border-color: rgba(37, 99, 235, 0.72);
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
-      background: rgba(255, 255, 255, 0.08);
+    .simple-box {
+      display: grid;
+      gap: 20px;
+      padding: 28px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 32%),
+        rgba(255, 255, 255, 0.035);
     }
 
-    .form-message {
-      display: none;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.28);
-      color: #BBF7D0;
-      font-weight: 800;
+    .simple-box h2 {
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .simple-box p {
+      color: var(--muted);
+      max-width: 680px;
     }
 
     .footer {
-      padding: 42px 0;
-      border-top: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.72);
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .footer-inner {
-      display: grid;
-      gap: 24px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .footer p {
-      color: var(--muted-soft);
-    }
-
-    .socials {
+    .footer-links {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.045);
+    .footer-links a {
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 800;
-      transition: var(--transition);
+      font-weight: 700;
     }
 
-    .socials a:hover {
+    .footer-links a:hover {
       color: white;
-      border-color: rgba(37, 99, 235, 0.5);
-      background: rgba(37, 99, 235, 0.14);
-      transform: translateY(-2px);
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      transform: translateY(18px);
+      transition: opacity 650ms ease, transform 650ms ease;
     }
 
     .reveal.visible {
@@ -1034,89 +425,43 @@
         flex-direction: row;
       }
 
-      .cards-grid,
-      .results-grid,
-      .process-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .form-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .template {
+        grid-template-columns: 1fr auto;
+        align-items: center;
       }
 
       .footer-inner {
-        grid-template-columns: 1fr auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
     }
 
     @media (min-width: 900px) {
-      .nav-links,
-      .nav-actions {
+      .nav-links {
         display: flex;
       }
 
-      .menu-btn,
-      .mobile-menu {
-        display: none;
-      }
-
       .hero-grid {
-        grid-template-columns: 1.08fr 0.82fr;
-        align-items: center;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr 0.82fr;
-        align-items: stretch;
-      }
-
-      .cards-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .results-grid,
-      .process-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .case-studies-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .contact-grid {
-        grid-template-columns: 0.82fr 1.18fr;
-        align-items: start;
+        grid-template-columns: 1fr 0.42fr;
       }
     }
 
     @media (max-width: 520px) {
-      .section {
-        padding: 72px 0;
-      }
-
-      .trust-row,
-      .experience-grid,
-      .case-metrics {
-        grid-template-columns: 1fr;
-      }
-
       .hero {
-        padding-top: 118px;
+        padding: 70px 0 44px;
       }
 
-      .floating-metric {
-        left: 10px;
-        top: auto;
-        bottom: 18px;
+      .section {
+        padding: 44px 0;
       }
 
-      .profile-info {
-        left: 26px;
-        right: 26px;
-        bottom: 30px;
+      .btn,
+      .view-link {
+        width: 100%;
       }
 
-      .btn {
+      .template-action {
         width: 100%;
       }
     }
@@ -1124,578 +469,235 @@
 </head>
 
 <body>
-  <header class="nav" id="navbar">
+  <header class="nav">
     <div class="container nav-inner">
-      <a href="#home" class="logo" aria-label="الانتقال إلى الصفحة الرئيسية">
-        <span class="logo-mark">MB</span>
-        <span>ميديا باير</span>
+      <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+        <span class="brand-mark">P</span>
+        <span>Portfolio Hub</span>
       </a>
 
       <nav class="nav-links" aria-label="القائمة الرئيسية">
-        <a href="#about">نبذة عني</a>
-        <a href="#services">الخدمات</a>
-        <a href="#results">النتائج</a>
-        <a href="#case-studies">دراسات الحالة</a>
-        <a href="#contact">تواصل معي</a>
+        <a href="#templates">النماذج</a>
+        <a href="#contact">تواصل</a>
       </nav>
-
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary">احجز مكالمة</a>
-      </div>
-
-      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">
-        <span></span>
-      </button>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">نبذة عني</a>
-    <a href="#services">الخدمات</a>
-    <a href="#results">النتائج</a>
-    <a href="#case-studies">دراسات الحالة</a>
-    <a href="#faq">الأسئلة الشائعة</a>
-    <a href="#contact">تواصل معي</a>
-  </div>
-
   <main>
-    <section class="hero" id="home">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <span class="eyebrow">متخصص إعلانات ممولة</span>
-          <h1 class="hero-title">ضاعف نمو علامتك التجارية من خلال <span class="gradient-text">إعلانات ميتا مربحة</span>.</h1>
-          <p class="lead hero-description">
-            أساعد أصحاب الأعمال والعلامات التجارية على تحويل الميزانية الإعلانية إلى نمو واضح وقابل للقياس من خلال حملات فيسبوك وإنستجرام مبنية على البيانات، الاختبار، والتحسين المستمر.
+          <span class="label">نماذج بورتفوليو جاهزة للتخصيص</span>
+
+          <h1>
+            اختر البورتفوليو المناسب لتخصصك.
+          </h1>
+
+          <p>
+            صفحة بسيطة تجمع نماذج بورتفوليو مختلفة للمسوقين والمبدعين. كل نموذج مصمم بطابع مختلف يناسب المجال الخاص به.
           </p>
 
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">احجز استشارة مجانية ←</a>
-            <a href="#case-studies" class="btn btn-secondary">شاهد دراسات الحالة</a>
-          </div>
-
-          <div class="trust-row" aria-label="نقاط الثقة">
-            <div class="trust-pill"><strong>إعلانات ميتا</strong> استراتيجية وتشغيل</div>
-            <div class="trust-pill"><strong>تحسين ROAS</strong> ورفع العائد</div>
-            <div class="trust-pill"><strong>توليد عملاء</strong> بجودة أفضل</div>
-            <div class="trust-pill"><strong>متاجر إلكترونية</strong> وحملات مبيعات</div>
+            <a href="#templates" class="btn btn-primary">استعرض النماذج</a>
+            <a href="#contact" class="btn btn-secondary">اطلب نسخة مخصصة</a>
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <article class="profile-card glass-card" aria-label="بطاقة شخصية">
-            <div class="profile-media" role="img" aria-label="صورة شخصية احترافية"></div>
-            <div class="profile-info">
-              <h2>محمد سعيد</h2>
-              <p>ميديا باير ومتخصص تسويق بالأداء</p>
-            </div>
-            <div class="floating-metric">
-              <strong>5X</strong>
-              <span>متوسط العائد على الإنفاق الإعلاني للحملات المحسّنة</span>
-            </div>
-          </article>
-        </div>
+        <aside class="hero-note reveal">
+          <strong>5</strong>
+          <span>نماذج مختلفة في مشروع واحد، وكل نموذج يفتح في صفحة مستقلة.</span>
+        </aside>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="section-header reveal">
-          <span class="eyebrow">نبذة عني</span>
-          <h2>أبني حملات هدفها البيع الحقيقي، وليس مجرد صرف الميزانية.</h2>
-        </div>
-
-        <div class="about-copy glass-card reveal">
+    <section class="section" id="templates">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>النماذج المتاحة</h2>
           <p>
-            أنا ميديا باير متخصص في إدارة إعلانات ميتا للأعمال التي تريد نموًا واضحًا، عملاء محتملين بجودة أعلى، وعائدًا أقوى على الإنفاق الإعلاني.
+            اختر التخصص وشاهد القالب المناسب له. كل صفحة لها تصميم وتجربة مختلفة عن الأخرى.
           </p>
-          <p>
-            أعتمد على مزيج من تحليل الجمهور، تطوير العرض، استراتيجية المحتوى الإعلاني، تحليل الفانل، والتحسين المستمر لمساعدة العلامات التجارية على التوسع بثقة.
-          </p>
-
-          <div class="about-points">
-            <div class="point"><span class="point-icon">✓</span><span>خبرة في قطاعات مثل المتاجر الإلكترونية، الخدمات المحلية، التعليم، التدريب، العقارات، والبراندات الشخصية.</span></div>
-            <div class="point"><span class="point-icon">✓</span><span>تقارير واضحة، تواصل احترافي، وقرارات مبنية على الأرقام لا التخمين.</span></div>
-            <div class="point"><span class="point-icon">✓</span><span>نظام اختبار قوي للكرياتيفات والزوايا الإعلانية لاكتشاف ما يحقق أفضل نتائج.</span></div>
-            <div class="point"><span class="point-icon">✓</span><span>يختارني العملاء بسبب الاستراتيجية، التنفيذ، التحسين، والمتابعة المستمرة.</span></div>
-          </div>
         </div>
 
-        <div class="experience-grid reveal">
-          <div class="mini-stat glass-card"><strong>4+</strong><span>سنوات خبرة في التسويق بالأداء</span></div>
-          <div class="mini-stat glass-card"><strong>12+</strong><span>قطاعًا تم العمل عليه واختباره</span></div>
-          <div class="mini-stat glass-card"><strong>50+</strong><span>حملة ناجحة تم إطلاقها</span></div>
-          <div class="mini-stat glass-card"><strong>24/7</strong><span>متابعة مستمرة للأداء والتحسين</span></div>
+        <div class="templates">
+          <article class="template media reveal">
+            <div class="template-main">
+              <div class="template-top">
+                <span class="icon">🎯</span>
+                <h3>Media Buyer Portfolio</h3>
+              </div>
+
+              <p>
+                مناسب لعرض النتائج، الـ ROAS، الحملات، ودراسات الحالة الخاصة بالإعلانات الممولة.
+              </p>
+
+              <div class="tags">
+                <span class="tag">ROAS</span>
+                <span class="tag">Ad Spend</span>
+                <span class="tag">Case Studies</span>
+              </div>
+            </div>
+
+            <div class="template-action">
+              <a class="view-link" href="media-buyer.html">عرض النموذج</a>
+            </div>
+          </article>
+
+          <article class="template digital reveal">
+            <div class="template-main">
+              <div class="template-top">
+                <span class="icon">📊</span>
+                <h3>Digital Marketing Portfolio</h3>
+              </div>
+
+              <p>
+                مناسب للمسوقين الرقميين والاستشاريين لعرض الاستراتيجيات والقنوات التسويقية والنتائج.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Strategy</span>
+                <span class="tag">KPIs</span>
+                <span class="tag">Growth</span>
+              </div>
+            </div>
+
+            <div class="template-action">
+              <a class="view-link" href="digital-marketing.html">عرض النموذج</a>
+            </div>
+          </article>
+
+          <article class="template copy reveal">
+            <div class="template-main">
+              <div class="template-top">
+                <span class="icon">✍️</span>
+                <h3>Copywriter Portfolio</h3>
+              </div>
+
+              <p>
+                مناسب لكُتاب الإعلانات لعرض نماذج الكتابة، صفحات البيع، الإيميلات، ونتائج التحويل.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Sales Copy</span>
+                <span class="tag">Emails</span>
+                <span class="tag">Conversion</span>
+              </div>
+            </div>
+
+            <div class="template-action">
+              <a class="view-link" href="copywriter.html">عرض النموذج</a>
+            </div>
+          </article>
+
+          <article class="template design reveal">
+            <div class="template-main">
+              <div class="template-top">
+                <span class="icon">🎨</span>
+                <h3>Graphic Designer Portfolio</h3>
+              </div>
+
+              <p>
+                مناسب للمصممين لعرض المشاريع، الهويات البصرية، تصميمات السوشيال ميديا، والموكابات.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Branding</span>
+                <span class="tag">Gallery</span>
+                <span class="tag">Mockups</span>
+              </div>
+            </div>
+
+            <div class="template-action">
+              <a class="view-link" href="graphic-designer.html">عرض النموذج</a>
+            </div>
+          </article>
+
+          <article class="template social reveal">
+            <div class="template-main">
+              <div class="template-top">
+                <span class="icon">📱</span>
+                <h3>Social Media Specialist Portfolio</h3>
+              </div>
+
+              <p>
+                مناسب لمتخصصي السوشيال ميديا لعرض نمو الحسابات، الريلز، المحتوى، وخطط الإدارة.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Reels</span>
+                <span class="tag">Engagement</span>
+                <span class="tag">Content</span>
+              </div>
+            </div>
+
+            <div class="template-action">
+              <a class="view-link" href="social-media.html">عرض النموذج</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="mini-section" id="contact">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">الخدمات</span>
-          <h2>كل ما تحتاجه لبناء نظام إعلانات مربح.</h2>
-          <p class="lead">من إعداد الحملات إلى اختبار الكرياتيفات والتوسع، كل خدمة مصممة لتحقيق نتائج حقيقية للأعمال.</p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="service-card reveal">
-            <div class="icon-box">📊</div>
-            <h3>إدارة إعلانات ميتا</h3>
-            <p>إدارة كاملة لحملات فيسبوك وإنستجرام من الإعداد والاستهداف إلى الاختبار والتحسين والتوسع.</p>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="icon-box">🎯</div>
-            <h3>حملات توليد العملاء</h3>
-            <p>حملات مصممة لجذب عملاء محتملين مؤهلين وتحويلهم إلى مكالمات، رسائل، أو نماذج تواصل.</p>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="icon-box">🛒</div>
-            <h3>إعلانات المتاجر الإلكترونية</h3>
-            <p>أنظمة إعلانية موجهة للمبيعات تشمل حملات المنتجات، إعادة الاستهداف، الكتالوج، وتحسين العائد.</p>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="icon-box">📈</div>
-            <h3>تحسين التحويلات</h3>
-            <p>تحسين صفحات الهبوط، الفانل، العروض، الرسائل، والتتبع لتحويل المزيد من النقرات إلى عملاء.</p>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="icon-box">💡</div>
-            <h3>استراتيجية الكرياتيف</h3>
-            <p>تطوير زوايا إعلانية، هوكات، أفكار محتوى، وخطة اختبار مناسبة للجمهور وهدف الحملة.</p>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="icon-box">🤝</div>
-            <h3>استشارات تسويقية</h3>
-            <p>جلسات استراتيجية لمراجعة الأداء، تحديد فرص النمو، وبناء خطة واضحة قابلة للتنفيذ.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="results">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">النتائج</span>
-          <h2>أرقام تهم أصحاب الأعمال فعلًا.</h2>
-        </div>
-
-        <div class="results-grid">
-          <article class="stat-card reveal"><strong>$500K+</strong><span>إنفاق إعلاني تمت إدارته</span></article>
-          <article class="stat-card reveal"><strong>1000+</strong><span>عميل محتمل تم توليده</span></article>
-          <article class="stat-card reveal"><strong>5X</strong><span>متوسط العائد على الإنفاق</span></article>
-          <article class="stat-card reveal"><strong>50+</strong><span>حملة ناجحة</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="case-studies">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">دراسات الحالة</span>
-          <h2>قصص أداء من قطاعات مختلفة.</h2>
-          <p class="lead">هذه الكروت جاهزة للتعديل، ويمكنك استبدال الأرقام بالنتائج الحقيقية الخاصة بك.</p>
-        </div>
-
-        <div class="cards-grid case-studies-grid">
-          <article class="case-card reveal">
-            <div class="case-top">
-              <span class="tag">متجر إلكتروني</span>
-            </div>
-            <h3>متجر أزياء أونلاين</h3>
-            <div class="case-list">
-              <div><strong>التحدي</strong><p>انخفاض العائد على الإعلانات وعدم ثبات المبيعات من الحملات العامة.</p></div>
-              <div><strong>الاستراتيجية</strong><p>إعادة هيكلة الحملات، اختبار كرياتيفات UGC، وبناء فانل إعادة استهداف.</p></div>
-              <div><strong>النتيجة</strong><p>زيادة عدد الطلبات وتقليل تكلفة الشراء.</p></div>
-            </div>
-            <div class="case-metrics">
-              <div class="case-metric"><strong>4.8X</strong><span>ROAS</span></div>
-              <div class="case-metric"><strong>320+</strong><span>طلب</span></div>
-            </div>
-          </article>
-
-          <article class="case-card reveal">
-            <div class="case-top">
-              <span class="tag">عقارات</span>
-            </div>
-            <h3>حملة عملاء محتملين للعقارات</h3>
-            <div class="case-list">
-              <div><strong>التحدي</strong><p>تكلفة عالية للعميل المحتمل مع ضعف جودة البيانات.</p></div>
-              <div><strong>الاستراتيجية</strong><p>تحسين شرائح الجمهور، تطوير رسالة صفحة الهبوط، وتأهيل العملاء من خلال نماذج أفضل.</p></div>
-              <div><strong>النتيجة</strong><p>عملاء محتملون أكثر جدية وجودة أفضل لفريق المبيعات.</p></div>
-            </div>
-            <div class="case-metrics">
-              <div class="case-metric"><strong>3.2X</strong><span>ROAS</span></div>
-              <div class="case-metric"><strong>460+</strong><span>عميل محتمل</span></div>
-            </div>
-          </article>
-
-          <article class="case-card reveal">
-            <div class="case-top">
-              <span class="tag">تعليم</span>
-            </div>
-            <h3>إطلاق كورس أونلاين</h3>
-            <div class="case-list">
-              <div><strong>التحدي</strong><p>الحاجة إلى زيادة التسجيلات بسرعة قبل موعد الإطلاق.</p></div>
-              <div><strong>الاستراتيجية</strong><p>حملات مبنية على الإلحاح، اختبار هوكات فيديو، وإعادة استهداف الجمهور الدافئ.</p></div>
-              <div><strong>النتيجة</strong><p>زيادة التسجيلات وتحسين تكلفة الرسالة المؤهلة.</p></div>
-            </div>
-            <div class="case-metrics">
-              <div class="case-metric"><strong>5.6X</strong><span>ROAS</span></div>
-              <div class="case-metric"><strong>230+</strong><span>عميل محتمل</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="testimonials">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">آراء العملاء</span>
-          <h2>ثقة من علامات تجارية وأصحاب أعمال طموحين.</h2>
-        </div>
-
-        <div class="testimonial-shell reveal">
-          <div class="testimonial-track" id="testimonialTrack">
-            <article class="testimonial-card">
-              <p class="quote">“لأول مرة أصبح لدينا نظام إعلاني واضح بدلًا من الترويج العشوائي. الحملات أصبحت منظمة، التقارير واضحة، وجودة العملاء تحسنت.”</p>
-              <div class="client"><div class="avatar">أ</div><div><strong>أحمد حسن</strong><span>مؤسس علامة خدمات محلية</span></div></div>
-            </article>
-
-            <article class="testimonial-card">
-              <p class="quote">“طريقة اختبار الكرياتيفات فرقت معنا جدًا. اكتشفنا زوايا إعلانية يتفاعل معها الجمهور، واستطعنا توسيع الحملات بثقة.”</p>
-              <div class="client"><div class="avatar">م</div><div><strong>مريم علي</strong><span>مالكة متجر إلكتروني</span></div></div>
-            </article>
-
-            <article class="testimonial-card">
-              <p class="quote">“احترافية، متابعة، وقرارات مبنية على الأرقام. هيكلة الحملات وخطة التحسين ساعدتنا على تقليل الهدر والتركيز على التحويلات الحقيقية.”</p>
-              <div class="client"><div class="avatar">ع</div><div><strong>عمر خالد</strong><span>مدير تسويق</span></div></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="slider-controls reveal" aria-label="أزرار التحكم في آراء العملاء">
-          <button class="slider-btn" id="prevTestimonial" aria-label="الرأي السابق">→</button>
-          <button class="slider-btn" id="nextTestimonial" aria-label="الرأي التالي">←</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">طريقة العمل</span>
-          <h2>نظام بسيط لتحقيق نمو مستمر.</h2>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-card reveal">
-            <h3>البحث والتحليل</h3>
-            <p>فهم الجمهور، العرض، المنافسين، الفانل، الأداء الحالي، وفرص النمو المتاحة.</p>
-          </article>
-
-          <article class="process-card reveal">
-            <h3>الاستراتيجية</h3>
-            <p>بناء خطة حملات واضحة تشمل الأهداف، الاستهداف، زوايا الكرياتيف، توزيع الميزانية، ومؤشرات الأداء.</p>
-          </article>
-
-          <article class="process-card reveal">
-            <h3>الإطلاق</h3>
-            <p>إعداد الحملات، التتبع، الإعلانات، الجماهير، وهيكل الاختبار بدقة وتنفيذ احترافي.</p>
-          </article>
-
-          <article class="process-card reveal">
-            <h3>التحسين والتوسع</h3>
-            <p>تحليل الأداء، تقليل الهدر، توسيع الحملات الناجحة، اختبار كرياتيفات جديدة، وتحسين مسار التحويل باستمرار.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">الأسئلة الشائعة</span>
-          <h2>أسئلة قد تحتاج معرفتها قبل التعاون.</h2>
-        </div>
-
-        <div class="faq-list reveal">
-          <article class="faq-item active">
-            <button class="faq-question" type="button">
-              ما المنصات التي تتخصص فيها؟
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>أتخصص بشكل أساسي في إعلانات ميتا، وتشمل حملات فيسبوك وإنستجرام لتوليد العملاء، المتاجر الإلكترونية، الأعمال المحلية، والخدمات.</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button">
-              هل تقوم بإنشاء الكرياتيفات الإعلانية؟
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>أقدم استراتيجية الكرياتيف، الهوكات، الزوايا الإعلانية، وخطة الاختبار. ويمكن حسب المشروع التعاون مع مصمم أو تقديم بريف واضح للتصميم.</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button">
-              ما الميزانية الشهرية المناسبة للبدء؟
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>تختلف الميزانية المناسبة حسب المجال، العرض، الهدف، والسوق. خلال الاستشارة يمكن تحديد ميزانية بداية واقعية مناسبة لوضعك.</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button">
-              كيف يتم عرض التقارير وقياس الأداء؟
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>أركز على الأرقام المهمة مثل الإنفاق، تكلفة النتيجة، العائد على الإنفاق، العملاء المحتملين، المبيعات، معدل التحويل، وخطوات التحسين التالية.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-card glass-card reveal">
-          <span class="eyebrow">تواصل معي</span>
-          <h2>جاهز تنمو بإعلانات أذكى؟</h2>
-          <p class="lead">املأ النموذج وسأراجع نشاطك التجاري، أهدافك، وميزانيتك الإعلانية لتحديد كيف يمكن تحسين نظام الإعلانات لديك.</p>
-
-          <div class="contact-list">
-            <a class="contact-item" href="https://wa.me/201000000000" target="_blank" rel="noopener"><span>☎</span><span>واتساب: +20 100 000 0000</span></a>
-            <a class="contact-item" href="mailto:hello@example.com"><span>✉</span><span>البريد الإلكتروني: hello@example.com</span></a>
-            <a class="contact-item" href="#case-studies"><span>★</span><span>شاهد دراسات الحالة قبل الحجز</span></a>
-          </div>
-        </div>
-
-        <form class="contact-card glass-card form reveal" id="contactForm">
-          <div class="form-message" id="formMessage">شكرًا لك! تم تجهيز رسالتك بنجاح.</div>
-
-          <div class="form-row">
-            <div class="field">
-              <label for="name">الاسم</label>
-              <input type="text" id="name" name="name" placeholder="اكتب اسمك بالكامل" required />
-            </div>
-            <div class="field">
-              <label for="email">البريد الإلكتروني</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
-            </div>
+        <div class="simple-box reveal">
+          <div>
+            <span class="label">اطلب نسخة مخصصة</span>
+            <h2>عايز بورتفوليو باسمك أو باسم شركتك؟</h2>
+            <p>
+              ابعت التخصص المناسب، الاسم، الصورة، الخدمات، النتائج، ورقم الواتساب، وسيتم تجهيز نسخة مناسبة لك.
+            </p>
           </div>
 
-          <div class="form-row">
-            <div class="field">
-              <label for="business">نوع النشاط التجاري</label>
-              <select id="business" name="business" required>
-                <option value="">اختر نوع النشاط</option>
-                <option>متجر إلكتروني</option>
-                <option>خدمة محلية</option>
-                <option>عقارات</option>
-                <option>تعليم / كورسات</option>
-                <option>تدريب / استشارات</option>
-                <option>أخرى</option>
-              </select>
-            </div>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/201105681942?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A."
+              target="_blank"
+              rel="noopener"
+            >
+              تواصل عبر واتساب
+            </a>
 
-            <div class="field">
-              <label for="budget">الميزانية الإعلانية الشهرية</label>
-              <select id="budget" name="budget" required>
-                <option value="">اختر الميزانية</option>
-                <option>أقل من 1,000 دولار</option>
-                <option>من 1,000 إلى 3,000 دولار</option>
-                <option>من 3,000 إلى 10,000 دولار</option>
-                <option>أكثر من 10,000 دولار</option>
-              </select>
-            </div>
+            <a class="btn btn-secondary" href="#templates">اختيار نموذج</a>
           </div>
-
-          <div class="field">
-            <label for="message">الرسالة</label>
-            <textarea id="message" name="message" placeholder="اكتب نبذة عن نشاطك التجاري، أهدافك، والتحديات الحالية في الإعلانات..." required></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">إرسال الرسالة ←</button>
-        </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>
-        <a href="#home" class="logo">
-          <span class="logo-mark">MB</span>
-          <span>ميديا باير</span>
-        </a>
-        <p>© <span id="year"></span> محمد سعيد. جميع الحقوق محفوظة.</p>
-      </div>
+      <p>© <span id="year"></span> محمد سعيد. جميع الحقوق محفوظة.</p>
 
-      <div class="socials">
-        <a href="#" aria-label="حساب لينكدإن">لينكدإن</a>
-        <a href="#" aria-label="حساب فيسبوك">فيسبوك</a>
-        <a href="#" aria-label="حساب إنستجرام">إنستجرام</a>
-        <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="التواصل عبر واتساب">واتساب</a>
-        <a href="mailto:hello@example.com" aria-label="التواصل عبر البريد الإلكتروني">البريد الإلكتروني</a>
+      <div class="footer-links">
+        <a href="media-buyer.html">Media Buyer</a>
+        <a href="digital-marketing.html">Digital Marketing</a>
+        <a href="copywriter.html">Copywriter</a>
+        <a href="graphic-designer.html">Graphic Designer</a>
+        <a href="social-media.html">Social Media</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const navbar = document.getElementById('navbar');
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 16);
-    });
-
-    menuBtn.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('active');
-        menuBtn.classList.toggle('active', isOpen);
-        menuBtn.setAttribute('aria-expanded', isOpen.toString());
-        document.body.classList.toggle('no-scroll', isOpen);
-    });
-
-    mobileLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        menuBtn.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('no-scroll');
-        });
-    });
-
     const revealElements = document.querySelectorAll('.reveal');
+
     const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
-        });
+      });
     }, { threshold: 0.14 });
 
     revealElements.forEach((element, index) => {
-        element.style.transitionDelay = `${Math.min(index % 4, 3) * 80}ms`;
-        revealObserver.observe(element);
-    });
-
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    function setFaqHeight(item) {
-        const answer = item.querySelector('.faq-answer');
-        if (item.classList.contains('active')) {
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-        answer.style.maxHeight = 0;
-        }
-    }
-
-    faqItems.forEach((item) => {
-        const button = item.querySelector('.faq-question');
-        setFaqHeight(item);
-
-        button.addEventListener('click', () => {
-        faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-            otherItem.classList.remove('active');
-            setFaqHeight(otherItem);
-            }
-        });
-
-        item.classList.toggle('active');
-        setFaqHeight(item);
-        });
-    });
-
-    window.addEventListener('resize', () => {
-        faqItems.forEach(setFaqHeight);
-    });
-
-    const track = document.getElementById('testimonialTrack');
-    const slides = Array.from(track.children);
-    const nextBtn = document.getElementById('nextTestimonial');
-    const prevBtn = document.getElementById('prevTestimonial');
-    let currentSlide = 0;
-
-    function updateSlider() {
-        track.style.transform = `translateX(${currentSlide * 100}%)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlider();
-    });
-
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-    }, 6500);
-
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const business = document.getElementById('business').value;
-        const budget = document.getElementById('budget').value;
-        const message = document.getElementById('message').value.trim();
-
-        const whatsappNumber = '201105681942';
-
-        const whatsappMessage =
-    `مرحبًا، أريد الاستفسار عن خدمات الإعلانات الممولة.
-
-    الاسم:
-    ${name}
-
-    البريد الإلكتروني:
-    ${email}
-
-    نوع النشاط التجاري:
-    ${business}
-
-    الميزانية الإعلانية الشهرية:
-    ${budget}
-
-    الرسالة:
-    ${message}`;
-
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-        window.open(whatsappURL, '_blank');
-
-        formMessage.style.display = 'block';
-        contactForm.reset();
-
-        setTimeout(() => {
-        formMessage.style.display = 'none';
-        }, 4500);
+      element.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+      revealObserver.observe(element);
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
- </script>
+  </script>
 </body>
 </html>

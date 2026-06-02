@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>بورتفوليو أخصائي تسويق رقمي | استراتيجية نمو متكاملة</title>
+
+  <meta name="description" content="بورتفوليو عربي احترافي لأخصائي تسويق رقمي يساعد العلامات التجارية على بناء استراتيجية نمو، تحسين رحلة العميل، تطوير المحتوى، وتحقيق نتائج قابلة للقياس." />
+
+  <style>
+    :root {
+      --bg: #080A12;
+      --bg-2: #0E1220;
+      --surface: #121827;
+      --surface-soft: rgba(255,255,255,0.055);
+      --primary: #A78BFA;
+      --primary-dark: #7C3AED;
+      --accent: #F59E0B;
+      --mint: #2DD4BF;
+      --text: #FFFFFF;
+      --muted: #A1A1AA;
+      --soft: #E5E7EB;
+      --border: rgba(255,255,255,0.12);
+      --radius: 28px;
+      --shadow: 0 30px 100px rgba(0,0,0,0.45);
+      --container: min(1140px, 92%);
+      --transition: 260ms ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      direction: rtl;
+      text-align: right;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 5%, rgba(167,139,250,0.22), transparent 32%),
+        radial-gradient(circle at 10% 20%, rgba(245,158,11,0.13), transparent 28%),
+        linear-gradient(180deg, #080A12 0%, #0B1020 52%, #080A12 100%);
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: var(--container);
+      margin: auto;
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.22;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 88px);
+    }
+
+    h2 {
+      font-size: clamp(32px, 5.5vw, 60px);
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: 18px;
+      color: #D4D4D8;
+      max-width: 740px;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: #0B0B0F;
+      background: linear-gradient(135deg, var(--accent), #FCD34D);
+      border-color: transparent;
+      box-shadow: 0 18px 45px rgba(245,158,11,0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.055);
+      color: var(--soft);
+      backdrop-filter: blur(14px);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8,10,18,0.78);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(167,139,250,0.95), rgba(45,212,191,0.85));
+      color: white;
+      direction: ltr;
+      box-shadow: 0 14px 34px rgba(167,139,250,0.25);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 110px 0 82px;
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: radial-gradient(circle at center, black, transparent 75%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-title {
+      margin-bottom: 22px;
+      max-width: 900px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .strategy-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 740px;
+    }
+
+    .strategy-tags span {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.045);
+      color: #D4D4D8;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .studio-board {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-board::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(167,139,250,0.18);
+      filter: blur(20px);
+      left: -80px;
+      top: -90px;
+    }
+
+    .board-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+
+    .board-top small {
+      color: var(--muted);
+    }
+
+    .board-title {
+      font-weight: 900;
+      color: var(--soft);
+    }
+
+    .journey-map {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 14px;
+    }
+
+    .journey-step {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(8,10,18,0.62);
+      border: 1px solid var(--border);
+    }
+
+    .journey-dot {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(167,139,250,0.18);
+      color: var(--primary);
+      font-weight: 900;
+      direction: ltr;
+    }
+
+    .journey-step strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .journey-step span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .journey-percent {
+      color: var(--accent);
+      font-weight: 900;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .insight-card {
+      margin-top: 18px;
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(245,158,11,0.16), rgba(167,139,250,0.12));
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+
+    .insight-card strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .insight-card p {
+      color: #E5E7EB;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-panel {
+      padding: 32px;
+    }
+
+    .about-panel p + p {
+      margin-top: 16px;
+    }
+
+    .brand-note {
+      padding: 32px;
+      background:
+        linear-gradient(145deg, rgba(167,139,250,0.16), rgba(45,212,191,0.07));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .brand-note h3 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .brand-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .brand-list div {
+      display: flex;
+      gap: 12px;
+      color: #E5E7EB;
+    }
+
+    .brand-list span {
+      color: var(--mint);
+      font-weight: 900;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      transition: var(--transition);
+      min-height: 250px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(167,139,250,0.45);
+      background: rgba(167,139,250,0.09);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(245,158,11,0.14);
+      color: var(--accent);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+    }
+
+    /* Framework */
+    .framework {
+      display: grid;
+      gap: 18px;
+    }
+
+    .framework-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .framework-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245,158,11,0.42);
+    }
+
+    .framework-number {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      display: block;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .framework-card h3 {
+      margin-bottom: 12px;
+    }
+
+    /* Channels */
+    .ecosystem {
+      display: grid;
+      gap: 18px;
+    }
+
+    .ecosystem-main {
+      padding: 34px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(167,139,250,0.18), rgba(245,158,11,0.08));
+      border: 1px solid var(--border);
+    }
+
+    .ecosystem-main h3 {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .channel-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .channel-cloud span {
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: rgba(8,10,18,0.56);
+      border: 1px solid var(--border);
+      color: #E5E7EB;
+      font-weight: 800;
+    }
+
+    .ecosystem-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .mini-box {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+    }
+
+    .mini-box strong {
+      display: block;
+      color: var(--mint);
+      font-size: 28px;
+      margin-bottom: 8px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    /* Case Studies */
+    .case-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .case-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(45,212,191,0.38);
+    }
+
+    .case-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .case-card h3 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .case-points {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .case-points div {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(8,10,18,0.48);
+      border: 1px solid var(--border);
+    }
+
+    .case-points strong {
+      color: white;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .case-result {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .case-result div {
+      padding: 15px;
+      border-radius: 16px;
+      background: rgba(245,158,11,0.09);
+      border: 1px solid rgba(245,158,11,0.20);
+    }
+
+    .case-result strong {
+      display: block;
+      color: var(--accent);
+      font-size: 24px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .case-result span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Results */
+    .results-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .result-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(167,139,250,0.12);
+      top: -50px;
+      left: -50px;
+    }
+
+    .result-card strong {
+      display: block;
+      font-size: 44px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      direction: ltr;
+      text-align: right;
+      position: relative;
+      z-index: 2;
+    }
+
+    .result-card h3,
+    .result-card p {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+    }
+
+    .testimonial p {
+      color: #E5E7EB;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial span {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    /* Process */
+    .process {
+      display: grid;
+      gap: 18px;
+      counter-reset: process;
+    }
+
+    .process-step {
+      counter-increment: process;
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .process-step:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245,158,11,0.38);
+    }
+
+    .process-step::before {
+      content: "0" counter(process);
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--accent);
+      color: #080A12;
+      font-weight: 900;
+      margin-bottom: 20px;
+      direction: ltr;
+    }
+
+    .process-step h3 {
+      margin-bottom: 10px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      max-width: 900px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px;
+      background: transparent;
+      color: white;
+      border: 0;
+      text-align: right;
+      font-size: 17px;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+    }
+
+    .faq-question span {
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      padding: 0 22px;
+      transition: 300ms ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      padding: 0 22px 22px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-copy {
+      padding: 34px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-list div {
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+      color: #E5E7EB;
+    }
+
+    form {
+      padding: 28px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: #E5E7EB;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(8,10,18,0.58);
+      color: white;
+      outline: none;
+      font-size: 15px;
+      direction: rtl;
+      text-align: right;
+      transition: var(--transition);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #71717A;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(167,139,250,0.7);
+      box-shadow: 0 0 0 4px rgba(167,139,250,0.12);
+    }
+
+    .submit-btn {
+      border: 0;
+      min-height: 56px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #FCD34D);
+      color: #080A12;
+      font-weight: 900;
+      cursor: pointer;
+      font-size: 16px;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px rgba(245,158,11,0.24);
+    }
+
+    .footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      background: rgba(0,0,0,0.25);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 750ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .nav-links,
+      .nav-cta {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 0.9fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .framework {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .ecosystem {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .case-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .testimonials {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 80px 0 64px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .case-result {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-board,
+      .about-panel,
+      .brand-note,
+      .contact-copy,
+      form {
+        padding: 22px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">GS</span>
+        <span>استوديو النمو</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#framework">الإطار</a>
+        <a href="#cases">دراسات النمو</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta">ابدأ خطة النمو</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">أخصائي تسويق رقمي واستراتيجية نمو</div>
+
+          <h1 class="hero-title">
+            أبني للعلامات التجارية
+            <span>نظام نمو متكامل</span>
+            وليس مجرد حملات منفصلة.
+          </h1>
+
+          <p class="lead hero-desc">
+            أساعد المشاريع على فهم جمهورها، صياغة عرضها، بناء رحلة عميل واضحة، وتفعيل قنوات التسويق المناسبة لتحقيق نمو مستدام وقابل للقياس.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">اطلب تحليل مشروعك</a>
+            <a href="#framework" class="btn btn-secondary">شاهد منهجية العمل</a>
+          </div>
+
+          <div class="strategy-tags">
+            <span>استراتيجية نمو</span>
+            <span>تموضع العلامة</span>
+            <span>رحلة العميل</span>
+            <span>المحتوى والتحويل</span>
+            <span>CRM واحتفاظ العملاء</span>
+          </div>
+        </div>
+
+        <aside class="studio-board glass reveal">
+          <div class="board-top">
+            <div>
+              <div class="board-title">خريطة رحلة العميل</div>
+              <small>من أول ظهور حتى تكرار الشراء</small>
+            </div>
+            <small>Growth Studio</small>
+          </div>
+
+          <div class="journey-map">
+            <div class="journey-step">
+              <div class="journey-dot">1</div>
+              <div>
+                <strong>الوعي</strong>
+                <span>محتوى يوضح المشكلة ويجذب الجمهور المناسب</span>
+              </div>
+              <div class="journey-percent">+42%</div>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">2</div>
+              <div>
+                <strong>الاهتمام</strong>
+                <span>رسائل تشرح القيمة وتبني الثقة</span>
+              </div>
+              <div class="journey-percent">+58%</div>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">3</div>
+              <div>
+                <strong>التحويل</strong>
+                <span>صفحات وعروض تجعل القرار أسهل</span>
+              </div>
+              <div class="journey-percent">+31%</div>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">4</div>
+              <div>
+                <strong>الاحتفاظ</strong>
+                <span>متابعة ورسائل تعيد العميل مرة أخرى</span>
+              </div>
+              <div class="journey-percent">+26%</div>
+            </div>
+          </div>
+
+          <div class="insight-card">
+            <strong>الفكرة الأساسية</strong>
+            <p>
+              التسويق القوي لا يبدأ من الإعلان، بل يبدأ من فهم السوق والرسالة ورحلة العميل.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="section-head reveal">
+          <div class="eyebrow">نبذة عني</div>
+          <h2>أفكر في التسويق كنظام كامل، لا كمنشورات وإعلانات متفرقة.</h2>
+          <p class="lead">
+            أعمل على ربط الاستراتيجية بالمحتوى، والرسائل التسويقية بالقنوات، والنتائج بالأرقام التي تهم صاحب المشروع فعلًا.
+          </p>
+        </div>
+
+        <div class="about-panel glass reveal">
+          <p>
+            دوري كأخصائي تسويق رقمي هو أن أساعد المشروع على معرفة: من يخاطب؟ ماذا يقول؟ أين يظهر؟ وكيف يحوّل الاهتمام إلى طلب حقيقي.
+          </p>
+
+          <p>
+            لذلك لا أبدأ من اختيار منصة أو نشر محتوى عشوائي، بل من تحليل السوق، تحديد الجمهور، بناء الرسالة، ثم تصميم خطة تنفيذ مناسبة للمرحلة التي يمر بها المشروع.
+          </p>
+        </div>
+
+        <div class="brand-note reveal">
+          <h3>متى تحتاج هذا النوع من التسويق؟</h3>
+          <p>
+            عندما يكون لديك منتج جيد، لكن الرسالة غير واضحة، أو القنوات غير مترابطة، أو النتائج لا تعكس حجم المجهود المبذول.
+          </p>
+
+          <div class="brand-list">
+            <div><span>✓</span> لديك محتوى، لكنه لا يحوّل الجمهور إلى عملاء.</div>
+            <div><span>✓</span> لديك عروض، لكنها غير مصاغة بطريقة مقنعة.</div>
+            <div><span>✓</span> لديك قنوات كثيرة، لكن لا يوجد نظام يربطها.</div>
+            <div><span>✓</span> تريد خطة نمو واضحة بدل التجربة العشوائية.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">الخدمات التسويقية</div>
+          <h2>خدمات مبنية حول استراتيجية النمو، وليس حول قناة واحدة.</h2>
+          <p class="lead">
+            هذا البورتفوليو يركز على الصورة الأكبر للتسويق: الرسالة، الجمهور، المحتوى، الفانل، التحويل، والاحتفاظ.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">🧭</div>
+            <h3>استراتيجية النمو</h3>
+            <p>
+              بناء خطة تسويقية واضحة تحدد الجمهور، الرسالة، القنوات، الأولويات، ومؤشرات النجاح.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">💬</div>
+            <h3>صياغة الرسائل التسويقية</h3>
+            <p>
+              تحويل قيمة المنتج إلى رسائل واضحة تجعل العميل يفهم لماذا يحتاجك ولماذا الآن.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🧩</div>
+            <h3>تصميم رحلة العميل</h3>
+            <p>
+              ربط نقاط التلامس من أول ظهور حتى الشراء والمتابعة لتقليل التسرب وزيادة التحويل.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✍️</div>
+            <h3>استراتيجية المحتوى</h3>
+            <p>
+              بناء محاور محتوى تخدم الوعي، الثقة، الاعتراضات، والتحويل بدل النشر لمجرد الحضور.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🔁</div>
+            <h3>تحسين التحويل والاحتفاظ</h3>
+            <p>
+              تطوير صفحات الهبوط، العروض، رسائل المتابعة، ونقاط الإقناع لزيادة الطلب وتكرار الشراء.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">📌</div>
+            <h3>استشارات تسويقية</h3>
+            <p>
+              جلسات تحليل وتشخيص للمشروع مع خطة عملية تساعدك على معرفة الخطوة التالية بوضوح.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Framework -->
+    <section class="section" id="framework">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">إطار العمل</div>
+          <h2>منهجية مختلفة عن إدارة الإعلانات: أفهم، أصيغ، أبني، ثم أحسن.</h2>
+        </div>
+
+        <div class="framework">
+          <article class="framework-card reveal">
+            <span class="framework-number">01</span>
+            <h3>تحليل السوق</h3>
+            <p>
+              فهم الجمهور، المنافسين، الاعتراضات، ونقاط القوة التي يمكن البناء عليها.
+            </p>
+          </article>
+
+          <article class="framework-card reveal">
+            <span class="framework-number">02</span>
+            <h3>بناء الرسالة</h3>
+            <p>
+              صياغة عرض قيمة واضح ونبرة تواصل تناسب شخصية العلامة والجمهور.
+            </p>
+          </article>
+
+          <article class="framework-card reveal">
+            <span class="framework-number">03</span>
+            <h3>تصميم النظام</h3>
+            <p>
+              تحديد القنوات، المحتوى، صفحات التحويل، ورسائل المتابعة داخل رحلة واحدة.
+            </p>
+          </article>
+
+          <article class="framework-card reveal">
+            <span class="framework-number">04</span>
+            <h3>التحسين المستمر</h3>
+            <p>
+              قراءة النتائج وتحسين الرسائل والتجربة بناءً على سلوك الجمهور.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section class="section" id="ecosystem">
+      <div class="container ecosystem">
+        <div class="ecosystem-main reveal">
+          <div class="eyebrow">منظومة القنوات</div>
+          <h3>أربط القنوات ببعضها لتخدم هدفًا واحدًا: نمو أوضح.</h3>
+          <p>
+            التسويق الرقمي ليس مجرد قناة واحدة. النجاح يأتي عندما يعمل المحتوى، البريد، الموقع، السوشيال، التحليل، وتجربة العميل كمنظومة واحدة.
+          </p>
+
+          <div class="channel-cloud">
+            <span>المحتوى العضوي</span>
+            <span>تحسين الموقع</span>
+            <span>البريد الإلكتروني</span>
+            <span>إدارة المجتمعات</span>
+            <span>تحليل البيانات</span>
+            <span>CRM</span>
+            <span>صفحات الهبوط</span>
+            <span>إعادة تنشيط العملاء</span>
+          </div>
+        </div>
+
+        <div class="ecosystem-side reveal">
+          <div class="mini-box">
+            <strong>360°</strong>
+            <p>نظرة شاملة على رحلة العميل بدل التركيز على حملة منفصلة.</p>
+          </div>
+
+          <div class="mini-box">
+            <strong>4 مراحل</strong>
+            <p>وعي، اهتمام، تحويل، احتفاظ — وكل مرحلة لها رسائلها وقنواتها.</p>
+          </div>
+
+          <div class="mini-box">
+            <strong>1 نظام</strong>
+            <p>كل قناة تعمل ضمن خطة واحدة بدل جهود منفصلة وغير مترابطة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">نتائج النمو</div>
+          <h2>أقيس النجاح بما يحدث في رحلة العميل بالكامل.</h2>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card reveal">
+            <strong>+64%</strong>
+            <h3>تحسن وضوح العرض</h3>
+            <p>من خلال إعادة صياغة الرسائل والتموضع.</p>
+          </article>
+
+          <article class="result-card reveal">
+            <strong>+48%</strong>
+            <h3>زيادة التفاعل النوعي</h3>
+            <p>بعد تطوير استراتيجية محتوى مرتبطة بدوافع الجمهور.</p>
+          </article>
+
+          <article class="result-card reveal">
+            <strong>+37%</strong>
+            <h3>تحسن التحويل</h3>
+            <p>بسبب تحسين رحلة العميل وصفحات الهبوط.</p>
+          </article>
+
+          <article class="result-card reveal">
+            <strong>+29%</strong>
+            <h3>زيادة تكرار الطلب</h3>
+            <p>من خلال رسائل متابعة واحتفاظ أفضل.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cases -->
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">دراسات نمو</div>
+          <h2>أمثلة توضح الفرق بين التسويق الشامل وإدارة الإعلانات فقط.</h2>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card reveal">
+            <div class="case-label">مشروع خدمات</div>
+            <h3>تحويل خدمة غير واضحة إلى عرض مفهوم وسهل البيع.</h3>
+            <p>
+              كان المشروع يملك خدمة قوية، لكن الجمهور لا يفهم الفرق بينها وبين المنافسين.
+            </p>
+
+            <div class="case-points">
+              <div>
+                <strong>المشكلة</strong>
+                <p>رسائل عامة لا تشرح القيمة الحقيقية.</p>
+              </div>
+
+              <div>
+                <strong>الحل</strong>
+                <p>إعادة بناء عرض القيمة، تقسيم الجمهور، وصياغة محتوى يشرح النتائج.</p>
+              </div>
+            </div>
+
+            <div class="case-result">
+              <div><strong>+52%</strong><span>زيادة الاستفسارات</span></div>
+              <div><strong>+41%</strong><span>تحسن جودة العملاء</span></div>
+              <div><strong>+33%</strong><span>زيادة الحجز</span></div>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-label">علامة شخصية</div>
+            <h3>بناء منظومة محتوى تحول المتابعين إلى طلبات حقيقية.</h3>
+            <p>
+              كان الحساب ينشر باستمرار، لكن بدون مسار واضح يقود الجمهور للتواصل.
+            </p>
+
+            <div class="case-points">
+              <div>
+                <strong>المشكلة</strong>
+                <p>محتوى متنوع لكن غير مرتبط بهدف تجاري واضح.</p>
+              </div>
+
+              <div>
+                <strong>الحل</strong>
+                <p>بناء محاور محتوى للوعي، الثقة، الاعتراضات، والتحويل.</p>
+              </div>
+            </div>
+
+            <div class="case-result">
+              <div><strong>+73%</strong><span>زيادة الرسائل</span></div>
+              <div><strong>+46%</strong><span>زيادة الحفظ</span></div>
+              <div><strong>+28%</strong><span>زيادة المبيعات</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">آراء العملاء</div>
+          <h2>الفرق الحقيقي يظهر عندما تصبح الخطة أوضح.</h2>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <p>
+              “لم يكن العمل مجرد خطة محتوى، بل إعادة ترتيب كاملة لطريقة ظهورنا أمام العميل.”
+            </p>
+            <span>مؤسس شركة خدمات</span>
+          </article>
+
+          <article class="testimonial reveal">
+            <p>
+              “أصبحنا نفهم ماذا نقول، ولمن نقول، وكيف نقيس النتيجة بدل النشر العشوائي.”
+            </p>
+            <span>صاحبة علامة شخصية</span>
+          </article>
+
+          <article class="testimonial reveal">
+            <p>
+              “أكثر شيء مفيد كان ربط القنوات ببعضها. كل جزء أصبح يخدم رحلة العميل.”
+            </p>
+            <span>مدير مشروع ناشئ</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">طريقة العمل</div>
+          <h2>خطوات عملية لبناء تسويق أكثر وضوحًا وترابطًا.</h2>
+        </div>
+
+        <div class="process">
+          <article class="process-step reveal">
+            <h3>جلسة اكتشاف</h3>
+            <p>نفهم المشروع، الجمهور، العروض، التحديات، والأهداف.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <h3>تحليل وتشخيص</h3>
+            <p>نراجع القنوات الحالية، الرسائل، المحتوى، ورحلة العميل.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <h3>خطة نمو</h3>
+            <p>نضع أولويات واضحة وقنوات مناسبة ومؤشرات قياس عملية.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <h3>تنفيذ وتحسين</h3>
+            <p>نطبق الخطة ونحسنها بناءً على البيانات ورد فعل الجمهور.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">الأسئلة الشائعة</div>
+          <h2>أسئلة قبل بدء التعاون.</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل هذا مختلف عن الميديا باير؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم. الميديا باير يركز غالبًا على إدارة الحملات الإعلانية، أما هنا فالتركيز على الاستراتيجية الكاملة: الرسالة، الجمهور، المحتوى، رحلة العميل، التحويل، والاحتفاظ.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل يمكنك العمل بدون إدارة إعلانات؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم، يمكن العمل على الاستراتيجية، المحتوى، تحسين الموقع، الرسائل، البريد الإلكتروني، وتحسين رحلة العميل بدون إدارة حملات إعلانية مباشرة.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              ما الذي أحتاجه قبل البدء؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              أحتاج معرفة نوع المشروع، الجمهور المستهدف، العروض الحالية، القنوات المستخدمة، وأهم التحديات التي تواجهك في التسويق.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              هل يناسب الشركات الصغيرة؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              نعم، خصوصًا إذا كان المشروع يحتاج إلى وضوح في الرسالة وخطة تسويقية منظمة قبل زيادة الإنفاق أو التوسع.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy glass reveal">
+          <div class="eyebrow">تواصل معي</div>
+          <h2>هل تريد تحويل التسويق من مجهود متفرق إلى نظام نمو واضح؟</h2>
+          <p>
+            املأ البيانات وسيتم إرسالها مباشرة إلى واتساب في رسالة منظمة تحتوي على تفاصيل مشروعك.
+          </p>
+
+          <div class="contact-list">
+            <div>✓ مناسب للمشاريع التي تحتاج استراتيجية شاملة.</div>
+            <div>✓ تركيز على الرسالة، القنوات، رحلة العميل، والتحويل.</div>
+            <div>✓ مختلف عن قالب الميديا باير لأنه لا يتمحور حول الإعلانات فقط.</div>
+          </div>
+        </div>
+
+        <form id="whatsappForm" class="glass reveal">
+          <div class="form-group">
+            <label for="name">الاسم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" placeholder="اكتب رقم الهاتف" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" placeholder="اكتب البريد الإلكتروني" required />
+          </div>
+
+          <div class="form-group">
+            <label for="project">نوع المشروع</label>
+            <select id="project" required>
+              <option value="">اختر نوع المشروع</option>
+              <option value="شركة ناشئة">شركة ناشئة</option>
+              <option value="متجر إلكتروني">متجر إلكتروني</option>
+              <option value="خدمة محلية">خدمة محلية</option>
+              <option value="علامة شخصية">علامة شخصية</option>
+              <option value="مشروع تعليمي">مشروع تعليمي</option>
+              <option value="مشروع آخر">مشروع آخر</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service">الخدمة المطلوبة</label>
+            <select id="service" required>
+              <option value="">اختر الخدمة</option>
+              <option value="استراتيجية نمو">استراتيجية نمو</option>
+              <option value="تحليل تسويقي">تحليل تسويقي</option>
+              <option value="استراتيجية محتوى">استراتيجية محتوى</option>
+              <option value="تحسين رحلة العميل">تحسين رحلة العميل</option>
+              <option value="صياغة الرسائل التسويقية">صياغة الرسائل التسويقية</option>
+              <option value="استشارة تسويقية">استشارة تسويقية</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">هدفك الأساسي</label>
+            <select id="goal" required>
+              <option value="">اختر الهدف</option>
+              <option value="زيادة الطلبات">زيادة الطلبات</option>
+              <option value="توضيح عرض المشروع">توضيح عرض المشروع</option>
+              <option value="تحسين المحتوى">تحسين المحتوى</option>
+              <option value="تنظيم القنوات التسويقية">تنظيم القنوات التسويقية</option>
+              <option value="زيادة الاحتفاظ بالعملاء">زيادة الاحتفاظ بالعملاء</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">تفاصيل إضافية</label>
+            <textarea id="message" placeholder="اكتب نبذة عن مشروعك، التحديات الحالية، والنتيجة التي تريد الوصول إليها..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">إرسال البيانات عبر واتساب</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 استوديو النمو — بورتفوليو أخصائي تسويق رقمي باستراتيجية مختلفة عن الميديا باير.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Reveal
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const icon = question.querySelector("span");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+        icon.textContent = item.classList.contains("active") ? "−" : "+";
+      });
+    });
+
+    // WhatsApp Form
+    const whatsappForm = document.getElementById("whatsappForm");
+
+    whatsappForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const whatsappNumber = "201000000000";
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const project = document.getElementById("project").value;
+      const service = document.getElementById("service").value;
+      const goal = document.getElementById("goal").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage = `
+طلب جديد من بورتفوليو أخصائي التسويق الرقمي
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email}
+
+نوع المشروع: ${project}
+الخدمة المطلوبة: ${service}
+الهدف الأساسي: ${goal}
+
+تفاصيل المشروع:
+${message}
+      `;
+
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
