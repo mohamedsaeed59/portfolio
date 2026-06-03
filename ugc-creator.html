@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صانع محتوى UGC</title>
+
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #151827;
+      --muted: #667085;
+      --primary: #7c3aed;
+      --secondary: #ec4899;
+      --accent: #06b6d4;
+      --border: rgba(21, 24, 39, 0.1);
+      --shadow: 0 20px 50px rgba(20, 24, 40, 0.12);
+      --soft: #eef1f8;
+      --header: rgba(255, 255, 255, 0.82);
+    }
+
+    body.dark {
+      --bg: #080914;
+      --card: #111320;
+      --text: #ffffff;
+      --muted: #b8bfd6;
+      --primary: #a855f7;
+      --secondary: #f43f5e;
+      --accent: #22d3ee;
+      --border: rgba(255, 255, 255, 0.1);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --soft: #181b2d;
+      --header: rgba(8, 9, 20, 0.82);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.18), transparent 35%),
+        radial-gradient(circle at top left, rgba(236, 72, 153, 0.15), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+      transition: 0.3s;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, 1180px);
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 50px;
+      background: rgba(124, 58, 237, 0.12);
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--header);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 19px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 12px 28px rgba(124, 58, 237, 0.3);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .theme-btn,
+    .menu-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .hero {
+      padding: 95px 0 70px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 660px;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 16px;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 16px 34px rgba(124, 58, 237, 0.28);
+    }
+
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone {
+      width: min(330px, 100%);
+      aspect-ratio: 9 / 16;
+      margin: auto;
+      border-radius: 42px;
+      padding: 16px;
+      background: #05060d;
+      border: 8px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .phone-screen {
+      height: 100%;
+      border-radius: 30px;
+      padding: 18px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.72)),
+        linear-gradient(160deg, #a855f7, #ec4899, #06b6d4);
+      overflow: hidden;
+    }
+
+    .record {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ff3b5c;
+      box-shadow: 0 0 0 8px rgba(255, 59, 92, 0.2);
+      animation: pulse 1.4s infinite;
+    }
+
+    .phone-title h3 {
+      font-size: 28px;
+      line-height: 1.3;
+      margin-top: 10px;
+    }
+
+    .phone-title span {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.18);
+      font-weight: bold;
+    }
+
+    .float {
+      position: absolute;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      padding: 12px 15px;
+      font-weight: 900;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .float.one {
+      top: 45px;
+      right: 18px;
+    }
+
+    .float.two {
+      bottom: 45px;
+      left: 15px;
+      animation-delay: 0.7s;
+    }
+
+    .stats-small {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .small-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .small-stat strong {
+      display: block;
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .small-stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 34px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 8px 13px;
+      border-radius: 50px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 22px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .list li {
+      color: var(--muted);
+      font-weight: bold;
+    }
+
+    .list li::before {
+      content: "✓";
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 3px 8px;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card,
+    .work-card,
+    .testimonial,
+    .price-card,
+    .faq-item,
+    .process-card,
+    .result-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      transition: 0.25s;
+    }
+
+    .service-card:hover,
+    .work-card:hover,
+    .price-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(124, 58, 237, 0.12);
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3,
+    .work-card h3,
+    .price-card h3,
+    .process-card h3 {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p,
+    .work-card p,
+    .price-card p,
+    .process-card p,
+    .testimonial p,
+    .faq-item p {
+      color: var(--muted);
+    }
+
+    .work-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .thumb {
+      min-height: 220px;
+      padding: 22px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(150deg, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+        linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .play {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(10px);
+    }
+
+    .thumb h3 {
+      font-size: 25px;
+      line-height: 1.3;
+    }
+
+    .work-body {
+      padding: 24px;
+    }
+
+    .category {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      font-weight: 900;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .process-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .result-card {
+      text-align: center;
+    }
+
+    .result-card strong {
+      font-size: 44px;
+      color: var(--primary);
+      display: block;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .result-card span {
+      color: var(--muted);
+      font-weight: bold;
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .client {
+      margin-top: 18px;
+      font-weight: 900;
+    }
+
+    .client span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card.featured {
+      border-color: rgba(124, 58, 237, 0.5);
+      transform: scale(1.03);
+      position: relative;
+    }
+
+    .popular {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 50px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 34px;
+      color: var(--primary);
+      font-weight: 900;
+      margin: 16px 0;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .price-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 24px;
+    }
+
+    .price-card li {
+      color: var(--muted);
+      font-weight: bold;
+    }
+
+    .price-card li::before {
+      content: "✓";
+      color: var(--primary);
+      margin-left: 8px;
+      font-weight: 900;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .faq-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: right;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.25s;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 170px;
+      margin-top: 12px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .info {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: bold;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      font-weight: 900;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+    }
+
+    .form-message {
+      display: none;
+      padding: 12px;
+      border-radius: 14px;
+      font-weight: bold;
+    }
+
+    .form-message.error {
+      display: block;
+      color: #be123c;
+      background: rgba(244, 63, 94, 0.12);
+    }
+
+    .form-message.success {
+      display: block;
+      color: #047857;
+      background: rgba(16, 185, 129, 0.12);
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.7s;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse {
+      50% {
+        transform: scale(1.15);
+        opacity: 0.75;
+      }
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .nav {
+        position: fixed;
+        top: 76px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .pricing {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .result-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .grid-3,
+      .pricing,
+      .process-grid,
+      .result-grid,
+      .stats-small {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .float {
+        display: none;
+      }
+
+      .btns {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container navbar">
+      <a href="#home" class="brand">
+        <span class="logo">UGC</span>
+        <span>صانعة محتوى</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about">من أنا</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#process">الخطوات</a>
+        <a href="#pricing">الباقات</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <div class="actions">
+        <button class="theme-btn" id="themeBtn">☾</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="reveal">
+          <span class="label">محتوى حقيقي يبني الثقة ويقرب العميل من الشراء</span>
+          <h1>
+            أصنع <span class="gradient-text">فيديوهات UGC</span>
+            تجعل منتجك أقرب لجمهورك
+          </h1>
+          <p>
+            أساعد العلامات التجارية على الظهور بمحتوى طبيعي ومقنع يشبه تجربة العميل الحقيقية،
+            من خلال فيديوهات قصيرة مناسبة لتيك توك، إنستجرام ريلز، الإعلانات، ومراجعات المنتجات.
+          </p>
+
+          <div class="btns">
+            <a href="#work" class="btn btn-primary">شاهد الأعمال</a>
+            <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+          </div>
+
+          <div class="stats-small">
+            <div class="small-stat">
+              <strong>+180</strong>
+              <span>فيديو منفذ</span>
+            </div>
+            <div class="small-stat">
+              <strong>+45</strong>
+              <span>فكرة إعلانية</span>
+            </div>
+            <div class="small-stat">
+              <strong>+22</strong>
+              <span>براند تعاونت معه</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="float one">هوك قوي خلال أول ٣ ثوانٍ</div>
+          <div class="float two">تصوير طبيعي يبيع بدون مبالغة</div>
+
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="record">
+                <span>تسجيل محتوى</span>
+                <span class="dot"></span>
+              </div>
+
+              <div class="phone-title">
+                <span>تجربة منتج</span>
+                <h3>ليه المنتج ده يستاهل التجربة؟</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">من أنا</span>
+          <h2 class="section-title">صانعة محتوى تفهم المنتج قبل الكاميرا</h2>
+          <p class="section-desc">
+            لا أقدم فيديو جميل فقط، بل أصنع رسالة واضحة تساعد البراند على الظهور بشكل طبيعي وموثوق.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card reveal">
+            <div class="avatar">▶</div>
+            <h3>صانعة محتوى UGC للعلامات التجارية</h3>
+            <p>
+              متخصصة في صناعة فيديوهات قصيرة للمنتجات والخدمات بأسلوب واقعي يناسب المنصات الاجتماعية
+              والحملات الإعلانية وصفحات البيع.
+            </p>
+
+            <div class="tags">
+              <span class="tag">مراجعات منتجات</span>
+              <span class="tag">سكريبتات</span>
+              <span class="tag">ريلز</span>
+              <span class="tag">تعليق صوتي</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>محتوى يبدو طبيعيًا لكنه مبني على هدف تسويقي واضح</h3>
+            <p>
+              أعمل على فهم المنتج والجمهور، تحديد زاوية البيع المناسبة، كتابة الهوك والسكريبت،
+              ثم تصوير محتوى بسيط وواقعي يجعل المشاهد يشعر أن المنتج جزء من تجربة يومية حقيقية.
+            </p>
+
+            <ul class="list">
+              <li>إنشاء فيديوهات منتجات ومراجعات وتجارب استخدام.</li>
+              <li>كتابة هوكات وسكريبتات مناسبة للإعلانات القصيرة.</li>
+              <li>تصوير نظيف وطبيعي يبرز المنتج بدون تكلف.</li>
+              <li>تسليم محتوى جاهز للنشر أو الاستخدام في الحملات.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">الخدمات</span>
+          <h2 class="section-title">كل ما يحتاجه البراند لصناعة محتوى قصير مؤثر</h2>
+          <p class="section-desc">
+            خدمات مناسبة للمتاجر الإلكترونية، منتجات العناية، المطاعم، التطبيقات، والخدمات الرقمية.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="service-card reveal">
+            <div class="icon">🎬</div>
+            <h3>فيديوهات UGC</h3>
+            <p>فيديوهات طبيعية تحاكي تجربة العميل وتعرض المنتج بطريقة قريبة من الجمهور.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">⭐</div>
+            <h3>مراجعات منتجات</h3>
+            <p>مراجعات صادقة ومنظمة توضح المميزات وطريقة الاستخدام وسبب اختيار المنتج.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📱</div>
+            <h3>ريلز وتيك توك</h3>
+            <p>محتوى سريع الإيقاع مناسب للانتشار والتفاعل والحملات المدفوعة.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">✍</div>
+            <h3>كتابة السكريبت</h3>
+            <p>هوكات وأفكار وسيناريوهات مختصرة تركز على المشكلة والحل والدعوة للشراء.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🎙</div>
+            <h3>تعليق صوتي</h3>
+            <p>تعليق صوتي واضح ودافئ يناسب الإعلانات والشروحات وتجارب المنتجات.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📦</div>
+            <h3>باقات محتوى شهرية</h3>
+            <p>خطة محتوى مستمرة تشمل أفكارًا متعددة وفيديوهات منتظمة للبراند.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">نماذج الأعمال</span>
+          <h2 class="section-title">أفكار فيديوهات جاهزة لجذب الانتباه</h2>
+          <p class="section-desc">
+            أمثلة لأنواع المحتوى التي يمكن تنفيذها لمنتجك بهدف واضح وقابل للاستخدام في الإعلانات.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="work-card reveal">
+            <div class="thumb">
+              <div class="play">▶</div>
+              <h3>تجربة قبل وبعد</h3>
+            </div>
+            <div class="work-body">
+              <div class="category">منتجات عناية</div>
+              <h3>إظهار الفرق بطريقة طبيعية</h3>
+              <p>الهدف: بناء ثقة سريعة من خلال تجربة استخدام واقعية ونتيجة واضحة.</p>
+              <a href="#contact" class="mini-btn">اطلب نموذج مشابه</a>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <div class="thumb">
+              <div class="play">▶</div>
+              <h3>مراجعة منتج</h3>
+            </div>
+            <div class="work-body">
+              <div class="category">متاجر إلكترونية</div>
+              <h3>عرض المميزات بلغة العميل</h3>
+              <p>الهدف: توضيح سبب الشراء وتقليل تردد العميل قبل الطلب.</p>
+              <a href="#contact" class="mini-btn">اطلب نموذج مشابه</a>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <div class="thumb">
+              <div class="play">▶</div>
+              <h3>هوك إعلاني</h3>
+            </div>
+            <div class="work-body">
+              <div class="category">حملات مدفوعة</div>
+              <h3>افتتاحية توقف التمرير</h3>
+              <p>الهدف: جذب الانتباه في أول ثوانٍ ورفع فرصة مشاهدة الفيديو للنهاية.</p>
+              <a href="#contact" class="mini-btn">اطلب نموذج مشابه</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">طريقة العمل</span>
+          <h2 class="section-title">خطوات واضحة من الفكرة حتى التسليم</h2>
+          <p class="section-desc">
+            عملية منظمة تضمن أن كل فيديو له هدف ورسالة وإخراج مناسب للمنصة.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal">
+            <h3>فهم المنتج</h3>
+            <p>أراجع المنتج والجمهور ونقاط البيع قبل اقتراح أي فكرة.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>كتابة الفكرة والسكريبت</h3>
+            <p>أجهز هوك وسيناريو مختصر يوضح المشكلة والحل.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>التصوير</h3>
+            <p>تصوير طبيعي يبرز المنتج في استخدام حقيقي.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>المونتاج</h3>
+            <p>قص سريع ونصوص واضحة وإيقاع مناسب للمشاهدة.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>التسليم النهائي</h3>
+            <p>تسليم الملفات بجودة مناسبة مع التعديلات المتفق عليها.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">أرقام ونتائج</span>
+          <h2 class="section-title">محتوى مصمم ليخدم أهداف البراند</h2>
+          <p class="section-desc">
+            أرقام توضح طبيعة المخرجات التي يمكن للبراند الاعتماد عليها.
+          </p>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-card reveal">
+            <strong>+٢.٥م</strong>
+            <span>مشاهدة محتوى قصيرة</span>
+          </div>
+
+          <div class="result-card reveal">
+            <strong>+١٨٠</strong>
+            <span>فيديو تم تسليمه</span>
+          </div>
+
+          <div class="result-card reveal">
+            <strong>+٢٢</strong>
+            <span>براند تم التعاون معه</span>
+          </div>
+
+          <div class="result-card reveal">
+            <strong>+٩٠</strong>
+            <span>فكرة محتوى وإعلان</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">آراء العملاء</span>
+          <h2 class="section-title">تجارب براندات وثقت في المحتوى</h2>
+          <p class="section-desc">
+            التعاون الناجح يبدأ بفهم المنتج وينتهي بمحتوى واضح يمكن استخدامه بثقة.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              المحتوى كان طبيعيًا جدًا ومناسبًا للجمهور. طريقة شرح المنتج كانت بسيطة وغير مباشرة.
+            </p>
+            <div class="client">
+              سارة محمود
+              <span>مديرة متجر عناية</span>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              استلمنا فيديوهات جاهزة للإعلانات، السكريبت كان واضحًا والهوك قويًا.
+            </p>
+            <div class="client">
+              مروان علي
+              <span>مسؤول تسويق</span>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              التعاون كان منظمًا وسريعًا، والأفكار كانت مختلفة ومناسبة لطبيعة البراند.
+            </p>
+            <div class="client">
+              نور حسن
+              <span>صاحبة براند محلي</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">الباقات</span>
+          <h2 class="section-title">اختار الباقة الأنسب لمرحلة البراند</h2>
+          <p class="section-desc">
+            باقات مرنة تناسب تجربة أول فيديو أو إطلاق منتج أو إنتاج محتوى شهري مستمر.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card reveal">
+            <h3>باقة تجربة</h3>
+            <p>مناسبة لاختبار فكرة واحدة أو منتج جديد.</p>
+            <div class="price">١ فيديو <small>/ قصير</small></div>
+            <ul>
+              <li>فكرة واحدة واضحة</li>
+              <li>سكريبت مختصر</li>
+              <li>تصوير ومونتاج</li>
+              <li>تعديل بسيط واحد</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">ابدأ بهذه الباقة</a>
+          </div>
+
+          <div class="price-card featured reveal">
+            <span class="popular">الأكثر طلبًا</span>
+            <h3>باقة محتوى</h3>
+            <p>مناسبة لإطلاق حملة أو اختبار أكثر من زاوية بيع.</p>
+            <div class="price">٤ فيديوهات <small>/ متنوعة</small></div>
+            <ul>
+              <li>٤ أفكار مختلفة</li>
+              <li>هوكات وسكريبتات</li>
+              <li>تصوير ومونتاج</li>
+              <li>نسخ مناسبة للإعلانات</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">اطلب الباقة الآن</a>
+          </div>
+
+          <div class="price-card reveal">
+            <h3>باقة شهرية</h3>
+            <p>مناسبة للبراندات التي تحتاج حضورًا مستمرًا.</p>
+            <div class="price">٨ فيديوهات <small>/ شهريًا</small></div>
+            <ul>
+              <li>خطة أفكار شهرية</li>
+              <li>تنويع بين مراجعات وهوكات</li>
+              <li>تصوير دفعات منظمة</li>
+              <li>متابعة وتحسين الزوايا</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">ناقش الباقة</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">أسئلة شائعة</span>
+          <h2 class="section-title">إجابات سريعة قبل بدء التعاون</h2>
+          <p class="section-desc">
+            أهم التفاصيل التي تساعدك على معرفة طريقة تنفيذ محتوى UGC لمنتجك.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>هل أحتاج لإرسال المنتج؟</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>نعم، في أغلب فيديوهات المنتجات يفضل إرسال المنتج حتى تظهر التجربة حقيقية وطبيعية.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>هل يمكن استخدام الفيديو في الإعلانات؟</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>نعم، يمكن تجهيز الفيديو بصيغة مناسبة للحملات الإعلانية حسب الاتفاق ومدة الاستخدام المطلوبة.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>هل تكتبين السكريبت أم أرسله أنا؟</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>يمكنني كتابة السكريبت بالكامل بعد فهم المنتج والجمهور، ويمكن أيضًا تطوير سكريبت موجود لديك.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-btn" type="button">
+              <span>ما مدة تسليم الفيديوهات؟</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>تختلف المدة حسب عدد الفيديوهات وتفاصيل التصوير، ويتم تحديد موعد واضح قبل بدء التنفيذ.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <span class="label">تواصل معي</span>
+          <h2 class="section-title">جاهز لتحويل منتجك إلى محتوى يلفت الانتباه؟</h2>
+          <p class="section-desc">
+            ارسل تفاصيل المنتج وعدد الفيديوهات المطلوبة، وسأقترح عليك زاوية محتوى مناسبة لهدفك.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card reveal">
+            <h3>لنبدأ بفكرة قوية</h3>
+            <p>
+              سواء كنت تريد فيديو تجربة، مراجعة منتج، هوك إعلاني، أو باقة محتوى كاملة،
+              يمكننا اختيار الشكل الأنسب لطبيعة منتجك وجمهورك.
+            </p>
+
+            <div class="contact-info">
+              <div class="info">📱 واتساب مباشر للتواصل السريع</div>
+              <div class="info">🎬 فيديوهات مناسبة لريلز وتيك توك</div>
+              <div class="info">⚡ أفكار قابلة للاستخدام في الإعلانات</div>
+            </div>
+
+            <a class="btn btn-primary" href="https://wa.me/201000000000" target="_blank">
+              تواصل عبر واتساب
+            </a>
+          </div>
+
+          <div class="card reveal">
+            <form id="leadForm">
+              <div>
+                <label for="name">الاسم</label>
+                <input type="text" id="name" placeholder="اكتب اسمك" />
+              </div>
+
+              <div>
+                <label for="product">نوع المنتج</label>
+                <input type="text" id="product" placeholder="مثال: عناية بالبشرة، ملابس، تطبيق، مطعم" />
+              </div>
+
+              <div>
+                <label for="videos">عدد الفيديوهات المطلوبة</label>
+                <select id="videos">
+                  <option value="">اختر العدد المناسب</option>
+                  <option value="فيديو واحد">فيديو واحد</option>
+                  <option value="٤ فيديوهات">٤ فيديوهات</option>
+                  <option value="٨ فيديوهات">٨ فيديوهات</option>
+                  <option value="عدد مخصص">عدد مخصص</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message">الرسالة</label>
+                <textarea id="message" placeholder="اكتب هدفك من المحتوى وأي تفاصيل مهمة عن المنتج"></textarea>
+              </div>
+
+              <div class="form-message" id="formMessage"></div>
+
+              <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © جميع الحقوق محفوظة — صانعة محتوى UGC
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const themeBtn = document.getElementById("themeBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      body.classList.add("dark");
+      themeBtn.textContent = "☀";
+    }
+
+    themeBtn.addEventListener("click", function () {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "☀";
+      } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "☾";
+      }
+    });
+
+    menuBtn.addEventListener("click", function () {
+      nav.classList.toggle("active");
+      menuBtn.textContent = nav.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if (target) {
+          e.preventDefault();
+          nav.classList.remove("active");
+          menuBtn.textContent = "☰";
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach(function (element) {
+      observer.observe(element);
+    });
+
+    document.querySelectorAll(".faq-btn").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const item = button.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(function (faq) {
+          if (faq !== item) {
+            faq.classList.remove("active");
+            faq.querySelector(".faq-btn span:last-child").textContent = "+";
+          }
+        });
+
+        item.classList.toggle("active");
+
+        const icon = button.querySelector("span:last-child");
+        icon.textContent = item.classList.contains("active") ? "−" : "+";
+      });
+    });
+
+    const form = document.getElementById("leadForm");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const product = document.getElementById("product").value.trim();
+      const videos = document.getElementById("videos").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      formMessage.className = "form-message";
+
+      if (!name || !product || !videos || !message) {
+        formMessage.textContent = "من فضلك املأ جميع البيانات حتى أستطيع فهم طلبك بشكل صحيح.";
+        formMessage.classList.add("error");
+        return;
+      }
+
+      if (message.length < 10) {
+        formMessage.textContent = "اكتب رسالة أوضح قليلًا عن المنتج أو الهدف من الفيديوهات.";
+        formMessage.classList.add("error");
+        return;
+      }
+
+      formMessage.textContent = "تم استلام طلبك بنجاح. يمكنك الآن التواصل عبر واتساب لتأكيد التفاصيل.";
+      formMessage.classList.add("success");
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

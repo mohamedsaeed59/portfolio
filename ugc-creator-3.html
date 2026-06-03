@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>صانعة محتوى UGC للعلامات التجارية</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --soft: #eef2f8;
+      --text: #141824;
+      --muted: #6d7485;
+      --main: #2563eb;
+      --main-2: #7c3aed;
+      --border: rgba(20, 24, 36, 0.09);
+      --shadow: 0 18px 50px rgba(20, 24, 36, 0.10);
+      --header: rgba(255,255,255,0.8);
+    }
+
+    body.dark {
+      --bg: #0b1020;
+      --card: #12182b;
+      --soft: #182033;
+      --text: #ffffff;
+      --muted: #b8c0d4;
+      --main: #60a5fa;
+      --main-2: #a78bfa;
+      --border: rgba(255,255,255,0.09);
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --header: rgba(11,16,32,0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.14), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: var(--header);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--main), var(--main-2));
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .nav a:hover {
+      color: var(--main);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .theme-btn,
+    .menu-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .hero {
+      padding: 72px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .card,
+    .service,
+    .work-item,
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+    }
+
+    .hero-main {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--main);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--main), var(--main-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 14px;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-main {
+      color: #fff;
+      background: linear-gradient(135deg, var(--main), var(--main-2));
+    }
+
+    .btn-light {
+      background: var(--soft);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero-side {
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+      min-height: 420px;
+    }
+
+    .mini {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .mini strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--main);
+      margin-bottom: 8px;
+    }
+
+    .mini span,
+    .mini p {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .mini.primary {
+      background: linear-gradient(135deg, var(--main), var(--main-2));
+      color: #fff;
+    }
+
+    .mini.primary strong,
+    .mini.primary span,
+    .mini.primary p {
+      color: #fff;
+    }
+
+    .section {
+      padding: 34px 0 24px;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.2;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    .about-card {
+      padding: 28px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .point {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service {
+      padding: 24px;
+      transition: 0.25s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--main), var(--main-2));
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .service h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .works {
+      display: grid;
+      gap: 14px;
+    }
+
+    .work-item {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 170px 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .work-cover {
+      min-height: 110px;
+      border-radius: 20px;
+      background:
+        linear-gradient(140deg, rgba(0,0,0,0.1), rgba(0,0,0,0.5)),
+        linear-gradient(135deg, var(--main), var(--main-2));
+      display: flex;
+      align-items: end;
+      padding: 14px;
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .work-body small {
+      display: inline-block;
+      color: var(--main);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .work-body h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: var(--main);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 18px;
+    }
+
+    .contact-box {
+      padding: 28px;
+    }
+
+    .contact-box h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .contact-list div {
+      padding: 14px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      font-weight: 800;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 13px 14px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--main);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .form-message {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 900;
+    }
+
+    .form-message.error {
+      display: block;
+      background: rgba(244, 63, 94, 0.12);
+      color: #be123c;
+    }
+
+    .form-message.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.12);
+      color: #047857;
+    }
+
+    .footer {
+      padding: 28px 0 34px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 74px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .hero-grid,
+      .contact-grid,
+      .work-item {
+        grid-template-columns: 1fr;
+      }
+
+      .services,
+      .stats,
+      .about-points {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .work-item {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 46px 0 30px;
+      }
+
+      .section {
+        padding: 26px 0 18px;
+      }
+
+      .services,
+      .stats,
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-main,
+      .hero-side,
+      .contact-box {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">
+        <span class="brand-badge">U</span>
+        <span>صانعة محتوى UGC</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about">من أنا</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <div class="actions">
+        <button class="theme-btn" id="themeBtn">☾</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-main reveal">
+          <div>
+            <span class="hero-tag">محتوى حقيقي يساعد منتجك على البيع بثقة</span>
+            <h1>محتوى <span>قصير وواقعي</span> يجعل البراند أقرب للعميل</h1>
+            <p>
+              أصنع فيديوهات UGC للمنتجات والخدمات بأسلوب طبيعي يناسب تيك توك، ريلز، والإعلانات،
+              مع تركيز على الثقة، الوضوح، والنتيجة.
+            </p>
+            <div class="hero-btns">
+              <a href="#work" class="btn btn-main">شاهد الأعمال</a>
+              <a href="#contact" class="btn btn-light">تواصل معي</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side reveal">
+          <div class="mini primary">
+            <strong>+180</strong>
+            <span>فيديو تم تنفيذه</span>
+          </div>
+          <div class="mini">
+            <strong>+22</strong>
+            <span>براند تم التعاون معه</span>
+          </div>
+          <div class="mini">
+            <p>أفكار، هوكات، مراجعات منتجات، وتجارب استخدام جاهزة للنشر أو للإعلانات.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>من أنا</h2>
+          <p>أركز على صناعة محتوى يبدو حقيقيًا للمشاهد لكنه مبني على رسالة تسويقية واضحة.</p>
+        </div>
+
+        <div class="card about-card reveal">
+          <p>
+            أساعد البراندات على تقديم منتجاتها بطريقة بسيطة ومقنعة من خلال فيديوهات قصيرة،
+            تشمل كتابة الفكرة، الهوك، التصوير، والمونتاج، بما يناسب جمهور السوشيال ميديا.
+          </p>
+
+          <div class="about-points">
+            <div class="point">فهم المنتج والجمهور</div>
+            <div class="point">كتابة هوكات وسكريبتات</div>
+            <div class="point">تسليم فيديو جاهز للنشر</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>الخدمات</h2>
+          <p>أهم الخدمات المطلوبة من البراندات وصناع المنتجات.</p>
+        </div>
+
+        <div class="services">
+          <div class="service reveal">
+            <div class="service-icon">🎬</div>
+            <h3>فيديوهات UGC</h3>
+            <p>محتوى طبيعي يعرض المنتج بشكل بسيط ومقنع.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">⭐</div>
+            <h3>مراجعات منتجات</h3>
+            <p>شرح المميزات وتجربة الاستخدام بلغة العميل.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">✍</div>
+            <h3>سكريبتات</h3>
+            <p>هوكات وأفكار قصيرة مناسبة للإعلانات.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">📱</div>
+            <h3>ريلز وتيك توك</h3>
+            <p>فيديوهات سريعة ومناسبة للمحتوى القصير.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>نماذج أعمال</h2>
+          <p>أمثلة مختصرة لزوايا محتوى يمكن تنفيذها حسب نوع المنتج.</p>
+        </div>
+
+        <div class="works">
+          <div class="work-item reveal">
+            <div class="work-cover">تجربة منتج</div>
+            <div class="work-body">
+              <small>منتجات عناية</small>
+              <h3>فيديو قبل وبعد</h3>
+              <p>الهدف: بناء ثقة سريعة وإظهار النتيجة بطريقة طبيعية.</p>
+            </div>
+            <a href="#contact" class="btn btn-light">اطلب مثله</a>
+          </div>
+
+          <div class="work-item reveal">
+            <div class="work-cover">مراجعة سريعة</div>
+            <div class="work-body">
+              <small>متجر إلكتروني</small>
+              <h3>عرض مميزات المنتج</h3>
+              <p>الهدف: تقليل تردد العميل وشرح المنتج بوضوح.</p>
+            </div>
+            <a href="#contact" class="btn btn-light">اطلب مثله</a>
+          </div>
+
+          <div class="work-item reveal">
+            <div class="work-cover">هوك إعلاني</div>
+            <div class="work-body">
+              <small>إعلانات قصيرة</small>
+              <h3>افتتاحية توقف التمرير</h3>
+              <p>الهدف: جذب الانتباه خلال أول ثوانٍ من الفيديو.</p>
+            </div>
+            <a href="#contact" class="btn btn-light">اطلب مثله</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>أرقام سريعة</h2>
+          <p>لمحة مختصرة عن حجم العمل والمخرجات.</p>
+        </div>
+
+        <div class="stats">
+          <div class="card stat reveal">
+            <strong>+٢م</strong>
+            <span>مشاهدة محتوى</span>
+          </div>
+
+          <div class="card stat reveal">
+            <strong>+١٨٠</strong>
+            <span>فيديو منفذ</span>
+          </div>
+
+          <div class="card stat reveal">
+            <strong>+٢٢</strong>
+            <span>براند مخدوم</span>
+          </div>
+
+          <div class="card stat reveal">
+            <strong>+٩٠</strong>
+            <span>فكرة محتوى</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>تواصل معي</h2>
+          <p>إذا كان لديك منتج أو خدمة، أرسل التفاصيل وسأقترح عليك زاوية محتوى مناسبة.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-box reveal">
+            <h3>ابدأ الآن</h3>
+            <p>يمكنك التواصل مباشرة أو إرسال نموذج مختصر بالأسفل.</p>
+
+            <div class="contact-list">
+              <div>📱 واتساب للتواصل السريع</div>
+              <div>🎬 محتوى جاهز للريلز والإعلانات</div>
+              <div>⚡ تنفيذ سريع وواضح</div>
+            </div>
+
+            <a href="https://wa.me/201000000000" target="_blank" class="btn btn-main">تواصل عبر واتساب</a>
+          </div>
+
+          <div class="contact-box reveal">
+            <form id="leadForm">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="اكتب اسمك" />
+              </div>
+
+              <div class="field">
+                <label for="product">نوع المنتج</label>
+                <input id="product" type="text" placeholder="مثال: عناية، ملابس، تطبيق" />
+              </div>
+
+              <div class="field">
+                <label for="message">الرسالة</label>
+                <textarea id="message" placeholder="اكتب المطلوب باختصار"></textarea>
+              </div>
+
+              <div class="form-message" id="formMessage"></div>
+
+              <button type="submit" class="btn btn-main">إرسال</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © جميع الحقوق محفوظة — صانعة محتوى UGC للعلامات التجارية
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const themeBtn = document.getElementById("themeBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+
+    const savedTheme = localStorage.getItem("ugc-third-theme");
+    if (savedTheme === "dark") {
+      body.classList.add("dark");
+      themeBtn.textContent = "☀";
+    }
+
+    themeBtn.addEventListener("click", function () {
+      body.classList.toggle("dark");
+      const isDark = body.classList.contains("dark");
+      localStorage.setItem("ugc-third-theme", isDark ? "dark" : "light");
+      themeBtn.textContent = isDark ? "☀" : "☾";
+    });
+
+    menuBtn.addEventListener("click", function () {
+      nav.classList.toggle("active");
+      menuBtn.textContent = nav.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          nav.classList.remove("active");
+          menuBtn.textContent = "☰";
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(function (item) {
+      observer.observe(item);
+    });
+
+    const form = document.getElementById("leadForm");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const product = document.getElementById("product").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      formMessage.className = "form-message";
+
+      if (!name || !product || !message) {
+        formMessage.textContent = "من فضلك املأ كل البيانات.";
+        formMessage.classList.add("error");
+        return;
+      }
+
+      if (message.length < 8) {
+        formMessage.textContent = "اكتب تفاصيل أكثر قليلًا.";
+        formMessage.classList.add("error");
+        return;
+      }
+
+      formMessage.textContent = "تم إرسال الطلب بنجاح.";
+      formMessage.classList.add("success");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
