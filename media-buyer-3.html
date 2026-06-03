@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خبير الميديا باير والنمو الرقمي</title>
+    <!-- Google Fonts (Plus Jakarta Sans للارقام و Tajawal للعربي) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #060814;
+            --bg-card: #0b112c;
+            --accent-neon: #a855f7;
+            --accent-cyan: #06b6d4;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --gradient-1: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- تصميم الشاشة الجانبية الثابتة / هيدر متطور --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: rgba(11, 17, 44, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- شبكة بينتو الحديثة (Bento Grid Layout) --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .bento-item {
+            background-color: var(--bg-card);
+            border-radius: 24px;
+            padding: 35px;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+
+        /* تخصيص مساحات قطع بينتو */
+        .hero-block {
+            grid-column: span 2;
+            background: linear-gradient(180deg, #0b112c 0%, #070a1e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-block h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .hero-block p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 90%;
+            margin-bottom: 25px;
+        }
+
+        .profile-block {
+            grid-column: span 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-container {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 40px;
+        }
+
+        .social-chips {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* لوحة الأرقام الكبيرة */
+        .big-stats-block {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background: transparent;
+            padding: 0;
+            border: none;
+        }
+
+        .stat-box {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .stat-box .num {
+            font-size: 40px;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .stat-box .label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        /* لوحة الأعمال مع الفلتر التفاعلي */
+        .work-block {
+            grid-column: span 3;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-neon);
+            color: #fff;
+        }
+
+        .campaigns-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .campaign-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .campaign-item.hide {
+            display: none;
+        }
+
+        .camp-platform {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .camp-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .camp-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 12px;
+            margin-top: 12px;
+        }
+
+        .camp-data span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .camp-data strong {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        /* لوحة اتصل بي */
+        .connect-block {
+            grid-column: span 3;
+            background: radial-gradient(circle at top left, rgba(6, 182, 212, 0.15), transparent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .connect-text h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .btn-glow {
+            background: var(--gradient-1);
+            color: #fff;
+            padding: 16px 35px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+            transition: box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 45px rgba(6, 182, 212, 0.6);
+        }
+
+        /* شاشات الموبايل والتابلت */
+        @media (max-width: 992px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-block, .profile-block, .big-stats-block, .work-block, .connect-block {
+                grid-column: span 1;
+            }
+            .big-stats-block {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .big-stats-block {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+                border-radius: 20px;
+            }
+            .hero-block h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <!-- هيدر علوي مبسط -->
+        <header>
+            <div class="brand-name">أحمد الرشيدي | Growth & Media Buying</div>
+            <nav class="nav-menu">
+                <a href="#" class="active">الرئيسية</a>
+                <a href="https://wa.me/yournumber" target="_block">واتساب سريع</a>
+            </nav>
+        </header>
+
+        <!-- شبكة بينتو التفاعلية -->
+        <div class="bento-grid">
+            
+            <!-- لوحة الهيرو الاستراتيجية -->
+            <div class="bento-item hero-block">
+                <h1>أقود حملاتك الإعلانية <br>بمنطق الاستثمار لا النفقات.</h1>
+                <p>ميديا باير متخصص في قراءة البيانات، وبناء قنوات البيع (Funnels)، واستهداف الجمهور المناسب بدقة لتوليد أقصى عائد ربحي ممكن لمشروعك الناشئ أو القائم.</p>
+                <div>
+                    <a href="mailto:your-email@example.com" style="color: var(--accent-cyan); font-weight: 700; text-decoration: underline;">أرسل بريداً إلكترونياً مباشراً ←</a>
+                </div>
+            </div>
+
+            <!-- الكارت الشخصي السريع -->
+            <div class="bento-item profile-block">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h2>مشتري إعلانات محترف</h2>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 5px;">مقرّي الحالي: الرياض / دبي</p>
+                <div class="social-chips">
+                    <span class="chip"><i class="fab fa-meta"></i> Meta Verified</span>
+                    <span class="chip"><i class="fab fa-google"></i> Google Expert</span>
+                    <span class="chip">E-commerce</span>
+                    <span class="chip">Lead Gen</span>
+                </div>
+            </div>
+
+            <!-- لوحة الأرقام الكبرى الفورية -->
+            <div class="bento-item big-stats-block">
+                <div class="stat-box">
+                    <span class="num">$420K</span>
+                    <span class="label">إجمالي الميزانيات المدارة</span>
+                </div>
+                <div class="stat-box">
+                    <span class="num">4.5x</span>
+                    <span class="label">متوسط الـ ROAS المحقق</span>
+                </div>
+                <div class="stat-box">
+                    <span class="num">35+</span>
+                    <span class="label">متاجر وشركات تم تنميتها</span>
+                </div>
+                <div class="stat-box">
+                    <span class="num">0.80$</span>
+                    <span class="label">أقل تكلفة نقرة شراء (CPA)</span>
+                </div>
+            </div>
+
+            <!-- لوحة التحكم وتصفية الأعمال المتقدمة -->
+            <div class="bento-item work-block">
+                <div class="work-header">
+                    <h2>سجل النجاحات والنتائج</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">الكل</button>
+                        <button class="filter-btn" data-filter="meta">Meta (فيس/انستا)</button>
+                        <button class="filter-btn" data-filter="tiktok">تيك توك</button>
+                        <button class="filter-btn" data-filter="google">جوجل</button>
+                    </div>
+                </div>
+
+                <!-- قائمة الحملات القابلة للفلترة بالجافا سكربت -->
+                <div class="campaigns-list">
+                    
+                    <div class="campaign-item" data-category="meta">
+                        <span class="camp-platform">Meta Ads</span>
+                        <h3 class="camp-title">حملة عبايات سعودية فاخرة - مبيعات مباشرة</h3>
+                        <div class="camp-row">
+                            <div class="camp-data"><span>الإنفاق</span><strong>$3,500</strong></div>
+                            <div class="camp-data"><span>المبيعات</span><strong>$21,000</strong></div>
+                            <div class="camp-data"><span>العائد ROAS</span><strong>6.0x</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-item" data-category="tiktok">
+                        <span class="camp-platform">TikTok Ads</span>
+                        <h3 class="camp-title">تطبيق توصيل خدمات - زيادة عدد التحميلات والطلب</h3>
+                        <div class="camp-row">
+                            <div class="camp-data"><span>التحميلات</span><strong>+15,400</strong></div>
+                            <div class="camp-data"><span>تكلفة التحميل</span><strong>$0.22</strong></div>
+                            <div class="camp-data"><span>معدل النشاط</span><strong>28%</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-item" data-category="google">
+                        <span class="camp-platform">Google Search</span>
+                        <h3 class="camp-title">شركة محاماة واستشارات قانونية - جلب اتصالات وعملاء</h3>
+                        <div class="camp-row">
+                            <div class="camp-data"><span>نقرات مؤهلة</span><strong>4,200</strong></div>
+                            <div class="camp-data"><span>استشارات محجوزة</span><strong>310</strong></div>
+                            <div class="camp-data"><span>معدل التحويل</span><strong>7.3%</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-item" data-category="meta">
+                        <span class="camp-platform">Instagram Ads</span>
+                        <h3 class="camp-title">متجر إلكتروني لبيع الساعات الميكانيكية</h3>
+                        <div class="camp-row">
+                            <div class="camp-data"><span>الإنفاق</span><strong>$8,000</strong></div>
+                            <div class="camp-data"><span>المبيعات</span><strong>$33,600</strong></div>
+                            <div class="camp-data"><span>العائد ROAS</span><strong>4.2x</strong></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- لوحة دعوة لاتخاذ إجراء الفورية -->
+            <div class="bento-item connect-block">
+                <div class="connect-text">
+                    <h2>هل تبحث عن شريك نمو حقيقي لعلامتك التجارية؟</h2>
+                    <p style="color: var(--text-secondary);">فلنتحدث لمدة 15 دقيقة مجاناً لتحليل قنواتك الإعلانية الحالية.</p>
+                </div>
+                <a href="https://wa.me/yournumber" class="btn-glow">احجز مكالمة الاستراتيجية عبر واتساب <i class="fab fa-whatsapp"></i></a>
+            </div>
+
+        </div>
+
+        <footer style="text-align: center; margin-top: 5px; padding: 25px; color: var(--text-secondary); font-size: 13px;">
+            جميع الحقوق محفوظة © 2026 | مصمم لرفع كفاءة الإنفاق الإعلاني والتسويقي
+        </footer>
+
+    </div>
+
+    <!-- جافا سكربت الفلترة الديناميكية -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const campaignItems = document.querySelectorAll('.campaign-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // إلغاء تفعيل الأزرار الأخرى وتفعيل الزر الحالي
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                campaignItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

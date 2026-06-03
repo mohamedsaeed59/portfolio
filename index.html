@@ -3,33 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <meta
     name="description"
-    content="نماذج بورتفوليو احترافية جاهزة للميديا بايرز، المسوقين، الكوبي رايترز، المصممين، ومتخصصي السوشيال ميديا."
+    content="مكتبة نماذج بورتفوليو احترافية، كل تخصص يحتوي على 3 نماذج مختلفة للميديا باير، التسويق الرقمي، الكوبي رايتر، التصميم الجرافيكي، والسوشيال ميديا."
   />
-
-  <title>نماذج بورتفوليو احترافية</title>
+  <title>مكتبة نماذج البورتفوليو</title>
 
   <style>
     :root {
-      --bg: #F8FAFC;
+      --bg: #F7F8FC;
+      --bg-soft: #EEF2FF;
       --surface: #FFFFFF;
-      --surface-2: #F1F5F9;
+      --surface-2: #F8FAFC;
       --text: #0F172A;
       --muted: #64748B;
-      --line: rgba(15, 23, 42, 0.1);
-
+      --line: rgba(15, 23, 42, 0.10);
+      --strong-line: rgba(15, 23, 42, 0.16);
       --blue: #2563EB;
       --green: #22C55E;
       --gold: #D4AF37;
       --purple: #8B5CF6;
       --pink: #EC4899;
-
+      --orange: #F97316;
       --radius: 24px;
-      --container: 1120px;
+      --container: 1180px;
       --transition: 250ms ease;
-      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --shadow: 0 22px 60px rgba(15, 23, 42, 0.09);
+      --shadow-soft: 0 12px 34px rgba(15, 23, 42, 0.06);
+    }
+
+    [data-theme="dark"] {
+      --bg: #080B12;
+      --bg-soft: #101827;
+      --surface: #111827;
+      --surface-2: #0F172A;
+      --text: #F8FAFC;
+      --muted: #A7B3C5;
+      --line: rgba(255, 255, 255, 0.10);
+      --strong-line: rgba(255, 255, 255, 0.18);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+      --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.24);
     }
 
     * {
@@ -46,13 +59,14 @@
       min-height: 100vh;
       font-family: Tahoma, Arial, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.10), transparent 30%),
-        var(--bg);
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.12), transparent 28%),
+        linear-gradient(180deg, var(--bg), var(--bg-soft));
       color: var(--text);
       line-height: 1.8;
       text-align: right;
       overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
     }
 
     a {
@@ -66,9 +80,9 @@
     }
 
     .nav {
-      padding: 20px 0;
+      padding: 16px 0;
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.82);
+      background: color-mix(in srgb, var(--surface) 84%, transparent);
       backdrop-filter: blur(18px);
       position: sticky;
       top: 0;
@@ -91,42 +105,68 @@
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      border-radius: 12px;
-      background: #0F172A;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
       color: #FFFFFF;
       font-weight: 900;
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .nav-links {
       display: none;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       color: var(--muted);
       font-size: 0.92rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .nav-links a:hover {
       color: var(--text);
     }
 
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      border-color: var(--strong-line);
+    }
+
     .hero {
-      padding: 92px 0 62px;
+      padding: 88px 0 56px;
     }
 
     .hero-grid {
       display: grid;
-      gap: 42px;
+      gap: 34px;
       align-items: center;
     }
 
     .hero-content {
-      max-width: 780px;
+      max-width: 820px;
     }
 
     .label {
@@ -137,11 +177,11 @@
       margin-bottom: 18px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: #1E293B;
-      background: #FFFFFF;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      color: var(--text);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
       font-size: 0.84rem;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .label::before {
@@ -154,17 +194,24 @@
     }
 
     h1 {
-      font-size: clamp(2.3rem, 7vw, 5rem);
+      font-size: clamp(2.25rem, 6vw, 5rem);
       line-height: 1.12;
       letter-spacing: -0.04em;
       margin-bottom: 22px;
       color: var(--text);
     }
 
+    .accent-text {
+      background: linear-gradient(135deg, var(--blue), var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
     .hero p {
-      max-width: 720px;
+      max-width: 740px;
       color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.18rem);
+      font-size: clamp(1rem, 2vw, 1.16rem);
     }
 
     .hero-actions {
@@ -184,60 +231,96 @@
       font-weight: 900;
       transition: var(--transition);
       white-space: nowrap;
+      border: 1px solid transparent;
     }
 
     .btn-primary {
-      background: #0F172A;
-      color: #FFFFFF;
+      background: var(--text);
+      color: var(--surface);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
     }
 
-    .btn-primary:hover {
+    [data-theme="dark"] .btn-primary {
+      background: #FFFFFF;
+      color: #0F172A;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.22);
     }
 
     .btn-secondary {
-      background: #FFFFFF;
+      background: var(--surface);
       color: var(--text);
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      border-color: var(--line);
+      box-shadow: var(--shadow-soft);
     }
 
-    .btn-secondary:hover {
-      transform: translateY(-3px);
-      background: #F8FAFC;
-      border-color: rgba(15, 23, 42, 0.18);
-    }
-
-    .hero-note {
-      padding: 26px;
-      border-radius: var(--radius);
+    .hero-panel {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+      border-radius: 30px;
       border: 1px solid var(--line);
-      background: #FFFFFF;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), var(--surface));
       box-shadow: var(--shadow);
     }
 
-    .hero-note strong {
-      display: block;
-      font-size: 2.2rem;
-      line-height: 1;
-      margin-bottom: 12px;
-      color: var(--blue);
+    .stat-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface-2);
     }
 
-    .hero-note span {
+    .stat-card strong {
+      display: block;
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .stat-card span {
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 800;
+    }
+
+    .quick-list li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quick-list li::before {
+      content: "✓";
+      width: 22px;
+      height: 22px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--green);
+      font-size: 0.78rem;
     }
 
     .section {
-      padding: 58px 0;
+      padding: 56px 0;
     }
 
     .section-head {
-      max-width: 720px;
-      margin-bottom: 28px;
+      max-width: 760px;
+      margin-bottom: 30px;
     }
 
     .section-head h2 {
@@ -252,121 +335,172 @@
       color: var(--muted);
     }
 
-    .templates {
+    .specialties {
       display: grid;
-      gap: 14px;
+      gap: 24px;
     }
 
-    .template {
-      position: relative;
-      display: grid;
-      gap: 20px;
+    .specialty {
       padding: 22px;
-      border-radius: var(--radius);
+      border-radius: 30px;
       border: 1px solid var(--line);
-      background: #FFFFFF;
-      transition: var(--transition);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+      box-shadow: var(--shadow-soft);
       overflow: hidden;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
+      position: relative;
     }
 
-    .template:hover {
-      transform: translateY(-4px);
-      background: #FFFFFF;
-      border-color: rgba(15, 23, 42, 0.16);
-      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.09);
-    }
-
-    .template::before {
+    .specialty::before {
       content: "";
       position: absolute;
       inset-inline-start: 0;
       top: 0;
-      width: 5px;
+      width: 6px;
       height: 100%;
       background: var(--blue);
     }
 
-    .template.media::before { background: var(--green); }
-    .template.digital::before { background: var(--blue); }
-    .template.copy::before { background: var(--gold); }
-    .template.design::before { background: var(--purple); }
-    .template.social::before { background: var(--pink); }
+    .specialty.media::before { background: var(--green); }
+    .specialty.digital::before { background: var(--blue); }
+    .specialty.copy::before { background: var(--gold); }
+    .specialty.design::before { background: var(--purple); }
+    .specialty.social::before { background: var(--pink); }
 
-    .template-main {
+    .specialty-head {
       display: grid;
-      gap: 10px;
+      gap: 14px;
+      margin-bottom: 18px;
     }
 
-    .template-top {
+    .specialty-title {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
     .icon {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
-      background: #F8FAFC;
+      border-radius: 16px;
+      background: var(--surface-2);
       border: 1px solid var(--line);
       font-size: 1.35rem;
+      flex: 0 0 auto;
     }
 
-    .template h3 {
-      font-size: 1.25rem;
+    .specialty h3 {
+      font-size: 1.32rem;
       letter-spacing: -0.02em;
       color: var(--text);
     }
 
-    .template p {
+    .specialty-head p {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.98rem;
+      max-width: 780px;
+    }
+
+    .models-count {
+      width: fit-content;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .models-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .model-card {
+      position: relative;
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: var(--transition);
+      min-height: 100%;
+    }
+
+    .model-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--strong-line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .model-badge {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+
+    .model-card h4 {
+      font-size: 1.05rem;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .model-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 6px;
+      margin-top: auto;
     }
 
     .tag {
       padding: 6px 10px;
       border-radius: 999px;
-      background: #F8FAFC;
+      background: var(--surface-2);
       border: 1px solid var(--line);
-      color: #334155;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .template-action {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 900;
     }
 
     .view-link {
-      min-height: 44px;
-      padding: 0 16px;
+      min-height: 42px;
+      padding: 0 15px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: #0F172A;
-      color: #FFFFFF;
-      font-size: 0.9rem;
+      background: var(--text);
+      color: var(--surface);
+      font-size: 0.88rem;
       font-weight: 900;
       transition: var(--transition);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+      box-shadow: var(--shadow-soft);
+      margin-top: 4px;
+    }
+
+    [data-theme="dark"] .view-link {
+      background: #FFFFFF;
+      color: #0F172A;
     }
 
     .view-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.2);
     }
 
     .mini-section {
@@ -380,8 +514,8 @@
       border-radius: 30px;
       border: 1px solid var(--line);
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%),
-        #FFFFFF;
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 32%),
+        var(--surface);
       box-shadow: var(--shadow);
     }
 
@@ -394,7 +528,7 @@
 
     .simple-box p {
       color: var(--muted);
-      max-width: 680px;
+      max-width: 720px;
     }
 
     .footer {
@@ -402,7 +536,7 @@
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 0.92rem;
-      background: #FFFFFF;
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
     }
 
     .footer-inner {
@@ -419,7 +553,7 @@
 
     .footer-links a {
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .footer-links a:hover {
@@ -442,9 +576,9 @@
         flex-direction: row;
       }
 
-      .template {
+      .specialty-head {
         grid-template-columns: 1fr auto;
-        align-items: center;
+        align-items: start;
       }
 
       .footer-inner {
@@ -454,23 +588,29 @@
       }
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 760px) {
+      .models-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 920px) {
       .nav-links {
         display: flex;
       }
 
       .hero-grid {
-        grid-template-columns: 1fr 0.42fr;
+        grid-template-columns: 1fr 0.38fr;
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 560px) {
       .hero {
-        padding: 70px 0 44px;
+        padding: 66px 0 40px;
       }
 
       .section {
-        padding: 44px 0;
+        padding: 42px 0;
       }
 
       .btn,
@@ -478,8 +618,8 @@
         width: 100%;
       }
 
-      .template-action {
-        width: 100%;
+      .specialty {
+        padding: 18px;
       }
     }
   </style>
@@ -493,10 +633,13 @@
         <span>Portfolio Hub</span>
       </a>
 
-      <nav class="nav-links" aria-label="القائمة الرئيسية">
-        <a href="#templates">النماذج</a>
-        <a href="#contact">تواصل</a>
-      </nav>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="القائمة الرئيسية">
+          <a href="#templates">النماذج</a>
+          <a href="#contact">تواصل</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="تبديل الوضع">🌙</button>
+      </div>
     </div>
   </header>
 
@@ -504,25 +647,32 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <span class="label">نماذج بورتفوليو جاهزة للتخصيص</span>
+          <span class="label">مكتبة بورتفوليو كاملة قابلة للتخصيص</span>
 
           <h1>
-            اختر البورتفوليو المناسب لتخصصك.
+            5 تخصصات، وكل تخصص يحتوي على <span class="accent-text">3 نماذج مختلفة</span>.
           </h1>
 
           <p>
-            صفحة بسيطة تجمع نماذج بورتفوليو مختلفة للمسوقين والمبدعين. كل نموذج مصمم بطابع مختلف يناسب المجال الخاص به.
+            صفحة منظمة لعرض كل نماذج البورتفوليو المتاحة بشكل واضح. يستطيع العميل اختيار التخصص ثم مشاهدة 3 اتجاهات تصميم مختلفة داخل نفس التخصص.
           </p>
 
           <div class="hero-actions">
-            <a href="#templates" class="btn btn-primary">استعرض النماذج</a>
+            <a href="#templates" class="btn btn-primary">استعرض كل النماذج</a>
             <a href="#contact" class="btn btn-secondary">اطلب نسخة مخصصة</a>
           </div>
         </div>
 
-        <aside class="hero-note reveal">
-          <strong>5</strong>
-          <span>نماذج مختلفة في مشروع واحد، وكل نموذج يفتح في صفحة مستقلة.</span>
+        <aside class="hero-panel reveal" aria-label="ملخص النماذج">
+          <div class="stat-card">
+            <strong>15</strong>
+            <span>نموذج بورتفوليو موزعة على 5 تخصصات.</span>
+          </div>
+          <ul class="quick-list">
+            <li>3 نماذج لكل تخصص</li>
+            <li>روابط مستقلة لكل نموذج</li>
+            <li>تصميم يدعم الوضع الفاتح والداكن</li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -530,125 +680,265 @@
     <section class="section" id="templates">
       <div class="container">
         <div class="section-head reveal">
-          <h2>النماذج المتاحة</h2>
+          <h2>النماذج المتاحة حسب التخصص</h2>
           <p>
-            اختر التخصص وشاهد القالب المناسب له. كل صفحة لها تصميم وتجربة مختلفة عن الأخرى.
+            تم إعادة تنظيم الصفحة بحيث يظهر كل تخصص كقسم مستقل، وداخل كل قسم 3 نماذج مختلفة يمكن للزائر الاختيار بينها بسهولة.
           </p>
         </div>
 
-        <div class="templates">
-          <article class="template media reveal">
-            <div class="template-main">
-              <div class="template-top">
-                <span class="icon">🎯</span>
-                <h3>Media Buyer Portfolio</h3>
+        <div class="specialties">
+          <article class="specialty media reveal">
+            <div class="specialty-head">
+              <div>
+                <div class="specialty-title">
+                  <span class="icon">🎯</span>
+                  <h3>Media Buyer Portfolio</h3>
+                </div>
+                <p>نماذج مناسبة لعرض نتائج الحملات، الإنفاق الإعلاني، دراسات الحالة، وتحسين تكلفة الحصول على العميل.</p>
               </div>
-
-              <p>
-                مناسب لعرض النتائج، الـ ROAS، الحملات، ودراسات الحالة الخاصة بالإعلانات الممولة.
-              </p>
-
-              <div class="tags">
-                <span class="tag">ROAS</span>
-                <span class="tag">Ad Spend</span>
-                <span class="tag">Case Studies</span>
-              </div>
+              <span class="models-count">3 نماذج متاحة</span>
             </div>
 
-            <div class="template-action">
-              <a class="view-link" href="media-buyer.html">عرض النموذج</a>
-            </div>
-          </article>
-
-          <article class="template digital reveal">
-            <div class="template-main">
-              <div class="template-top">
-                <span class="icon">📊</span>
-                <h3>Digital Marketing Portfolio</h3>
+            <div class="models-grid">
+              <div class="model-card">
+                <span class="model-badge">النموذج 01</span>
+                <h4>نموذج استشاري قوي</h4>
+                <p>مناسب للميديا باير الذي يريد الظهور كخبير إعلانات وتحليل نتائج.</p>
+                <div class="tags">
+                  <span class="tag">ROAS</span>
+                  <span class="tag">Scaling</span>
+                  <span class="tag">Case Studies</span>
+                </div>
+                <a class="view-link" href="media-buyer.html">عرض النموذج</a>
               </div>
 
-              <p>
-                مناسب للمسوقين الرقميين والاستشاريين لعرض الاستراتيجيات والقنوات التسويقية والنتائج.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Strategy</span>
-                <span class="tag">KPIs</span>
-                <span class="tag">Growth</span>
-              </div>
-            </div>
-
-            <div class="template-action">
-              <a class="view-link" href="digital-marketing.html">عرض النموذج</a>
-            </div>
-          </article>
-
-          <article class="template copy reveal">
-            <div class="template-main">
-              <div class="template-top">
-                <span class="icon">✍️</span>
-                <h3>Copywriter Portfolio</h3>
+              <div class="model-card">
+                <span class="model-badge">النموذج 02</span>
+                <h4>نموذج نتائج وأرقام</h4>
+                <p>يركز على الأرقام، تكلفة الرسالة، تكلفة الشراء، وأداء الحملات قبل وبعد.</p>
+                <div class="tags">
+                  <span class="tag">CPA</span>
+                  <span class="tag">Reports</span>
+                  <span class="tag">Ad Spend</span>
+                </div>
+                <a class="view-link" href="media-buyer-2.html">عرض النموذج</a>
               </div>
 
-              <p>
-                مناسب لكُتاب الإعلانات لعرض نماذج الكتابة، صفحات البيع، الإيميلات، ونتائج التحويل.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Sales Copy</span>
-                <span class="tag">Emails</span>
-                <span class="tag">Conversion</span>
+              <div class="model-card">
+                <span class="model-badge">النموذج 03</span>
+                <h4>نموذج براند شخصي</h4>
+                <p>يعرض الشخصية، طريقة التفكير، الخدمات، وآلية إدارة الحملات بشكل أنيق.</p>
+                <div class="tags">
+                  <span class="tag">Personal Brand</span>
+                  <span class="tag">Strategy</span>
+                  <span class="tag">Meta Ads</span>
+                </div>
+                <a class="view-link" href="media-buyer-3.html">عرض النموذج</a>
               </div>
-            </div>
-
-            <div class="template-action">
-              <a class="view-link" href="copywriter.html">عرض النموذج</a>
             </div>
           </article>
 
-          <article class="template design reveal">
-            <div class="template-main">
-              <div class="template-top">
-                <span class="icon">🎨</span>
-                <h3>Graphic Designer Portfolio</h3>
+          <article class="specialty digital reveal">
+            <div class="specialty-head">
+              <div>
+                <div class="specialty-title">
+                  <span class="icon">📊</span>
+                  <h3>Digital Marketing Portfolio</h3>
+                </div>
+                <p>نماذج للمسوقين الرقميين والاستشاريين لعرض الاستراتيجية، القنوات، خطط النمو، والنتائج.</p>
               </div>
-
-              <p>
-                مناسب للمصممين لعرض المشاريع، الهويات البصرية، تصميمات السوشيال ميديا، والموكابات.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Branding</span>
-                <span class="tag">Gallery</span>
-                <span class="tag">Mockups</span>
-              </div>
+              <span class="models-count">3 نماذج متاحة</span>
             </div>
 
-            <div class="template-action">
-              <a class="view-link" href="graphic-designer.html">عرض النموذج</a>
+            <div class="models-grid">
+              <div class="model-card">
+                <span class="model-badge">النموذج 01</span>
+                <h4>نموذج Growth Marketer</h4>
+                <p>يعرض رحلة النمو من التحليل إلى التنفيذ وقياس النتائج.</p>
+                <div class="tags">
+                  <span class="tag">Growth</span>
+                  <span class="tag">KPIs</span>
+                  <span class="tag">Funnels</span>
+                </div>
+                <a class="view-link" href="digital-marketing.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 02</span>
+                <h4>نموذج وكالة مصغرة</h4>
+                <p>مناسب لمن يقدم أكثر من خدمة تسويقية ويريد عرضها في شكل مرتب.</p>
+                <div class="tags">
+                  <span class="tag">SEO</span>
+                  <span class="tag">Ads</span>
+                  <span class="tag">Content</span>
+                </div>
+                <a class="view-link" href="digital-marketing-2.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 03</span>
+                <h4>نموذج استراتيجي Premium</h4>
+                <p>يركز على تحليل السوق، الرسائل التسويقية، وتخطيط الحملات متعددة القنوات.</p>
+                <div class="tags">
+                  <span class="tag">Strategy</span>
+                  <span class="tag">Research</span>
+                  <span class="tag">Planning</span>
+                </div>
+                <a class="view-link" href="digital-marketing-3.html">عرض النموذج</a>
+              </div>
             </div>
           </article>
 
-          <article class="template social reveal">
-            <div class="template-main">
-              <div class="template-top">
-                <span class="icon">📱</span>
-                <h3>Social Media Specialist Portfolio</h3>
+          <article class="specialty copy reveal">
+            <div class="specialty-head">
+              <div>
+                <div class="specialty-title">
+                  <span class="icon">✍️</span>
+                  <h3>Copywriter Portfolio</h3>
+                </div>
+                <p>نماذج لكُتّاب الإعلانات لعرض نماذج الكتابة، صفحات البيع، الإيميلات، ورسائل التحويل.</p>
               </div>
-
-              <p>
-                مناسب لمتخصصي السوشيال ميديا لعرض نمو الحسابات، الريلز، المحتوى، وخطط الإدارة.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Reels</span>
-                <span class="tag">Engagement</span>
-                <span class="tag">Content</span>
-              </div>
+              <span class="models-count">3 نماذج متاحة</span>
             </div>
 
-            <div class="template-action">
-              <a class="view-link" href="social-media.html">عرض النموذج</a>
+            <div class="models-grid">
+              <div class="model-card">
+                <span class="model-badge">النموذج 01</span>
+                <h4>نموذج كاتب إعلانات مباشر</h4>
+                <p>مناسب لعرض نماذج الإعلانات، السكريبتات، وصفحات الهبوط.</p>
+                <div class="tags">
+                  <span class="tag">Sales Copy</span>
+                  <span class="tag">Landing Pages</span>
+                  <span class="tag">Hooks</span>
+                </div>
+                <a class="view-link" href="copywriter.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 02</span>
+                <h4>نموذج Conversion Copy</h4>
+                <p>يعرض قبل وبعد النصوص، تحسين الرسائل، وتأثير الكتابة على التحويل.</p>
+                <div class="tags">
+                  <span class="tag">Conversion</span>
+                  <span class="tag">A/B Testing</span>
+                  <span class="tag">Messaging</span>
+                </div>
+                <a class="view-link" href="copywriter-2.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 03</span>
+                <h4>نموذج Storytelling</h4>
+                <p>مناسب للكوبي رايتر الذي يعتمد على السرد، الهوية الصوتية، وبناء البراند.</p>
+                <div class="tags">
+                  <span class="tag">Storytelling</span>
+                  <span class="tag">Brand Voice</span>
+                  <span class="tag">Emails</span>
+                </div>
+                <a class="view-link" href="copywriter-3.html">عرض النموذج</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="specialty design reveal">
+            <div class="specialty-head">
+              <div>
+                <div class="specialty-title">
+                  <span class="icon">🎨</span>
+                  <h3>Graphic Designer Portfolio</h3>
+                </div>
+                <p>نماذج للمصممين لعرض المشاريع، الهويات البصرية، تصميمات السوشيال، والموكابات بطريقة جذابة.</p>
+              </div>
+              <span class="models-count">3 نماذج متاحة</span>
+            </div>
+
+            <div class="models-grid">
+              <div class="model-card">
+                <span class="model-badge">النموذج 01</span>
+                <h4>نموذج معرض أعمال</h4>
+                <p>يعتمد على الجاليري البصري لعرض المشاريع بشكل سريع ومباشر.</p>
+                <div class="tags">
+                  <span class="tag">Gallery</span>
+                  <span class="tag">Mockups</span>
+                  <span class="tag">Social Designs</span>
+                </div>
+                <a class="view-link" href="graphic-designer.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 02</span>
+                <h4>نموذج هوية بصرية</h4>
+                <p>مناسب لمن يركز على البراندنج، الشعارات، أنظمة الألوان، وتطبيقات الهوية.</p>
+                <div class="tags">
+                  <span class="tag">Branding</span>
+                  <span class="tag">Logo</span>
+                  <span class="tag">Identity</span>
+                </div>
+                <a class="view-link" href="graphic-designer-2.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 03</span>
+                <h4>نموذج Creative Studio</h4>
+                <p>يعرض المصمم كاستوديو إبداعي يقدم حلول تصميم متكاملة للعلامات التجارية.</p>
+                <div class="tags">
+                  <span class="tag">Studio</span>
+                  <span class="tag">Creative</span>
+                  <span class="tag">Campaigns</span>
+                </div>
+                <a class="view-link" href="graphic-designer-3.html">عرض النموذج</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="specialty social reveal">
+            <div class="specialty-head">
+              <div>
+                <div class="specialty-title">
+                  <span class="icon">📱</span>
+                  <h3>Social Media Specialist Portfolio</h3>
+                </div>
+                <p>نماذج لمتخصصي السوشيال ميديا لعرض نمو الحسابات، الريلز، خطط المحتوى، وإدارة الصفحات.</p>
+              </div>
+              <span class="models-count">3 نماذج متاحة</span>
+            </div>
+
+            <div class="models-grid">
+              <div class="model-card">
+                <span class="model-badge">النموذج 01</span>
+                <h4>نموذج مدير حسابات</h4>
+                <p>يعرض الخدمات، خطة الإدارة، النشر، التقارير، وتحسين التفاعل.</p>
+                <div class="tags">
+                  <span class="tag">Management</span>
+                  <span class="tag">Engagement</span>
+                  <span class="tag">Reports</span>
+                </div>
+                <a class="view-link" href="social-media.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 02</span>
+                <h4>نموذج Reels & Content</h4>
+                <p>يركز على الريلز، الأفكار، السكريبتات، ونماذج المحتوى القصير.</p>
+                <div class="tags">
+                  <span class="tag">Reels</span>
+                  <span class="tag">Scripts</span>
+                  <span class="tag">Content Ideas</span>
+                </div>
+                <a class="view-link" href="social-media-2.html">عرض النموذج</a>
+              </div>
+
+              <div class="model-card">
+                <span class="model-badge">النموذج 03</span>
+                <h4>نموذج Social Strategist</h4>
+                <p>مناسب لمن يقدم استراتيجية محتوى كاملة مبنية على الجمهور والهدف والنتائج.</p>
+                <div class="tags">
+                  <span class="tag">Strategy</span>
+                  <span class="tag">Calendar</span>
+                  <span class="tag">Analytics</span>
+                </div>
+                <a class="view-link" href="social-media-3.html">عرض النموذج</a>
+              </div>
             </div>
           </article>
         </div>
@@ -662,7 +952,7 @@
             <span class="label">اطلب نسخة مخصصة</span>
             <h2>عايز بورتفوليو باسمك أو باسم شركتك؟</h2>
             <p>
-              ابعت التخصص المناسب، الاسم، الصورة، الخدمات، النتائج، ورقم الواتساب، وسيتم تجهيز نسخة مناسبة لك.
+              ابعت التخصص، النموذج المفضل، الاسم، الصورة، الخدمات، النتائج، ورقم الواتساب، وسيتم تجهيز نسخة مناسبة لك بنفس اتجاه التصميم الذي اخترته.
             </p>
           </div>
 
@@ -698,6 +988,22 @@
   </footer>
 
   <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('portfolioHubTheme');
+
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+      themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', currentTheme);
+      localStorage.setItem('portfolioHubTheme', currentTheme);
+      themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    });
+
     const revealElements = document.querySelectorAll('.reveal');
 
     const revealObserver = new IntersectionObserver((entries) => {

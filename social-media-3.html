@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمالي | صانع ومطور محتوى رقمي</title>
+    <!-- خط جوال (عصري، دائري ومبهج) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Readex+Pro:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --primary: #6366f1; /* بنفسجي مودرن */
+            --accent: #ff007a; /* فوشيا حيوي للفت الانتباه */
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --radius: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Readex Pro', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* الخلفية الديناميكية الملونة */
+        .blob-bg {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        /* التنقل */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            background: #f1f5f9;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* سيكشن الهيرو الدائري */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            padding-top: 8rem;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-text p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+
+        /* الأزرار الكرتونية الحديثة */
+        .btn-creative {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 8px 0px #4338ca;
+            transition: all 0.2s ease;
+        }
+
+        .btn-creative:hover {
+            transform: translateY(3px);
+            box-shadow: 0 5px 0px #4338ca;
+        }
+
+        /* العناصر التفاعلية جهة اليسار */
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .circle-wrapper {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morphing 8s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        @keyframes morphing {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 40% 60% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        /* الأقسام الهيكلية */
+        .main-container {
+            padding: 5rem 10%;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        /* الخدمات بطراز الكروت الطائرة */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card-creative {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 10px 0px #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .card-creative:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 0px rgba(99, 102, 241, 0.1);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* معرض الأعمال */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--text-dark);
+            color: white;
+            border-color: var(--text-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.3s;
+        }
+
+        .work-card:hover {
+            transform: scale(1.02);
+        }
+
+        .work-card.fade-out {
+            display: none;
+        }
+
+        .work-banner {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .work-detail {
+            padding: 1.5rem;
+        }
+
+        .work-detail h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-detail p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* فورم التواصل الفريد */
+        .contact-box {
+            background: #fff;
+            border: 3px solid var(--text-dark);
+            border-radius: var(--radius);
+            padding: 3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 8px 8px 0 var(--text-dark);
+        }
+
+        .creative-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            background: #f8fafc;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            outline: none;
+        }
+
+        .creative-input:focus {
+            border-color: var(--primary);
+            background: #fff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #b90058;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #b90058;
+        }
+
+        /* الاستجابة للهواتف */
+        @media (max-width: 968px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 7rem;
+            }
+            .hero-text h1 { font-size: 2.3rem; }
+            .nav-menu { display: none; }
+            .circle-wrapper { width: 250px; height: 250px; }
+            .main-container { padding: 4rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob-bg"></div>
+
+    <!-- البار العلوي -->
+    <nav class="navbar">
+        <a href="#" class="logo">فِكرة</a>
+        <ul class="nav-menu">
+            <li><a href="#home" class="active">أهلاً</a></li>
+            <li><a href="#capabilities">ماذا أفعل؟</a></li>
+            <li><a href="#works">صناعتي</a></li>
+            <li><a href="#talk">لنتحدث</a></li>
+        </ul>
+    </nav>
+
+    <!-- الهيرو -->
+    <section id="home" class="hero-section">
+        <div class="hero-text">
+            <span class="tagline">👋 مرحباً بك في عالمي الإبداعي</span>
+            <h1>أصنع محتوى <span>يتحول</span> إلى أرقام ومبيعات.</h1>
+            <p>أنا لست مجرد شخص ينشر الصور؛ أنا أبني هوية رقمية لشركتك تجعل العميل يقع في حب منتجك ويتفاعل معه بشكل يومي ملموس.</p>
+            <a href="#talk" class="btn-creative">دعنا نتحدث عن مشروعك ✨</a>
+        </div>
+        <div class="hero-visual">
+            <div class="circle-wrapper">🚀</div>
+        </div>
+    </section>
+
+    <!-- الخدمات -->
+    <main class="main-container" id="capabilities">
+        <div class="section-header">
+            <h2>القدرات والحلول الإبداعية</h2>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card-creative">
+                <div class="icon-box" style="background: #e0e7ff;">🎨</div>
+                <h3>هندسة المحتوى المرئي</h3>
+                <p>صناعة وتوجيه المنشورات والـ Reels بطريقة خاطفة للعين لمنع المستخدم من التمرير السريع.</p>
+            </div>
+            <div class="card-creative">
+                <div class="icon-box" style="background: #fce7f3;">💬</div>
+                <h3>إدارة وتنشيط المجتمعات</h3>
+                <p>تحويل التعليقات والرسائل العشوائية إلى مجتمع وفيّ للبراند، وزيادة الولاء والمبيعات المباشرة.</p>
+            </div>
+            <div class="card-creative">
+                <div class="icon-box" style="background: #fef3c7;">📊</div>
+                <h3>التحليل والنمو السريع</h3>
+                <p>قراءة خوارزميات المنصات وفهم الأرقام لتعديل مسار الحملات والوصول لأكبر فئة مستهدفة.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- الأعمال -->
+    <section class="main-container" id="works" style="background: #fff; border-top: 1px solid #e2e8f0;">
+        <div class="section-header">
+            <h2>مشاهد من إبداعي</h2>
+        </div>
+
+        <div class="portfolio-tabs">
+            <button class="tab-btn active" data-target="all">كل شيء</button>
+            <button class="tab-btn" data-target="reels">فيديوهات قصيرة</button>
+            <button class="tab-btn" data-target="designs">هويات وبوستات</button>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="work-card" data-cat="reels">
+                <div class="work-banner" style="background: #ffe4e6;">🎬</div>
+                <div class="work-detail">
+                    <h3>فيديو ريلز لبراند ملابس</h3>
+                    <p>فيديو تخطى حاجز الـ 200K مشاهدة وحقق مبيعات قياسية.</p>
+                </div>
+            </div>
+            <div class="work-card" data-cat="designs">
+                <div class="work-banner" style="background: #ccfbf1;">✨</div>
+                <div class="work-detail">
+                    <h3>هوية انستغرام متكاملة</h3>
+                    <p>تنسيق وتنظيم شبكة الحساب لتبدو كلوحة فنية تعبر عن الفخامة.</p>
+                </div>
+            </div>
+            <div class="work-card" data-cat="reels">
+                <div class="work-banner" style="background: #e0e7ff;">📱</div>
+                <div class="work-detail">
+                    <h3>سلسلة تيك توك تعليمية</h3>
+                    <p>محتوى تعليمي تفاعلي لشركة تقنية ناشئة جلب 10 آلاف متابع مهتم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التواصل -->
+    <section class="main-container" id="talk">
+        <div class="contact-box">
+            <h2 style="margin-bottom: 1.5rem; text-align: center;">هل أنت مستعد لنقل حساباتك للمستوى التالي؟</h2>
+            <form id="popForm">
+                <input type="text" class="creative-input" placeholder="اسمك الكريم أو شركتك" required>
+                <input type="email" class="creative-input" placeholder="رقم الواتساب أو الإيميل للتواصل" required>
+                <textarea class="creative-input" rows="4" placeholder="ما هي المنصة التي تريد التركيز عليها حالياً؟" required></textarea>
+                <button type="submit" class="btn-submit">أرسل فكرتك فوراً 🚀</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- جافا سكريبت التفاعلي للفلاتر والتنقل -->
+    <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const cards = document.querySelectorAll('.work-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const target = tab.getAttribute('data-target');
+
+                cards.forEach(card => {
+                    if (target === 'all' || card.getAttribute('data-cat') === target) {
+                        card.classList.remove('fade-out');
+                    } else {
+                        card.classList.add('fade-out');
+                    }
+                });
+            });
+        });
+
+        // رسالة نجاح الفورم المبهجة
+        document.getElementById('popForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('رائع جداً! وصلتنّي رسالتك، سأقوم بمراجعة حساباتك وتجهيز فكرة مبدئية لنناقشها سوياً في مكالمتنا القادمة. 🤝🔥');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

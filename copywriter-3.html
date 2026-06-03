@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف أعمال كاتب النصوص الإعلانية</title>
+    <!-- استدعاء Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- خط Tajawal الأنيق والمناسب للتصاميم الحديثة والفاخرة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0b0f19;
+            scroll-behavior: smooth;
+        }
+        /* تأثير التوهج النيوني الخلفي */
+        .neon-glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        /* إخفاء شريط التمرير الأصلي لجمالية التصميم */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="text-gray-200 antialiased overflow-x-hidden">
+
+    <!-- توهجات خلفية جمالية (Ambient Lights) -->
+    <div class="neon-glow top-10 right-10"></div>
+    <div class="neon-glow top-[500px] left-10"></div>
+
+    <!-- الهيدر العائم الدائري -->
+    <div class="fixed top-6 left-0 right-0 z-50 px-4">
+        <header class="max-w-4xl mx-auto bg-gray-900/70 border border-gray-800 backdrop-blur-xl rounded-2xl px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-l from-violet-400 to-blue-400">
+                مِـرْوَد .
+            </div>
+            <nav class="hidden sm:flex space-x-reverse space-x-6 text-sm font-medium">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors">الفلسفة</a>
+                <a href="#cases" class="text-gray-400 hover:text-white transition-colors">دراسات حالة</a>
+                <a href="#pricing" class="text-gray-400 hover:text-white transition-colors">الاستثمار</a>
+            </nav>
+            <a href="#connect" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
+                ابدأ رحلتك
+            </a>
+        </header>
+    </div>
+
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section class="min-h-screen flex items-center justify-center pt-24">
+        <div class="container mx-auto px-6 text-center max-w-5xl">
+            <h2 class="text-xs md:text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">// تحويل الحبر الرقمي إلى أرقام مبيعات</h2>
+            <h1 class="text-5xl md:text-8xl font-black text-white leading-tight mb-8">
+                نصوص لا تقرأ، <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-violet-500">بل تُعاش وتشتري.</span>
+            </h1>
+            <p class="text-gray-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+                أنا كاتب استراتيجي. أصمم رحلات العميل النفسية باستخدام كلمات منتقاة، لرفع نسب التحويل المالي لشركات التجارة الإلكترونية والـ SaaS B2B.
+            </p>
+            
+            <!-- أرقام سريعة كدليل اجتماعي -->
+            <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto bg-gray-900/40 border border-gray-800 p-4 rounded-2xl backdrop-blur-sm">
+                <div>
+                    <div class="text-xl md:text-2xl font-bold text-white">+5M$</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-1">مبيعات للعملاء</div>
+                </div>
+                <div class="border-x border-gray-800">
+                    <div class="text-xl md:text-2xl font-bold text-white">12%</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-1">متوسط الـ CTR</div>
+                </div>
+                <div>
+                    <div class="text-xl md:text-2xl font-bold text-white">+150</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-1">نص إعلاني رابح</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفلسفة والأسلوب (About / Philosophy) -->
+    <section id="about" class="py-24 border-y border-gray-900 bg-gray-950/50">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/3">
+                    <div class="text-xs font-bold text-violet-400 mb-2">// لِمَ أنا بالذات؟</div>
+                    <h3 class="text-3xl font-bold text-white">الكلمات الرنانة خديعة، الأرقام هي الحقيقة.</h3>
+                </div>
+                <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
+                        <h4 class="text-white font-bold mb-2 text-sm">هندسة الرغبة</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">أدرس المشاعر الأساسية التي تحرك جمهورك (الخوف من الفوات، الرغبة في التميز) ثم أبني النص حولها.</p>
+                    </div>
+                    <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
+                        <h4 class="text-white font-bold mb-2 text-sm">التوافق مع الـ SEO والـ UX</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">أكتب نصوصاً مريحة للعين، تحترم تجربة المستخدم وتتصدر محركات البحث دون خسارة الروح الإبداعية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم دراسات الحالة / نماذج العمل (Case Studies) -->
+    <section id="cases" class="py-24">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="mb-16 flex justify-between items-end">
+                <div>
+                    <span class="text-xs font-bold text-blue-400">// معرض النتائج</span>
+                    <h3 class="text-3xl font-black text-white mt-1">قصص نجاح من الميدان</h3>
+                </div>
+                <div class="text-xs text-gray-500">انقر على البطاقة للتفاصيل</div>
+            </div>
+
+            <!-- بطاقات المشاريع التفاعلية -->
+            <div class="space-y-6">
+                <!-- كرت 1 -->
+                <div onclick="toggleCaseDetails(1)" class="group cursor-pointer bg-gray-900/40 hover:bg-gray-900/80 border border-gray-800 rounded-2xl p-6 md:p-8 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full font-medium">تجارة إلكترونية - العناية بالبشرة</span>
+                            <h4 class="text-xl font-bold text-white mt-3 group-hover:text-blue-400 transition-colors">إعادة صياغة قمع مبيعات بالكامل لمنتج تجميلي مخصص</h4>
+                        </div>
+                        <div class="text-left">
+                            <span class="text-2xl font-black text-green-400">+240%</span>
+                            <p class="text-[10px] text-gray-500">ارتفاع في العائد من الإعلانات (ROAS)</p>
+                        </div>
+                    </div>
+                    <!-- تفاصيل مخفية تظهر بالـ JS -->
+                    <div id="details-1" class="hidden mt-6 pt-6 border-t border-gray-800 text-sm text-gray-400 space-y-3">
+                        <p>**المشكلة:** كان المتجر يعاني من زيارات عالية ولكن بمعدل شراء ضئيل جداً بسبب نصوص تقليدية مملة.</p>
+                        <p>**الحل:** قمت بإنشاء قصة (Storytelling) مخصصة تبدأ من إعلان التيك توك المثير وتنتهي بصفحة هبوط تركز على الأمان النفسي والنتائج السريعة.</p>
+                    </div>
+                </div>
+
+                <!-- كرت 2 -->
+                <div onclick="toggleCaseDetails(2)" class="group cursor-pointer bg-gray-900/40 hover:bg-gray-900/80 border border-gray-800 rounded-2xl p-6 md:p-8 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs bg-violet-500/10 text-violet-400 px-3 py-1 rounded-full font-medium">B2B SaaS - برمجيات محاسبة</span>
+                            <h4 class="text-xl font-bold text-white mt-3 group-hover:text-violet-400 transition-colors">كتابة محتوى البريد الإلكتروني للمشتركين في الفترة التجريبية</h4>
+                        </div>
+                        <div class="text-left">
+                            <span class="text-2xl font-black text-green-400">18.5%</span>
+                            <p class="text-[10px] text-gray-500">نسبة التحويل للاشتراك المدفوع</p>
+                        </div>
+                    </div>
+                    <div id="details-2" class="hidden mt-6 pt-6 border-t border-gray-800 text-sm text-gray-400 space-y-3">
+                        <p>**المشكلة:** المشتركون يسجلون في التطبيق مجاناً ثم ينسونه دون ترقية الباقة.</p>
+                        <p>**الحل:** صممت سلسلة بريد من 5 رسائل تعليمية / تحفيزية تركز على إبراز "الوقت الضائع" والمال المفقود في حال عدم استخدام النظام بانتظام.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم أسعار الخدمات (Pricing/Investment) -->
+    <section id="pricing" class="py-24 bg-gray-950/40 border-t border-gray-900">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-violet-400">// حزم الاستثمار</span>
+                <h3 class="text-3xl font-bold text-white mt-1">خطط واضحة، بدون مفاجآت</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <!-- باقة 1 -->
+                <div class="bg-gray-900/40 border border-gray-800 p-8 rounded-2xl relative">
+                    <h4 class="text-lg font-bold text-white mb-2">حزمة الإطلاق السريع</h4>
+                    <p class="text-xs text-gray-500 mb-6">مثالية للمتاجر الناشئة التي تريد إعلانات رابحة فوراً.</p>
+                    <ul class="space-y-3 text-xs text-gray-400 mb-8">
+                        <li class="flex items-center gap-2">✔ صياغة 5 إعلانات مبتكرة (مكتوبة ومرئية)</li>
+                        <li class="flex items-center gap-2">✔ دراسة سريعة للمنافسين وعميلك المثالي</li>
+                        <li class="flex items-center gap-2">✔ تعديل مجاني واحد بعد إطلاق الحملة</li>
+                    </ul>
+                    <a href="#connect" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-bold text-xs py-3 rounded-xl transition-all">ابدأ بهذه الحزمة</a>
+                </div>
+
+                <!-- باقة 2 -->
+                <div class="bg-gradient-to-b from-blue-900/20 to-transparent border border-blue-600/40 p-8 rounded-2xl relative">
+                    <span class="absolute -top-3 right-6 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">الأكثر طلباً</span>
+                    <h4 class="text-lg font-bold text-white mb-2">قمع التحويل الكامل</h4>
+                    <p class="text-xs text-gray-400 mb-6">لهؤلاء الذين يتطلعون للسيطرة الكاملة ورفع المبيعات بشكل مستدام.</p>
+                    <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center gap-2 text-blue-400">✔ صفحة هبوط كاملة عالية التحويل (محتوى + هيكلة)</li>
+                        <li class="flex items-center gap-2">✔ سلسلة من 4 رسائل بريد إلكتروني لبيع المنتج</li>
+                        <li class="flex items-center gap-2">✔ بحث نفسي مطور وعميق لجمهورك المستهدف</li>
+                    </ul>
+                    <a href="#connect" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-3 rounded-xl transition-all shadow-lg shadow-blue-600/20">احجز مقعدك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال والتفاعل (Connect) -->
+    <section id="connect" class="py-24 border-t border-gray-900">
+        <div class="container mx-auto px-6 max-w-xl text-center">
+            <h3 class="text-3xl font-black text-white mb-2">لنصنع شيئاً عظيماً معاً</h3>
+            <p class="text-gray-500 text-xs mb-8">أستقبل عدداً محدوداً من المشاريع شهرياً لضمان الجودة الفائقة.</p>
+            
+            <form id="fastForm" onsubmit="sendForm(event)" class="space-y-4 text-right">
+                <input type="text" id="clientName" placeholder="اسمك الكريم أو اسم شركتك" required class="w-full bg-gray-900/50 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all text-sm">
+                <input type="email" id="clientEmail" placeholder="عنوان بريدك الإلكتروني الفعال" required class="w-full bg-gray-900/50 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all text-sm">
+                <textarea id="clientMsg" placeholder="ما هو منتجك؟ وما التحدي الحالي الذي تواجهه؟" rows="4" required class="w-full bg-gray-900/50 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all text-sm"></textarea>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-violet-600 text-white font-bold text-sm py-4 rounded-xl hover:from-blue-700 hover:to-violet-700 transition-all shadow-lg shadow-violet-600/10">
+                    أرسل الفكرة فوراً ⚡
+                </button>
+            </form>
+            <div id="msgSent" class="hidden text-sm font-semibold text-blue-400 mt-4 bg-blue-950/30 border border-blue-900/50 p-4 rounded-xl">
+                🚀 تم الاستلام! سأقوم بمراجعة موقعك / منتجك والرد عليك بخطة أولية خلال 24 ساعة.
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر بسيط -->
+    <footer class="py-12 bg-gray-950 text-center border-t border-gray-900 text-[11px] text-gray-600">
+        <p>© 2026 مِرْوَد للكتابة الاستراتيجية. الكلمات قوة، فاستغلها.</p>
+    </footer>
+
+    <!-- جافا سكريبت التفاعلية -->
+    <script>
+        // دالة لإظهار وإخفاء تفاصيل أعمال الكاتب (الأكورديون التفاعلي)
+        function toggleCaseDetails(id) {
+            const detailsElement = document.getElementById(`details-${id}`);
+            if (detailsElement.classList.contains('hidden')) {
+                // إخفاء أي تفاصيل أخرى أولاً لتركيز انتباه الزائر
+                document.querySelectorAll('[id^="details-"]').forEach(el => el.classList.add('hidden'));
+                detailsElement.classList.remove('hidden');
+            } else {
+                detailsElement.classList.add('hidden');
+            }
+        }
+
+        // دالة إرسال الفورم التفاعلية التخيلية
+        function sendForm(e) {
+            e.preventDefault();
+            const form = document.getElementById('fastForm');
+            const alertBox = document.getElementById('msgSent');
+            
+            form.style.opacity = '0.3';
+            form.querySelectorAll('input, textarea, button').forEach(input => input.disabled = true);
+            
+            setTimeout(() => {
+                form.classList.add('hidden');
+                alertBox.classList.remove('hidden');
+            }, 800);
+        }
+    </script>
+</body>
+</html>
