@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بورتفليو مصور فوتوغرافي | هوية فاخرة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap');
+
+    :root {
+      --bg: #090806;
+      --bg-soft: #12100c;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-strong: rgba(255, 255, 255, 0.1);
+      --gold: #d9b66f;
+      --gold-soft: #f2d898;
+      --cream: #fff6df;
+      --muted: #b8aa8a;
+      --line: rgba(217, 182, 111, 0.22);
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(217, 182, 111, .18), transparent 28%),
+        radial-gradient(circle at 80% 0%, rgba(255, 246, 223, .08), transparent 26%),
+        linear-gradient(135deg, #050403 0%, #0d0b08 45%, #171006 100%);
+      color: var(--cream);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 85%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.65) 100%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(22px);
+      background: rgba(9, 8, 6, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: fit-content;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(217,182,111,.18), rgba(255,255,255,.03));
+      box-shadow: 0 0 34px rgba(217,182,111,.22);
+      font-size: 22px;
+    }
+
+    .brand h1 {
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 12px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cream);
+      background: rgba(217,182,111,.12);
+    }
+
+    .nav-cta,
+    .btn-primary,
+    .btn-secondary {
+      border: 1px solid var(--gold);
+      background: linear-gradient(135deg, var(--gold), #a77a2f);
+      color: #120d05;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .28s;
+      box-shadow: 0 15px 36px rgba(217,182,111,.18);
+      font-family: inherit;
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 48px rgba(217,182,111,.3);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--cream);
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-soft);
+      background: rgba(217, 182, 111, .09);
+      border: 1px solid var(--line);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero-title {
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .thin {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 246, 223, .85);
+      font-weight: 900;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 2;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream);
+      box-shadow: none;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 600px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold-soft);
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 620px;
+    }
+
+    .frame-main {
+      position: absolute;
+      inset: 42px 0 0 82px;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(217,182,111,.24);
+      transform: rotate(-2deg);
+    }
+
+    .frame-main::after,
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.62), transparent 55%);
+      pointer-events: none;
+    }
+
+    .frame-side {
+      position: absolute;
+      width: 46%;
+      height: 48%;
+      right: 0;
+      bottom: 24px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(217,182,111,.35);
+      box-shadow: var(--shadow);
+      transform: rotate(4deg);
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 8px;
+      bottom: 92px;
+      width: 250px;
+      border: 1px solid var(--line);
+      background: rgba(12, 10, 7, .72);
+      backdrop-filter: blur(18px);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card b {
+      color: var(--gold-soft);
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .floating-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .lens {
+      position: absolute;
+      right: 38px;
+      top: 0;
+      width: 138px;
+      height: 138px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background:
+        radial-gradient(circle, rgba(255,246,223,.95) 0 7%, transparent 8% 26%, rgba(217,182,111,.35) 27% 28%, transparent 29%),
+        radial-gradient(circle at 35% 35%, rgba(255,246,223,.4), transparent 28%),
+        rgba(217,182,111,.07);
+      box-shadow: 0 0 80px rgba(217,182,111,.24);
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--gold-soft);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      max-width: 670px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 470px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service {
+      min-height: 240px;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      position: relative;
+      overflow: hidden;
+      transition: .28s;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      border-color: rgba(217,182,111,.45);
+    }
+
+    .service::before {
+      content: attr(data-num);
+      position: absolute;
+      left: 20px;
+      top: 14px;
+      color: rgba(217,182,111,.18);
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .service .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(217,182,111,.12);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 26px;
+    }
+
+    .service h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    .showcase-wrap {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 18px;
+      background: rgba(255,255,255,.035);
+      box-shadow: var(--shadow);
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 17px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: rgba(217,182,111,.14);
+      color: var(--cream);
+      border-color: var(--line);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr 1fr;
+      grid-auto-rows: 230px;
+      gap: 14px;
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      cursor: pointer;
+      transition: .28s;
+      background: var(--bg-soft);
+    }
+
+    .gallery-card:hover {
+      transform: scale(.985);
+      border-color: rgba(217,182,111,.44);
+    }
+
+    .gallery-card.big {
+      grid-row: span 2;
+    }
+
+    .gallery-info {
+      position: absolute;
+      z-index: 2;
+      right: 18px;
+      left: 18px;
+      bottom: 18px;
+    }
+
+    .gallery-info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .gallery-info span {
+      color: var(--gold-soft);
+      font-size: 13px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .process-card {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(217,182,111,.09), rgba(255,255,255,.035));
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .process-card h3 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.045);
+    }
+
+    .step-num {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      color: var(--gold-soft);
+      font-weight: 900;
+    }
+
+    .step h4 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .step p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .package {
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.045);
+      border-radius: 30px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: .28s;
+    }
+
+    .package.featured {
+      background: linear-gradient(180deg, rgba(217,182,111,.16), rgba(255,255,255,.045));
+      border-color: rgba(217,182,111,.42);
+      transform: translateY(-14px);
+    }
+
+    .package:hover {
+      transform: translateY(-8px);
+    }
+
+    .package.featured:hover {
+      transform: translateY(-20px);
+    }
+
+    .badge {
+      display: inline-flex;
+      color: #160e04;
+      background: var(--gold-soft);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .package h3 {
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    .price {
+      color: var(--gold-soft);
+      font-size: 36px;
+      font-weight: 900;
+      margin: 18px 0;
+    }
+
+    .package ul {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      color: var(--muted);
+      margin: 24px 0;
+    }
+
+    .package li::before {
+      content: "✓";
+      color: var(--gold-soft);
+      margin-left: 8px;
+      font-weight: 900;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .quote {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.045);
+      border-radius: 28px;
+      padding: 26px;
+    }
+
+    .quote .stars {
+      color: var(--gold-soft);
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .quote p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .quote strong {
+      display: block;
+    }
+
+    .quote span {
+      color: var(--gold-soft);
+      font-size: 13px;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-info,
+    form {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.045);
+      border-radius: 34px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info h3 {
+      font-size: 34px;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      color: var(--muted);
+    }
+
+    .contact-item b {
+      color: var(--cream);
+      margin-left: 5px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.22);
+      color: var(--cream);
+      border-radius: 18px;
+      padding: 14px 15px;
+      font-family: inherit;
+      outline: none;
+      transition: .22s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(217,182,111,.08);
+    }
+
+    textarea {
+      min-height: 128px;
+      resize: vertical;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.86);
+      backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      width: min(900px, 100%);
+      max-height: 86vh;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      background: #000;
+    }
+
+    .lightbox-content img {
+      height: 72vh;
+      object-fit: cover;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 4;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(0,0,0,.45);
+      color: #fff;
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: rgba(12,10,7,.88);
+      border: 1px solid var(--line);
+      color: var(--cream);
+      padding: 14px 18px;
+      border-radius: 18px;
+      transform: translateY(140%);
+      transition: .3s;
+      z-index: 120;
+      box-shadow: var(--shadow);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .process,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+
+      .services-grid,
+      .packages,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        height: 70px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        right: 18px;
+        left: 18px;
+        padding: 14px;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: rgba(9,8,6,.96);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        text-align: center;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-title {
+        letter-spacing: -1px;
+      }
+
+      .stats,
+      .services-grid,
+      .packages,
+      .testimonials,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .hero-visual {
+        min-height: 470px;
+      }
+
+      .frame-main {
+        inset: 40px 22px 0 0;
+      }
+
+      .frame-side {
+        width: 56%;
+        height: 40%;
+      }
+
+      .floating-card {
+        width: 220px;
+        bottom: 40px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 260px;
+      }
+
+      .gallery-card.big {
+        grid-row: span 1;
+      }
+
+      .package.featured {
+        transform: none;
+      }
+
+      .package.featured:hover {
+        transform: translateY(-8px);
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <div class="brand-mark">◉</div>
+        <div>
+          <h1>عدسة النور</h1>
+          <span>تصوير احترافي للمناسبات والعلامات</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">الرئيسية</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#works">الأعمال</a></li>
+        <li><a href="#process">الطريقة</a></li>
+        <li><a href="#packages">الباقات</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">احجز جلسة</a>
+    </div>
+  </nav>
+
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow">✦ بورتفليو مصور عربي بهوية فاخرة</div>
+        <h2 class="hero-title">
+          نصنع من اللحظة <span class="thin">حكاية</span><br /> تبقى للأبد
+        </h2>
+        <p class="hero-text">
+          تصوير سينمائي وفوتوغرافي للمناسبات، المنتجات، البورتريه، والمشاريع التجارية بأسلوب هادئ وفاخر يبرز التفاصيل ويحوّل الصورة إلى تجربة بصرية متكاملة.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#works">استعرض الأعمال</a>
+          <a class="btn-secondary" href="#packages">شاهد الباقات</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>8+</strong><span>سنوات خبرة</span></div>
+          <div class="stat"><strong>340</strong><span>جلسة تصوير مكتملة</span></div>
+          <div class="stat"><strong>98%</strong><span>رضا العملاء</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="معرض صور المصور">
+        <div class="lens"></div>
+        <div class="frame-main">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1100&q=85" alt="تصوير زفاف فاخر" />
+        </div>
+        <div class="frame-side">
+          <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=85" alt="كاميرا تصوير" />
+        </div>
+        <div class="floating-card">
+          <b>جلسات مصممة خصيصًا</b>
+          <p>نخطط لكل جلسة حسب الهدف، المكان، الإضاءة، والهوية البصرية المطلوبة.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">الخدمات</div>
+          <h2 class="section-title">تصوير احترافي يغطي كل احتياج بصري</h2>
+        </div>
+        <p class="section-desc">من اللحظات الشخصية إلى الحملات التجارية، نقدم تجربة تصوير منظمة من التخطيط وحتى تسليم الصور النهائية.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service" data-num="01">
+          <div class="icon">💍</div>
+          <h3>تصوير مناسبات</h3>
+          <p>توثيق حفلات الزفاف والخطوبة والفعاليات بأسلوب سينمائي ناعم يحافظ على طبيعية اللحظة.</p>
+        </article>
+        <article class="service" data-num="02">
+          <div class="icon">🧴</div>
+          <h3>تصوير منتجات</h3>
+          <p>صور تسويقية قوية للمتاجر والعلامات التجارية مع إضاءة احترافية وتكوينات جذابة.</p>
+        </article>
+        <article class="service" data-num="03">
+          <div class="icon">👤</div>
+          <h3>بورتريه شخصي</h3>
+          <p>جلسات شخصية ومهنية مناسبة للسوشيال ميديا، لينكدإن، البورتفوليو، وصور العلامة الشخصية.</p>
+        </article>
+        <article class="service" data-num="04">
+          <div class="icon">🏢</div>
+          <h3>تصوير تجاري</h3>
+          <p>تصوير مطاعم، أماكن، فرق عمل، حملات إعلانية، ومحتوى بصري متكامل للشركات.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">معرض الأعمال</div>
+          <h2 class="section-title">لقطات مختارة من مشاريع مختلفة</h2>
+        </div>
+        <p class="section-desc">يمكن للعميل تصفح الأعمال حسب نوع التصوير، والضغط على أي صورة لعرضها بحجم كبير.</p>
+      </div>
+
+      <div class="showcase-wrap">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="wedding">مناسبات</button>
+          <button class="filter-btn" data-filter="product">منتجات</button>
+          <button class="filter-btn" data-filter="portrait">بورتريه</button>
+          <button class="filter-btn" data-filter="commercial">تجاري</button>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <div class="gallery-card big" data-category="wedding" data-title="زفاف كلاسيكي" data-img="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85" alt="تصوير زفاف" />
+            <div class="gallery-info"><h3>زفاف كلاسيكي</h3><span>مناسبات</span></div>
+          </div>
+          <div class="gallery-card" data-category="product" data-title="منتج فاخر" data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85" alt="تصوير منتجات" />
+            <div class="gallery-info"><h3>منتج فاخر</h3><span>منتجات</span></div>
+          </div>
+          <div class="gallery-card" data-category="portrait" data-title="جلسة بورتريه" data-img="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="تصوير بورتريه" />
+            <div class="gallery-info"><h3>جلسة بورتريه</h3><span>بورتريه</span></div>
+          </div>
+          <div class="gallery-card" data-category="commercial" data-title="مطعم وهوية" data-img="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=85" alt="تصوير مطاعم" />
+            <div class="gallery-info"><h3>مطعم وهوية</h3><span>تجاري</span></div>
+          </div>
+          <div class="gallery-card big" data-category="product" data-title="إعلان عطر" data-img="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85" alt="تصوير عطر" />
+            <div class="gallery-info"><h3>إعلان عطر</h3><span>منتجات</span></div>
+          </div>
+          <div class="gallery-card" data-category="wedding" data-title="تفاصيل ذهبية" data-img="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85" alt="تفاصيل زفاف" />
+            <div class="gallery-info"><h3>تفاصيل ذهبية</h3><span>مناسبات</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container process">
+      <div class="process-card">
+        <div class="section-kicker">طريقة العمل</div>
+        <h3>تجربة تصوير منظمة من أول فكرة لآخر صورة</h3>
+        <p>لا نعتمد على التصوير العشوائي. كل مشروع يبدأ بفهم الهدف، ثم تخطيط للمشهد والإضاءة، ثم تنفيذ احترافي، وبعدها معالجة لونية وتسليم منظم.</p>
+        <a class="btn-primary" href="#contact">ابدأ مشروعك</a>
+      </div>
+      <div class="timeline">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div><h4>جلسة فهم الهدف</h4><p>نحدد نوع التصوير، الاستخدام النهائي، المرجع البصري، والمخرجات المطلوبة.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div><h4>تجهيز اللوكيشن والإضاءة</h4><p>اختيار المكان، زوايا التصوير، الإكسسوارات، ومخطط الإضاءة المناسب.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div><h4>التصوير والتنفيذ</h4><p>جلسة تصوير مرنة وموجهة للحصول على لقطات متنوعة واحترافية.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div><h4>المعالجة والتسليم</h4><p>اختيار أفضل اللقطات، تعديل الألوان، وتنظيم الملفات بروابط جاهزة للتحميل.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">الباقات</div>
+          <h2 class="section-title">اختر الباقة المناسبة لاحتياجك</h2>
+        </div>
+        <p class="section-desc">يمكن تعديل تفاصيل كل باقة حسب طبيعة المشروع، عدد الساعات، ومكان التصوير.</p>
+      </div>
+
+      <div class="packages">
+        <article class="package">
+          <span class="badge">أساسية</span>
+          <h3>جلسة قصيرة</h3>
+          <p class="section-desc">مناسبة للبورتريه أو المنتجات البسيطة.</p>
+          <div class="price">2,500 ج</div>
+          <ul>
+            <li>ساعة تصوير واحدة</li>
+            <li>15 صورة معالجة</li>
+            <li>تسليم خلال 5 أيام</li>
+            <li>رابط تحميل خاص</li>
+          </ul>
+          <a class="btn-secondary" href="#contact">اطلب الباقة</a>
+        </article>
+
+        <article class="package featured">
+          <span class="badge">الأكثر طلبًا</span>
+          <h3>جلسة احترافية</h3>
+          <p class="section-desc">للبراندات، المناسبات الصغيرة، والمحتوى التجاري.</p>
+          <div class="price">5,500 ج</div>
+          <ul>
+            <li>3 ساعات تصوير</li>
+            <li>45 صورة معالجة</li>
+            <li>توجيه بصري أثناء الجلسة</li>
+            <li>تسليم خلال 7 أيام</li>
+          </ul>
+          <a class="btn-primary" href="#contact">احجز الآن</a>
+        </article>
+
+        <article class="package">
+          <span class="badge">VIP</span>
+          <h3>مشروع كامل</h3>
+          <p class="section-desc">للزفاف، الحملات، أو التصوير التجاري المتكامل.</p>
+          <div class="price">12,000 ج</div>
+          <ul>
+            <li>يوم تصوير كامل</li>
+            <li>100 صورة معالجة</li>
+            <li>مساعد إضاءة</li>
+            <li>معرض صور أونلاين</li>
+          </ul>
+          <a class="btn-secondary" href="#contact">ناقش المشروع</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">آراء العملاء</div>
+          <h2 class="section-title">تجربة سلسة ونتائج تليق بذكرياتك</h2>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <article class="quote">
+          <div class="stars">★★★★★</div>
+          <p>التصوير كان منظم جدًا والنتيجة طلعت أرقى من المتوقع. كل لقطة فيها إحساس وتفاصيل.</p>
+          <strong>سارة محمود</strong>
+          <span>جلسة زفاف</span>
+        </article>
+        <article class="quote">
+          <div class="stars">★★★★★</div>
+          <p>صور المنتجات ساعدتنا نطور شكل المتجر والإعلانات. الإضاءة والمعالجة ممتازين.</p>
+          <strong>مؤمن علي</strong>
+          <span>براند منتجات</span>
+        </article>
+        <article class="quote">
+          <div class="stars">★★★★★</div>
+          <p>أكثر شيء أعجبني هو الهدوء في التعامل والتوجيه أثناء الجلسة بدون أي توتر.</p>
+          <strong>ندى حسن</strong>
+          <span>بورتريه شخصي</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact">
+      <div class="contact-info">
+        <div class="section-kicker">تواصل معنا</div>
+        <h3>جاهز نحول فكرتك إلى صور فاخرة؟</h3>
+        <p>املأ البيانات التالية وسيتم التواصل معك لتحديد تفاصيل الجلسة، الموعد المناسب، والباقة الأنسب لك.</p>
+        <div class="contact-item"><span>📞</span><div><b>الهاتف:</b> 01000000000</div></div>
+        <div class="contact-item"><span>✉️</span><div><b>البريد:</b> hello@lensstudio.com</div></div>
+        <div class="contact-item"><span>📍</span><div><b>الموقع:</b> القاهرة، مصر</div></div>
+        <div class="contact-item"><span>⏱️</span><div><b>المواعيد:</b> يوميًا من 10 صباحًا حتى 8 مساءً</div></div>
+      </div>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">الاسم</label>
+            <input id="name" type="text" placeholder="اكتب اسمك" required />
+          </div>
+          <div class="field">
+            <label for="phone">رقم الهاتف</label>
+            <input id="phone" type="tel" placeholder="01000000000" required />
+          </div>
+          <div class="field">
+            <label for="service">نوع التصوير</label>
+            <select id="service" required>
+              <option value="">اختر الخدمة</option>
+              <option>تصوير مناسبات</option>
+              <option>تصوير منتجات</option>
+              <option>بورتريه شخصي</option>
+              <option>تصوير تجاري</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">التاريخ المتوقع</label>
+            <input id="date" type="date" />
+          </div>
+          <div class="field full">
+            <label for="message">تفاصيل إضافية</label>
+            <textarea id="message" placeholder="اكتب تفاصيل الجلسة أو فكرة المشروع"></textarea>
+          </div>
+          <div class="field full">
+            <button class="btn-primary" type="submit">إرسال الطلب</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© 2026 عدسة النور — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="close-lightbox" id="closeLightbox">×</button>
+      <img id="lightboxImg" src="" alt="عرض الصورة" />
+    </div>
+  </div>
+
+  <div class="toast" id="toast">تم إرسال الطلب بنجاح، سنتواصل معك قريبًا.</div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const links = document.querySelectorAll('.nav-links a');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '☰';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(item => item.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        galleryCards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.style.display = match ? 'block' : 'none';
+        });
+      });
+    });
+
+    galleryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        lightboxImg.src = card.dataset.img;
+        lightbox.classList.add('open');
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) lightbox.classList.remove('open');
+    });
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      toast.classList.add('show');
+      form.reset();
+      setTimeout(() => toast.classList.remove('show'), 3200);
+    });
+
+    const sections = document.querySelectorAll('main[id], section[id]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

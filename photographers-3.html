@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بورتفوليو مصور فوتوغرافي</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+    :root {
+      --bg: #0b0b0f;
+      --bg-soft: #12121a;
+      --card: rgba(255,255,255,.07);
+      --card-strong: rgba(255,255,255,.11);
+      --text: #ffffff;
+      --muted: #b9b9c8;
+      --line: rgba(255,255,255,.12);
+      --gold: #d7a84f;
+      --gold-2: #f4d58d;
+      --shadow: 0 22px 70px rgba(0,0,0,.35);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cairo', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(215,168,79,.20), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(255,255,255,.08), transparent 24%),
+        linear-gradient(180deg, #07070a 0%, var(--bg) 42%, #09090d 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: auto; }
+
+    .navbar {
+      position: fixed;
+      top: 18px;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+      background: rgba(15,15,22,.62);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -.5px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #17120a;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(215,168,79,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: var(--gold-2); }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 13px 21px;
+      transition: .25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: #15100a;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 14px 35px rgba(215,168,79,.24);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-ghost {
+      color: var(--text);
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+    }
+
+    .menu-btn { display: none; width: 46px; height: 46px; padding: 0; }
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 0 90px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr .92fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-2);
+      background: rgba(215,168,79,.10);
+      border: 1px solid rgba(215,168,79,.25);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 8%, var(--gold-2) 45%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 2;
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 35px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 620px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 29px;
+      color: var(--gold-2);
+      margin-bottom: 4px;
+    }
+
+    .stat-card span { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .photo-stack {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-photo {
+      position: absolute;
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: var(--shadow);
+      background: #222;
+    }
+
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .photo-main { width: 72%; height: 78%; right: 8%; top: 4%; }
+    .photo-small { width: 42%; height: 38%; left: 1%; bottom: 6%; border: 8px solid #0b0b0f; }
+    .photo-float { width: 34%; height: 32%; left: 11%; top: 2%; border: 8px solid #0b0b0f; }
+
+    .camera-card {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: min(310px, 78%);
+      background: rgba(255,255,255,.09);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .camera-card h3 { font-size: 20px; margin-bottom: 7px; }
+    .camera-card p { color: var(--muted); line-height: 1.8; font-size: 14px; }
+
+    section { padding: 92px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-title span {
+      color: var(--gold-2);
+      font-weight: 900;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 9px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.25;
+      letter-spacing: -.8px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 470px;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-img {
+      height: 520px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .about-content { padding: 12px; }
+    .about-content h3 { font-size: 32px; margin-bottom: 15px; }
+    .about-content p { color: var(--muted); line-height: 2; margin-bottom: 22px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .feature {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      color: #eee;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      transition: .25s ease;
+    }
+
+    .service-card:hover { transform: translateY(-6px); background: var(--card-strong); }
+    .service-icon { font-size: 33px; margin-bottom: 20px; }
+    .service-card h3 { font-size: 20px; margin-bottom: 12px; }
+    .service-card p { color: var(--muted); line-height: 1.8; font-size: 14px; }
+
+    .portfolio-filter {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      padding: 11px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #17120a;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      border-color: transparent;
+    }
+
+    .portfolio-grid {
+      columns: 3 280px;
+      column-gap: 18px;
+    }
+
+    .work-item {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      background: #222;
+      border: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    .work-item img {
+      width: 100%;
+      height: auto;
+      transition: .35s ease;
+    }
+
+    .work-item:hover img { transform: scale(1.05); }
+
+    .work-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 55px 20px 18px;
+      background: linear-gradient(0deg, rgba(0,0,0,.82), transparent);
+      transform: translateY(20%);
+      opacity: 0;
+      transition: .25s ease;
+    }
+
+    .work-item:hover .work-overlay { transform: translateY(0); opacity: 1; }
+    .work-overlay h3 { margin-bottom: 4px; }
+    .work-overlay span { color: var(--gold-2); font-size: 13px; font-weight: 800; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: steps;
+    }
+
+    .process-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+      position: relative;
+      min-height: 210px;
+    }
+
+    .process-card::before {
+      counter-increment: steps;
+      content: '0' counter(steps);
+      color: rgba(244,213,141,.23);
+      font-size: 54px;
+      font-weight: 900;
+      position: absolute;
+      left: 22px;
+      top: 10px;
+    }
+
+    .process-card h3 { margin-top: 58px; margin-bottom: 10px; }
+    .process-card p { color: var(--muted); line-height: 1.8; font-size: 14px; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(180deg, rgba(215,168,79,.18), rgba(255,255,255,.07));
+      border-color: rgba(244,213,141,.38);
+      transform: translateY(-10px);
+    }
+
+    .badge {
+      display: inline-flex;
+      color: #17120a;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .price-card h3 { font-size: 24px; margin-bottom: 10px; }
+    .price { font-size: 38px; font-weight: 900; color: var(--gold-2); margin: 14px 0; }
+    .price small { font-size: 14px; color: var(--muted); font-weight: 700; }
+    .price-card ul { list-style: none; margin: 22px 0; display: grid; gap: 12px; color: var(--muted); }
+    .price-card li::before { content: '✓'; color: var(--gold-2); font-weight: 900; margin-left: 8px; }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .quote-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .quote-card p { color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+    .client { display: flex; align-items: center; gap: 12px; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; background: #333; }
+    .client strong { display: block; }
+    .client span { color: var(--gold-2); font-size: 13px; font-weight: 800; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-info, .contact-form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .contact-info h2 { font-size: 38px; margin-bottom: 14px; }
+    .contact-info p { color: var(--muted); line-height: 2; margin-bottom: 24px; }
+    .contact-list { display: grid; gap: 14px; }
+    .contact-item { background: rgba(255,255,255,.06); border: 1px solid var(--line); border-radius: 20px; padding: 16px; color: #eee; font-weight: 800; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field { margin-bottom: 13px; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      outline: none;
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      border-radius: 18px;
+      padding: 15px 16px;
+      font-family: inherit;
+      font-weight: 700;
+    }
+    select option { color: #111; }
+    textarea { min-height: 132px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(244,213,141,.55); }
+
+    footer {
+      padding: 26px 0 38px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(0,0,0,.86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.open { display: flex; }
+    .lightbox img { max-height: 86vh; border-radius: 22px; box-shadow: var(--shadow); }
+    .close-lightbox {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.10);
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        top: 86px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        background: rgba(15,15,22,.96);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 22px;
+      }
+      .nav-links.open { display: flex; }
+      .menu-btn { display: inline-flex; }
+      .nav-actions .btn-primary { display: none; }
+      .hero-grid, .about-card, .contact-wrap { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 540px; }
+      .services-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid, .testimonials { grid-template-columns: 1fr; }
+      .price-card.featured { transform: none; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 640px) {
+      .container, .nav-inner { width: min(100% - 26px, 1180px); }
+      .hero { padding-top: 126px; }
+      .stats, .services-grid, .process-grid, .features, .form-row { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { min-height: 430px; }
+      .photo-main { width: 82%; height: 74%; right: 0; }
+      .photo-small { width: 52%; height: 34%; }
+      .photo-float { width: 45%; height: 28%; }
+      .camera-card { width: 88%; }
+      section { padding: 68px 0; }
+      .about-img { height: 390px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark">📷</span>
+        <span>عدسة إبداع</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من أنا</a>
+        <a href="#services">الخدمات</a>
+        <a href="#portfolio">الأعمال</a>
+        <a href="#packages">الباقات</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact">احجز جلسة</a>
+        <button class="btn btn-ghost menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">✨ تصوير احترافي يحكي القصة</div>
+          <h1>نحوّل لحظاتك إلى <span class="gradient-text">صور لا تُنسى</span></h1>
+          <p>بورتفوليو عصري لمصور فوتوغرافي يعرض الخبرة، الخدمات، الأعمال السابقة، والباقات بطريقة واضحة تساعد العميل على اتخاذ قرار الحجز بسرعة وثقة.</p>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">مشاهدة الأعمال</a>
+            <a href="#contact" class="btn btn-ghost">طلب عرض سعر</a>
+          </div>
+          <div class="stats">
+            <div class="stat-card"><strong>+250</strong><span>جلسة تصوير ناجحة</span></div>
+            <div class="stat-card"><strong>8</strong><span>سنوات خبرة</span></div>
+            <div class="stat-card"><strong>4.9</strong><span>تقييم العملاء</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="photo-stack">
+            <div class="hero-photo photo-main"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=85" alt="جلسة تصوير زفاف"></div>
+            <div class="hero-photo photo-small"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=85" alt="بورتريه احترافي"></div>
+            <div class="hero-photo photo-float"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=85" alt="تفاصيل تصوير"></div>
+          </div>
+          <div class="camera-card">
+            <h3>تصوير بجودة سينمائية</h3>
+            <p>إضاءة دقيقة، ألوان متوازنة، معالجة احترافية، وتسليم منظم يناسب الاستخدام الشخصي والتجاري.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span>من أنا</span>
+            <h2>مصوّر يهتم بالتفاصيل قبل اللقطة</h2>
+          </div>
+          <p class="section-desc">أؤمن أن الصورة الناجحة ليست مجرد كاميرا جيدة، بل رؤية، ترتيب، لحظة صحيحة، وتجربة مريحة للعميل من أول تواصل حتى استلام الصور.</p>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="about-img"><img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&w=900&q=85" alt="مصور يحمل كاميرا"></div>
+          <div class="about-content">
+            <h3>مرحباً، أنا أحمد — مصور فوتوغرافي محترف</h3>
+            <p>أقدم خدمات تصوير للأفراد، العلامات التجارية، المنتجات، المناسبات، وحفلات الزفاف. أعمل بأسلوب بسيط وراقٍ يبرز الشخصية أو المنتج بدون مبالغة، مع اهتمام كبير بالتكوين، الإضاءة، والألوان.</p>
+            <div class="features">
+              <div class="feature">تصوير داخلي وخارجي</div>
+              <div class="feature">تعديل ألوان احترافي</div>
+              <div class="feature">تسليم سريع ومنظم</div>
+              <div class="feature">إخراج يناسب السوشيال ميديا</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span>الخدمات</span>
+            <h2>خدمات تصوير تناسب احتياجك</h2>
+          </div>
+          <p class="section-desc">كل خدمة مصممة لتقديم تجربة واضحة ونتيجة نهائية قابلة للاستخدام مباشرة سواء للذكرى، الهوية الشخصية، أو التسويق.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal"><div class="service-icon">💍</div><h3>تصوير زفاف</h3><p>توثيق اللحظات المهمة بتفاصيل عاطفية ولقطات طبيعية تعيش معك لسنوات.</p></div>
+          <div class="service-card reveal"><div class="service-icon">👤</div><h3>بورتريه شخصي</h3><p>صور احترافية للملفات الشخصية، الأعمال، السوشيال ميديا، والهوية المهنية.</p></div>
+          <div class="service-card reveal"><div class="service-icon">🛍️</div><h3>تصوير منتجات</h3><p>إظهار المنتج بأفضل شكل من خلال إضاءة منظمة وخلفيات مناسبة للمتاجر والإعلانات.</p></div>
+          <div class="service-card reveal"><div class="service-icon">🎉</div><h3>تغطية مناسبات</h3><p>تغطية كاملة للفعاليات، الافتتاحات، المؤتمرات، وأعياد الميلاد بلقطات متنوعة.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span>معرض الأعمال</span>
+            <h2>نماذج من أحدث الجلسات</h2>
+          </div>
+          <p class="section-desc">استخدم أزرار التصنيف لمشاهدة نوع التصوير المناسب لك، واضغط على أي صورة لعرضها بحجم أكبر.</p>
+        </div>
+
+        <div class="portfolio-filter reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="wedding">زفاف</button>
+          <button class="filter-btn" data-filter="portrait">بورتريه</button>
+          <button class="filter-btn" data-filter="product">منتجات</button>
+          <button class="filter-btn" data-filter="event">مناسبات</button>
+        </div>
+
+        <div class="portfolio-grid reveal" id="portfolioGrid">
+          <div class="work-item" data-category="wedding"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85" alt="تصوير زفاف"><div class="work-overlay"><h3>جلسة زفاف خارجية</h3><span>زفاف</span></div></div>
+          <div class="work-item" data-category="portrait"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=85" alt="بورتريه رجل"><div class="work-overlay"><h3>بورتريه مهني</h3><span>بورتريه</span></div></div>
+          <div class="work-item" data-category="product"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85" alt="تصوير منتج"><div class="work-overlay"><h3>تصوير ساعة فاخرة</h3><span>منتجات</span></div></div>
+          <div class="work-item" data-category="event"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=700&q=85" alt="تصوير مناسبة"><div class="work-overlay"><h3>تغطية فعالية</h3><span>مناسبات</span></div></div>
+          <div class="work-item" data-category="portrait"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=85" alt="بورتريه امرأة"><div class="work-overlay"><h3>جلسة شخصية</h3><span>بورتريه</span></div></div>
+          <div class="work-item" data-category="wedding"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=85" alt="تفاصيل زفاف"><div class="work-overlay"><h3>تفاصيل يوم الزفاف</h3><span>زفاف</span></div></div>
+          <div class="work-item" data-category="product"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85" alt="تصوير حذاء"><div class="work-overlay"><h3>حملة منتج رياضي</h3><span>منتجات</span></div></div>
+          <div class="work-item" data-category="event"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=85" alt="حدث اجتماعي"><div class="work-overlay"><h3>مناسبة خاصة</h3><span>مناسبات</span></div></div>
+          <div class="work-item" data-category="product"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=85" alt="تصوير مستحضرات"><div class="work-overlay"><h3>تصوير مستحضرات</h3><span>منتجات</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span>طريقة العمل</span>
+            <h2>خطوات واضحة من الحجز للتسليم</h2>
+          </div>
+        </div>
+        <div class="process-grid">
+          <div class="process-card reveal"><h3>تحديد الهدف</h3><p>نفهم نوع الجلسة، الاستخدام المطلوب، والستايل المناسب قبل التصوير.</p></div>
+          <div class="process-card reveal"><h3>تجهيز التصوير</h3><p>اختيار المكان، الإضاءة، الخلفيات، وجدول اللقطات لتقليل العشوائية.</p></div>
+          <div class="process-card reveal"><h3>جلسة التصوير</h3><p>تنفيذ اللقطات بتوجيه بسيط ومريح للحصول على صور طبيعية واحترافية.</p></div>
+          <div class="process-card reveal"><h3>المعالجة والتسليم</h3><p>تنقيح الصور، ضبط الألوان، ثم التسليم عبر رابط منظم وسهل التحميل.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span>الباقات</span>
+            <h2>اختر الباقة المناسبة</h2>
+          </div>
+          <p class="section-desc">يمكن تعديل أي باقة حسب عدد الساعات، مكان التصوير، وعدد الصور المطلوبة.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <h3>جلسة أساسية</h3>
+            <div class="price">1,500 <small>جنيه</small></div>
+            <ul>
+              <li>ساعة تصوير واحدة</li>
+              <li>15 صورة معالجة</li>
+              <li>اختيار مكان واحد</li>
+              <li>تسليم خلال 5 أيام</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost">اختيار الباقة</a>
+          </div>
+          <div class="price-card featured reveal">
+            <span class="badge">الأكثر طلباً</span>
+            <h3>جلسة احترافية</h3>
+            <div class="price">3,500 <small>جنيه</small></div>
+            <ul>
+              <li>3 ساعات تصوير</li>
+              <li>40 صورة معالجة</li>
+              <li>مكانان للتصوير</li>
+              <li>صور مناسبة للإعلانات</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">احجز الآن</a>
+          </div>
+          <div class="price-card reveal">
+            <h3>تغطية كاملة</h3>
+            <div class="price">حسب الطلب</div>
+            <ul>
+              <li>تغطية فعاليات أو زفاف</li>
+              <li>عدد ساعات مرن</li>
+              <li>فريق تصوير إضافي</li>
+              <li>تسليم ألبوم رقمي</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost">طلب عرض سعر</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span>آراء العملاء</span>
+            <h2>ماذا قالوا عن التجربة؟</h2>
+          </div>
+        </div>
+        <div class="testimonials">
+          <div class="quote-card reveal"><p>التجربة كانت مريحة جداً، والتوجيه أثناء التصوير خلّى الصور تطلع طبيعية وراقية.</p><div class="client"><div class="avatar"><img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="عميل"></div><div><strong>محمد سامي</strong><span>جلسة بورتريه</span></div></div></div>
+          <div class="quote-card reveal"><p>صور المنتجات فرقت جداً في شكل المتجر والإعلانات. الإضاءة والتفاصيل كانوا ممتازين.</p><div class="client"><div class="avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="عميلة"></div><div><strong>سارة عادل</strong><span>تصوير منتجات</span></div></div></div>
+          <div class="quote-card reveal"><p>تغطية يوم الفرح كانت منظمة، واللقطات العفوية كانت أجمل حاجة في الألبوم.</p><div class="client"><div class="avatar"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=120&q=80" alt="عميل"></div><div><strong>أحمد ومنة</strong><span>تصوير زفاف</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div class="contact-info">
+            <h2>جاهز نحجز جلستك؟</h2>
+            <p>املأ البيانات وسنرد عليك بتفاصيل الباقة المناسبة، المواعيد المتاحة، وتجهيزات التصوير المطلوبة.</p>
+            <div class="contact-list">
+              <div class="contact-item">📞 0100 000 0000</div>
+              <div class="contact-item">✉️ hello@lensstudio.com</div>
+              <div class="contact-item">📍 القاهرة، مصر</div>
+              <div class="contact-item">📸 Instagram: @lensstudio</div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="field"><input type="text" id="name" placeholder="الاسم" required></div>
+              <div class="field"><input type="tel" id="phone" placeholder="رقم الهاتف" required></div>
+            </div>
+            <div class="field">
+              <select id="service" required>
+                <option value="">نوع الخدمة المطلوبة</option>
+                <option>تصوير زفاف</option>
+                <option>بورتريه شخصي</option>
+                <option>تصوير منتجات</option>
+                <option>تغطية مناسبة</option>
+              </select>
+            </div>
+            <div class="field"><input type="date" id="date"></div>
+            <div class="field"><textarea id="message" placeholder="اكتب تفاصيل بسيطة عن الجلسة المطلوبة"></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width:100%">إرسال الطلب</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 عدسة إبداع — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="close-lightbox" id="closeLightbox">×</button>
+    <img src="" alt="عرض الصورة" id="lightboxImg">
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const workItems = document.querySelectorAll('.work-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        workItems.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          item.style.display = match ? 'block' : 'none';
+        });
+      });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    workItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      alert(`شكراً ${name}، تم استلام طلبك وسنتواصل معك قريباً.`);
+      e.target.reset();
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
