@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بورتفليو عربي عصري لأخصائية نفسية وإرشاد أسري وتربية إيجابية." />
+  <title>بورتفليو أخصائية نفسية | تصميم هادئ</title>
+  <style>
+    :root{
+      --bg:#fbf7ef;
+      --paper:#fffdf8;
+      --ink:#23312f;
+      --muted:#74807b;
+      --sage:#769b8f;
+      --sage-dark:#43695f;
+      --clay:#c98b65;
+      --cream:#f2e7d6;
+      --line:rgba(35,49,47,.12);
+      --shadow:0 24px 70px rgba(35,49,47,.12);
+      --soft-shadow:0 14px 34px rgba(35,49,47,.08);
+      --radius:28px;
+      --container:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family: Tahoma, Arial, sans-serif;
+      color:var(--ink);
+      line-height:1.8;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(201,139,101,.18), transparent 30%),
+        radial-gradient(circle at 92% 8%, rgba(118,155,143,.22), transparent 34%),
+        linear-gradient(180deg, #fffaf2, var(--bg));
+      text-align:right;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(100% - 32px,var(--container));margin-inline:auto}
+    .section{padding:82px 0}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 14px;border:1px solid var(--line);
+      background:rgba(255,255,255,.62);border-radius:999px;
+      color:var(--sage-dark);font-weight:900;font-size:.85rem;
+    }
+    .btn{
+      min-height:50px;padding:0 20px;border:none;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      cursor:pointer;font-weight:900;font-size:.95rem;transition:.25s ease;
+      font-family:inherit;
+    }
+    .btn-primary{background:var(--sage-dark);color:white;box-shadow:0 14px 30px rgba(67,105,95,.26)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(67,105,95,.34)}
+    .btn-soft{background:var(--cream);color:var(--ink);border:1px solid rgba(35,49,47,.08)}
+    .btn-soft:hover{transform:translateY(-3px);background:#eadbc5}
+
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(251,247,239,.76);
+      border-bottom:1px solid rgba(35,49,47,.08);
+    }
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900}
+    .logo-mark{width:42px;height:42px;border-radius:16px;background:linear-gradient(135deg,var(--sage),var(--sage-dark));display:grid;place-items:center;color:white;box-shadow:var(--soft-shadow)}
+    .logo small{display:block;color:var(--muted);font-size:.72rem;margin-top:-4px}
+    .links{display:flex;align-items:center;gap:20px;color:#45524f;font-weight:800;font-size:.9rem}
+    .links a{transition:.2s ease}.links a:hover{color:var(--sage-dark)}
+    .menu-btn{display:none;background:var(--paper);border:1px solid var(--line);border-radius:14px;width:44px;height:44px;font-size:1.25rem}
+
+    .hero{padding:70px 0 42px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:34px;align-items:center}
+    .hero-copy{padding:40px 0}
+    .hero h1{font-size:clamp(2.15rem,5vw,4.9rem);line-height:1.18;letter-spacing:-.055em;margin:18px 0;color:#20312e}
+    .hero h1 span{color:var(--sage-dark)}
+    .hero p{font-size:1.08rem;color:#5f6b67;max-width:690px;margin-bottom:24px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 30px}
+    .trust-row{display:flex;gap:12px;flex-wrap:wrap}
+    .trust-item{padding:12px 14px;border-radius:18px;background:rgba(255,255,255,.68);border:1px solid var(--line);font-weight:900;color:#394944;box-shadow:0 8px 22px rgba(35,49,47,.045)}
+    .trust-item small{display:block;color:var(--muted);font-weight:800;font-size:.74rem}
+
+    .portrait-card{position:relative;border-radius:44px;background:linear-gradient(145deg,#f9ead9,#fffdf8 54%,#dfeae3);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.6);overflow:hidden}
+    .portrait-card:before{content:"";position:absolute;inset:auto -90px -110px auto;width:260px;height:260px;border-radius:50%;background:rgba(118,155,143,.22)}
+    .portrait-frame{height:560px;border-radius:34px;overflow:hidden;background:linear-gradient(160deg,#e9d4bf,#f8f3ea);display:grid;place-items:center;position:relative}
+    .abstract-person{width:min(74%,360px);aspect-ratio:1/1.22;border-radius:46% 46% 34% 34%;background:linear-gradient(180deg,#d6a884,#b87658);position:relative;box-shadow:inset 0 -34px 0 rgba(67,105,95,.16)}
+    .abstract-person:before{content:"";position:absolute;width:44%;aspect-ratio:1;border-radius:50%;background:#8e5c49;top:9%;left:28%;box-shadow:0 42px 0 24px #f0c3a4}
+    .abstract-person:after{content:"جلسات آمنة وهادئة";position:absolute;right:-42px;bottom:22px;background:white;border:1px solid var(--line);border-radius:999px;padding:12px 16px;font-weight:900;color:var(--sage-dark);box-shadow:var(--soft-shadow);white-space:nowrap}
+    .floating-note{position:absolute;top:28px;right:26px;max-width:190px;background:rgba(255,255,255,.86);border:1px solid var(--line);padding:14px;border-radius:22px;box-shadow:var(--soft-shadow);font-weight:900;color:#40504c}
+    .floating-note small{display:block;color:var(--muted);font-weight:800}
+
+    .section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}
+    .section-title h2{font-size:clamp(1.7rem,3.5vw,3rem);line-height:1.25;letter-spacing:-.035em;margin-top:10px}
+    .section-title p{color:var(--muted);max-width:650px;margin-top:8px}
+
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{position:relative;min-height:250px;padding:24px;border-radius:var(--radius);background:rgba(255,255,255,.74);border:1px solid var(--line);box-shadow:var(--soft-shadow);overflow:hidden;transition:.25s ease}
+    .service:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .service-icon{width:58px;height:58px;border-radius:20px;background:var(--cream);display:grid;place-items:center;font-size:1.65rem;margin-bottom:18px}
+    .service h3{font-size:1.22rem;margin-bottom:8px}.service p{color:#66736f;font-size:.95rem}.service .num{position:absolute;left:18px;bottom:10px;font-size:4.5rem;font-weight:900;color:rgba(67,105,95,.07);line-height:1}
+
+    .about-wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px;align-items:stretch}
+    .about-card,.method-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--soft-shadow);padding:26px}
+    .about-card h3,.method-card h3{font-size:1.45rem;margin-bottom:10px}.about-card p{color:#60706b;margin-bottom:16px}
+    .credentials{display:grid;gap:10px}.credential{display:flex;align-items:center;gap:10px;padding:12px;border-radius:18px;background:#f7efe4;border:1px solid rgba(35,49,47,.06);font-weight:900}.credential span{width:34px;height:34px;border-radius:12px;background:white;display:grid;place-items:center}
+    .steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border-radius:20px;background:#fff8ed;border:1px solid rgba(35,49,47,.07)}.step b{width:38px;height:38px;border-radius:14px;background:var(--sage-dark);color:white;display:grid;place-items:center}.step p{color:var(--muted);font-size:.94rem}
+
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.program{border-radius:32px;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:var(--soft-shadow)}.program-top{min-height:150px;background:linear-gradient(135deg,rgba(118,155,143,.28),rgba(201,139,101,.22));padding:22px;display:flex;align-items:end}.program-top h3{font-size:1.35rem}.program-body{padding:22px}.program-body ul{list-style:none;display:grid;gap:8px;color:#64716d}.program-body li:before{content:"✓";color:var(--sage-dark);font-weight:900;margin-left:8px}
+
+    .booking{background:#20312e;color:white;border-radius:42px;padding:34px;display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.booking:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.06);left:-120px;top:-100px}.booking h2{font-size:clamp(1.7rem,3.5vw,3rem);line-height:1.25;margin:10px 0}.booking p{color:rgba(255,255,255,.74)}.booking-form{position:relative;display:grid;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:18px}.booking-form input,.booking-form select,.booking-form textarea{width:100%;border:none;outline:none;border-radius:18px;background:rgba(255,255,255,.94);padding:14px 16px;font-family:inherit;color:var(--ink)}.booking-form textarea{min-height:96px;resize:vertical}.booking-form .btn{background:#f4d5bb;color:#20312e}
+
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.quote{background:rgba(255,255,255,.76);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--soft-shadow)}.quote p{color:#5e6b67}.quote strong{display:block;margin-top:16px}.stars{color:#c98b65;margin-bottom:8px}
+
+    .faq{display:grid;gap:12px;max-width:900px;margin-inline:auto}.faq-item{border:1px solid var(--line);border-radius:22px;background:var(--paper);overflow:hidden;box-shadow:0 10px 24px rgba(35,49,47,.05)}.faq-q{width:100%;border:none;background:transparent;padding:18px 20px;display:flex;justify-content:space-between;gap:14px;font-family:inherit;font-weight:900;font-size:1rem;cursor:pointer;text-align:right;color:var(--ink)}.faq-a{display:none;padding:0 20px 18px;color:var(--muted)}.faq-item.active .faq-a{display:block}.faq-item.active .plus{transform:rotate(45deg)}.plus{transition:.2s ease;font-size:1.3rem}
+
+    footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center}.whatsapp{position:fixed;left:20px;bottom:20px;z-index:60;min-height:56px;padding:0 18px;border-radius:999px;background:#25d366;color:white;display:inline-flex;align-items:center;gap:10px;font-weight:900;box-shadow:0 18px 40px rgba(37,211,102,.32)}
+
+    @media(max-width:920px){.hero-grid,.about-wrap,.booking{grid-template-columns:1fr}.services-grid,.programs,.testimonials{grid-template-columns:1fr 1fr}.portrait-frame{height:440px}.links{position:absolute;top:74px;right:16px;left:16px;background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:16px;display:none;flex-direction:column;align-items:stretch}.links.open{display:flex}.menu-btn{display:block}}
+    @media(max-width:620px){.section{padding:58px 0}.hero{padding-top:38px}.hero-actions,.trust-row{flex-direction:column}.btn,.trust-item{width:100%}.services-grid,.programs,.testimonials{grid-template-columns:1fr}.section-head{display:block}.portrait-frame{height:360px}.booking{padding:24px;border-radius:30px}.abstract-person:after{right:-18px;font-size:.82rem}.whatsapp{right:16px;left:16px;justify-content:center}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#home" aria-label="الرئيسية">
+        <span class="logo-mark">ن</span>
+        <span>نور للاستشارات<small>صحة نفسية وإرشاد أسري</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      <div class="links" id="navLinks">
+        <a href="#services">الخدمات</a>
+        <a href="#about">عن الأخصائية</a>
+        <a href="#programs">البرامج</a>
+        <a href="#booking">الحجز</a>
+        <a href="#faq">الأسئلة</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="pill">🌿 مساحة آمنة للفهم والتغيير</span>
+        <h1>رحلتك نحو الهدوء تبدأ بخطوة <span>واعية</span></h1>
+        <p>بورتفليو شخصي لأخصائية نفسية وتربية إيجابية وإرشاد أسري، يعرض الخبرات والخدمات بطريقة واضحة تساعد الزائر على فهم الخدمة وحجز الموعد بسهولة.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking">احجز استشارة الآن</a>
+          <a class="btn btn-soft" href="#services">استكشف الخدمات</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item">+1200<small>جلسة واستشارة</small></div>
+          <div class="trust-item">+8 سنوات<small>خبرة عملية</small></div>
+          <div class="trust-item">أونلاين / حضوري<small>مرونة في المواعيد</small></div>
+        </div>
+      </div>
+
+      <div class="portrait-card" aria-label="بطاقة تعريفية">
+        <div class="floating-note">جلسات بسرية تامة<small>استماع — فهم — خطة</small></div>
+        <div class="portrait-frame">
+          <div class="abstract-person" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="pill">الخدمات</span>
+          <h2>خدمات واضحة تناسب احتياج الزائر</h2>
+          <p>تقسيم بسيط يساعد العميل على اختيار الخدمة المناسبة بدون تعقيد أو تشتت.</p>
+        </div>
+      </div>
+      <div class="services-grid">
+        <article class="service"><div class="service-icon">🧠</div><h3>الصحة النفسية</h3><p>جلسات دعم نفسي، فهم المشاعر، التعامل مع الضغوط، وبناء خطوات عملية للتحسن.</p><span class="num">01</span></article>
+        <article class="service"><div class="service-icon">👨‍👩‍👧</div><h3>الإرشاد الأسري</h3><p>تحسين التواصل داخل الأسرة، إدارة الخلافات، وبناء علاقة أكثر هدوءًا واحترامًا.</p><span class="num">02</span></article>
+        <article class="service"><div class="service-icon">🌱</div><h3>التربية الإيجابية</h3><p>إرشاد للأمهات والآباء لفهم سلوك الطفل ووضع حدود صحية بدون عنف أو ضغط.</p><span class="num">03</span></article>
+        <article class="service"><div class="service-icon">💬</div><h3>استشارات زوجية</h3><p>مساعدة الطرفين على فهم أنماط الحوار، تقليل التوتر، وبناء حلول عملية.</p><span class="num">04</span></article>
+        <article class="service"><div class="service-icon">🪞</div><h3>لغة الجسد</h3><p>قراءة السلوك غير اللفظي وفهم الانطباعات والرسائل الاجتماعية بشكل علمي مبسط.</p><span class="num">05</span></article>
+        <article class="service"><div class="service-icon">🤝</div><h3>علم النفس الاجتماعي</h3><p>فهم العلاقات، التأثير الاجتماعي، مهارات التواصل، وبناء الثقة في التعاملات اليومية.</p><span class="num">06</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container about-wrap">
+      <article class="about-card">
+        <span class="pill">عن الأخصائية</span>
+        <h3>أ. داليا محمود</h3>
+        <p>أخصائية صحة نفسية وإرشاد أسري وتربية إيجابية، تهتم بتقديم تجربة استشارية إنسانية وواضحة تساعد العميل على فهم نفسه وعلاقاته واتخاذ خطوات عملية للتغيير.</p>
+        <div class="credentials">
+          <div class="credential"><span>🎓</span> ماجستير صحة نفسية وإرشاد</div>
+          <div class="credential"><span>📜</span> دبلومات متخصصة في التربية الإيجابية</div>
+          <div class="credential"><span>🎤</span> ورش عمل ومحاضرات للأسر والمربين</div>
+          <div class="credential"><span>🔒</span> التزام كامل بالسرية والخصوصية</div>
+        </div>
+      </article>
+      <article class="method-card">
+        <span class="pill">طريقة العمل</span>
+        <h3>رحلة بسيطة من 4 خطوات</h3>
+        <div class="steps">
+          <div class="step"><b>1</b><div><h4>تحديد الاحتياج</h4><p>فهم سبب التواصل وتحديد نوع الجلسة الأنسب.</p></div></div>
+          <div class="step"><b>2</b><div><h4>جلسة تقييم أولية</h4><p>استماع منظم وتحليل أولي للمشكلة والسياق.</p></div></div>
+          <div class="step"><b>3</b><div><h4>خطة إرشادية</h4><p>خطوات واضحة وتمارين مناسبة بين الجلسات.</p></div></div>
+          <div class="step"><b>4</b><div><h4>متابعة وتحسين</h4><p>قياس التقدم وتعديل الخطة حسب احتياج الحالة.</p></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="programs">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="pill">البرامج</span>
+          <h2>برامج وجلسات يمكن عرضها بشكل منظم</h2>
+          <p>يمكن تعديل هذه الباقات حسب نظام الدكتورة سواء جلسات فردية أو برامج شهرية.</p>
+        </div>
+      </div>
+      <div class="programs">
+        <article class="program"><div class="program-top"><h3>جلسة فردية</h3></div><div class="program-body"><ul><li>جلسة 60 دقيقة</li><li>تحديد المشكلة بوضوح</li><li>توصيات عملية بعد الجلسة</li></ul></div></article>
+        <article class="program"><div class="program-top"><h3>برنامج أسري</h3></div><div class="program-body"><ul><li>4 جلسات متابعة</li><li>تحسين التواصل العائلي</li><li>خطة تطبيق داخل البيت</li></ul></div></article>
+        <article class="program"><div class="program-top"><h3>تربية إيجابية</h3></div><div class="program-body"><ul><li>فهم سلوك الطفل</li><li>بدائل العقاب والصراخ</li><li>نظام حدود وروتين</li></ul></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="booking">
+    <div class="container">
+      <div class="booking">
+        <div>
+          <span class="pill">الحجز</span>
+          <h2>احجز موعدك بسهولة</h2>
+          <p>املأ البيانات وسيتم تجهيز رسالة واتساب تلقائيًا باسم العميل ونوع الاستشارة المطلوبة.</p>
+        </div>
+        <form class="booking-form" id="bookingForm">
+          <input id="name" type="text" placeholder="الاسم" required />
+          <select id="service" required>
+            <option value="">اختار نوع الاستشارة</option>
+            <option>استشارة نفسية</option>
+            <option>إرشاد أسري</option>
+            <option>تربية إيجابية</option>
+            <option>استشارة زوجية</option>
+            <option>لغة الجسد وعلم النفس الاجتماعي</option>
+          </select>
+          <textarea id="message" placeholder="اكتب ملاحظة مختصرة اختياريًا"></textarea>
+          <button class="btn" type="submit">إرسال طلب الحجز على واتساب</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="pill">آراء العملاء</span>
+          <h2>ثقة وراحة من التجربة الأولى</h2>
+        </div>
+      </div>
+      <div class="testimonials">
+        <article class="quote"><div class="stars">★★★★★</div><p>طريقة الكلام هادئة ومنظمة، خرجت من الجلسة وأنا فاهمة أتصرف إزاي.</p><strong>عميلة سابقة</strong></article>
+        <article class="quote"><div class="stars">★★★★★</div><p>ساعدتني أفهم ابني بدل ما أتعامل مع السلوك بعصبية.</p><strong>أم لطفلين</strong></article>
+        <article class="quote"><div class="stars">★★★★★</div><p>الموقع واضح وسهل، عرفت الخدمات وحجزت بدون ما أحتاج أسأل كتير.</p><strong>زائر للموقع</strong></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title" style="text-align:center;margin-bottom:28px">
+        <span class="pill">أسئلة شائعة</span>
+        <h2>إجابات سريعة قبل الحجز</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-q">هل الجلسات أونلاين؟ <span class="plus">+</span></button><div class="faq-a">نعم، يمكن توفير جلسات أونلاين أو حضوري حسب المتاح.</div></div>
+        <div class="faq-item"><button class="faq-q">هل البيانات سرية؟ <span class="plus">+</span></button><div class="faq-a">نعم، جميع التفاصيل التي يتم مشاركتها في الجلسة يتم التعامل معها بسرية تامة.</div></div>
+        <div class="faq-item"><button class="faq-q">كم مدة الجلسة؟ <span class="plus">+</span></button><div class="faq-a">عادة من 45 إلى 60 دقيقة، ويمكن تعديل ذلك حسب نوع الخدمة.</div></div>
+        <div class="faq-item"><button class="faq-q">هل الموقع مناسب للدورات أيضًا؟ <span class="plus">+</span></button><div class="faq-a">نعم، يمكن إضافة صفحة أو قسم لورش العمل والدورات وشهادات الحضور.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 نور للاستشارات — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/201015365340" target="_blank" rel="noopener">☏ تواصل واتساب</a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        document.querySelectorAll('.faq-item').forEach(i => { if(i !== item) i.classList.remove('active'); });
+        item.classList.toggle('active');
+      });
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const service = document.getElementById('service').value;
+      const note = document.getElementById('message').value.trim();
+      const text = `مرحبًا، أنا ${name}. أرغب في حجز ${service}.${note ? ' ملاحظة: ' + note : ''}`;
+      window.open(`https://wa.me/201015365340?text=${encodeURIComponent(text)}`, '_blank');
+    });
+  </script>
+</body>
+</html>

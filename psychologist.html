@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بورتفوليو عربي عصري لأخصائية نفسية وإرشاد أسري وتربية إيجابية." />
+  <title>بورتفوليو أخصائية نفسية</title>
+
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --card: #ffffff;
+      --text: #24302d;
+      --muted: #6e7b76;
+      --primary: #6f9d8f;
+      --primary-dark: #406f63;
+      --secondary: #d9bfa3;
+      --soft: #edf5f1;
+      --line: rgba(36, 48, 45, 0.11);
+      --shadow: 0 22px 60px rgba(36, 48, 45, 0.10);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(111, 157, 143, 0.22), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(217, 191, 163, 0.28), transparent 34%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea { font: inherit; }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      max-width: 690px;
+      margin-bottom: 32px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      color: var(--primary-dark);
+      font-size: 0.86rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.35;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 5.6vw, 5rem);
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.6vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 900;
+      transition: 220ms ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary-dark);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(64, 111, 99, 0.24);
+    }
+
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(64, 111, 99, 0.32); }
+
+    .btn-light {
+      background: rgba(255,255,255,0.76);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-light:hover { transform: translateY(-3px); background: #fff; }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 12px 0;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 244, 239, 0.72);
+      border-bottom: 1px solid rgba(36,48,45,0.07);
+    }
+
+    .nav {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 14px 0 10px;
+      box-shadow: 0 10px 30px rgba(36,48,45,0.055);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 10px 24px rgba(64,111,99,0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      background: var(--soft);
+      color: var(--primary-dark);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--primary-dark);
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .hero {
+      padding: 76px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+    }
+
+    .hero-copy > p {
+      max-width: 650px;
+      font-size: 1.12rem;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+    }
+
+    .trust-card {
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+    }
+
+    .trust-card strong {
+      display: block;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .trust-card span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .profile-card {
+      position: relative;
+      border-radius: 42px;
+      padding: 18px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 30px;
+      background:
+        linear-gradient(160deg, rgba(111,157,143,0.18), rgba(217,191,163,0.20)),
+        url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80') center/cover;
+      filter: saturate(0.86);
+    }
+
+    .profile-content {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: end;
+      padding: 24px;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .profile-content::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(25,42,38,0.86), rgba(25,42,38,0.04) 62%);
+    }
+
+    .profile-info {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      color: #fff;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .profile-info p { color: rgba(255,255,255,0.82); }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #9df2c5;
+      box-shadow: 0 0 0 6px rgba(157,242,197,0.18);
+    }
+
+    .floating-note {
+      position: absolute;
+      top: 34px;
+      left: 34px;
+      z-index: 3;
+      max-width: 240px;
+      padding: 15px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(36,48,45,0.12);
+    }
+
+    .floating-note strong {
+      color: var(--primary-dark);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .floating-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .quote-card {
+      min-height: 100%;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(150deg, var(--primary-dark), #294d45);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card .quote-mark {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.13);
+      font-size: 2rem;
+      margin-bottom: 32px;
+    }
+
+    .quote-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+
+    .quote-card p { color: rgba(255,255,255,0.78); }
+
+    .about-text {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .info-item, .service-card, .program-card, .price-card, .testimonial, .faq-item {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(36,48,45,0.055);
+    }
+
+    .info-item {
+      padding: 18px;
+    }
+
+    .info-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--text);
+      margin-top: 5px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 22px;
+      transition: 220ms ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(64,111,99,0.25);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.13rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step {
+      position: relative;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.64);
+      border: 1px solid var(--line);
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary-dark);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .program-card {
+      overflow: hidden;
+    }
+
+    .program-img {
+      height: 190px;
+      background: linear-gradient(135deg, rgba(111,157,143,0.25), rgba(217,191,163,0.32));
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+    }
+
+    .program-body {
+      padding: 20px;
+    }
+
+    .program-body h3 {
+      margin-bottom: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tab-btn {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.74);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: 180ms ease;
+    }
+
+    .tab-btn.active {
+      background: var(--primary-dark);
+      color: #fff;
+      border-color: var(--primary-dark);
+    }
+
+    .tab-panel {
+      display: none;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 34px rgba(36,48,45,0.055);
+    }
+
+    .tab-panel.active { display: block; }
+
+    .tab-panel ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tab-panel li {
+      position: relative;
+      padding-right: 28px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .tab-panel li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: var(--primary-dark);
+      font-weight: 900;
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border-color: rgba(64,111,99,0.30);
+      box-shadow: var(--shadow);
+      transform: translateY(-8px);
+    }
+
+    .price-tag {
+      display: inline-flex;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    .price-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .price-card .amount {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin: 14px 0;
+    }
+
+    .price-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 22px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .testimonial {
+      padding: 22px;
+    }
+
+    .stars {
+      color: #d69b33;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 16px;
+      color: var(--text);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      cursor: pointer;
+      text-align: right;
+      font-weight: 900;
+    }
+
+    .faq-q span:last-child {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--primary-dark);
+      flex: 0 0 auto;
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px;
+    }
+
+    .faq-item.open .faq-a { display: block; }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      padding: 22px;
+      border-radius: 38px;
+      background: linear-gradient(135deg, rgba(64,111,99,0.94), rgba(41,77,69,0.98));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p { color: rgba(255,255,255,0.76); }
+
+    .contact-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list a, .contact-list div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-weight: 800;
+    }
+
+    form {
+      background: rgba(255,255,255,0.96);
+      border-radius: 28px;
+      padding: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    label {
+      color: var(--text);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 16px;
+      padding: 13px 14px;
+      color: var(--text);
+      outline: none;
+      transition: 180ms ease;
+    }
+
+    textarea { min-height: 118px; resize: vertical; }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(64,111,99,0.42);
+      box-shadow: 0 0 0 4px rgba(111,157,143,0.13);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .form-message {
+      min-height: 24px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(37,211,102,0.34);
+      font-size: 1.55rem;
+      transition: 220ms ease;
+    }
+
+    .whatsapp-float:hover { transform: translateY(-4px) scale(1.04); }
+
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid, .programs-grid, .prices, .testimonials {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .profile-content { min-height: 430px; }
+    }
+
+    @media (max-width: 720px) {
+      .nav { border-radius: 26px; height: auto; padding: 10px; align-items: start; }
+      .menu-btn { display: grid; place-items: center; }
+      .nav-links {
+        position: absolute;
+        top: 88px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        background: rgba(255,255,255,0.96);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { text-align: center; }
+      .nav .btn { display: none; }
+
+      .hero { padding-top: 48px; }
+      .section { padding: 58px 0; }
+      .trust-row, .info-list, .services-grid, .programs-grid, .prices, .testimonials, .process, .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured { transform: none; }
+      .floating-note { position: relative; inset: auto; margin-bottom: 12px; max-width: none; }
+      .profile-card::before { inset: 12px; }
+      .profile-content { min-height: 420px; padding: 16px; }
+      .contact-card { padding: 14px; border-radius: 30px; }
+      .whatsapp-float { width: 54px; height: 54px; left: 14px; bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <div class="container">
+      <nav class="nav" aria-label="القائمة الرئيسية">
+        <a class="logo" href="#home" aria-label="العودة للرئيسية">
+          <span class="logo-mark">ن</span>
+          <span>د. ندى أحمد</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">من أنا</a>
+          <a href="#services">الخدمات</a>
+          <a href="#programs">البرامج</a>
+          <a href="#prices">الباقات</a>
+          <a href="#faq">الأسئلة</a>
+          <a href="#contact">تواصل</a>
+        </div>
+
+        <a class="btn btn-primary" href="#contact">حجز استشارة</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">🌿 مساحة آمنة للفهم والتغيير</span>
+          <h1>رحلة نفسية أكثر وعيًا وهدوءًا لك ولأسرتك</h1>
+          <p>
+            أخصائية صحة نفسية وإرشاد أسري وتربية إيجابية، أساعدك على فهم المشاعر، تحسين العلاقات، وبناء أساليب تواصل أكثر اتزانًا داخل الأسرة والعمل والحياة اليومية.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">ابدأ بحجز استشارة</a>
+            <a class="btn btn-light" href="#services">استكشف الخدمات</a>
+          </div>
+
+          <div class="trust-row" aria-label="أرقام الثقة">
+            <div class="trust-card"><strong>+8</strong><span>سنوات خبرة</span></div>
+            <div class="trust-card"><strong>+1200</strong><span>جلسة واستشارة</span></div>
+            <div class="trust-card"><strong>95%</strong><span>رضا العملاء</span></div>
+          </div>
+        </div>
+
+        <div class="profile-card" aria-label="بطاقة شخصية">
+          <div class="floating-note">
+            <strong>جلسات أونلاين وحضوري</strong>
+            <span>مواعيد مرنة وسرية كاملة في كل الجلسات.</span>
+          </div>
+          <div class="profile-content">
+            <div class="profile-info">
+              <div class="status"><span class="status-dot"></span> متاحة لاستقبال حجوزات جديدة</div>
+              <h3>د. ندى أحمد</h3>
+              <p>أخصائية نفسية وتربية إيجابية | صحة نفسية وإرشاد أسري | لغة الجسد وعلم النفس الاجتماعي</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <h3>الوعي ليس رفاهية، بل بداية حقيقية للتغيير.</h3>
+          <p>
+            أؤمن أن كل شخص يحتاج إلى مساحة آمنة يسمع فيها نفسه بوضوح، ويفهم ما يمر به دون أحكام أو ضغط.
+          </p>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">من أنا</span>
+            <h2>خبرة تجمع بين الدعم النفسي والإرشاد العملي</h2>
+            <p>
+              أعمل مع الأفراد والأسر لمساعدتهم على تجاوز التحديات النفسية والعلاقاتية بأسلوب علمي بسيط، مع التركيز على التربية الإيجابية، فهم أنماط التواصل، وتحليل السلوك ولغة الجسد.
+            </p>
+          </div>
+
+          <div class="about-text">
+            <p>
+              هدفي أن تكون الجلسة واضحة ومفيدة، لا تعتمد فقط على الاستماع، بل على فهم المشكلة ووضع خطوات عملية مناسبة لطبيعة كل حالة.
+            </p>
+            <div class="info-list">
+              <div class="info-item"><span>التخصص الأساسي</span><strong>الصحة النفسية والإرشاد الأسري</strong></div>
+              <div class="info-item"><span>مجالات العمل</span><strong>التربية الإيجابية ولغة الجسد</strong></div>
+              <div class="info-item"><span>نوع الجلسات</span><strong>فردية، أسرية، أونلاين</strong></div>
+              <div class="info-item"><span>أسلوب العمل</span><strong>هادئ، عملي، مبني على الثقة</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">الخدمات</span>
+          <h2>خدمات مصممة لتناسب احتياجك</h2>
+          <p>اختاري الخدمة الأقرب لتحديك الحالي، ويمكن تحديد الأنسب لك أثناء التواصل الأول.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🧠</div>
+            <h3>استشارات نفسية فردية</h3>
+            <p>دعم لفهم المشاعر، القلق، الضغط، التشتت، وصعوبة اتخاذ القرار.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">👨‍👩‍👧</div>
+            <h3>إرشاد أسري</h3>
+            <p>تحسين التواصل داخل الأسرة وتقليل الخلافات وبناء مساحة حوار صحية.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🌱</div>
+            <h3>التربية الإيجابية</h3>
+            <p>خطوات عملية للتعامل مع الأطفال دون عنف أو تهديد أو شعور دائم بالذنب.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💬</div>
+            <h3>استشارات علاقات</h3>
+            <p>فهم أنماط العلاقات، الحدود الصحية، والتعامل مع الخلافات المتكررة.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🪞</div>
+            <h3>لغة الجسد</h3>
+            <p>فهم الإشارات غير اللفظية وتطوير الحضور والتواصل الاجتماعي بثقة.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🎤</div>
+            <h3>ورش عمل ومحاضرات</h3>
+            <p>برامج للشركات، المدارس، والمراكز حول الصحة النفسية والتواصل.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">طريقة العمل</span>
+          <h2>رحلة واضحة من أول تواصل</h2>
+          <p>كل خطوة مصممة لتجعل التجربة سهلة ومريحة بدون تعقيد.</p>
+        </div>
+
+        <div class="process">
+          <div class="step"><div class="step-number">1</div><h3>تواصل أولي</h3><p>تحديد نوع الاحتياج والموعد المناسب.</p></div>
+          <div class="step"><div class="step-number">2</div><h3>جلسة تقييم</h3><p>فهم السياق والتحديات الرئيسية.</p></div>
+          <div class="step"><div class="step-number">3</div><h3>خطة مناسبة</h3><p>اقتراح خطوات عملية حسب الحالة.</p></div>
+          <div class="step"><div class="step-number">4</div><h3>متابعة وتطوير</h3><p>قياس التحسن وتعديل الخطة عند الحاجة.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">البرامج وورش العمل</span>
+          <h2>برامج تدريبية بلغة بسيطة وتأثير عملي</h2>
+          <p>مناسبة للأفراد، الأمهات، المدارس، والفرق التي تحتاج إلى وعي نفسي وتواصل أفضل.</p>
+        </div>
+
+        <div class="programs-grid">
+          <article class="program-card">
+            <div class="program-img">🌿</div>
+            <div class="program-body">
+              <h3>أساسيات التربية الإيجابية</h3>
+              <p>برنامج عملي لفهم احتياجات الطفل والتعامل مع السلوكيات اليومية.</p>
+            </div>
+          </article>
+          <article class="program-card">
+            <div class="program-img">🤝</div>
+            <div class="program-body">
+              <h3>فن التواصل الأسري</h3>
+              <p>ورشة تساعد الأسرة على الحوار، الحدود، وتقليل الصدامات المتكررة.</p>
+            </div>
+          </article>
+          <article class="program-card">
+            <div class="program-img">🧩</div>
+            <div class="program-body">
+              <h3>فهم لغة الجسد</h3>
+              <p>تدريب مبسط لفهم الرسائل غير اللفظية وتطوير الثقة في التواصل.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">تفاصيل أكثر</span>
+          <h2>كل خدمة لها هدف واضح</h2>
+          <p>اختاري التصنيف لمعرفة أهم ما يمكن العمل عليه خلال الجلسات.</p>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="tab-btn active" data-tab="tab1">الصحة النفسية</button>
+          <button class="tab-btn" data-tab="tab2">الإرشاد الأسري</button>
+          <button class="tab-btn" data-tab="tab3">التربية الإيجابية</button>
+          <button class="tab-btn" data-tab="tab4">لغة الجسد</button>
+        </div>
+
+        <div class="tab-panel active" id="tab1">
+          <h3>الصحة النفسية</h3>
+          <p>جلسات تساعد على فهم الضغط النفسي والقلق والمشاعر المتداخلة بطريقة أعمق وأكثر هدوءًا.</p>
+          <ul>
+            <li>إدارة القلق والضغط اليومي.</li>
+            <li>فهم أنماط التفكير المتكررة.</li>
+            <li>تطوير الوعي الذاتي والاتزان الانفعالي.</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="tab2">
+          <h3>الإرشاد الأسري</h3>
+          <p>دعم عملي لتحسين جودة العلاقات داخل الأسرة وبناء تواصل أوضح بين أفرادها.</p>
+          <ul>
+            <li>تقليل الخلافات المتكررة.</li>
+            <li>بناء حدود صحية داخل العلاقات.</li>
+            <li>تحسين لغة الحوار والتفاهم.</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="tab3">
+          <h3>التربية الإيجابية</h3>
+          <p>مساعدة الأمهات والآباء على فهم سلوك الطفل واستخدام بدائل تربوية أكثر وعيًا.</p>
+          <ul>
+            <li>التعامل مع العناد ونوبات الغضب.</li>
+            <li>بناء علاقة آمنة مع الطفل.</li>
+            <li>تقليل الصراخ والعقاب العشوائي.</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="tab4">
+          <h3>لغة الجسد وعلم النفس الاجتماعي</h3>
+          <p>فهم أعمق للتواصل غير اللفظي والانطباعات الأولى والحضور الشخصي.</p>
+          <ul>
+            <li>قراءة الإشارات غير اللفظية بشكل متزن.</li>
+            <li>تطوير الثقة في المقابلات والاجتماعات.</li>
+            <li>تحسين مهارات التواصل الاجتماعي.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prices">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">الباقات</span>
+          <h2>اختاري ما يناسب احتياجك الحالي</h2>
+          <p>يمكن تعديل تفاصيل الباقات حسب نوع الجلسة والمدة وطريقة الحضور.</p>
+        </div>
+
+        <div class="prices">
+          <article class="price-card">
+            <span class="price-tag">جلسة واحدة</span>
+            <h3>استشارة فردية</h3>
+            <p>مناسبة لفهم مشكلة محددة والحصول على توجيه أولي.</p>
+            <div class="amount">حسب الموعد</div>
+            <ul>
+              <li>جلسة أونلاين أو حضوري</li>
+              <li>تحديد هدف واضح للجلسة</li>
+              <li>توصيات عملية بعد الجلسة</li>
+            </ul>
+            <a class="btn btn-light" href="#contact">احجزي الآن</a>
+          </article>
+
+          <article class="price-card featured">
+            <span class="price-tag">الأكثر طلبًا</span>
+            <h3>باقة متابعة</h3>
+            <p>مناسبة للتحديات التي تحتاج إلى خطة ومتابعة مستمرة.</p>
+            <div class="amount">4 جلسات</div>
+            <ul>
+              <li>خطة متابعة شخصية</li>
+              <li>مراجعة تقدم كل جلسة</li>
+              <li>تمارين بسيطة بين الجلسات</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">اختيار الباقة</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-tag">للجهات</span>
+            <h3>ورش ومحاضرات</h3>
+            <p>للشركات والمدارس والمراكز المهتمة بالصحة النفسية والتواصل.</p>
+            <div class="amount">حسب البرنامج</div>
+            <ul>
+              <li>موضوعات مخصصة</li>
+              <li>محتوى تفاعلي مبسط</li>
+              <li>إمكانية الحضور أو الأونلاين</li>
+            </ul>
+            <a class="btn btn-light" href="#contact">طلب عرض</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">آراء العملاء</span>
+          <h2>تجارب تعكس أثر الجلسات</h2>
+          <p>نماذج مختصرة لآراء يمكن استبدالها بآراء حقيقية عند تجهيز الموقع النهائي.</p>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>الجلسات ساعدتني أفهم نفسي بهدوء وأتعامل مع الضغط بطريقة أفضل.</p>
+            <strong>عميلة</strong>
+          </article>
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>استفدت جدًا في التعامل مع ابني بدون عصبية وبخطوات عملية بسيطة.</p>
+            <strong>أم لطفلين</strong>
+          </article>
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>الشرح كان واضحًا ومريحًا، وحسيت أن عندي خطة بدل التشتت.</p>
+            <strong>عميل</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">الأسئلة الشائعة</span>
+          <h2>إجابات سريعة قبل الحجز</h2>
+          <p>توضيح أهم النقاط التي قد يحتاجها الزائر قبل التواصل.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-q"><span>هل الجلسات سرية؟</span><span>−</span></button>
+            <div class="faq-a"><p>نعم، يتم التعامل مع كل المعلومات بسرية واحترام كامل لخصوصية العميل.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>هل يمكن الحجز أونلاين؟</span><span>+</span></button>
+            <div class="faq-a"><p>نعم، يمكن ترتيب جلسات أونلاين أو حضوري حسب المتاح والمناسب للحالة.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>كيف أعرف الخدمة المناسبة لي؟</span><span>+</span></button>
+            <div class="faq-a"><p>يمكنك إرسال رسالة مختصرة عن احتياجك وسيتم ترشيح نوع الجلسة أو البرنامج الأنسب.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>هل توجد جلسات للأسر؟</span><span>+</span></button>
+            <div class="faq-a"><p>نعم، توجد جلسات إرشاد أسري تساعد على تحسين الحوار وتقليل الصدامات داخل الأسرة.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-info">
+            <div>
+              <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.18);">تواصل وحجز</span>
+              <h2>احجزي استشارتك الأولى</h2>
+              <p>املئي البيانات وسيتم تجهيز رسالة واتساب تلقائيًا بالتفاصيل لتسهيل التواصل.</p>
+            </div>
+            <div class="contact-list">
+              <a href="https://wa.me/201000000000" target="_blank" rel="noopener">☏ واتساب: 01000000000</a>
+              <div>📍 القاهرة - جلسات أونلاين متاحة</div>
+              <div>⏰ المواعيد حسب الحجز المسبق</div>
+            </div>
+          </div>
+
+          <form id="bookingForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" name="name" type="text" placeholder="اكتبي اسمك" required>
+              </div>
+              <div class="field">
+                <label for="phone">رقم الهاتف</label>
+                <input id="phone" name="phone" type="tel" placeholder="رقم واتساب" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="service">نوع الخدمة</label>
+              <select id="service" name="service" required>
+                <option value="">اختاري الخدمة</option>
+                <option>استشارة نفسية فردية</option>
+                <option>إرشاد أسري</option>
+                <option>تربية إيجابية</option>
+                <option>لغة الجسد وعلم النفس الاجتماعي</option>
+                <option>ورشة أو محاضرة</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">رسالة مختصرة</label>
+              <textarea id="message" name="message" placeholder="اكتبي نبذة بسيطة عن سبب التواصل"></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">إرسال على واتساب</button>
+            <div class="form-message" id="formMessage" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">☏</a>
+
+  <footer>
+    <div class="container">© 2026 د. ندى أحمد — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    const sections = document.querySelectorAll('main section[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 140;
+        if (scrollY >= sectionTop) current = section.getAttribute('id');
+      });
+      navItems.forEach((item) => {
+        item.classList.toggle('active', item.getAttribute('href') === '#' + current);
+      });
+    });
+
+    document.querySelectorAll('.tab-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach((btn) => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach((panel) => panel.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.faq-q').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const icon = button.querySelector('span:last-child');
+        item.classList.toggle('open');
+        icon.textContent = item.classList.contains('open') ? '−' : '+';
+      });
+    });
+
+    const form = document.getElementById('bookingForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !phone || !service) {
+        formMessage.textContent = 'من فضلك املئي الاسم ورقم الهاتف ونوع الخدمة.';
+        return;
+      }
+
+      const text = `مرحبًا دكتورة، أريد حجز استشارة.%0Aالاسم: ${encodeURIComponent(name)}%0Aرقم الهاتف: ${encodeURIComponent(phone)}%0Aالخدمة: ${encodeURIComponent(service)}%0Aالرسالة: ${encodeURIComponent(message || 'لا توجد رسالة إضافية')}`;
+      const whatsappNumber = '201000000000';
+      formMessage.textContent = 'سيتم تحويلك إلى واتساب الآن.';
+      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+    });
+  </script>
+</body>
+</html>
