@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nexa Social Agency | إدارة السوشيال ميديا</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tahoma", "Arial", sans-serif;
+    }
+
+    :root {
+      --primary: #5b4bff;
+      --secondary: #ff7a3d;
+      --dark: #101828;
+      --gray: #667085;
+      --light: #f7f7fb;
+      --white: #ffffff;
+      --border: #e4e7ec;
+      --green: #12b76a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 15px 35px rgba(91, 75, 255, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #4739e8;
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--dark);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      color: var(--gray);
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: var(--dark);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(91, 75, 255, 0.13), transparent 34%),
+        radial-gradient(circle at 10% 80%, rgba(255, 122, 61, 0.13), transparent 34%),
+        #fbfbff;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 32px rgba(16, 24, 40, 0.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.22;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(16, 24, 40, 0.05);
+    }
+
+    .stat-box strong {
+      display: block;
+      color: var(--primary);
+      font-size: 27px;
+      margin-bottom: 2px;
+    }
+
+    .stat-box span {
+      color: var(--gray);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image {
+      height: 560px;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 28px 80px rgba(16, 24, 40, 0.16);
+      border: 8px solid #fff;
+    }
+
+    .hero-image img {
+      height: 100%;
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -18px;
+      bottom: 36px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+      width: 245px;
+      box-shadow: 0 25px 55px rgba(16, 24, 40, 0.16);
+    }
+
+    .floating-card span {
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 30px;
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    .progress {
+      margin-top: 14px;
+      background: #eef2ff;
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress div {
+      width: 82%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    /* Sections */
+    section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-head p {
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-img {
+      height: 460px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(16, 24, 40, 0.12);
+    }
+
+    .about-img img {
+      height: 100%;
+    }
+
+    .about-content h2 {
+      font-size: 40px;
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--light);
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .point b {
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .point span {
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    /* Services */
+    .services {
+      background: var(--light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 28px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 55px rgba(16, 24, 40, 0.09);
+      border-color: rgba(91, 75, 255, 0.35);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: #f1efff;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+    }
+
+    /* Portfolio */
+    .portfolio-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .tab {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--gray);
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: 0.3s;
+    }
+
+    .tab.active,
+    .tab:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      overflow: hidden;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 55px rgba(16, 24, 40, 0.1);
+    }
+
+    .work-img {
+      height: 245px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .work-img img {
+      height: 100%;
+      transition: 0.4s;
+    }
+
+    .work-card:hover .work-img img {
+      transform: scale(1.06);
+    }
+
+    .tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .work-body {
+      padding: 22px;
+    }
+
+    .work-body h3 {
+      margin-bottom: 7px;
+      font-size: 21px;
+    }
+
+    .work-body p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* Case Studies */
+    .cases {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .cases .section-head p {
+      color: #cbd5e1;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .case-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .case-img {
+      height: 270px;
+    }
+
+    .case-img img {
+      height: 100%;
+    }
+
+    .case-body {
+      padding: 28px;
+    }
+
+    .case-body h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .case-body p {
+      color: #cbd5e1;
+      margin-bottom: 22px;
+    }
+
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .case-result {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .case-result strong {
+      display: block;
+      color: #fff;
+      font-size: 23px;
+    }
+
+    .case-result span {
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(16, 24, 40, 0.05);
+    }
+
+    .step-num {
+      width: 45px;
+      height: 45px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: var(--light);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 25px 65px rgba(91, 75, 255, 0.16);
+      transform: translateY(-10px);
+    }
+
+    .popular {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: var(--secondary);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .price-card h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .price-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 34px;
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .price span {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .features li {
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    /* Testimonials */
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .test-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 16px 40px rgba(16, 24, 40, 0.05);
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .test-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .client img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    .client strong {
+      display: block;
+    }
+
+    .client span {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* Contact */
+    .contact {
+      background:
+        radial-gradient(circle at top right, rgba(91, 75, 255, 0.12), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(255, 122, 61, 0.12), transparent 34%),
+        #fbfbff;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 36px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 36px;
+      box-shadow: 0 26px 80px rgba(16, 24, 40, 0.09);
+    }
+
+    .contact-info h2 {
+      font-size: 42px;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: var(--gray);
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list div {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      outline: none;
+      font-size: 15px;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      background: var(--dark);
+      color: #cbd5e1;
+      padding: 34px 0;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 29px;
+      box-shadow: 0 16px 40px rgba(37, 211, 102, 0.35);
+      z-index: 999;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 450px;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .test-grid,
+      .case-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 76px;
+        right: -100%;
+        width: 84%;
+        height: calc(100vh - 76px);
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        border-left: 1px solid var(--border);
+        transition: 0.3s;
+        box-shadow: -25px 0 60px rgba(16, 24, 40, 0.1);
+      }
+
+      nav ul.active {
+        right: 0;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .test-grid,
+      .case-grid,
+      .case-results,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-card {
+        right: 14px;
+        bottom: 18px;
+        width: 220px;
+      }
+
+      .about-content h2,
+      .contact-info h2 {
+        font-size: 32px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .contact-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <div class="logo-mark">NX</div>
+        <span>Nexa Social</span>
+      </a>
+
+      <nav>
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <ul id="navMenu">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#portfolio">الأعمال</a></li>
+          <li><a href="#cases">النتائج</a></li>
+          <li><a href="#pricing">الباقات</a></li>
+          <li><a href="#contact" class="btn btn-primary">ابدأ الآن</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="badge">وكالة متخصصة في إدارة السوشيال ميديا</div>
+
+        <h1>
+          نبني حضورًا رقميًا يحول جمهورك إلى
+          <span>عملاء فعليين</span>
+        </h1>
+
+        <p>
+          Nexa Social هي وكالة إدارة سوشيال ميديا تساعد الشركات، المطاعم، العيادات،
+          والمتاجر الإلكترونية على صناعة محتوى مؤثر، إدارة الحسابات باحتراف،
+          وتحسين النتائج من خلال خطط واضحة وتقارير شهرية.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary">شاهد أعمالنا</a>
+          <a href="#contact" class="btn btn-outline">اطلب استشارة مجانية</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-box">
+            <strong>+85</strong>
+            <span>عميل تم خدمته</span>
+          </div>
+
+          <div class="stat-box">
+            <strong>+6M</strong>
+            <span>وصول شهري للحملات</span>
+          </div>
+
+          <div class="stat-box">
+            <strong>+3,400</strong>
+            <span>قطعة محتوى منشورة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image">
+          <img 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" 
+            alt="فريق تسويق يعمل على خطة سوشيال ميديا"
+          />
+        </div>
+
+        <div class="floating-card">
+          <span>متوسط نمو التفاعل</span>
+          <strong>+187%</strong>
+          <div class="progress">
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about-grid">
+
+      <div class="about-img">
+        <img 
+          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80" 
+          alt="اجتماع فريق تسويق رقمي"
+        />
+      </div>
+
+      <div class="about-content">
+        <div class="section-label">من نحن</div>
+
+        <h2>لسنا مجرد فريق ينشر بوستات، نحن شريك نمو رقمي.</h2>
+
+        <p>
+          نعمل مع البراندات من مرحلة فهم النشاط والجمهور، ثم نبني خطة محتوى شهرية
+          تشمل الأفكار، التصميمات، النصوص، الريلز، وجدولة النشر.
+        </p>
+
+        <p>
+          هدفنا أن تكون صفحة شركتك واضحة، نشطة، ومقنعة للعملاء، مع متابعة مستمرة
+          للأداء وتحسين المحتوى بناءً على الأرقام.
+        </p>
+
+        <div class="about-points">
+          <div class="point">
+            <b>✓</b>
+            <span>خطة محتوى شهرية مبنية على أهداف النشاط.</span>
+          </div>
+
+          <div class="point">
+            <b>✓</b>
+            <span>تصميمات حديثة متوافقة مع هوية البراند.</span>
+          </div>
+
+          <div class="point">
+            <b>✓</b>
+            <span>تقارير أداء واضحة تساعدك على اتخاذ قرار أفضل.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">خدماتنا</div>
+        <h2>حلول كاملة لإدارة حضورك الرقمي</h2>
+        <p>
+          نغطي جميع مراحل إدارة السوشيال ميديا بداية من التخطيط وحتى التقارير والتحسين.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>إدارة حسابات السوشيال ميديا</h3>
+          <p>
+            إدارة صفحات فيسبوك، إنستجرام، تيك توك، ولينكدإن من حيث النشر والمتابعة والتفاعل.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✍️</div>
+          <h3>كتابة المحتوى</h3>
+          <p>
+            كتابة منشورات احترافية، أفكار حملات، سكريبتات ريلز، وكابشن مناسب لهوية البراند.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>تصميمات سوشيال ميديا</h3>
+          <p>
+            تصميم بوستات، ستوري، كوفرات، وإعلانات بصرية بشكل عصري ومتناسق.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎬</div>
+          <h3>إنتاج Reels</h3>
+          <p>
+            أفكار وسكريبتات ومونتاج فيديوهات قصيرة تساعد على زيادة الانتشار والتفاعل.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📢</div>
+          <h3>إعلانات ممولة</h3>
+          <p>
+            إدارة حملات Meta Ads بهدف زيادة الرسائل، العملاء المحتملين، أو المبيعات.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>تقارير وتحليل أداء</h3>
+          <p>
+            تقرير شهري يوضح أفضل المحتويات، معدلات النمو، والتوصيات القادمة.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">أعمالنا</div>
+        <h2>نماذج من مشاريع عملنا</h2>
+        <p>
+          نماذج واقعية لمجالات مختلفة عملنا عليها: مطاعم، عيادات، متاجر، وبراندات ناشئة.
+        </p>
+      </div>
+
+      <div class="portfolio-tabs">
+        <button class="tab active" data-filter="all">الكل</button>
+        <button class="tab" data-filter="food">مطاعم</button>
+        <button class="tab" data-filter="medical">عيادات</button>
+        <button class="tab" data-filter="ecommerce">متاجر</button>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="work-card" data-category="food">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80" 
+              alt="حملة محتوى لمطعم"
+            />
+            <span class="tag">مطاعم</span>
+          </div>
+          <div class="work-body">
+            <h3>حملة إطلاق منيو جديد</h3>
+            <p>
+              تصميم محتوى بصري وحملة رسائل لزيادة الطلبات على المنيو الجديد.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card" data-category="medical">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" 
+              alt="محتوى عيادة طبية"
+            />
+            <span class="tag">عيادات</span>
+          </div>
+          <div class="work-body">
+            <h3>محتوى توعوي لعيادة</h3>
+            <p>
+              منشورات تثقيفية بتصميم هادئ ونصوص واضحة لبناء الثقة مع المرضى.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card" data-category="ecommerce">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80" 
+              alt="حملة متجر إلكتروني"
+            />
+            <span class="tag">متاجر</span>
+          </div>
+          <div class="work-body">
+            <h3>حملة مبيعات لمتجر إلكتروني</h3>
+            <p>
+              محتوى إعلاني يركز على مزايا المنتجات والعروض لزيادة الطلبات.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card" data-category="food">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" 
+              alt="إدارة سوشيال ميديا لمطعم"
+            />
+            <span class="tag">مطاعم</span>
+          </div>
+          <div class="work-body">
+            <h3>إدارة صفحة مطعم</h3>
+            <p>
+              خطة محتوى شهرية تشمل عروض، منتجات، ريلز، وتعليقات العملاء.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card" data-category="medical">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80" 
+              alt="حملة مركز طبي"
+            />
+            <span class="tag">عيادات</span>
+          </div>
+          <div class="work-body">
+            <h3>حملة حجز استشارات</h3>
+            <p>
+              إعلانات ممولة لزيادة رسائل الحجز والاستفسارات الخاصة بالخدمات الطبية.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card" data-category="ecommerce">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80" 
+              alt="فريق عمل متجر إلكتروني"
+            />
+            <span class="tag">متاجر</span>
+          </div>
+          <div class="work-body">
+            <h3>خطة محتوى متجر</h3>
+            <p>
+              محتوى موجه للبيع مع اختبار زوايا مختلفة للإعلانات والعروض.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section class="cases" id="cases">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">دراسات حالة</div>
+        <h2>نتائج قابلة للقياس</h2>
+        <p>
+          نهتم بالأرقام لأنها توضح مدى تأثير المحتوى والإعلانات على نشاطك.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <div class="case-card">
+          <div class="case-img">
+            <img 
+              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=80" 
+              alt="فريق يناقش نتائج حملة تسويقية"
+            />
+          </div>
+
+          <div class="case-body">
+            <h3>مطعم محلي — 3 أشهر إدارة كاملة</h3>
+            <p>
+              بدأنا بتحسين شكل الصفحة، تجهيز خطة محتوى أسبوعية، وإطلاق حملات رسائل
+              لزيادة الطلبات والاستفسارات.
+            </p>
+
+            <div class="case-results">
+              <div class="case-result">
+                <strong>+240%</strong>
+                <span>نمو التفاعل</span>
+              </div>
+
+              <div class="case-result">
+                <strong>+680</strong>
+                <span>رسالة</span>
+              </div>
+
+              <div class="case-result">
+                <strong>4.2x</strong>
+                <span>زيادة الوصول</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-img">
+            <img 
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" 
+              alt="تحليل بيانات تسويقية"
+            />
+          </div>
+
+          <div class="case-body">
+            <h3>متجر إلكتروني — حملة مبيعات</h3>
+            <p>
+              تم اختبار أكثر من شكل إعلاني، وتحسين النصوص والتصميمات للوصول لأفضل
+              تكلفة للعميل المحتمل.
+            </p>
+
+            <div class="case-results">
+              <div class="case-result">
+                <strong>-31%</strong>
+                <span>تكلفة العميل</span>
+              </div>
+
+              <div class="case-result">
+                <strong>+390</strong>
+                <span>طلب جديد</span>
+              </div>
+
+              <div class="case-result">
+                <strong>+156%</strong>
+                <span>زيارات المتجر</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section>
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">طريقة العمل</div>
+        <h2>خطوات واضحة من البداية</h2>
+        <p>
+          كل عميل له خطة مناسبة حسب مجاله، جمهوره، وهدفه من السوشيال ميديا.
+        </p>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>تحليل النشاط</h3>
+          <p>نفهم البراند والجمهور والمنافسين قبل البدء.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>خطة شهرية</h3>
+          <p>نجهز خطة محتوى واضحة بالأفكار والزوايا.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>تصميم وتنفيذ</h3>
+          <p>نصمم ونكتب ونجهز المحتوى للنشر.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>نشر ومتابعة</h3>
+          <p>ننشر المحتوى ونتابع التعليقات والرسائل.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <h3>تقرير وتحسين</h3>
+          <p>نراجع الأداء ونحسن الخطة للشهر القادم.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">الباقات</div>
+        <h2>اختر الباقة المناسبة لنشاطك</h2>
+        <p>
+          يمكن تعديل أي باقة حسب احتياجك وحجم نشاطك وعدد المنصات المطلوبة.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p>مناسبة للشركات الناشئة والحضور الأساسي.</p>
+
+          <div class="price">
+            4,500 <span>جنيه / شهر</span>
+          </div>
+
+          <ul class="features">
+            <li>12 تصميم شهريًا</li>
+            <li>كتابة الكابشن</li>
+            <li>جدولة النشر</li>
+            <li>تقرير شهري مختصر</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-outline">اختر الباقة</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="popular">الأكثر طلبًا</div>
+
+          <h3>Growth</h3>
+          <p>مناسبة للشركات التي تريد نموًا وتفاعلًا أقوى.</p>
+
+          <div class="price">
+            8,000 <span>جنيه / شهر</span>
+          </div>
+
+          <ul class="features">
+            <li>20 تصميم شهريًا</li>
+            <li>4 ريلز شهريًا</li>
+            <li>إدارة التعليقات والرسائل</li>
+            <li>خطة محتوى شهرية</li>
+            <li>تقرير وتحليل أداء</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary">اختر الباقة</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Premium</h3>
+          <p>إدارة كاملة للمحتوى والإعلانات والنمو.</p>
+
+          <div class="price">
+            حسب الطلب
+          </div>
+
+          <ul class="features">
+            <li>إدارة كاملة للحسابات</li>
+            <li>تصميمات + ريلز</li>
+            <li>إعلانات ممولة</li>
+            <li>تقرير تفصيلي</li>
+            <li>اجتماع شهري للمراجعة</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-outline">اطلب عرض مخصص</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">آراء العملاء</div>
+        <h2>شركاء نجاحنا</h2>
+        <p>
+          نحرص دائمًا على بناء علاقة مستمرة مع العملاء قائمة على الوضوح والنتائج.
+        </p>
+      </div>
+
+      <div class="test-grid">
+
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            الفريق ساعدنا ننظم الصفحة ونظهر بشكل احترافي. لاحظنا فرق واضح في الرسائل بعد أول شهر.
+          </p>
+
+          <div class="client">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" 
+              alt="عميل"
+            />
+            <div>
+              <strong>أحمد مصطفى</strong>
+              <span>مؤسس مطعم</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            أكثر شيء أعجبنا هو الالتزام بالخطة الشهرية والتقرير الواضح في نهاية كل شهر.
+          </p>
+
+          <div class="client">
+            <img 
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" 
+              alt="عميلة"
+            />
+            <div>
+              <strong>سارة محمود</strong>
+              <span>مديرة متجر إلكتروني</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            التصميمات أصبحت أقوى، والصفحة بقت أوضح للعميل. تجربة ممتازة ومستمرين معهم.
+          </p>
+
+          <div class="client">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+              alt="عميل"
+            />
+            <div>
+              <strong>كريم سامي</strong>
+              <span>صاحب براند ملابس</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div class="contact-info">
+          <div class="section-label">تواصل معنا</div>
+
+          <h2>جاهز تبدأ إدارة احترافية لحساباتك؟</h2>
+
+          <p>
+            املأ البيانات وسنرسل لك تصورًا أوليًا مناسبًا لنشاطك مع اقتراح الباقة الأفضل.
+          </p>
+
+          <div class="contact-list">
+            <div>📍 القاهرة، مصر</div>
+            <div>📞 01000000000</div>
+            <div>✉️ hello@nexasocial.com</div>
+            <div>⏱️ مواعيد العمل: من 10 صباحًا إلى 6 مساءً</div>
+          </div>
+        </div>
+
+        <form id="contactForm">
+
+          <input type="text" id="name" placeholder="الاسم" required />
+
+          <input type="text" id="business" placeholder="اسم الشركة أو النشاط" required />
+
+          <select id="service" required>
+            <option value="">اختر الخدمة المطلوبة</option>
+            <option value="إدارة سوشيال ميديا">إدارة سوشيال ميديا</option>
+            <option value="تصميمات ومحتوى">تصميمات ومحتوى</option>
+            <option value="إعلانات ممولة">إعلانات ممولة</option>
+            <option value="باقة كاملة">باقة كاملة</option>
+          </select>
+
+          <textarea id="message" placeholder="اكتب تفاصيل بسيطة عن نشاطك"></textarea>
+
+          <button type="submit" class="btn btn-primary">
+            إرسال عبر واتساب
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Nexa Social Agency — جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/201000000000" target="_blank">☏</a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    menuBtn.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll("nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
+      });
+    });
+
+    const tabs = document.querySelectorAll(".tab");
+    const cards = document.querySelectorAll(".work-card");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+
+        const filter = tab.getAttribute("data-filter");
+
+        cards.forEach(function (card) {
+          const category = card.getAttribute("data-category");
+
+          if (filter === "all" || filter === category) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const business = document.getElementById("business").value;
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value;
+
+      const phoneNumber = "201000000000";
+
+      const whatsappMessage =
+        "مرحبًا Nexa Social، أريد الاستفسار عن خدمات إدارة السوشيال ميديا.%0A%0A" +
+        "الاسم: " + name + "%0A" +
+        "اسم النشاط: " + business + "%0A" +
+        "الخدمة المطلوبة: " + service + "%0A" +
+        "تفاصيل إضافية: " + message;
+
+      const whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
