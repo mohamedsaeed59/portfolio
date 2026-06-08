@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>راحة هوم | خدمات منزلية</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tahoma", "Arial", sans-serif;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #14b8a6;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --yellow: #f59e0b;
+      --green: #22c55e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--dark);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--gray);
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 75px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(37, 99, 235, 0.13), transparent 30%),
+        radial-gradient(circle at 10% 85%, rgba(20, 184, 166, 0.14), transparent 30%),
+        var(--light);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.25;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+    }
+
+    .stat-box strong {
+      display: block;
+      color: var(--primary);
+      font-size: 27px;
+      margin-bottom: 2px;
+    }
+
+    .stat-box span {
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, 0.12);
+      position: relative;
+    }
+
+    .hero-image {
+      height: 480px;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image img {
+      height: 100%;
+    }
+
+    .floating-service {
+      position: absolute;
+      right: -15px;
+      bottom: 35px;
+      width: 255px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 22px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
+    }
+
+    .floating-service small {
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    .floating-service strong {
+      display: block;
+      font-size: 23px;
+      margin-top: 3px;
+    }
+
+    .rating {
+      color: var(--yellow);
+      margin-top: 7px;
+      font-weight: 900;
+    }
+
+    /* General Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-head p {
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    /* Trust */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .trust-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .trust-card .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .trust-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .trust-card p {
+      color: var(--gray);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* About */
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .about-img {
+      height: 460px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    .about-img img {
+      height: 100%;
+    }
+
+    .about-content h2 {
+      font-size: 40px;
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 16px;
+      font-size: 17px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .point {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--gray);
+    }
+
+    .point b {
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 28px;
+      transition: 0.3s;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.04);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 55px rgba(15, 23, 42, 0.09);
+      border-color: rgba(37, 99, 235, 0.35);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: #eff6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+    }
+
+    /* Before After */
+    .work {
+      background: var(--light);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 55px rgba(15, 23, 42, 0.1);
+    }
+
+    .work-img {
+      height: 235px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .work-img img {
+      height: 100%;
+      transition: 0.4s;
+    }
+
+    .work-card:hover .work-img img {
+      transform: scale(1.06);
+    }
+
+    .work-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+
+    .work-body {
+      padding: 22px;
+    }
+
+    .work-body h3 {
+      margin-bottom: 7px;
+      font-size: 21px;
+    }
+
+    .work-body p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+    }
+
+    .step-num {
+      width: 45px;
+      height: 45px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: var(--light);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 25px 65px rgba(37, 99, 235, 0.15);
+      transform: translateY(-10px);
+    }
+
+    .popular {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: var(--secondary);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .price-card h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .price-card p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 32px;
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .price span {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .features li {
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    /* Testimonials */
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .test-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+    }
+
+    .stars {
+      color: var(--yellow);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .test-card p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .client strong {
+      display: block;
+    }
+
+    .client span {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* Areas */
+    .areas {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .areas .section-head p {
+      color: #cbd5e1;
+    }
+
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .area {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    /* Contact */
+    .contact {
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.12), transparent 34%),
+        #fbfdff;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 36px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 36px;
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.09);
+    }
+
+    .contact-info h2 {
+      font-size: 42px;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: var(--gray);
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list div {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      outline: none;
+      font-size: 15px;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      background: var(--dark);
+      color: #cbd5e1;
+      padding: 34px 0;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 29px;
+      box-shadow: 0 16px 40px rgba(37, 211, 102, 0.35);
+      z-index: 999;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 430px;
+      }
+
+      .trust-grid,
+      .services-grid,
+      .work-grid,
+      .pricing-grid,
+      .test-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 76px;
+        right: -100%;
+        width: 84%;
+        height: calc(100vh - 76px);
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        border-left: 1px solid var(--border);
+        transition: 0.3s;
+        box-shadow: -25px 0 60px rgba(15, 23, 42, 0.1);
+      }
+
+      nav ul.active {
+        right: 0;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-stats,
+      .trust-grid,
+      .services-grid,
+      .work-grid,
+      .pricing-grid,
+      .test-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-service {
+        right: 14px;
+        bottom: 18px;
+        width: 225px;
+      }
+
+      .about-content h2,
+      .contact-info h2 {
+        font-size: 32px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .contact-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <div class="logo-mark">🏠</div>
+        <span>راحة هوم</span>
+      </a>
+
+      <nav>
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <ul id="navMenu">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#work">أعمالنا</a></li>
+          <li><a href="#pricing">الأسعار</a></li>
+          <li><a href="#contact" class="btn btn-primary pointer-events: none">احجز الآن</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="badge">خدمات منزلية موثوقة في أسرع وقت</div>
+
+        <h1>
+          كل خدمات منزلك في مكان واحد
+          <span>بجودة وسرعة</span>
+        </h1>
+
+        <p>
+          راحة هوم مكتب متخصص في تقديم خدمات التنظيف، الصيانة، مكافحة الحشرات،
+          التعقيم، وصيانة التكييف من خلال فريق مدرب وأسعار واضحة قبل التنفيذ.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">احجز خدمة الآن</a>
+          <a href="#services" class="btn btn-outline">تصفح الخدمات</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-box">
+            <strong>+2500</strong>
+            <span>عميل تم خدمته</span>
+          </div>
+
+          <div class="stat-box">
+            <strong>24/7</strong>
+            <span>استقبال الطلبات</span>
+          </div>
+
+          <div class="stat-box">
+            <strong>+4.8</strong>
+            <span>تقييم العملاء</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-image">
+          <img 
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80" 
+            alt="خدمة تنظيف منزلية"
+          />
+        </div>
+
+        <div class="floating-service">
+          <small>أكثر خدمة مطلوبة</small>
+          <strong>تنظيف عميق للمنازل</strong>
+          <div class="rating">★★★★★ 4.9</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section>
+    <div class="container">
+      <div class="trust-grid">
+
+        <div class="trust-card">
+          <div class="icon">⚡</div>
+          <h3>استجابة سريعة</h3>
+          <p>تأكيد الحجز خلال وقت قصير</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="icon">👷</div>
+          <h3>فريق مدرب</h3>
+          <p>عمالة موثوقة ومحترفة</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="icon">💰</div>
+          <h3>سعر واضح</h3>
+          <p>تحديد السعر قبل التنفيذ</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="icon">🛡️</div>
+          <h3>ضمان خدمة</h3>
+          <p>متابعة بعد الانتهاء</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="icon">📞</div>
+          <h3>حجز واتساب</h3>
+          <p>تواصل مباشر وسهل</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+
+      <div class="about-img">
+        <img 
+          src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1200&q=80" 
+          alt="تنظيف المنزل"
+        />
+      </div>
+
+      <div class="about-content">
+        <div class="section-label">من نحن</div>
+
+        <h2>نساعدك في الحفاظ على منزلك نظيفًا وآمنًا بدون مجهود.</h2>
+
+        <p>
+          نحن مكتب خدمات منزلية يقدم حلولًا عملية للأفراد والشركات، بداية من التنظيف
+          العميق وحتى الصيانة ومكافحة الحشرات.
+        </p>
+
+        <p>
+          هدفنا أن تحصل على خدمة واضحة، سريعة، وآمنة من خلال فريق ملتزم بالمواعيد
+          ويستخدم أدوات مناسبة لكل نوع خدمة.
+        </p>
+
+        <div class="about-points">
+          <div class="point">
+            <b>✓</b>
+            <span>خدمات للأفراد والشركات والمكاتب.</span>
+          </div>
+
+          <div class="point">
+            <b>✓</b>
+            <span>إمكانية الحجز في نفس اليوم حسب التوفر.</span>
+          </div>
+
+          <div class="point">
+            <b>✓</b>
+            <span>تقييم الخدمة ومتابعة العميل بعد التنفيذ.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">خدماتنا</div>
+        <h2>خدمات منزلية متكاملة</h2>
+        <p>
+          اختر الخدمة المناسبة وسيقوم فريقنا بالتواصل معك لتحديد التفاصيل والموعد.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🧹</div>
+          <h3>تنظيف المنازل</h3>
+          <p>
+            تنظيف شامل للشقق، الفيلات، المطابخ، الحمامات، والزجاج باستخدام أدوات مناسبة.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛋️</div>
+          <h3>تنظيف المفروشات</h3>
+          <p>
+            تنظيف الكنب، السجاد، الموكيت، والستائر لإزالة الأتربة والبقع والروائح.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🐜</div>
+          <h3>مكافحة الحشرات</h3>
+          <p>
+            مكافحة الصراصير، النمل، البق، والفئران بمواد آمنة وفعالة.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>سباكة</h3>
+          <p>
+            إصلاح التسريبات، تسليك الأحواض، تركيب الخلاطات، وصيانة المواسير.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h3>كهرباء</h3>
+          <p>
+            إصلاح الأعطال، تركيب المفاتيح، النجف، الإنارة، وفحص التوصيلات.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">❄️</div>
+          <h3>صيانة التكييف</h3>
+          <p>
+            تنظيف التكييف، كشف الأعطال، شحن فريون، وتركيب أو فك الأجهزة.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="work" id="work">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">أعمالنا</div>
+        <h2>نماذج من الخدمات التي نقدمها</h2>
+        <p>
+          يمكن استبدال هذه الصور لاحقًا بصور حقيقية من أعمال المكتب قبل وبعد التنفيذ.
+        </p>
+      </div>
+
+      <div class="work-grid">
+
+        <div class="work-card">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80" 
+              alt="تنظيف منزل"
+            />
+            <span class="work-tag">تنظيف</span>
+          </div>
+          <div class="work-body">
+            <h3>تنظيف عميق لشقة</h3>
+            <p>
+              تنظيف شامل للأرضيات، الحمامات، المطبخ، الزجاج، وترتيب المكان بعد الانتهاء.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=80" 
+              alt="تنظيف أدوات"
+            />
+            <span class="work-tag">تعقيم</span>
+          </div>
+          <div class="work-body">
+            <h3>تعقيم وتنظيف بعد التشطيب</h3>
+            <p>
+              إزالة الأتربة وبقايا التشطيب وتجهيز المنزل للسكن بشكل آمن ومنظم.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-img">
+            <img 
+              src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80" 
+              alt="خدمة صيانة"
+            />
+            <span class="work-tag">صيانة</span>
+          </div>
+          <div class="work-body">
+            <h3>صيانة منزلية سريعة</h3>
+            <p>
+              معالجة أعطال السباكة والكهرباء البسيطة داخل المنزل بسرعة وكفاءة.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section>
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">طريقة الحجز</div>
+        <h2>خطوات بسيطة للحصول على الخدمة</h2>
+        <p>
+          وفر وقتك واحجز الخدمة التي تحتاجها من خلال واتساب أو نموذج الطلب.
+        </p>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>اختر الخدمة</h3>
+          <p>حدد نوع الخدمة المطلوبة من القائمة.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>أرسل التفاصيل</h3>
+          <p>اكتب المساحة، المكان، والموعد المناسب.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>تأكيد السعر</h3>
+          <p>نوضح التكلفة قبل بدء التنفيذ.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>تنفيذ الخدمة</h3>
+          <p>يصل الفريق في الموعد المتفق عليه.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <h3>متابعة الجودة</h3>
+          <p>نتأكد من رضاك بعد انتهاء الخدمة.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">الأسعار</div>
+        <h2>أسعار مبدئية واضحة</h2>
+        <p>
+          السعر النهائي يحدد حسب المساحة، نوع الخدمة، وحالة المكان.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>تنظيف شقة</h3>
+          <p>تنظيف أساسي مناسب للشقق الصغيرة والمتوسطة.</p>
+
+          <div class="price">
+            يبدأ من 500 <span>جنيه</span>
+          </div>
+
+          <ul class="features">
+            <li>تنظيف غرف ومعيشة</li>
+            <li>تنظيف حمام ومطبخ</li>
+            <li>تنظيف أرضيات وزجاج</li>
+            <li>تحديد السعر حسب المساحة</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-outline">احجز الخدمة</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="popular">الأكثر طلبًا</div>
+
+          <h3>تنظيف عميق</h3>
+          <p>مناسب للتنظيف بعد فترة طويلة أو بعد التشطيب.</p>
+
+          <div class="price">
+            يبدأ من 900 <span>جنيه</span>
+          </div>
+
+          <ul class="features">
+            <li>تنظيف شامل ودقيق</li>
+            <li>إزالة أتربة وبقع</li>
+            <li>تنظيف مطبخ وحمامات بعمق</li>
+            <li>فريق متخصص حسب المساحة</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary">احجز الخدمة</a>
+        </div>
+
+        <div class="price-card">
+          <h3>مكافحة حشرات</h3>
+          <p>رش آمن وفعال للمنازل والشركات.</p>
+
+          <div class="price">
+            يبدأ من 350 <span>جنيه</span>
+          </div>
+
+          <ul class="features">
+            <li>مكافحة صراصير ونمل</li>
+            <li>مكافحة بق وفئران</li>
+            <li>مواد آمنة</li>
+            <li>متابعة بعد الخدمة</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-outline">احجز الخدمة</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">آراء العملاء</div>
+        <h2>ماذا يقول عملاؤنا؟</h2>
+        <p>
+          نحرص على تقديم خدمة محترمة وواضحة من أول تواصل وحتى انتهاء التنفيذ.
+        </p>
+      </div>
+
+      <div class="test-grid">
+
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            الفريق وصل في المعاد، والتنظيف كان ممتاز خصوصًا المطبخ والحمامات.
+          </p>
+
+          <div class="client">
+            <div class="avatar">م</div>
+            <div>
+              <strong>محمود أحمد</strong>
+              <span>عميل تنظيف شقة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            تعامل محترم وسعر واضح من البداية، وخدمة مكافحة الحشرات كانت فعالة.
+          </p>
+
+          <div class="client">
+            <div class="avatar">س</div>
+            <div>
+              <strong>سارة علي</strong>
+              <span>خدمة مكافحة حشرات</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            طلبت صيانة تكييف وتم التواصل بسرعة، والفني كان ملتزم ومحترف.
+          </p>
+
+          <div class="client">
+            <div class="avatar">أ</div>
+            <div>
+              <strong>أحمد حسن</strong>
+              <span>صيانة تكييف</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="areas">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">مناطق الخدمة</div>
+        <h2>نخدم عدة مناطق داخل القاهرة والجيزة</h2>
+        <p>
+          يمكن تعديل هذه المناطق حسب نطاق عمل المكتب الحقيقي.
+        </p>
+      </div>
+
+      <div class="areas-list">
+        <span class="area">مدينة نصر</span>
+        <span class="area">التجمع الخامس</span>
+        <span class="area">المعادي</span>
+        <span class="area">مصر الجديدة</span>
+        <span class="area">الرحاب</span>
+        <span class="area">أكتوبر</span>
+        <span class="area">الشيخ زايد</span>
+        <span class="area">الدقي</span>
+        <span class="area">المهندسين</span>
+        <span class="area">الهرم</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div class="contact-info">
+          <div class="section-label">تواصل معنا</div>
+
+          <h2>احجز خدمتك الآن بسهولة</h2>
+
+          <p>
+            املأ البيانات وسيتم تحويلك مباشرة إلى واتساب برسالة جاهزة تحتوي على تفاصيل طلبك.
+          </p>
+
+          <div class="contact-list">
+            <div>📍 القاهرة، مصر</div>
+            <div>📞 01000000000</div>
+            <div>✉️ info@raha-home.com</div>
+            <div>⏱️ استقبال الطلبات طوال الأسبوع</div>
+          </div>
+        </div>
+
+        <form id="contactForm">
+
+          <input type="text" id="name" placeholder="الاسم" required />
+
+          <input type="text" id="area" placeholder="المنطقة" required />
+
+          <select id="service" required>
+            <option value="">اختر الخدمة المطلوبة</option>
+            <option value="تنظيف منازل">تنظيف منازل</option>
+            <option value="تنظيف عميق">تنظيف عميق</option>
+            <option value="تنظيف مفروشات">تنظيف مفروشات</option>
+            <option value="مكافحة حشرات">مكافحة حشرات</option>
+            <option value="سباكة">سباكة</option>
+            <option value="كهرباء">كهرباء</option>
+            <option value="صيانة تكييف">صيانة تكييف</option>
+          </select>
+
+          <textarea id="message" placeholder="اكتب تفاصيل بسيطة عن الخدمة المطلوبة"></textarea>
+
+          <button type="submit" class="btn btn-primary">
+            إرسال الطلب عبر واتساب
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 راحة هوم للخدمات المنزلية — جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/201000000000" target="_blank">☏</a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    menuBtn.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll("nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
+      });
+    });
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const area = document.getElementById("area").value;
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value;
+
+      const phoneNumber = "201000000000";
+
+      const whatsappMessage =
+        "مرحبًا، أريد حجز خدمة من راحة هوم.%0A%0A" +
+        "الاسم: " + name + "%0A" +
+        "المنطقة: " + area + "%0A" +
+        "الخدمة المطلوبة: " + service + "%0A" +
+        "تفاصيل إضافية: " + message;
+
+      const whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
