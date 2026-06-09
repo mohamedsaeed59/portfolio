@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دار الأمان | مكتب خدمات منزلية ورعاية أسرية</title>
+  <meta name="description" content="مكتب دار الأمان للخدمات المنزلية ورعاية الأطفال والمرضى وكبار السن. عمالة موثوقة، متابعة مستمرة، وأنظمة مرنة حسب احتياج الأسرة." />
+
+  <style>
+    :root {
+      --bg: #f6f8f5;
+      --card: #ffffff;
+      --dark: #10201b;
+      --muted: #66736f;
+      --primary: #0f766e;
+      --primary-2: #14b8a6;
+      --soft: #e7f5f2;
+      --cream: #fff7ed;
+      --orange: #f59e0b;
+      --border: #dfe7e3;
+      --shadow: 0 26px 70px rgba(16, 32, 27, .10);
+      --radius: 28px;
+      --container: min(1180px, 92%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 88% 8%, rgba(20,184,166,.15), transparent 30%),
+        radial-gradient(circle at 12% 20%, rgba(245,158,11,.10), transparent 28%),
+        var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      width: var(--container);
+      margin: auto;
+    }
+
+    .btn {
+      min-height: 52px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .25s ease;
+      gap: 9px;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(15,118,110,.24);
+    }
+
+    .btn-primary:hover,
+    .btn-outline:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary-2);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      letter-spacing: -.04em;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6.5vw, 78px);
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4.4vw, 52px);
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(246,248,245,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(223,231,227,.78);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      box-shadow: 0 14px 28px rgba(15,118,110,.24);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: -3px;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 900;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 0;
+      background: var(--dark);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 82px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-text > p {
+      font-size: 18px;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-points span {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 13px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+      box-shadow: 0 10px 24px rgba(16,32,27,.04);
+    }
+
+    .hero-media {
+      position: relative;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-img {
+      height: 510px;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .hero-img img {
+      height: 100%;
+    }
+
+    .service-note {
+      position: absolute;
+      right: -18px;
+      bottom: 38px;
+      max-width: 260px;
+      background: rgba(255,255,255,.94);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 20px 45px rgba(16,32,27,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .service-note strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    .service-note span {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 16px 34px rgba(16,32,27,.05);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 31px;
+      line-height: 1;
+      margin-bottom: 8px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    /* About */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .about-photo {
+      height: 500px;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 10px solid #fff;
+    }
+
+    .about-photo img {
+      height: 100%;
+    }
+
+    .about-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px 15px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .check b {
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(16,32,27,.05);
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-img {
+      height: 210px;
+      overflow: hidden;
+    }
+
+    .service-img img {
+      height: 100%;
+      transition: .4s;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .service-body {
+      padding: 24px;
+    }
+
+    .service-body .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 17px;
+      background: var(--soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .service-body h3 {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    /* Systems */
+    .systems {
+      background: #10201b;
+      color: #fff;
+      border-radius: 44px;
+      margin: 0 auto;
+      width: min(1260px, 96%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .systems::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(20,184,166,.20), transparent 30%),
+        radial-gradient(circle at 88% 78%, rgba(245,158,11,.16), transparent 30%);
+      pointer-events: none;
+    }
+
+    .systems .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .systems .section-head p {
+      color: #cbd5d1;
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .system-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 26px;
+      padding: 25px;
+    }
+
+    .system-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .system-card p {
+      color: #cbd5d1;
+      font-size: 15px;
+    }
+
+    /* Cases */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .case-card {
+      min-height: 330px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .case-card img {
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .case-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(16,32,27,.86), rgba(16,32,27,.14));
+      z-index: -1;
+    }
+
+    .case-body {
+      height: 100%;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+    }
+
+    .case-body span {
+      display: inline-flex;
+      width: fit-content;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .case-body p {
+      color: #e9f2ef;
+    }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(16,32,27,.05);
+    }
+
+    .step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 14px;
+    }
+
+    /* Testimonials */
+    .reviews {
+      background: var(--cream);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review {
+      background: #fff;
+      border: 1px solid #f1e1cc;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 14px 32px rgba(154,87,24,.06);
+    }
+
+    .stars {
+      color: var(--orange);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .person img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .person strong {
+      display: block;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Contact */
+    .contact-box {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 32px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-list div {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px 16px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 15px 16px;
+      outline: none;
+      font-size: 15px;
+      background: #fbfdfc;
+      color: var(--dark);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(15,118,110,.08);
+    }
+
+    footer {
+      padding: 34px 0;
+      text-align: center;
+      background: var(--dark);
+      color: #cbd5d1;
+      font-weight: 800;
+    }
+
+    .float-whatsapp {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      z-index: 1000;
+      box-shadow: 0 18px 42px rgba(37,211,102,.34);
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .about-wrap,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-stats,
+      .system-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .cases-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-note {
+        right: 18px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        height: 76px;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 76px;
+        right: -100%;
+        width: 86%;
+        height: calc(100vh - 76px);
+        background: #fff;
+        border-left: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px;
+        transition: .28s;
+        box-shadow: -28px 0 60px rgba(16,32,27,.13);
+      }
+
+      nav ul.active {
+        right: 0;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-img {
+        height: 420px;
+      }
+
+      .quick-stats,
+      .services-grid,
+      .system-grid,
+      .cases-grid,
+      .reviews-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-note {
+        position: static;
+        max-width: none;
+        margin-top: 14px;
+      }
+
+      .about-card,
+      .contact-box {
+        padding: 24px;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .systems {
+        border-radius: 30px;
+        width: min(100%, 100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="دار الأمان للرعاية والخدمات المنزلية">
+        <span class="brand-mark">د</span>
+        <span>
+          دار الأمان
+          <small>رعاية وخدمات منزلية</small>
+        </span>
+      </a>
+
+      <nav>
+        <button class="menu-btn" id="menuBtn" type="button">☰</button>
+        <ul id="navMenu">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">عن المكتب</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#systems">أنظمة الخدمة</a></li>
+          <li><a href="#cases">نماذج احتياج</a></li>
+          <li><a href="#contact" class="btn btn-primary">اطلب الخدمة</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="label">مكتب خدمات منزلية ورعاية أسرية</div>
+          <h1>رعاية موثوقة وخدمات منزلية تجعل البيت أكثر راحة وأمانًا.</h1>
+          <p>
+            دار الأمان مكتب متخصص في توفير خدمات النظافة المنزلية، رعاية الأطفال، مرافقة كبار السن، رعاية المرضى، والتمريض المنزلي بنظام يومي أو شهري أو ساعات، مع متابعة مستمرة من فريق المكتب.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/201149206734" target="_blank" class="btn btn-primary">احجز استشارة واتساب</a>
+            <a href="tel:01149206734" class="btn btn-outline">اتصال مباشر</a>
+          </div>
+
+          <div class="hero-points">
+            <span>فريق مختار بعناية</span>
+            <span>متابعة بعد بدء الخدمة</span>
+            <span>أنظمة مرنة حسب احتياج الأسرة</span>
+            <span>خدمات للأفراد والشركات</span>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1200&q=80" alt="فريق رعاية وخدمات منزلية يتابع طلبات العملاء">
+          </div>
+
+          <div class="service-note">
+            <strong>طلبك بيتراجع خطوة بخطوة</strong>
+            <p>نحدد الاحتياج، نقترح النظام الأنسب، ثم نتابع جودة الخدمة مع الأسرة.</p>
+            <span>ثقة • راحة • التزام</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="quick-stats">
+          <div class="stat">
+            <strong>+12</strong>
+            <span>مجال خدمة ورعاية</span>
+          </div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>طلبات واستفسارات واتساب</span>
+          </div>
+          <div class="stat">
+            <strong>3</strong>
+            <span>أنظمة تشغيل مرنة</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>متابعة من إدارة المكتب</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-wrap">
+        <div class="about-photo">
+          <img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&fit=crop&w=1100&q=80" alt="رعاية منزلية لكبار السن">
+        </div>
+
+        <div class="about-card">
+          <div class="label">عن المكتب</div>
+          <h2>دار الأمان ليس مجرد وسيط، بل جهة متابعة وتنظيم للخدمة من البداية للنهاية.</h2>
+          <p>
+            نعمل مع الأسر التي تحتاج إلى مساعدة موثوقة داخل المنزل، سواء في النظافة، رعاية الأطفال، رعاية كبار السن، أو متابعة المرضى بعد الخروج من المستشفى.
+          </p>
+          <p>
+            قبل ترشيح أي خدمة، نبدأ بفهم ظروف البيت، عدد الساعات المطلوبة، مستوى الرعاية، وطبيعة المهام اليومية؛ ثم نرشح النظام المناسب ونوضح التفاصيل بوضوح.
+          </p>
+
+          <div class="checks">
+            <div class="check"><b>✓</b><span>اختيار الخدمة بناءً على احتياج الأسرة وليس مجرد طلب عام.</span></div>
+            <div class="check"><b>✓</b><span>إمكانية توفير خدمة لساعات محددة، يوم كامل، أو نظام شهري.</span></div>
+            <div class="check"><b>✓</b><span>متابعة دورية مع العميل للتأكد من جودة التنفيذ والالتزام.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">الخدمات الأساسية</div>
+          <h2>خدمات مصممة لتخفيف ضغط البيت والرعاية اليومية.</h2>
+          <p>نوفر حلولًا عملية للأسر التي تحتاج إلى دعم منظم وموثوق داخل المنزل.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80" alt="رعاية الأطفال داخل المنزل">
+            </div>
+            <div class="service-body">
+              <div class="icon">👶</div>
+              <h3>رعاية الأطفال</h3>
+              <p>جليسات أطفال للمساعدة في المتابعة اليومية، التغذية، اللعب الآمن، وتنظيم وقت الطفل داخل المنزل.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80" alt="رعاية المرضى في المنزل">
+            </div>
+            <div class="service-body">
+              <div class="icon">🏥</div>
+              <h3>رعاية المرضى</h3>
+              <p>مساعدة منزلية للحالات التي تحتاج إلى متابعة شخصية، مرافقة، تنظيم مواعيد، واهتمام يومي مريح.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="نظافة منزلية احترافية">
+            </div>
+            <div class="service-body">
+              <div class="icon">🧹</div>
+              <h3>نظافة منزلية</h3>
+              <p>تنظيف شقق وفيلات، ترتيب، تلميع، وتنظيف عميق أو دوري حسب احتياج المنزل ومساحته.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=900&q=80" alt="رعاية كبار السن">
+            </div>
+            <div class="service-body">
+              <div class="icon">👵</div>
+              <h3>رعاية كبار السن</h3>
+              <p>مرافقات لكبار السن للمساعدة في الحركة، الوجبات، الصحبة اليومية، والمتابعة داخل المنزل.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="مساعدة في الطبخ وتحضير الطعام">
+            </div>
+            <div class="service-body">
+              <div class="icon">🍲</div>
+              <h3>طبخ ومساعدة منزلية</h3>
+              <p>مساعدة في تجهيز الوجبات، ترتيب المطبخ، وتحضير احتياجات البيت اليومية بنظام واضح.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="خدمة نظافة مكاتب وشركات">
+            </div>
+            <div class="service-body">
+              <div class="icon">🏢</div>
+              <h3>خدمة مكاتب وشركات</h3>
+              <p>نظافة مكاتب، بوفيه، وترتيب يومي للبيئات الإدارية والشركات الصغيرة والمتوسطة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section systems" id="systems">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">أنظمة الخدمة</div>
+          <h2>اختار النظام المناسب لبيتك أو حالتك.</h2>
+          <p>كل أسرة لها ظروف مختلفة؛ لذلك نوفر أكثر من نظام تشغيل حتى تكون الخدمة مناسبة للوقت والميزانية ومستوى الاحتياج.</p>
+        </div>
+
+        <div class="system-grid">
+          <div class="system-card">
+            <h3>نظام الساعات</h3>
+            <p>مناسب للمهام الخفيفة أو الزيارات القصيرة مثل التنظيف السريع أو مرافقة مؤقتة.</p>
+          </div>
+          <div class="system-card">
+            <h3>نظام اليوم الكامل</h3>
+            <p>مناسب للأسر التي تحتاج مساعدة يومية خلال وقت محدد بدون إقامة كاملة.</p>
+          </div>
+          <div class="system-card">
+            <h3>نظام شهري</h3>
+            <p>مناسب للرعاية المستمرة أو المنازل التي تحتاج متابعة منتظمة طوال الشهر.</p>
+          </div>
+          <div class="system-card">
+            <h3>نظام مخصص</h3>
+            <p>للحالات الخاصة مثل كبار السن، المرضى، أو ترتيبات الشركات والمكاتب.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">نماذج احتياج</div>
+          <h2>نساعدك تختار الخدمة حسب الموقف، مش حسب اسم الخدمة فقط.</h2>
+          <p>هذه أمثلة من الطلبات التي يتعامل معها المكتب بشكل يومي.</p>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card">
+            <img src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=900&q=80" alt="أسرة تحتاج جليسة أطفال">
+            <div class="case-body">
+              <span>أسرة عاملة</span>
+              <h3>طفل يحتاج متابعة بعد المدرسة</h3>
+              <p>نرشح نظام ساعات أو يوم كامل حسب مواعيد رجوع الأسرة وطبيعة مهام الطفل.</p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?auto=format&fit=crop&w=900&q=80" alt="رعاية كبار السن في المنزل">
+            <div class="case-body">
+              <span>كبار السن</span>
+              <h3>والد أو والدة يحتاج صحبة ومساعدة</h3>
+              <p>نحدد نوع المرافقة المطلوبة: حركة، وجبات، صحبة، أو متابعة يومية مستمرة.</p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80" alt="تنظيف عميق للمنزل">
+            <div class="case-body">
+              <span>تنظيف عميق</span>
+              <h3>شقة تحتاج ترتيب وتنظيف شامل</h3>
+              <p>نحدد المساحة، عدد الغرف، نوع التنظيف، وهل الخدمة مرة واحدة أو دورية.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="steps">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">طريقة العمل</div>
+          <h2>خطوات بسيطة وواضحة قبل بدء الخدمة.</h2>
+          <p>هدفنا إن العميل يعرف كل التفاصيل قبل الاتفاق، ويبدأ الخدمة وهو مطمئن.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>استلام الطلب</h3>
+            <p>نستقبل بيانات الأسرة أو المكان ونفهم طبيعة الاحتياج.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>تحديد النظام</h3>
+            <p>نقترح ساعات، يومي، شهري، أو نظام مخصص حسب الحالة.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>ترشيح الخدمة</h3>
+            <p>يتم ترشيح الخيار الأنسب من حيث الخبرة والمهام المطلوبة.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>بدء التنفيذ</h3>
+            <p>تبدأ الخدمة في الموعد المتفق عليه مع توضيح التعليمات.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <h3>متابعة الجودة</h3>
+            <p>نتابع مع العميل للتأكد من الالتزام ورضاه عن الخدمة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">آراء العملاء</div>
+          <h2>تجارب أسر اعتمدت على دار الأمان.</h2>
+          <p>الثقة في خدمات المنزل والرعاية لا تأتي من الكلام فقط، بل من الالتزام والمتابعة.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>التعامل كان منظمًا من أول مكالمة. فهموا احتياج والدتي ورشحوا نظام مناسب جدًا للرعاية اليومية.</p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="عميلة">
+              <div>
+                <strong>مروة عادل</strong>
+                <span>رعاية كبار السن</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>كنت محتاجة مساعدة في تنظيف عميق قبل نقل الشقة، والخدمة كانت مرتبة وواضحة في كل التفاصيل.</p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&q=80" alt="عميلة">
+              <div>
+                <strong>دينا سامي</strong>
+                <span>تنظيف وتجهيز منزل</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>أهم شيء بالنسبة لنا كان المتابعة. المكتب كان بيرد بسرعة وبيتأكد إن كل شيء ماشي بشكل مريح.</p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="عميل">
+              <div>
+                <strong>أحمد شوقي</strong>
+                <span>رعاية مريض بالمنزل</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="label">تواصل معنا</div>
+            <h2>احكي لنا احتياجك، ونرشح لك أنسب خدمة.</h2>
+            <p>
+              املأ البيانات وسيتم تحويلها مباشرة إلى واتساب المكتب بشكل منظم حتى نرد عليك بالتفاصيل المناسبة.
+            </p>
+
+            <div class="contact-list">
+              <div>📞 اتصال مباشر: 01149206734</div>
+              <div>💬 واتساب: 01149206734</div>
+              <div>📍 خدمات داخل القاهرة والجيزة ومناطق أخرى حسب الطلب</div>
+              <div>⏱️ استقبال الطلبات والاستفسارات طوال الأسبوع</div>
+            </div>
+          </div>
+
+          <form id="requestForm">
+            <input type="text" id="name" placeholder="الاسم" required>
+            <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+            <input type="text" id="area" placeholder="المنطقة أو المحافظة" required>
+
+            <select id="service" required>
+              <option value="">اختر نوع الخدمة</option>
+              <option value="رعاية أطفال">رعاية أطفال</option>
+              <option value="رعاية كبار السن">رعاية كبار السن</option>
+              <option value="رعاية مرضى">رعاية مرضى</option>
+              <option value="تمريض منزلي">تمريض منزلي</option>
+              <option value="نظافة منزلية">نظافة منزلية</option>
+              <option value="طبخ ومساعدة منزلية">طبخ ومساعدة منزلية</option>
+              <option value="خدمة مكاتب وشركات">خدمة مكاتب وشركات</option>
+            </select>
+
+            <select id="system" required>
+              <option value="">اختر نظام الخدمة</option>
+              <option value="ساعات محددة">ساعات محددة</option>
+              <option value="يوم كامل">يوم كامل</option>
+              <option value="شهري">شهري</option>
+              <option value="غير محدد وأحتاج ترشيح">غير محدد وأحتاج ترشيح</option>
+            </select>
+
+            <textarea id="message" placeholder="اكتب تفاصيل بسيطة عن الحالة أو احتياج المنزل"></textarea>
+
+            <button type="submit" class="btn btn-primary">إرسال الطلب عبر واتساب</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">© 2026 دار الأمان للرعاية والخدمات المنزلية — راحة البيت تبدأ من الاختيار الصحيح.</div>
+  </footer>
+
+  <a class="float-whatsapp" href="https://wa.me/201149206734" target="_blank" aria-label="واتساب">☏</a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll("nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+    });
+
+    const form = document.getElementById("requestForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const area = document.getElementById("area").value.trim();
+      const service = document.getElementById("service").value;
+      const system = document.getElementById("system").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappNumber = "201149206734";
+
+      const text =
+`مرحبًا دار الأمان، أريد الاستفسار عن خدمة منزلية أو رعاية.
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+المنطقة / المحافظة: ${area}
+نوع الخدمة: ${service}
+نظام الخدمة: ${system}
+
+تفاصيل إضافية:
+${message}`;
+
+      const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
