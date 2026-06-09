@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ستوديو التصميم الإبداعي | بورتفوليو</title>
-    <!-- خط تجريبي وعصري من جوجل -->
+    <title>ليان منصور | مصممة هويات بصرية وتغليف</title>
+    <meta name="description" content="بورتفوليو ليان منصور، مصممة هويات بصرية وتغليف ومطبوعات. أعمال مختارة في العلامات التجارية، الكتيبات الفنية، وتغليف المنتجات." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBMPlexSansArabic:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- الألوان الأساسية والتصميم العام --- */
         :root {
-            --bg-primary: #fbfbf9; /* خلفية كريمية فاتحة جداً */
+            --bg-primary: #fbfbf9;
             --text-dark: #111111;
             --text-muted: #666666;
-            --accent-color: #e2b697; /* لون ترابي ناعم */
+            --accent-color: #b9825f;
+            --accent-soft: #f1dfd1;
             --card-bg: #ffffff;
+            --line: #e8e4dd;
         }
 
         * {
@@ -24,16 +24,23 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'IBM Plex Sans Arabic', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-primary);
             color: var(--text-dark);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        /* --- شريط تنقل جانبي عصري ثابت --- */
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         header {
             position: fixed;
             top: 0;
@@ -41,8 +48,8 @@
             width: 280px;
             height: 100vh;
             background: #ffffff;
-            border-left: 1px solid #eeeeee;
-            padding: 60px 40px;
+            border-left: 1px solid var(--line);
+            padding: 56px 38px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -50,11 +57,21 @@
         }
 
         .brand-logo {
-            font-size: 28px;
+            font-size: 27px;
             font-weight: 700;
             letter-spacing: -1px;
             text-decoration: none;
             color: var(--text-dark);
+            line-height: 1.25;
+        }
+
+        .brand-logo small {
+            display: block;
+            margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0;
         }
 
         nav ul {
@@ -74,13 +91,13 @@
             position: relative;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a:hover,
+        nav ul li a.active {
             color: var(--text-dark);
             font-weight: 700;
             padding-right: 15px;
         }
 
-        /* المؤشر الصغير عند الاختيار */
         nav ul li a::before {
             content: '';
             position: absolute;
@@ -93,7 +110,8 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover::before, nav ul li a.active::before {
+        nav ul li a:hover::before,
+        nav ul li a.active::before {
             width: 10px;
         }
 
@@ -102,34 +120,63 @@
             color: var(--text-muted);
         }
 
-        /* --- حاوية المحتوى الرئيسي (مُزاحة لتترك مساحة للنوافذ الجانبية) --- */
+        .header-footer a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         main {
             margin-right: 280px;
             padding: 0 5%;
         }
 
         section {
-            padding: 120px 0 60px;
+            padding: 110px 0 70px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        /* --- قسم الاستقبال (Hero) --- */
-        .hero-section h1 {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 30px;
-            max-width: 800px;
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1.08fr 0.82fr;
+            gap: 56px;
+            align-items: center;
         }
 
-        .hero-section p {
-            font-size: 22px;
+        .hero-copy h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: 700;
+            line-height: 1.18;
+            margin-bottom: 28px;
+            max-width: 860px;
+            letter-spacing: -1.8px;
+        }
+
+        .hero-copy p {
+            font-size: 21px;
             color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 40px;
+            max-width: 620px;
+            margin-bottom: 38px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 34px;
+        }
+
+        .hero-meta span {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: #4f4b46;
+            border-radius: 999px;
+            padding: 9px 14px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         .explore-link {
@@ -148,28 +195,89 @@
             border-color: var(--accent-color);
         }
 
-        /* --- قسم من أنا والخبرات --- */
+        .hero-image-wrap {
+            position: relative;
+        }
+
+        .hero-image {
+            height: 590px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--accent-soft);
+            box-shadow: 0 24px 70px rgba(17, 17, 17, 0.08);
+        }
+
+        .availability-card {
+            position: absolute;
+            right: -28px;
+            bottom: 36px;
+            width: min(310px, 84%);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--line);
+            padding: 22px;
+            backdrop-filter: blur(16px);
+        }
+
+        .availability-card strong {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .availability-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 64px;
             align-items: start;
         }
 
-        .about-text h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
+        .section-kicker {
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .about-text h2,
+        .works-head h2,
+        .contact-box h2 {
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.25;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .profile-card {
+            display: grid;
+            gap: 22px;
+        }
+
+        .profile-photo {
+            height: 320px;
+            overflow: hidden;
+            background: var(--accent-soft);
         }
 
         .experience-list {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 28px;
         }
 
         .exp-item {
-            border-bottom: 1px solid #e5e5e5;
-            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 22px;
         }
 
         .exp-item .year {
@@ -180,14 +288,57 @@
 
         .exp-item h4 {
             font-size: 20px;
-            margin: 5px 0;
+            margin: 6px 0;
         }
 
-        /* --- قسم معرض الأعمال الفني (Asymmetric Gallery) --- */
+        .exp-item p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 42px;
+        }
+
+        .stat {
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 24px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 34px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat span {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .works-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 46px;
+        }
+
+        .works-head p {
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
         .gallery-filter {
             display: flex;
-            gap: 25px;
-            margin-bottom: 60px;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 54px;
         }
 
         .gallery-filter button {
@@ -200,79 +351,104 @@
             transition: 0.3s;
         }
 
-        .gallery-filter button.active, .gallery-filter button:hover {
+        .gallery-filter button.active,
+        .gallery-filter button:hover {
             color: var(--text-dark);
             border-bottom: 2px solid var(--text-dark);
         }
 
-        /* شبكة أعمال غير متناظرة ومميزة */
         .work-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 42px;
         }
 
-        /* جعل الكارت الثاني والرابع ينزلان قليلاً ليعطي مظهر الـ Masonry/Asymmetric */
         .work-card:nth-child(even) {
-            margin-top: 50px;
+            margin-top: 54px;
         }
 
         .work-card {
             background-color: var(--card-bg);
-            border: 1px solid #eeeeee;
-            border-radius: 4px;
+            border: 1px solid var(--line);
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.4s ease;
+            transition: transform 0.35s ease, opacity 0.3s ease;
         }
 
         .work-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
         }
 
         .work-media {
             width: 100%;
-            height: 400px;
+            height: 430px;
             background-color: #f0f0ed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .work-card.large .work-media {
+            height: 520px;
         }
 
         .work-details {
-            padding: 25px;
+            padding: 24px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            gap: 20px;
         }
 
         .work-details h3 {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.45;
         }
 
         .work-details span {
             font-size: 14px;
             color: var(--text-muted);
+            white-space: nowrap;
         }
 
-        /* --- قسم التواصل البسيط --- */
-        .contact-box h2 {
-            font-size: 50px;
-            margin-bottom: 20px;
+        .work-summary {
+            padding: 0 24px 26px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .clients-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 70px;
+        }
+
+        .client-card {
+            border: 1px solid var(--line);
+            background: #fff;
+            padding: 24px 18px;
+            text-align: center;
+            font-weight: 700;
+            color: #3e3a36;
         }
 
         .contact-box p {
             font-size: 20px;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 500px;
+            margin-bottom: 38px;
+            max-width: 560px;
         }
 
-        .email-link {
-            font-size: 32px;
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .email-link,
+        .whatsapp-link {
+            font-size: clamp(22px, 3vw, 34px);
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 700;
@@ -280,119 +456,214 @@
             transition: 0.3s;
         }
 
-        .email-link:hover {
+        .whatsapp-link {
             color: var(--accent-color);
             border-color: var(--accent-color);
         }
 
-        /* --- التجاوب مع شاشات الجوال --- */
+        .email-link:hover,
+        .whatsapp-link:hover {
+            color: #6e4b34;
+            border-color: #6e4b34;
+        }
+
+        @media (max-width: 1100px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+            .hero-image {
+                height: 460px;
+            }
+            .availability-card {
+                right: 22px;
+            }
+        }
+
         @media (max-width: 992px) {
             header {
                 position: relative;
                 width: 100%;
                 height: auto;
-                padding: 30px;
+                padding: 26px 20px;
                 border-left: none;
-                border-bottom: 1px solid #eeeeee;
+                border-bottom: 1px solid var(--line);
                 flex-direction: row;
+                align-items: center;
+                gap: 20px;
+            }
+            .brand-logo small,
+            .header-footer {
+                display: none;
             }
             nav ul {
                 flex-direction: row;
-                gap: 15px;
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
             }
             nav ul li a {
                 font-size: 15px;
             }
-            nav ul li a:hover, nav ul li a.active {
+            nav ul li a:hover,
+            nav ul li a.active {
                 padding-right: 0;
+            }
+            nav ul li a::before {
+                display: none;
             }
             main {
                 margin-right: 0;
                 padding: 0 20px;
             }
             section {
-                padding: 60px 0;
+                padding: 64px 0;
                 min-height: auto;
             }
-            .hero-section h1 {
-                font-size: 38px;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+            .about-grid,
             .work-grid {
                 grid-template-columns: 1fr;
             }
             .work-card:nth-child(even) {
                 margin-top: 0;
             }
-            .work-media {
-                height: 280px;
+            .works-head {
+                align-items: flex-start;
+                flex-direction: column;
             }
-            .email-link {
-                font-size: 22px;
+            .stats-grid,
+            .clients-row {
+                grid-template-columns: 1fr 1fr;
+            }
+            .work-media,
+            .work-card.large .work-media {
+                height: 330px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav ul {
+                justify-content: flex-start;
+            }
+            .hero-copy h1 {
+                font-size: 36px;
+            }
+            .hero-copy p {
+                font-size: 18px;
+            }
+            .hero-image,
+            .profile-photo,
+            .work-media,
+            .work-card.large .work-media {
+                height: 270px;
+            }
+            .availability-card {
+                position: static;
+                width: 100%;
+                margin-top: 14px;
+            }
+            .stats-grid,
+            .clients-row {
+                grid-template-columns: 1fr;
+            }
+            .work-details {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- الهيدر الجانبي الثابت -->
     <header>
-        <a href="#" class="brand-logo">مَفهومـ.</a>
+        <a href="#hero" class="brand-logo">ليان منصور<small>Visual Identity Designer</small></a>
         <nav>
             <ul>
                 <li><a href="#hero" class="nav-item active">البداية</a></li>
-                <li><a href="#about" class="nav-item">الفلسفة</a></li>
+                <li><a href="#about" class="nav-item">عن ليان</a></li>
                 <li><a href="#works" class="nav-item">المشاريع</a></li>
-                <li><a href="#connect" class="nav-item">اتصال</a></li>
+                <li><a href="#connect" class="nav-item">تواصل</a></li>
             </ul>
         </nav>
         <div class="header-footer">
-            <p>© 2026 ستوديو مفهوم</p>
+            <p>القاهرة، مصر</p>
+            <p><a href="mailto:lian.mansour.design@gmail.com">lian.mansour.design@gmail.com</a></p>
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي للموقع -->
     <main>
-        
-        <!-- قسم الهيرو -->
         <section id="hero" class="hero-section">
-            <h1>نصنعُ بصماتٍ بصرية تروي قصصاً ملهمة وتدومُ طويلاً.</h1>
-            <p>أنا مصمم جرافيك مستقل، أؤمن أن البساطة هي أعلى درجات التعقيد والجمال الفني.</p>
-            <a href="#works" class="explore-link">شاهد المشاريع الأخيرة</a>
+            <div class="hero-copy">
+                <div class="section-kicker">مصممة هويات بصرية وتغليف</div>
+                <h1>أصمم حضوراً بصرياً هادئاً، واضحاً، ويترك أثراً من أول لقاء.</h1>
+                <p>أعمل مع المطاعم، العلامات الحرفية، المنتجات المحلية، والاستوديوهات الصغيرة على بناء هويات بصرية دقيقة تمتد من الشعار إلى التغليف والمطبوعات وتجربة العميل.</p>
+                <div class="hero-meta">
+                    <span>Brand Identity</span>
+                    <span>Packaging</span>
+                    <span>Editorial Design</span>
+                    <span>Art Direction</span>
+                </div>
+                <a href="#works" class="explore-link">شاهد المشاريع المختارة</a>
+            </div>
+            <div class="hero-image-wrap">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="مساحة عمل تصميم هادئة تحتوي على لابتوب ولوحات ألوان">
+                </div>
+                <div class="availability-card">
+                    <strong>متاحة لمشاريع يوليو</strong>
+                    <p>أقبل مشروعين فقط شهرياً لضمان وقت كافٍ للبحث، التجربة، وتسليم هوية متماسكة قابلة للاستخدام.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- قسم عن المصمم والفلسفة -->
         <section id="about">
             <div class="about-grid">
                 <div class="about-text">
-                    <h2>فلسفتي في التصميم</h2>
-                    <p style="color: var(--text-muted); font-size: 18px; margin-bottom: 20px;">
-                        التصميم ليس مجرد ألوان مصفوفة، بل هو حلول ذكية للمشاكل وتسهيل للتواصل بين العلامة التجارية وجمهورها.
-                    </p>
-                    <p style="color: var(--text-muted); font-size: 16px;">
-                        على مدار أكثر من 5 سنوات، قمت بمساعدة الشركات الناشئة والطموحة لتجسيد أفكارها في قوالب بصرية فاخرة تزيد من قيمتها السوقية.
-                    </p>
-                </div>
-                <div class="experience-list">
-                    <div class="exp-item">
-                        <span class="year">2024 - مستمر</span>
-                        <h4>مخرج فني مستقل</h4>
-                        <p style="color: var(--text-muted); font-size: 14px;">إدارة وتصميم الهويات البصرية للعديد من الشركات في الخليج العربي.</p>
+                    <div class="section-kicker">عن ليان</div>
+                    <h2>أتعامل مع التصميم كطريقة لترتيب الفكرة قبل تجميلها.</h2>
+                    <p>بدأت عملي في التصميم عام 2019، ومع الوقت اتجهت أكثر إلى الهويات الهادئة، التغليف البسيط، والمطبوعات التي تمنح العلامة التجارية إحساساً واضحاً وموثوقاً.</p>
+                    <p>أبحث أولاً في شخصية المشروع، جمهوره، طريقة بيعه، وتفاصيل استخدام الهوية يومياً؛ ثم أبني نظاماً بصرياً يساعد صاحب المشروع على الظهور بثبات دون الحاجة لإعادة اختراع الشكل في كل مرة.</p>
+                    <div class="stats-grid">
+                        <div class="stat"><strong>46</strong><span>مشروع مكتمل</span></div>
+                        <div class="stat"><strong>7</strong><span>قطاعات مختلفة</span></div>
+                        <div class="stat"><strong>5+</strong><span>سنوات خبرة</span></div>
                     </div>
-                    <div class="exp-item">
-                        <span class="year">2022 - 2024</span>
-                        <h4>مصمم أول في وكالة بكسل الإبداعية</h4>
-                        <p style="color: var(--text-muted); font-size: 14px;">تطوير الحملات الإعلانية الإبداعية والإشراف على فرق التصميم.</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-photo">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=900&auto=format&fit=crop" alt="بورتريه مصممة تعمل على مشروع بصري">
+                    </div>
+                    <div class="experience-list">
+                        <div class="exp-item">
+                            <span class="year">2024 - الآن</span>
+                            <h4>مصممة مستقلة للهويات والتغليف</h4>
+                            <p>تطوير الهويات البصرية، أنظمة التغليف، والقوالب الجاهزة للاستخدام اليومي للعلامات الصغيرة والمتوسطة.</p>
+                        </div>
+                        <div class="exp-item">
+                            <span class="year">2021 - 2024</span>
+                            <h4>Senior Graphic Designer — Noon Creative House</h4>
+                            <p>تصميم حملات إطلاق منتجات، مطبوعات تسويقية، وإرشاد بصري لفرق المحتوى والسوشيال ميديا.</p>
+                        </div>
+                        <div class="exp-item">
+                            <span class="year">2019 - 2021</span>
+                            <h4>Junior Brand Designer — Cairo Studio Lab</h4>
+                            <p>المشاركة في بناء moodboards، تطبيقات الهوية، عروض العملاء، وتحضير ملفات التسليم والطباعة.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- قسم الأعمال الفنية -->
         <section id="works">
+            <div class="works-head">
+                <div>
+                    <div class="section-kicker">مشاريع مختارة</div>
+                    <h2>أعمال تجمع بين الهدوء، الوضوح، والتفاصيل القابلة للتطبيق.</h2>
+                </div>
+                <p>كل مشروع يبدأ بسؤال واضح: كيف نجعل العميل يفهم العلامة ويثق بها قبل أن يقرأ كل التفاصيل؟</p>
+            </div>
+
             <div class="gallery-filter">
                 <button class="filter-trigger active" data-target="all">كل الأعمال</button>
                 <button class="filter-trigger" data-target="editorial">مطبوعات وكتب</button>
@@ -401,61 +672,100 @@
             </div>
 
             <div class="work-grid">
-                <!-- كارت 1 -->
-                <div class="work-card" data-cat="editorial">
-                    <div class="work-media">صورة غلاف المجلة الفنية / معرض فني</div>
+                <article class="work-card large" data-cat="editorial">
+                    <div class="work-media">
+                        <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1200&auto=format&fit=crop" alt="تصميم مطبوعات وكتب فنية على طاولة عمل">
+                    </div>
                     <div class="work-details">
-                        <h3>كتيب معرض "أبعاد" السنوي</h3>
+                        <h3>كتيب معرض «أبعاد» للفنون المعاصرة</h3>
                         <span>مطبوعات</span>
                     </div>
-                </div>
-                <!-- كارت 2 -->
-                <div class="work-card" data-cat="brand">
-                    <div class="work-media">صورة الهوية البصرية لـ نسيج</div>
-                    <div class="work-details">
-                        <h3>هوية شركة "نسيج" للمنسوجات</h3>
-                        <span>علامات تجارية</span>
+                    <p class="work-summary">تصميم نظام صفحات هادئ يعتمد على المساحات البيضاء، تقسيم الأعمال حسب التجربة البصرية، وتجهيز الملف للطباعة بقياس A5.</p>
+                </article>
+
+                <article class="work-card" data-cat="brand">
+                    <div class="work-media">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="تفاصيل أقمشة ومنسوجات ضمن مشروع هوية بصرية">
                     </div>
-                </div>
-                <!-- كارت 3 -->
-                <div class="work-card" data-cat="package">
-                    <div class="work-media">صورة غلاف العبوة الفاخرة</div>
                     <div class="work-details">
-                        <h3>تغليف وتعبئة عطور "الشرق"</h3>
+                        <h3>هوية «نسيج» للمنسوجات الطبيعية</h3>
+                        <span>علامة تجارية</span>
+                    </div>
+                    <p class="work-summary">هوية دافئة لعلامة متخصصة في المفروشات المصنوعة يدوياً، تشمل الشعار، الألوان، بطاقات المنتج، وأسلوب التصوير.</p>
+                </article>
+
+                <article class="work-card" data-cat="package">
+                    <div class="work-media">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1200&auto=format&fit=crop" alt="زجاجات عطر فاخرة مناسبة لمشروع تغليف">
+                    </div>
+                    <div class="work-details">
+                        <h3>تغليف عطور «الشرق»</h3>
                         <span>تغليف منتجات</span>
                     </div>
-                </div>
-                <!-- كارت 4 -->
-                <div class="work-card" data-cat="brand">
-                    <div class="work-media">صورة شعار تطبيق مالي</div>
-                    <div class="work-details">
-                        <h3>الشعار البصري لمنصة "نمو"</h3>
-                        <span>علامات تجارية</span>
+                    <p class="work-summary">تصميم ملصقات وصناديق لعطرين بإحساس شرقي معاصر، مع الاعتماد على خامات مطفية وتباين واضح في معلومات العبوة.</p>
+                </article>
+
+                <article class="work-card large" data-cat="brand">
+                    <div class="work-media">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop" alt="استخدام تطبيق دفع إلكتروني على هاتف ضمن مشروع هوية منصة مالية">
                     </div>
-                </div>
+                    <div class="work-details">
+                        <h3>النظام البصري لمنصة «نمو» المالية</h3>
+                        <span>علامة تجارية</span>
+                    </div>
+                    <p class="work-summary">بناء هوية رقمية لمنصة مدفوعات صغيرة، مع ألوان هادئة، أيقونات بسيطة، وقوالب عرض تصلح للموقع والعروض التقديمية.</p>
+                </article>
+
+                <article class="work-card" data-cat="package">
+                    <div class="work-media">
+                        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=1200&auto=format&fit=crop" alt="منتجات طبيعية وفواكه ضمن مشروع تغليف غذائي">
+                    </div>
+                    <div class="work-details">
+                        <h3>عبوات «ريف» للمربى الطبيعي</h3>
+                        <span>تغليف منتجات</span>
+                    </div>
+                    <p class="work-summary">تطوير ملصقات بثلاث نكهات، مع نظام ألوان واضح لكل منتج وتوجيهات تصوير تناسب المتاجر والسوشيال ميديا.</p>
+                </article>
+
+                <article class="work-card" data-cat="editorial">
+                    <div class="work-media">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="مساحة داخلية هادئة تناسب مشروع كتالوج أثاث وديكور">
+                    </div>
+                    <div class="work-details">
+                        <h3>كتالوج «دار» للأثاث الهادئ</h3>
+                        <span>مطبوعات</span>
+                    </div>
+                    <p class="work-summary">كتالوج منتجات مكوّن من 32 صفحة، يركز على الصور الكبيرة، تفاصيل الخامات، وجدول مواصفات مختصر وسهل القراءة.</p>
+                </article>
+            </div>
+
+            <div class="clients-row">
+                <div class="client-card">Naseej</div>
+                <div class="client-card">Nomo</div>
+                <div class="client-card">Reef Jars</div>
+                <div class="client-card">Dar Living</div>
             </div>
         </section>
 
-        <!-- قسم التواصل الفاخر -->
         <section id="connect">
             <div class="contact-box">
-                <h2>هل لديك مشروع طموح؟</h2>
-                <p>أنا متاح حالياً للمشاريع الجديدة والاستشارات التصميمية.</p>
-                <a href="mailto:hello@yourdomain.com" class="email-link">hello@yourdomain.com</a>
+                <div class="section-kicker">تواصل</div>
+                <h2>لديك علامة تحتاج شكلاً أكثر وضوحاً؟</h2>
+                <p>أرسل نبذة قصيرة عن مشروعك، وسأعود إليك بخطوات العمل المقترحة ونطاق التنفيذ المناسب.</p>
+                <div class="contact-links">
+                    <a href="mailto:lian.mansour.design@gmail.com" class="email-link">lian.mansour.design@gmail.com</a>
+                    <a href="https://wa.me/201015365340?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%84%D9%8A%D8%A7%D9%86%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D8%AD%D8%AF%D8%AB%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85." target="_blank" class="whatsapp-link" rel="noopener">واتساب</a>
+                </div>
             </div>
         </section>
-
     </main>
 
-    <!-- الجافا سكريبت للتحكم بالتأثيرات والفلترة -->
     <script>
-        // 1. نظام الفلترة الأنيق للمشاريع
         const filters = document.querySelectorAll('.filter-trigger');
         const cards = document.querySelectorAll('.work-card');
 
         filters.forEach(filter => {
             filter.addEventListener('click', () => {
-                // إزالة التنشيط عن باقي الأزرار
                 filters.forEach(f => f.classList.remove('active'));
                 filter.classList.add('active');
 
@@ -464,17 +774,21 @@
                 cards.forEach(card => {
                     if (target === 'all' || card.getAttribute('data-cat') === target) {
                         card.style.display = 'block';
-                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
                     } else {
                         card.style.opacity = '0';
                         card.style.transform = 'scale(0.95)';
-                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
                     }
                 });
             });
         });
 
-        // 2. تغيير التنشيط في القائمة الجانبية أثناء التمرير
         const mainSections = document.querySelectorAll('section');
         const menuItems = document.querySelectorAll('.nav-item');
 
@@ -483,7 +797,7 @@
             mainSections.forEach(sec => {
                 const top = sec.offsetTop;
                 const height = sec.clientHeight;
-                if (pageYOffset >= (top - height / 3)) {
+                if (window.pageYOffset >= (top - height / 3)) {
                     activeId = sec.getAttribute('id');
                 }
             });
