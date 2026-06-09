@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>صانعة محتوى UGC للعلامات التجارية</title>
+<title>هبة ناصر | UGC Creator Portfolio</title>
+  <meta name="description" content="بورتفوليو هبة ناصر، صانعة محتوى UGC متخصصة في فيديوهات المنتجات، مراجعات، ريلز، تيك توك، وسكريبتات إعلانية قصيرة." />
   <style>
     :root {
       --bg: #f5f7fb;
@@ -373,6 +374,117 @@
       align-items: center;
     }
 
+
+    .profile-row {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      height: 260px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--soft);
+      position: relative;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-photo::after {
+      content: "Heba Nasser";
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(255,255,255,.88);
+      color: #141824;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-video {
+      min-height: 260px;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+      border-radius: 22px;
+    }
+
+    .hero-video::after {
+      content: "Product Review";
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(0,0,0,.45);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .work-video {
+      min-height: 170px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background: #111827;
+    }
+
+    .work-video video {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .work-video span {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 2;
+      background: rgba(255,255,255,.88);
+      color: #141824;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 720px) {
+      .profile-row {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        height: 320px;
+      }
+
+      .work-video video {
+        height: 240px;
+      }
+    }
+
     .work-cover {
       min-height: 110px;
       border-radius: 20px;
@@ -612,7 +724,7 @@
     <div class="container nav-wrap">
       <a href="#home" class="brand">
         <span class="brand-badge">U</span>
-        <span>صانعة محتوى UGC</span>
+        <span>هبة ناصر</span>
       </a>
 
       <nav class="nav" id="nav">
@@ -636,11 +748,10 @@
 
         <div class="hero-main reveal">
           <div>
-            <span class="hero-tag">محتوى حقيقي يساعد منتجك على البيع بثقة</span>
+            <span class="hero-tag">UGC Creator للبراندات والمتاجر الإلكترونية</span>
             <h1>محتوى <span>قصير وواقعي</span> يجعل البراند أقرب للعميل</h1>
             <p>
-              أصنع فيديوهات UGC للمنتجات والخدمات بأسلوب طبيعي يناسب تيك توك، ريلز، والإعلانات،
-              مع تركيز على الثقة، الوضوح، والنتيجة.
+              أنا هبة ناصر، أصنع فيديوهات UGC للمنتجات والخدمات بأسلوب طبيعي يناسب تيك توك، ريلز، والإعلانات، مع تركيز على الثقة، الوضوح، والنتيجة.
             </p>
             <div class="hero-btns">
               <a href="#work" class="btn btn-main">شاهد الأعمال</a>
@@ -658,8 +769,10 @@
             <strong>+22</strong>
             <span>براند تم التعاون معه</span>
           </div>
-          <div class="mini">
-            <p>أفكار، هوكات، مراجعات منتجات، وتجارب استخدام جاهزة للنشر أو للإعلانات.</p>
+          <div class="mini hero-video">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="https://videos.pexels.com/video-files/4912133/4912133-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
 
@@ -669,20 +782,28 @@
     <section class="section" id="about">
       <div class="container">
         <div class="section-head reveal">
-          <h2>من أنا</h2>
+          <h2>هبة ناصر — من أنا</h2>
           <p>أركز على صناعة محتوى يبدو حقيقيًا للمشاهد لكنه مبني على رسالة تسويقية واضحة.</p>
         </div>
 
         <div class="card about-card reveal">
-          <p>
-            أساعد البراندات على تقديم منتجاتها بطريقة بسيطة ومقنعة من خلال فيديوهات قصيرة،
-            تشمل كتابة الفكرة، الهوك، التصوير، والمونتاج، بما يناسب جمهور السوشيال ميديا.
-          </p>
+          <div class="profile-row">
+            <div class="profile-photo">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="هبة ناصر صانعة محتوى UGC">
+            </div>
 
-          <div class="about-points">
-            <div class="point">فهم المنتج والجمهور</div>
-            <div class="point">كتابة هوكات وسكريبتات</div>
-            <div class="point">تسليم فيديو جاهز للنشر</div>
+            <div>
+              <p>
+                أنا صانعة محتوى UGC أساعد البراندات على تقديم منتجاتها بطريقة بسيطة ومقنعة من خلال فيديوهات قصيرة،
+                تشمل كتابة الفكرة، الهوك، التصوير، والمونتاج، بما يناسب جمهور السوشيال ميديا.
+              </p>
+
+              <div class="about-points">
+                <div class="point">فهم المنتج والجمهور</div>
+                <div class="point">كتابة هوكات وسكريبتات</div>
+                <div class="point">تسليم فيديو جاهز للنشر</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -727,12 +848,17 @@
       <div class="container">
         <div class="section-head reveal">
           <h2>نماذج أعمال</h2>
-          <p>أمثلة مختصرة لزوايا محتوى يمكن تنفيذها حسب نوع المنتج.</p>
+          <p>فيديوهات حقيقية مدمجة لتوضيح شكل المحتوى والزوايا التي يمكن تنفيذها حسب نوع المنتج.</p>
         </div>
 
         <div class="works">
           <div class="work-item reveal">
-            <div class="work-cover">تجربة منتج</div>
+            <div class="work-video">
+              <span>Product Review</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/8154850/8154850-uhd_4096_2160_25fps.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="work-body">
               <small>منتجات عناية</small>
               <h3>فيديو قبل وبعد</h3>
@@ -742,7 +868,12 @@
           </div>
 
           <div class="work-item reveal">
-            <div class="work-cover">مراجعة سريعة</div>
+            <div class="work-video">
+              <span>Routine Video</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/4911927/4911927-uhd_3840_2160_24fps.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="work-body">
               <small>متجر إلكتروني</small>
               <h3>عرض مميزات المنتج</h3>
@@ -752,7 +883,12 @@
           </div>
 
           <div class="work-item reveal">
-            <div class="work-cover">هوك إعلاني</div>
+            <div class="work-video">
+              <span>Product Shoot</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/7287915/7287915-uhd_2160_3840_25fps.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="work-body">
               <small>إعلانات قصيرة</small>
               <h3>افتتاحية توقف التمرير</h3>
@@ -813,7 +949,7 @@
               <div>⚡ تنفيذ سريع وواضح</div>
             </div>
 
-            <a href="https://wa.me/201000000000" target="_blank" class="btn btn-main">تواصل عبر واتساب</a>
+            <a href="https://wa.me/201015365340" target="_blank" class="btn btn-main">تواصل عبر واتساب</a>
           </div>
 
           <div class="contact-box reveal">
@@ -846,7 +982,7 @@
 
   <footer class="footer">
     <div class="container">
-      © جميع الحقوق محفوظة — صانعة محتوى UGC للعلامات التجارية
+      © 2026 هبة ناصر — UGC Creator للعلامات التجارية
     </div>
   </footer>
 
@@ -856,7 +992,7 @@
     const menuBtn = document.getElementById("menuBtn");
     const nav = document.getElementById("nav");
 
-    const savedTheme = localStorage.getItem("ugc-third-theme");
+    const savedTheme = localStorage.getItem("heba-ugc-theme");
     if (savedTheme === "dark") {
       body.classList.add("dark");
       themeBtn.textContent = "☀";
@@ -865,7 +1001,7 @@
     themeBtn.addEventListener("click", function () {
       body.classList.toggle("dark");
       const isDark = body.classList.contains("dark");
-      localStorage.setItem("ugc-third-theme", isDark ? "dark" : "light");
+      localStorage.setItem("heba-ugc-theme", isDark ? "dark" : "light");
       themeBtn.textContent = isDark ? "☀" : "☾";
     });
 
@@ -924,7 +1060,20 @@
         return;
       }
 
-      formMessage.textContent = "تم إرسال الطلب بنجاح.";
+      const whatsappNumber = "201015365340";
+      const whatsappMessage =
+`مرحبًا هبة، أريد الاستفسار عن فيديوهات UGC.
+
+الاسم: ${name}
+نوع المنتج: ${product}
+
+تفاصيل المنتج / الهدف:
+${message}`;
+
+      const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+      window.open(url, "_blank");
+
+      formMessage.textContent = "تم تجهيز طلبك وفتحه في واتساب لتأكيد التفاصيل.";
       formMessage.classList.add("success");
       form.reset();
     });

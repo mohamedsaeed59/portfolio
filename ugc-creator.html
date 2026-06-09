@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>صانع محتوى UGC</title>
+
+  <title>ملك عادل | UGC Creator & Product Video Portfolio</title>
+  <meta name="description" content="بورتفوليو ملك عادل، صانعة محتوى UGC متخصصة في فيديوهات المنتجات، مراجعات العناية والجمال، Unboxing، وسكريبتات الإعلانات القصيرة." />
 
   <style>
     :root {
-      --bg: #f7f8fc;
+      --bg: #f8f6ff;
       --card: #ffffff;
       --text: #151827;
       --muted: #667085;
@@ -15,9 +17,10 @@
       --secondary: #ec4899;
       --accent: #06b6d4;
       --border: rgba(21, 24, 39, 0.1);
-      --shadow: 0 20px 50px rgba(20, 24, 40, 0.12);
-      --soft: #eef1f8;
+      --shadow: 0 22px 56px rgba(20, 24, 40, 0.12);
+      --soft: #f0ecff;
       --header: rgba(255, 255, 255, 0.82);
+      --radius: 28px;
     }
 
     body.dark {
@@ -29,7 +32,7 @@
       --secondary: #f43f5e;
       --accent: #22d3ee;
       --border: rgba(255, 255, 255, 0.1);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
       --soft: #181b2d;
       --header: rgba(8, 9, 20, 0.82);
     }
@@ -47,8 +50,9 @@
     body {
       font-family: Tahoma, Arial, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(124, 58, 237, 0.18), transparent 35%),
-        radial-gradient(circle at top left, rgba(236, 72, 153, 0.15), transparent 32%),
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.22), transparent 34%),
+        radial-gradient(circle at top left, rgba(236, 72, 153, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(6, 182, 212, 0.12), transparent 34%),
         var(--bg);
       color: var(--text);
       line-height: 1.8;
@@ -67,29 +71,47 @@
     }
 
     .section {
-      padding: 90px 0;
+      padding: 92px 0;
     }
 
     .section-head {
-      max-width: 720px;
-      margin-bottom: 40px;
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-inline: auto;
     }
 
     .label {
-      display: inline-block;
-      padding: 7px 14px;
-      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
       background: rgba(124, 58, 237, 0.12);
       color: var(--primary);
-      font-weight: bold;
+      font-weight: 900;
       margin-bottom: 14px;
       border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--secondary);
+      box-shadow: 0 0 18px var(--secondary);
     }
 
     .section-title {
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.3;
+      font-size: clamp(30px, 4.5vw, 52px);
+      line-height: 1.25;
       margin-bottom: 12px;
+      letter-spacing: -0.04em;
     }
 
     .section-desc {
@@ -124,14 +146,22 @@
     }
 
     .logo {
-      width: 45px;
-      height: 45px;
-      border-radius: 16px;
+      width: 47px;
+      height: 47px;
+      border-radius: 18px;
       display: grid;
       place-items: center;
       color: #fff;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       box-shadow: 0 12px 28px rgba(124, 58, 237, 0.3);
+      direction: ltr;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: -4px;
     }
 
     .nav {
@@ -139,7 +169,7 @@
       align-items: center;
       gap: 18px;
       color: var(--muted);
-      font-weight: bold;
+      font-weight: 900;
       font-size: 15px;
     }
 
@@ -170,7 +200,7 @@
     }
 
     .hero {
-      padding: 95px 0 70px;
+      padding: 90px 0 76px;
       min-height: calc(100vh - 76px);
       display: flex;
       align-items: center;
@@ -179,19 +209,21 @@
     .hero-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      gap: 45px;
+      gap: 46px;
       align-items: center;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 76px);
-      line-height: 1.15;
+      font-size: clamp(40px, 6.7vw, 82px);
+      line-height: 1.12;
       margin-bottom: 22px;
+      letter-spacing: -0.05em;
     }
 
     .gradient-text {
       background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
 
@@ -199,7 +231,7 @@
       color: var(--muted);
       font-size: 20px;
       margin-bottom: 30px;
-      max-width: 660px;
+      max-width: 700px;
     }
 
     .btns {
@@ -238,69 +270,80 @@
       transform: translateY(-3px);
     }
 
-    .hero-card {
+    .hero-video-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 34px;
-      padding: 24px;
+      border-radius: 36px;
+      padding: 18px;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
 
-    .phone {
-      width: min(330px, 100%);
+    .phone-frame {
+      width: min(340px, 100%);
       aspect-ratio: 9 / 16;
       margin: auto;
       border-radius: 42px;
-      padding: 16px;
+      padding: 12px;
       background: #05060d;
       border: 8px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
-    }
-
-    .phone-screen {
-      height: 100%;
-      border-radius: 30px;
-      padding: 18px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.72)),
-        linear-gradient(160deg, #a855f7, #ec4899, #06b6d4);
+      position: relative;
       overflow: hidden;
     }
 
-    .record {
+    .phone-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 28px;
+      display: block;
+    }
+
+    .phone-overlay {
+      position: absolute;
+      inset: 20px;
+      border-radius: 28px;
+      background: linear-gradient(to top, rgba(0,0,0,.68), rgba(0,0,0,.08) 58%);
+      pointer-events: none;
       display: flex;
-      justify-content: space-between;
+      align-items: flex-end;
+      padding: 18px;
+      color: #fff;
+    }
+
+    .phone-overlay strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .record-pill {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 2;
+      display: inline-flex;
       align-items: center;
-      font-weight: bold;
+      gap: 8px;
+      background: rgba(0,0,0,.45);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.20);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
     }
 
     .dot {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: #ff3b5c;
       box-shadow: 0 0 0 8px rgba(255, 59, 92, 0.2);
       animation: pulse 1.4s infinite;
-    }
-
-    .phone-title h3 {
-      font-size: 28px;
-      line-height: 1.3;
-      margin-top: 10px;
-    }
-
-    .phone-title span {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 50px;
-      background: rgba(255,255,255,0.18);
-      font-weight: bold;
     }
 
     .float {
@@ -313,6 +356,7 @@
       padding: 12px 15px;
       font-weight: 900;
       animation: float 4s ease-in-out infinite;
+      z-index: 3;
     }
 
     .float.one {
@@ -345,6 +389,8 @@
       display: block;
       font-size: 24px;
       color: var(--primary);
+      direction: ltr;
+      text-align: right;
     }
 
     .small-stat span {
@@ -363,21 +409,41 @@
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 28px;
     }
 
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 28px;
+    .profile-card {
       display: grid;
-      place-items: center;
-      color: #fff;
-      font-size: 34px;
-      margin-bottom: 18px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      gap: 18px;
+    }
+
+    .profile-photo {
+      height: 360px;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-photo::after {
+      content: "UGC Creator";
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(255,255,255,.88);
+      color: #151827;
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
     }
 
     .card h3 {
@@ -487,31 +553,53 @@
       overflow: hidden;
     }
 
-    .thumb {
-      min-height: 220px;
-      padding: 22px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background:
-        linear-gradient(150deg, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
-        linear-gradient(135deg, var(--primary), var(--secondary));
+    .video-wrap {
+      height: 360px;
+      position: relative;
+      overflow: hidden;
+      background: #080914;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: .4s;
+    }
+
+    .work-card:hover video {
+      transform: scale(1.04);
+    }
+
+    .video-label {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255,255,255,.88);
+      color: #151827;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
     }
 
     .play {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
       width: 54px;
       height: 54px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: rgba(255, 255, 255, 0.22);
+      color: #fff;
       backdrop-filter: blur(10px);
-    }
-
-    .thumb h3 {
-      font-size: 25px;
-      line-height: 1.3;
+      border: 1px solid rgba(255,255,255,.25);
+      font-weight: 900;
     }
 
     .work-body {
@@ -571,6 +659,7 @@
       display: block;
       line-height: 1;
       margin-bottom: 10px;
+      direction: ltr;
     }
 
     .result-card span {
@@ -862,6 +951,10 @@
       .btn {
         width: 100%;
       }
+
+      .video-wrap {
+        height: 430px;
+      }
     }
   </style>
 </head>
@@ -871,8 +964,11 @@
   <header class="header">
     <div class="container navbar">
       <a href="#home" class="brand">
-        <span class="logo">UGC</span>
-        <span>صانعة محتوى</span>
+        <span class="logo">MA</span>
+        <span>
+          ملك عادل
+          <small>UGC Creator</small>
+        </span>
       </a>
 
       <nav class="nav" id="nav">
@@ -885,8 +981,8 @@
       </nav>
 
       <div class="actions">
-        <button class="theme-btn" id="themeBtn">☾</button>
-        <button class="menu-btn" id="menuBtn">☰</button>
+        <button class="theme-btn" id="themeBtn" type="button">☾</button>
+        <button class="menu-btn" id="menuBtn" type="button">☰</button>
       </div>
     </div>
   </header>
@@ -897,29 +993,28 @@
       <div class="container hero-grid">
 
         <div class="reveal">
-          <span class="label">محتوى حقيقي يبني الثقة ويقرب العميل من الشراء</span>
+          <span class="label">UGC Creator للمنتجات والبراندات المحلية</span>
           <h1>
             أصنع <span class="gradient-text">فيديوهات UGC</span>
-            تجعل منتجك أقرب لجمهورك
+            تبدو طبيعية وتخدم قرار الشراء
           </h1>
           <p>
-            أساعد العلامات التجارية على الظهور بمحتوى طبيعي ومقنع يشبه تجربة العميل الحقيقية،
-            من خلال فيديوهات قصيرة مناسبة لتيك توك، إنستجرام ريلز، الإعلانات، ومراجعات المنتجات.
+            أنا ملك عادل، صانعة محتوى UGC أساعد البراندات على تقديم منتجاتها بطريقة قريبة من العميل: مراجعات، تجربة استخدام، Unboxing، وسكريبتات إعلانية قصيرة مناسبة لريلز وتيك توك والإعلانات المدفوعة.
           </p>
 
           <div class="btns">
-            <a href="#work" class="btn btn-primary">شاهد الأعمال</a>
-            <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+            <a href="#work" class="btn btn-primary">شاهد نماذج الفيديو</a>
+            <a href="#contact" class="btn btn-secondary">اطلب تعاون</a>
           </div>
 
           <div class="stats-small">
             <div class="small-stat">
               <strong>+180</strong>
-              <span>فيديو منفذ</span>
+              <span>فيديو قصير تم تنفيذه</span>
             </div>
             <div class="small-stat">
               <strong>+45</strong>
-              <span>فكرة إعلانية</span>
+              <span>سكريبت إعلاني</span>
             </div>
             <div class="small-stat">
               <strong>+22</strong>
@@ -928,21 +1023,17 @@
           </div>
         </div>
 
-        <div class="hero-card reveal">
-          <div class="float one">هوك قوي خلال أول ٣ ثوانٍ</div>
-          <div class="float two">تصوير طبيعي يبيع بدون مبالغة</div>
+        <div class="hero-video-card reveal">
+          <div class="float one">هوك واضح من أول ٣ ثوانٍ</div>
+          <div class="float two">تصوير طبيعي يشبه تجربة العميل</div>
 
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="record">
-                <span>تسجيل محتوى</span>
-                <span class="dot"></span>
-              </div>
-
-              <div class="phone-title">
-                <span>تجربة منتج</span>
-                <h3>ليه المنتج ده يستاهل التجربة؟</h3>
-              </div>
+          <div class="phone-frame">
+            <span class="record-pill"><span class="dot"></span> تسجيل مراجعة</span>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="https://videos.pexels.com/video-files/4912133/4912133-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            </video>
+            <div class="phone-overlay">
+              <strong>مراجعة منتج عناية بأسلوب قريب من الجمهور</strong>
             </div>
           </div>
         </div>
@@ -955,41 +1046,45 @@
 
         <div class="section-head reveal">
           <span class="label">من أنا</span>
-          <h2 class="section-title">صانعة محتوى تفهم المنتج قبل الكاميرا</h2>
+          <h2 class="section-title">أتعامل مع الفيديو كرحلة إقناع قصيرة، وليس مجرد ظهور أمام الكاميرا.</h2>
           <p class="section-desc">
-            لا أقدم فيديو جميل فقط، بل أصنع رسالة واضحة تساعد البراند على الظهور بشكل طبيعي وموثوق.
+            أبدأ من فهم المنتج والجمهور، ثم أختار زاوية محتوى تجعل الفيديو طبيعيًا، سريعًا، وقابلًا للاستخدام في الحملات أو صفحات البيع.
           </p>
         </div>
 
         <div class="about-grid">
-          <div class="card reveal">
-            <div class="avatar">▶</div>
-            <h3>صانعة محتوى UGC للعلامات التجارية</h3>
-            <p>
-              متخصصة في صناعة فيديوهات قصيرة للمنتجات والخدمات بأسلوب واقعي يناسب المنصات الاجتماعية
-              والحملات الإعلانية وصفحات البيع.
-            </p>
+          <div class="card profile-card reveal">
+            <div class="profile-photo">
+              <img src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=80" alt="ملك عادل صانعة محتوى UGC">
+            </div>
 
-            <div class="tags">
-              <span class="tag">مراجعات منتجات</span>
-              <span class="tag">سكريبتات</span>
-              <span class="tag">ريلز</span>
-              <span class="tag">تعليق صوتي</span>
+            <div>
+              <h3>ملك عادل — UGC Creator</h3>
+              <p>
+                متخصصة في محتوى المنتجات، الجمال والعناية، المنتجات اليومية، المتاجر الإلكترونية، وتجارب الاستخدام القصيرة.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Product Review</span>
+                <span class="tag">Unboxing</span>
+                <span class="tag">Reels</span>
+                <span class="tag">Voice Over</span>
+              </div>
             </div>
           </div>
 
           <div class="card reveal">
-            <h3>محتوى يبدو طبيعيًا لكنه مبني على هدف تسويقي واضح</h3>
+            <h3>محتوى يبدو عفويًا، لكنه مبني على رسالة تسويقية واضحة</h3>
             <p>
-              أعمل على فهم المنتج والجمهور، تحديد زاوية البيع المناسبة، كتابة الهوك والسكريبت،
-              ثم تصوير محتوى بسيط وواقعي يجعل المشاهد يشعر أن المنتج جزء من تجربة يومية حقيقية.
+              لا أعتمد على مدح المنتج بشكل مباشر. أركز على موقف حقيقي يواجهه العميل، ثم أقدم المنتج كحل بسيط ومفهوم، مع تصوير نظيف ومونتاج سريع يناسب سلوك المشاهدة على السوشيال ميديا.
             </p>
 
             <ul class="list">
-              <li>إنشاء فيديوهات منتجات ومراجعات وتجارب استخدام.</li>
-              <li>كتابة هوكات وسكريبتات مناسبة للإعلانات القصيرة.</li>
-              <li>تصوير نظيف وطبيعي يبرز المنتج بدون تكلف.</li>
-              <li>تسليم محتوى جاهز للنشر أو الاستخدام في الحملات.</li>
+              <li>كتابة هوك وسكريبت مناسب لطبيعة المنتج.</li>
+              <li>تصوير UGC عمودي مناسب لريلز وتيك توك.</li>
+              <li>إظهار المنتج في استخدام يومي طبيعي.</li>
+              <li>تسليم فيديوهات قابلة للنشر أو الاستخدام في Ads.</li>
+              <li>إمكانية تنفيذ أكثر من زاوية بيع لنفس المنتج.</li>
             </ul>
           </div>
         </div>
@@ -1000,11 +1095,11 @@
     <section class="section" id="services">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">الخدمات</span>
-          <h2 class="section-title">كل ما يحتاجه البراند لصناعة محتوى قصير مؤثر</h2>
+          <h2 class="section-title">خدمات محتوى مناسبة للبراندات التي تريد بيعًا أوضح وثقة أسرع.</h2>
           <p class="section-desc">
-            خدمات مناسبة للمتاجر الإلكترونية، منتجات العناية، المطاعم، التطبيقات، والخدمات الرقمية.
+            مناسبة للمتاجر الإلكترونية، منتجات العناية والجمال، المطاعم، المنتجات اليومية، التطبيقات، والخدمات الرقمية.
           </p>
         </div>
 
@@ -1018,30 +1113,30 @@
           <div class="service-card reveal">
             <div class="icon">⭐</div>
             <h3>مراجعات منتجات</h3>
-            <p>مراجعات صادقة ومنظمة توضح المميزات وطريقة الاستخدام وسبب اختيار المنتج.</p>
+            <p>مراجعات منظمة توضح المشكلة، التجربة، المميزات، وسبب ترشيح المنتج.</p>
           </div>
 
           <div class="service-card reveal">
             <div class="icon">📱</div>
             <h3>ريلز وتيك توك</h3>
-            <p>محتوى سريع الإيقاع مناسب للانتشار والتفاعل والحملات المدفوعة.</p>
+            <p>محتوى عمودي سريع الإيقاع مناسب للانتشار والحملات المدفوعة.</p>
           </div>
 
           <div class="service-card reveal">
             <div class="icon">✍</div>
             <h3>كتابة السكريبت</h3>
-            <p>هوكات وأفكار وسيناريوهات مختصرة تركز على المشكلة والحل والدعوة للشراء.</p>
+            <p>هوكات وسيناريوهات قصيرة تركز على زاوية بيع واحدة واضحة.</p>
           </div>
 
           <div class="service-card reveal">
             <div class="icon">🎙</div>
             <h3>تعليق صوتي</h3>
-            <p>تعليق صوتي واضح ودافئ يناسب الإعلانات والشروحات وتجارب المنتجات.</p>
+            <p>Voice over واضح ودافئ مناسب للشروحات وتجارب المنتجات.</p>
           </div>
 
           <div class="service-card reveal">
             <div class="icon">📦</div>
-            <h3>باقات محتوى شهرية</h3>
+            <h3>باقات شهرية</h3>
             <p>خطة محتوى مستمرة تشمل أفكارًا متعددة وفيديوهات منتظمة للبراند.</p>
           </div>
         </div>
@@ -1052,51 +1147,60 @@
     <section class="section" id="work">
       <div class="container">
 
-        <div class="section-head reveal">
-          <span class="label">نماذج الأعمال</span>
-          <h2 class="section-title">أفكار فيديوهات جاهزة لجذب الانتباه</h2>
+        <div class="section-head center reveal">
+          <span class="label">نماذج فيديو حقيقية</span>
+          <h2 class="section-title">أنماط محتوى أستخدمها حسب المنتج والجمهور.</h2>
           <p class="section-desc">
-            أمثلة لأنواع المحتوى التي يمكن تنفيذها لمنتجك بهدف واضح وقابل للاستخدام في الإعلانات.
+            هذه الفيديوهات مدمجة كعينات بصرية حقيقية من الإنترنت لتوضيح شكل المحتوى داخل البورتفوليو.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="work-card reveal">
-            <div class="thumb">
+            <div class="video-wrap">
+              <span class="video-label">Product Review</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/8154850/8154850-uhd_4096_2160_25fps.mp4" type="video/mp4">
+              </video>
               <div class="play">▶</div>
-              <h3>تجربة قبل وبعد</h3>
             </div>
             <div class="work-body">
-              <div class="category">منتجات عناية</div>
-              <h3>إظهار الفرق بطريقة طبيعية</h3>
-              <p>الهدف: بناء ثقة سريعة من خلال تجربة استخدام واقعية ونتيجة واضحة.</p>
-              <a href="#contact" class="mini-btn">اطلب نموذج مشابه</a>
+              <div class="category">Beauty & Skincare</div>
+              <h3>مراجعة منتج عناية</h3>
+              <p>زاوية محتوى مناسبة لعرض المنتج أمام الكاميرا، شرح الإحساس بالاستخدام، وسبب الترشيح.</p>
+              <a href="#contact" class="mini-btn">اطلب فيديو مشابه</a>
             </div>
           </div>
 
           <div class="work-card reveal">
-            <div class="thumb">
+            <div class="video-wrap">
+              <span class="video-label">Self Care Routine</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/4911927/4911927-uhd_3840_2160_24fps.mp4" type="video/mp4">
+              </video>
               <div class="play">▶</div>
-              <h3>مراجعة منتج</h3>
             </div>
             <div class="work-body">
-              <div class="category">متاجر إلكترونية</div>
-              <h3>عرض المميزات بلغة العميل</h3>
-              <p>الهدف: توضيح سبب الشراء وتقليل تردد العميل قبل الطلب.</p>
-              <a href="#contact" class="mini-btn">اطلب نموذج مشابه</a>
+              <div class="category">Tutorial / Routine</div>
+              <h3>روتين استخدام المنتج</h3>
+              <p>مناسب للمنتجات التي تحتاج إلى إظهار طريقة الاستخدام أو دمجها داخل روتين يومي.</p>
+              <a href="#contact" class="mini-btn">اطلب فيديو مشابه</a>
             </div>
           </div>
 
           <div class="work-card reveal">
-            <div class="thumb">
+            <div class="video-wrap">
+              <span class="video-label">Product Shoot</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/7287915/7287915-uhd_2160_3840_25fps.mp4" type="video/mp4">
+              </video>
               <div class="play">▶</div>
-              <h3>هوك إعلاني</h3>
             </div>
             <div class="work-body">
-              <div class="category">حملات مدفوعة</div>
-              <h3>افتتاحية توقف التمرير</h3>
-              <p>الهدف: جذب الانتباه في أول ثوانٍ ورفع فرصة مشاهدة الفيديو للنهاية.</p>
-              <a href="#contact" class="mini-btn">اطلب نموذج مشابه</a>
+              <div class="category">E-commerce</div>
+              <h3>تصوير منتج لمتجر إلكتروني</h3>
+              <p>مناسب للمنتجات التي تحتاج إلى إظهار التفاصيل، التغليف، والحركة داخل مشهد واقعي.</p>
+              <a href="#contact" class="mini-btn">اطلب فيديو مشابه</a>
             </div>
           </div>
         </div>
@@ -1107,11 +1211,11 @@
     <section class="section" id="process">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">طريقة العمل</span>
-          <h2 class="section-title">خطوات واضحة من الفكرة حتى التسليم</h2>
+          <h2 class="section-title">خطوات واضحة من Brief المنتج حتى التسليم.</h2>
           <p class="section-desc">
-            عملية منظمة تضمن أن كل فيديو له هدف ورسالة وإخراج مناسب للمنصة.
+            كل فيديو يبدأ بهدف واضح: جذب الانتباه، شرح المنتج، كسر الاعتراض، أو دفع العميل للطلب.
           </p>
         </div>
 
@@ -1122,7 +1226,7 @@
           </div>
 
           <div class="process-card reveal">
-            <h3>كتابة الفكرة والسكريبت</h3>
+            <h3>كتابة الفكرة</h3>
             <p>أجهز هوك وسيناريو مختصر يوضح المشكلة والحل.</p>
           </div>
 
@@ -1137,7 +1241,7 @@
           </div>
 
           <div class="process-card reveal">
-            <h3>التسليم النهائي</h3>
+            <h3>التسليم</h3>
             <p>تسليم الملفات بجودة مناسبة مع التعديلات المتفق عليها.</p>
           </div>
         </div>
@@ -1148,9 +1252,9 @@
     <section class="section" id="results">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">أرقام ونتائج</span>
-          <h2 class="section-title">محتوى مصمم ليخدم أهداف البراند</h2>
+          <h2 class="section-title">محتوى مصمم ليخدم أهداف البراند.</h2>
           <p class="section-desc">
             أرقام توضح طبيعة المخرجات التي يمكن للبراند الاعتماد عليها.
           </p>
@@ -1158,22 +1262,22 @@
 
         <div class="result-grid">
           <div class="result-card reveal">
-            <strong>+٢.٥م</strong>
-            <span>مشاهدة محتوى قصيرة</span>
+            <strong>+2.5M</strong>
+            <span>مشاهدة على محتوى قصير</span>
           </div>
 
           <div class="result-card reveal">
-            <strong>+١٨٠</strong>
+            <strong>+180</strong>
             <span>فيديو تم تسليمه</span>
           </div>
 
           <div class="result-card reveal">
-            <strong>+٢٢</strong>
+            <strong>+22</strong>
             <span>براند تم التعاون معه</span>
           </div>
 
           <div class="result-card reveal">
-            <strong>+٩٠</strong>
+            <strong>+90</strong>
             <span>فكرة محتوى وإعلان</span>
           </div>
         </div>
@@ -1184,9 +1288,9 @@
     <section class="section" id="testimonials">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">آراء العملاء</span>
-          <h2 class="section-title">تجارب براندات وثقت في المحتوى</h2>
+          <h2 class="section-title">تجارب براندات وثقت في المحتوى.</h2>
           <p class="section-desc">
             التعاون الناجح يبدأ بفهم المنتج وينتهي بمحتوى واضح يمكن استخدامه بثقة.
           </p>
@@ -1196,22 +1300,22 @@
           <div class="testimonial reveal">
             <div class="stars">★★★★★</div>
             <p>
-              المحتوى كان طبيعيًا جدًا ومناسبًا للجمهور. طريقة شرح المنتج كانت بسيطة وغير مباشرة.
+              ملك فهمت المنتج بسرعة وقدمت فيديو طبيعي جدًا مناسب لجمهورنا. السكريبت كان بسيط ومقنع.
             </p>
             <div class="client">
               سارة محمود
-              <span>مديرة متجر عناية</span>
+              <span>Founder — Glow Care</span>
             </div>
           </div>
 
           <div class="testimonial reveal">
             <div class="stars">★★★★★</div>
             <p>
-              استلمنا فيديوهات جاهزة للإعلانات، السكريبت كان واضحًا والهوك قويًا.
+              استلمنا فيديوهات جاهزة للإعلانات، فيها هوك واضح ومشاهد استخدام حقيقية للمنتج.
             </p>
             <div class="client">
               مروان علي
-              <span>مسؤول تسويق</span>
+              <span>Marketing Specialist — Shopora</span>
             </div>
           </div>
 
@@ -1222,7 +1326,7 @@
             </p>
             <div class="client">
               نور حسن
-              <span>صاحبة براند محلي</span>
+              <span>Owner — Noura Handmade</span>
             </div>
           </div>
         </div>
@@ -1233,11 +1337,11 @@
     <section class="section" id="pricing">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">الباقات</span>
-          <h2 class="section-title">اختار الباقة الأنسب لمرحلة البراند</h2>
+          <h2 class="section-title">اختار الباقة الأنسب لمرحلة البراند.</h2>
           <p class="section-desc">
-            باقات مرنة تناسب تجربة أول فيديو أو إطلاق منتج أو إنتاج محتوى شهري مستمر.
+            باقات مرنة تناسب تجربة أول فيديو، إطلاق منتج، أو إنتاج محتوى شهري مستمر.
           </p>
         </div>
 
@@ -1245,7 +1349,7 @@
           <div class="price-card reveal">
             <h3>باقة تجربة</h3>
             <p>مناسبة لاختبار فكرة واحدة أو منتج جديد.</p>
-            <div class="price">١ فيديو <small>/ قصير</small></div>
+            <div class="price">1 فيديو <small>/ قصير</small></div>
             <ul>
               <li>فكرة واحدة واضحة</li>
               <li>سكريبت مختصر</li>
@@ -1259,7 +1363,7 @@
             <span class="popular">الأكثر طلبًا</span>
             <h3>باقة محتوى</h3>
             <p>مناسبة لإطلاق حملة أو اختبار أكثر من زاوية بيع.</p>
-            <div class="price">٤ فيديوهات <small>/ متنوعة</small></div>
+            <div class="price">4 فيديوهات <small>/ متنوعة</small></div>
             <ul>
               <li>٤ أفكار مختلفة</li>
               <li>هوكات وسكريبتات</li>
@@ -1272,7 +1376,7 @@
           <div class="price-card reveal">
             <h3>باقة شهرية</h3>
             <p>مناسبة للبراندات التي تحتاج حضورًا مستمرًا.</p>
-            <div class="price">٨ فيديوهات <small>/ شهريًا</small></div>
+            <div class="price">8 فيديوهات <small>/ شهريًا</small></div>
             <ul>
               <li>خطة أفكار شهرية</li>
               <li>تنويع بين مراجعات وهوكات</li>
@@ -1289,9 +1393,9 @@
     <section class="section" id="faq">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">أسئلة شائعة</span>
-          <h2 class="section-title">إجابات سريعة قبل بدء التعاون</h2>
+          <h2 class="section-title">إجابات سريعة قبل بدء التعاون.</h2>
           <p class="section-desc">
             أهم التفاصيل التي تساعدك على معرفة طريقة تنفيذ محتوى UGC لمنتجك.
           </p>
@@ -1345,7 +1449,7 @@
     <section class="section" id="contact">
       <div class="container">
 
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
           <span class="label">تواصل معي</span>
           <h2 class="section-title">جاهز لتحويل منتجك إلى محتوى يلفت الانتباه؟</h2>
           <p class="section-desc">
@@ -1367,7 +1471,7 @@
               <div class="info">⚡ أفكار قابلة للاستخدام في الإعلانات</div>
             </div>
 
-            <a class="btn btn-primary" href="https://wa.me/201000000000" target="_blank">
+            <a class="btn btn-primary" href="https://wa.me/201015365340" target="_blank">
               تواصل عبر واتساب
             </a>
           </div>
@@ -1402,7 +1506,7 @@
 
               <div class="form-message" id="formMessage"></div>
 
-              <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+              <button type="submit" class="btn btn-primary">إرسال الطلب عبر واتساب</button>
             </form>
           </div>
         </div>
@@ -1414,7 +1518,7 @@
 
   <footer>
     <div class="container">
-      © جميع الحقوق محفوظة — صانعة محتوى UGC
+      © 2026 ملك عادل — UGC Creator & Product Video Portfolio
     </div>
   </footer>
 
@@ -1424,7 +1528,7 @@
     const menuBtn = document.getElementById("menuBtn");
     const nav = document.getElementById("nav");
 
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("malakUgcTheme");
 
     if (savedTheme === "dark") {
       body.classList.add("dark");
@@ -1435,10 +1539,10 @@
       body.classList.toggle("dark");
 
       if (body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem("malakUgcTheme", "dark");
         themeBtn.textContent = "☀";
       } else {
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("malakUgcTheme", "light");
         themeBtn.textContent = "☾";
       }
     });
@@ -1524,9 +1628,22 @@
         return;
       }
 
-      formMessage.textContent = "تم استلام طلبك بنجاح. يمكنك الآن التواصل عبر واتساب لتأكيد التفاصيل.";
-      formMessage.classList.add("success");
+      const whatsappNumber = "201015365340";
+      const whatsappMessage =
+`مرحبًا ملك، أريد الاستفسار عن فيديوهات UGC.
 
+الاسم: ${name}
+نوع المنتج: ${product}
+عدد الفيديوهات المطلوبة: ${videos}
+
+تفاصيل المنتج / الهدف:
+${message}`;
+
+      const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+      window.open(url, "_blank");
+
+      formMessage.textContent = "تم تجهيز طلبك وفتحه في واتساب لتأكيد التفاصيل.";
+      formMessage.classList.add("success");
       form.reset();
     });
   </script>

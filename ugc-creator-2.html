@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>بورتفوليو صانعة محتوى UGC</title>
+  <title>رنا فؤاد | UGC Creator Portfolio</title>
+  <meta name="description" content="بورتفوليو رنا فؤاد، صانعة محتوى UGC متخصصة في مراجعات المنتجات، فيديوهات Unboxing، ريلز وتيك توك، وسكريبتات إعلانية قصيرة." />
 
   <style>
     :root {
@@ -589,6 +590,109 @@
       color: var(--muted);
       position: relative;
       z-index: 2;
+    }
+
+
+    .creator-photo {
+      width: 100%;
+      height: 250px;
+      border-radius: 30px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      transform: rotate(-2deg);
+      box-shadow: 0 18px 40px rgba(35,31,32,.14);
+    }
+
+    .creator-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .creator-photo::after {
+      content: "Rana Fouad";
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(255,255,255,.88);
+      color: #231f20;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-video-preview {
+      width: 100%;
+      height: 280px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 18px;
+      background: #111;
+      box-shadow: 0 18px 42px rgba(35,31,32,.16);
+    }
+
+    .hero-video-preview video,
+    .real-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-video-preview::after {
+      content: "Product Review";
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      color: #fff;
+      background: rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .work-visual.real-video {
+      height: 330px;
+      padding: 0;
+      background: #111;
+      position: relative;
+    }
+
+    .work-visual.real-video::before {
+      display: none;
+    }
+
+    .video-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255,255,255,.88);
+      color: #231f20;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      z-index: 2;
+      backdrop-filter: blur(10px);
+    }
+
+    .work-visual.real-video .play {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 2;
+      color: #fff;
     }
 
     .portfolio-grid {
@@ -1183,7 +1287,7 @@
     <div class="container nav-wrap">
       <a href="#home" class="brand">
         <span class="brand-mark">UGC</span>
-        <span>استوديو محتوى شخصي</span>
+        <span>رنا فؤاد</span>
       </a>
 
       <nav class="nav" id="nav">
@@ -1216,7 +1320,7 @@
               تقنع جمهورك من أول مشاهدة
             </h1>
             <p>
-              أساعد البراندات على تحويل المنتج إلى قصة قصيرة واقعية:
+              أنا رنا فؤاد، أساعد البراندات على تحويل المنتج إلى قصة قصيرة واقعية:
               هوك قوي، سكريبت بسيط، تصوير طبيعي، ورسالة تسويقية تجعل العميل يشعر أن المنتج مناسب له.
             </p>
 
@@ -1245,8 +1349,12 @@
         <div class="hero-side">
           <div class="creator-card reveal">
             <div>
-              <div class="creator-face">▶</div>
-              <h2>من الفكرة إلى فيديو جاهز للنشر</h2>
+              <div class="hero-video-preview">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="https://videos.pexels.com/video-files/4912133/4912133-uhd_3840_2160_24fps.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2>فيديوهات منتج تبدو كأنها تجربة عميل حقيقية</h2>
               <p>
                 محتوى مناسب لريلز، تيك توك، إعلانات ممولة، صفحات المنتجات، وإطلاق المنتجات الجديدة.
               </p>
@@ -1295,7 +1403,7 @@
 
         <div class="section-head reveal">
           <span class="pill">من أنا</span>
-          <h2 class="section-title">صانعة محتوى UGC تركز على الثقة والنتيجة</h2>
+          <h2 class="section-title">رنا فؤاد — صانعة محتوى UGC تركز على الثقة والنتيجة</h2>
           <p class="section-desc">
             أتعامل مع كل منتج كأنه تجربة يجب أن يشعر بها المشاهد، وليس مجرد إعلان مباشر.
           </p>
@@ -1303,9 +1411,12 @@
 
         <div class="about-wrap">
           <div class="panel reveal">
+            <div class="creator-photo">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="رنا فؤاد صانعة محتوى UGC">
+            </div>
             <h3>أفهم البراند، الجمهور، والرسالة قبل التصوير.</h3>
             <p>
-              أعمل على صناعة فيديوهات قصيرة تجمع بين العفوية والهدف التسويقي.
+              أنا رنا فؤاد، صانعة محتوى UGC متخصصة في فيديوهات المنتجات اليومية، العناية والجمال، المتاجر الإلكترونية، والريلز القصيرة.
               أكتب الفكرة والسكريبت، أحدد زاوية البيع، ثم أصور محتوى طبيعيًا يساعد العميل على فهم المنتج والثقة به.
             </p>
 
@@ -1431,40 +1542,49 @@
 
         <div class="portfolio-grid">
           <div class="work reveal">
-            <div class="work-visual">
+            <div class="work-visual real-video">
+              <span class="video-tag">Skincare Review</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/8154850/8154850-uhd_4096_2160_25fps.mp4" type="video/mp4">
+              </video>
               <div class="play">▶</div>
-              <h3>مشكلة ثم حل</h3>
             </div>
             <div class="work-body">
               <div class="category">منتجات عناية</div>
-              <h4>تحويل الاحتياج إلى تجربة</h4>
-              <p>فيديو يبدأ بمشكلة يومية ثم يوضح كيف يساعد المنتج في حلها بشكل طبيعي.</p>
+              <h4>مراجعة منتج عناية بطريقة طبيعية</h4>
+              <p>فيديو يوضح إحساس الاستخدام، شكل المنتج، والسبب الذي يجعل العميل يفكر في التجربة.</p>
               <a href="#contact" class="small-link">اطلب فكرة مشابهة</a>
             </div>
           </div>
 
           <div class="work reveal">
-            <div class="work-visual">
+            <div class="work-visual real-video">
+              <span class="video-tag">Routine Video</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/4911927/4911927-uhd_3840_2160_24fps.mp4" type="video/mp4">
+              </video>
               <div class="play">▶</div>
-              <h3>فتح المنتج وتجربته</h3>
+            </div>
+            <div class="work-body">
+              <div class="category">روتين استخدام</div>
+              <h4>دمج المنتج داخل روتين يومي</h4>
+              <p>مناسب للمنتجات التي تحتاج شرح طريقة الاستخدام وإظهارها ضمن مشهد واقعي قريب من العميل.</p>
+              <a href="#contact" class="small-link">اطلب فكرة مشابهة</a>
+            </div>
+          </div>
+
+          <div class="work reveal">
+            <div class="work-visual real-video">
+              <span class="video-tag">Product Shoot</span>
+              <video controls muted playsinline preload="metadata">
+                <source src="https://videos.pexels.com/video-files/7287915/7287915-uhd_2160_3840_25fps.mp4" type="video/mp4">
+              </video>
+              <div class="play">▶</div>
             </div>
             <div class="work-body">
               <div class="category">متاجر إلكترونية</div>
-              <h4>تجربة واقعية من أول لقطة</h4>
-              <p>محتوى يركز على شكل المنتج، التفاصيل، وطريقة الاستخدام لجعل القرار أسهل.</p>
-              <a href="#contact" class="small-link">اطلب فكرة مشابهة</a>
-            </div>
-          </div>
-
-          <div class="work reveal">
-            <div class="work-visual">
-              <div class="play">▶</div>
-              <h3>٣ أسباب للشراء</h3>
-            </div>
-            <div class="work-body">
-              <div class="category">إعلانات قصيرة</div>
-              <h4>رسالة سريعة ومباشرة</h4>
-              <p>فيديو سريع يعرض أهم أسباب تجربة المنتج بطريقة سهلة ومناسبة للإعلانات.</p>
+              <h4>تصوير منتج مناسب للبيع أونلاين</h4>
+              <p>لقطات تبرز التفاصيل، التغليف، ملمس المنتج، وحركة الاستخدام داخل فيديو قصير.</p>
               <a href="#contact" class="small-link">اطلب فكرة مشابهة</a>
             </div>
           </div>
@@ -1566,8 +1686,8 @@
             <p>
               الفيديوهات كانت طبيعية جدًا ومناسبة لطبيعة المنتج. أكثر ما أعجبنا هو قوة الهوك وبساطة الرسالة.
             </p>
-            <strong>ريم أحمد</strong>
-            <span>براند عناية بالبشرة</span>
+            <strong>سلمى يوسف</strong>
+            <span>Founder — Bloom Skin</span>
           </div>
 
           <div class="quote reveal">
@@ -1575,8 +1695,8 @@
             <p>
               استلمنا محتوى يمكن استخدامه في الإعلانات مباشرة، والأفكار كانت متنوعة وليست مكررة.
             </p>
-            <strong>كريم محمود</strong>
-            <span>متجر إلكتروني</span>
+            <strong>محمود رامي</strong>
+            <span>Marketing Manager — Cartly</span>
           </div>
 
           <div class="quote reveal">
@@ -1584,8 +1704,8 @@
             <p>
               طريقة العمل منظمة، من فهم المنتج إلى التسليم. الفيديو النهائي كان قريبًا من الجمهور فعلًا.
             </p>
-            <strong>هنا سامي</strong>
-            <span>مسؤولة تسويق</span>
+            <strong>ندى خالد</strong>
+            <span>Brand Manager — Luma Home</span>
           </div>
         </div>
 
@@ -1729,7 +1849,7 @@
               <div>⚡ أفكار قابلة للاستخدام في الإعلانات</div>
             </div>
 
-            <a href="https://wa.me/201000000000" target="_blank" class="btn btn-main">تواصل عبر واتساب</a>
+            <a href="https://wa.me/201015365340" target="_blank" class="btn btn-main">تواصل عبر واتساب</a>
           </div>
 
           <div class="contact-card reveal">
@@ -1774,7 +1894,7 @@
 
   <footer class="footer">
     <div class="container">
-      © جميع الحقوق محفوظة — بورتفوليو صانعة محتوى UGC
+      © جميع الحقوق محفوظة — رنا فؤاد | UGC Creator Portfolio
     </div>
   </footer>
 
@@ -1784,7 +1904,7 @@
     const menuBtn = document.getElementById("menuBtn");
     const nav = document.getElementById("nav");
 
-    const savedTheme = localStorage.getItem("ugc-theme-two");
+    const savedTheme = localStorage.getItem("rana-ugc-theme");
 
     if (savedTheme === "dark") {
       body.classList.add("dark");
@@ -1795,10 +1915,10 @@
       body.classList.toggle("dark");
 
       if (body.classList.contains("dark")) {
-        localStorage.setItem("ugc-theme-two", "dark");
+        localStorage.setItem("rana-ugc-theme", "dark");
         themeBtn.textContent = "☀";
       } else {
-        localStorage.setItem("ugc-theme-two", "light");
+        localStorage.setItem("rana-ugc-theme", "light");
         themeBtn.textContent = "☾";
       }
     });
@@ -1883,7 +2003,21 @@
         return;
       }
 
-      formMessage.textContent = "تم إرسال الطلب بنجاح. يمكنك المتابعة عبر واتساب لتأكيد التفاصيل.";
+      const whatsappNumber = "201015365340";
+      const whatsappMessage =
+`مرحبًا رنا، أريد الاستفسار عن فيديوهات UGC.
+
+الاسم: ${name}
+نوع المنتج: ${product}
+عدد الفيديوهات المطلوبة: ${videos}
+
+تفاصيل المنتج / الهدف:
+${message}`;
+
+      const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+      window.open(url, "_blank");
+
+      formMessage.textContent = "تم تجهيز طلبك وفتحه في واتساب لتأكيد التفاصيل.";
       formMessage.classList.add("success");
 
       form.reset();
