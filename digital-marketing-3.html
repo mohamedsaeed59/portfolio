@@ -1,626 +1,1819 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بورتفوليو رقمي | النمو والتسويق الحديث</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* إعدادات وتأثيرات الثيم الداكن */
-        :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --accent-neon: #00f5d4;
-            --accent-purple: #7b2cbf;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --white: #ffffff;
-            --border-color: #334155;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Marketing | Digital Marketing Specialist</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-            scroll-behavior: smooth;
-        }
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --white: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --primary: #2563eb;
+      --primary-soft: #eaf1ff;
+      --green: #16a34a;
+      --orange: #f97316;
+      --purple: #7c3aed;
+      --pink: #db2777;
+      --cyan: #0891b2;
+      --border: #e5eaf3;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* تنسيق الهيدر الزجاجي (Glassmorphism) */
-        header {
-            position: fixed;
-            top: 20px;
-            left: 5%;
-            right: 5%;
-            width: 90%;
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            z-index: 1000;
-            transition: var(--transition);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-        }
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
 
-        .logo {
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .logo span {
-            color: var(--accent-neon);
-        }
+    img {
+      width: 100%;
+      display: block;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
 
-        .nav-links a {
-            color: var(--text-muted);
-            font-weight: 500;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 15px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-neon);
-        }
+    .navbar {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-light);
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
 
-        /* سيكشن الهيرو بستايل يساري/يميني متداخل */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 8% 60px;
-            position: relative;
-        }
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: #fff;
+      font-weight: 900;
+    }
 
-        /* تأثير إضاءة خلفية نيون */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: 10%;
-            width: 300px;
-            height: 300px;
-            background: var(--accent-purple);
-            filter: blur(150px);
-            opacity: 0.4;
-            z-index: -1;
-        }
+    .logo-text strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.2;
+    }
 
-        .hero-wrapper {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-            width: 100%;
-        }
+    .logo-text span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
 
-        .hero-text h1 {
-            font-size: 52px;
-            font-weight: 900;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        .hero-text h1 span {
-            background: linear-gradient(to left, var(--accent-neon), #00b4d8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .nav-links a {
+      transition: 0.3s;
+    }
 
-        .hero-text p {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            max-width: 600px;
-        }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
-        /* الأزرار النيون */
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-        }
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+    }
 
-        .btn-neon {
-            padding: 12px 35px;
-            background: var(--accent-neon);
-            color: var(--bg-dark);
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 245, 212, 0.3);
-        }
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 14px;
+      font-size: 22px;
+      cursor: pointer;
+    }
 
-        .btn-neon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(0, 245, 212, 0.5);
-        }
+    .hero {
+      padding: 78px 0 54px;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.09), transparent 34%),
+        radial-gradient(circle at 18% 25%, rgba(6, 182, 212, 0.10), transparent 30%);
+    }
 
-        .btn-outline {
-            padding: 12px 35px;
-            background: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--border-color);
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 48px;
+      align-items: center;
+    }
 
-        .btn-outline:hover {
-            border-color: var(--accent-neon);
-            color: var(--accent-neon);
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
 
-        /* سيكشن الأرقام والإحصائيات */
-        .stats-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            text-align: center;
-            gap: 20px;
-        }
+    .badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.12);
+    }
 
-        .stat-box h3 {
-            font-size: 40px;
-            color: var(--accent-neon);
-            font-weight: 900;
-            margin-bottom: 5px;
-        }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 66px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
 
-        .stat-box p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-        /* الأقسام العامة */
-        section {
-            padding: 100px 8% 60px;
-        }
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
 
-        .title-area {
-            margin-bottom: 60px;
-        }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
 
-        .title-area h2 {
-            font-size: 38px;
-            font-weight: 900;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: inherit;
+    }
 
-        .title-area p {
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.24);
+    }
 
-        /* الخدمات بطراز البطاقات المدمجة */
-        .grid-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
 
-        .card-service {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 40px 30px;
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
 
-        .card-service::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent-neon);
-            opacity: 0;
-            transition: var(--transition);
-        }
+    .btn-secondary:hover {
+      background: #f1f5ff;
+    }
 
-        .card-service:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 245, 212, 0.4);
-        }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 650px;
+    }
 
-        .card-service:hover::before {
-            opacity: 1;
-        }
+    .stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.045);
+    }
 
-        .card-service .icon {
-            font-size: 32px;
-            margin-bottom: 20px;
-            background: rgba(0, 245, 212, 0.1);
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            color: var(--accent-neon);
-        }
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.2;
+    }
 
-        .card-service h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-        .card-service p {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
+    .hero-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-        /* معرض الأعمال بنظام الفولدر الإبداعي */
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.08);
+      top: -90px;
+      left: -90px;
+    }
 
-        .work-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
+    .hero-img {
+      height: 520px;
+      object-fit: cover;
+      border-radius: 26px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .work-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transform: scale(1.02);
-        }
+    .floating {
+      position: absolute;
+      z-index: 4;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 16px 18px;
+      width: 220px;
+    }
 
-        .work-banner {
-            height: 220px;
-            background: linear-gradient(45deg, #1e1e2f, #3a3a52);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
+    .floating small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-        .badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--accent-neon);
-            color: var(--accent-neon);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
+    .floating strong {
+      display: block;
+      font-size: 22px;
+      margin-top: 2px;
+    }
 
-        .work-body {
-            padding: 25px;
-        }
+    .floating p {
+      font-size: 12px;
+      margin: 2px 0 0;
+      color: var(--muted);
+    }
 
-        .work-body h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+    .float-1 {
+      right: -16px;
+      bottom: 72px;
+    }
 
-        .work-body p {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
+    .float-2 {
+      left: -16px;
+      top: 70px;
+    }
 
-        .work-link {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
+    section {
+      padding: 76px 0;
+    }
 
-        /* سيكشن التواصل الحديث */
-        .contact-section {
-            background: linear-gradient(180deg, var(--bg-dark) 0%, #090d16 100%);
-        }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-        }
+    .section-label {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
 
-        .contact-box input, .contact-box textarea {
-            width: 100%;
-            background: #1e293b;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: 8px;
-            color: var(--text-light);
-            font-size: 16px;
-            margin-bottom: 20px;
-            outline: none;
-            transition: var(--transition);
-        }
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+    }
 
-        .contact-box input:focus, .contact-box textarea:focus {
-            border-color: var(--accent-neon);
-            box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
-        }
+    .section-head p {
+      color: var(--muted);
+      max-width: 480px;
+      font-size: 15px;
+    }
 
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 30px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
 
-        /* شاشات الموبايل والتجاوب */
-        @media (max-width: 992px) {
-            .hero-wrapper {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-text h1 {
-                font-size: 38px;
-            }
-            .cta-buttons {
-                justify-content: center;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .about-img {
+      min-height: 430px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                right: -100%;
-                width: 90%;
-                background: var(--bg-card);
-                flex-direction: column;
-                padding: 30px;
-                border-radius: 20px;
-                border: 1px solid var(--border-color);
-                transition: var(--transition);
-                gap: 20px;
-            }
-            .nav-links.active {
-                right: 5%;
-            }
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-    </style>
+    .about-img img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.045);
+    }
+
+    .about-card h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .chip {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #f1f5ff;
+      border: 1px solid #dbe7ff;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+    }
+
+    .blue { background: #eaf1ff; color: var(--primary); }
+    .green { background: #eafaf0; color: var(--green); }
+    .orange { background: #fff4e8; color: var(--orange); }
+    .purple { background: #f3eefe; color: var(--purple); }
+    .pink { background: #fdf0f7; color: var(--pink); }
+    .cyan { background: #e8f8fb; color: var(--cyan); }
+
+    .service-number {
+      color: #c3cad6;
+      font-weight: 900;
+      font-size: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .service-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: #475467;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .details-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .tab-content.active {
+      display: grid;
+    }
+
+    .tab-text h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .tab-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .deliverable {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      font-size: 14px;
+      color: #475467;
+      font-weight: 700;
+    }
+
+    .tab-image {
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .tab-image img {
+      height: 360px;
+      object-fit: cover;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      transition: 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .work-img {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .work-img img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .work-card:hover .work-img img {
+      transform: scale(1.06);
+    }
+
+    .work-body {
+      padding: 22px;
+    }
+
+    .work-tag {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .work-body h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .work-metrics {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .metric {
+      flex: 1;
+      min-width: 92px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 10px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .package {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      position: relative;
+    }
+
+    .package.featured {
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: var(--shadow);
+      transform: translateY(-8px);
+    }
+
+    .popular {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .package h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .package p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .package ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 24px;
+      color: #475467;
+      font-size: 14px;
+    }
+
+    .package li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .price small {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .package .btn {
+      width: 100%;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: #475467;
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      outline: none;
+      font-family: inherit;
+      color: var(--text);
+      background: #f8fafc;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: none;
+    }
+
+    form .btn {
+      border: 0;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .tab-content,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .work-grid,
+      .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-img {
+        height: 450px;
+      }
+
+      .package.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        background: rgba(255,255,255,0.98);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .work-grid,
+      .packages-grid,
+      .process-grid,
+      .deliverables {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-img {
+        height: 390px;
+      }
+
+      .floating {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .details-wrap,
+      .contact-box,
+      .about-card {
+        padding: 24px;
+      }
+
+      .tab-image img {
+        height: 280px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- الهيدر الزجاجي -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">GROWTH<span>.X</span></div>
-            <div class="menu-toggle" id="menuToggle">☰</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">الرئيسية</a></li>
-                <li><a href="#services">الخبرات</a></li>
-                <li><a href="#projects">المشاريع</a></li>
-                <li><a href="#contact">تواصل معي</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <span class="logo-mark">AM</span>
+        <span class="logo-text">
+          <strong>Ahmed Marketing</strong>
+          <span>Digital Marketing Specialist</span>
+        </span>
+      </a>
 
-    <!-- سيكشن الهيرو الرئيسي -->
-    <section id="home" class="hero">
-        <div class="hero-wrapper">
-            <div class="hero-text">
-                <h1>أقود الشركات لمضاعفة أرباحها عبر <span>التسويق بالأرقام</span></h1>
-                <p>أنا أخصائي تسويق رقمي ومسؤول نمو (Growth Marketer). لا أقدم مجرد إعلانات تقليدية، بل أبني استراتيجيات مبنية على تحليل البيانات والتحويل الفعلي لعملاء دائمين.</p>
-                <div class="cta-buttons">
-                    <a href="#contact"><button class="btn-neon">ابدأ الاستشارة مجاناً</button></a>
-                    <a href="#projects"><button class="btn-outline">مشاهدة النتائج</button></a>
-                </div>
-            </div>
-            
-            <!-- أرقام سريعة عوضاً عن الصورة التقليدية -->
-            <div class="stats-container">
-                <div class="stat-box">
-                    <h3>+3M</h3>
-                    <p>مبيعات محققة للعملاء ($)</p>
-                </div>
-                <div class="stat-box">
-                    <h3>4.8x</h3>
-                    <p>متوسط العائد على الإعلان ROAS</p>
-                </div>
-                <div class="stat-box">
-                    <h3>+50</h3>
-                    <p>مشروع تجاري ناجح</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">من أنا</a>
+        <a href="#services">الخدمات</a>
+        <a href="#details">كيف أساعدك؟</a>
+        <a href="#work">الأعمال</a>
+        <a href="#contact" class="nav-cta">تواصل معي</a>
+      </nav>
 
-    <!-- سيكشن الخدمات التفاعلي -->
-    <section id="services">
-        <div class="title-area">
-            <h2>القدرات والخبرات الاستراتيجية</h2>
-            <p>مجالات أركز عليها لضمان قفزة نوعية في أرقام مشروعك</p>
-        </div>
-        
-        <div class="grid-services">
-            <div class="card-service">
-                <div class="icon">📈</div>
-                <h3>هندسة قنوات البيع (Funnel Building)</h3>
-                <p>تصميم وتطوير رحلة العميل بالكامل منذ رؤية الإعلان الأول وحتى إتمام عملية الشراء لتقليل الهدر المالي والـ Bounce Rate.</p>
-            </div>
-            
-            <div class="card-service">
-                <div class="icon">🎯</div>
-                <h3>الحملات المدفوعة المتقدمة</h3>
-                <p>إدارة وتوسيع نطاق (Scaling) الإعلانات على المنصات الكبرى كـ Google Ads والمنصات الاجتماعية باستخدام تقنيات التحسين المستمر.</p>
-            </div>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
 
-            <div class="card-service">
-                <div class="icon">🔍</div>
-                <h3>تحليل البيانات وتحسين التحويل (CRO)</h3>
-                <p>قراءة سلوك الزوار داخل المتجر واكتشاف نقاط الاختناق التي تمنعهم من الشراء وتعديلها لرفع نسبة المبيعات مباشرة.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- سيكشن المشاريع ونقاط النجاح -->
-    <section id="projects">
-        <div class="title-area">
-            <h2>دراسات حالة ومشاريع ناجحة</h2>
-            <p>أرقام حقيقية تم تحقيقها لبراندات ومتاجر إلكترونية مختلفة</p>
+  <main class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="badge">
+          <span></span>
+          Digital Marketing Specialist | Strategy, Ads, Content & SEO
         </div>
 
-        <div class="works-grid">
-            <div class="work-card">
-                <div class="work-banner" style="background: linear-gradient(135deg, #134e5e, #71b280);">
-                    <div class="badge">E-Commerce</div>
-                    متجر أجهزة منزلية
-                </div>
-                <div class="work-body">
-                    <h3>توسيع مبيعات متجر أجهزة</h3>
-                    <p>تعديل الـ Funnel وإطلاق حملات مبيعات منسقة أدت إلى رفع الأرباح من 20 ألفاً إلى 95 ألف دولار شهرياً خلال 90 يوماً فقط.</p>
-                    <a href="#" class="work-link">مشاهدة تفاصيل الاستراتيجية ←</a>
-                </div>
-            </div>
+        <h1>
+          أساعد الشركات على بناء حضور رقمي
+          <span>يحقق نتائج واضحة</span>
+        </h1>
 
-            <div class="work-card">
-                <div class="work-banner" style="background: linear-gradient(135deg, #42275a, #733b99);">
-                    <div class="badge">B2B Lead Generation</div>
-                    شركة استشارات قانونية
-                </div>
-                <div class="work-body">
-                    <h3>جلب عملاء محتملين للشركات</h3>
-                    <p>اعتماد استراتيجية تسويق بالمحتوى والـ SEO على جوجل، مما ساهم في استقبال أكثر من 400 طلب استشارة من شركات كبرى بجهد مجاني تماماً.</p>
-                    <a href="#" class="work-link">مشاهدة تفاصيل الاستراتيجية ←</a>
-                </div>
-            </div>
+        <p>
+          أنا أحمد، Digital Marketing Specialist أعمل مع الشركات والمتاجر ومقدمي الخدمات
+          على تحسين ظهورهم الرقمي من خلال الإعلانات المدفوعة، إدارة السوشيال ميديا،
+          كتابة المحتوى، تحسين محركات البحث، وصفحات الهبوط.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">استكشف الخدمات</a>
+          <a href="#contact" class="btn btn-secondary">تواصل معي</a>
         </div>
-    </section>
 
-    <!-- سيكشن التواصل الداكن -->
-    <section id="contact" class="contact-section">
-        <div class="contact-grid">
-            <div>
-                <div class="title-area" style="margin-bottom: 30px;">
-                    <h2>لنقذف بأرقامك نحو الأعلى 🚀</h2>
-                    <p>إذا كنت تبحث عن شريك تسويقي يفهم لغة الأرقام والاستثمار، اترك تفاصيل موقعك وسأقوم بمراجعة مبدئية له مجاناً.</p>
-                </div>
-                <p style="color: var(--accent-neon); font-weight: bold;">💬 متاح للمشاريع الكبيرة والتعاقدات الاستشارية.</p>
-            </div>
-            
-            <div class="contact-box">
-                <form id="growthForm" onsubmit="submitForm(event)">
-                    <input type="text" id="username" placeholder="الاسم الكامل" required>
-                    <input type="url" id="website" placeholder="رابط متجرك / موقعك الحالي (إن وجد)">
-                    <textarea id="goal" rows="4" placeholder="ما هو العائق الأكبر أمام نمو مبيعاتك حالياً؟" required></textarea>
-                    <button type="submit" class="btn-neon" style="width: 100%;">طلب مراجعة مجانية لمشروعي</button>
-                </form>
-            </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>+64</strong>
+            <span>مشروع تسويقي</span>
+          </div>
+          <div class="stat">
+            <strong>+5M</strong>
+            <span>وصول للحملات</span>
+          </div>
+          <div class="stat">
+            <strong>4.2x</strong>
+            <span>متوسط عائد إعلاني</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- الفوتر -->
-    <footer>
-        <p>© 2026 جميع الحقوق محفوظة لـ GROWTH.X | صُنع بذكاء وشغف للتسويق الرقمي</p>
-    </footer>
+      <div class="hero-card reveal">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+          alt="Digital Marketing Specialist"
+        />
 
-    <!-- الجافا سكريبت للتفاعلية -->
-    <script>
-        // إظهار وإخفاء قائمة الموبايل
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+        <div class="floating float-1">
+          <small>Most Requested</small>
+          <strong>Meta Ads</strong>
+          <p>حملات رسائل ومبيعات وLeads</p>
+        </div>
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
-        });
+        <div class="floating float-2">
+          <small>Monthly Growth</small>
+          <strong>+230%</strong>
+          <p>تحسن في الوصول والتفاعل</p>
+        </div>
+      </div>
+    </div>
+  </main>
 
-        // إغلاق المنيو عند اختيار الرابط
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.textContent = '☰';
-            });
-        });
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">من أنا</div>
+          <h2>أجمع بين التفكير الاستراتيجي والتنفيذ العملي</h2>
+        </div>
+        <p>
+          أتعامل مع التسويق باعتباره نظامًا كاملًا يبدأ من فهم العميل، ثم اختيار القنوات المناسبة،
+          ثم قياس النتائج وتحسينها باستمرار.
+        </p>
+      </div>
 
-        // تتبع السكرول وتغيير الزر الفعال في القائمة
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - 160)) {
-                    current = section.getAttribute('id');
-                }
-            });
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Marketing Analytics">
+        </div>
 
-            document.querySelectorAll('.nav-links a').forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').includes(current)) {
-                    a.classList.add('active');
-                }
-            });
-        });
+        <div class="about-card reveal">
+          <h3>أختار الحل التسويقي المناسب حسب مرحلة المشروع</h3>
+          <p>
+            ليس كل مشروع يحتاج نفس الخدمة. بعض المشاريع تحتاج إعلانات ممولة، وبعضها يحتاج محتوى،
+            وبعضها يحتاج تحسين ظهور في جوجل أو صفحة هبوط أقوى.
+          </p>
+          <p>
+            لذلك أبدأ بفهم الهدف الحالي للمشروع، ثم أحدد الخدمة أو مجموعة الخدمات التي تساعده
+            على تحقيق نتائج أفضل بأقل تعقيد ممكن.
+          </p>
 
-        // رسالة تأكيد إرسال الفورم
-        function submitForm(event) {
-            event.preventDefault();
-            const name = document.getElementById('username').value;
-            alert(`مرحباً ${name}، تم استلام بيانات موقعك بنجاح! سأقوم بفحصها وإرسال التقرير لبريدك قريباً جداً.`);
-            document.getElementById('growthForm').reset();
+          <div class="chips">
+            <span class="chip">Social Media</span>
+            <span class="chip">Media Buying</span>
+            <span class="chip">SEO</span>
+            <span class="chip">Copywriting</span>
+            <span class="chip">Landing Pages</span>
+            <span class="chip">Email Marketing</span>
+            <span class="chip">Marketing Strategy</span>
+            <span class="chip">Analytics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الخدمات</div>
+          <h2>خدماتي التسويقية</h2>
+        </div>
+        <p>
+          أقدم حلولًا تسويقية مرنة تناسب مرحلة مشروعك الحالية، سواء كنت تحتاج حملة إعلانية،
+          خطة محتوى، تحسين ظهورك في جوجل، أو استراتيجية تسويق كاملة.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon blue">📱</div>
+            <div class="service-number">01</div>
+          </div>
+          <h3>إدارة السوشيال ميديا</h3>
+          <p>تنظيم الحسابات وبناء خطة محتوى شهرية تحافظ على ظهور البراند بشكل احترافي.</p>
+          <ul class="service-list">
+            <li>خطة محتوى شهرية</li>
+            <li>أفكار بوستات وReels</li>
+            <li>تحسين Bio وHighlights</li>
+          </ul>
+          <a class="service-link" data-tab="social">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon green">🎯</div>
+            <div class="service-number">02</div>
+          </div>
+          <h3>الإعلانات الممولة</h3>
+          <p>إدارة حملات Meta / Google / TikTok حسب الهدف: رسائل، Leads، مبيعات أو زيارات.</p>
+          <ul class="service-list">
+            <li>إعداد الحملة</li>
+            <li>اختبار الجمهور والكريتيف</li>
+            <li>متابعة وتحسين</li>
+          </ul>
+          <a class="service-link" data-tab="ads">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon orange">✍️</div>
+            <div class="service-number">03</div>
+          </div>
+          <h3>كتابة المحتوى التسويقي</h3>
+          <p>كتابة نصوص إعلانات، منشورات، رسائل بيع، Hooks، وسكريبتات Reels.</p>
+          <ul class="service-list">
+            <li>Ad Copy</li>
+            <li>Social Captions</li>
+            <li>WhatsApp Scripts</li>
+          </ul>
+          <a class="service-link" data-tab="copy">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon purple">🔎</div>
+            <div class="service-number">04</div>
+          </div>
+          <h3>SEO وتحسين الظهور</h3>
+          <p>تحسين ظهور الموقع في جوجل من خلال الكلمات المفتاحية والمحتوى وصفحات الخدمة.</p>
+          <ul class="service-list">
+            <li>Keyword Research</li>
+            <li>On-page SEO</li>
+            <li>Local SEO</li>
+          </ul>
+          <a class="service-link" data-tab="seo">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon pink">🧪</div>
+            <div class="service-number">05</div>
+          </div>
+          <h3>صفحات الهبوط</h3>
+          <p>تخطيط أو كتابة صفحة هبوط مخصصة للحملات لزيادة التحويل وتقليل تكلفة العميل.</p>
+          <ul class="service-list">
+            <li>Page Structure</li>
+            <li>Offer Positioning</li>
+            <li>CTA واضح</li>
+          </ul>
+          <a class="service-link" data-tab="landing">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon cyan">📊</div>
+            <div class="service-number">06</div>
+          </div>
+          <h3>تحليل الأداء والتقارير</h3>
+          <p>قراءة بيانات الإعلانات والمحتوى وتحويلها لقرارات واضحة قابلة للتنفيذ.</p>
+          <ul class="service-list">
+            <li>Campaign Report</li>
+            <li>KPI Analysis</li>
+            <li>Recommendations</li>
+          </ul>
+          <a class="service-link" data-tab="analytics">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon blue">🧭</div>
+            <div class="service-number">07</div>
+          </div>
+          <h3>استراتيجية التسويق</h3>
+          <p>خطة واضحة تحدد الجمهور، الرسالة، القنوات، والعروض المناسبة لمرحلة المشروع.</p>
+          <ul class="service-list">
+            <li>Market Research</li>
+            <li>Customer Persona</li>
+            <li>Marketing Roadmap</li>
+          </ul>
+          <a class="service-link" data-tab="strategy">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon green">📩</div>
+            <div class="service-number">08</div>
+          </div>
+          <h3>Email Marketing</h3>
+          <p>حملات بريدية للمتاجر والكورسات وإعادة استهداف العملاء السابقين.</p>
+          <ul class="service-list">
+            <li>Email Sequences</li>
+            <li>Offers Campaigns</li>
+            <li>Customer Retention</li>
+          </ul>
+          <a class="service-link" data-tab="email">اعرف التفاصيل ←</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-top">
+            <div class="service-icon orange">🚀</div>
+            <div class="service-number">09</div>
+          </div>
+          <h3>Launch Campaign</h3>
+          <p>إطلاق منتج، خدمة، كورس أو عرض موسمي بخطة محتوى وإعلانات ورسائل بيع.</p>
+          <ul class="service-list">
+            <li>Launch Plan</li>
+            <li>Ads & Content Angles</li>
+            <li>Sales Messages</li>
+          </ul>
+          <a class="service-link" data-tab="launch">اعرف التفاصيل ←</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="details">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">كيف أساعدك؟</div>
+          <h2>حلول عملية حسب هدف مشروعك</h2>
+        </div>
+        <p>
+          لكل مشروع احتياج مختلف، لذلك أبدأ بفهم الهدف ثم أختار الأدوات التسويقية المناسبة لتحقيقه.
+        </p>
+      </div>
+
+      <div class="details-wrap reveal">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="social">Social Media</button>
+          <button class="tab-btn" data-tab="ads">Ads</button>
+          <button class="tab-btn" data-tab="copy">Copywriting</button>
+          <button class="tab-btn" data-tab="seo">SEO</button>
+          <button class="tab-btn" data-tab="landing">Landing Page</button>
+          <button class="tab-btn" data-tab="analytics">Analytics</button>
+          <button class="tab-btn" data-tab="strategy">Strategy</button>
+          <button class="tab-btn" data-tab="email">Email</button>
+          <button class="tab-btn" data-tab="launch">Launch</button>
+        </div>
+
+        <div class="tab-content active" id="social">
+          <div class="tab-text">
+            <h3>إدارة السوشيال ميديا</h3>
+            <p>
+              مناسبة للبراندات التي تحتاج ظهور منتظم واحترافي على Instagram وFacebook وTikTok،
+              مع خطة محتوى واضحة بدل النشر العشوائي.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">تحليل الصفحة الحالية</div>
+              <div class="deliverable">خطة محتوى شهرية</div>
+              <div class="deliverable">أفكار بوستات وReels</div>
+              <div class="deliverable">تحسين Bio وHighlights</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1200&auto=format&fit=crop" alt="Social Media">
+          </div>
+        </div>
+
+        <div class="tab-content" id="ads">
+          <div class="tab-text">
+            <h3>إدارة الإعلانات الممولة</h3>
+            <p>
+              مناسبة لمن يريد تشغيل حملات إعلانية بهدف واضح: رسائل واتساب، Leads، مبيعات،
+              زيارات موقع، أو إعادة استهداف العملاء المهتمين.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">Campaign Setup</div>
+              <div class="deliverable">Audience Testing</div>
+              <div class="deliverable">Creative Testing</div>
+              <div class="deliverable">Weekly Optimization</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Ads Analytics">
+          </div>
+        </div>
+
+        <div class="tab-content" id="copy">
+          <div class="tab-text">
+            <h3>كتابة المحتوى التسويقي</h3>
+            <p>
+              كتابة نصوص تساعد البراند يشرح خدمته ويقنع العميل، سواء داخل إعلان، بوست،
+              صفحة هبوط، أو رسالة واتساب.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">Ad Copies</div>
+              <div class="deliverable">Hooks للإعلانات</div>
+              <div class="deliverable">Captions للسوشيال</div>
+              <div class="deliverable">Sales Messages</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop" alt="Copywriting">
+          </div>
+        </div>
+
+        <div class="tab-content" id="seo">
+          <div class="tab-text">
+            <h3>SEO وتحسين محركات البحث</h3>
+            <p>
+              مناسب للمواقع التي تريد ظهور مستمر في جوجل بدون الاعتماد الكامل على الإعلانات،
+              خصوصًا شركات الخدمات والمتاجر والمقالات.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">بحث كلمات مفتاحية</div>
+              <div class="deliverable">تحسين صفحات الخدمة</div>
+              <div class="deliverable">Meta Titles & Descriptions</div>
+              <div class="deliverable">خطة محتوى SEO</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1200&auto=format&fit=crop" alt="SEO">
+          </div>
+        </div>
+
+        <div class="tab-content" id="landing">
+          <div class="tab-text">
+            <h3>تخطيط وكتابة Landing Page</h3>
+            <p>
+              صفحة الهبوط تساعد الحملة تحقق تحويل أفضل لأنها تركز على عرض واحد ورسالة واحدة
+              وCTA واضح.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">Page Sections</div>
+              <div class="deliverable">Hero Message</div>
+              <div class="deliverable">Offer Structure</div>
+              <div class="deliverable">CTA & Form Copy</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Landing Page">
+          </div>
+        </div>
+
+        <div class="tab-content" id="analytics">
+          <div class="tab-text">
+            <h3>تحليل الأداء والتقارير</h3>
+            <p>
+              مناسبة لمن يشغّل إعلانات أو محتوى بالفعل لكنه لا يعرف ما الذي يعمل وما الذي يحتاج تغيير.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">تحليل Campaigns</div>
+              <div class="deliverable">قراءة KPI</div>
+              <div class="deliverable">توصيات تحسين</div>
+              <div class="deliverable">Report واضح</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Reports">
+          </div>
+        </div>
+
+        <div class="tab-content" id="strategy">
+          <div class="tab-text">
+            <h3>استراتيجية التسويق</h3>
+            <p>
+              مناسبة للمشاريع التي تحتاج تعرف أين تضع مجهودها وميزانيتها،
+              وما الرسالة التي تخاطب بها الجمهور.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">تحليل السوق</div>
+              <div class="deliverable">تحليل المنافسين</div>
+              <div class="deliverable">Customer Persona</div>
+              <div class="deliverable">Marketing Roadmap</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="Strategy">
+          </div>
+        </div>
+
+        <div class="tab-content" id="email">
+          <div class="tab-text">
+            <h3>Email Marketing</h3>
+            <p>
+              مناسب للمتاجر والكورسات والبراندات التي تمتلك قاعدة عملاء وتريد إعادة البيع
+              أو التذكير بالعروض.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">Email Sequence</div>
+              <div class="deliverable">Newsletter Copy</div>
+              <div class="deliverable">Offer Campaigns</div>
+              <div class="deliverable">Customer Retention</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=1200&auto=format&fit=crop" alt="Email Marketing">
+          </div>
+        </div>
+
+        <div class="tab-content" id="launch">
+          <div class="tab-text">
+            <h3>Launch Campaign</h3>
+            <p>
+              مخصصة لإطلاق منتج أو خدمة أو كورس أو عرض موسمي، وتشمل ترتيب الرسائل
+              والمحتوى والإعلانات.
+            </p>
+            <div class="deliverables">
+              <div class="deliverable">Launch Plan</div>
+              <div class="deliverable">Content Angles</div>
+              <div class="deliverable">Ads Plan</div>
+              <div class="deliverable">Sales Follow-up Messages</div>
+            </div>
+          </div>
+          <div class="tab-image">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Launch Campaign">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">أعمال ونتائج</div>
+          <h2>مشاريع ساعدت أصحابها يحققوا نتائج أفضل</h2>
+        </div>
+        <p>
+          نماذج من مشاريع عملت عليها في الإعلانات، المحتوى، تحسين الظهور، وصفحات الهبوط.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop" alt="Ecommerce">
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Media Buying</span>
+            <h3>حملة مبيعات لمتجر إلكتروني</h3>
+            <p>إدارة حملات مبيعات واختبار عروض مختلفة لتحسين تكلفة الشراء.</p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>3.8x</strong>
+                <span>ROAS</span>
+              </div>
+              <div class="metric">
+                <strong>-31%</strong>
+                <span>CPA</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1200&auto=format&fit=crop" alt="Leads">
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Lead Generation</span>
+            <h3>حملة Leads لأكاديمية</h3>
+            <p>إطلاق حملة رسائل واستمارة Lead Form مع نصوص متابعة واتساب.</p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>1,420</strong>
+                <span>Leads</span>
+              </div>
+              <div class="metric">
+                <strong>19%</strong>
+                <span>Close Rate</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1200&auto=format&fit=crop" alt="Social">
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Social Media</span>
+            <h3>تحسين ظهور براند خدمي</h3>
+            <p>إعادة تنظيم الحساب، خطة محتوى، وتطوير الرسائل الأساسية للبراند.</p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>+230%</strong>
+                <span>Reach</span>
+              </div>
+              <div class="metric">
+                <strong>+68%</strong>
+                <span>Messages</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1200&auto=format&fit=crop" alt="SEO">
+          </div>
+          <div class="work-body">
+            <span class="work-tag">SEO</span>
+            <h3>تحسين موقع شركة خدمات</h3>
+            <p>بحث كلمات مفتاحية وتحسين صفحات الخدمة للظهور المحلي في جوجل.</p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>+155%</strong>
+                <span>Organic</span>
+              </div>
+              <div class="metric">
+                <strong>32</strong>
+                <span>Keywords</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Landing Page">
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Landing Page</span>
+            <h3>صفحة هبوط لحملة كورس</h3>
+            <p>تخطيط محتوى الصفحة وتحسين ترتيب الأقسام والـ CTA لزيادة التسجيل.</p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>+44%</strong>
+                <span>Conversion</span>
+              </div>
+              <div class="metric">
+                <strong>-22%</strong>
+                <span>Cost</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Analytics">
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Analytics</span>
+            <h3>تحليل أداء حملات شهرية</h3>
+            <p>تقرير شامل يوضح أفضل القنوات، الإعلانات الرابحة، وخطة التحسين التالية.</p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>12</strong>
+                <span>KPI</span>
+              </div>
+              <div class="metric">
+                <strong>Weekly</strong>
+                <span>Report</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">طريقة العمل</div>
+          <h2>خطوات واضحة من أول تحليل حتى التحسين</h2>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>فهم الهدف</h3>
+          <p>أحدد هل الهدف مبيعات، رسائل، ظهور، عملاء محتملين، أو تحسين نتائج.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>اختيار الحل</h3>
+          <p>أرشح الخدمة المناسبة حسب وضع المشروع والميزانية والمرحلة الحالية.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>التنفيذ</h3>
+          <p>تنفيذ الخدمة المطلوبة بخطة واضحة ومخرجات متفق عليها من البداية.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <h3>التحسين</h3>
+          <p>متابعة النتائج وتقديم توصيات عملية لتحسين الأداء في الخطوة التالية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">التعاون</div>
+          <h2>اختر طريقة التعاون المناسبة</h2>
+        </div>
+        <p>
+          يمكنك البدء بخدمة واحدة محددة، أو التعاون الشهري على أكثر من جانب من جوانب التسويق.
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        <div class="package reveal">
+          <h3>خدمة محددة</h3>
+          <div class="price">حسب الخدمة</div>
+          <p>مناسبة إذا كان لديك احتياج واضح مثل إعلان، SEO، كتابة محتوى، أو صفحة هبوط.</p>
+          <ul>
+            <li>خدمة واحدة واضحة</li>
+            <li>مخرجات محددة</li>
+            <li>مدة تنفيذ متفق عليها</li>
+            <li>مناسبة للمشاريع الصغيرة</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">اطلب خدمة</a>
+        </div>
+
+        <div class="package featured reveal">
+          <span class="popular">الأكثر طلبًا</span>
+          <h3>تعاون شهري</h3>
+          <div class="price">حسب الاحتياج</div>
+          <p>مناسب للمشاريع التي تحتاج محتوى وإعلانات وتحسين مستمر خلال الشهر.</p>
+          <ul>
+            <li>دمج أكثر من خدمة</li>
+            <li>خطة تنفيذ شهرية</li>
+            <li>متابعة وتحسين</li>
+            <li>تقرير أداء واضح</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">ناقش مشروعك</a>
+        </div>
+
+        <div class="package reveal">
+          <h3>استشارة تسويقية</h3>
+          <div class="price">جلسة واحدة</div>
+          <p>مناسبة إذا كنت لا تعرف أين تبدأ وتحتاج تشخيص سريع لوضع مشروعك.</p>
+          <ul>
+            <li>تحليل الوضع الحالي</li>
+            <li>تحديد الأولويات</li>
+            <li>ترشيح أفضل خدمة</li>
+            <li>خطة خطوات مختصرة</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">احجز استشارة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="contact-info">
+          <h2>هل تريد تحسين نتائجك التسويقية؟</h2>
+          <p>
+            ارسل تفاصيل مشروعك، وسأقترح عليك أفضل طريقة للبدء حسب هدفك ومرحلتك الحالية.
+          </p>
+
+          <div class="contact-list">
+            <span>📞 01012345678</span>
+            <span>✉️ hello@ahmedmarketing.com</span>
+            <span>📍 Cairo, Egypt</span>
+            <span>⏱️ الرد خلال 24 ساعة</span>
+          </div>
+        </div>
+
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="اسمك" required />
+          <input type="text" id="business" placeholder="نوع مشروعك" required />
+
+          <select id="service" required>
+            <option value="">اختر الخدمة المطلوبة</option>
+            <option value="إدارة السوشيال ميديا">إدارة السوشيال ميديا</option>
+            <option value="إعلانات ممولة">إعلانات ممولة</option>
+            <option value="كتابة محتوى">كتابة محتوى</option>
+            <option value="SEO">SEO</option>
+            <option value="Landing Page">Landing Page</option>
+            <option value="تحليل وتقارير">تحليل وتقارير</option>
+            <option value="استراتيجية تسويق">استراتيجية تسويق</option>
+            <option value="Email Marketing">Email Marketing</option>
+            <option value="مش عارف أختار">مش عارف أختار</option>
+          </select>
+
+          <textarea id="message" placeholder="اكتب هدفك الحالي أو المشكلة التي تريد حلها"></textarea>
+
+          <button class="btn btn-primary" type="submit">
+            إرسال عبر واتساب
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Ahmed Marketing — Digital Marketing Specialist
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuBtn.textContent = navLinks.classList.contains("show") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
         }
-    </script>
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+    const serviceLinks = document.querySelectorAll(".service-link");
+
+    function activateTab(tabId) {
+      tabButtons.forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.tab === tabId);
+      });
+
+      tabContents.forEach(content => {
+        content.classList.toggle("active", content.id === tabId);
+      });
+    }
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        activateTab(btn.dataset.tab);
+      });
+    });
+
+    serviceLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const tabId = link.dataset.tab;
+        activateTab(tabId);
+        document.getElementById("details").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const business = document.getElementById("business").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      const phone = "201012345678";
+
+      const text = `
+أهلًا أحمد، أنا ${name}
+
+نوع المشروع:
+${business}
+
+الخدمة المطلوبة:
+${service}
+
+تفاصيل أو الهدف الحالي:
+${message || "لا يوجد"}
+
+أريد معرفة التفاصيل وطريقة البدء.
+      `;
+
+      const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
 </body>
 </html>
