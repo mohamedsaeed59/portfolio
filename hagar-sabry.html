@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هاجر صبري | أخصائية سوشيال ميديا وإدارة حسابات</title>
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --white: #ffffff;
+      --text: #182033;
+      --muted: #667085;
+      --primary: #2563eb;
+      --primary-soft: #eaf1ff;
+      --dark: #101828;
+      --green: #16a34a;
+      --purple: #7c3aed;
+      --orange: #f97316;
+      --pink: #db2777;
+      --cyan: #0891b2;
+      --border: #e5eaf3;
+      --shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 14px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 78px 0 54px;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 34%),
+        radial-gradient(circle at 18% 25%, rgba(8, 145, 178, 0.10), transparent 30%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 66px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: #f1f5ff;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 650px;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.045);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.08);
+      top: -90px;
+      left: -90px;
+    }
+
+    .hero-img {
+      height: 520px;
+      object-fit: cover;
+      border-radius: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .floating {
+      position: absolute;
+      z-index: 4;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 16px 18px;
+      width: 230px;
+    }
+
+    .floating small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .floating strong {
+      display: block;
+      font-size: 22px;
+      margin-top: 2px;
+    }
+
+    .floating p {
+      font-size: 12px;
+      margin: 2px 0 0;
+      color: var(--muted);
+    }
+
+    .float-1 {
+      right: -16px;
+      bottom: 72px;
+    }
+
+    .float-2 {
+      left: -16px;
+      top: 70px;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 500px;
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .about-img {
+      min-height: 430px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .about-img img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.045);
+    }
+
+    .about-card h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .chip {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #f1f5ff;
+      border: 1px solid #dbe7ff;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .blue { background: #eaf1ff; color: var(--primary); }
+    .green { background: #eafaf0; color: var(--green); }
+    .orange { background: #fff4e8; color: var(--orange); }
+    .purple { background: #f3eefe; color: var(--purple); }
+    .pink { background: #fdf0f7; color: var(--pink); }
+    .cyan { background: #e8f8fb; color: var(--cyan); }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .service-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: #475467;
+      font-size: 13px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+    }
+
+    .timeline-date {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .timeline-content h3 {
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-content h4 {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-img {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.06);
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .project-body h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .metrics {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .metric {
+      flex: 1;
+      min-width: 92px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 10px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+    }
+
+    .skill-box h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: #475467;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .edu-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+    }
+
+    .edu-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .edu-card p,
+    .edu-card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .edu-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .edu-card li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: #475467;
+      font-size: 14px;
+    }
+
+    .contact-list a {
+      color: var(--primary);
+      font-weight: 800;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      outline: none;
+      font-family: inherit;
+      color: var(--text);
+      background: #f8fafc;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: none;
+    }
+
+    form .btn {
+      border: 0;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-box,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .projects-grid,
+      .skills-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-img {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        background: rgba(255,255,255,0.98);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .projects-grid,
+      .skills-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-img {
+        height: 390px;
+      }
+
+      .floating {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box,
+      .about-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <span class="logo-mark">HS</span>
+        <span class="logo-text">
+          <strong>هاجر صبري</strong>
+          <span>أخصائية سوشيال ميديا</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">من أنا</a>
+        <a href="#services">الخدمات</a>
+        <a href="#experience">الخبرات</a>
+        <a href="#work">أبرز الأعمال</a>
+        <a href="#contact" class="nav-cta">تواصل معي</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="badge">
+          <span></span>
+          أخصائية سوشيال ميديا | إدارة حسابات | ميديا باير
+        </div>
+
+        <h1>
+          أساعد العلامات التجارية على النمو من خلال
+          <span>المحتوى والإعلانات والاستراتيجية الرقمية</span>
+        </h1>
+
+        <p>
+          أنا هاجر صبري، متخصصة في التسويق الرقمي بخبرة عملية في إدارة السوشيال ميديا،
+          الإعلانات الممولة، تحسين الظهور عبر SEO، إدارة الحسابات، والتنسيق مع العملاء.
+          أدمج بين التفكير الإبداعي والتحليل لتحقيق نتائج قابلة للقياس.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">تواصل معي</a>
+          <a href="#experience" class="btn btn-secondary">شاهد الخبرات</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>+4 سنوات</strong>
+            <span>خبرة في القيادة والإدارة</span>
+          </div>
+          <div class="stat">
+            <strong>+400</strong>
+            <span>طالب تم تدريبهم</span>
+          </div>
+          <div class="stat">
+            <strong>70%</strong>
+            <span>تحسن في الأداء</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop"
+          alt="أخصائية تسويق رقمي"
+        />
+
+        <div class="floating float-1">
+          <small>التركيز الأساسي</small>
+          <strong>Meta Ads</strong>
+          <p>حملات فيسبوك وإنستجرام</p>
+        </div>
+
+        <div class="floating float-2">
+          <small>نقطة قوة</small>
+          <strong>القيادة</strong>
+          <p>تنظيم الفرق وإدارة المهام</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">من أنا</div>
+          <h2>مسوّقة رقمية بخلفية قوية في الإدارة والقيادة</h2>
+        </div>
+        <p>
+          تجمع خبرتي بين التسويق الرقمي، التواصل مع العملاء، إدارة الأكاديميات،
+          التدريب الرياضي، وتنظيم الفرق والمهام.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop" alt="فريق تسويق">
+        </div>
+
+        <div class="about-card reveal">
+          <h3>من إدارة الفرق إلى إدارة النمو الرقمي</h3>
+
+          <p>
+            أمتلك خلفية متنوعة في التدريب الرياضي، إدارة الأكاديميات، والتسويق الرقمي.
+            هذا المزيج ساعدني على تطوير مهارات الانضباط، التواصل، القيادة، التنظيم،
+            وحل المشكلات بطريقة عملية.
+          </p>
+
+          <p>
+            أركز حاليًا على مساعدة العلامات التجارية في تحسين حضورها الرقمي من خلال
+            إدارة السوشيال ميديا، الإعلانات الممولة، تحسين الظهور، تخطيط المحتوى،
+            وإدارة الحسابات.
+          </p>
+
+          <div class="chips">
+            <span class="chip">إدارة السوشيال ميديا</span>
+            <span class="chip">Meta Ads</span>
+            <span class="chip">SEO</span>
+            <span class="chip">إدارة الحسابات</span>
+            <span class="chip">Media Buying</span>
+            <span class="chip">تخطيط المحتوى</span>
+            <span class="chip">القيادة</span>
+            <span class="chip">تحليل الأداء</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الخدمات</div>
+          <h2>الخدمات التسويقية التي أقدمها</h2>
+        </div>
+        <p>
+          خدمات عملية للعلامات التجارية التي تحتاج إلى محتوى أقوى، إعلانات أفضل،
+          وتواصل رقمي أكثر وضوحًا مع الجمهور.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon blue">📱</div>
+          <h3>إدارة السوشيال ميديا</h3>
+          <p>
+            إدارة صفحات التواصل الاجتماعي من خلال خطط محتوى منظمة ورسائل واضحة للبراند.
+          </p>
+          <ul class="service-list">
+            <li>خطط محتوى</li>
+            <li>تحسين الصفحة</li>
+            <li>زيادة التفاعل</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon green">🎯</div>
+          <h3>الإعلانات الممولة</h3>
+          <p>
+            إنشاء وإدارة حملات فيسبوك وإنستجرام باستهداف واضح وتحكم أفضل في الميزانية.
+          </p>
+          <ul class="service-list">
+            <li>إعداد حملات Meta</li>
+            <li>تحديد الجمهور</li>
+            <li>تحسين الميزانية</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon orange">🔎</div>
+          <h3>تحسين الظهور SEO</h3>
+          <p>
+            تطبيق أساسيات SEO لتحسين ظهور المحتوى وزيادة الوصول العضوي.
+          </p>
+          <ul class="service-list">
+            <li>تحسين الكلمات المفتاحية</li>
+            <li>تحسين ظهور المحتوى</li>
+            <li>دعم الوصول العضوي</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon purple">🤝</div>
+          <h3>إدارة الحسابات</h3>
+          <p>
+            التواصل مع العملاء، فهم أهدافهم، وتنسيق الخطط والمهام التسويقية.
+          </p>
+          <ul class="service-list">
+            <li>تنسيق مع العملاء</li>
+            <li>متابعة الحملات</li>
+            <li>تنظيم المهام</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon pink">✍️</div>
+          <h3>تخطيط المحتوى</h3>
+          <p>
+            تحويل أهداف المشروع إلى أفكار محتوى تدعم الوعي والثقة والتفاعل.
+          </p>
+          <ul class="service-list">
+            <li>أفكار منشورات</li>
+            <li>زوايا محتوى</li>
+            <li>تخطيط شهري</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon cyan">📊</div>
+          <h3>التقارير والتحليل</h3>
+          <p>
+            قراءة مؤشرات الأداء الأساسية واستخدامها لتحسين الحملات والمحتوى.
+          </p>
+          <ul class="service-list">
+            <li>متابعة الأداء</li>
+            <li>تحليلات أساسية</li>
+            <li>ملاحظات تحسين</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الخبرات</div>
+          <h2>الخبرات العملية</h2>
+        </div>
+        <p>
+          مزيج من التسويق الرقمي، إدارة الحسابات، الميديا باينج، والإدارة القيادية.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">يوليو 2024 - فبراير 2025</div>
+          <div class="timeline-content">
+            <h3>أخصائية سوشيال ميديا</h3>
+            <h4>Digital Marketing Freelancer — 24 Hour Media Company</h4>
+            <p>
+              إدارة حملات إعلانية ممولة على فيسبوك وإنستجرام، تحسين الميزانيات والاستهداف
+              لزيادة التفاعل، تطبيق استراتيجيات SEO لتحسين ظهور المحتوى، والتعاون مع العملاء
+              لبناء خطط سوشيال ميديا قائمة على البيانات.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">مارس 2024 - يونيو 2024</div>
+          <div class="timeline-content">
+            <h3>Account Manager & Media Buyer</h3>
+            <h4>Everest Company</h4>
+            <p>
+              دعم مهام إدارة الحسابات والميديا باينج، والتنسيق بين احتياجات العملاء،
+              تنفيذ الحملات، ومتابعة الأداء.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">يناير 2019 - يونيو 2024</div>
+          <div class="timeline-content">
+            <h3>مديرة أكاديمية رياضية ومدربة رئيسية</h3>
+            <h4>إدارة أكاديمية رياضية</h4>
+            <p>
+              إدارة العمليات اليومية للأكاديمية، الإشراف على الفريق وتطوير البرامج التدريبية،
+              تدريب أكثر من 400 طالب في الكونغ فو والجمباز، تحسين مؤشرات الأداء بنسبة 70%،
+              وتنظيم الفعاليات والجداول والمهام الإدارية.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">يناير 2019 - يونيو 2024</div>
+          <div class="timeline-content">
+            <h3>مدربة كونغ فو وجمباز</h3>
+            <h4>التدريب الرياضي</h4>
+            <p>
+              تصميم برامج تدريبية لمختلف الفئات العمرية، مع التركيز على الانضباط،
+              تطوير المهارات، الالتزام، وتحسين الأداء.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">أبرز الأعمال</div>
+          <h2>نقاط قوة مهنية</h2>
+        </div>
+        <p>
+          أمثلة توضح كيف تتكامل خبرة التسويق والإدارة والقيادة في العمل.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="إعلانات ممولة">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">إعلانات ممولة</span>
+            <h3>حملات فيسبوك وإنستجرام</h3>
+            <p>
+              إدارة حملات ممولة مع الاهتمام بالاستهداف، ضبط الميزانية، وتحسين التفاعل.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>Meta</strong>
+                <span>المنصة</span>
+              </div>
+              <div class="metric">
+                <strong>Ads</strong>
+                <span>التركيز</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1200&auto=format&fit=crop" alt="سوشيال ميديا">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">سوشيال ميديا</span>
+            <h3>تحسين ظهور المحتوى والصفحات</h3>
+            <p>
+              دعم حضور الصفحات من خلال تخطيط المحتوى، تحسين الظهور، وتنظيم الرسائل التسويقية.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>SEO</strong>
+                <span>دعم الظهور</span>
+              </div>
+              <div class="metric">
+                <strong>Growth</strong>
+                <span>الهدف</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="إدارة حسابات">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">إدارة الحسابات</span>
+            <h3>التواصل والتنسيق مع العملاء</h3>
+            <p>
+              العمل مع العملاء والفرق الداخلية لتنسيق المهام التسويقية، احتياجات الحملات، والخطط.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>Plans</strong>
+                <span>خطط قائمة على البيانات</span>
+              </div>
+              <div class="metric">
+                <strong>Clients</strong>
+                <span>تنسيق مع العملاء</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="قيادة">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">قيادة وإدارة</span>
+            <h3>إدارة عمليات أكاديمية رياضية</h3>
+            <p>
+              إدارة العمليات اليومية، تنسيق الفريق، الجداول، والبرامج التدريبية داخل الأكاديمية.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>+400</strong>
+                <span>طالب</span>
+              </div>
+              <div class="metric">
+                <strong>70%</strong>
+                <span>تحسن أداء</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="تنظيم">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">تنظيم وتخطيط</span>
+            <h3>إدارة البرامج والجداول وسير العمل</h3>
+            <p>
+              تنسيق البرامج والجداول والمهام مع الحفاظ على سير عمل منظم وتنفيذ مستمر.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>Time</strong>
+                <span>إدارة الوقت</span>
+              </div>
+              <div class="metric">
+                <strong>Team</strong>
+                <span>قيادة فريق</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="تحليل">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">تحليل وتقارير</span>
+            <h3>تحليلات أساسية وتنظيم بيانات</h3>
+            <p>
+              استخدام Excel وأدوات التقارير الأساسية لتنظيم البيانات ودعم اتخاذ قرارات أفضل.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>Excel</strong>
+                <span>أدوات مكتبية</span>
+              </div>
+              <div class="metric">
+                <strong>Reports</strong>
+                <span>تقارير</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">المهارات</div>
+          <h2>المهارات التقنية والشخصية</h2>
+        </div>
+        <p>
+          مجموعة مهارات عملية تشمل التسويق الرقمي، الأدوات المكتبية، التحليل، والقيادة.
+        </p>
+      </div>
+
+      <div class="skills-wrap">
+        <div class="skill-box reveal">
+          <h3>التسويق الرقمي</h3>
+          <div class="skill-list">
+            <span class="skill">إدارة السوشيال ميديا</span>
+            <span class="skill">SEO</span>
+            <span class="skill">Meta Ads</span>
+            <span class="skill">Media Buying</span>
+            <span class="skill">تخطيط المحتوى</span>
+            <span class="skill">تحليلات أساسية</span>
+          </div>
+        </div>
+
+        <div class="skill-box reveal">
+          <h3>الأدوات المكتبية</h3>
+          <div class="skill-list">
+            <span class="skill">Excel</span>
+            <span class="skill">Word</span>
+            <span class="skill">PowerPoint</span>
+            <span class="skill">إعداد تقارير</span>
+            <span class="skill">تنظيم البيانات</span>
+          </div>
+        </div>
+
+        <div class="skill-box reveal">
+          <h3>المهارات الشخصية</h3>
+          <div class="skill-list">
+            <span class="skill">قيادة فريق</span>
+            <span class="skill">إدارة الوقت</span>
+            <span class="skill">التواصل</span>
+            <span class="skill">الانضباط</span>
+            <span class="skill">حل المشكلات</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">التعليم والكورسات</div>
+          <h2>الخلفية الأكاديمية والشهادات</h2>
+        </div>
+      </div>
+
+      <div class="education-grid">
+        <div class="edu-card reveal">
+          <h3>التعليم</h3>
+          <p>
+            بكالوريوس آداب — نظم معلومات جغرافية
+          </p>
+          <p>
+            كلية الآداب — جامعة المنصورة
+          </p>
+          <p>
+            سنة التخرج: 2021 - 2024
+          </p>
+          <p>
+            التقدير: جيد جدًا
+          </p>
+        </div>
+
+        <div class="edu-card reveal">
+          <h3>الكورسات</h3>
+          <ul>
+            <li>Digital Marketing & SEO Specialization — YouTube / Google</li>
+            <li>Facebook & Instagram Ads Mastery — YouTube / Google</li>
+            <li>Media Buying Certification — Online Course</li>
+            <li>Advanced Excel, PowerPoint, and Word — Self-Taught</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">اللغات</div>
+          <h2>لغات التواصل</h2>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon blue">ع</div>
+          <h3>العربية</h3>
+          <p>اللغة الأم مع قدرة قوية على التواصل والتنظيم والشرح.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon green">EN</div>
+          <h3>الإنجليزية</h3>
+          <p>مستوى Fluent مناسب للتواصل مع العملاء وفهم مصطلحات التسويق والتقارير.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon purple">💬</div>
+          <h3>التواصل مع العملاء</h3>
+          <p>خبرة في التواصل مع العملاء، الفرق، ومختلف الفئات العمرية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="contact-info">
+          <h2>لنتحدث عن أهدافك التسويقية</h2>
+          <p>
+            سواء كنت تحتاج إلى إدارة سوشيال ميديا، إعلانات ممولة، دعم SEO،
+            أو إدارة حسابات، يمكنك التواصل معي مباشرة.
+          </p>
+
+          <div class="contact-list">
+            <span>📞 <a href="tel:01040303789">01040303789</a></span>
+            <span>✉️ <a href="mailto:hagersabry1300@gmail.com">hagersabry1300@gmail.com</a></span>
+            <span>📍 السنبلاوين، المنصورة، الدقهلية</span>
+            <span>🌍 متاحة للعمل عن بُعد أو داخل الموقع حسب الفرصة</span>
+          </div>
+        </div>
+
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="اسمك" required />
+          <input type="text" id="company" placeholder="اسم الشركة أو المشروع" required />
+
+          <select id="service" required>
+            <option value="">اختر الخدمة أو الفرصة</option>
+            <option value="إدارة السوشيال ميديا">إدارة السوشيال ميديا</option>
+            <option value="إعلانات ممولة">إعلانات ممولة</option>
+            <option value="دعم SEO">دعم SEO</option>
+            <option value="إدارة حسابات">إدارة حسابات</option>
+            <option value="Media Buying">Media Buying</option>
+            <option value="فرصة عمل">فرصة عمل</option>
+          </select>
+
+          <textarea id="message" placeholder="اكتب رسالة مختصرة"></textarea>
+
+          <button class="btn btn-primary" type="submit">
+            إرسال عبر واتساب
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 هاجر صبري عبد العال رمضان — أخصائية سوشيال ميديا وإدارة حسابات
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuBtn.textContent = navLinks.classList.contains("show") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      const phone = "201040303789";
+
+      const text = `
+أهلًا هاجر، أنا ${name}
+
+الشركة / المشروع:
+${company}
+
+الخدمة أو الفرصة:
+${service}
+
+الرسالة:
+${message || "لا توجد تفاصيل إضافية"}
+
+أرغب في التواصل معك بخصوص هذا الأمر.
+      `;
+
+      const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
