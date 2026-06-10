@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Growth | شركة تسويق وخدمات رقمية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070b18;
+      --bg-soft: #0d1326;
+      --card: rgba(255, 255, 255, 0.075);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #f7f9ff;
+      --muted: #aeb7d5;
+      --primary: #7c3cff;
+      --secondary: #00d4ff;
+      --accent: #ffca45;
+      --green: #31d98b;
+      --danger: #ff5c7a;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      --radius: 28px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(124, 60, 255, .35), transparent 30%),
+        radial-gradient(circle at 85% 10%, rgba(0, 212, 255, .25), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(255, 202, 69, .12), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .05;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 0;
+      backdrop-filter: blur(20px);
+      background: rgba(7, 11, 24, 0.74);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 28px rgba(124, 60, 255, .35);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 12px;
+      margin-top: -5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      border: 0;
+      outline: 0;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 14px 32px rgba(124, 60, 255, .28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(0, 212, 255, .25);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,.14);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 76px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .badge {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.08);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .badge span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px var(--green);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.17;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff, #b8f4ff 35%, #b99cff 75%, #ffda72);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .avatars {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatars img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--bg);
+      margin-inline-start: -10px;
+    }
+
+    .avatars img:first-child {
+      margin-inline-start: 0;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.055));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, .18);
+      top: -90px;
+      left: -80px;
+      filter: blur(8px);
+    }
+
+    .dashboard-img {
+      height: 430px;
+      border-radius: 26px;
+      object-fit: cover;
+      width: 100%;
+      opacity: .92;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .floating-box {
+      position: absolute;
+      right: 34px;
+      bottom: 34px;
+      width: min(280px, calc(100% - 68px));
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(7, 11, 24, .78);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+    }
+
+    .floating-box h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      height: 10px;
+      background: rgba(255,255,255,.12);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+
+    .progress span {
+      display: block;
+      width: 78%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: inherit;
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--secondary);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.25;
+      font-weight: 900;
+      letter-spacing: -.7px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .stat-card h3 {
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: .3s ease;
+      min-height: 250px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      background: var(--card-strong);
+      border-color: rgba(255,255,255,.2);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      background: linear-gradient(135deg, rgba(124,60,255,.9), rgba(0,212,255,.75));
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .service-card .number {
+      position: absolute;
+      left: 24px;
+      bottom: 16px;
+      font-size: 46px;
+      font-weight: 900;
+      color: rgba(255,255,255,.06);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .about-img img {
+      height: 520px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      padding: 34px;
+      border-radius: 34px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin: 14px 0 22px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #dfe6ff;
+      font-weight: 700;
+    }
+
+    .check span {
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(49, 217, 139, .15);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work-card {
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-6px);
+      background: var(--card-strong);
+    }
+
+    .work-card img {
+      height: 230px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .work-body {
+      padding: 20px;
+    }
+
+    .work-body small {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(0,212,255,.1);
+      color: #95efff;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .work-body h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .plan {
+      padding: 26px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .plan.featured {
+      background: linear-gradient(180deg, rgba(124,60,255,.26), rgba(255,255,255,.07));
+      border-color: rgba(124,60,255,.45);
+      box-shadow: 0 25px 80px rgba(124,60,255,.16);
+      transform: translateY(-10px);
+    }
+
+    .tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #221500;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .plan h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 900;
+      margin: 18px 0;
+    }
+
+    .price span {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .plan ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 24px;
+      color: #dfe6ff;
+      font-weight: 600;
+    }
+
+    .plan li::before {
+      content: "✓";
+      color: var(--green);
+      margin-left: 8px;
+      font-weight: 900;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .testimonial p {
+      color: #d9e0fa;
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .person img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .person h4 {
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .person span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .contact-info,
+    .contact-form {
+      border-radius: 34px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+
+    .contact-info {
+      background:
+        linear-gradient(135deg, rgba(124,60,255,.28), rgba(0,212,255,.10)),
+        var(--card);
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin: 12px 0 22px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid var(--border);
+    }
+
+    .info-item b {
+      display: block;
+      font-size: 14px;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: #dfe6ff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+      outline: none;
+      font-family: inherit;
+      transition: .25s;
+    }
+
+    select option {
+      color: #111;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(0,212,255,.65);
+      box-shadow: 0 0 0 4px rgba(0,212,255,.08);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 14px 0 0;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-menu.show {
+      display: block;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: .7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links,
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .services-grid,
+      .portfolio-grid,
+      .plans,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .dashboard-img {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stats,
+      .services-grid,
+      .portfolio-grid,
+      .plans,
+      .testimonials,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-desc {
+        margin-top: 10px;
+      }
+
+      .hero-card {
+        border-radius: 26px;
+        padding: 12px;
+      }
+
+      .dashboard-img {
+        height: 310px;
+        border-radius: 20px;
+      }
+
+      .floating-box {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .about-img img {
+        height: 330px;
+      }
+
+      .plan.featured {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-wrap">
+        <a href="#" class="brand">
+          <div class="logo">N</div>
+          <div>
+            Nova Growth
+            <small>Digital Marketing Agency</small>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#services">الخدمات</a>
+          <a href="#about">من نحن</a>
+          <a href="#work">الأعمال</a>
+          <a href="#plans">الباقات</a>
+          <a href="#contact">تواصل معنا</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-primary">احجز استشارة</a>
+          <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#services">الخدمات</a>
+        <a href="#about">من نحن</a>
+        <a href="#work">الأعمال</a>
+        <a href="#plans">الباقات</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="badge"><span></span> نساعدك تتحول من مجرد صفحة إلى علامة رقمية واضحة</div>
+
+            <h1>
+              حلول تسويق وخدمات رقمية
+              <span class="gradient-text">تصنع حضورك باحتراف</span>
+            </h1>
+
+            <p>
+              Nova Growth شركة متخصصة في التسويق الرقمي، إدارة صفحات السوشيال ميديا،
+              تصميمات المحتوى، المونتاج، الخدمات الرقمية، وإنشاء مكاتب تعليمية وكورسات
+              تساعدك تعرض خدماتك وتبيعها بشكل أقوى.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">ابدأ مشروعك الآن</a>
+              <a href="#work" class="btn btn-ghost">شاهد نماذج الأعمال</a>
+            </div>
+
+            <div class="hero-note">
+              <div class="avatars">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="client">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="client">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="client">
+              </div>
+              <span>أكثر من 85 عميل اعتمدوا علينا في تطوير حضورهم الرقمي.</span>
+            </div>
+          </div>
+
+          <div class="hero-card reveal">
+            <img
+              class="dashboard-img"
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=85"
+              alt="فريق تسويق رقمي يعمل على مشروع"
+            >
+
+            <div class="floating-box">
+              <h3>نمو متوسط الحسابات خلال 90 يوم</h3>
+              <p style="color: var(--muted); font-size: 14px;">تحسين المحتوى + خطة نشر + حملات مدفوعة</p>
+              <div class="progress"><span></span></div>
+              <strong style="color: var(--green);">+78% تفاعل ومتابعات</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat-card">
+            <h3 data-count="85">0</h3>
+            <p>عميل وشركة</p>
+          </div>
+          <div class="stat-card">
+            <h3 data-count="320">0</h3>
+            <p>تصميم سوشيال ميديا</p>
+          </div>
+          <div class="stat-card">
+            <h3 data-count="140">0</h3>
+            <p>فيديو ومونتاج</p>
+          </div>
+          <div class="stat-card">
+            <h3 data-count="26">0</h3>
+            <p>كورسات ومشاريع تعليمية</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">خدماتنا</div>
+            <h2 class="section-title">كل ما تحتاجه لبناء حضور رقمي قوي</h2>
+          </div>
+          <p class="section-desc">
+            نشتغل معك من الفكرة والاستراتيجية، إلى التصميم والنشر والتحليل، بأسلوب بسيط ومنظم يناسب طبيعة مشروعك.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">📣</div>
+            <h3>التسويق الرقمي</h3>
+            <p>خطط تسويقية، حملات ممولة، تحليل جمهور، وتحسين الرسائل الإعلانية للوصول لعملاء أكثر جودة.</p>
+            <div class="number">01</div>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon">📱</div>
+            <h3>إدارة صفحات السوشيال</h3>
+            <p>إدارة المحتوى، كتابة الكابشن، جدولة المنشورات، متابعة الرسائل، وتحسين شكل الصفحة بالكامل.</p>
+            <div class="number">02</div>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon">🎨</div>
+            <h3>تصاميم سوشيال ميديا</h3>
+            <p>تصميم بوستات، إعلانات، ستوري، هوية بصرية مصغرة، وقوالب محتوى قابلة للاستخدام المستمر.</p>
+            <div class="number">03</div>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon">🎬</div>
+            <h3>مونتاج وفيديوهات قصيرة</h3>
+            <p>مونتاج Reels وTikTok وShorts، إضافة نصوص، مؤثرات، انتقالات، وتحسين الإيقاع لجذب الانتباه.</p>
+            <div class="number">04</div>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon">💻</div>
+            <h3>خدمات رقمية</h3>
+            <p>صفحات هبوط، بورتفوليو، نماذج حجز، روابط ذكية، وتحسين تجربة العميل من أول زيارة حتى التواصل.</p>
+            <div class="number">05</div>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-icon">🎓</div>
+            <h3>مكاتب تعليمية وكورسات</h3>
+            <p>تجهيز محتوى الكورسات، صفحات التسجيل، تصميم العروض، وتنظيم تجربة الطالب داخل المشروع التعليمي.</p>
+            <div class="number">06</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img reveal">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+              alt="اجتماع فريق عمل تسويق"
+            >
+          </div>
+
+          <div class="about-content reveal">
+            <div class="section-kicker">من نحن</div>
+            <h2 class="section-title">نحوّل أفكارك إلى نظام تسويقي واضح</h2>
+            <p>
+              بدأنا Nova Growth بهدف بسيط: مساعدة أصحاب المشاريع الصغيرة والمتوسطة
+              على الظهور بشكل احترافي بدون تعقيد. نهتم بالتفاصيل، ونركز على أن يكون
+              كل تصميم أو حملة أو صفحة هدفها واضح وقابل للقياس.
+            </p>
+
+            <div class="checks">
+              <div class="check"><span>✓</span> محتوى مناسب لطبيعة المجال والجمهور المستهدف.</div>
+              <div class="check"><span>✓</span> تصاميم عصرية تحافظ على هوية المشروع.</div>
+              <div class="check"><span>✓</span> متابعة وتحليل لتحسين النتائج مع الوقت.</div>
+              <div class="check"><span>✓</span> حلول عملية تناسب ميزانية المشاريع الناشئة.</div>
+            </div>
+
+            <div style="margin-top: 26px;">
+              <a href="#contact" class="btn btn-primary">اطلب خطة مناسبة لك</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">أعمال مختارة</div>
+            <h2 class="section-title">نماذج من مشاريع نفذناها</h2>
+          </div>
+          <p class="section-desc">
+            أمثلة واقعية لطبيعة الأعمال التي نقدمها في التسويق، التصميم، الفيديو، والمشاريع التعليمية.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="work-card reveal">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85" alt="تحليل حملات تسويقية">
+            <div class="work-body">
+              <small>تسويق رقمي</small>
+              <h3>حملة إعلانات لمركز تدريبي</h3>
+              <p>إعداد رسائل إعلانية وصفحة تسجيل ساعدت على زيادة طلبات التسجيل بنسبة 64%.</p>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=900&q=85" alt="تصميم محتوى سوشيال ميديا">
+            <div class="work-body">
+              <small>سوشيال ميديا</small>
+              <h3>هوية محتوى لمطعم محلي</h3>
+              <p>تصميم قوالب أسبوعية للمنشورات والستوري مع خطة نشر شهرية واضحة.</p>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=900&q=85" alt="مونتاج فيديو">
+            <div class="work-body">
+              <small>مونتاج</small>
+              <h3>سلسلة فيديوهات قصيرة</h3>
+              <p>إنتاج 30 فيديو Reels لمدرب أونلاين مع تحسين البداية والعناوين لجذب المشاهد.</p>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="مكتب خدمات رقمية">
+            <div class="work-body">
+              <small>خدمات رقمية</small>
+              <h3>صفحة خدمات لشركة ناشئة</h3>
+              <p>تصميم صفحة تعريفية تعرض الخدمات والباقات وطرق التواصل بشكل احترافي.</p>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85" alt="كورسات تعليمية">
+            <div class="work-body">
+              <small>تعليم وكورسات</small>
+              <h3>تجهيز كورس أساسيات التسويق</h3>
+              <p>تنظيم محتوى الكورس، تصميم الشرائح، وتجهيز صفحة تسجيل للطلاب.</p>
+            </div>
+          </div>
+
+          <div class="work-card reveal">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85" alt="إدارة فريق تسويق">
+            <div class="work-body">
+              <small>إدارة صفحات</small>
+              <h3>إدارة شهرية لبراند تجاري</h3>
+              <p>خطة محتوى، تصاميم، ردود، تقارير أداء، وتحسين مستمر لأسلوب التواصل.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">باقات مرنة</div>
+            <h2 class="section-title">اختر البداية المناسبة لمشروعك</h2>
+          </div>
+          <p class="section-desc">
+            الأسعار تقديرية وقابلة للتخصيص حسب حجم العمل وعدد التصميمات أو الفيديوهات أو الصفحات المطلوبة.
+          </p>
+        </div>
+
+        <div class="plans">
+          <div class="plan reveal">
+            <h3>باقة الانطلاق</h3>
+            <p style="color: var(--muted);">مناسبة للمشاريع الصغيرة التي تحتاج بداية منظمة.</p>
+            <div class="price">1,500 ج <span>/ شهر</span></div>
+            <ul>
+              <li>8 تصميمات سوشيال ميديا</li>
+              <li>كتابة كابشن للمنشورات</li>
+              <li>تنظيم شكل الصفحة</li>
+              <li>تقرير أداء مبسط</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" style="width:100%">اطلب الباقة</a>
+          </div>
+
+          <div class="plan featured reveal">
+            <div class="tag">الأكثر طلبًا</div>
+            <h3>باقة النمو</h3>
+            <p style="color: var(--muted);">للمشاريع التي تريد محتوى وإدارة وتسويق بشكل مستمر.</p>
+            <div class="price">3,500 ج <span>/ شهر</span></div>
+            <ul>
+              <li>12 تصميم سوشيال ميديا</li>
+              <li>4 فيديوهات قصيرة</li>
+              <li>خطة محتوى شهرية</li>
+              <li>إدارة رسائل وتعليقات أساسية</li>
+              <li>متابعة حملة إعلانية واحدة</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width:100%">ابدأ الآن</a>
+          </div>
+
+          <div class="plan reveal">
+            <h3>باقة المشاريع التعليمية</h3>
+            <p style="color: var(--muted);">للمكاتب التعليمية والمدربين وأصحاب الكورسات.</p>
+            <div class="price">حسب المطلوب</div>
+            <ul>
+              <li>صفحة تسجيل للكورس</li>
+              <li>تصميم عروض تقديمية</li>
+              <li>تصميم إعلانات الكورس</li>
+              <li>تنظيم المحتوى التعليمي</li>
+              <li>خطة إطلاق وتسويق</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" style="width:100%">اطلب عرض سعر</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">آراء العملاء</div>
+            <h2 class="section-title">ماذا يقول عملاؤنا؟</h2>
+          </div>
+        </div>
+
+        <div class="testimonials">
+          <div class="testimonial reveal">
+            <p>
+              “كان عندنا مشكلة إن شكل الصفحة مش موحد، وبعد الشغل معاهم بقى عندنا محتوى منظم وتصميمات ثابتة واحترافية.”
+            </p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="client">
+              <div>
+                <h4>سارة محمود</h4>
+                <span>مديرة مركز تدريبي</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              “أكثر شيء أعجبني إنهم لا يصممون فقط، لكن يفكرون في الهدف من كل منشور وكل إعلان.”
+            </p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="client">
+              <div>
+                <h4>أحمد ناصر</h4>
+                <span>صاحب متجر إلكتروني</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              “ساعدونا نجهز صفحة الكورس والإعلانات والمحتوى، وفرق جدًا في شكل إطلاق البرنامج التدريبي.”
+            </p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="client">
+              <div>
+                <h4>منى عادل</h4>
+                <span>مدربة مهارات رقمية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="contact-info reveal">
+            <div class="section-kicker">تواصل معنا</div>
+            <h2 class="section-title">جاهز نبدأ؟</h2>
+            <p>
+              ارسل لنا تفاصيل مشروعك وسنقترح عليك أنسب خدمة أو باقة حسب هدفك وميزانيتك.
+            </p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <div style="font-size: 24px;">📞</div>
+                <div>
+                  <b>رقم التواصل</b>
+                  <span>0100 123 4567</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div style="font-size: 24px;">✉️</div>
+                <div>
+                  <b>البريد الإلكتروني</b>
+                  <span>hello@novagrowth.agency</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div style="font-size: 24px;">📍</div>
+                <div>
+                  <b>نطاق العمل</b>
+                  <span>مصر والوطن العربي - أونلاين</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm">
+            <div class="form-grid">
+              <div class="field">
+                <label>الاسم</label>
+                <input type="text" id="name" placeholder="اكتب اسمك" required>
+              </div>
+
+              <div class="field">
+                <label>رقم واتساب</label>
+                <input type="tel" id="phone" placeholder="0100 000 0000" required>
+              </div>
+
+              <div class="field">
+                <label>نوع الخدمة</label>
+                <select id="service" required>
+                  <option value="">اختر الخدمة</option>
+                  <option>تسويق رقمي</option>
+                  <option>إدارة صفحات</option>
+                  <option>تصاميم سوشيال ميديا</option>
+                  <option>مونتاج فيديو</option>
+                  <option>خدمات رقمية</option>
+                  <option>كورسات ومشاريع تعليمية</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>ميزانيتك التقريبية</label>
+                <select id="budget" required>
+                  <option value="">اختر الميزانية</option>
+                  <option>أقل من 2000 جنيه</option>
+                  <option>من 2000 إلى 5000 جنيه</option>
+                  <option>من 5000 إلى 10000 جنيه</option>
+                  <option>أحتاج عرض سعر مخصص</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label>تفاصيل المشروع</label>
+                <textarea id="message" placeholder="اكتب نبذة عن مشروعك أو الهدف المطلوب..." required></textarea>
+              </div>
+
+              <div class="field full">
+                <button type="submit" class="btn btn-primary" style="width:100%">
+                  إرسال عبر واتساب
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Nova Growth Agency — جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+      menuBtn.textContent = mobileMenu.classList.contains("show") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    function animateCounters() {
+      if (countersStarted) return;
+      countersStarted = true;
+
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count);
+        let current = 0;
+        const speed = Math.max(1, Math.floor(target / 60));
+
+        const update = () => {
+          current += speed;
+          if (current >= target) {
+            counter.textContent = target + "+";
+          } else {
+            counter.textContent = current;
+            requestAnimationFrame(update);
+          }
+        };
+
+        update();
+      });
+    }
+
+    const statsSection = document.querySelector(".stats");
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+      }
+    }, { threshold: 0.35 });
+
+    statsObserver.observe(statsSection);
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value;
+      const budget = document.getElementById("budget").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappNumber = "201001234567";
+
+      const text = `
+أهلا Nova Growth 👋
+
+الاسم: ${name}
+رقم التواصل: ${phone}
+الخدمة المطلوبة: ${service}
+الميزانية التقريبية: ${budget}
+
+تفاصيل المشروع:
+${message}
+      `.trim();
+
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+</body>
+</html>
