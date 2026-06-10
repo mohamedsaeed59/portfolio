@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Finish | شركة تشطيب وديكور</title>
+
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --white: #ffffff;
+      --text: #241f1a;
+      --muted: #756c63;
+      --primary: #a46f3e;
+      --primary-dark: #7b4e2b;
+      --dark: #1d1712;
+      --soft: #efe4d8;
+      --border: rgba(36, 31, 26, 0.12);
+      --shadow: 0 20px 55px rgba(36, 31, 26, 0.12);
+      --radius: 26px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(246, 243, 238, 0.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .nav-cta {
+      background: var(--dark);
+      color: #fff !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 78px 0 56px;
+      background:
+        radial-gradient(circle at top right, rgba(164, 111, 62, 0.14), transparent 34%),
+        radial-gradient(circle at 15% 25%, rgba(123, 78, 43, 0.08), transparent 28%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 66px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--primary-dark);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(29, 23, 18, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--soft);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 650px;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(36, 31, 26, 0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background: #fff;
+      padding: 18px;
+      border-radius: 36px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .hero-img {
+      height: 540px;
+      object-fit: cover;
+      border-radius: 28px;
+    }
+
+    .floating {
+      position: absolute;
+      z-index: 4;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      width: 220px;
+    }
+
+    .floating small {
+      color: var(--muted);
+      font-size: 12px;
+      display: block;
+    }
+
+    .floating strong {
+      font-size: 22px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .floating p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .float-1 {
+      right: -18px;
+      bottom: 70px;
+    }
+
+    .float-2 {
+      left: -18px;
+      top: 72px;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-label {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 500px;
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .about-img {
+      min-height: 440px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .about-img img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 12px 35px rgba(36, 31, 26, 0.06);
+    }
+
+    .about-card h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .chip {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: 0.3s;
+      box-shadow: 0 12px 35px rgba(36, 31, 26, 0.05);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: #5f554d;
+      font-size: 13px;
+    }
+
+    .service-card li::before {
+      content: "✓";
+      color: #16a34a;
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(36, 31, 26, 0.05);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-img {
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.06);
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .project-body h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .meta {
+      flex: 1;
+      min-width: 95px;
+      background: #faf7f3;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 10px;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .meta span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .comparison {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 36px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .comparison .section-label {
+      color: #d8b08a;
+    }
+
+    .comparison .section-head p {
+      color: #c9beb4;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .ba-card {
+      position: relative;
+      min-height: 370px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .ba-card img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(29, 23, 18, 0.82);
+      color: #fff;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .package {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 12px 35px rgba(36, 31, 26, 0.05);
+      position: relative;
+    }
+
+    .package.featured {
+      box-shadow: var(--shadow);
+      border-color: rgba(164, 111, 62, 0.35);
+      transform: translateY(-8px);
+    }
+
+    .popular {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .package h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .package p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .package ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 24px;
+      color: #5f554d;
+      font-size: 14px;
+    }
+
+    .package li::before {
+      content: "✓";
+      color: #16a34a;
+      font-weight: 900;
+      margin-left: 8px;
+    }
+
+    .package .btn {
+      width: 100%;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(36, 31, 26, 0.05);
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .client img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .client strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .client span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: #5f554d;
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      outline: none;
+      font-family: inherit;
+      color: var(--text);
+      background: #faf7f3;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: none;
+    }
+
+    form .btn {
+      border: 0;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .projects-grid,
+      .packages-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-img {
+        height: 450px;
+      }
+
+      .package.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        background: rgba(246, 243, 238, 0.98);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .projects-grid,
+      .packages-grid,
+      .testimonials-grid,
+      .process-grid,
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-img {
+        height: 390px;
+      }
+
+      .floating {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .contact-box,
+      .about-card,
+      .comparison {
+        padding: 24px;
+      }
+
+      .ba-card {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <span class="logo-mark">EF</span>
+        <span class="logo-text">
+          <strong>Elite Finish</strong>
+          <span>تشطيب وديكور داخلي</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">من نحن</a>
+        <a href="#services">الخدمات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#packages">الباقات</a>
+        <a href="#contact" class="nav-cta">اطلب معاينة</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="badge">
+          <span></span>
+          شركة تشطيب وديكور داخلي في مصر
+        </div>
+
+        <h1>
+          نحول المساحات الفارغة إلى أماكن
+          <span>راقية وجاهزة للسكن</span>
+        </h1>
+
+        <p>
+          Elite Finish شركة متخصصة في أعمال التشطيب والديكور الداخلي للشقق، الفلل،
+          المكاتب، والمحلات التجارية. نبدأ من المعاينة والتصميم وحتى التسليم النهائي
+          بجودة واضحة ومتابعة دقيقة لكل مرحلة.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">اطلب معاينة مجانية</a>
+          <a href="#projects" class="btn btn-secondary">شاهد أعمالنا</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>+120</strong>
+            <span>وحدة تم تشطيبها</span>
+          </div>
+          <div class="stat">
+            <strong>9</strong>
+            <span>سنوات خبرة</span>
+          </div>
+          <div class="stat">
+            <strong>+35</strong>
+            <span>فريق فني ومهندس</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-card">
+          <img
+            class="hero-img"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop"
+            alt="تشطيب وديكور داخلي"
+          />
+
+          <div class="floating float-1">
+            <small>آخر مشروع</small>
+            <strong>شقة 165م</strong>
+            <p>تشطيب كامل — القاهرة الجديدة</p>
+          </div>
+
+          <div class="floating float-2">
+            <small>مدة التنفيذ</small>
+            <strong>45 يوم</strong>
+            <p>متابعة يومية وتسليم مرحلي</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">من نحن</div>
+          <h2>تشطيب متقن يبدأ من التخطيط وينتهي بتسليم نظيف</h2>
+        </div>
+        <p>
+          نهتم بالتفاصيل التي تظهر في الشكل النهائي والتفاصيل التي لا تظهر لكنها تصنع جودة المكان.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?q=80&w=1200&auto=format&fit=crop" alt="Interior finishing">
+        </div>
+
+        <div class="about-card reveal">
+          <h3>ننفذ التشطيب كمنظومة كاملة وليس مجرد عمالة منفصلة</h3>
+          <p>
+            نعمل على تنظيم كل مراحل التشطيب من البداية: رفع المقاسات، تحديد الاحتياجات،
+            اختيار الخامات، وضع جدول التنفيذ، ثم متابعة الأعمال الفنية حتى التسليم.
+          </p>
+          <p>
+            هدفنا أن يحصل العميل على نتيجة نهائية متناسقة، خامات مناسبة للميزانية،
+            ومتابعة واضحة لكل مرحلة بدون عشوائية أو تأخير غير مبرر.
+          </p>
+
+          <div class="chips">
+            <span class="chip">تشطيب شقق</span>
+            <span class="chip">تشطيب فيلل</span>
+            <span class="chip">ديكور داخلي</span>
+            <span class="chip">جبس بورد</span>
+            <span class="chip">دهانات</span>
+            <span class="chip">كهرباء وسباكة</span>
+            <span class="chip">أرضيات</span>
+            <span class="chip">تصميم 3D</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الخدمات</div>
+          <h2>خدمات التشطيب والديكور</h2>
+        </div>
+        <p>
+          يمكنك طلب خدمة محددة أو تنفيذ مشروع كامل من المحارة حتى التسليم النهائي.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">🏠</div>
+          <h3>تشطيب شقق كامل</h3>
+          <p>تنفيذ كامل للوحدة بداية من أعمال الكهرباء والسباكة وحتى الدهانات والتسليم.</p>
+          <ul>
+            <li>رفع مقاسات ومعاينة</li>
+            <li>جدول تنفيذ واضح</li>
+            <li>متابعة هندسية</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🏛️</div>
+          <h3>تشطيب فيلل ودوبلكس</h3>
+          <p>تنفيذ تشطيبات الفلل والمساحات الكبيرة مع تنسيق الخامات والتفاصيل المعمارية.</p>
+          <ul>
+            <li>توزيع مساحات</li>
+            <li>تنسيق خامات</li>
+            <li>تشطيب داخلي وخارجي</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🎨</div>
+          <h3>ديكور داخلي</h3>
+          <p>تصميم وتنسيق الألوان، الإضاءة، الأثاث، والحوائط للحصول على شكل متكامل.</p>
+          <ul>
+            <li>Moodboard</li>
+            <li>اختيار ألوان وخامات</li>
+            <li>تنسيق الأثاث والإضاءة</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">💡</div>
+          <h3>كهرباء وإضاءة</h3>
+          <p>تأسيس كهرباء، توزيع مخارج، إنارة مخفية، سبوتات، ولوحات تحكم حسب الاستخدام.</p>
+          <ul>
+            <li>تأسيس كهرباء</li>
+            <li>توزيع إنارة</li>
+            <li>اختبار وتسليم</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🚿</div>
+          <h3>سباكة وعزل</h3>
+          <p>تأسيس السباكة، اختبار الضغط، عزل الحمامات والمطابخ، وتجهيز أماكن الأجهزة.</p>
+          <ul>
+            <li>تأسيس كامل</li>
+            <li>عزل واختبار</li>
+            <li>تجهيز أجهزة</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🧱</div>
+          <h3>جبس بورد ودهانات</h3>
+          <p>تنفيذ أسقف جبس بورد، بيوت نور، حوائط ديكورية، ودهانات داخلية حديثة.</p>
+          <ul>
+            <li>أسقف معلقة</li>
+            <li>بيوت نور</li>
+            <li>دهانات وديكورات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">المشاريع</div>
+          <h2>نماذج من أعمالنا</h2>
+        </div>
+        <p>
+          مشاريع متنوعة بين شقق سكنية، فيلل، مكاتب، ومحلات تجارية.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop" alt="Modern Apartment">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">تشطيب شقة</span>
+            <h3>شقة Modern Classic</h3>
+            <p>تشطيب كامل لشقة سكنية بألوان دافئة وإضاءة مخفية وخامات عملية.</p>
+            <div class="project-meta">
+              <div class="meta">
+                <strong>165م</strong>
+                <span>المساحة</span>
+              </div>
+              <div class="meta">
+                <strong>45 يوم</strong>
+                <span>مدة التنفيذ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1200&auto=format&fit=crop" alt="Villa Finishing">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">فيلا</span>
+            <h3>فيلا بتشطيب Luxury</h3>
+            <p>تنفيذ ريسبشن وغرف نوم بحلول إضاءة ودهانات وخامات فاخرة.</p>
+            <div class="project-meta">
+              <div class="meta">
+                <strong>420م</strong>
+                <span>المساحة</span>
+              </div>
+              <div class="meta">
+                <strong>90 يوم</strong>
+                <span>مدة التنفيذ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop" alt="Office Interior">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">مكتب إداري</span>
+            <h3>مكتب عمل هادئ</h3>
+            <p>تصميم وتنفيذ مكتب إداري بإضاءة مناسبة ومساحات عمل عملية.</p>
+            <div class="project-meta">
+              <div class="meta">
+                <strong>110م</strong>
+                <span>المساحة</span>
+              </div>
+              <div class="meta">
+                <strong>28 يوم</strong>
+                <span>مدة التنفيذ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=1200&auto=format&fit=crop" alt="Kitchen">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">مطبخ</span>
+            <h3>مطبخ مفتوح عصري</h3>
+            <p>تنفيذ مطبخ مفتوح بخامات سهلة التنظيف وتوزيع عملي للأجهزة.</p>
+            <div class="project-meta">
+              <div class="meta">
+                <strong>24م</strong>
+                <span>المساحة</span>
+              </div>
+              <div class="meta">
+                <strong>12 يوم</strong>
+                <span>مدة التنفيذ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1200&auto=format&fit=crop" alt="Reception">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">ريسبشن</span>
+            <h3>ريسبشن فاخر</h3>
+            <p>تنسيق رخام، دهانات، جبس بورد، وإنارة للحصول على مساحة استقبال راقية.</p>
+            <div class="project-meta">
+              <div class="meta">
+                <strong>75م</strong>
+                <span>المساحة</span>
+              </div>
+              <div class="meta">
+                <strong>21 يوم</strong>
+                <span>مدة التنفيذ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" alt="Cafe">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">تجاري</span>
+            <h3>تشطيب كافيه صغير</h3>
+            <p>تنفيذ تصميم تجاري دافئ يناسب تجربة العملاء والتصوير داخل المكان.</p>
+            <div class="project-meta">
+              <div class="meta">
+                <strong>85م</strong>
+                <span>المساحة</span>
+              </div>
+              <div class="meta">
+                <strong>30 يوم</strong>
+                <span>مدة التنفيذ</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="comparison reveal">
+        <div class="section-head">
+          <div>
+            <div class="section-label">قبل وبعد</div>
+            <h2>الفرق الحقيقي يظهر بعد التنفيذ</h2>
+          </div>
+          <p>
+            نهتم بتحويل المساحة من حالة خام أو غير منظمة إلى مكان متناسق وجاهز للاستخدام.
+          </p>
+        </div>
+
+        <div class="before-after">
+          <div class="ba-card">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop" alt="Before">
+            <span class="ba-label">قبل</span>
+          </div>
+
+          <div class="ba-card">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="After">
+            <span class="ba-label">بعد</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">مراحل العمل</div>
+          <h2>نظام تنفيذ واضح من أول معاينة حتى التسليم</h2>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>المعاينة ورفع المقاسات</h3>
+          <p>نعاين المساحة ونفهم احتياجات العميل ونحدد البنود المطلوبة.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>عرض السعر والخطة</h3>
+          <p>نقدم عرض واضح يشمل البنود، الخامات، المدة، وطريقة الدفع.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>التنفيذ والمتابعة</h3>
+          <p>تنفيذ الأعمال بترتيب واضح مع متابعة هندسية وتقارير تقدم.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <h3>التسليم النهائي</h3>
+          <p>مراجعة التشطيب، معالجة الملاحظات، وتسليم الوحدة بشكل نظيف.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الباقات</div>
+          <h2>أنظمة تشطيب تناسب ميزانية كل عميل</h2>
+        </div>
+        <p>
+          الأسعار النهائية تختلف حسب المساحة، حالة الوحدة، نوع الخامات، ومستوى التصميم المطلوب.
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        <div class="package reveal">
+          <h3>تشطيب اقتصادي</h3>
+          <div class="price">يبدأ من 3,500 <small>ج / متر</small></div>
+          <p>مناسب للشقق التي تحتاج تشطيب عملي بخامات جيدة وميزانية محسوبة.</p>
+          <ul>
+            <li>كهرباء وسباكة أساسية</li>
+            <li>محارة ودهانات</li>
+            <li>أرضيات سيراميك</li>
+            <li>تسليم عملي ونظيف</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">اطلب عرض سعر</a>
+        </div>
+
+        <div class="package featured reveal">
+          <span class="popular">الأكثر طلبًا</span>
+          <h3>تشطيب Premium</h3>
+          <div class="price">يبدأ من 5,500 <small>ج / متر</small></div>
+          <p>مناسب لمن يريد جودة أعلى وتفاصيل ديكور واضحة في التصميم النهائي.</p>
+          <ul>
+            <li>خامات أعلى جودة</li>
+            <li>جبس بورد وإنارة مخفية</li>
+            <li>دهانات ديكورية</li>
+            <li>متابعة هندسية كاملة</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">احجز معاينة</a>
+        </div>
+
+        <div class="package reveal">
+          <h3>تشطيب Luxury</h3>
+          <div class="price">حسب المشروع</div>
+          <p>مناسب للفلل والمساحات الكبيرة التي تحتاج تصميم وتنفيذ بتفاصيل فاخرة.</p>
+          <ul>
+            <li>تصميم 3D</li>
+            <li>رخام وخامات فاخرة</li>
+            <li>إضاءة وديكور متقدم</li>
+            <li>إدارة كاملة للمشروع</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">ناقش مشروعك</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">آراء العملاء</div>
+          <h2>ثقة العملاء هي أهم نتيجة</h2>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial reveal">
+          <p>
+            "التسليم كان منظم جدًا، وكل مرحلة كانت واضحة. أكتر حاجة عجبتني إن مفيش عشوائية في التنفيذ."
+          </p>
+          <div class="client">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+            <div>
+              <strong>أحمد سمير</strong>
+              <span>شقة سكنية — القاهرة الجديدة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <p>
+            "ساعدونا نختار خامات مناسبة للميزانية، والنتيجة النهائية طلعت أهدى وأفخم من المتوقع."
+          </p>
+          <div class="client">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+            <div>
+              <strong>مريم عادل</strong>
+              <span>تشطيب ريسبشن وغرف نوم</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <p>
+            "كان في متابعة مستمرة، وأي ملاحظات كانت بتتظبط بسرعة. تجربة مريحة مقارنة بتجارب سابقة."
+          </p>
+          <div class="client">
+            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Client">
+            <div>
+              <strong>محمد خالد</strong>
+              <span>مكتب إداري — مدينة نصر</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="contact-info">
+          <h2>جاهز تبدأ تشطيب وحدتك؟</h2>
+          <p>
+            ارسل تفاصيل الوحدة، المساحة، ومكان المشروع، وسيتم التواصل معك لتحديد المعاينة
+            أو إرسال عرض مبدئي مناسب.
+          </p>
+
+          <div class="contact-list">
+            <span>📞 01012345678</span>
+            <span>✉️ info@elitefinish.com</span>
+            <span>📍 القاهرة والجيزة والتجمع والشيخ زايد</span>
+            <span>⏱️ الرد خلال 24 ساعة</span>
+          </div>
+        </div>
+
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="اسمك" required />
+          <input type="text" id="location" placeholder="مكان المشروع" required />
+          <input type="text" id="area" placeholder="المساحة التقريبية بالمتر" required />
+
+          <select id="service" required>
+            <option value="">اختر نوع الخدمة</option>
+            <option value="تشطيب شقة كامل">تشطيب شقة كامل</option>
+            <option value="تشطيب فيلا">تشطيب فيلا</option>
+            <option value="ديكور داخلي">ديكور داخلي</option>
+            <option value="كهرباء وسباكة">كهرباء وسباكة</option>
+            <option value="جبس بورد ودهانات">جبس بورد ودهانات</option>
+            <option value="معاينة فقط">معاينة فقط</option>
+          </select>
+
+          <textarea id="message" placeholder="اكتب حالة الوحدة: على الطوب، نصف تشطيب، تشطيب قديم، أو أي تفاصيل مهمة"></textarea>
+
+          <button class="btn btn-primary" type="submit">
+            إرسال عبر واتساب
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Elite Finish — شركة تشطيب وديكور داخلي
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuBtn.textContent = navLinks.classList.contains("show") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const location = document.getElementById("location").value.trim();
+      const area = document.getElementById("area").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      const phone = "201012345678";
+
+      const text = `
+أهلًا Elite Finish، أنا ${name}
+
+مكان المشروع:
+${location}
+
+المساحة التقريبية:
+${area}
+
+الخدمة المطلوبة:
+${service}
+
+تفاصيل الوحدة:
+${message || "لا يوجد"}
+
+أريد معرفة التفاصيل وتحديد معاينة.
+      `;
+
+      const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
