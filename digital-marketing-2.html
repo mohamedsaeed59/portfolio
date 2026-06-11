@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -1723,5 +1723,865 @@ ${message || "لا يوجد"}
     });
   </script>
 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كريم منصور | Digital Marketing Specialist</title>
+
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-2: #0d1728;
+      --card: rgba(255,255,255,0.075);
+      --card-2: rgba(255,255,255,0.105);
+      --border: rgba(255,255,255,0.12);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #22d3ee;
+      --secondary: #a78bfa;
+      --accent: #34d399;
+      --orange: #fb923c;
+      --danger: #fb7185;
+      --yellow: #facc15;
+      --shadow: 0 24px 70px rgba(0,0,0,0.28);
+      --radius: 26px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Tahoma", "Arial", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.16), transparent 28%),
+        radial-gradient(circle at 20% 20%, rgba(167, 139, 250, 0.16), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(52, 211, 153, 0.10), transparent 24%),
+        var(--bg);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .container { width: min(1180px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8, 17, 31, 0.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; font-weight: 900; }
+    .logo-mark {
+      width: 46px; height: 46px; display: grid; place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #06101d; font-weight: 900;
+      box-shadow: 0 14px 34px rgba(34,211,238,0.22);
+    }
+    .logo-title { line-height: 1.25; }
+    .logo-title strong { display: block; font-size: 16px; }
+    .logo-title span { display: block; font-size: 12px; color: var(--muted); font-weight: 500; }
+
+    .nav-links { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 14px; }
+    .nav-links a { transition: 0.3s; white-space: nowrap; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      color: #06101d !important;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 11px 18px; border-radius: 999px; font-weight: 900;
+    }
+    .menu-btn {
+      display: none; width: 44px; height: 44px; border-radius: 14px;
+      border: 1px solid var(--border); background: var(--card); color: #fff;
+      font-size: 23px; cursor: pointer;
+    }
+
+    .hero { padding: 82px 0 58px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 9px; padding: 9px 15px;
+      border-radius: 999px; background: rgba(34,211,238,0.1);
+      border: 1px solid rgba(34,211,238,0.22); color: #a5f3fc;
+      font-size: 13px; font-weight: 700; margin-bottom: 22px;
+    }
+    .badge span { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 6px rgba(52,211,153,0.13); }
+    .hero h1 { font-size: clamp(36px, 6vw, 68px); line-height: 1.13; letter-spacing: -2px; margin-bottom: 22px; }
+    .hero h1 em { font-style: normal; background: linear-gradient(135deg, #67e8f9, #c4b5fd, #86efac); -webkit-background-clip: text; color: transparent; }
+    .hero p { color: var(--muted); font-size: 17px; max-width: 650px; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 34px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 14px 22px; border-radius: 999px; border: 1px solid transparent;
+      font-weight: 900; font-size: 14px; cursor: pointer; transition: 0.3s; font-family: inherit;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #06101d; box-shadow: 0 18px 42px rgba(34,211,238,0.22); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 24px 60px rgba(34,211,238,0.32); }
+    .btn-secondary { background: rgba(255,255,255,0.06); border-color: var(--border); color: #fff; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.11); }
+
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 650px; }
+    .stat { padding: 18px; background: var(--card); border: 1px solid var(--border); border-radius: 22px; }
+    .stat strong { display: block; font-size: 25px; line-height: 1.2; }
+    .stat span { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+
+    .hero-visual { position: relative; }
+    .dashboard-card {
+      position: relative; padding: 18px; border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.055));
+      border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden;
+    }
+    .dashboard-card::before {
+      content: ""; position: absolute; width: 250px; height: 250px; border-radius: 50%;
+      background: rgba(34,211,238,0.16); filter: blur(36px); top: -80px; left: -80px;
+    }
+    .hero-img { height: 520px; object-fit: cover; border-radius: 26px; position: relative; z-index: 1; filter: saturate(1.03); }
+    .mini-card {
+      position: absolute; z-index: 4; background: rgba(8,17,31,0.88); backdrop-filter: blur(16px);
+      border: 1px solid var(--border); border-radius: 22px; padding: 17px 18px; box-shadow: var(--shadow);
+    }
+    .mini-card small { display: block; color: var(--muted); margin-bottom: 2px; font-size: 12px; }
+    .mini-card strong { font-size: 22px; }
+    .mini-card p { font-size: 12px; color: var(--muted); margin: 4px 0 0; }
+    .mini-1 { right: -18px; bottom: 64px; width: 220px; }
+    .mini-2 { left: -18px; top: 70px; width: 220px; }
+    .mini-progress { height: 8px; background: rgba(255,255,255,0.1); border-radius: 999px; margin-top: 12px; overflow: hidden; }
+    .mini-progress span { display: block; height: 100%; width: 78%; border-radius: inherit; background: linear-gradient(135deg, var(--accent), var(--primary)); }
+
+    section { padding: 76px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+    .section-label { color: var(--primary); font-weight: 900; font-size: 14px; margin-bottom: 8px; }
+    .section-head h2 { font-size: clamp(28px, 4vw, 46px); line-height: 1.25; letter-spacing: -1px; }
+    .section-head p { color: var(--muted); max-width: 520px; font-size: 15px; }
+
+    .about-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 26px; align-items: stretch; }
+    .about-img { min-height: 440px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .about-img img { height: 100%; object-fit: cover; }
+    .about-card { padding: 34px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--border); }
+    .about-card h3 { font-size: 29px; margin-bottom: 14px; }
+    .about-card p { color: var(--muted); margin-bottom: 16px; }
+    .tools, .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .tool, .chip {
+      padding: 9px 13px; border-radius: 999px; background: rgba(255,255,255,0.075);
+      border: 1px solid rgba(255,255,255,0.095); color: #dffafe; font-size: 13px; font-weight: 700;
+    }
+    .chip.green { color: #bbf7d0; border-color: rgba(52,211,153,.2); background: rgba(52,211,153,.08); }
+    .chip.orange { color: #fed7aa; border-color: rgba(251,146,60,.22); background: rgba(251,146,60,.08); }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
+    .service-card, .account-card, .proof-card, .sample-card, .report-card, .testimonial, .step {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); transition: 0.3s; position: relative; overflow: hidden;
+    }
+    .service-card { padding: 25px; }
+    .service-card:hover, .account-card:hover, .proof-card:hover, .sample-card:hover { transform: translateY(-6px); background: var(--card-2); border-color: rgba(34,211,238,0.28); }
+    .service-icon { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(34,211,238,0.17), rgba(167,139,250,0.16)); font-size: 25px; margin-bottom: 18px; }
+    .service-card h3 { font-size: 19px; margin-bottom: 8px; }
+    .service-card p { color: var(--muted); font-size: 14px; }
+
+    .accounts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .account-card { padding: 20px; min-height: 190px; }
+    .brand-row { display: flex; align-items: center; gap: 13px; margin-bottom: 16px; }
+    .brand-logo {
+      width: 58px; height: 58px; flex: 0 0 58px; display: grid; place-items: center;
+      border-radius: 18px; background: linear-gradient(135deg, rgba(34,211,238,.28), rgba(167,139,250,.25));
+      border: 1px solid rgba(255,255,255,.16); color: #fff; font-weight: 900; letter-spacing: .5px;
+    }
+    .brand-row h3 { font-size: 17px; line-height: 1.35; }
+    .brand-row span { display: block; color: var(--muted); font-size: 12px; }
+    .account-card p { color: var(--muted); font-size: 13px; }
+    .account-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+    .account-meta div { padding: 9px; border-radius: 14px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.08); }
+    .account-meta strong { display: block; font-size: 13px; }
+    .account-meta span { color: var(--muted); font-size: 11px; }
+
+    .case-list { display: grid; gap: 26px; }
+    .case-card {
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; padding: 24px;
+      border-radius: 34px; background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
+      border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden;
+    }
+    .case-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .case-title h3 { font-size: 27px; margin-bottom: 4px; }
+    .case-title p { color: var(--muted); font-size: 14px; }
+    .case-badge { padding: 7px 12px; border-radius: 999px; background: rgba(34,211,238,.11); border: 1px solid rgba(34,211,238,.2); color: #a5f3fc; font-size: 12px; font-weight: 900; white-space: nowrap; }
+    .case-blocks { display: grid; gap: 14px; }
+    .case-block { padding: 16px; border-radius: 20px; background: rgba(8,17,31,.34); border: 1px solid rgba(255,255,255,.08); }
+    .case-block h4 { font-size: 15px; color: #e0f2fe; margin-bottom: 6px; }
+    .case-block p, .case-block li { color: var(--muted); font-size: 14px; }
+    .case-block ul { padding-right: 18px; display: grid; gap: 4px; }
+    .case-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+    .case-metric { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 12px; }
+    .case-metric strong { display: block; font-size: 22px; line-height: 1.1; }
+    .case-metric span { color: var(--muted); font-size: 11px; }
+
+    .mock-screen {
+      background: #07101d; border: 1px solid rgba(255,255,255,.12); border-radius: 26px; overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.025);
+    }
+    .screen-bar { height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.09); }
+    .dots { display: flex; gap: 6px; direction: ltr; }
+    .dots span { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.28); }
+    .screen-title { color: var(--muted); font-size: 12px; }
+    .screen-body { padding: 18px; }
+    .screen-kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+    .screen-kpi { padding: 13px; border-radius: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.07); }
+    .screen-kpi small { display: block; color: var(--muted); font-size: 11px; }
+    .screen-kpi strong { font-size: 21px; }
+    .chart { height: 180px; border-radius: 20px; background: linear-gradient(180deg, rgba(34,211,238,.12), rgba(52,211,153,.04)); border: 1px solid rgba(255,255,255,.07); display: flex; align-items: end; gap: 9px; padding: 16px; }
+    .bar { flex: 1; border-radius: 999px 999px 8px 8px; background: linear-gradient(180deg, var(--primary), var(--accent)); min-height: 36px; opacity: .9; }
+    .ad-preview { margin-top: 16px; padding: 14px; border-radius: 18px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.08); }
+    .ad-preview h4 { font-size: 14px; margin-bottom: 8px; }
+    .ad-preview p { color: var(--muted); font-size: 13px; }
+
+    .proof-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .tab-btn { border: 1px solid var(--border); color: #dbeafe; background: rgba(255,255,255,.06); border-radius: 999px; padding: 10px 14px; cursor: pointer; font-family: inherit; font-weight: 800; transition: .3s; }
+    .tab-btn.active, .tab-btn:hover { color: #06101d; background: linear-gradient(135deg, var(--primary), var(--accent)); border-color: transparent; }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .proof-card { padding: 18px; }
+    .proof-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .proof-head h3 { font-size: 18px; }
+    .proof-head span { color: var(--muted); font-size: 12px; }
+    .proof-shot { height: 210px; border-radius: 20px; background: #07101d; border: 1px solid rgba(255,255,255,.09); overflow: hidden; padding: 14px; }
+    .shot-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    .shot-cell { background: rgba(255,255,255,.06); border-radius: 12px; padding: 10px; min-height: 58px; }
+    .shot-cell small { color: var(--muted); display: block; font-size: 10px; }
+    .shot-cell strong { font-size: 18px; }
+    .shot-line { height: 9px; border-radius: 999px; background: rgba(255,255,255,.08); margin: 10px 0; overflow: hidden; }
+    .shot-line span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+    .proof-card p { color: var(--muted); font-size: 13px; margin-top: 14px; }
+
+    .strategy-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items: stretch; }
+    .strategy-card { padding: 28px; border-radius: 34px; background: rgba(255,255,255,.065); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .strategy-card h3 { font-size: 28px; margin-bottom: 12px; }
+    .strategy-card p { color: var(--muted); margin-bottom: 18px; }
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item { display: grid; grid-template-columns: 50px 1fr; gap: 14px; align-items: start; }
+    .timeline-num { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #06101d; font-weight: 900; }
+    .timeline-content { padding: 16px; border-radius: 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); }
+    .timeline-content h4 { font-size: 16px; margin-bottom: 4px; }
+    .timeline-content p { color: var(--muted); font-size: 13px; margin: 0; }
+
+    .samples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .sample-card { padding: 24px; }
+    .sample-type { color: #a5f3fc; font-weight: 900; font-size: 13px; margin-bottom: 10px; }
+    .sample-card h3 { font-size: 21px; margin-bottom: 12px; }
+    .sample-box { padding: 16px; border-radius: 18px; background: rgba(8,17,31,.42); border: 1px solid rgba(255,255,255,.08); color: #dbeafe; font-size: 14px; min-height: 220px; }
+    .sample-box strong { color: #fff; }
+    .sample-box p { margin-bottom: 12px; color: #cbd5e1; }
+
+    .reports-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 22px; }
+    .report-card { padding: 24px; }
+    .report-card h3 { font-size: 24px; margin-bottom: 12px; }
+    .report-card p { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+    .report-table { display: grid; gap: 10px; }
+    .report-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 13px 14px; border-radius: 16px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.08); }
+    .report-row span { color: var(--muted); font-size: 13px; }
+    .report-row strong { font-size: 15px; }
+    .actions-list { display: grid; gap: 12px; }
+    .action-item { padding: 14px; border-radius: 18px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.08); }
+    .action-item strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .action-item span { color: var(--muted); font-size: 13px; }
+
+    .results-box { border-radius: 34px; padding: 34px; border: 1px solid var(--border); background: linear-gradient(135deg, rgba(34,211,238,0.13), rgba(167,139,250,0.12)), rgba(255,255,255,0.04); box-shadow: var(--shadow); }
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .result-card { padding: 24px; background: rgba(8,17,31,0.46); border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; }
+    .result-card strong { display: block; font-size: 34px; line-height: 1.1; margin-bottom: 7px; }
+    .result-card span { color: var(--muted); font-size: 14px; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { padding: 24px; }
+    .step-num { width: 42px; height: 42px; border-radius: 16px; display: grid; place-items: center; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #06101d; font-weight: 900; margin-bottom: 18px; }
+    .step h3 { font-size: 18px; margin-bottom: 8px; }
+    .step p { color: var(--muted); font-size: 14px; }
+
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .testimonial { padding: 26px; }
+    .testimonial p { color: #cbd5e1; font-size: 14px; margin-bottom: 20px; }
+    .client { display: flex; align-items: center; gap: 12px; }
+    .client img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+    .client strong { display: block; font-size: 14px; }
+    .client span { color: var(--muted); font-size: 12px; }
+
+    .contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; padding: 34px; border-radius: 34px; background: linear-gradient(135deg, rgba(34,211,238,0.14), rgba(52,211,153,0.12)), rgba(255,255,255,0.05); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .contact-info h2 { font-size: clamp(28px, 4vw, 46px); line-height: 1.25; margin-bottom: 14px; }
+    .contact-info p { color: var(--muted); margin-bottom: 22px; }
+    .contact-list { display: grid; gap: 12px; color: #dbeafe; font-size: 14px; }
+    form { display: grid; gap: 14px; }
+    input, select, textarea { width: 100%; border: 1px solid rgba(255,255,255,0.12); background: rgba(8,17,31,0.58); color: #fff; padding: 15px 16px; border-radius: 16px; outline: none; font-family: inherit; }
+    textarea { resize: none; min-height: 130px; }
+    input::placeholder, textarea::placeholder { color: #94a3b8; }
+    select { color: #cbd5e1; }
+    option { color: #111827; }
+    form .btn { width: 100%; border: 0; }
+    footer { padding: 32px 0; border-top: 1px solid var(--border); color: var(--muted); text-align: center; font-size: 14px; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .services-grid, .accounts-grid { grid-template-columns: repeat(3, 1fr); }
+      .nav-links { gap: 12px; font-size: 13px; }
+    }
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .contact-box, .case-card, .strategy-wrap, .reports-grid { grid-template-columns: 1fr; }
+      .proof-grid, .samples-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .results-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .accounts-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-img { height: 450px; }
+    }
+    @media (max-width: 760px) {
+      .menu-btn { display: block; }
+      .nav-links { position: fixed; top: 76px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 16px; background: rgba(8, 17, 31, 0.97); border-bottom: 1px solid var(--border); }
+      .nav-links.show { display: flex; }
+      .nav-links a { padding: 14px; border-radius: 14px; }
+      .nav-cta { text-align: center; margin-top: 8px; }
+      .hero { padding-top: 48px; }
+      .hero-stats, .services-grid, .accounts-grid, .proof-grid, .samples-grid, .results-grid, .process-grid, .testimonials-grid, .case-metrics { grid-template-columns: 1fr; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+      .hero-img { height: 395px; }
+      .mini-card { position: relative; inset: auto; width: 100%; margin-top: 12px; }
+      .about-card, .contact-box, .results-box, .case-card, .strategy-card { padding: 24px; }
+      .case-top { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <span class="logo-mark">MK</span>
+        <span class="logo-title">
+          <strong>كريم منصور</strong>
+          <span>Digital Marketing Specialist</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#accounts">الحسابات</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#proof">إثبات النتائج</a>
+        <a href="#strategy">الخطة</a>
+        <a href="#samples">عينات المحتوى</a>
+        <a href="#contact" class="nav-cta">تواصل الآن</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="badge"><span></span> Digital Marketing Specialist — Meta Ads & Content Strategy</div>
+        <h1>أحوّل التسويق من بوستات عشوائية إلى <em>نظام نمو قابل للقياس</em></h1>
+        <p>
+          أنا كريم منصور، Digital Marketing Specialist أعمل على إدارة المحتوى والإعلانات وتحليل النتائج للعيادات والمتاجر والأكاديميات ومشاريع الخدمات.
+          أركز على بناء Funnel واضح يبدأ من الرسالة الإعلانية وينتهي برسالة واتساب أو عملية شراء قابلة للقياس.
+        </p>
+        <div class="hero-actions">
+          <a href="#cases" class="btn btn-primary">شاهد الـ Case Studies</a>
+          <a href="#proof" class="btn btn-secondary">شاهد إثبات النتائج</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>12+</strong><span>حساب تم العمل عليه</span></div>
+          <div class="stat"><strong>140+</strong><span>Creative و Ad Copy</span></div>
+          <div class="stat"><strong>4.1x</strong><span>أفضل ROAS لحملة متجر</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="dashboard-card">
+          <img class="hero-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop" alt="Marketing analytics meeting" />
+          <div class="mini-card mini-1">
+            <small>Best Campaign Result</small>
+            <strong>-57%</strong>
+            <p>انخفاض تكلفة الرسالة بعد اختبار 6 زوايا إعلانية</p>
+            <div class="mini-progress"><span></span></div>
+          </div>
+          <div class="mini-card mini-2">
+            <small>Content Output</small>
+            <strong>32 Post</strong>
+            <p>خطة محتوى كاملة لشهر واحد</p>
+            <div class="mini-progress"><span style="width: 66%;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">من أنا</div>
+          <h2>مسوّق يهتم بالدليل قبل الكلام</h2>
+        </div>
+        <p>أتعامل مع كل مشروع كمنظومة كاملة: فهم الجمهور، صياغة العرض، كتابة المحتوى، اختبار الإعلانات، ثم قراءة الأرقام وتحويلها لقرارات.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Marketing Analytics" />
+        </div>
+        <div class="about-card reveal">
+          <h3>أعمل على الرحلة كاملة: Strategy → Content → Ads → Report</h3>
+          <p>
+            أبدأ بتحليل الحساب والسوق والمنافسين، ثم أبني Content Pillars وAds Angles واضحة، وبعدها أطلق الحملات وأقيس الأداء أسبوعيًا لاتخاذ قرارات مبنية على البيانات.
+          </p>
+          <p>
+            خبرتي تركز على Meta Ads، Social Media Strategy، كتابة الإعلانات، تنظيم خطة المحتوى، تحسين معدل التحويل، وإعداد تقارير أداء مفهومة لأصحاب القرار.
+          </p>
+          <div class="tools">
+            <span class="tool">Meta Ads Manager</span>
+            <span class="tool">Google Analytics</span>
+            <span class="tool">Content Calendar</span>
+            <span class="tool">Creative Testing</span>
+            <span class="tool">Copywriting</span>
+            <span class="tool">Audience Research</span>
+            <span class="tool">WhatsApp Funnel</span>
+            <span class="tool">Weekly Reports</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="accounts">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Accounts Worked With</div>
+          <h2>حسابات وبراندات تم العمل عليها</h2>
+        </div>
+        <p>اشتغلت على حسابات في مجالات مختلفة بين العيادات، المتاجر، الأكاديميات، والخدمات المنزلية، مع اختلاف أهداف كل مشروع بين الرسائل، المبيعات، والحجوزات.</p>
+      </div>
+
+      <div class="accounts-grid">
+        <div class="account-card reveal">
+          <div class="brand-row"><div class="brand-logo">BC</div><div><h3>Bloom Clinic</h3><span>Beauty Clinic</span></div></div>
+          <p>إدارة إعلانات رسائل وكتابة محتوى تعليمي لزيادة الحجوزات عبر واتساب.</p>
+          <div class="account-meta"><div><strong>3 شهور</strong><span>مدة التعاون</span></div><div><strong>Ads + Content</strong><span>نوع العمل</span></div></div>
+        </div>
+        <div class="account-card reveal">
+          <div class="brand-row"><div class="brand-logo">NM</div><div><h3>Nour Market</h3><span>E-commerce Store</span></div></div>
+          <p>اختبار عروض ومنتجات مختلفة لتحسين ROAS وتقليل تكلفة الشراء.</p>
+          <div class="account-meta"><div><strong>5 شهور</strong><span>مدة التعاون</span></div><div><strong>Meta Ads</strong><span>نوع العمل</span></div></div>
+        </div>
+        <div class="account-card reveal">
+          <div class="brand-row"><div class="brand-logo">EA</div><div><h3>Edu Academy</h3><span>Training Academy</span></div></div>
+          <p>حملات Lead Generation للكورسات مع Funnel متابعة على واتساب.</p>
+          <div class="account-meta"><div><strong>2 شهور</strong><span>مدة التعاون</span></div><div><strong>Leads Funnel</strong><span>نوع العمل</span></div></div>
+        </div>
+        <div class="account-card reveal">
+          <div class="brand-row"><div class="brand-logo">HF</div><div><h3>HomeFix</h3><span>Home Services</span></div></div>
+          <p>إعادة بناء الرسائل الإعلانية ومحتوى الثقة للخدمات المنزلية.</p>
+          <div class="account-meta"><div><strong>6 أسابيع</strong><span>مدة التعاون</span></div><div><strong>Strategy</strong><span>نوع العمل</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الخدمات</div>
+          <h2>ما الذي أقدمه عمليًا؟</h2>
+        </div>
+        <p>أقدم شغل تنفيذي واضح يبدأ من تحليل الحساب وينتهي بتقرير أسبوعي يوضح الأداء والقرارات التالية.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal"><div class="service-icon">🧭</div><h3>Marketing Strategy</h3><p>تحليل السوق والجمهور والمنافسين، وتحديد الرسائل والقنوات والأهداف.</p></div>
+        <div class="service-card reveal"><div class="service-icon">📱</div><h3>Content Planning</h3><p>بناء Content Pillars، أفكار Reels، Hooks، وجدول نشر شهري.</p></div>
+        <div class="service-card reveal"><div class="service-icon">🎯</div><h3>Meta Ads</h3><p>إطلاق حملات رسائل، Leads، ومبيعات مع A/B Testing مستمر.</p></div>
+        <div class="service-card reveal"><div class="service-icon">✍️</div><h3>Ad Copywriting</h3><p>كتابة Hook، Body، CTA، وتجهيز أكثر من زاوية إعلانية لكل عرض.</p></div>
+        <div class="service-card reveal"><div class="service-icon">🧪</div><h3>Creative Testing</h3><p>اختبار التصميم، الفيديو، الرسالة، العرض، والجمهور لاختيار الأفضل.</p></div>
+        <div class="service-card reveal"><div class="service-icon">💬</div><h3>WhatsApp Funnel</h3><p>تنظيم رسائل المتابعة والردود السريعة لتحويل الرسائل لحجوزات.</p></div>
+        <div class="service-card reveal"><div class="service-icon">📊</div><h3>Reports</h3><p>تقارير أسبوعية توضح النتائج، أفضل إعلان، أسوأ إعلان، وخطة الأسبوع التالي.</p></div>
+        <div class="service-card reveal"><div class="service-icon">🚀</div><h3>Scaling</h3><p>زيادة الميزانية على الحملات الناجحة وإيقاف الهدر في الحملات الضعيفة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Case Studies</div>
+          <h2>دراسات حالة بتفاصيل الخطة والتنفيذ والنتائج</h2>
+        </div>
+        <p>نماذج من مشاريع عملت عليها بداية من المشكلة وحتى التنفيذ والنتيجة النهائية.</p>
+      </div>
+
+      <div class="case-list">
+        <article class="case-card reveal">
+          <div>
+            <div class="case-top">
+              <div class="case-title"><h3>Bloom Clinic — Lead Generation</h3><p>عيادة تجميل وليزر | هدف الحملة: حجوزات واتساب بجودة أعلى</p></div>
+              <span class="case-badge">Meta Ads + Content</span>
+            </div>
+            <div class="case-blocks">
+              <div class="case-block"><h4>المشكلة</h4><p>الحساب كان يحصل على رسائل كثيرة لكن نسبة التحويل للحجز ضعيفة، مع تكلفة رسالة مرتفعة وعدم وضوح في الرسائل الإعلانية.</p></div>
+              <div class="case-block"><h4>الخطة التي تم تنفيذها</h4><ul><li>تقسيم الجمهور إلى Brides، Laser Interest، وLookalike من العملاء السابقين.</li><li>إنشاء 3 عروض مختلفة: استشارة مجانية، خصم أول جلسة، وباقة شهرية.</li><li>ربط الإعلان برسالة واتساب جاهزة لتسهيل التواصل.</li></ul></div>
+              <div class="case-block"><h4>المحتوى والـ Copy</h4><p><strong>Hook:</strong> "بتحضري لمناسبة ومحتاجة بشرتك تبان أهدى؟"<br><strong>CTA:</strong> "ابعتيلنا كلمة Skin واحجزي استشارتك المجانية."</p></div>
+            </div>
+            <div class="case-metrics"><div class="case-metric"><strong>-57%</strong><span>Cost per Message</span></div><div class="case-metric"><strong>620</strong><span>WhatsApp Conversations</span></div><div class="case-metric"><strong>74</strong><span>Confirmed Bookings</span></div></div>
+          </div>
+          <div class="mock-screen">
+            <div class="screen-bar"><div class="dots"><span></span><span></span><span></span></div><div class="screen-title">Ads Manager Screenshot Preview</div></div>
+            <div class="screen-body">
+              <div class="screen-kpis"><div class="screen-kpi"><small>Amount Spent</small><strong>18,450 EGP</strong></div><div class="screen-kpi"><small>Cost / Message</small><strong>18.2 EGP</strong></div><div class="screen-kpi"><small>Messages</small><strong>620</strong></div><div class="screen-kpi"><small>Bookings</small><strong>74</strong></div></div>
+              <div class="chart"><span class="bar" style="height:42%"></span><span class="bar" style="height:56%"></span><span class="bar" style="height:65%"></span><span class="bar" style="height:82%"></span><span class="bar" style="height:70%"></span><span class="bar" style="height:96%"></span></div>
+              <div class="ad-preview"><h4>Best Performing Angle</h4><p>رسالة تعليمية + عرض استشارة مجانية + Screenshot لنتائج العملاء السابقين.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div>
+            <div class="case-top">
+              <div class="case-title"><h3>Nour Market — E-commerce Sales</h3><p>متجر إلكتروني | هدف الحملة: زيادة المبيعات وتقليل CPA</p></div>
+              <span class="case-badge">Sales Campaign</span>
+            </div>
+            <div class="case-blocks">
+              <div class="case-block"><h4>المشكلة</h4><p>المتجر كان يعتمد على إعلان واحد لكل المنتجات، بدون فصل بين الجمهور البارد، الدافئ، وإعادة الاستهداف.</p></div>
+              <div class="case-block"><h4>الخطة التي تم تنفيذها</h4><ul><li>تقسيم الحملات إلى Prospecting وRetargeting.</li><li>اختبار 5 Creatives: UGC، صورة منتج، عرض خصم، Bundle، وفيديو قصير.</li><li>تحسين صفحة الهبوط ورسالة العرض قبل زيادة الميزانية.</li></ul></div>
+              <div class="case-block"><h4>المحتوى والـ Copy</h4><p><strong>Hook:</strong> "اختار الباندل المناسب ووفّر في كل طلب."<br><strong>CTA:</strong> "اطلب الآن قبل انتهاء عرض الأسبوع."</p></div>
+            </div>
+            <div class="case-metrics"><div class="case-metric"><strong>4.1x</strong><span>ROAS</span></div><div class="case-metric"><strong>-34%</strong><span>CPA</span></div><div class="case-metric"><strong>312</strong><span>Orders</span></div></div>
+          </div>
+          <div class="mock-screen">
+            <div class="screen-bar"><div class="dots"><span></span><span></span><span></span></div><div class="screen-title">Sales Dashboard Preview</div></div>
+            <div class="screen-body">
+              <div class="screen-kpis"><div class="screen-kpi"><small>Revenue</small><strong>184K EGP</strong></div><div class="screen-kpi"><small>ROAS</small><strong>4.1x</strong></div><div class="screen-kpi"><small>Orders</small><strong>312</strong></div><div class="screen-kpi"><small>CPA</small><strong>92 EGP</strong></div></div>
+              <div class="chart"><span class="bar" style="height:32%"></span><span class="bar" style="height:48%"></span><span class="bar" style="height:57%"></span><span class="bar" style="height:68%"></span><span class="bar" style="height:86%"></span><span class="bar" style="height:94%"></span></div>
+              <div class="ad-preview"><h4>Best Creative</h4><p>فيديو قصير يوضح المنتج أثناء الاستخدام مع عرض Bundle واضح في أول 3 ثواني.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div>
+            <div class="case-top">
+              <div class="case-title"><h3>Edu Academy — Course Leads</h3><p>أكاديمية تدريب | هدف الحملة: Leads مؤهلة للكورس</p></div>
+              <span class="case-badge">Lead Funnel</span>
+            </div>
+            <div class="case-blocks">
+              <div class="case-block"><h4>المشكلة</h4><p>الإعلانات كانت تركز على السعر فقط، فكانت الرسائل كثيرة لكن معظمها غير مؤهل أو يسأل بدون نية تسجيل.</p></div>
+              <div class="case-block"><h4>الخطة التي تم تنفيذها</h4><ul><li>توضيح مخرجات الكورس والوظائف المحتملة بدل التركيز على الخصم.</li><li>تجهيز Landing Section مختصر يجاوب على الأسئلة المتكررة.</li><li>تقسيم المحتوى بين Proof، FAQ، Pain Points، وSuccess Stories.</li></ul></div>
+              <div class="case-block"><h4>المحتوى والـ Copy</h4><p><strong>Hook:</strong> "مشكلتك مش إنك تتعلم، مشكلتك تبدأ منين."<br><strong>CTA:</strong> "ابعت كلمة Course ونبعتلك تفاصيل الخطة."</p></div>
+            </div>
+            <div class="case-metrics"><div class="case-metric"><strong>1,250</strong><span>Leads</span></div><div class="case-metric"><strong>18%</strong><span>Enrollment Rate</span></div><div class="case-metric"><strong>22 EGP</strong><span>Cost per Lead</span></div></div>
+          </div>
+          <div class="mock-screen">
+            <div class="screen-bar"><div class="dots"><span></span><span></span><span></span></div><div class="screen-title">Lead Generation Preview</div></div>
+            <div class="screen-body">
+              <div class="screen-kpis"><div class="screen-kpi"><small>Leads</small><strong>1,250</strong></div><div class="screen-kpi"><small>CPL</small><strong>22 EGP</strong></div><div class="screen-kpi"><small>Qualified Leads</small><strong>410</strong></div><div class="screen-kpi"><small>Enrollments</small><strong>225</strong></div></div>
+              <div class="chart"><span class="bar" style="height:38%"></span><span class="bar" style="height:45%"></span><span class="bar" style="height:72%"></span><span class="bar" style="height:64%"></span><span class="bar" style="height:88%"></span><span class="bar" style="height:80%"></span></div>
+              <div class="ad-preview"><h4>Best Message</h4><p>إعلان يشرح مخرجات الكورس وخطة التعلم بدل إعلان خصم مباشر.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Proof of Work</div>
+          <h2>سكرينشوتس تثبت الشغل والنتائج</h2>
+        </div>
+        <p>لقطات مختصرة من نتائج الحملات، تقارير الأداء، جداول المحتوى، ومتابعة الرسائل على واتساب.</p>
+      </div>
+
+      <div class="proof-tabs reveal">
+        <button class="tab-btn active" data-filter="all">الكل</button>
+        <button class="tab-btn" data-filter="ads">Ads Results</button>
+        <button class="tab-btn" data-filter="content">Content Calendar</button>
+        <button class="tab-btn" data-filter="insights">Insights</button>
+        <button class="tab-btn" data-filter="reports">Reports</button>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-card reveal" data-category="ads"><div class="proof-head"><h3>Meta Ads Result</h3><span>Bloom Clinic</span></div><div class="proof-shot"><div class="shot-row"><div class="shot-cell"><small>Messages</small><strong>620</strong></div><div class="shot-cell"><small>Cost / Result</small><strong>18.2ج</strong></div></div><div class="shot-line"><span style="width:88%"></span></div><div class="shot-line"><span style="width:64%"></span></div><div class="shot-line"><span style="width:72%"></span></div></div><p>انخفضت تكلفة الرسالة بعد إعادة تقسيم الجمهور واختبار 6 زوايا إعلانية مختلفة.</p></div>
+        <div class="proof-card reveal" data-category="content"><div class="proof-head"><h3>Content Calendar</h3><span>Edu Academy</span></div><div class="proof-shot"><div class="shot-row"><div class="shot-cell"><small>Posts</small><strong>18</strong></div><div class="shot-cell"><small>Reels</small><strong>8</strong></div></div><div class="shot-line"><span style="width:90%"></span></div><div class="shot-line"><span style="width:78%"></span></div><div class="shot-line"><span style="width:55%"></span></div></div><p>جدول محتوى شهري يوضح نوع المنشور، الهدف، الـ Hook، وتاريخ النشر.</p></div>
+        <div class="proof-card reveal" data-category="insights"><div class="proof-head"><h3>Instagram Insights</h3><span>HomeFix</span></div><div class="proof-shot"><div class="shot-row"><div class="shot-cell"><small>Reach</small><strong>+220%</strong></div><div class="shot-cell"><small>Messages</small><strong>+71%</strong></div></div><div class="shot-line"><span style="width:82%"></span></div><div class="shot-line"><span style="width:69%"></span></div><div class="shot-line"><span style="width:91%"></span></div></div><p>مقارنة قبل وبعد لإثبات تأثير المحتوى على الوصول والرسائل.</p></div>
+        <div class="proof-card reveal" data-category="reports"><div class="proof-head"><h3>Weekly Report</h3><span>Nour Market</span></div><div class="proof-shot"><div class="shot-row"><div class="shot-cell"><small>ROAS</small><strong>4.1x</strong></div><div class="shot-cell"><small>Orders</small><strong>312</strong></div></div><div class="shot-line"><span style="width:76%"></span></div><div class="shot-line"><span style="width:84%"></span></div><div class="shot-line"><span style="width:68%"></span></div></div><p>ملخص أسبوعي يوضح أين تم صرف الميزانية وما القرار القادم.</p></div>
+        <div class="proof-card reveal" data-category="ads"><div class="proof-head"><h3>Creative Testing</h3><span>Nour Market</span></div><div class="proof-shot"><div class="shot-row"><div class="shot-cell"><small>Creatives</small><strong>5</strong></div><div class="shot-cell"><small>Winner</small><strong>UGC</strong></div></div><div class="shot-line"><span style="width:61%"></span></div><div class="shot-line"><span style="width:92%"></span></div><div class="shot-line"><span style="width:47%"></span></div></div><p>مقارنة بين الإعلانات لتحديد أفضل Creative وأفضل زاوية بيع.</p></div>
+        <div class="proof-card reveal" data-category="reports"><div class="proof-head"><h3>WhatsApp Leads</h3><span>Bloom Clinic</span></div><div class="proof-shot"><div class="shot-row"><div class="shot-cell"><small>Chats</small><strong>620</strong></div><div class="shot-cell"><small>Bookings</small><strong>74</strong></div></div><div class="shot-line"><span style="width:80%"></span></div><div class="shot-line"><span style="width:59%"></span></div><div class="shot-line"><span style="width:73%"></span></div></div><p>إثبات تحويل الرسائل إلى حجوزات وليس مجرد نتائج إعلانية سطحية.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="strategy">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Marketing Plan Framework</div>
+          <h2>الخطة التي أمشي عليها في أي مشروع</h2>
+        </div>
+        <p>أستخدم نفس الإطار مع كل مشروع، مع تعديل التفاصيل حسب المجال والهدف والميزانية.</p>
+      </div>
+
+      <div class="strategy-wrap">
+        <div class="strategy-card reveal">
+          <h3>كل حملة عندي تبدأ بسؤال: ما القرار الذي نريد من العميل أن يتخذه؟</h3>
+          <p>بعدها أبني الرسالة، الجمهور، المحتوى، والـ Offer حول هذا القرار. ثم يتم الاختبار والتحسين بناءً على الأرقام وليس التوقعات.</p>
+          <div class="chips"><span class="chip green">Audience Research</span><span class="chip">Competitor Audit</span><span class="chip orange">Offer Testing</span><span class="chip">Creative Matrix</span><span class="chip green">Weekly Optimization</span></div>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item"><div class="timeline-num">1</div><div class="timeline-content"><h4>Audit</h4><p>مراجعة الحساب، الإعلانات السابقة، الرسائل، العروض، والتفاعل الحالي.</p></div></div>
+          <div class="timeline-item"><div class="timeline-num">2</div><div class="timeline-content"><h4>Research</h4><p>تحليل الجمهور والمنافسين وتحديد مشاكل العميل ودوافع الشراء.</p></div></div>
+          <div class="timeline-item"><div class="timeline-num">3</div><div class="timeline-content"><h4>Content Pillars</h4><p>تقسيم المحتوى إلى Proof، Education، Offers، FAQs، وTrust Building.</p></div></div>
+          <div class="timeline-item"><div class="timeline-num">4</div><div class="timeline-content"><h4>Launch & Test</h4><p>إطلاق أكثر من Creative وAd Copy لاختبار الزوايا والجمهور.</p></div></div>
+          <div class="timeline-item"><div class="timeline-num">5</div><div class="timeline-content"><h4>Report & Scale</h4><p>تقرير أسبوعي ثم توسيع الفائز وإيقاف الخاسر وتعديل الخطة.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="samples">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Content Samples</div>
+          <h2>عينات من المحتوى والـ Copywriting</h2>
+        </div>
+        <p>نماذج من طريقة كتابة الإعلانات، المنشورات، والسكريبتات التي استخدمتها في الحملات.</p>
+      </div>
+
+      <div class="samples-grid">
+        <div class="sample-card reveal">
+          <div class="sample-type">Ad Copy Sample</div>
+          <h3>Beauty Clinic Campaign</h3>
+          <div class="sample-box">
+            <p><strong>Hook:</strong> بتصرفي على جلسات كتير ومش شايفة نتيجة ثابتة؟</p>
+            <p><strong>Body:</strong> في Bloom Clinic بنبدأ بتقييم نوع البشرة قبل أي جلسة، علشان الخطة تكون مناسبة ليكي مش مجرد خدمة عامة.</p>
+            <p><strong>CTA:</strong> ابعتي كلمة Skin واحجزي استشارة مجانية.</p>
+          </div>
+        </div>
+        <div class="sample-card reveal">
+          <div class="sample-type">Social Post Sample</div>
+          <h3>Educational Content</h3>
+          <div class="sample-box">
+            <p><strong>العنوان:</strong> 3 علامات إن إعلانك بيجيب رسائل لكن مش بيجيب عملاء</p>
+            <p>1. الناس بتسأل على السعر فقط.<br>2. مفيش ردود متابعة جاهزة.<br>3. الإعلان بيشرح العرض ومش بيشرح القيمة.</p>
+            <p><strong>الخلاصة:</strong> الإعلان الجيد لا يجلب رسائل فقط، بل يجلب رسائل من ناس فاهمة العرض.</p>
+          </div>
+        </div>
+        <div class="sample-card reveal">
+          <div class="sample-type">Reel Script Sample</div>
+          <h3>Course Lead Generation</h3>
+          <div class="sample-box">
+            <p><strong>Scene 1:</strong> شخص فاتح كورسات كثيرة ومشتت.</p>
+            <p><strong>Voiceover:</strong> مشكلتك مش إنك تتعلم، مشكلتك تبدأ منين.</p>
+            <p><strong>Text on screen:</strong> خطة 30 يوم تبدأ بيها المجال.</p>
+            <p><strong>CTA:</strong> اكتب Course ونبعتلك التفاصيل.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reports">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">Weekly Reporting</div>
+          <h2>Weekly Performance Report</h2>
+        </div>
+        <p>التقرير لا يعرض أرقام فقط، بل يوضح ماذا حدث، لماذا حدث، وما القرار القادم.</p>
+      </div>
+
+      <div class="reports-grid">
+        <div class="report-card reveal">
+          <h3>Performance Summary</h3>
+          <p>تقرير أسبوعي لحملة Nour Market خلال أسبوع اختبار العروض والـ Creatives.</p>
+          <div class="report-table">
+            <div class="report-row"><span>Amount Spent</span><strong>12,400 EGP</strong></div>
+            <div class="report-row"><span>Reach</span><strong>184,000</strong></div>
+            <div class="report-row"><span>Messages / Leads</span><strong>386</strong></div>
+            <div class="report-row"><span>Cost per Lead</span><strong>32 EGP</strong></div>
+            <div class="report-row"><span>Best Creative</span><strong>UGC Video</strong></div>
+            <div class="report-row"><span>Worst Creative</span><strong>Static Offer</strong></div>
+          </div>
+        </div>
+        <div class="report-card reveal">
+          <h3>Next Week Action Plan</h3>
+          <p>الجزء الأهم في التقرير: القرارات العملية للأسبوع القادم.</p>
+          <div class="actions-list">
+            <div class="action-item"><strong>زيادة ميزانية الإعلان الفائز 20%</strong><span>لأن تكلفة الرسالة أقل من متوسط الحساب بنسبة 38%.</span></div>
+            <div class="action-item"><strong>إيقاف Creative ضعيف الأداء</strong><span>لأنه حصل على CTR منخفض وتكلفة أعلى بدون تحويلات واضحة.</span></div>
+            <div class="action-item"><strong>اختبار Hook جديد</strong><span>التركيز على Pain Point بدل عرض الخصم المباشر.</span></div>
+            <div class="action-item"><strong>تحسين رسائل واتساب</strong><span>إضافة أسئلة تأهيلية لتقليل الرسائل غير الجادة.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container">
+      <div class="results-box reveal">
+        <div class="section-head" style="margin-bottom: 26px;">
+          <div>
+            <div class="section-label">نتائج بالأرقام</div>
+            <h2>أرقام مختصرة من المشاريع</h2>
+          </div>
+          <p>ملخص أداء من الحسابات والحملات التي عملت عليها خلال 2025.</p>
+        </div>
+        <div class="results-grid">
+          <div class="result-card"><strong data-count="12">0</strong><span>حساب تم العمل عليه</span></div>
+          <div class="result-card"><strong data-count="620">0</strong><span>ألف جنيه ميزانيات مدارة</span></div>
+          <div class="result-card"><strong data-count="140">0</strong><span>Creative وAd Copy تم اختبارهم</span></div>
+          <div class="result-card"><strong data-count="36">0</strong><span>تقرير أداء أسبوعي</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal"><div><div class="section-label">طريقة العمل</div><h2>من التحليل إلى النمو</h2></div></div>
+      <div class="process-grid">
+        <div class="step reveal"><div class="step-num">1</div><h3>تحليل المشروع</h3><p>فهم المنتج، الجمهور، المنافسين، الوضع الحالي، ونقاط القوة والضعف.</p></div>
+        <div class="step reveal"><div class="step-num">2</div><h3>بناء الخطة</h3><p>تحديد القنوات، الرسائل، الـ Offer، المحتوى، والميزانية المناسبة.</p></div>
+        <div class="step reveal"><div class="step-num">3</div><h3>التنفيذ والاختبار</h3><p>إطلاق المحتوى والحملات، اختبار الزوايا، ومتابعة الأداء يوميًا.</p></div>
+        <div class="step reveal"><div class="step-num">4</div><h3>التحسين والتوسع</h3><p>تحليل البيانات، تقليل التكلفة، زيادة النتائج، وتوسيع أفضل الحملات.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal"><div><div class="section-label">آراء العملاء</div><h2>ماذا يقول العملاء؟</h2></div></div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal"><p>"كريم ساعدنا نحول التسويق من بوستات عشوائية لخطة واضحة، والأهم إننا بقينا نفهم الأرقام أسبوعيًا."</p><div class="client"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"><div><strong>محمد أيمن</strong><span>Founder - Service Business</span></div></div></div>
+        <div class="testimonial reveal"><p>"أكثر شيء مميز كان اختبار الإعلانات. عرفنا أي رسالة بتجيب عملاء جادين وأي رسالة بتجيب أسئلة بس."</p><div class="client"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client"><div><strong>سارة خالد</strong><span>Marketing Manager - Academy</span></div></div></div>
+        <div class="testimonial reveal"><p>"التقارير كانت واضحة جدًا: صرفنا كام، جبنا كام Lead، وإيه اللي هيتعمل الأسبوع الجاي."</p><div class="client"><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Client"><div><strong>عمر شريف</strong><span>Owner - E-commerce Store</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="contact-info">
+          <h2>تواصل معي</h2>
+          <p>للاستفسار عن تعاون جديد أو مراجعة حسابك الحالي، ارسل تفاصيل المشروع وسأرد خلال 24 ساعة.</p>
+          <div class="contact-list"><span>📞 01012345678</span><span>✉️ hello@marketingkarem.com</span><span>📍 Cairo, Egypt</span><span>⏱️ الرد خلال 24 ساعة</span></div>
+        </div>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="اسمك" required />
+          <input type="text" id="business" placeholder="نوع مشروعك أو رابط الحساب" required />
+          <select id="service" required>
+            <option value="">اختر المطلوب</option>
+            <option value="مراجعة حساب سوشيال ميديا">مراجعة حساب سوشيال ميديا</option>
+            <option value="إدارة حملات Meta Ads">إدارة حملات Meta Ads</option>
+            <option value="خطة محتوى شهرية">خطة محتوى شهرية</option>
+            <option value="كتابة إعلانات ومحتوى">كتابة إعلانات ومحتوى</option>
+            <option value="تقرير وتحليل أداء">تقرير وتحليل أداء</option>
+          </select>
+          <textarea id="message" placeholder="اكتب هدفك الحالي: مبيعات، رسائل، Leads، تحسين محتوى، تقليل تكلفة الإعلان..."></textarea>
+          <button type="submit" class="btn btn-primary">إرسال عبر واتساب</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="container">© 2026 كريم منصور — Digital Marketing Specialist</div></footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuBtn.textContent = navLinks.classList.contains("show") ? "×" : "☰";
+    });
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("active"); });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => observer.observe(el));
+
+    const counters = document.querySelectorAll("[data-count]");
+    const resultsSection = document.getElementById("results");
+    let started = false;
+    function startCounters() {
+      if (started || !resultsSection) return;
+      const rect = resultsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 120) {
+        started = true;
+        counters.forEach(counter => {
+          const target = Number(counter.dataset.count);
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 45));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            counter.textContent = current;
+          }, 28);
+        });
+      }
+    }
+    window.addEventListener("scroll", startCounters);
+    startCounters();
+
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const proofCards = document.querySelectorAll(".proof-card");
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+        proofCards.forEach(card => {
+          const show = filter === "all" || card.dataset.category === filter;
+          card.style.display = show ? "block" : "none";
+        });
+      });
+    });
+
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const business = document.getElementById("business").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+      const phone = "201012345678";
+      const text = `أهلًا كريم، أنا ${name}\n\nنوع المشروع / رابط الحساب:\n${business}\n\nالمطلوب:\n${service}\n\nالهدف أو التفاصيل:\n${message || "لا يوجد"}\n\nأريد معرفة أفضل طريقة للبدء.`;
+      const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
 </body>
 </html>
