@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أحمد الغندور | الدحيح — Portfolio</title>
+  <meta name="description" content="أحمد الغندور - الدحيح: صانع محتوى معرفي، مقدم، وباحث في تبسيط العلوم والسرد القصصي." />
+
+  <style>
+    :root{
+      --bg:#070812;
+      --bg2:#0d1020;
+      --card:rgba(255,255,255,.075);
+      --card2:rgba(255,255,255,.12);
+      --text:#f8fafc;
+      --muted:#a7b0c0;
+      --line:rgba(255,255,255,.14);
+      --p1:#7c3aed;
+      --p2:#06b6d4;
+      --p3:#f59e0b;
+      --green:#22c55e;
+      --red:#fb7185;
+      --shadow:0 24px 80px rgba(0,0,0,.42);
+      --radius:28px;
+      --max:1180px;
+    }
+
+    [data-theme="light"]{
+      --bg:#f7f8fc;
+      --bg2:#ffffff;
+      --card:rgba(255,255,255,.78);
+      --card2:rgba(255,255,255,.96);
+      --text:#101827;
+      --muted:#5d6678;
+      --line:rgba(15,23,42,.12);
+      --shadow:0 22px 65px rgba(15,23,42,.13);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family:Tahoma,Arial,system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 80% 0%,rgba(124,58,237,.34),transparent 35rem),
+        radial-gradient(circle at 10% 8%,rgba(6,182,212,.22),transparent 32rem),
+        radial-gradient(circle at 8% 92%,rgba(245,158,11,.13),transparent 28rem),
+        var(--bg);
+      color:var(--text);
+      line-height:1.75;
+      overflow-x:hidden;
+    }
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      background-image:
+        linear-gradient(rgba(255,255,255,.032) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.032) 1px, transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom, black, transparent 82%);
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+    ::selection{background:rgba(124,58,237,.55);color:white}
+
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .progress{position:fixed;top:0;right:0;height:4px;width:0%;z-index:999;background:linear-gradient(90deg,var(--p1),var(--p2),var(--p3));box-shadow:0 0 22px rgba(6,182,212,.6)}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:90;
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(18px);
+      background:color-mix(in srgb,var(--bg) 83%,transparent);
+    }
+
+    .nav-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:-.4px;
+    }
+
+    .brand-logo{
+      width:46px;height:46px;
+      border-radius:17px;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at 28% 24%,rgba(255,255,255,.34),transparent 30%),
+        linear-gradient(135deg,var(--p1),var(--p2));
+      color:#fff;
+      font-weight:1000;
+      box-shadow:0 18px 40px rgba(124,58,237,.26);
+    }
+
+    .brand small{display:block;color:var(--muted);font-size:12px;margin-top:-4px;font-weight:800}
+
+    .links{display:flex;align-items:center;gap:6px;list-style:none}
+    .links a{
+      display:block;
+      padding:10px 13px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:900;
+      font-size:14px;
+      transition:.25s ease;
+    }
+    .links a:hover,.links a.active{color:var(--text);background:var(--card)}
+
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .icon-btn{
+      width:43px;height:43px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--text);
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      transition:.25s ease;
+    }
+    .icon-btn:hover{transform:translateY(-2px);background:var(--card2)}
+    .menu{display:none}
+
+    .hero{padding:70px 0 32px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 13px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--muted);
+      font-weight:900;
+      font-size:13px;
+      backdrop-filter:blur(14px);
+    }
+    .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green)}
+
+    h1{
+      margin-top:20px;
+      font-size:clamp(42px,7vw,86px);
+      line-height:1.04;
+      letter-spacing:-2px;
+    }
+    .grad{
+      background:linear-gradient(90deg,var(--p2),#fff,var(--p3));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      margin-top:22px;
+      max-width:650px;
+      color:var(--muted);
+      font-size:clamp(16px,2vw,20px);
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+    .btn{
+      min-height:50px;
+      padding:13px 18px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      background:var(--card);
+      color:var(--text);
+      font-weight:1000;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+    .btn:hover{transform:translateY(-3px);background:var(--card2);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+    .btn.primary{border:0;color:#fff;background:linear-gradient(135deg,var(--p1),var(--p2));box-shadow:0 22px 52px rgba(124,58,237,.26)}
+    .btn.soft{color:var(--muted)}
+
+    .hero-photo-card{
+      position:relative;
+      min-height:585px;
+      border-radius:34px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .hero-photo-card:before{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.13);
+      z-index:2;
+      pointer-events:none;
+    }
+    .hero-img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(1.02) contrast(1.02);
+      transform:scale(1.02);
+    }
+    .hero-photo-card:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top,rgba(7,8,18,.96),rgba(7,8,18,.22) 58%,rgba(7,8,18,.1)),
+        radial-gradient(circle at 15% 20%,rgba(6,182,212,.28),transparent 22rem);
+      z-index:1;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      right:26px;
+      left:26px;
+      bottom:26px;
+      z-index:3;
+      display:grid;
+      gap:14px;
+    }
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(8,9,20,.55);
+      color:#fff;
+      backdrop-filter:blur(14px);
+      font-size:12px;
+      font-weight:900;
+    }
+    .hero-name{
+      padding:20px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:24px;
+      background:rgba(8,9,20,.62);
+      backdrop-filter:blur(18px);
+    }
+    [data-theme="light"] .hero-name,[data-theme="light"] .tag{background:rgba(255,255,255,.64);color:#111827}
+    .hero-name h2{font-size:28px;line-height:1.25}
+    .hero-name p{color:var(--muted);font-size:14px;margin-top:4px}
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:26px;
+    }
+    .stat{
+      padding:22px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:var(--card);
+      backdrop-filter:blur(16px);
+      box-shadow:0 16px 44px rgba(0,0,0,.11);
+    }
+    .num{
+      font-size:32px;
+      line-height:1.1;
+      font-weight:1000;
+      letter-spacing:-1px;
+      direction:ltr;
+      text-align:right;
+    }
+    .label{margin-top:6px;color:var(--muted);font-size:13px;font-weight:900}
+
+    .section{padding:74px 0}
+    .head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:22px;
+      margin-bottom:28px;
+    }
+    .kicker{color:var(--p2);font-weight:1000;font-size:14px;margin-bottom:8px}
+    h2{font-size:clamp(30px,4.5vw,52px);line-height:1.18;letter-spacing:-.9px}
+    .desc{color:var(--muted);max-width:540px;font-size:16px}
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--card);
+      backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.84fr 1.16fr;
+      gap:20px;
+    }
+    .about-card{padding:28px}
+    .about-card img{
+      width:100%;
+      height:330px;
+      object-fit:cover;
+      border-radius:24px;
+      margin-bottom:22px;
+      border:1px solid var(--line);
+    }
+    .about-card h3{font-size:26px;margin-bottom:8px}
+    .about-card p{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .chip{
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.055);
+      color:var(--muted);
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .timeline{padding:24px}
+    .t-item{
+      display:grid;
+      grid-template-columns:86px 1fr;
+      gap:16px;
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .t-item:last-child{border-bottom:0}
+    .year{color:var(--p3);font-weight:1000;direction:ltr;text-align:right}
+    .t-item h4{font-size:18px;margin-bottom:4px}
+    .t-item p{color:var(--muted);font-size:14px}
+
+    .pillars{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .pillar{
+      min-height:230px;
+      padding:24px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      position:relative;
+      overflow:hidden;
+      transition:.3s ease;
+    }
+    .pillar:hover{transform:translateY(-8px);background:var(--card2)}
+    .pillar:after{
+      content:attr(data-n);
+      position:absolute;
+      left:14px;
+      bottom:-20px;
+      font-size:88px;
+      font-weight:1000;
+      color:rgba(255,255,255,.055);
+      direction:ltr;
+    }
+    [data-theme="light"] .pillar:after{color:rgba(15,23,42,.06)}
+    .picon{
+      width:48px;height:48px;
+      display:grid;
+      place-items:center;
+      border-radius:17px;
+      background:linear-gradient(135deg,var(--p1),var(--p2));
+      color:#fff;
+      margin-bottom:18px;
+      box-shadow:0 18px 40px rgba(124,58,237,.22);
+    }
+    .pillar h3{font-size:20px;margin-bottom:8px}
+    .pillar p{color:var(--muted);font-size:14px}
+
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .filter{
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--muted);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:1000;
+      transition:.25s ease;
+    }
+    .filter.active,.filter:hover{color:white;border-color:transparent;background:linear-gradient(135deg,var(--p1),var(--p2))}
+
+    .work{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .work-card{
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:var(--card);
+      overflow:hidden;
+      transition:.3s ease;
+      box-shadow:0 18px 48px rgba(0,0,0,.13);
+    }
+    .work-card:hover{transform:translateY(-8px);background:var(--card2)}
+    .thumb{
+      height:220px;
+      position:relative;
+      overflow:hidden;
+      background:var(--bg2);
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.5s ease;
+    }
+    .work-card:hover .thumb img{transform:scale(1.06)}
+    .thumb:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(7,8,18,.82),transparent 62%);
+    }
+    .badge{
+      position:absolute;
+      right:14px;
+      top:14px;
+      z-index:1;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,.42);
+      color:#fff;
+      backdrop-filter:blur(12px);
+      font-size:12px;
+      font-weight:1000;
+    }
+    .thumb-title{
+      position:absolute;
+      right:16px;
+      left:16px;
+      bottom:16px;
+      z-index:1;
+      color:#fff;
+      font-size:25px;
+      font-weight:1000;
+      line-height:1.25;
+    }
+    .work-body{padding:20px}
+    .work-body p{color:var(--muted);font-size:14px;margin:8px 0 15px}
+    .metrics{display:flex;flex-wrap:wrap;gap:8px}
+    .metric{
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:1000;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .step{
+      padding:24px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:var(--card);
+      position:relative;
+    }
+    .step-num{
+      width:42px;height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:rgba(245,158,11,.13);
+      color:var(--p3);
+      font-weight:1000;
+      direction:ltr;
+      margin-bottom:18px;
+    }
+    .step h3{font-size:19px;margin-bottom:8px}
+    .step p{color:var(--muted);font-size:14px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+    }
+    .big-photo,.small-photos{min-height:420px}
+    .big-photo{
+      position:relative;
+      overflow:hidden;
+    }
+    .big-photo img,.small-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .big-photo:after,.small-photo:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(7,8,18,.82),transparent 55%);
+    }
+    .caption{
+      position:absolute;
+      right:22px;
+      left:22px;
+      bottom:22px;
+      z-index:2;
+      color:#fff;
+    }
+    .caption h3{font-size:28px}
+    .caption p{color:rgba(255,255,255,.75)}
+    .small-photos{display:grid;gap:20px}
+    .small-photo{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      min-height:200px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:20px;
+    }
+    .contact-info{padding:32px}
+    .contact-info p{color:var(--muted);margin:14px 0 22px}
+    .links-list{display:grid;gap:12px}
+    .contact-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.055);
+      color:var(--muted);
+      font-weight:1000;
+    }
+    .form{padding:32px;display:grid;gap:14px}
+    .field{display:grid;gap:8px}
+    .field label{color:var(--muted);font-size:13px;font-weight:1000}
+    .field input,.field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.07);
+      color:var(--text);
+      border-radius:18px;
+      padding:14px 16px;
+      outline:0;
+      transition:.25s ease;
+    }
+    .field textarea{min-height:124px;resize:vertical}
+    .field input:focus,.field textarea:focus{border-color:rgba(6,182,212,.6);box-shadow:0 0 0 4px rgba(6,182,212,.12)}
+
+    .footer{
+      padding:34px 0;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+    .footer strong{color:var(--text)}
+    .top{
+      position:fixed;
+      left:22px;
+      bottom:22px;
+      width:48px;height:48px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:var(--card2);
+      color:var(--text);
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      opacity:0;
+      transform:translateY(14px);
+      transition:.25s ease;
+      z-index:80;
+      box-shadow:0 18px 50px rgba(0,0,0,.22);
+    }
+    .top.show{opacity:1;transform:translateY(0)}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:.75s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:1020px){
+      .hero-grid,.about-grid,.gallery,.contact-grid{grid-template-columns:1fr}
+      .stats,.pillars,.process{grid-template-columns:repeat(2,1fr)}
+      .work{grid-template-columns:repeat(2,1fr)}
+      .hero-photo-card{min-height:540px}
+    }
+
+    @media(max-width:760px){
+      .container{width:min(100% - 28px,var(--max))}
+      .links{
+        position:fixed;
+        top:78px;
+        right:14px;
+        left:14px;
+        padding:14px;
+        border:1px solid var(--line);
+        border-radius:22px;
+        background:color-mix(in srgb,var(--bg) 94%,transparent);
+        box-shadow:var(--shadow);
+        backdrop-filter:blur(18px);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .links.open{display:flex}
+      .links a{border-radius:14px}
+      .menu{display:grid}
+      .hero{padding-top:48px}
+      h1{letter-spacing:-1px}
+      .stats,.pillars,.process,.work{grid-template-columns:1fr}
+      .head{display:grid}
+      .t-item{grid-template-columns:72px 1fr}
+      .hero-photo-card{min-height:540px}
+      .about-card img{height:280px}
+      .big-photo,.small-photos{min-height:auto}
+      .big-photo{height:390px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress" id="progress"></div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-logo">د</span>
+        <span>
+          أحمد الغندور
+          <small>صانع محتوى معرفي</small>
+        </span>
+      </a>
+
+      <ul class="links" id="links">
+        <li><a href="#about">نبذة</a></li>
+        <li><a href="#content">المحتوى</a></li>
+        <li><a href="#work">الأعمال</a></li>
+        <li><a href="#process">المنهجية</a></li>
+        <li><a href="#contact">تعاون</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="تبديل الوضع">☾</button>
+        <button class="icon-btn menu" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow"><span class="live-dot"></span> تعليم ترفيهي | علوم | سرد قصصي</span>
+          <h1>
+            أحمد الغندور
+            <br>
+            <span class="grad">الدحيح</span>
+          </h1>
+          <p class="lead">
+            صانع محتوى ومقدم مصري متخصص في تحويل الأفكار العلمية والمعرفية الصعبة إلى حكايات بسيطة، ممتعة، وقابلة للمشاركة على المنصات الرقمية.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">الأعمال المختارة ←</a>
+            <a class="btn" href="https://www.youtube.com/@Da7ee7" target="_blank" rel="noreferrer">مشاهدة القناة</a>
+            <a class="btn soft" href="#contact">طلب تعاون</a>
+          </div>
+        </div>
+
+        <article class="hero-photo-card reveal">
+          <img class="hero-img" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ahmed_El_Ghandour.jpg" alt="أحمد الغندور - الدحيح">
+          <div class="hero-overlay">
+            <div class="tag-row">
+              <span class="tag">Popular Science</span>
+              <span class="tag">Storytelling</span>
+              <span class="tag">YouTube</span>
+            </div>
+            <div class="hero-name">
+              <h2>من السؤال البسيط تبدأ الحكاية.</h2>
+              <p>صياغة المحتوى تبدأ من فضول حقيقي، ثم تتحول إلى حلقة لها إيقاع، شخصية، وخط معرفي واضح.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container stats reveal">
+        <article class="stat">
+          <div class="num" data-count="2.47" data-suffix="M+">0</div>
+          <div class="label">مشترك على قناة Da7ee7</div>
+        </article>
+        <article class="stat">
+          <div class="num" data-count="221" data-suffix="+">0</div>
+          <div class="label">فيديو منشور على يوتيوب</div>
+        </article>
+        <article class="stat">
+          <div class="num" data-count="1.5" data-suffix="B+">0</div>
+          <div class="label">مشاهدة مذكورة لسلسلة الدحيح</div>
+        </article>
+        <article class="stat">
+          <div class="num" data-count="2014" data-suffix="">0</div>
+          <div class="label">بداية مشروع الدحيح</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="head reveal">
+          <div>
+            <div class="kicker">نبذة</div>
+            <h2>صوت عربي في تبسيط المعرفة</h2>
+          </div>
+          <p class="desc">
+            يجمع بين خلفية علمية، قدرة على البحث، وحضور قوي أمام الكاميرا لصناعة محتوى تعليمي لا يبدو كدرس تقليدي.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel about-card reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ahmed_El_Ghandour.jpg" alt="صورة أحمد الغندور">
+            <h3>أحمد وليد محمد الغندور</h3>
+            <p>
+              معروف باسم "الدحيح"، وهو من أبرز صناع المحتوى المعرفي في المنطقة العربية. يقدم موضوعات في العلوم، التاريخ، الفلسفة، والثقافة العامة بأسلوب ساخر ومنظم.
+            </p>
+            <div class="chips">
+              <span class="chip">Script Writing</span>
+              <span class="chip">Research</span>
+              <span class="chip">On-Camera</span>
+              <span class="chip">Science Communication</span>
+              <span class="chip">Edutainment</span>
+            </div>
+          </article>
+
+          <article class="panel timeline reveal">
+            <div class="t-item">
+              <div class="year">2014</div>
+              <div>
+                <h4>انطلاق الدحيح</h4>
+                <p>بداية صناعة حلقات علمية مبسطة للجمهور العربي، مع الاعتماد على شخصية واضحة وإيقاع سريع.</p>
+              </div>
+            </div>
+            <div class="t-item">
+              <div class="year">2016</div>
+              <div>
+                <h4>بكالوريوس أحياء من الجامعة الأمريكية بالقاهرة</h4>
+                <p>خلفية علمية ساعدت في بناء طريقة بحث وصياغة دقيقة للمحتوى.</p>
+              </div>
+            </div>
+            <div class="t-item">
+              <div class="year">2022</div>
+              <div>
+                <h4>Forbes Middle East 30 Under 30</h4>
+                <p>ظهر ضمن قائمة فوربس الشرق الأوسط تحت 30 عامًا، وفق خبر منشور من الجامعة الأمريكية بالقاهرة.</p>
+              </div>
+            </div>
+            <div class="t-item">
+              <div class="year">2026</div>
+              <div>
+                <h4>عودة جديدة مع AJ+</h4>
+                <p>عودة موسم جديد للدحيح مع AJ+، بما يعكس استمرار قوة العلامة الشخصية وانتظار الجمهور للمحتوى.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="content">
+      <div class="container">
+        <div class="head reveal">
+          <div>
+            <div class="kicker">Content DNA</div>
+            <h2>المعادلة التي تصنع حلقة ناجحة</h2>
+          </div>
+          <p class="desc">
+            كل حلقة تبدأ بسؤال جذاب، ثم تتحول إلى سرد بصري ولغوي يساعد الجمهور على فهم الفكرة بدون فقدان المتعة.
+          </p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar reveal" data-n="01">
+            <div class="picon">🔎</div>
+            <h3>بحث عميق</h3>
+            <p>جمع المصادر، تبسيط المفاهيم، وفرز ما يستحق الظهور داخل الحلقة.</p>
+          </article>
+          <article class="pillar reveal" data-n="02">
+            <div class="picon">✍️</div>
+            <h3>سكريبت قصصي</h3>
+            <p>بناء Hook واضح، تصاعد منطقي، وقفلات تحفظ المعلومة في ذهن المشاهد.</p>
+          </article>
+          <article class="pillar reveal" data-n="03">
+            <div class="picon">🎙️</div>
+            <h3>أداء مميز</h3>
+            <p>لغة بسيطة، سرعة مناسبة، وخفة ظل تجعل الموضوعات الجادة أقرب للجمهور.</p>
+          </article>
+          <article class="pillar reveal" data-n="04">
+            <div class="picon">📈</div>
+            <h3>قابلية انتشار</h3>
+            <p>عناوين وزوايا تصلح للفيديو الطويل والمقاطع القصيرة والسوشيال ميديا.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="head reveal">
+          <div>
+            <div class="kicker">Selected Work</div>
+            <h2>أعمال ومحطات مختارة</h2>
+          </div>
+          <p class="desc">
+            أمثلة على تنوع الأسلوب بين العلم، الرياضة، اللقاءات، والظهور الإعلامي.
+          </p>
+        </div>
+
+        <div class="filters reveal">
+          <button class="filter active" data-filter="all">الكل</button>
+          <button class="filter" data-filter="science">علوم</button>
+          <button class="filter" data-filter="series">سلاسل</button>
+          <button class="filter" data-filter="media">ظهور إعلامي</button>
+        </div>
+
+        <div class="work" id="workGrid">
+          <article class="work-card reveal" data-cat="science">
+            <div class="thumb">
+              <img src="https://img.youtube.com/vi/2LfJcOt7Zhs/hqdefault.jpg" alt="حلقة الشطرنج من الدحيح">
+              <span class="badge">Science / History</span>
+              <div class="thumb-title">الشطرنج.. لعبة غيرت التاريخ؟</div>
+            </div>
+            <div class="work-body">
+              <h3>سرد تاريخي ومعرفي</h3>
+              <p>حلقة تمزج بين التاريخ، السياسة، والثقافة الشعبية في قالب فيديو معرفي جذاب.</p>
+              <div class="metrics">
+                <span class="metric">سكريبت طويل</span>
+                <span class="metric">سرد تاريخي</span>
+                <span class="metric">تعليم ترفيهي</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-cat="series">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="استوديو صناعة محتوى">
+              <span class="badge">Series Format</span>
+              <div class="thumb-title">الدحيح</div>
+            </div>
+            <div class="work-body">
+              <h3>برنامج معرفي ساخر</h3>
+              <p>هوية ثابتة تقوم على سؤال مثير، بحث منظم، وتقديم ساخر يجعل المعلومة سهلة الوصول.</p>
+              <div class="metrics">
+                <span class="metric">Pop Science</span>
+                <span class="metric">YouTube</span>
+                <span class="metric">Brand Voice</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-cat="media">
+            <div class="thumb">
+              <img src="https://img.youtube.com/vi/oc6azHJybOI/hqdefault.jpg" alt="ظهور أحمد الغندور في مهرجان الجونة">
+              <span class="badge">Media Appearance</span>
+              <div class="thumb-title">افتتاح مهرجان الجونة السينمائي</div>
+            </div>
+            <div class="work-body">
+              <h3>حضور جماهيري</h3>
+              <p>ظهور إعلامي يستخدم أسلوب الحكاية لتقديم موضوعات ثقافية أمام جمهور متنوع.</p>
+              <div class="metrics">
+                <span class="metric">Stage</span>
+                <span class="metric">Cinema Culture</span>
+                <span class="metric">Public Speaking</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-cat="media">
+            <div class="thumb">
+              <img src="https://img.youtube.com/vi/N4H5BhF1fTQ/hqdefault.jpg" alt="Traverse Talk مع أحمد الغندور">
+              <span class="badge">Talk</span>
+              <div class="thumb-title">The Power of Exploration</div>
+            </div>
+            <div class="work-body">
+              <h3>محاضرات ولقاءات</h3>
+              <p>نقل تجربة صناعة المحتوى إلى مساحة حوارية مع جمهور مهتم بالتعلم والاستكشاف.</p>
+              <div class="metrics">
+                <span class="metric">Community</span>
+                <span class="metric">Inspiration</span>
+                <span class="metric">Q&A</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-cat="series">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop" alt="كرة قدم">
+              <span class="badge">Sport Series</span>
+              <div class="thumb-title">الكورة مع السلامة</div>
+            </div>
+            <div class="work-body">
+              <h3>توسيع النبرة خارج العلوم</h3>
+              <p>استخدام نفس روح السرد والتبسيط في موضوعات رياضية وثقافية لها جمهور واسع.</p>
+              <div class="metrics">
+                <span class="metric">رياضة</span>
+                <span class="metric">ثقافة عامة</span>
+                <span class="metric">سلسلة</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-cat="science">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&auto=format&fit=crop" alt="مختبر علوم">
+              <span class="badge">Explainer</span>
+              <div class="thumb-title">تحويل العلم إلى قصة</div>
+            </div>
+            <div class="work-body">
+              <h3>صياغة مفاهيم معقدة</h3>
+              <p>إعادة بناء الموضوع العلمي من منظور إنساني يفتح باب الفضول بدل الحفظ المباشر.</p>
+              <div class="metrics">
+                <span class="metric">Science</span>
+                <span class="metric">Simplification</span>
+                <span class="metric">Research</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="head reveal">
+          <div>
+            <div class="kicker">Visual Presence</div>
+            <h2>حضور بصري يناسب المنصات</h2>
+          </div>
+          <p class="desc">صور داعمة تعكس بيئة صناعة المحتوى: بحث، كتابة، تصوير، ونشر.</p>
+        </div>
+
+        <div class="gallery">
+          <article class="panel big-photo reveal">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1400&auto=format&fit=crop" alt="استوديو عمل حديث">
+            <div class="caption">
+              <h3>من غرفة الكتابة إلى الشاشة</h3>
+              <p>بيئة إنتاج تعتمد على البحث والسيناريو قبل التصوير.</p>
+            </div>
+          </article>
+
+          <div class="small-photos">
+            <article class="small-photo reveal">
+              <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop" alt="فريق يعمل على محتوى">
+              <div class="caption">
+                <h3>فريق بحث وإنتاج</h3>
+                <p>تنظيم الفكرة قبل النشر.</p>
+              </div>
+            </article>
+            <article class="small-photo reveal">
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop" alt="كاميرا تصوير">
+              <div class="caption">
+                <h3>تصوير ومونتاج</h3>
+                <p>تنفيذ بصري يخدم الفكرة.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="head reveal">
+          <div>
+            <div class="kicker">Process</div>
+            <h2>كيف تتحول الفكرة إلى حلقة؟</h2>
+          </div>
+          <p class="desc">منهجية واضحة تجعل التعاون أسهل: سؤال، بحث، كتابة، تنفيذ، ثم توزيع.</p>
+        </div>
+
+        <div class="process">
+          <article class="step reveal">
+            <div class="step-num">01</div>
+            <h3>تحديد السؤال</h3>
+            <p>اختيار زاوية لها قيمة وفضول، وليست مجرد موضوع عام.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-num">02</div>
+            <h3>البحث والتحقق</h3>
+            <p>جمع المصادر وفرز الأفكار لتحديد خط الحلقة ومراجعها.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-num">03</div>
+            <h3>كتابة السكريبت</h3>
+            <p>تحويل المعلومات إلى مشاهد، انتقالات، ونقاط ذروة.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-num">04</div>
+            <h3>النشر والتوزيع</h3>
+            <p>اختيار العنوان، الصورة المصغرة، والمقاطع القصيرة المناسبة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <article class="panel contact-info reveal">
+          <div class="kicker">Collaboration</div>
+          <h2>للتعاونات الإعلامية والتعليمية</h2>
+          <p>
+            مناسب لحملات التوعية، المنصات التعليمية، البرامج المعرفية، الفعاليات، والسلاسل الرقمية طويلة أو قصيرة المدى.
+          </p>
+
+          <div class="links-list">
+            <a class="contact-link" href="https://www.youtube.com/@Da7ee7" target="_blank" rel="noreferrer">
+              <span>YouTube / @Da7ee7</span>
+              <strong>↗</strong>
+            </a>
+            <a class="contact-link" href="https://www.instagram.com/ghandour6/" target="_blank" rel="noreferrer">
+              <span>Instagram / @ghandour6</span>
+              <strong>↗</strong>
+            </a>
+            <a class="contact-link" href="mailto:business@da7ee7.com">
+              <span>business@da7ee7.com</span>
+              <strong>✉</strong>
+            </a>
+          </div>
+        </article>
+
+        <form class="panel form reveal" id="contactForm">
+          <div class="field">
+            <label for="name">اسم الجهة</label>
+            <input id="name" type="text" placeholder="مثال: منصة تعليمية / وكالة إنتاج" required>
+          </div>
+          <div class="field">
+            <label for="project">نوع التعاون</label>
+            <input id="project" type="text" placeholder="مثال: سلسلة فيديوهات / حملة توعية / فعالية" required>
+          </div>
+          <div class="field">
+            <label for="message">ملخص الفكرة</label>
+            <textarea id="message" placeholder="اكتب فكرة التعاون أو الهدف من الحملة..." required></textarea>
+          </div>
+          <button class="btn primary" type="submit">تجهيز رسالة التعاون</button>
+          <p id="result" style="color:var(--muted);font-size:14px"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button class="top" id="topBtn" aria-label="العودة للأعلى">↑</button>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>أحمد الغندور — الدحيح</strong> © جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const progress = document.getElementById('progress');
+    const themeBtn = document.getElementById('themeBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const links = document.getElementById('links');
+    const topBtn = document.getElementById('topBtn');
+
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if(savedTheme){
+      body.dataset.theme = savedTheme;
+      themeBtn.textContent = savedTheme === 'light' ? '☀' : '☾';
+    }
+
+    themeBtn.addEventListener('click', () => {
+      const next = body.dataset.theme === 'light' ? 'dark' : 'light';
+      body.dataset.theme = next;
+      localStorage.setItem('portfolio-theme', next);
+      themeBtn.textContent = next === 'light' ? '☀' : '☾';
+    });
+
+    menuBtn.addEventListener('click', () => {
+      links.classList.toggle('open');
+      menuBtn.textContent = links.classList.contains('open') ? '×' : '☰';
+    });
+
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    function updateScroll(){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progress.style.width = value + '%';
+      topBtn.classList.toggle('show', window.scrollY > 520);
+    }
+    window.addEventListener('scroll', updateScroll);
+    updateScroll();
+
+    topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const decimal = String(target).includes('.');
+        const start = performance.now();
+        const duration = 1100;
+
+        function tick(now){
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const current = target * eased;
+          el.textContent = (decimal ? current.toFixed(2) : Math.round(current)) + suffix;
+          if(p < 1) requestAnimationFrame(tick);
+          else el.textContent = (decimal ? target.toFixed(2) : target) + suffix;
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, {threshold:.7});
+
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+    document.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.work-card').forEach(card => {
+          card.style.display = filter === 'all' || card.dataset.cat === filter ? '' : 'none';
+        });
+      });
+    });
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navAnchors = [...document.querySelectorAll('.links a')];
+
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navAnchors.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      });
+    }, {rootMargin:'-35% 0px -55% 0px', threshold:.01});
+
+    sections.forEach(section => activeObserver.observe(section));
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const project = document.getElementById('project').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const text =
+        `مرحبًا، أنا ${name}.` + "\n" +
+        `نوع التعاون: ${project}` + "\n" +
+        `ملخص الفكرة: ${message}` + "\n\n" +
+        `نرغب في تحديد موعد لمناقشة التفاصيل.`;
+
+      document.getElementById('result').innerHTML =
+        'تم تجهيز الرسالة:<br><strong style="white-space:pre-line;color:var(--text)">' +
+        text.replace(/</g,'&lt;').replace(/>/g,'&gt;') +
+        '</strong>';
+    });
+  </script>
+</body>
+</html>

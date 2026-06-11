@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>هاجر صبري | أخصائية سوشيال ميديا وإدارة حسابات</title>
+  <title>هاجر صبري | Social Media Portfolio</title>
 
   <style>
     :root {
       --bg: #f7f9fc;
       --white: #ffffff;
-      --text: #182033;
+      --text: #172033;
       --muted: #667085;
       --primary: #2563eb;
       --primary-soft: #eaf1ff;
-      --dark: #101828;
-      --green: #16a34a;
-      --purple: #7c3aed;
-      --orange: #f97316;
-      --pink: #db2777;
       --cyan: #0891b2;
+      --green: #16a34a;
+      --orange: #f97316;
+      --purple: #7c3aed;
+      --pink: #db2777;
       --border: #e5eaf3;
       --shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
       --radius: 24px;
@@ -61,7 +60,7 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
     }
@@ -90,7 +89,6 @@
       background: linear-gradient(135deg, var(--primary), var(--cyan));
       color: #fff;
       font-weight: 900;
-      font-size: 16px;
     }
 
     .logo-text strong {
@@ -145,7 +143,7 @@
     .hero {
       padding: 78px 0 54px;
       background:
-        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 34%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.11), transparent 34%),
         radial-gradient(circle at 18% 25%, rgba(8, 145, 178, 0.10), transparent 30%);
     }
 
@@ -273,23 +271,10 @@
       overflow: hidden;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(37, 99, 235, 0.08);
-      top: -90px;
-      left: -90px;
-    }
-
     .hero-img {
       height: 520px;
       object-fit: cover;
       border-radius: 26px;
-      position: relative;
-      z-index: 1;
     }
 
     .floating {
@@ -481,45 +466,6 @@
       margin-left: 8px;
     }
 
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 18px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
-    }
-
-    .timeline-date {
-      color: var(--primary);
-      font-weight: 900;
-      font-size: 14px;
-    }
-
-    .timeline-content h3 {
-      font-size: 21px;
-      margin-bottom: 4px;
-    }
-
-    .timeline-content h4 {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .timeline-content p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -606,6 +552,75 @@
       font-size: 11px;
     }
 
+    .results-box {
+      background: linear-gradient(135deg, #ffffff, #f1f6ff);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .result-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .result-card strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .result-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .skills-wrap {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -639,45 +654,6 @@
       color: #475467;
       font-size: 13px;
       font-weight: 800;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .edu-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
-    }
-
-    .edu-card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .edu-card p,
-    .edu-card li {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .edu-card ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .edu-card li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 900;
-      margin-left: 8px;
     }
 
     .contact-box {
@@ -766,14 +742,18 @@
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
-      .contact-box,
-      .education-grid {
+      .contact-box {
         grid-template-columns: 1fr;
       }
 
       .services-grid,
       .projects-grid,
       .skills-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .results-grid,
+      .process-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -822,7 +802,9 @@
       .hero-stats,
       .services-grid,
       .projects-grid,
-      .skills-wrap {
+      .skills-wrap,
+      .results-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
@@ -842,12 +824,9 @@
         margin-top: 12px;
       }
 
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
       .contact-box,
-      .about-card {
+      .about-card,
+      .results-box {
         padding: 24px;
       }
     }
@@ -862,15 +841,15 @@
         <span class="logo-mark">HS</span>
         <span class="logo-text">
           <strong>هاجر صبري</strong>
-          <span>أخصائية سوشيال ميديا</span>
+          <span>Social Media Specialist</span>
         </span>
       </a>
 
       <nav class="nav-links" id="navLinks">
         <a href="#about">من أنا</a>
         <a href="#services">الخدمات</a>
-        <a href="#experience">الخبرات</a>
-        <a href="#work">أبرز الأعمال</a>
+        <a href="#work">الأعمال</a>
+        <a href="#results">النتائج</a>
         <a href="#contact" class="nav-cta">تواصل معي</a>
       </nav>
 
@@ -883,37 +862,37 @@
       <div class="hero-content reveal">
         <div class="badge">
           <span></span>
-          أخصائية سوشيال ميديا | إدارة حسابات | ميديا باير
+          Social Media Specialist | Account Manager | Media Buyer
         </div>
 
         <h1>
-          أساعد العلامات التجارية على النمو من خلال
-          <span>المحتوى والإعلانات والاستراتيجية الرقمية</span>
+          أساعد البراندات على النمو من خلال
+          <span>المحتوى والإعلانات الرقمية</span>
         </h1>
 
         <p>
-          أنا هاجر صبري، متخصصة في التسويق الرقمي بخبرة عملية في إدارة السوشيال ميديا،
-          الإعلانات الممولة، تحسين الظهور عبر SEO، إدارة الحسابات، والتنسيق مع العملاء.
-          أدمج بين التفكير الإبداعي والتحليل لتحقيق نتائج قابلة للقياس.
+          أنا هاجر صبري، أعمل على تحسين حضور العلامات التجارية عبر السوشيال ميديا
+          من خلال إدارة المحتوى، الإعلانات الممولة، تحسين الظهور، والتنسيق مع العملاء
+          لبناء خطط تسويقية واضحة وقابلة للقياس.
         </p>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">تواصل معي</a>
-          <a href="#experience" class="btn btn-secondary">شاهد الخبرات</a>
+          <a href="#work" class="btn btn-primary">شاهد الأعمال</a>
+          <a href="#contact" class="btn btn-secondary">تواصل معي</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat">
             <strong>+4 سنوات</strong>
-            <span>خبرة في القيادة والإدارة</span>
+            <span>خبرة في الإدارة والقيادة</span>
           </div>
           <div class="stat">
-            <strong>+400</strong>
-            <span>طالب تم تدريبهم</span>
+            <strong>Meta Ads</strong>
+            <span>حملات فيسبوك وإنستجرام</span>
           </div>
           <div class="stat">
-            <strong>70%</strong>
-            <span>تحسن في الأداء</span>
+            <strong>SEO</strong>
+            <span>تحسين ظهور المحتوى</span>
           </div>
         </div>
       </div>
@@ -922,19 +901,19 @@
         <img
           class="hero-img"
           src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop"
-          alt="أخصائية تسويق رقمي"
+          alt="هاجر صبري - تسويق رقمي"
         />
 
         <div class="floating float-1">
-          <small>التركيز الأساسي</small>
+          <small>خدمة أساسية</small>
           <strong>Meta Ads</strong>
-          <p>حملات فيسبوك وإنستجرام</p>
+          <p>إعداد وإدارة الحملات الممولة</p>
         </div>
 
         <div class="floating float-2">
-          <small>نقطة قوة</small>
-          <strong>القيادة</strong>
-          <p>تنظيم الفرق وإدارة المهام</p>
+          <small>نقطة تميز</small>
+          <strong>إدارة وتنظيم</strong>
+          <p>متابعة العملاء والمهام بوضوح</p>
         </div>
       </div>
     </div>
@@ -945,43 +924,42 @@
       <div class="section-head reveal">
         <div>
           <div class="section-label">من أنا</div>
-          <h2>مسوّقة رقمية بخلفية قوية في الإدارة والقيادة</h2>
+          <h2>مسوّقة رقمية تجمع بين الإبداع والتنظيم والتحليل</h2>
         </div>
         <p>
-          تجمع خبرتي بين التسويق الرقمي، التواصل مع العملاء، إدارة الأكاديميات،
-          التدريب الرياضي، وتنظيم الفرق والمهام.
+          أتعامل مع السوشيال ميديا كقناة لبناء الثقة وتحقيق نتائج، وليس مجرد نشر محتوى يومي.
         </p>
       </div>
 
       <div class="about-grid">
         <div class="about-img reveal">
-          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop" alt="فريق تسويق">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop" alt="إدارة التسويق الرقمي">
         </div>
 
         <div class="about-card reveal">
-          <h3>من إدارة الفرق إلى إدارة النمو الرقمي</h3>
+          <h3>أبني حضورًا رقميًا واضحًا يناسب هدف كل مشروع</h3>
 
           <p>
-            أمتلك خلفية متنوعة في التدريب الرياضي، إدارة الأكاديميات، والتسويق الرقمي.
-            هذا المزيج ساعدني على تطوير مهارات الانضباط، التواصل، القيادة، التنظيم،
-            وحل المشكلات بطريقة عملية.
+            أمتلك خبرة في إدارة السوشيال ميديا، الإعلانات الممولة، تحسين ظهور المحتوى،
+            وإدارة الحسابات. أركز على فهم هدف المشروع أولًا، ثم تحويله إلى محتوى وحملات
+            يمكن متابعتها وقياس نتائجها.
           </p>
 
           <p>
-            أركز حاليًا على مساعدة العلامات التجارية في تحسين حضورها الرقمي من خلال
-            إدارة السوشيال ميديا، الإعلانات الممولة، تحسين الظهور، تخطيط المحتوى،
-            وإدارة الحسابات.
+            خلفيتي في إدارة الأكاديميات والتدريب الرياضي أضافت لي مهارات قوية في القيادة،
+            تنظيم الوقت، التواصل، وإدارة الفرق، وهي مهارات تساعدني في التعامل مع العملاء
+            وتنفيذ الخطط التسويقية بكفاءة.
           </p>
 
           <div class="chips">
             <span class="chip">إدارة السوشيال ميديا</span>
-            <span class="chip">Meta Ads</span>
+            <span class="chip">إعلانات ممولة</span>
             <span class="chip">SEO</span>
-            <span class="chip">إدارة الحسابات</span>
-            <span class="chip">Media Buying</span>
-            <span class="chip">تخطيط المحتوى</span>
-            <span class="chip">القيادة</span>
-            <span class="chip">تحليل الأداء</span>
+            <span class="chip">إدارة حسابات</span>
+            <span class="chip">ميديا باينج</span>
+            <span class="chip">تخطيط محتوى</span>
+            <span class="chip">تقارير وتحليل</span>
+            <span class="chip">قيادة وتنظيم</span>
           </div>
         </div>
       </div>
@@ -993,11 +971,10 @@
       <div class="section-head reveal">
         <div>
           <div class="section-label">الخدمات</div>
-          <h2>الخدمات التسويقية التي أقدمها</h2>
+          <h2>خدمات تسويقية تساعد البراند يظهر بشكل أفضل</h2>
         </div>
         <p>
-          خدمات عملية للعلامات التجارية التي تحتاج إلى محتوى أقوى، إعلانات أفضل،
-          وتواصل رقمي أكثر وضوحًا مع الجمهور.
+          خدمات مناسبة للشركات والمتاجر ومقدمي الخدمات الذين يحتاجون حضورًا أقوى على السوشيال ميديا.
         </p>
       </div>
 
@@ -1006,23 +983,23 @@
           <div class="service-icon blue">📱</div>
           <h3>إدارة السوشيال ميديا</h3>
           <p>
-            إدارة صفحات التواصل الاجتماعي من خلال خطط محتوى منظمة ورسائل واضحة للبراند.
+            تنظيم الصفحة، وضع خطة محتوى، وتحسين طريقة ظهور البراند أمام الجمهور.
           </p>
           <ul class="service-list">
-            <li>خطط محتوى</li>
-            <li>تحسين الصفحة</li>
-            <li>زيادة التفاعل</li>
+            <li>خطة محتوى شهرية</li>
+            <li>أفكار منشورات وReels</li>
+            <li>تحسين شكل الصفحة</li>
           </ul>
         </div>
 
         <div class="service-card reveal">
           <div class="service-icon green">🎯</div>
-          <h3>الإعلانات الممولة</h3>
+          <h3>إعلانات Meta</h3>
           <p>
-            إنشاء وإدارة حملات فيسبوك وإنستجرام باستهداف واضح وتحكم أفضل في الميزانية.
+            إنشاء وإدارة حملات فيسبوك وإنستجرام بهدف زيادة التفاعل، الرسائل، أو الوصول.
           </p>
           <ul class="service-list">
-            <li>إعداد حملات Meta</li>
+            <li>إعداد الحملات</li>
             <li>تحديد الجمهور</li>
             <li>تحسين الميزانية</li>
           </ul>
@@ -1032,12 +1009,12 @@
           <div class="service-icon orange">🔎</div>
           <h3>تحسين الظهور SEO</h3>
           <p>
-            تطبيق أساسيات SEO لتحسين ظهور المحتوى وزيادة الوصول العضوي.
+            تحسين المحتوى والكلمات المستخدمة لزيادة فرص الظهور والوصول العضوي.
           </p>
           <ul class="service-list">
             <li>تحسين الكلمات المفتاحية</li>
-            <li>تحسين ظهور المحتوى</li>
-            <li>دعم الوصول العضوي</li>
+            <li>تحسين وصف المحتوى</li>
+            <li>رفع قابلية الظهور</li>
           </ul>
         </div>
 
@@ -1045,12 +1022,12 @@
           <div class="service-icon purple">🤝</div>
           <h3>إدارة الحسابات</h3>
           <p>
-            التواصل مع العملاء، فهم أهدافهم، وتنسيق الخطط والمهام التسويقية.
+            متابعة العملاء، فهم احتياجاتهم، وتنظيم التواصل بين العميل وفريق التنفيذ.
           </p>
           <ul class="service-list">
-            <li>تنسيق مع العملاء</li>
-            <li>متابعة الحملات</li>
+            <li>متابعة العميل</li>
             <li>تنظيم المهام</li>
+            <li>تحديثات مستمرة</li>
           </ul>
         </div>
 
@@ -1058,92 +1035,26 @@
           <div class="service-icon pink">✍️</div>
           <h3>تخطيط المحتوى</h3>
           <p>
-            تحويل أهداف المشروع إلى أفكار محتوى تدعم الوعي والثقة والتفاعل.
+            تحويل أهداف المشروع إلى أفكار محتوى واضحة تدعم الوعي والثقة والتفاعل.
           </p>
           <ul class="service-list">
-            <li>أفكار منشورات</li>
             <li>زوايا محتوى</li>
-            <li>تخطيط شهري</li>
+            <li>أفكار حملات</li>
+            <li>جدولة محتوى</li>
           </ul>
         </div>
 
         <div class="service-card reveal">
           <div class="service-icon cyan">📊</div>
-          <h3>التقارير والتحليل</h3>
+          <h3>تقارير وتحليل</h3>
           <p>
-            قراءة مؤشرات الأداء الأساسية واستخدامها لتحسين الحملات والمحتوى.
+            متابعة الأرقام الأساسية واستخدامها لتحسين المحتوى والحملات القادمة.
           </p>
           <ul class="service-list">
             <li>متابعة الأداء</li>
-            <li>تحليلات أساسية</li>
-            <li>ملاحظات تحسين</li>
+            <li>تحليل النتائج</li>
+            <li>مقترحات تحسين</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">الخبرات</div>
-          <h2>الخبرات العملية</h2>
-        </div>
-        <p>
-          مزيج من التسويق الرقمي، إدارة الحسابات، الميديا باينج، والإدارة القيادية.
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-date">يوليو 2024 - فبراير 2025</div>
-          <div class="timeline-content">
-            <h3>أخصائية سوشيال ميديا</h3>
-            <h4>Digital Marketing Freelancer — 24 Hour Media Company</h4>
-            <p>
-              إدارة حملات إعلانية ممولة على فيسبوك وإنستجرام، تحسين الميزانيات والاستهداف
-              لزيادة التفاعل، تطبيق استراتيجيات SEO لتحسين ظهور المحتوى، والتعاون مع العملاء
-              لبناء خطط سوشيال ميديا قائمة على البيانات.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-date">مارس 2024 - يونيو 2024</div>
-          <div class="timeline-content">
-            <h3>Account Manager & Media Buyer</h3>
-            <h4>Everest Company</h4>
-            <p>
-              دعم مهام إدارة الحسابات والميديا باينج، والتنسيق بين احتياجات العملاء،
-              تنفيذ الحملات، ومتابعة الأداء.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-date">يناير 2019 - يونيو 2024</div>
-          <div class="timeline-content">
-            <h3>مديرة أكاديمية رياضية ومدربة رئيسية</h3>
-            <h4>إدارة أكاديمية رياضية</h4>
-            <p>
-              إدارة العمليات اليومية للأكاديمية، الإشراف على الفريق وتطوير البرامج التدريبية،
-              تدريب أكثر من 400 طالب في الكونغ فو والجمباز، تحسين مؤشرات الأداء بنسبة 70%،
-              وتنظيم الفعاليات والجداول والمهام الإدارية.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-date">يناير 2019 - يونيو 2024</div>
-          <div class="timeline-content">
-            <h3>مدربة كونغ فو وجمباز</h3>
-            <h4>التدريب الرياضي</h4>
-            <p>
-              تصميم برامج تدريبية لمختلف الفئات العمرية، مع التركيز على الانضباط،
-              تطوير المهارات، الالتزام، وتحسين الأداء.
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -1153,24 +1064,24 @@
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <div class="section-label">أبرز الأعمال</div>
-          <h2>نقاط قوة مهنية</h2>
+          <div class="section-label">الأعمال</div>
+          <h2>نماذج من نوعية المشاريع التي أعمل عليها</h2>
         </div>
         <p>
-          أمثلة توضح كيف تتكامل خبرة التسويق والإدارة والقيادة في العمل.
+          أمثلة منظمة لعرض طريقة التفكير والخدمات التي يمكن تنفيذها للبراندات المختلفة.
         </p>
       </div>
 
       <div class="projects-grid">
         <article class="project-card reveal">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="إعلانات ممولة">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="حملات إعلانية">
           </div>
           <div class="project-body">
             <span class="project-tag">إعلانات ممولة</span>
-            <h3>حملات فيسبوك وإنستجرام</h3>
+            <h3>إدارة حملات فيسبوك وإنستجرام</h3>
             <p>
-              إدارة حملات ممولة مع الاهتمام بالاستهداف، ضبط الميزانية، وتحسين التفاعل.
+              إعداد حملات ممولة مع تحسين الاستهداف والميزانية بهدف زيادة التفاعل والوصول.
             </p>
             <div class="metrics">
               <div class="metric">
@@ -1179,7 +1090,7 @@
               </div>
               <div class="metric">
                 <strong>Ads</strong>
-                <span>التركيز</span>
+                <span>الخدمة</span>
               </div>
             </div>
           </div>
@@ -1190,19 +1101,19 @@
             <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1200&auto=format&fit=crop" alt="سوشيال ميديا">
           </div>
           <div class="project-body">
-            <span class="project-tag">سوشيال ميديا</span>
-            <h3>تحسين ظهور المحتوى والصفحات</h3>
+            <span class="project-tag">Social Media</span>
+            <h3>تحسين ظهور صفحة براند</h3>
             <p>
-              دعم حضور الصفحات من خلال تخطيط المحتوى، تحسين الظهور، وتنظيم الرسائل التسويقية.
+              تنظيم محتوى الصفحة وتحسين شكل التواصل مع الجمهور من خلال خطة محتوى واضحة.
             </p>
             <div class="metrics">
               <div class="metric">
-                <strong>SEO</strong>
-                <span>دعم الظهور</span>
+                <strong>Content</strong>
+                <span>تخطيط</span>
               </div>
               <div class="metric">
                 <strong>Growth</strong>
-                <span>الهدف</span>
+                <span>هدف</span>
               </div>
             </div>
           </div>
@@ -1213,19 +1124,19 @@
             <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="إدارة حسابات">
           </div>
           <div class="project-body">
-            <span class="project-tag">إدارة الحسابات</span>
-            <h3>التواصل والتنسيق مع العملاء</h3>
+            <span class="project-tag">Account Management</span>
+            <h3>تنسيق خطط العملاء</h3>
             <p>
-              العمل مع العملاء والفرق الداخلية لتنسيق المهام التسويقية، احتياجات الحملات، والخطط.
+              متابعة احتياجات العملاء، تنظيم المهام، والتأكد من سير الخطة التسويقية بوضوح.
             </p>
             <div class="metrics">
-              <div class="metric">
-                <strong>Plans</strong>
-                <span>خطط قائمة على البيانات</span>
-              </div>
               <div class="metric">
                 <strong>Clients</strong>
-                <span>تنسيق مع العملاء</span>
+                <span>متابعة</span>
+              </div>
+              <div class="metric">
+                <strong>Plans</strong>
+                <span>تنظيم</span>
               </div>
             </div>
           </div>
@@ -1233,22 +1144,22 @@
 
         <article class="project-card reveal">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="قيادة">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="خطة محتوى">
           </div>
           <div class="project-body">
-            <span class="project-tag">قيادة وإدارة</span>
-            <h3>إدارة عمليات أكاديمية رياضية</h3>
+            <span class="project-tag">Content Planning</span>
+            <h3>خطة محتوى شهرية</h3>
             <p>
-              إدارة العمليات اليومية، تنسيق الفريق، الجداول، والبرامج التدريبية داخل الأكاديمية.
+              بناء محاور محتوى تساعد البراند يشرح خدماته ويزيد ثقة الجمهور به.
             </p>
             <div class="metrics">
               <div class="metric">
-                <strong>+400</strong>
-                <span>طالب</span>
+                <strong>Ideas</strong>
+                <span>أفكار</span>
               </div>
               <div class="metric">
-                <strong>70%</strong>
-                <span>تحسن أداء</span>
+                <strong>Calendar</strong>
+                <span>جدولة</span>
               </div>
             </div>
           </div>
@@ -1256,49 +1167,124 @@
 
         <article class="project-card reveal">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="تنظيم">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="تحليل أداء">
           </div>
           <div class="project-body">
-            <span class="project-tag">تنظيم وتخطيط</span>
-            <h3>إدارة البرامج والجداول وسير العمل</h3>
+            <span class="project-tag">Analytics</span>
+            <h3>متابعة وتحليل الأداء</h3>
             <p>
-              تنسيق البرامج والجداول والمهام مع الحفاظ على سير عمل منظم وتنفيذ مستمر.
+              قراءة مؤشرات الأداء الأساسية لتحديد ما يحتاج تحسينًا في المحتوى أو الحملات.
             </p>
             <div class="metrics">
               <div class="metric">
-                <strong>Time</strong>
-                <span>إدارة الوقت</span>
+                <strong>KPI</strong>
+                <span>مؤشرات</span>
               </div>
+              <div class="metric">
+                <strong>Report</strong>
+                <span>تقرير</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="قيادة وتنظيم">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Leadership</span>
+            <h3>إدارة وتنظيم فرق العمل</h3>
+            <p>
+              خبرة في تنظيم فرق ومهام وجداول عمل، مما يدعم تنفيذ الخطط التسويقية بسلاسة.
+            </p>
+            <div class="metrics">
               <div class="metric">
                 <strong>Team</strong>
-                <span>قيادة فريق</span>
+                <span>قيادة</span>
+              </div>
+              <div class="metric">
+                <strong>Time</strong>
+                <span>تنظيم</span>
               </div>
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="project-card reveal">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="تحليل">
+  <section id="results">
+    <div class="container">
+      <div class="results-box reveal">
+        <div class="section-head" style="margin-bottom: 26px;">
+          <div>
+            <div class="section-label">النتائج</div>
+            <h2>أرقام تعكس خبرة عملية في التنظيم والنمو</h2>
           </div>
-          <div class="project-body">
-            <span class="project-tag">تحليل وتقارير</span>
-            <h3>تحليلات أساسية وتنظيم بيانات</h3>
-            <p>
-              استخدام Excel وأدوات التقارير الأساسية لتنظيم البيانات ودعم اتخاذ قرارات أفضل.
-            </p>
-            <div class="metrics">
-              <div class="metric">
-                <strong>Excel</strong>
-                <span>أدوات مكتبية</span>
-              </div>
-              <div class="metric">
-                <strong>Reports</strong>
-                <span>تقارير</span>
-              </div>
-            </div>
+          <p>
+            مزيج الخبرة التسويقية والإدارية يساعد في إدارة الحملات والعملاء والفرق بشكل أفضل.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <strong>+4</strong>
+            <span>سنوات خبرة قيادية</span>
           </div>
-        </article>
+
+          <div class="result-card">
+            <strong>+400</strong>
+            <span>طالب تم تدريبهم سابقًا</span>
+          </div>
+
+          <div class="result-card">
+            <strong>70%</strong>
+            <span>تحسن في مؤشرات الأداء</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Meta</strong>
+            <span>خبرة في الإعلانات الممولة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">طريقة العمل</div>
+          <h2>كيف أتعامل مع كل مشروع؟</h2>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>فهم الهدف</h3>
+          <p>تحديد هدف المشروع: تفاعل، رسائل، ظهور، أو تحسين الصورة الرقمية.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>تجهيز الخطة</h3>
+          <p>بناء خطة محتوى أو حملة مناسبة لطبيعة الجمهور والخدمة.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>التنفيذ والمتابعة</h3>
+          <p>متابعة المحتوى أو الإعلان والتنسيق مع العميل أو فريق العمل.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <h3>التحليل والتحسين</h3>
+          <p>مراجعة النتائج واستخراج ملاحظات تساعد على تطوير الأداء القادم.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1307,117 +1293,43 @@
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <div class="section-label">المهارات</div>
-          <h2>المهارات التقنية والشخصية</h2>
+          <div class="section-label">الأدوات والمهارات</div>
+          <h2>المهارات التي تدعم تنفيذ المشاريع</h2>
         </div>
-        <p>
-          مجموعة مهارات عملية تشمل التسويق الرقمي، الأدوات المكتبية، التحليل، والقيادة.
-        </p>
       </div>
 
       <div class="skills-wrap">
         <div class="skill-box reveal">
-          <h3>التسويق الرقمي</h3>
+          <h3>تسويق رقمي</h3>
           <div class="skill-list">
-            <span class="skill">إدارة السوشيال ميديا</span>
+            <span class="skill">Social Media</span>
             <span class="skill">SEO</span>
             <span class="skill">Meta Ads</span>
             <span class="skill">Media Buying</span>
-            <span class="skill">تخطيط المحتوى</span>
-            <span class="skill">تحليلات أساسية</span>
+            <span class="skill">Content Planning</span>
           </div>
         </div>
 
         <div class="skill-box reveal">
-          <h3>الأدوات المكتبية</h3>
+          <h3>تحليل وأدوات</h3>
           <div class="skill-list">
             <span class="skill">Excel</span>
             <span class="skill">Word</span>
             <span class="skill">PowerPoint</span>
-            <span class="skill">إعداد تقارير</span>
-            <span class="skill">تنظيم البيانات</span>
+            <span class="skill">Basic Analytics</span>
+            <span class="skill">Reports</span>
           </div>
         </div>
 
         <div class="skill-box reveal">
-          <h3>المهارات الشخصية</h3>
+          <h3>مهارات شخصية</h3>
           <div class="skill-list">
-            <span class="skill">قيادة فريق</span>
-            <span class="skill">إدارة الوقت</span>
-            <span class="skill">التواصل</span>
-            <span class="skill">الانضباط</span>
-            <span class="skill">حل المشكلات</span>
+            <span class="skill">Team Leadership</span>
+            <span class="skill">Time Management</span>
+            <span class="skill">Communication</span>
+            <span class="skill">Organization</span>
+            <span class="skill">Problem Solving</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">التعليم والكورسات</div>
-          <h2>الخلفية الأكاديمية والشهادات</h2>
-        </div>
-      </div>
-
-      <div class="education-grid">
-        <div class="edu-card reveal">
-          <h3>التعليم</h3>
-          <p>
-            بكالوريوس آداب — نظم معلومات جغرافية
-          </p>
-          <p>
-            كلية الآداب — جامعة المنصورة
-          </p>
-          <p>
-            سنة التخرج: 2021 - 2024
-          </p>
-          <p>
-            التقدير: جيد جدًا
-          </p>
-        </div>
-
-        <div class="edu-card reveal">
-          <h3>الكورسات</h3>
-          <ul>
-            <li>Digital Marketing & SEO Specialization — YouTube / Google</li>
-            <li>Facebook & Instagram Ads Mastery — YouTube / Google</li>
-            <li>Media Buying Certification — Online Course</li>
-            <li>Advanced Excel, PowerPoint, and Word — Self-Taught</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="languages">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">اللغات</div>
-          <h2>لغات التواصل</h2>
-        </div>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon blue">ع</div>
-          <h3>العربية</h3>
-          <p>اللغة الأم مع قدرة قوية على التواصل والتنظيم والشرح.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon green">EN</div>
-          <h3>الإنجليزية</h3>
-          <p>مستوى Fluent مناسب للتواصل مع العملاء وفهم مصطلحات التسويق والتقارير.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon purple">💬</div>
-          <h3>التواصل مع العملاء</h3>
-          <p>خبرة في التواصل مع العملاء، الفرق، ومختلف الفئات العمرية.</p>
         </div>
       </div>
     </div>
@@ -1427,10 +1339,10 @@
     <div class="container">
       <div class="contact-box reveal">
         <div class="contact-info">
-          <h2>لنتحدث عن أهدافك التسويقية</h2>
+          <h2>هل لديك مشروع يحتاج حضورًا رقميًا أقوى؟</h2>
           <p>
-            سواء كنت تحتاج إلى إدارة سوشيال ميديا، إعلانات ممولة، دعم SEO،
-            أو إدارة حسابات، يمكنك التواصل معي مباشرة.
+            يمكنك التواصل معي لمناقشة إدارة السوشيال ميديا، الإعلانات الممولة،
+            تحسين الظهور، أو إدارة حسابات العملاء.
           </p>
 
           <div class="contact-list">
@@ -1446,16 +1358,16 @@
           <input type="text" id="company" placeholder="اسم الشركة أو المشروع" required />
 
           <select id="service" required>
-            <option value="">اختر الخدمة أو الفرصة</option>
+            <option value="">اختر الخدمة المطلوبة</option>
             <option value="إدارة السوشيال ميديا">إدارة السوشيال ميديا</option>
             <option value="إعلانات ممولة">إعلانات ممولة</option>
-            <option value="دعم SEO">دعم SEO</option>
+            <option value="تحسين الظهور SEO">تحسين الظهور SEO</option>
             <option value="إدارة حسابات">إدارة حسابات</option>
-            <option value="Media Buying">Media Buying</option>
+            <option value="تخطيط محتوى">تخطيط محتوى</option>
             <option value="فرصة عمل">فرصة عمل</option>
           </select>
 
-          <textarea id="message" placeholder="اكتب رسالة مختصرة"></textarea>
+          <textarea id="message" placeholder="اكتب تفاصيل مختصرة عن المشروع أو الفرصة"></textarea>
 
           <button class="btn btn-primary" type="submit">
             إرسال عبر واتساب
@@ -1467,7 +1379,7 @@
 
   <footer>
     <div class="container">
-      © 2026 هاجر صبري عبد العال رمضان — أخصائية سوشيال ميديا وإدارة حسابات
+      © 2026 هاجر صبري — Portfolio Website
     </div>
   </footer>
 
@@ -1517,10 +1429,10 @@
 الشركة / المشروع:
 ${company}
 
-الخدمة أو الفرصة:
+الخدمة المطلوبة:
 ${service}
 
-الرسالة:
+التفاصيل:
 ${message || "لا توجد تفاصيل إضافية"}
 
 أرغب في التواصل معك بخصوص هذا الأمر.
