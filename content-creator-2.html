@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ملك عادل | Content Creator Portfolio</title>
+  <meta name="description" content="بورتفوليو ملك عادل، صانعة محتوى متخصصة في الفيديوهات القصيرة، UGC، lifestyle، beauty، ومحتوى العلامات التجارية." />
+
+  <style>
+    :root{
+      --bg:#fff8f7;
+      --bg-soft:#fff0ef;
+      --card:#ffffff;
+      --text:#241b22;
+      --muted:#796b75;
+      --line:#ead7d7;
+      --rose:#e95f87;
+      --rose-dark:#c43d67;
+      --peach:#ffb199;
+      --lav:#b494ff;
+      --cream:#fff6df;
+      --mint:#cdf7e6;
+      --shadow:0 24px 70px rgba(129,62,84,.14);
+      --shadow-sm:0 16px 40px rgba(129,62,84,.10);
+      --radius:30px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family:"Tahoma", "Arial", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(255,177,153,.42), transparent 24rem),
+        radial-gradient(circle at 92% 16%, rgba(180,148,255,.26), transparent 27rem),
+        linear-gradient(180deg,var(--bg),#fff 45%,#fffaf6);
+      color:var(--text);
+      line-height:1.8;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      background-image:radial-gradient(rgba(233,95,135,.14) 1px, transparent 1px);
+      background-size:24px 24px;
+      mask-image:linear-gradient(to bottom,#000,transparent 78%);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea{font:inherit}
+    ::selection{background:rgba(233,95,135,.32)}
+
+    .container{width:min(var(--max),calc(100% - 36px));margin-inline:auto}
+    .progress{position:fixed;top:0;right:0;width:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--peach),var(--lav));z-index:999}
+
+    .nav{
+      position:sticky;top:0;z-index:90;
+      backdrop-filter:blur(18px);
+      background:rgba(255,248,247,.82);
+      border-bottom:1px solid rgba(234,215,215,.75);
+    }
+    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}
+    .brand-mark{
+      width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;
+      background:conic-gradient(from 210deg,var(--rose),var(--peach),var(--lav),var(--rose));
+      box-shadow:0 18px 36px rgba(233,95,135,.22);
+      font-size:20px;
+    }
+    .brand span small{display:block;color:var(--muted);font-size:12px;margin-top:-3px;font-weight:700}
+    .links{display:flex;align-items:center;gap:6px;list-style:none}
+    .links a{display:block;padding:9px 13px;border-radius:999px;color:var(--muted);font-weight:800;font-size:14px;transition:.25s ease}
+    .links a:hover,.links a.active{background:#fff;color:var(--rose-dark);box-shadow:var(--shadow-sm)}
+    .menu-btn{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);cursor:pointer}
+
+    .hero{padding:62px 0 34px}
+    .hero-grid{display:grid;grid-template-columns:1fr .92fr;gap:34px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--rose-dark);font-weight:900;box-shadow:var(--shadow-sm);font-size:13px}
+    .spark{width:9px;height:9px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 7px rgba(233,95,135,.13)}
+    h1{font-size:clamp(42px,7.2vw,88px);line-height:1.04;margin-top:18px;letter-spacing:-1.7px}
+    .highlight{display:inline-block;background:linear-gradient(90deg,var(--rose),#a965ff,var(--peach));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{margin-top:20px;color:var(--muted);font-size:clamp(16px,2vw,20px);max-width:650px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);font-weight:900;cursor:pointer;transition:.25s ease;box-shadow:0 10px 30px rgba(129,62,84,.07)}
+    .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+    .btn.primary{border:0;color:#fff;background:linear-gradient(135deg,var(--rose),#a965ff);box-shadow:0 18px 42px rgba(233,95,135,.24)}
+
+    .creator-card{position:relative;min-height:610px;border-radius:42px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);isolation:isolate}
+    .creator-card::before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.6);border-radius:32px;z-index:2;pointer-events:none}
+    .creator-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .creator-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(36,27,34,.82),rgba(36,27,34,.12) 58%,rgba(255,255,255,.05));z-index:1}
+    .floating-card{position:absolute;z-index:3;right:26px;left:26px;bottom:26px;padding:22px;border-radius:28px;background:rgba(255,255,255,.84);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);box-shadow:0 20px 60px rgba(0,0,0,.14)}
+    .floating-card h2{font-size:26px;line-height:1.35}.floating-card p{color:var(--muted);font-size:14px;margin-top:5px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.tag{padding:7px 10px;border-radius:999px;background:#fff3f6;color:var(--rose-dark);font-weight:900;font-size:12px;border:1px solid #ffd7e2}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}.stat{padding:22px;border-radius:26px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}.num{font-size:34px;font-weight:1000;line-height:1.1;direction:ltr;text-align:right}.label{color:var(--muted);font-weight:800;font-size:13px;margin-top:6px}
+
+    .section{padding:76px 0}.head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.kicker{color:var(--rose-dark);font-weight:1000;margin-bottom:8px;font-size:14px}h2{font-size:clamp(30px,4.5vw,54px);line-height:1.17;letter-spacing:-.8px}.desc{max-width:560px;color:var(--muted);font-size:16px}.panel{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:20px}.bio{padding:30px}.bio-photo{height:360px;border-radius:24px;overflow:hidden;margin-bottom:22px}.bio-photo img{width:100%;height:100%;object-fit:cover}.bio h3{font-size:26px}.bio p{color:var(--muted);margin-top:8px}.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.skill{padding:8px 12px;border-radius:999px;background:#fff5f7;border:1px solid #ffd8e3;color:var(--rose-dark);font-size:13px;font-weight:900}
+    .timeline{padding:26px}.t-item{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}.t-item:last-child{border-bottom:0}.year{font-weight:1000;color:var(--rose-dark);direction:ltr;text-align:right}.t-item h3{font-size:18px}.t-item p{color:var(--muted);font-size:14px}
+
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{position:relative;padding:25px;border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden;transition:.25s ease}.service:hover{transform:translateY(-7px)}.service::after{content:attr(data-no);position:absolute;left:14px;bottom:-25px;color:rgba(233,95,135,.08);font-size:88px;font-weight:1000;direction:ltr}.icon{width:50px;height:50px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(135deg,#fff0ef,#f3eaff);font-size:23px;margin-bottom:16px}.service h3{font-size:20px}.service p{color:var(--muted);font-size:14px;margin-top:7px}
+
+    .videos{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.video-main,.video-list{min-height:500px}.video-frame{position:relative;aspect-ratio:16/9;background:#111;border-radius:24px;overflow:hidden}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.video-main{padding:18px}.video-main h3{font-size:27px;margin-top:18px}.video-main p{color:var(--muted);margin-top:6px}.video-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.video-meta span{padding:7px 10px;border-radius:999px;background:#fff6df;border:1px solid #f2ddaa;color:#8a5b00;font-weight:900;font-size:12px}.video-list{display:grid;gap:14px}.video-tab{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:center;padding:14px;background:#fff;border:1px solid var(--line);border-radius:24px;cursor:pointer;text-align:right;transition:.25s ease}.video-tab:hover,.video-tab.active{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:#ffc0d2}.video-thumb{height:82px;border-radius:17px;overflow:hidden;position:relative}.video-thumb img{width:100%;height:100%;object-fit:cover}.play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(36,27,34,.16);color:#fff;font-size:24px}.video-tab strong{display:block;font-size:15px}.video-tab small{display:block;color:var(--muted);font-weight:800;margin-top:4px}
+
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden;transition:.25s ease}.project:hover{transform:translateY(-7px)}.project-img{height:230px;position:relative;overflow:hidden}.project-img img{width:100%;height:100%;object-fit:cover;transition:.45s ease}.project:hover .project-img img{transform:scale(1.06)}.project-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(36,27,34,.65),transparent 62%)}.badge{position:absolute;right:14px;top:14px;z-index:2;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.86);color:var(--rose-dark);font-weight:1000;font-size:12px}.project-title{position:absolute;right:16px;left:16px;bottom:15px;z-index:2;color:#fff;font-size:22px;font-weight:1000;line-height:1.3}.project-body{padding:20px}.project-body p{color:var(--muted);font-size:14px;margin:7px 0 14px}.metrics{display:flex;flex-wrap:wrap;gap:8px}.metric{font-size:12px;font-weight:900;color:var(--muted);padding:7px 9px;border-radius:12px;background:#fff8f7;border:1px solid var(--line)}
+
+    .brands{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.brand-box{min-height:92px;border-radius:24px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;text-align:center;padding:15px;font-weight:1000;color:#5c4b56;box-shadow:0 12px 30px rgba(129,62,84,.06)}
+
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{padding:24px;border-radius:26px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}.step-num{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#fff0ef;color:var(--rose-dark);font-weight:1000;direction:ltr;margin-bottom:15px}.step h3{font-size:19px}.step p{color:var(--muted);font-size:14px;margin-top:7px}
+
+    .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px}.contact-info{padding:32px;background:linear-gradient(135deg,#fff,#fff0ef)}.contact-info p{color:var(--muted);margin:12px 0 22px}.contact-links{display:grid;gap:11px}.contact-link{display:flex;align-items:center;justify-content:space-between;padding:14px;border-radius:18px;background:#fff;border:1px solid var(--line);color:var(--muted);font-weight:900}.form{padding:32px;display:grid;gap:14px}.field{display:grid;gap:7px}.field label{font-size:13px;color:var(--muted);font-weight:900}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:#fff;color:var(--text);outline:0}.field textarea{min-height:126px;resize:vertical}.field input:focus,.field textarea:focus{border-color:#ffabc2;box-shadow:0 0 0 4px rgba(233,95,135,.10)}
+
+    .footer{padding:34px 0;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:14px}.footer strong{color:var(--text)}.top{position:fixed;left:22px;bottom:22px;width:48px;height:48px;border:0;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;box-shadow:0 18px 38px rgba(233,95,135,.26);cursor:pointer;opacity:0;transform:translateY(15px);transition:.25s ease;z-index:70}.top.show{opacity:1;transform:translateY(0)}
+
+    .reveal{opacity:0;transform:translateY(26px);transition:.75s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:1020px){.hero-grid,.about-grid,.videos,.contact-grid{grid-template-columns:1fr}.stats,.services,.process{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.creator-card{min-height:560px}}
+    @media(max-width:760px){.container{width:min(var(--max),calc(100% - 26px))}.links{position:fixed;top:78px;right:13px;left:13px;padding:13px;border:1px solid var(--line);border-radius:24px;background:rgba(255,248,247,.96);display:none;flex-direction:column;align-items:stretch;box-shadow:var(--shadow);backdrop-filter:blur(18px)}.links.open{display:flex}.menu-btn{display:grid;place-items:center}.hero{padding-top:44px}.stats,.services,.projects,.process,.brands{grid-template-columns:1fr}.head{display:grid}.creator-card{min-height:530px}.t-item{grid-template-columns:70px 1fr}.video-tab{grid-template-columns:104px 1fr}.project-img{height:215px}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">م</span>
+        <span>ملك عادل <small>Content Creator & UGC Specialist</small></span>
+      </a>
+      <ul class="links" id="links">
+        <li><a href="#about">نبذة</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#videos">الفيديوهات</a></li>
+        <li><a href="#projects">الأعمال</a></li>
+        <li><a href="#contact">تعاون</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow"><span class="spark"></span> Beauty · Lifestyle · UGC · Reels</span>
+          <h1>ملك عادل<br><span class="highlight">بتحوّل الفكرة لفيديو الناس تكمله للآخر</span></h1>
+          <p class="lead">صانعة محتوى مصرية متخصصة في الفيديوهات القصيرة، مراجعات المنتجات، سيناريوهات UGC، ومحتوى lifestyle للعلامات التجارية التي تريد حضورًا ناعمًا، واضحًا، وقابلًا للمشاركة.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#videos">مشاهدة الفيديوهات</a>
+            <a class="btn" href="#projects">الأعمال المختارة</a>
+            <a class="btn" href="#contact">طلب تعاون</a>
+          </div>
+        </div>
+
+        <article class="creator-card reveal">
+          <img class="creator-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" alt="ملك عادل صانعة محتوى">
+          <div class="floating-card">
+            <h2>محتوى بسيط في شكله، ذكي في تأثيره.</h2>
+            <p>من أول الـ Hook لحد آخر ثانية، كل فيديو بيتبني على رسالة واضحة وإحساس قريب من الجمهور.</p>
+            <div class="tags">
+              <span class="tag">UGC Ads</span>
+              <span class="tag">Reels</span>
+              <span class="tag">Product Review</span>
+              <span class="tag">Script Writing</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container stats reveal">
+        <article class="stat"><div class="num" data-count="184" data-suffix="K+">0</div><div class="label">متابع على إنستجرام وتيك توك</div></article>
+        <article class="stat"><div class="num" data-count="320" data-suffix="+">0</div><div class="label">فيديو قصير منشور</div></article>
+        <article class="stat"><div class="num" data-count="37" data-suffix="">0</div><div class="label">تعاون مع علامات تجارية</div></article>
+        <article class="stat"><div class="num" data-count="9.6" data-suffix="M+">0</div><div class="label">مشاهدات إجمالية للمحتوى</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="head reveal">
+          <div><div class="kicker">نبذة</div><h2>حضور أنثوي هادئ، ومحتوى يعرف يبيع بدون ما يزعج</h2></div>
+          <p class="desc">ملك تشتغل على المحتوى من زاوية الجمهور: ما الذي يوقفه؟ ما الذي يجعله يثق؟ وما الجملة التي تدفعه للحفظ أو المشاركة أو الشراء؟</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel bio reveal">
+            <div class="bio-photo"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="جلسة تصوير لصانعة محتوى"></div>
+            <h3>ملك عادل</h3>
+            <p>بدأت ملك في صناعة المحتوى من خلال فيديوهات يومية بسيطة عن العناية الشخصية، تنظيم اليوم، وتجربة المنتجات. خلال ثلاث سنوات، تحوّل أسلوبها إلى مساحة تعاون للبراندات التي تبحث عن محتوى طبيعي، قابل للتصديق، ومناسب للمنصات القصيرة.</p>
+            <div class="skills">
+              <span class="skill">تصوير بالموبايل</span><span class="skill">كتابة سكريبت</span><span class="skill">Voice Over</span><span class="skill">UGC Ads</span><span class="skill">مونتاج Reels</span><span class="skill">Content Calendar</span>
+            </div>
+          </article>
+          <article class="panel timeline reveal">
+            <div class="t-item"><div class="year">2022</div><div><h3>بداية محتوى Lifestyle</h3><p>نشر فيديوهات قصيرة عن الروتين اليومي، المنتجات المفضلة، وتجارب الشراء بلهجة بسيطة وقريبة.</p></div></div>
+            <div class="t-item"><div class="year">2023</div><div><h3>أول حملات UGC</h3><p>تنفيذ فيديوهات مراجعة وتجربة منتجات لعلامات في العناية بالبشرة، الأزياء، والإكسسوارات.</p></div></div>
+            <div class="t-item"><div class="year">2024</div><div><h3>تطوير أسلوب تصوير ثابت</h3><p>بناء ستايل بصري يعتمد على الإضاءة الطبيعية، ألوان ناعمة، ولقطات قريبة تبرز تفاصيل المنتج.</p></div></div>
+            <div class="t-item"><div class="year">2025</div><div><h3>تعاونات شهرية مستمرة</h3><p>إدارة أفكار فيديوهات قصيرة من السكريبت حتى التسليم النهائي للعلامات التجارية.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="head reveal"><div><div class="kicker">الخدمات</div><h2>ماذا تقدم للعلامات التجارية؟</h2></div><p class="desc">خدمات مصممة للمنصات القصيرة، من فكرة أولية إلى فيديو جاهز للنشر أو الإعلان.</p></div>
+        <div class="services">
+          <article class="service reveal" data-no="01"><div class="icon">🎬</div><h3>UGC Videos</h3><p>فيديوهات طبيعية للمنتجات بصيغة تجربة شخصية، مناسبة للإعلانات أو النشر العضوي.</p></article>
+          <article class="service reveal" data-no="02"><div class="icon">✍️</div><h3>سكريبت Reels</h3><p>كتابة Hook، تسلسل مشاهد، CTA، ونص صوتي واضح يحافظ على انتباه المشاهد.</p></article>
+          <article class="service reveal" data-no="03"><div class="icon">📱</div><h3>مراجعات منتجات</h3><p>عرض مميزات المنتج بطريقة واقعية، مع إبراز الاستخدام اليومي والتفاصيل التي تهم الجمهور.</p></article>
+          <article class="service reveal" data-no="04"><div class="icon">✨</div><h3>Content Direction</h3><p>اقتراح أفكار شهرية، زوايا تصوير، وستايل بصري يحافظ على شخصية البراند.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="container">
+        <div class="head reveal"><div><div class="kicker">Video Portfolio</div><h2>فيديوهات مختارة</h2></div><p class="desc">نماذج تعكس أسلوب ملك في عرض المنتج، بناء الثقة، وتقديم تجربة مشاهدة ناعمة وسريعة.</p></div>
+        <div class="videos">
+          <article class="panel video-main reveal">
+            <div class="video-frame"><iframe id="mainVideo" src="https://www.youtube.com/embed/ysz5S6PUM-U" title="UGC video preview" allowfullscreen></iframe></div>
+            <h3 id="videoTitle">Morning Skincare Routine</h3>
+            <p id="videoDesc">فيديو قصير لروتين صباحي يدمج المنتج داخل استخدام يومي طبيعي، مع لقطات قريبة ونص بسيط يشرح الإحساس والنتيجة.</p>
+            <div class="video-meta" id="videoMeta"><span>Beauty</span><span>UGC</span><span>45 sec</span></div>
+          </article>
+
+          <div class="video-list reveal">
+            <button class="video-tab active" data-src="https://www.youtube.com/embed/ysz5S6PUM-U" data-title="Morning Skincare Routine" data-desc="فيديو قصير لروتين صباحي يدمج المنتج داخل استخدام يومي طبيعي، مع لقطات قريبة ونص بسيط يشرح الإحساس والنتيجة." data-tags="Beauty,UGC,45 sec">
+              <span class="video-thumb"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=700&auto=format&fit=crop" alt="منتجات عناية"><span class="play">▶</span></span><span><strong>Morning Skincare Routine</strong><small>Beauty · UGC</small></span>
+            </button>
+            <button class="video-tab" data-src="https://www.youtube.com/embed/jNQXAC9IVRw" data-title="Coffee Corner Setup" data-desc="محتوى lifestyle لركن قهوة منزلي، يعتمد على لقطات هادئة، ترتيب بصري، وانتقالات مناسبة لمنصات Reels وTikTok." data-tags="Lifestyle,Reels,38 sec">
+              <span class="video-thumb"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=700&auto=format&fit=crop" alt="ركن قهوة"><span class="play">▶</span></span><span><strong>Coffee Corner Setup</strong><small>Lifestyle · Reels</small></span>
+            </button>
+            <button class="video-tab" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-title="Unboxing Soft Jewelry" data-desc="فيديو unboxing لإكسسوارات يومية، يركز على تفاصيل التغليف، ملمس المنتج، وطريقة تنسيقه في خروج سريع." data-tags="Fashion,Unboxing,30 sec">
+              <span class="video-thumb"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=700&auto=format&fit=crop" alt="إكسسوارات"><span class="play">▶</span></span><span><strong>Unboxing Soft Jewelry</strong><small>Fashion · Unboxing</small></span>
+            </button>
+            <button class="video-tab" data-src="https://www.youtube.com/embed/aqz-KE-bpKQ" data-title="Mini Bag Review" data-desc="مراجعة حقيبة صغيرة بتقسيم واضح: المشكلة، التجربة، التفاصيل، ثم سبب الترشيح في نهاية الفيديو." data-tags="Review,UGC Ads,52 sec">
+              <span class="video-thumb"><img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=700&auto=format&fit=crop" alt="حقيبة نسائية"><span class="play">▶</span></span><span><strong>Mini Bag Review</strong><small>Review · UGC Ads</small></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="head reveal"><div><div class="kicker">Selected Campaigns</div><h2>أعمال مختارة</h2></div><p class="desc">كل مشروع هنا مبني على هدف واضح: تعريف، تجربة، ثقة، أو تحفيز قرار الشراء.</p></div>
+        <div class="projects">
+          <article class="project reveal"><div class="project-img"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop" alt="منتجات عناية بالبشرة"><span class="badge">Beauty Brand</span><div class="project-title">Glow Lab — روتين عناية واقعي</div></div><div class="project-body"><h3>UGC للمنتجات اليومية</h3><p>ثلاثة فيديوهات قصيرة عن طريقة استخدام السيروم والكريم، بصيغة تجربة شخصية وتصوير قريب.</p><div class="metrics"><span class="metric">3 Reels</span><span class="metric">Script + Edit</span><span class="metric">Product Demo</span></div></div></article>
+          <article class="project reveal"><div class="project-img"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop" alt="ملابس نسائية"><span class="badge">Fashion</span><div class="project-title">Luna Wear — تنسيقات أسبوعية</div></div><div class="project-body"><h3>محتوى Styling</h3><p>سلسلة فيديوهات تنسيق قطع بسيطة بأكثر من طريقة، مع Hook سريع وCTA للحفظ.</p><div class="metrics"><span class="metric">5 Looks</span><span class="metric">Reels</span><span class="metric">Styling Tips</span></div></div></article>
+          <article class="project reveal"><div class="project-img"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop" alt="قهوة ومقهى"><span class="badge">Cafe</span><div class="project-title">Cora Café — يوم هادئ في المكان</div></div><div class="project-body"><h3>تصوير تجربة مكان</h3><p>فيديو زيارة قصير يبرز الأجواء، المشروب، تفاصيل الديكور، وتجربة الجلوس من منظور الزائر.</p><div class="metrics"><span class="metric">Visit Reel</span><span class="metric">Voice Over</span><span class="metric">Lifestyle</span></div></div></article>
+          <article class="project reveal"><div class="project-img"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=1200&auto=format&fit=crop" alt="مكياج"><span class="badge">Makeup</span><div class="project-title">Mira Cosmetics — Before & After</div></div><div class="project-body"><h3>إظهار نتيجة المنتج</h3><p>فيديوهات سريعة توضّح الفرق قبل وبعد، مع تركيز على الثبات، الملمس، ودرجة اللون.</p><div class="metrics"><span class="metric">Before/After</span><span class="metric">Beauty Shots</span><span class="metric">CTA</span></div></div></article>
+          <article class="project reveal"><div class="project-img"><img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=1200&auto=format&fit=crop" alt="شنطة وإكسسوارات"><span class="badge">Accessories</span><div class="project-title">Nour Studio — تفاصيل صغيرة</div></div><div class="project-body"><h3>Unboxing & Review</h3><p>عرض التغليف وتجربة الإكسسوارات مع لقطات Macro وأفكار تنسيق مناسبة للخروج اليومي.</p><div class="metrics"><span class="metric">Unboxing</span><span class="metric">Macro</span><span class="metric">Review</span></div></div></article>
+          <article class="project reveal"><div class="project-img"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="منتجات تجميل"><span class="badge">UGC Ads</span><div class="project-title">Soft Ad Pack — 6 إعلانات قصيرة</div></div><div class="project-body"><h3>حزمة إعلانات UGC</h3><p>إنتاج ست نسخ مختلفة من الإعلان: مشكلة، تجربة، نتيجة، مقارنة، ترشيح، وسؤال تفاعلي.</p><div class="metrics"><span class="metric">6 Scripts</span><span class="metric">Ad Angles</span><span class="metric">Vertical</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="head reveal"><div><div class="kicker">Brand Collaborations</div><h2>علامات عملت معها</h2></div><p class="desc">تعاونات في مجالات الجمال، الأزياء، المقاهي، الإكسسوارات، والمنتجات اليومية.</p></div>
+        <div class="brands reveal"><div class="brand-box">Glow Lab</div><div class="brand-box">Luna Wear</div><div class="brand-box">Cora Café</div><div class="brand-box">Mira Cosmetics</div><div class="brand-box">Nour Studio</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="head reveal"><div><div class="kicker">Workflow</div><h2>طريقة العمل</h2></div><p class="desc">خطوات واضحة تضمن أن الفيديو النهائي مناسب للبراند، للمنصة، وللجمهور.</p></div>
+        <div class="process">
+          <article class="step reveal"><div class="step-num">01</div><h3>فهم المنتج</h3><p>تحديد الجمهور، نقطة البيع، أسئلة العميل، والاستخدام الحقيقي للمنتج.</p></article>
+          <article class="step reveal"><div class="step-num">02</div><h3>الفكرة والسكريبت</h3><p>كتابة زاوية الفيديو، الجمل الأساسية، اللقطات المطلوبة، ونهاية واضحة.</p></article>
+          <article class="step reveal"><div class="step-num">03</div><h3>التصوير والمونتاج</h3><p>تنفيذ الفيديو عموديًا بإضاءة ناعمة، صوت واضح، وانتقالات خفيفة.</p></article>
+          <article class="step reveal"><div class="step-num">04</div><h3>التسليم النهائي</h3><p>تسليم نسخة جاهزة للنشر، ونسخة بدون نص عند الحاجة لاستخدامها في الإعلانات.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <article class="panel contact-info reveal">
+          <div class="kicker">Collaboration</div><h2>جاهزة لتعاون جديد</h2>
+          <p>للحملات، مراجعات المنتجات، حزم UGC، أو صناعة محتوى شهري للمنصات القصيرة.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:hello@malakadel.co"><span>hello@malakadel.co</span><strong>✉</strong></a>
+            <a class="contact-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer"><span>Instagram / @malak.creates</span><strong>↗</strong></a>
+            <a class="contact-link" href="https://www.tiktok.com/" target="_blank" rel="noreferrer"><span>TikTok / @malak.creates</span><strong>↗</strong></a>
+          </div>
+        </article>
+        <form class="panel form reveal" id="contactForm">
+          <div class="field"><label for="brandName">اسم البراند</label><input id="brandName" type="text" placeholder="مثال: Glow Lab" required></div>
+          <div class="field"><label for="serviceType">نوع التعاون</label><input id="serviceType" type="text" placeholder="UGC Videos / Reels / Product Review" required></div>
+          <div class="field"><label for="brief">ملخص المطلوب</label><textarea id="brief" placeholder="اكتب الهدف من الحملة، نوع المنتج، وعدد الفيديوهات المطلوبة..." required></textarea></div>
+          <button class="btn primary" type="submit">تجهيز رسالة التعاون</button>
+          <p id="formResult" style="color:var(--muted);font-size:14px"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button class="top" id="topBtn" aria-label="العودة للأعلى">↑</button>
+  <footer class="footer"><div class="container"><strong>ملك عادل</strong> © Content Creator Portfolio</div></footer>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const topBtn = document.getElementById('topBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const links = document.getElementById('links');
+
+    function onScroll(){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+      topBtn.classList.toggle('show', window.scrollY > 520);
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    menuBtn.addEventListener('click', () => {
+      links.classList.toggle('open');
+      menuBtn.textContent = links.classList.contains('open') ? '×' : '☰';
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      menuBtn.textContent = '☰';
+    }));
+    topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.13});
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const decimal = String(target).includes('.');
+        const start = performance.now();
+        const duration = 1200;
+        function tick(now){
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const value = target * eased;
+          el.textContent = (decimal ? value.toFixed(1) : Math.round(value)) + suffix;
+          if(p < 1) requestAnimationFrame(tick);
+          else el.textContent = (decimal ? target.toFixed(1) : target) + suffix;
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, {threshold:.75});
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+    const mainVideo = document.getElementById('mainVideo');
+    const videoTitle = document.getElementById('videoTitle');
+    const videoDesc = document.getElementById('videoDesc');
+    const videoMeta = document.getElementById('videoMeta');
+    document.querySelectorAll('.video-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.video-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        mainVideo.src = tab.dataset.src;
+        videoTitle.textContent = tab.dataset.title;
+        videoDesc.textContent = tab.dataset.desc;
+        videoMeta.innerHTML = tab.dataset.tags.split(',').map(tag => `<span>${tag.trim()}</span>`).join('');
+      });
+    });
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navAnchors = [...document.querySelectorAll('.links a')];
+    const activeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, {rootMargin:'-35% 0px -55% 0px', threshold:.01});
+    sections.forEach(section => activeObserver.observe(section));
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const brand = document.getElementById('brandName').value.trim();
+      const type = document.getElementById('serviceType').value.trim();
+      const brief = document.getElementById('brief').value.trim();
+      const message = `مرحبًا ملك، أنا من ${brand}.\nنوع التعاون: ${type}\nملخص المطلوب: ${brief}\n\nنرغب في معرفة التفاصيل والخطوات القادمة.`;
+      document.getElementById('formResult').innerHTML = 'تم تجهيز الرسالة:<br><strong style="white-space:pre-line;color:var(--text)">' + message.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</strong>';
+    });
+  </script>
+</body>
+</html>
