@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malak.ugc.vibes | UGC Creator & Commercial Model</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Marcellus&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --off-white: #fbf8f2;
+      --cream: #f4eadc;
+      --beige: #dfcdb8;
+      --sand: #c7aa8d;
+      --brown: #59483a;
+      --dark: #2d241d;
+      --muted: #8c7a68;
+      --white: #ffffff;
+      --shadow: 0 25px 70px rgba(64, 47, 34, 0.12);
+      --radius: 26px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(223, 205, 184, 0.45), transparent 35%),
+        linear-gradient(180deg, var(--off-white), #fffaf4);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    .luxury-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      border: 1px solid rgba(89, 72, 58, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      backdrop-filter: blur(12px);
+    }
+
+    .luxury-label span {
+      width: 7px;
+      height: 7px;
+      background: var(--sand);
+      border-radius: 50%;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 248, 242, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(89, 72, 58, 0.08);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo strong {
+      font-family: "Marcellus", serif;
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .logo small {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--brown);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: var(--brown);
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--dark);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      padding: 72px 0 70px;
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      margin-top: 22px;
+      font-weight: 800;
+      font-size: clamp(42px, 6.5vw, 78px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--dark);
+    }
+
+    .hero-content h1 em {
+      font-style: normal;
+      color: var(--sand);
+    }
+
+    .hero-content p {
+      margin-top: 26px;
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 2;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+      box-shadow: 0 16px 35px rgba(45, 36, 29, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 45px rgba(45, 36, 29, 0.26);
+    }
+
+    .btn-outline {
+      border-color: rgba(89, 72, 58, 0.18);
+      color: var(--brown);
+      background: rgba(255, 255, 255, 0.46);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .hero-stats {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 620px;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid rgba(89, 72, 58, 0.08);
+      box-shadow: 0 12px 35px rgba(64, 47, 34, 0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Marcellus", serif;
+      font-size: 31px;
+      font-weight: 400;
+      color: var(--brown);
+      direction: ltr;
+      text-align: right;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .photo-card {
+      position: relative;
+      padding: 14px;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(89, 72, 58, 0.09);
+      transform: rotate(-1.8deg);
+    }
+
+    .photo-card::before {
+      content: "";
+      position: absolute;
+      inset: 28px 36px -18px -18px;
+      border-radius: 34px;
+      background: var(--cream);
+      z-index: -1;
+      transform: rotate(5deg);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 610px;
+      object-fit: cover;
+      border-radius: 27px;
+      filter: saturate(0.94) contrast(0.98);
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -26px;
+      bottom: 48px;
+      width: 220px;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(89, 72, 58, 0.09);
+      box-shadow: 0 20px 55px rgba(64, 47, 34, 0.14);
+    }
+
+    .floating-card small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .floating-card strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 17px;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(34px, 4.5vw, 58px);
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      max-width: 500px;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .portfolio {
+      background: linear-gradient(180deg, rgba(244, 234, 220, 0.55), rgba(255, 250, 244, 0.2));
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      padding: 11px 17px;
+      border: 1px solid rgba(89, 72, 58, 0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.58);
+      color: var(--muted);
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: 700;
+      font-size: 13px;
+      font-family: inherit;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .video-card {
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--white);
+      min-height: 430px;
+      box-shadow: 0 20px 55px rgba(64, 47, 34, 0.09);
+      border: 1px solid rgba(89, 72, 58, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .video-card video {
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+        background: #eee;
+        cursor: pointer;
+    }
+
+    .video-info {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 15px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.83);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    .video-info small {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .video-info h3 {
+      margin-top: 6px;
+      font-size: 15px;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 34px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(89, 72, 58, 0.08);
+      box-shadow: 0 18px 50px rgba(64, 47, 34, 0.07);
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      background: var(--white);
+    }
+
+    .service-card .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--cream);
+      color: var(--brown);
+      font-size: 23px;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 25px;
+      margin-bottom: 13px;
+      font-weight: 800;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      border-radius: 34px;
+      overflow: hidden;
+      min-height: 500px;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      padding: 48px;
+      border-radius: 34px;
+      background: var(--dark);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-content::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      left: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: rgba(223, 205, 184, 0.12);
+    }
+
+    .about-content h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.25;
+      margin-bottom: 22px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-content p {
+      color: rgba(255,255,255,0.72);
+      line-height: 2;
+      margin-bottom: 22px;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-list {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-list div {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: rgba(255,255,255,0.84);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .about-list span {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      color: var(--cream);
+      flex: 0 0 auto;
+    }
+
+    .process {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(89, 72, 58, 0.08);
+    }
+
+    .process-card strong {
+      display: block;
+      font-family: "Marcellus", serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--sand);
+      margin-bottom: 18px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .process-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .contact {
+      padding-bottom: 42px;
+    }
+
+    .contact-box {
+      padding: 56px;
+      border-radius: 38px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.82), rgba(244,234,220,0.78)),
+        var(--cream);
+      border: 1px solid rgba(89, 72, 58, 0.09);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(34px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 570px;
+      font-weight: 500;
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-link {
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(89, 72, 58, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      transition: 0.3s ease;
+      font-weight: 700;
+    }
+
+    .contact-link:hover {
+      background: var(--dark);
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+
+    .contact-link strong {
+      direction: ltr;
+      text-align: left;
+      font-family: "Inter", "Cairo", sans-serif;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-panel,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .photo-card img {
+        height: 560px;
+      }
+
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        height: 70px;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 18px;
+        right: 18px;
+        padding: 22px;
+        border-radius: 24px;
+        background: rgba(255,255,255,0.94);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .hero-content h1 {
+        font-size: 43px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card {
+        transform: none;
+      }
+
+      .photo-card img {
+        height: 500px;
+      }
+
+      .floating-card {
+        right: 14px;
+        bottom: 22px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .video-grid,
+      .services-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-card,
+      .video-card video {
+        min-height: 480px;
+        height: 480px;
+      }
+
+      .about-content,
+      .contact-box {
+        padding: 32px;
+      }
+
+      .about-image {
+        min-height: 430px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container {
+        width: min(100% - 26px, 1120px);
+      }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .photo-card img {
+        height: 430px;
+      }
+
+      .floating-card {
+        width: calc(100% - 28px);
+      }
+
+      .video-card,
+      .video-card video {
+        min-height: 440px;
+        height: 440px;
+      }
+
+      .contact-link {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <strong>Malak.ugc.vibes</strong>
+        <small>UGC CREATOR</small>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#portfolio">الشغل</a>
+        <a href="#services">الخدمات</a>
+        <a href="#about">عن ملك</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="luxury-label"><span></span> UGC Creator & Commercial Model</div>
+
+          <h1>
+            محتوى بسيط، <br>
+            شكله راقي، <br>
+            <em>وبيوصل للعميل.</em>
+          </h1>
+
+          <p>
+            أنا ملك، UGC Creator و Commercial Model. بعمل محتوى طبيعي وشيك للبراندات، خصوصًا في مجالات الجمال، اللايف ستايل، الفاشون، الأكل، والخدمات. بشتغل مع براندات في السوق المصري والخليجي، وعندي خبرة سنتين في صناعة المحتوى والإعلانات.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">شوفي شغلي</a>
+            <a href="#contact" class="btn btn-outline">تواصلي معايا</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>2+</strong>
+              <span>سنين خبرة في المحتوى والإعلانات</span>
+            </div>
+            <div class="stat">
+              <strong>EG + GCC</strong>
+              <span>محتوى مناسب لمصر والخليج</span>
+            </div>
+            <div class="stat">
+              <strong>UGC</strong>
+              <span>ريلز، إعلانات، ديمو، وتجارب منتجات</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="photo-card">
+            <img src="images/malak.jpg" alt="ملك UGC Creator">
+          </div>
+
+          <div class="floating-card">
+            <small>متاحة للتعاون مع البراندات</small>
+            <strong>Beauty، Lifestyle، Fashion، Food وحملات Commercial.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="luxury-label"><span></span> شغل نفذته لبراندات مختلفة</div>
+            <h2>نماذج من فيديوهاتي</h2>
+          </div>
+          <p>
+            دي نماذج من فيديوهات صورتها بأسلوب طبيعي وهادي، كل فيديو معمول عشان يوضح المنتج ويحسّس العميل إنه قريب منه.
+          </p>
+        </div>
+
+        <div class="filter-tabs reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="beauty">جمال</button>
+          <button class="filter-btn" data-filter="lifestyle">لايف ستايل</button>
+          <button class="filter-btn" data-filter="fashion">فاشون</button>
+          <button class="filter-btn" data-filter="food">أكل ومشروبات</button>
+        </div>
+
+        <div class="video-grid reveal">
+            <article class="video-card" data-category="beauty">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/beauty-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Beauty UGC</small>
+            <h3>تجربة سكين كير بروتين صباحي</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="lifestyle">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/lifestyle-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Lifestyle</small>
+            <h3>روتين يومي بستايل لايف ستايل</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="fashion">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/beauty-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Fashion</small>
+            <h3>تصوير فاشون بإحساس إعلاني</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="food">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/lifestyle-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Food & Beverage</small>
+            <h3>تجربة منتج أكل بطريقة طبيعية</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="beauty">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/beauty-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Skincare</small>
+            <h3>Skincare Texture & Application</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="lifestyle">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/lifestyle-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>UGC Ad</small>
+            <h3>إعلان قصير لمنتج بيحل مشكلة يومية</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="fashion">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/beauty-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Commercial</small>
+            <h3>لقطات Commercial ناعمة للمنتج</h3>
+            </div>
+            </article>
+
+            <article class="video-card" data-category="food">
+            <video muted loop playsinline preload="auto" controls>
+            <source src="videos/lifestyle-1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+            <small>Product Content</small>
+            <h3>Ad Creative قصير للريلز</h3>
+            </div>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="luxury-label"><span></span> الخدمات اللي بقدمها</div>
+            <h2>الخدمات</h2>
+          </div>
+          <p>
+            بشتغل على محتوى يخلي المنتج يبان واضح، حقيقي، وقريب من طريقة كلام العميل اليومية.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="icon">✦</div>
+            <h3>فيديوهات UGC</h3>
+            <p>
+              فيديوهات قصيرة للريلز والإعلانات، من أول أول ثانية تشد الانتباه لحد تجربة المنتج بشكل واضح وطبيعي.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">♡</div>
+            <h3>Commercial Modeling</h3>
+            <p>
+              تصوير منتجات بستايل ناعم وأنثوي، مناسب لبراندات الجمال، الفاشون، واللايف ستايل.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">⌁</div>
+            <h3>Storytelling للبراند</h3>
+            <p>
+              بحب أقدم المنتج كجزء من يوم حقيقي، مش كإعلان مباشر، عشان العميل يحس إنه محتوى طبيعي.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">◌</div>
+            <h3>Product Demos</h3>
+            <p>
+              لقطات استخدام واضحة للمنتج، بتبين تفاصيله وتجربته بشكل بسيط ومريح للعين.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">✧</div>
+            <h3>Voiceover Ads</h3>
+            <p>
+              Voiceover هادي وواضح لفيديوهات بتشرح المنتج من غير رغي أو تعقيد.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">☾</div>
+            <h3>باقات محتوى</h3>
+            <p>
+              بشتغل مع البراندات على أكتر من فيديو في الشهر، بأفكار مختلفة تناسب النشر والإعلانات.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-panel">
+        <div class="about-image reveal">
+          <img src="images/malak.jpg" alt="صورة ملك UGC Creator">
+        </div>
+
+        <div class="about-content reveal">
+          <h2>بعمل محتوى شكله Premium، بس إحساسه طبيعي وقريب من الناس.</h2>
+
+          <p>
+            أنا ملك، UGC Creator و Commercial Model، عندي خبرة سنتين في تصوير المحتوى والإعلانات للبراندات. شغلي بيركز إن المنتج يطلع واضح، شيك، وقريب من العميل، خصوصًا للبراندات اللي بتستهدف مصر والخليج.
+          </p>
+
+          <p>
+            الستايل بتاعي ناعم، بسيط، وأنثوي. بهتم بالإضاءة، تفاصيل المنتج، طريقة الكلام، وتعابير الوجه، عشان الفيديو يطلع طبيعي ومناسب للبراند من غير زحمة أو مبالغة.
+          </p>
+
+          <div class="about-list">
+            <div><span>✓</span> بقدر أقدم المحتوى بالعربي أو الإنجليزي حسب جمهور البراند</div>
+            <div><span>✓</span> الفيديوهات بتتجهز للنشر على السوشيال أو للاستخدام في الإعلانات</div>
+            <div><span>✓</span> فاهمة طريقة كلام وذوق الجمهور المصري والخليجي</div>
+            <div><span>✓</span> ستايل بصري ناعم، بسيط، وراقي</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="luxury-label"><span></span> إزاي بشتغل مع البراندات</div>
+            <h2>من البريف للتسليم</h2>
+          </div>
+          <p>
+            بحب الشغل يكون واضح من البداية: نفهم المنتج، نحدد الفكرة، نصور، وبعدها يتسلم الفيديو جاهز للنشر.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal">
+            <strong>01</strong>
+            <h3>فهم المنتج والبراند</h3>
+            <p>بفهم المنتج، الجمهور، شكل البراند، والهدف من الفيديو أو الحملة.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <strong>02</strong>
+            <h3>تحديد فكرة الفيديو</h3>
+            <p>بنحدد زاوية الفيديو، الـ Hook، السيناريو، والمود البصري المناسب.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <strong>03</strong>
+            <h3>تصوير المحتوى</h3>
+            <p>بتصور المحتوى بشكل طبيعي، نضيف، ومركز على المنتج وتفاصيله.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <strong>04</strong>
+            <h3>تسليم الفيديوهات</h3>
+            <p>الفيديوهات بتتسلم جاهزة للنشر أو الاستخدام في الحملات الإعلانية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div>
+            <div class="luxury-label"><span></span> نشتغل سوا؟</div>
+            <h2>محتاجين محتوى ناعم وراقي لبراندكم؟</h2>
+            <p>
+              للتعاون، تصوير المنتجات، حملات UGC، أو Commercial Modeling، ابعتولي على إنستجرام أو واتساب وهنرتب كل التفاصيل.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="contact-link" href="https://www.instagram.com/Malak.ugc.vibes" target="_blank">
+              <span>إنستجرام</span>
+              <strong>@Malak.ugc.vibes</strong>
+            </a>
+
+            <a class="contact-link" href="https://wa.me/201000000000" target="_blank">
+              <span>واتساب</span>
+              <strong>احجزوا تعاون</strong>
+            </a>
+
+            <a class="contact-link" href="mailto:hello@malakugcvibes.com">
+              <span>الإيميل</span>
+              <strong>hello@malakugcvibes.com</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Malak.ugc.vibes — UGC Creator & Commercial Model
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.textContent = navLinks.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealOnScroll.observe(el));
+
+    const videos = document.querySelectorAll(".video-card video");
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.45 });
+
+    videos.forEach(video => videoObserver.observe(video));
+
+    document.querySelectorAll(".video-card").forEach(card => {
+      const video = card.querySelector("video");
+
+      card.addEventListener("mouseenter", () => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
+
+      card.addEventListener("click", () => {
+        if (video.paused) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    });
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const videoCards = document.querySelectorAll(".video-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        videoCards.forEach(card => {
+          const category = card.dataset.category;
+
+          if (filter === "all" || filter === category) {
+            card.style.display = "block";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1)";
+            }, 40);
+          } else {
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.96)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 220);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
