@@ -404,6 +404,29 @@
       box-shadow: 0 20px 55px rgba(64, 47, 34, 0.09);
       border: 1px solid rgba(89, 72, 58, 0.08);
       transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .video-card::before {
+      content: "▶";
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.86);
+      color: var(--dark);
+      font-size: 15px;
+      box-shadow: 0 12px 28px rgba(45, 36, 29, 0.16);
+      backdrop-filter: blur(12px);
     }
 
     .video-card video {
@@ -411,7 +434,84 @@
         height: 430px;
         object-fit: cover;
         background: #eee;
-        cursor: pointer;
+        pointer-events: none;
+    }
+
+    .video-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: rgba(45, 36, 29, 0.62);
+      backdrop-filter: blur(14px);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+    }
+
+    .video-popup.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .popup-content {
+      width: min(430px, 100%);
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--dark);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+      transform: translateY(18px) scale(0.96);
+      transition: 0.25s ease;
+    }
+
+    .video-popup.active .popup-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--dark);
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .popup-content video {
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .popup-caption {
+      padding: 16px 18px 18px;
+      background: var(--white);
+    }
+
+    .popup-caption small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .popup-caption h3 {
+      color: var(--dark);
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .video-info {
@@ -936,7 +1036,7 @@
 
         <div class="video-grid reveal">
             <article class="video-card" data-category="beauty">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/beauty-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -946,7 +1046,7 @@
             </article>
 
             <article class="video-card" data-category="lifestyle">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/lifestyle-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -956,7 +1056,7 @@
             </article>
 
             <article class="video-card" data-category="fashion">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/beauty-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -966,7 +1066,7 @@
             </article>
 
             <article class="video-card" data-category="food">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/lifestyle-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -976,7 +1076,7 @@
             </article>
 
             <article class="video-card" data-category="beauty">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/beauty-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -986,7 +1086,7 @@
             </article>
 
             <article class="video-card" data-category="lifestyle">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/lifestyle-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -996,7 +1096,7 @@
             </article>
 
             <article class="video-card" data-category="fashion">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/beauty-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -1006,7 +1106,7 @@
             </article>
 
             <article class="video-card" data-category="food">
-            <video muted loop playsinline preload="auto" controls>
+            <video muted playsinline preload="metadata">
             <source src="videos/lifestyle-1.mp4" type="video/mp4">
             </video>
             <div class="video-info">
@@ -1181,6 +1281,18 @@
     </section>
   </main>
 
+  <div class="video-popup" id="videoPopup" aria-hidden="true">
+    <div class="popup-content" role="dialog" aria-modal="true" aria-label="مشاهدة الفيديو">
+      <button class="popup-close" id="popupClose" aria-label="إغلاق الفيديو">×</button>
+      <video id="popupVideo" controls playsinline></video>
+      <div class="popup-caption">
+        <small id="popupCategory"></small>
+        <h3 id="popupTitle"></h3>
+      </div>
+    </div>
+  </div>
+
+
   <footer>
     © 2026 Malak.ugc.vibes — UGC Creator & Commercial Model
   </footer>
@@ -1214,35 +1326,57 @@
     revealElements.forEach(el => revealOnScroll.observe(el));
 
     const videos = document.querySelectorAll(".video-card video");
+    const videoPopup = document.getElementById("videoPopup");
+    const popupVideo = document.getElementById("popupVideo");
+    const popupClose = document.getElementById("popupClose");
+    const popupCategory = document.getElementById("popupCategory");
+    const popupTitle = document.getElementById("popupTitle");
 
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: 0.45 });
+    videos.forEach(video => {
+      video.pause();
+      video.currentTime = 0;
+      video.removeAttribute("controls");
+    });
 
-    videos.forEach(video => videoObserver.observe(video));
+    const openVideoPopup = (card) => {
+      const source = card.querySelector("source");
+      const category = card.querySelector(".video-info small");
+      const title = card.querySelector(".video-info h3");
+
+      if (!source) return;
+
+      popupVideo.src = source.src || source.getAttribute("src");
+      popupCategory.textContent = category ? category.textContent : "";
+      popupTitle.textContent = title ? title.textContent : "";
+      videoPopup.classList.add("active");
+      videoPopup.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      popupVideo.play().catch(() => {});
+    };
+
+    const closeVideoPopup = () => {
+      popupVideo.pause();
+      popupVideo.removeAttribute("src");
+      popupVideo.load();
+      videoPopup.classList.remove("active");
+      videoPopup.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
 
     document.querySelectorAll(".video-card").forEach(card => {
-      const video = card.querySelector("video");
+      card.addEventListener("click", () => openVideoPopup(card));
+    });
 
-      card.addEventListener("mouseenter", () => {
-        video.muted = true;
-        video.play().catch(() => {});
-      });
+    popupClose.addEventListener("click", closeVideoPopup);
 
-      card.addEventListener("click", () => {
-        if (video.paused) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
+    videoPopup.addEventListener("click", (e) => {
+      if (e.target === videoPopup) closeVideoPopup();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && videoPopup.classList.contains("active")) {
+        closeVideoPopup();
+      }
     });
 
     const filterBtns = document.querySelectorAll(".filter-btn");
