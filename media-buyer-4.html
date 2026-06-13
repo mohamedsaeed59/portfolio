@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karim Adel | Media Buyer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f8fc;
+      --surface: #ffffff;
+      --surface-2: #edf4fb;
+      --navy: #081827;
+      --navy-2: #102338;
+      --blue: #2563eb;
+      --cyan: #13c6c9;
+      --mint: #4dd7b5;
+      --ice: #eaf7ff;
+      --ink: #142238;
+      --muted: #64748b;
+      --soft: #dbeafe;
+      --line: rgba(8, 24, 39, 0.09);
+      --shadow: 0 25px 70px rgba(8, 24, 39, 0.11);
+      --shadow-2: 0 16px 45px rgba(37, 99, 235, 0.16);
+      --radius: 26px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(19, 198, 201, 0.18), transparent 30%),
+        radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 42%, #f6f9fd 100%);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1140px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(8, 24, 39, 0.04);
+    }
+
+    .eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 0 6px rgba(19, 198, 201, 0.12);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 251, 255, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue) 58%, var(--cyan));
+      box-shadow: var(--shadow-2);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .logo strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .logo small {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a { position: relative; transition: 0.25s ease; }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      min-height: 42px;
+      padding: 0 17px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 14px 35px rgba(8, 24, 39, 0.18);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 0;
+      border-radius: 15px;
+      background: var(--navy);
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      padding: 68px 0 72px;
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      margin-top: 22px;
+      color: var(--navy);
+      font-size: clamp(40px, 6.1vw, 76px);
+      line-height: 1.07;
+      letter-spacing: -1.7px;
+      font-weight: 900;
+    }
+
+    .hero-content h1 em {
+      font-style: normal;
+      color: transparent;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-content p {
+      margin-top: 24px;
+      max-width: 625px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 2;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 23px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.28s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      box-shadow: 0 17px 40px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 22px 50px rgba(37, 99, 235, 0.28); }
+
+    .btn-outline {
+      color: var(--navy);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.66);
+    }
+
+    .btn-outline:hover { background: #fff; transform: translateY(-3px); }
+
+    .hero-stats {
+      margin-top: 46px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 650px;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 35px rgba(8, 24, 39, 0.06);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--blue);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .hero-visual { position: relative; }
+
+    .photo-card {
+      position: relative;
+      padding: 14px;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transform: rotate(-1.4deg);
+      overflow: visible;
+    }
+
+    .photo-card::before {
+      content: "";
+      position: absolute;
+      inset: 34px -16px -18px 42px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(19, 198, 201, 0.18));
+      z-index: -1;
+      transform: rotate(4deg);
+    }
+
+    .photo-card .profile-img-wrap {
+      height: 610px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background: #eaf4ff;
+    }
+
+    .photo-card .profile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card .profile-img-wrap::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      height: 120px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, transparent, rgba(8, 24, 39, 0.72));
+      pointer-events: none;
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -24px;
+      bottom: 46px;
+      width: 246px;
+      padding: 19px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 60px rgba(8, 24, 39, 0.16);
+      backdrop-filter: blur(14px);
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .floating-card strong {
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 900;
+    }
+
+    section { padding: 92px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .section-head h2 {
+      margin-top: 14px;
+      color: var(--navy);
+      font-size: clamp(34px, 4.5vw, 58px);
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.95;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .specialties {
+      padding-top: 36px;
+    }
+
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .specialty-card {
+      padding: 26px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(8, 24, 39, 0.06);
+      transition: 0.25s ease;
+      min-height: 230px;
+    }
+
+    .specialty-card:hover { transform: translateY(-6px); background: #fff; }
+
+    .specialty-card .icon,
+    .service-card .icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(19, 198, 201, 0.15));
+      color: var(--blue);
+      font-size: 24px;
+      margin-bottom: 22px;
+    }
+
+    .specialty-card h3,
+    .service-card h3 { color: var(--navy); font-size: 22px; line-height: 1.35; font-weight: 900; margin-bottom: 12px; }
+    .specialty-card p,
+    .service-card p { color: var(--muted); font-size: 14px; line-height: 1.9; font-weight: 600; }
+
+    .portfolio {
+      background:
+        radial-gradient(circle at top left, rgba(19, 198, 201, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(234, 247, 255, 0.88), rgba(246, 249, 253, 0.46));
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      padding: 11px 17px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      color: var(--muted);
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-weight: 900;
+      font-size: 13px;
+      font-family: inherit;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work-card {
+      overflow: hidden;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 55px rgba(8, 24, 39, 0.08);
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .work-card:hover { transform: translateY(-7px); background: #fff; }
+
+    .work-card[data-video="true"] .media::before {
+      content: "▶";
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 4;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.88);
+      color: var(--navy);
+      box-shadow: 0 12px 30px rgba(8,24,39,0.16);
+      backdrop-filter: blur(12px);
+      font-size: 14px;
+    }
+
+    .media {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(8, 24, 39, 0.86), rgba(37, 99, 235, 0.32)),
+        var(--surface-2);
+    }
+
+    .media::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 3;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(8, 24, 39, 0.10);
+    }
+
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.98) contrast(1.02);
+    }
+
+    .work-body { padding: 22px; }
+    .work-body small { color: var(--blue); font-family: "Space Grotesk", sans-serif; font-size: 12px; font-weight: 800; direction: ltr; display: block; text-align: right; margin-bottom: 9px; }
+    .work-body h3 { color: var(--navy); font-size: 20px; line-height: 1.45; font-weight: 900; margin-bottom: 10px; }
+    .work-body p { color: var(--muted); font-size: 14px; line-height: 1.85; font-weight: 600; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 32px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(8, 24, 39, 0.06);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover { transform: translateY(-6px); background: #fff; }
+
+    .case-studies {
+      background: rgba(255,255,255,0.35);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .case-card {
+      padding: 30px;
+      border-radius: 30px;
+      color: #fff;
+      background:
+        radial-gradient(circle at top left, rgba(19,198,201,0.28), transparent 34%),
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+      box-shadow: 0 24px 70px rgba(8, 24, 39, 0.16);
+      position: relative;
+      overflow: hidden;
+      min-height: 310px;
+    }
+
+    .case-card::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      left: -60px;
+      top: -65px;
+      background: rgba(37, 99, 235, 0.25);
+    }
+
+    .case-card small { position: relative; z-index: 1; display: inline-flex; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.78); font-weight: 900; margin-bottom: 18px; }
+    .case-card h3 { position: relative; z-index: 1; font-size: 24px; line-height: 1.4; font-weight: 900; margin-bottom: 14px; }
+    .case-card p { position: relative; z-index: 1; color: rgba(255,255,255,0.72); line-height: 1.9; font-weight: 600; font-size: 14px; }
+    .case-list { position: relative; z-index: 1; margin-top: 22px; display: grid; gap: 12px; }
+    .case-list div { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.86); font-size: 13px; font-weight: 800; }
+    .case-list span { width: 25px; height: 25px; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,0.12); color: var(--cyan); }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      border-radius: 34px;
+      min-height: 520px;
+      overflow: hidden;
+      background: #eaf4ff;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-content {
+      padding: 48px;
+      border-radius: 34px;
+      color: #fff;
+      background:
+        radial-gradient(circle at top left, rgba(19,198,201,0.18), transparent 30%),
+        linear-gradient(135deg, var(--navy), #0b2035);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 26px 70px rgba(8, 24, 39, 0.16);
+    }
+
+    .about-content h2 { position: relative; z-index: 1; font-size: clamp(32px, 4vw, 50px); line-height: 1.25; margin-bottom: 22px; font-weight: 900; }
+    .about-content p { position: relative; z-index: 1; color: rgba(255,255,255,0.72); line-height: 2; margin-bottom: 20px; font-weight: 600; }
+
+    .about-list { position: relative; z-index: 1; margin-top: 28px; display: grid; gap: 14px; }
+    .about-list div { display: flex; align-items: center; gap: 13px; color: rgba(255,255,255,0.84); font-size: 14px; line-height: 1.7; font-weight: 800; }
+    .about-list span { width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,0.12); color: var(--cyan); }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 13px;
+    }
+
+    .tool {
+      padding: 19px 14px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      text-align: center;
+      font-weight: 900;
+      color: var(--navy);
+      box-shadow: 0 12px 35px rgba(8, 24, 39, 0.05);
+    }
+
+    .tool small { display: block; color: var(--muted); margin-top: 7px; font-weight: 800; font-family: "Space Grotesk", sans-serif; direction: ltr; }
+
+    .process {
+      background: linear-gradient(180deg, rgba(234,247,255,0.46), rgba(255,255,255,0.1));
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .process-card {
+      padding: 26px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 45px rgba(8, 24, 39, 0.055);
+    }
+
+    .process-card strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 31px;
+      font-weight: 800;
+      color: transparent;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 16px;
+    }
+
+    .process-card h3 { color: var(--navy); font-size: 17px; line-height: 1.45; font-weight: 900; margin-bottom: 9px; }
+    .process-card p { color: var(--muted); font-size: 13px; line-height: 1.8; font-weight: 600; }
+
+    .contact { padding-bottom: 42px; }
+
+    .contact-box {
+      padding: 56px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at top right, rgba(19,198,201,0.16), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,0.9), rgba(234,247,255,0.8));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      margin-top: 15px;
+      color: var(--navy);
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .contact-box p { margin-top: 16px; color: var(--muted); line-height: 1.95; font-weight: 600; max-width: 580px; }
+
+    .contact-actions { display: grid; gap: 14px; }
+
+    .contact-link {
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      transition: 0.25s ease;
+      font-weight: 900;
+    }
+
+    .contact-link:hover { color: #fff; background: var(--navy); transform: translateX(-4px); }
+    .contact-link strong { direction: ltr; text-align: left; font-family: "Space Grotesk", "Cairo", sans-serif; font-size: 14px; }
+
+    .video-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: rgba(8, 24, 39, 0.72);
+      backdrop-filter: blur(14px);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+    }
+
+    .video-popup.active { opacity: 1; pointer-events: auto; }
+
+    .popup-content {
+      width: min(760px, 100%);
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #030712;
+      box-shadow: 0 30px 90px rgba(8, 24, 39, 0.35);
+      transform: translateY(18px) scale(0.96);
+      transition: 0.25s ease;
+    }
+
+    .video-popup.active .popup-content { transform: translateY(0) scale(1); }
+
+    .popup-close {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .popup-content video { width: 100%; max-height: 78vh; object-fit: contain; background: #000; }
+
+    .popup-caption { padding: 18px 20px 22px; background: #fff; }
+    .popup-caption small { display: block; color: var(--blue); font-family: "Space Grotesk", sans-serif; font-weight: 800; margin-bottom: 7px; direction: ltr; text-align: right; }
+    .popup-caption h3 { color: var(--navy); line-height: 1.6; font-size: 17px; font-weight: 900; }
+
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; text-align: center; font-weight: 800; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: 0.7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1050px) {
+      .hero-grid, .about-panel, .contact-box { grid-template-columns: 1fr; }
+      .specialty-grid { grid-template-columns: repeat(2, 1fr); }
+      .work-grid, .services-grid, .case-grid { grid-template-columns: repeat(2, 1fr); }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-card .profile-img-wrap { height: 560px; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { height: 70px; }
+      .nav-cta { display: none; }
+      .menu-btn { display: grid; place-items: center; }
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 18px;
+        right: 18px;
+        padding: 22px;
+        border-radius: 24px;
+        background: rgba(255,255,255,0.96);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s ease;
+      }
+
+      .nav-links.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+      .hero { padding-top: 46px; }
+      .hero-visual { order: -1; }
+      .photo-card { transform: none; }
+      .photo-card .profile-img-wrap { height: 500px; }
+      .floating-card { right: 12px; bottom: 20px; }
+      .hero-content h1 { font-size: 42px; }
+      .hero-content p { font-size: 15px; }
+      .hero-stats, .specialty-grid, .work-grid, .services-grid, .case-grid, .process-grid, .tools-grid { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      section { padding: 68px 0; }
+      .about-content, .contact-box { padding: 32px; }
+      .about-image { min-height: 420px; }
+      .media { height: 260px; }
+    }
+
+    @media (max-width: 440px) {
+      .container { width: min(100% - 26px, 1140px); }
+      .logo strong { font-size: 16px; }
+      .logo small { font-size: 9px; }
+      .hero-actions { align-items: stretch; }
+      .btn { width: 100%; }
+      .photo-card .profile-img-wrap { height: 420px; }
+      .floating-card { width: calc(100% - 24px); }
+      .contact-link { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="Karim Adel Portfolio">
+        <span class="logo-mark">KA</span>
+        <span>
+          <strong>Karim Adel</strong>
+          <small>Media Buyer</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#specialties">التخصصات</a>
+        <a href="#portfolio">الحملات</a>
+        <a href="#services">الخدمات</a>
+        <a href="#case-studies">النتائج</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">ابدأ حملة</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow"><span></span> Meta Ads • Google Ads • Funnel Strategy • Performance Tracking</div>
+
+          <h1>
+            إعلانات مدفوعة مبنية على أرقام،<br>
+            اختبارات واضحة،<br>
+            <em>ونمو حقيقي للمبيعات.</em>
+          </h1>
+
+          <p>
+            كريم عادل، Media Buyer و Performance Marketing Specialist. أشتغل على إدارة الحملات الإعلانية للمتاجر الإلكترونية، الخدمات، الكورسات، والمشاريع المحلية من مرحلة تحليل الحساب وبناء الاستراتيجية إلى الاختبار والتحسين وقراءة النتائج.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">شوف الحملات</a>
+            <a href="#contact" class="btn btn-outline">تواصل للتعاون</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>3+</strong>
+              <span>سنوات خبرة في إدارة الحملات المدفوعة</span>
+            </div>
+            <div class="stat">
+              <strong>1.8M+</strong>
+              <span>جنيه ميزانيات إعلانية تم إدارتها وتحسينها</span>
+            </div>
+            <div class="stat">
+              <strong>4.2x</strong>
+              <span>أفضل عائد إعلاني تحقق في حملات E-Commerce</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="photo-card">
+            <div class="profile-img-wrap">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85" alt="كريم عادل ميديا باير" referrerpolicy="no-referrer">
+            </div>
+          </div>
+
+          <div class="floating-card">
+            <small>متاح لإدارة الحسابات والحملات</small>
+            <strong>Meta Ads، Google Ads، Funnel Tracking، وتقارير أداء أسبوعية.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="specialties" id="specialties">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> التخصصات الأساسية</div>
+            <h2>إدارة إعلانات كاملة من الاستراتيجية إلى التحسين اليومي.</h2>
+          </div>
+          <p>
+            تركيزي الأساسي على بناء حملات قابلة للقياس، واختبار الزوايا الإعلانية، وتحسين التكلفة بدون التضحية بجودة العملاء أو حجم المبيعات.
+          </p>
+        </div>
+
+        <div class="specialty-grid">
+          <article class="specialty-card reveal">
+            <div class="icon">📣</div>
+            <h3>Meta Ads</h3>
+            <p>إدارة حملات Facebook وInstagram للمبيعات، الرسائل، الليدز، والريتارجتنج مع تقسيم واضح للجمهور والكرييتف.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <div class="icon">🔎</div>
+            <h3>Google Ads</h3>
+            <p>Search وPerformance Max لحملات النية الشرائية العالية، مع متابعة الكلمات والتحويلات وتكلفة الاكتساب.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <div class="icon">🧪</div>
+            <h3>Creative Testing</h3>
+            <p>اختبار Hooks، عروض، صور، فيديوهات، وزوايا بيع مختلفة للوصول لأفضل إعلان قبل توسيع الميزانية.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <div class="icon">📊</div>
+            <h3>Analytics</h3>
+            <p>قراءة الأداء من Ads Manager وGA4 وSheets، وتحويل الأرقام لقرارات واضحة في الميزانية والمحتوى.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> Campaign Highlights</div>
+            <h2>حملات توضح طريقة التفكير، الاختبار، والتحسين.</h2>
+          </div>
+          <p>
+            كل مشروع هنا مبني على هدف واضح: مبيعات، ليدز، رسائل واتساب، أو تحسين أداء حساب إعلاني كان محتاج إعادة تنظيم.
+          </p>
+        </div>
+
+        <div class="filter-tabs reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-btn" data-filter="leads">Lead Generation</button>
+          <button class="filter-btn" data-filter="local">Local Business</button>
+          <button class="filter-btn" data-filter="analytics">Analytics</button>
+        </div>
+
+        <div class="work-grid reveal">
+          <article class="work-card" data-category="ecommerce" data-video="false">
+            <div class="media" data-label="Meta Ads">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85" alt="لوحة تحليل أداء حملات إعلانية" referrerpolicy="no-referrer">
+            </div>
+            <div class="work-body">
+              <small>E-COMMERCE</small>
+              <h3>رفع ROAS لمتجر Fashion خلال 6 أسابيع</h3>
+              <p>إعادة تقسيم الحملات، اختبار 14 كرييتف، وتحسين الريتارجتنج لرفع جودة المشتريات وتقليل تكلفة الطلب.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="leads" data-video="false">
+            <div class="media" data-label="Lead Gen">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85" alt="تحليل بيانات التسويق على لابتوب" referrerpolicy="no-referrer">
+            </div>
+            <div class="work-body">
+              <small>LEAD GENERATION</small>
+              <h3>حملة ليدز لأكاديمية تعليمية</h3>
+              <p>بناء Funnel يبدأ بإعلان توعوي وينتهي بفورم مؤهل، مع فلترة الجمهور حسب الاهتمام والمرحلة الدراسية.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="local" data-video="false">
+            <div class="media" data-label="WhatsApp">
+              <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=85" alt="فريق تسويق يناقش حملة إعلانية" referrerpolicy="no-referrer">
+            </div>
+            <div class="work-body">
+              <small>LOCAL BUSINESS</small>
+              <h3>حملات رسائل لمطعم محلي</h3>
+              <p>استهداف جغرافي دقيق، عروض مرتبطة بأوقات الطلب، وتحسين تكلفة المحادثة مع متابعة جودة الرسائل.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="analytics" data-video="false">
+            <div class="media" data-label="Reporting">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85" alt="تقارير وأرقام أداء الحملة" referrerpolicy="no-referrer">
+            </div>
+            <div class="work-body">
+              <small>REPORTING</small>
+              <h3>Dashboard أسبوعي لأداء الإعلانات</h3>
+              <p>تجميع أهم المؤشرات في تقرير واضح: Spend، CTR، CPL، CPA، ROAS، وأفضل الكرييتف حسب النتيجة.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="ecommerce" data-video="false">
+            <div class="media" data-label="Retargeting">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85" alt="إدارة متجر إلكتروني وحملات مبيعات" referrerpolicy="no-referrer">
+            </div>
+            <div class="work-body">
+              <small>RETARGETING</small>
+              <h3>ريتارجتنج لمتجر عناية بالبشرة</h3>
+              <p>تقسيم الجمهور بين زوار المنتج، Add To Cart، ومشاهدات الفيديو، مع رسائل مختلفة لكل مرحلة.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="leads" data-video="false">
+            <div class="media" data-label="Search Ads">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85" alt="فريق يعمل على استراتيجية إعلانات رقمية" referrerpolicy="no-referrer">
+            </div>
+            <div class="work-body">
+              <small>GOOGLE ADS</small>
+              <h3>Search Campaign لخدمة B2B</h3>
+              <p>اختيار كلمات عالية النية، كتابة إعلانات مباشرة، وربط التحويلات لقياس تكلفة العميل المحتمل بدقة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> الخدمات</div>
+            <h2>خدمات Performance Marketing واضحة ومبنية على نتائج.</h2>
+          </div>
+          <p>
+            الخدمات مصممة للبراندات التي تحتاج إدارة إعلانات عملية، متابعة يومية، وقرارات مبنية على أرقام حقيقية من الحساب.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">🚀</div>
+            <h3>إدارة الحملات الإعلانية</h3>
+            <p>إعداد وإدارة حملات Meta وGoogle حسب هدف النشاط: مبيعات، رسائل، زيارات، أو ليدز مؤهلة.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🧠</div>
+            <h3>استراتيجية Funnel</h3>
+            <p>تقسيم العميل بين Awareness وConsideration وConversion، وتحديد الرسالة المناسبة لكل مرحلة.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🎯</div>
+            <h3>تحليل الجمهور والاستهداف</h3>
+            <p>تحديد الشرائح، الاهتمامات، المواقع، سلوك الشراء، وبناء Lookalike وRetargeting Audiences.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🧩</div>
+            <h3>Creative Testing</h3>
+            <p>اختبار زوايا بيع مختلفة، Hooks، عروض، صور، فيديوهات، ونصوص إعلانية قبل رفع الميزانية.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🛠️</div>
+            <h3>Tracking & Pixel Setup</h3>
+            <p>مراجعة Pixel، Events، UTM، GA4، والتحويلات لضمان قراءة صحيحة للأداء والنتائج.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">📈</div>
+            <h3>Reports & Optimization</h3>
+            <p>تقارير أسبوعية وشهرية توضح أفضل الحملات، أسباب التحسن، وخطوات الاختبار القادمة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-studies" id="case-studies">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> نتائج مختارة</div>
+            <h2>أرقام توضح أثر التحسين المستمر.</h2>
+          </div>
+          <p>
+            النتائج هنا مبنية على تحسين بنية الحملات، اختبار الكرييتف، ضبط الميزانية، وفهم سلوك الجمهور داخل كل مشروع.
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card reveal">
+            <small>Fashion E-Commerce</small>
+            <h3>ROAS من 1.6x إلى 4.2x خلال 45 يوم</h3>
+            <p>تم إعادة بناء حملات المبيعات، فصل Prospecting عن Retargeting، وتجهيز خطة اختبار أسبوعية للكرييتف.</p>
+            <div class="case-list">
+              <div><span>✓</span> انخفاض تكلفة الشراء بنسبة 31%</div>
+              <div><span>✓</span> اختبار 14 إعلان بين صور وفيديوهات</div>
+              <div><span>✓</span> زيادة الطلبات من الريتارجتنج بنسبة 58%</div>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <small>Education Leads</small>
+            <h3>خفض CPL بنسبة 42% لأكاديمية تعليمية</h3>
+            <p>تم تحسين الاستهداف، إعادة كتابة الرسائل الإعلانية، وربط الفورم بخطوات متابعة أسرع مع فريق المبيعات.</p>
+            <div class="case-list">
+              <div><span>✓</span> 1,350 ليد خلال شهر واحد</div>
+              <div><span>✓</span> تقسيم الحملات حسب المرحلة الدراسية</div>
+              <div><span>✓</span> تحسين جودة الليدز بناءً على ردود فريق السيلز</div>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <small>Local Restaurant</small>
+            <h3>زيادة رسائل واتساب بنسبة 63%</h3>
+            <p>تم بناء عروض مرتبطة بالموقع والوقت، مع اختبار صور أكل قصيرة ونصوص مباشرة لرفع معدل المحادثات.</p>
+            <div class="case-list">
+              <div><span>✓</span> انخفاض تكلفة المحادثة بنسبة 35%</div>
+              <div><span>✓</span> تقسيم جغرافي حول فروع المطعم</div>
+              <div><span>✓</span> تحسين الحملات حسب أوقات الطلب الفعلية</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-panel">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1000&q=85" alt="ميديا باير يعمل على تحليل الحملات" referrerpolicy="no-referrer">
+        </div>
+
+        <div class="about-content reveal">
+          <h2>الإعلان الناجح مش مجرد ميزانية أكبر؛ الإعلان الناجح قرار صح في الوقت الصح.</h2>
+          <p>
+            أتعامل مع الحساب الإعلاني كمنظومة كاملة: عرض المنتج، جودة صفحة الهبوط، سرعة الرد، الرسالة الإعلانية، الجمهور، والكرييتف. كل عنصر من دول يؤثر على تكلفة النتيجة النهائية.
+          </p>
+          <p>
+            أشتغل مع المتاجر الإلكترونية، المشاريع الخدمية، الأكاديميات، المطاعم، والبراندات المحلية التي تحتاج إدارة إعلانات واضحة، متابعة دقيقة، وتطوير مستمر بدل الاعتماد على حملة واحدة فقط.
+          </p>
+
+          <div class="about-list">
+            <div><span>✓</span> إدارة يومية للحسابات الإعلانية ومتابعة مؤشرات الأداء الأساسية</div>
+            <div><span>✓</span> كتابة Copy إعلاني مناسب لكل مرحلة من رحلة العميل</div>
+            <div><span>✓</span> قراءة النتائج وربطها بالمبيعات الفعلية وليس مجرد أرقام داخل المنصة</div>
+            <div><span>✓</span> تقارير تنفيذية مختصرة تساعد صاحب البراند يفهم أين تذهب الميزانية</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> الأدوات</div>
+            <h2>الأدوات المستخدمة في الإدارة، القياس، والتقارير.</h2>
+          </div>
+          <p>
+            أستخدم أدوات تساعد على ربط الإعلان بالنتيجة، ومتابعة الأداء بشكل واضح بعيدًا عن التوقعات أو الانطباعات العامة.
+          </p>
+        </div>
+
+        <div class="tools-grid reveal">
+          <div class="tool">Meta Ads<small>Campaigns</small></div>
+          <div class="tool">Google Ads<small>Search / PMax</small></div>
+          <div class="tool">GA4<small>Analytics</small></div>
+          <div class="tool">GTM<small>Tracking</small></div>
+          <div class="tool">Looker<small>Reports</small></div>
+          <div class="tool">Sheets<small>Data Review</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> طريقة العمل</div>
+            <h2>من تحليل الحساب إلى قرارات التوسع.</h2>
+          </div>
+          <p>
+            كل تعاون يبدأ بفهم الوضع الحالي، ثم بناء خطة اختبار واضحة، وبعدها تحسين مبني على الأرقام وليس التخمين.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <strong>01</strong>
+            <h3>Audit</h3>
+            <p>تحليل الحساب، الحملات، التتبع، الجمهور، الكرييتف، وصفحات الهبوط.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <strong>02</strong>
+            <h3>Strategy</h3>
+            <p>تحديد الهدف، الميزانية، الفانل، أولويات الاختبار، ومؤشرات القياس.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <strong>03</strong>
+            <h3>Launch</h3>
+            <p>إطلاق الحملات ببنية واضحة تسهل قراءة النتائج وتوزيع الميزانية.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <strong>04</strong>
+            <h3>Optimize</h3>
+            <p>تحسين الاستهداف، العروض، الكرييتف، والميزانية حسب أداء كل حملة.</p>
+          </article>
+
+          <article class="process-card reveal">
+            <strong>05</strong>
+            <h3>Scale</h3>
+            <p>زيادة الميزانية على الإعلانات الرابحة مع الحفاظ على تكلفة النتيجة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div>
+            <div class="eyebrow"><span></span> جاهز لتحسين إعلاناتك؟</div>
+            <h2>خلّي كل جنيه في الإعلان له هدف واضح.</h2>
+            <p>
+              لإدارة حملات Meta أو Google، مراجعة حساب إعلاني، أو بناء خطة Performance كاملة، ابعت تفاصيل البراند والهدف الإعلاني الحالي.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="contact-link" href="https://www.linkedin.com/in/karim-ads" target="_blank">
+              <span>LinkedIn</span>
+              <strong>karim-ads</strong>
+            </a>
+
+            <a class="contact-link" href="https://wa.me/201010889944" target="_blank">
+              <span>واتساب</span>
+              <strong>ابدأ حملة</strong>
+            </a>
+
+            <a class="contact-link" href="mailto:karim.ads@gmail.com">
+              <span>الإيميل</span>
+              <strong>karim.ads@gmail.com</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Karim Adel — Media Buyer & Performance Marketing Specialist
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.textContent = navLinks.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => revealOnScroll.observe(el));
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const workCards = document.querySelectorAll(".work-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+
+        workCards.forEach(card => {
+          const category = card.dataset.category;
+          if (filter === "all" || filter === category) {
+            card.style.display = "block";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1)";
+            }, 40);
+          } else {
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.96)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 220);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
