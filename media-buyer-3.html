@@ -3,1707 +3,1788 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>سارة ناصر | Media Buyer Portfolio</title>
-  <meta name="description" content="سارة ناصر - Media Buyer متخصصة في إعلانات Meta وGoogle وTikTok للمتاجر والخدمات التعليمية." />
+  <title>آدم الشافعي | Media Buyer Portfolio</title>
+  <meta name="description" content="بورتفوليو آدم الشافعي، ميديا باير متخصص في حملات الأداء، التجارة الإلكترونية، Lead Generation، وتحسين العائد على الإنفاق الإعلاني." />
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --paper:#f3eee4;
-      --paper-2:#fffaf0;
-      --ink:#151515;
-      --muted:#66635e;
-      --line:#ded3c1;
-      --black:#111111;
-      --white:#ffffff;
-      --green:#19a974;
-      --lime:#d9ff63;
-      --orange:#ff8a3d;
-      --blue:#3767ff;
-      --pink:#ff6b91;
-      --shadow:0 24px 60px rgba(21,21,21,.12);
-      --radius:30px;
-      --max:1220px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      min-height:100vh;
-      font-family:Tahoma,Arial,system-ui,sans-serif;
-      background:
-        radial-gradient(circle at 0 0,rgba(217,255,99,.28),transparent 28rem),
-        radial-gradient(circle at 90% 12%,rgba(255,138,61,.18),transparent 25rem),
-        var(--paper);
-      color:var(--ink);
-      line-height:1.75;
-      overflow-x:hidden;
-    }
-
-    a{color:inherit;text-decoration:none}
-    button,input,textarea,select{font:inherit}
-    img{display:block;max-width:100%}
-    ::selection{background:var(--lime);color:#111}
-
-    .progress{
-      position:fixed;
-      top:0;
-      right:0;
-      height:5px;
-      width:0%;
-      z-index:999;
-      background:linear-gradient(90deg,var(--green),var(--lime),var(--orange));
-    }
-
-    .container{
-      width:min(var(--max),calc(100% - 36px));
-      margin-inline:auto;
-    }
-
-    .layout{
-      display:grid;
-      grid-template-columns:260px 1fr;
-      gap:24px;
-      align-items:start;
-      padding:24px 0 0;
-    }
-
-    .side{
-      position:sticky;
-      top:24px;
-      min-height:calc(100vh - 48px);
-      border:2px solid var(--black);
-      border-radius:34px;
-      background:var(--paper-2);
-      box-shadow:8px 8px 0 var(--black);
-      padding:22px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:24px;
-      z-index:50;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .mark{
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      border:2px solid var(--black);
-      background:var(--lime);
-      display:grid;
-      place-items:center;
-      font-weight:1000;
-      direction:ltr;
-      box-shadow:4px 4px 0 var(--black);
-    }
-
-    .logo strong{display:block;font-size:18px;line-height:1.2}
-    .logo small{display:block;color:var(--muted);font-weight:800;margin-top:2px}
-
-    .nav{
-      display:grid;
-      gap:8px;
-      list-style:none;
-    }
-
-    .nav a{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      padding:12px 13px;
-      border-radius:16px;
-      color:var(--muted);
-      font-weight:1000;
-      transition:.2s ease;
-    }
-
-    .nav a:hover,
-    .nav a.active{
-      color:var(--ink);
-      background:var(--lime);
-      box-shadow:inset 0 0 0 2px var(--black);
-    }
-
-    .side-actions{
-      display:grid;
-      gap:10px;
-    }
-
-    .side-cta{
-      width:100%;
-      border:2px solid var(--black);
-      border-radius:18px;
-      background:var(--lime);
-      color:#111;
-      cursor:pointer;
-      padding:12px 14px;
-      font-weight:1000;
-      box-shadow:4px 4px 0 var(--black);
-      transition:.2s ease;
-      text-align:center;
-    }
-
-    .side-cta:hover{
-      transform:translate(-2px,-2px);
-      box-shadow:6px 6px 0 var(--black);
-    }
-
-    .menu-btn{
-      width:100%;
-      border:2px solid var(--black);
-      border-radius:18px;
-      background:var(--white);
-      color:var(--ink);
-      cursor:pointer;
-      padding:12px 14px;
-      font-weight:1000;
-      box-shadow:4px 4px 0 var(--black);
-      transition:.2s ease;
-    }
-
-    .menu-btn:hover{
-      transform:translate(-2px,-2px);
-      box-shadow:6px 6px 0 var(--black);
-    }
-
-    .menu-btn{display:none}
-
-    .main{
-      min-width:0;
-    }
-
-    .hero{
-      min-height:calc(100vh - 48px);
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:22px;
-      align-items:stretch;
-    }
-
-    .hero-left{
-      border:2px solid var(--black);
-      border-radius:42px;
-      background:var(--paper-2);
-      box-shadow:10px 10px 0 var(--black);
-      padding:clamp(28px,5vw,54px);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-left::after{
-      content:"MEDIA BUYING";
-      position:absolute;
-      left:-20px;
-      bottom:-28px;
-      font-size:clamp(54px,8vw,118px);
-      font-weight:1000;
-      letter-spacing:-6px;
-      color:color-mix(in srgb,var(--ink) 8%,transparent);
-      direction:ltr;
-      white-space:nowrap;
-      pointer-events:none;
-    }
-
-    .pill{
-      width:max-content;
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      padding:9px 13px;
-      border:2px solid var(--black);
-      border-radius:999px;
-      background:var(--lime);
-      font-size:13px;
-      font-weight:1000;
-      box-shadow:4px 4px 0 var(--black);
-    }
-
-    .dot{
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background:var(--green);
-      box-shadow:0 0 0 5px rgba(25,169,116,.16);
-    }
-
-    h1{
-      margin-top:28px;
-      max-width:820px;
-      font-size:clamp(48px,8vw,105px);
-      line-height:.98;
-      letter-spacing:-4px;
-    }
-
-    .highlight{
-      display:inline-block;
-      background:var(--black);
-      color:var(--paper-2);
-      padding:0 .16em .08em;
-      border-radius:20px;
-      transform:rotate(-1deg);
-    }
-
-    .lead{
-      max-width:680px;
-      color:var(--muted);
-      margin-top:26px;
-      font-size:clamp(17px,2vw,22px);
-    }
-
-    .hero-cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:34px;
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-2: #f0f3f8;
+      --text: #111827;
+      --muted: #667085;
+      --soft: #98a2b3;
+      --line: #e5e7eb;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --green: #16a34a;
+      --orange: #f97316;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .page-blur {
+      position: fixed;
+      inset: -180px auto auto -180px;
+      width: 420px;
+      height: 420px;
+      background: rgba(37, 99, 235, 0.12);
+      filter: blur(60px);
+      border-radius: 999px;
+      z-index: -1;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 248, 251, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      rotate: -35deg;
+      top: 8px;
+      right: -18px;
+    }
+
+    .brand span:last-child {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      background: rgba(37, 99, 235, 0.08);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--secondary);
+      border: 1px solid var(--line);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(37, 99, 235, 0.35);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 84px 0 54px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
-    .btn{
-      min-height:52px;
-      padding:13px 18px;
-      border:2px solid var(--black);
-      border-radius:18px;
-      background:var(--white);
-      color:var(--ink);
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:9px;
-      font-weight:1000;
-      box-shadow:5px 5px 0 var(--black);
-      transition:.2s ease;
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 8px rgba(22, 163, 74, 0.13);
     }
 
-    .btn:hover{
-      transform:translate(-2px,-2px);
-      box-shadow:7px 7px 0 var(--black);
+    h1 {
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 1.15;
+      letter-spacing: -1.8px;
+      margin-bottom: 22px;
+      color: var(--secondary);
     }
 
-    .btn.primary{
-      background:var(--orange);
-      color:#111;
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .btn.dark{
-      background:var(--black);
-      color:var(--paper-2);
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 690px;
+      margin-bottom: 30px;
+      font-weight: 600;
     }
 
-    .hero-right{
-      display:grid;
-      gap:22px;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
     }
 
-    .photo-card{
-      min-height:430px;
-      border:2px solid var(--black);
-      border-radius:42px;
-      background:var(--black);
-      box-shadow:10px 10px 0 var(--black);
-      position:relative;
-      overflow:hidden;
+    .hero-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mini-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .mini-chip b {
+      color: var(--secondary);
+    }
+
+    .hero-card-wrap {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid rgba(229, 231, 235, 0.85);
+      box-shadow: var(--shadow);
+      border-radius: 34px;
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-img {
+      height: 520px;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      background: var(--surface-2);
     }
 
-    .photo-card img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      filter:saturate(1.02) contrast(1.04);
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .photo-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.62),transparent 52%);
+    .profile-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.72), transparent 55%);
     }
 
-    .photo-caption{
-      position:absolute;
-      right:20px;
-      left:20px;
-      bottom:20px;
-      z-index:2;
-      color:white;
+    .profile-badge {
+      position: absolute;
+      right: 34px;
+      bottom: 34px;
+      left: 34px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 22px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .photo-caption h2{
-      font-size:28px;
-      line-height:1.2;
+    .profile-badge h3 {
+      font-size: 18px;
+      color: var(--secondary);
     }
 
-    .photo-caption p{
-      color:rgba(255,255,255,.75);
-      margin-top:5px;
+    .profile-badge p {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
     }
 
-    .mini-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
+    .status {
+      background: rgba(22, 163, 74, 0.1);
+      color: var(--green);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
     }
 
-    .mini{
-      border:2px solid var(--black);
-      border-radius:28px;
-      padding:20px;
-      min-height:150px;
-      box-shadow:7px 7px 0 var(--black);
+    .floating-metric {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+      border-radius: 22px;
+      padding: 16px 18px;
+      z-index: 4;
     }
 
-    .mini.green{background:var(--green);color:white}
-    .mini.lime{background:var(--lime);color:#111}
+    .floating-metric strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.2;
+      color: var(--secondary);
+    }
+
+    .floating-metric span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
 
-    .mini strong{
-      display:block;
-      font-size:38px;
-      line-height:1;
-      direction:ltr;
-      text-align:right;
-      letter-spacing:-1px;
+    .fm-1 {
+      top: 40px;
+      right: -28px;
     }
 
-    .mini span{
-      display:block;
-      margin-top:9px;
-      font-weight:1000;
+    .fm-2 {
+      left: -24px;
+      bottom: 120px;
     }
 
-    section{
-      padding:72px 0 0;
+    .section {
+      padding: 72px 0;
     }
 
-    .section-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:22px;
-      margin-bottom:24px;
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
     }
 
-    .kicker{
-      font-weight:1000;
-      color:var(--green);
-      margin-bottom:8px;
-      direction:ltr;
-      text-align:right;
+    .section-kicker {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
     }
 
-    h2{
-      font-size:clamp(34px,5vw,66px);
-      line-height:1.05;
-      letter-spacing:-2px;
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      color: var(--secondary);
+      letter-spacing: -0.7px;
     }
 
-    .desc{
-      max-width:520px;
-      color:var(--muted);
-      font-size:16px;
+    .section-desc {
+      color: var(--muted);
+      max-width: 590px;
+      font-weight: 600;
+      margin-top: 10px;
     }
 
-    .bento{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:22px;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
     }
 
-    .card{
-      border:2px solid var(--black);
-      border-radius:34px;
-      background:var(--paper-2);
-      box-shadow:8px 8px 0 var(--black);
-      overflow:hidden;
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
     }
 
-    .about{
-      padding:30px;
-      display:grid;
-      grid-template-columns:1fr .86fr;
-      gap:24px;
-      align-items:center;
+    .stat-card .num {
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--secondary);
+      letter-spacing: -1px;
+      margin-bottom: 10px;
     }
 
-    .about p{
-      color:var(--muted);
-      margin-top:12px;
-      font-size:17px;
+    .stat-card p {
+      color: var(--muted);
+      font-weight: 800;
     }
 
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:9px;
-      margin-top:20px;
+    .logos {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
     }
 
-    .chip{
-      padding:8px 11px;
-      border:2px solid var(--black);
-      border-radius:999px;
-      background:var(--white);
-      font-size:13px;
-      font-weight:1000;
+    .logo-pill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      font-weight: 900;
+      color: #344054;
+      letter-spacing: -0.2px;
     }
 
-    .about-img{
-      border:2px solid var(--black);
-      border-radius:28px;
-      overflow:hidden;
-      min-height:310px;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .about-img img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+      transition: 0.25s;
     }
 
-    .audit-card{
-      padding:28px;
-      background:var(--black);
-      color:var(--paper-2);
-      min-height:100%;
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(37, 99, 235, 0.22);
     }
 
-    .audit-card .kicker{color:var(--lime)}
-    .audit-list{
-      display:grid;
-      gap:12px;
-      margin-top:22px;
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: rgba(37, 99, 235, 0.1);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      margin-bottom: 18px;
     }
 
-    .audit-item{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      padding:13px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:18px;
-      background:rgba(255,255,255,.065);
-      color:rgba(255,255,255,.78);
-      font-weight:900;
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+      color: var(--secondary);
     }
 
-    .ticker{
-      margin:22px 0 0;
-      border:2px solid var(--black);
-      border-radius:999px;
-      background:var(--lime);
-      overflow:hidden;
-      box-shadow:7px 7px 0 var(--black);
-      direction:ltr;
+    .service-card p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
-    .ticker-track{
-      display:flex;
-      width:max-content;
-      animation:marquee 22s linear infinite;
+    .service-list {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      color: #344054;
+      font-weight: 800;
+      font-size: 14px;
     }
 
-    .ticker span{
-      display:inline-block;
-      padding:13px 24px;
-      font-weight:1000;
-      color:#111;
-      white-space:nowrap;
+    .service-list li {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
 
-    @keyframes marquee{
-      from{transform:translateX(0)}
-      to{transform:translateX(50%)}
+    .service-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
     }
 
-    .services{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+    .cases-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
     }
 
-    .service{
-      padding:26px;
-      min-height:260px;
-      position:relative;
-      transition:.2s ease;
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .service:hover{
-      transform:translate(-3px,-3px);
-      box-shadow:11px 11px 0 var(--black);
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
     }
 
-    .service:nth-child(1){background:var(--paper-2)}
-    .service:nth-child(2){background:var(--lime);color:#111}
-    .service:nth-child(3){background:var(--orange);color:#111}
-    .service:nth-child(4){background:var(--green);color:white}
-    .service:nth-child(5){background:var(--paper-2)}
-    .service:nth-child(6){background:var(--black);color:var(--paper-2)}
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--secondary);
+      color: #fff;
+      border-color: var(--secondary);
+    }
 
-    .service-num{
-      width:44px;
-      height:44px;
-      display:grid;
-      place-items:center;
-      border:2px solid var(--black);
-      border-radius:50%;
-      background:var(--white);
-      color:#111;
-      box-shadow:3px 3px 0 var(--black);
-      direction:ltr;
-      font-weight:1000;
-      margin-bottom:20px;
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .service h3{
-      font-size:24px;
-      line-height:1.2;
-      margin-bottom:10px;
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+      transition: 0.25s;
     }
 
-    .service p{
-      color:currentColor;
-      opacity:.76;
-      font-weight:700;
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
     }
 
-    .filters{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:20px;
+    .case-img {
+      height: 230px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-2);
     }
 
-    .filter{
-      border:2px solid var(--black);
-      border-radius:999px;
-      padding:10px 15px;
-      background:var(--white);
-      color:var(--ink);
-      cursor:pointer;
-      font-weight:1000;
-      box-shadow:4px 4px 0 var(--black);
-      transition:.2s ease;
+    .case-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s;
     }
 
-    .filter:hover,
-    .filter.active{
-      background:var(--blue);
-      color:white;
-      transform:translate(-2px,-2px);
-      box-shadow:6px 6px 0 var(--black);
+    .case-card:hover .case-img img {
+      transform: scale(1.06);
     }
 
-    .cases{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:22px;
+    .case-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      color: var(--secondary);
+      border: 1px solid rgba(255,255,255,0.8);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
     }
 
-    .case{
-      display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      min-height:320px;
-      transition:.2s ease;
+    .case-body {
+      padding: 22px;
     }
 
-    .case:hover{
-      transform:translate(-3px,-3px);
-      box-shadow:11px 11px 0 var(--black);
+    .case-body h3 {
+      font-size: 21px;
+      color: var(--secondary);
+      margin-bottom: 8px;
     }
 
-    .case-img{
-      min-height:320px;
-      border-left:2px solid var(--black);
-      background:#ddd;
+    .case-body p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
-    .case-img img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
 
-    .case-body{
-      padding:26px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:20px;
+    .case-metric {
+      background: var(--surface-2);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
     }
 
-    .case-category{
-      width:max-content;
-      padding:7px 10px;
-      border:2px solid var(--black);
-      border-radius:999px;
-      background:var(--lime);
-      color:#111;
-      font-size:12px;
-      font-weight:1000;
-      margin-bottom:12px;
+    .case-metric strong {
+      display: block;
+      color: var(--secondary);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.2;
     }
 
-    .case h3{
-      font-size:28px;
-      line-height:1.2;
-      margin-bottom:10px;
+    .case-metric span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
     }
 
-    .case p{
-      color:var(--muted);
-      font-weight:700;
+    .process {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 20px;
+      align-items: stretch;
     }
 
-    .case-stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
+    .process-visual {
+      background: var(--secondary);
+      border-radius: 34px;
+      overflow: hidden;
+      min-height: 520px;
+      position: relative;
+      box-shadow: var(--shadow);
     }
 
-    .case-stat{
-      border:2px solid var(--black);
-      border-radius:16px;
-      padding:10px 7px;
-      text-align:center;
-      background:var(--white);
+    .process-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.74;
     }
 
-    .case-stat strong{
-      display:block;
-      direction:ltr;
-      font-size:19px;
-      line-height:1.1;
+    .process-visual-content {
+      position: absolute;
+      inset: auto 24px 24px 24px;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.68);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 24px;
+      padding: 22px;
     }
 
-    .case-stat span{
-      display:block;
-      margin-top:4px;
-      color:var(--muted);
-      font-size:11px;
-      font-weight:1000;
+    .process-visual-content h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
     }
 
-    .stack{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
+    .process-visual-content p {
+      color: rgba(255,255,255,0.78);
+      font-weight: 700;
     }
 
-    .tool{
-      min-height:150px;
-      padding:20px;
-      display:grid;
-      align-content:space-between;
-      transition:.2s ease;
+    .steps {
+      display: grid;
+      gap: 14px;
     }
 
-    .tool:hover{
-      transform:translate(-3px,-3px);
-      box-shadow:11px 11px 0 var(--black);
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      align-items: start;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
     }
 
-    .tool-icon{
-      width:48px;
-      height:48px;
-      display:grid;
-      place-items:center;
-      border:2px solid var(--black);
-      border-radius:16px;
-      background:var(--lime);
-      color:#111;
-      box-shadow:3px 3px 0 var(--black);
-      font-weight:1000;
+    .step-num {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 20px;
     }
 
-    .tool h3{
-      font-size:19px;
-      margin-top:18px;
+    .step h3 {
+      color: var(--secondary);
+      margin-bottom: 4px;
     }
 
-    .tool p{
-      color:var(--muted);
-      font-size:13px;
-      font-weight:800;
-      margin-top:4px;
+    .step p {
+      color: var(--muted);
+      font-weight: 600;
     }
 
-    .method{
-      display:grid;
-      gap:14px;
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
-    .method-row{
-      display:grid;
-      grid-template-columns:130px 1fr 220px;
-      gap:14px;
-      align-items:stretch;
-      border:2px solid var(--black);
-      border-radius:28px;
-      background:var(--paper-2);
-      box-shadow:7px 7px 0 var(--black);
-      padding:14px;
+    .tool {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: #344054;
     }
 
-    .method-num{
-      border:2px solid var(--black);
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      background:var(--black);
-      color:var(--paper-2);
-      font-size:26px;
-      font-weight:1000;
-      direction:ltr;
+    .tool-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 999px;
+      background: var(--primary);
+      flex: none;
     }
 
-    .method-text{
-      padding:10px 0;
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .method-text h3{
-      font-size:24px;
-      line-height:1.25;
+    .testimonial {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
     }
 
-    .method-text p{
-      color:var(--muted);
-      margin-top:4px;
-      font-weight:700;
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
     }
 
-    .method-tag{
-      border:2px solid var(--black);
-      border-radius:20px;
-      display:grid;
-      place-items:center;
-      background:var(--lime);
-      color:#111;
-      padding:10px;
-      text-align:center;
-      font-weight:1000;
+    .testimonial p {
+      color: #344054;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
-    .pricing{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .price{
-      padding:28px;
-      transition:.2s ease;
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface-2);
+      flex: none;
     }
 
-    .price.featured{
-      background:var(--black);
-      color:var(--paper-2);
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .price:hover{
-      transform:translate(-3px,-3px);
-      box-shadow:11px 11px 0 var(--black);
+    .person h4 {
+      color: var(--secondary);
+      line-height: 1.2;
     }
 
-    .price h3{
-      font-size:26px;
+    .person span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .price .amount{
-      display:block;
-      margin:18px 0;
-      font-size:38px;
-      font-weight:1000;
-      letter-spacing:-1px;
+    .contact {
+      background: var(--secondary);
+      border-radius: 38px;
+      padding: 46px;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
     }
 
-    .price ul{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      color:currentColor;
-      opacity:.78;
-      font-weight:800;
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.35);
+      filter: blur(70px);
+      left: -100px;
+      bottom: -130px;
     }
 
-    .contact{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:22px;
-      padding-bottom:72px;
+    .contact-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
     }
 
-    .contact-card{
-      padding:32px;
-      background:var(--black);
-      color:var(--paper-2);
+    .contact h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.22;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
     }
 
-    .contact-card .kicker{color:var(--lime)}
-    .contact-card p{
-      color:rgba(255,255,255,.74);
-      margin:12px 0 22px;
-      font-size:17px;
+    .contact p {
+      color: rgba(255,255,255,0.72);
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
-    .contact-list{
-      display:grid;
-      gap:12px;
+    .contact-info {
+      display: grid;
+      gap: 12px;
     }
 
-    .contact-link{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:18px;
-      padding:14px;
-      color:rgba(255,255,255,.78);
-      background:rgba(255,255,255,.065);
-      font-weight:1000;
+    .contact-line {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 14px 16px;
+      border-radius: 18px;
+      color: rgba(255,255,255,0.88);
+      font-weight: 800;
     }
 
-    .form{
-      padding:32px;
-      display:grid;
-      gap:14px;
+    .contact-form {
+      background: #fff;
+      color: var(--text);
+      border-radius: 28px;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
     }
 
-    .field{
-      display:grid;
-      gap:8px;
+    .field {
+      display: grid;
+      gap: 6px;
     }
 
-    .field label{
-      color:var(--muted);
-      font-size:13px;
-      font-weight:1000;
+    .field label {
+      font-size: 13px;
+      color: #344054;
+      font-weight: 900;
     }
 
     .field input,
-    .field textarea,
-    .field select{
-      width:100%;
-      border:2px solid var(--black);
-      border-radius:18px;
-      background:var(--white);
-      color:var(--ink);
-      padding:14px 16px;
-      outline:0;
-      box-shadow:3px 3px 0 var(--black);
-      transition:.2s ease;
+    .field textarea {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 15px;
+      outline: 0;
+      color: var(--text);
+      background: #fff;
+      transition: 0.25s;
+      font-weight: 700;
     }
 
-    .field select option{color:#111}
-    .field textarea{min-height:126px;resize:vertical}
+    .field textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
 
     .field input:focus,
-    .field textarea:focus,
-    .field select:focus{
-      transform:translate(-1px,-1px);
-      box-shadow:5px 5px 0 var(--black);
-      background:var(--paper-2);
+    .field textarea:focus {
+      border-color: rgba(37, 99, 235, 0.6);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
     }
 
-    .result{
-      color:var(--muted);
-      font-size:14px;
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
     }
 
-    .top{
-      position:fixed;
-      left:22px;
-      bottom:22px;
-      width:50px;
-      height:50px;
-      border:2px solid var(--black);
-      border-radius:18px;
-      background:var(--lime);
-      color:#111;
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      box-shadow:5px 5px 0 var(--black);
-      font-weight:1000;
-      opacity:0;
-      transform:translateY(14px);
-      pointer-events:none;
-      transition:.2s ease;
-      z-index:80;
+    .footer {
+      padding: 26px 0 38px;
+      color: var(--muted);
+      font-weight: 800;
     }
 
-    .top.show{
-      opacity:1;
-      transform:translateY(0);
-      pointer-events:auto;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
     }
 
-    .footer{
-      border-top:2px solid var(--black);
-      padding:26px 0;
-      text-align:center;
-      color:var(--muted);
-      font-weight:900;
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .reveal{
-      opacity:0;
-      transform:translateY(26px);
-      transition:.7s ease;
+    .socials a {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: #344054;
+      font-size: 13px;
+      font-weight: 900;
+      transition: 0.25s;
     }
 
-    .reveal.show{
-      opacity:1;
-      transform:translateY(0);
+    .socials a:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
     }
 
-    @media(max-width:1120px){
-      .layout{
-        grid-template-columns:1fr;
-      }
-
-      .side{
-        position:sticky;
-        top:12px;
-        min-height:auto;
-        flex-direction:row;
-        align-items:center;
-        padding:14px;
-        border-radius:24px;
-      }
-
-      .nav{
-        position:fixed;
-        top:95px;
-        right:18px;
-        left:18px;
-        display:none;
-        padding:14px;
-        border:2px solid var(--black);
-        border-radius:24px;
-        background:var(--paper-2);
-        box-shadow:8px 8px 0 var(--black);
-      }
-
-      .nav.open{display:grid}
-      .menu-btn{display:block}
-      .side-actions{
-        display:flex;
-        align-items:center;
-      }
-
-      .side-cta{
-        width:auto;
-        white-space:nowrap;
-      }
-
-      .hero{
-        min-height:auto;
-        grid-template-columns:1fr;
-      }
-
-      .photo-card{
-        min-height:420px;
-      }
-
-      .bento,
-      .contact{
-        grid-template-columns:1fr;
-      }
-
-      .about{
-        grid-template-columns:1fr;
-      }
-
-      .services,
-      .pricing{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .stack{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .cases{
-        grid-template-columns:1fr;
-      }
+    .whatsapp-float {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.35);
+      transition: 0.25s;
     }
 
-    @media(max-width:740px){
-      .container{width:min(var(--max),calc(100% - 24px))}
-      .layout{padding-top:12px}
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
 
-      .side{
-        box-shadow:5px 5px 0 var(--black);
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: 16px;
+        left: 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        border-radius: 24px;
+        padding: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        display: none;
       }
 
-      .logo small{display:none}
-      .brand-text{display:none}
-
-      .hero-left,
-      .photo-card,
-      .card{
-        border-radius:26px;
-        box-shadow:6px 6px 0 var(--black);
+      .nav-links.show {
+        display: flex;
       }
 
-      h1{
-        letter-spacing:-2px;
+      .nav-links a {
+        display: block;
+        text-align: center;
       }
 
-      .mini-grid,
-      .services,
-      .pricing,
-      .stack{
-        grid-template-columns:1fr;
+      .menu-btn {
+        display: grid;
+        place-items: center;
       }
 
-      .section-head{
-        display:grid;
+      .hero-grid,
+      .process,
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
 
-      .case{
-        grid-template-columns:1fr;
+      .stats-grid,
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .case-img{
-        border-left:0;
-        border-bottom:2px solid var(--black);
+      .services-grid,
+      .cases-grid,
+      .testimonials {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .case-stats{
-        grid-template-columns:1fr;
+      .profile-img {
+        height: 460px;
       }
 
-      .method-row{
-        grid-template-columns:1fr;
+      .fm-1 {
+        right: 12px;
       }
 
-      .method-num,
-      .method-tag{
-        min-height:72px;
-      }
-
-      section{
-        padding-top:58px;
+      .fm-2 {
+        left: 12px;
       }
     }
 
-    @media(prefers-reduced-motion:reduce){
-      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    @media (max-width: 680px) {
+      .nav-inner {
+        height: 72px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-head,
+      .cases-top,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats-grid,
+      .services-grid,
+      .cases-grid,
+      .tools-grid,
+      .testimonials,
+      .logos {
+        grid-template-columns: 1fr;
+      }
+
+      .case-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-img {
+        height: 420px;
+      }
+
+      .profile-badge {
+        right: 24px;
+        left: 24px;
+        bottom: 24px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .floating-metric {
+        display: none;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 28px;
+        border-radius: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="progress" id="progress"></div>
+  <div class="page-blur"></div>
 
-  <div class="container layout">
-    <aside class="side">
-      <a href="#home" class="logo" aria-label="العودة للبداية">
-        <span class="mark">SN</span>
-        <span class="brand-text">
-          <strong>سارة ناصر</strong>
-          <small>Media Buyer</small>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="آدم الشافعي">
+        <span class="brand-mark">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none">
+            <path d="M4 18.2L9.5 7.6C10.6 5.5 13.4 5.5 14.5 7.6L20 18.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M7.3 14.6H16.7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          آدم الشافعي
+          <small>Performance Media Buyer</small>
         </span>
       </a>
 
-      <nav>
-        <ul class="nav" id="nav">
-          <li><a href="#about">نبذة <span>01</span></a></li>
-          <li><a href="#services">الخدمات <span>02</span></a></li>
-          <li><a href="#cases">النتائج <span>03</span></a></li>
-          <li><a href="#method">الطريقة <span>04</span></a></li>
-          <li><a href="#contact">تواصل <span>05</span></a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">الرئيسية</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#cases">النتائج</a></li>
+        <li><a href="#process">طريقة العمل</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
 
-      <div class="side-actions">
-        <a class="side-cta" href="#contact">احجز Audit</a>
-        <button class="menu-btn" id="menuBtn">القائمة</button>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact">ابدأ حملة</a>
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="#111827" stroke-width="2.3" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
-    </aside>
+    </div>
+  </header>
 
-    <main class="main" id="home">
-      <section class="hero">
-        <div class="hero-left reveal">
-          <span class="pill"><span class="dot"></span> Performance Ads Partner</span>
-
-          <h1>
-            أشتري إعلانات
-            <br>
-            <span class="highlight">تجلب عملاء</span>
-            لا أرقام شكلية.
-          </h1>
-
-          <p class="lead">
-            أنا سارة ناصر، Media Buyer متخصصة في إدارة حملات Meta وGoogle وTikTok للمتاجر الإلكترونية والخدمات التعليمية. أركز على تكلفة العميل، جودة التتبع، وتحويل الميزانية إلى مبيعات قابلة للقياس.
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow"><span class="pulse"></span> متاح للتعاون مع 3 علامات جديدة هذا الشهر</div>
+          <h1>أحوّل الميزانية الإعلانية إلى <span class="gradient-text">مبيعات قابلة للقياس</span></h1>
+          <p class="hero-text">
+            ميديا باير متخصص في بناء وإدارة حملات الأداء على Meta وGoogle وTikTok، مع تركيز واضح على تقليل تكلفة الاكتساب، تحسين جودة العملاء، ورفع العائد على الإنفاق الإعلاني للمتاجر والخدمات.
           </p>
 
-          <div class="hero-cta">
-            <a class="btn primary" href="#cases">استعرض النتائج</a>
-            <a class="btn dark" href="#contact">احجز Audit</a>
-            <a class="btn" href="#services">الخدمات</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cases">شاهد نتائج الحملات</a>
+            <a class="btn btn-ghost" href="#contact">احجز مكالمة تحليل</a>
+          </div>
+
+          <div class="hero-mini">
+            <div class="mini-chip"><b>Meta Ads</b> Scaling</div>
+            <div class="mini-chip"><b>Google Ads</b> Search & PMax</div>
+            <div class="mini-chip"><b>TikTok Ads</b> Creative Testing</div>
           </div>
         </div>
 
-        <div class="hero-right">
-          <article class="photo-card reveal">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop" alt="Media Buyer reviewing marketing reports">
-            <div class="photo-caption">
-              <h2>من تحليل البيانات إلى قرار الميزانية.</h2>
-              <p>كل حملة لها سؤال واضح: ماذا نختبر؟ ومتى نوسّع؟ ومتى نوقف الهدر؟</p>
-            </div>
-          </article>
+        <div class="hero-card-wrap reveal">
+          <div class="floating-metric fm-1">
+            <strong>4.8x</strong>
+            <span>متوسط ROAS</span>
+          </div>
 
-          <div class="mini-grid reveal">
-            <div class="mini green">
-              <strong data-count="6.1" data-suffix="x">0</strong>
-              <span>أفضل ROAS محقق</span>
-            </div>
-            <div class="mini lime">
-              <strong data-count="41" data-suffix="%">0</strong>
-              <span>خفض في CPA</span>
+          <div class="hero-card">
+            <div class="profile-img">
+              <img 
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85" 
+                alt="آدم الشافعي أثناء مراجعة أداء الحملات الإعلانية"
+                loading="eager"
+              />
+              <div class="profile-badge">
+                <div>
+                  <h3>آدم الشافعي</h3>
+                  <p>Media Buyer & Growth Strategist · القاهرة</p>
+                </div>
+                <span class="status">حملات نشطة الآن</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <div class="ticker reveal" aria-label="أهم مؤشرات الأداء">
-        <div class="ticker-track">
-          <span>ROAS Optimization</span>
-          <span>Creative Testing</span>
-          <span>Meta Ads</span>
-          <span>Google Search</span>
-          <span>Conversion Tracking</span>
-          <span>Landing Page Audit</span>
-          <span>Retargeting Funnels</span>
-          <span>ROAS Optimization</span>
-          <span>Creative Testing</span>
-          <span>Meta Ads</span>
-          <span>Google Search</span>
-          <span>Conversion Tracking</span>
-          <span>Landing Page Audit</span>
-          <span>Retargeting Funnels</span>
+          <div class="floating-metric fm-2">
+            <strong>$320K+</strong>
+            <span>إجمالي إنفاق مُدار</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <section id="about">
+    <section class="section" aria-label="الأرقام">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="num" data-count="320" data-suffix="K+">$0</div>
+            <p>إنفاق إعلاني مُدار بالدولار</p>
+          </div>
+          <div class="stat-card">
+            <div class="num" data-count="74" data-suffix="+">0</div>
+            <p>حملة أداء تم إطلاقها وتحسينها</p>
+          </div>
+          <div class="stat-card">
+            <div class="num" data-count="38" data-suffix="%">0</div>
+            <p>متوسط انخفاض تكلفة الاكتساب</p>
+          </div>
+          <div class="stat-card">
+            <div class="num" data-count="6" data-suffix="+">0</div>
+            <p>قطاعات عمل مختلفة</p>
+          </div>
+        </div>
+
+        <div class="logos reveal">
+          <div class="logo-pill">NourFit</div>
+          <div class="logo-pill">CasaMart</div>
+          <div class="logo-pill">SkillHub</div>
+          <div class="logo-pill">DermaLine</div>
+          <div class="logo-pill">Bloom Kids</div>
+          <div class="logo-pill">Urban Roast</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">ABOUT</div>
-            <h2>الإعلان عندي يبدأ من البيزنس، مش من مدير الإعلانات.</h2>
+            <div class="section-kicker">الخدمات</div>
+            <h2 class="section-title">إدارة إعلانات مبنية على أرقام واضحة</h2>
           </div>
-          <p class="desc">
-            قبل ما أزود الميزانية، لازم أفهم المنتج، العرض، رحلة العميل، الصفحة، وطريقة قياس النتيجة. بعدها فقط نبدأ الاختبار والتوسع.
+          <p class="section-desc">
+            من تحليل العرض والعميل المستهدف إلى بناء الفانل، اختبار الكرياتيف، قراءة البيانات، وتوسيع الحملات الرابحة بدون حرق الميزانية.
           </p>
         </div>
 
-        <div class="bento">
-          <article class="card about reveal">
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V5M4 19H20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M8 15L11 11L14 13L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Performance Campaigns</h3>
+            <p>إطلاق وإدارة حملات مبيعات وليدز على Meta وGoogle مع تتبع يومي لمؤشرات الأداء.</p>
+            <ul class="service-list">
+              <li>Campaign Structure</li>
+              <li>Budget Allocation</li>
+              <li>Daily Optimization</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3V21M3 12H21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".35"/>
+              </svg>
+            </div>
+            <h3>Creative Testing</h3>
+            <p>اختبار زوايا إعلانية مختلفة للوصول إلى الرسالة التي تحقق أعلى Click-through وأفضل Conversion Rate.</p>
+            <ul class="service-list">
+              <li>Hook Testing</li>
+              <li>UGC Briefs</li>
+              <li>Ad Copy Angles</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M7 20H17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M9 20L15 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M5 9H19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Tracking & Reporting</h3>
+            <p>إعداد Pixel وCAPI وGA4 وLooker Studio لتكون قرارات التوسع مبنية على بيانات دقيقة.</p>
+            <ul class="service-list">
+              <li>Meta Pixel + CAPI</li>
+              <li>GA4 Events</li>
+              <li>Weekly Reports</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="cases-top reveal">
+          <div>
+            <div class="section-kicker">نتائج مختارة</div>
+            <h2 class="section-title">حملات حققت نمو فعلي</h2>
+          </div>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn" data-filter="leads">Lead Gen</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+          </div>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card reveal" data-category="ecommerce">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85" alt="متجر أزياء" loading="lazy">
+              <span class="case-tag">E-commerce Fashion</span>
+            </div>
+            <div class="case-body">
+              <h3>CasaMart Apparel</h3>
+              <p>إعادة بناء حملات Meta للمتجر، تقسيم الجمهور حسب نية الشراء، واختبار 18 كرياتيف خلال 45 يومًا.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>5.6x</strong><span>ROAS</span></div>
+                <div class="case-metric"><strong>-42%</strong><span>CPA</span></div>
+                <div class="case-metric"><strong>$61K</strong><span>Revenue</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="leads">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=85" alt="عيادة جلدية" loading="lazy">
+              <span class="case-tag">Clinic Leads</span>
+            </div>
+            <div class="case-body">
+              <h3>DermaLine Clinic</h3>
+              <p>حملة Lead Generation لعيادة جلدية مع تحسين جودة الاستفسارات وربط الحملات بنظام متابعة المبيعات.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>1,240</strong><span>Leads</span></div>
+                <div class="case-metric"><strong>-36%</strong><span>CPL</span></div>
+                <div class="case-metric"><strong>31%</strong><span>Booking Rate</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="education">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85" alt="منصة تعليمية" loading="lazy">
+              <span class="case-tag">Online Courses</span>
+            </div>
+            <div class="case-body">
+              <h3>SkillHub Academy</h3>
+              <p>إطلاق فانل بيع لكورس تدريبي، بداية من Awareness حتى Retargeting مع تحسين صفحة التسجيل.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>3.9x</strong><span>ROAS</span></div>
+                <div class="case-metric"><strong>612</strong><span>Sales</span></div>
+                <div class="case-metric"><strong>-28%</strong><span>Cost</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="ecommerce">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85" alt="منتجات رياضية" loading="lazy">
+              <span class="case-tag">Fitness Store</span>
+            </div>
+            <div class="case-body">
+              <h3>NourFit Store</h3>
+              <p>توسيع حملات متجر منتجات رياضية من ميزانية صغيرة إلى Scaling تدريجي مع الحفاظ على Profit Margin.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>4.7x</strong><span>ROAS</span></div>
+                <div class="case-metric"><strong>+189%</strong><span>Orders</span></div>
+                <div class="case-metric"><strong>22%</strong><span>Margin</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="leads">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="خدمات B2B" loading="lazy">
+              <span class="case-tag">B2B Leads</span>
+            </div>
+            <div class="case-body">
+              <h3>GrowthOps B2B</h3>
+              <p>حملة بحث على Google لخدمة B2B عالية التذكرة مع كلمات مفتاحية دقيقة وصفحات هبوط منفصلة.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>214</strong><span>MQLs</span></div>
+                <div class="case-metric"><strong>19%</strong><span>Close Rate</span></div>
+                <div class="case-metric"><strong>-33%</strong><span>CAC</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="ecommerce">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85" alt="براند قهوة" loading="lazy">
+              <span class="case-tag">Coffee Brand</span>
+            </div>
+            <div class="case-body">
+              <h3>Urban Roast</h3>
+              <p>اختبار عروض Bundles وSubscriptions لبراند قهوة محلي مع Retargeting مبني على سلوك الزائر.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>4.2x</strong><span>ROAS</span></div>
+                <div class="case-metric"><strong>+71%</strong><span>AOV</span></div>
+                <div class="case-metric"><strong>8.4%</strong><span>CVR</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">طريقة العمل</div>
+            <h2 class="section-title">من التشخيص إلى التوسع</h2>
+          </div>
+          <p class="section-desc">
+            كل حملة تبدأ بفهم المنتج، الأرقام، العرض، رحلة العميل، ثم يتم بناء خطة اختبار واضحة قبل رفع الميزانية.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-visual reveal">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85" alt="اجتماع تحليل أداء الحملات" loading="lazy">
+            <div class="process-visual-content">
+              <h3>قرارات مبنية على البيانات</h3>
+              <p>تقرير أسبوعي مختصر يوضح أين ذهبت الميزانية، ما الذي نجح، وما الخطوة التالية للنمو.</p>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-num">01</div>
+              <div>
+                <h3>Audit شامل للحساب</h3>
+                <p>تحليل الحملات الحالية، التتبع، الصفحات، الكرياتيف، الجمهور، والميزانية للوصول إلى نقاط التسريب.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">02</div>
+              <div>
+                <h3>بناء خطة اختبار</h3>
+                <p>تحديد الزوايا الإعلانية، العروض، الجماهير، والكرياتيفات التي تستحق الاختبار خلال أول 14 يوم.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">03</div>
+              <div>
+                <h3>إطلاق وتحسين يومي</h3>
+                <p>متابعة CTR وCPC وCPA وROAS مع قرارات واضحة لإيقاف الخاسر وتغذية الحملات الرابحة.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">04</div>
+              <div>
+                <h3>Scaling محسوب</h3>
+                <p>رفع الميزانية تدريجيًا حسب ثبات النتائج، مع فتح جماهير جديدة وتحسين Retargeting وLanding Pages.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">الأدوات</div>
+            <h2 class="section-title">منصات أعمل عليها يوميًا</h2>
+          </div>
+        </div>
+
+        <div class="tools-grid reveal">
+          <div class="tool"><span class="tool-dot"></span>Meta Ads Manager</div>
+          <div class="tool"><span class="tool-dot"></span>Google Ads</div>
+          <div class="tool"><span class="tool-dot"></span>TikTok Ads</div>
+          <div class="tool"><span class="tool-dot"></span>Google Analytics 4</div>
+          <div class="tool"><span class="tool-dot"></span>Google Tag Manager</div>
+          <div class="tool"><span class="tool-dot"></span>Looker Studio</div>
+          <div class="tool"><span class="tool-dot"></span>Shopify</div>
+          <div class="tool"><span class="tool-dot"></span>WordPress</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">آراء العملاء</div>
+            <h2 class="section-title">شراكات مستمرة وليست حملات مؤقتة</h2>
+          </div>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>آدم لم يكتفِ بإدارة الإعلانات، لكنه ساعدنا نفهم أين نخسر الميزانية وكيف نعيد ترتيب العرض والكرياتيف. خلال شهرين أصبحت الأرقام أكثر وضوحًا والطلبات أكثر ثباتًا.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="مريم عادل" loading="lazy">
+              </div>
+              <div>
+                <h4>مريم عادل</h4>
+                <span>Founder · CasaMart</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>أهم فرق كان جودة الليدز. قبل التعاون كان عندنا رسائل كثيرة بدون حجز، وبعد إعادة بناء الحملة ونظام المتابعة زادت الحجوزات بشكل واضح.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="دكتور كريم نادر" loading="lazy">
+              </div>
+              <div>
+                <h4>د. كريم نادر</h4>
+                <span>Managing Partner · DermaLine</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>التقارير الأسبوعية كانت مختصرة ومفهومة. كل قرار في الحملة كان له سبب واضح، وده ساعدنا نكبر الميزانية بثقة بدل التجربة العشوائية.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="يوسف ماهر" loading="lazy">
+              </div>
+              <div>
+                <h4>يوسف ماهر</h4>
+                <span>Marketing Lead · SkillHub</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact-grid">
             <div>
-              <h2>سارة ناصر</h2>
+              <h2>جاهز تبني حملة تحقق أرقام أوضح؟</h2>
               <p>
-                Performance Media Buyer لديها خبرة في إدارة حملات مبيعات ورسائل وتسجيلات لقطاعات مختلفة، مع تركيز خاص على المتاجر الإلكترونية والكورسات والخدمات المحلية.
-              </p>
-              <p>
-                طريقة العمل تعتمد على Creative Testing، بناء Funnels واضحة، وتتبع الأحداث بدقة حتى تكون قرارات الإيقاف والتوسيع مبنية على أرقام مفهومة.
+                أرسل تفاصيل مشروعك، وسأراجع الحساب الإعلاني أو فكرة الحملة وأقترح أفضل نقطة بداية خلال مكالمة قصيرة.
               </p>
 
-              <div class="chips">
-                <span class="chip">Meta Ads</span>
-                <span class="chip">Google Ads</span>
-                <span class="chip">TikTok Ads</span>
-                <span class="chip">GTM / GA4</span>
-                <span class="chip">CRO</span>
-                <span class="chip">UTM Reports</span>
+              <div class="contact-info">
+                <div class="contact-line">البريد: hello@adamgrowth.studio</div>
+                <div class="contact-line">واتساب: 0102 458 7619</div>
+                <div class="contact-line">العمل: مصر، الخليج، وأسواق التجارة الإلكترونية الدولية</div>
               </div>
             </div>
 
-            <div class="about-img">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" alt="Marketing strategy session">
-            </div>
-          </article>
+            <form class="contact-form" id="contactForm">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="اكتب اسمك" required>
+              </div>
 
-          <aside class="card audit-card reveal">
-            <div class="kicker">AUDIT FOCUS</div>
-            <h2>ماذا أراجع في أول جلسة؟</h2>
+              <div class="field">
+                <label for="business">نوع النشاط</label>
+                <input id="business" type="text" placeholder="متجر إلكتروني، عيادة، كورس، خدمة..." required>
+              </div>
 
-            <div class="audit-list">
-              <div class="audit-item"><span>Pixel & Events</span><strong>01</strong></div>
-              <div class="audit-item"><span>Campaign Structure</span><strong>02</strong></div>
-              <div class="audit-item"><span>Creative Angles</span><strong>03</strong></div>
-              <div class="audit-item"><span>Offer & Landing Page</span><strong>04</strong></div>
-              <div class="audit-item"><span>Budget Waste</span><strong>05</strong></div>
-            </div>
-          </aside>
-        </div>
-      </section>
+              <div class="field">
+                <label for="budget">متوسط الميزانية الشهرية</label>
+                <input id="budget" type="text" placeholder="مثال: 30,000 جنيه / 2,000 دولار" required>
+              </div>
 
-      <section id="services">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">SERVICES</div>
-            <h2>خدمات مصممة لتحسين الربح، لا زيادة الصرف فقط.</h2>
+              <div class="field">
+                <label for="message">ما الهدف من الحملة؟</label>
+                <textarea id="message" placeholder="مبيعات، حجوزات، ليدز، زيادة ROAS..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">إرسال عبر واتساب</button>
+              <div class="form-note">سيتم فتح واتساب برسالة منظمة تحتوي على بيانات المشروع.</div>
+            </form>
           </div>
-          <p class="desc">
-            سواء حسابك يبدأ من الصفر أو عندك حملات شغالة ومحتاجة تحسين، هنشتغل بخطة واضحة ومؤشرات قياس محددة.
-          </p>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="services">
-          <article class="card service reveal">
-            <div class="service-num">01</div>
-            <h3>إطلاق الحملات من الصفر</h3>
-            <p>بناء هيكل الحملات، تحديد الجمهور، كتابة الرسائل، واختيار أهداف مناسبة للمرحلة الحالية.</p>
-          </article>
+  <a class="whatsapp-float" href="https://wa.me/201024587619" target="_blank" aria-label="تواصل عبر واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M12 3.2A8.7 8.7 0 0 0 4.5 16.3L3.6 20.4L7.8 19.4A8.7 8.7 0 1 0 12 3.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M8.7 8.4C8.9 8 9.1 8 9.4 8H10C10.2 8 10.4 8.1 10.5 8.4L11.1 9.8C11.2 10.1 11.1 10.3 10.9 10.5L10.5 11C10.4 11.1 10.4 11.3 10.5 11.5C10.9 12.3 11.6 13 12.5 13.5C12.7 13.6 12.9 13.6 13 13.4L13.5 12.9C13.7 12.7 13.9 12.6 14.2 12.7L15.7 13.4C16 13.5 16.1 13.7 16.1 14V14.5C16.1 15 15.8 15.4 15.4 15.6C14.8 15.9 13.6 16 12.1 15.2C10.5 14.4 9.2 13.1 8.5 11.6C7.8 10.1 8.2 9.1 8.7 8.4Z" fill="currentColor"/>
+    </svg>
+  </a>
 
-          <article class="card service reveal">
-            <div class="service-num">02</div>
-            <h3>Creative Testing System</h3>
-            <p>اختبار Hooks وصور وفيديوهات وزوايا بيع لمعرفة الرسالة التي تحرك الجمهور فعلًا.</p>
-          </article>
-
-          <article class="card service reveal">
-            <div class="service-num">03</div>
-            <h3>تحسين CPA وROAS</h3>
-            <p>قراءة الأداء، تقليل الهدر، وإعادة توزيع الميزانية على الحملات والكرياتيف الرابح.</p>
-          </article>
-
-          <article class="card service reveal">
-            <div class="service-num">04</div>
-            <h3>Retargeting Funnels</h3>
-            <p>بناء إعادة استهداف حسب السلوك: زوار، مشاهدات فيديو، أضاف للسلة، رسائل، وعملاء سابقين.</p>
-          </article>
-
-          <article class="card service reveal">
-            <div class="service-num">05</div>
-            <h3>Tracking Setup</h3>
-            <p>تنظيم Pixel وGA4 وGTM وUTM حتى تظهر الصورة الحقيقية للأداء بدل أرقام متقطعة.</p>
-          </article>
-
-          <article class="card service reveal">
-            <div class="service-num">06</div>
-            <h3>Weekly Performance Reports</h3>
-            <p>تقارير مختصرة تشرح ما حدث، لماذا حدث، وما القرار القادم بلغة مفهومة لصاحب البيزنس.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="cases">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">RESULTS</div>
-            <h2>حالات عملية بأرقام مختصرة وواضحة.</h2>
-          </div>
-          <p class="desc">
-            النتائج هنا معروضة بطريقة تساعدك تفهم المشكلة والحل والمؤشر النهائي، وليس مجرد Screenshots من Ads Manager.
-          </p>
-        </div>
-
-        <div class="filters reveal">
-          <button class="filter active" data-filter="all">الكل</button>
-          <button class="filter" data-filter="store">متاجر</button>
-          <button class="filter" data-filter="leads">Lead Gen</button>
-          <button class="filter" data-filter="edu">تعليم</button>
-        </div>
-
-        <div class="cases">
-          <article class="card case reveal" data-cat="store">
-            <div class="case-img">
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop" alt="Online store marketing">
-            </div>
-            <div class="case-body">
-              <div>
-                <div class="case-category">E-commerce</div>
-                <h3>متجر منتجات عناية</h3>
-                <p>تم فصل حملات الاستحواذ عن إعادة الاستهداف، واختبار 6 زوايا بيع مختلفة مع تحسين صفحة المنتج.</p>
-              </div>
-              <div class="case-stats">
-                <div class="case-stat"><strong>6.1x</strong><span>ROAS</span></div>
-                <div class="case-stat"><strong>-34%</strong><span>CPA</span></div>
-                <div class="case-stat"><strong>+82%</strong><span>Revenue</span></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card case reveal" data-cat="leads">
-            <div class="case-img">
-              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop" alt="Clinic marketing leads">
-            </div>
-            <div class="case-body">
-              <div>
-                <div class="case-category">Lead Gen</div>
-                <h3>عيادة تجميل وأسنان</h3>
-                <p>تعديل الرسائل الإعلانية وإضافة أسئلة فلترة قبل التواصل لتقليل العملاء غير الجادين.</p>
-              </div>
-              <div class="case-stats">
-                <div class="case-stat"><strong>-41%</strong><span>CPL</span></div>
-                <div class="case-stat"><strong>2.3x</strong><span>Bookings</span></div>
-                <div class="case-stat"><strong>+56%</strong><span>Quality</span></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card case reveal" data-cat="edu">
-            <div class="case-img">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Education campaign">
-            </div>
-            <div class="case-body">
-              <div>
-                <div class="case-category">Education</div>
-                <h3>أكاديمية كورسات أونلاين</h3>
-                <p>بناء حملة تسجيل قبل بدء الدفعة، مع محتوى Proof، Retargeting، وتذكير قبل غلق الحجز.</p>
-              </div>
-              <div class="case-stats">
-                <div class="case-stat"><strong>+93%</strong><span>Enrollments</span></div>
-                <div class="case-stat"><strong>3.8x</strong><span>ROAS</span></div>
-                <div class="case-stat"><strong>-27%</strong><span>CAC</span></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card case reveal" data-cat="store">
-            <div class="case-img">
-              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop" alt="Sports fashion store">
-            </div>
-            <div class="case-body">
-              <div>
-                <div class="case-category">E-commerce</div>
-                <h3>متجر ملابس رياضية</h3>
-                <p>Scaling تدريجي مع Creative Rotation أسبوعي وتحليل المنتجات الأعلى ربحية قبل زيادة الميزانية.</p>
-              </div>
-              <div class="case-stats">
-                <div class="case-stat"><strong>4.7x</strong><span>ROAS</span></div>
-                <div class="case-stat"><strong>+118%</strong><span>Scale</span></div>
-                <div class="case-stat"><strong>19%</strong><span>CVR</span></div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="tools">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">STACK</div>
-            <h2>الأدوات التي تخدم القرار.</h2>
-          </div>
-          <p class="desc">
-            الأداة وحدها لا تصنع نتيجة. المهم هو كيف نستخدمها لتحديد أين تذهب الميزانية وأين تتوقف.
-          </p>
-        </div>
-
-        <div class="stack">
-          <article class="card tool reveal">
-            <div class="tool-icon">M</div>
-            <div>
-              <h3>Meta Ads</h3>
-              <p>Sales · Leads · Messages</p>
-            </div>
-          </article>
-
-          <article class="card tool reveal">
-            <div class="tool-icon">G</div>
-            <div>
-              <h3>Google Ads</h3>
-              <p>Search · PMax · Display</p>
-            </div>
-          </article>
-
-          <article class="card tool reveal">
-            <div class="tool-icon">T</div>
-            <div>
-              <h3>TikTok Ads</h3>
-              <p>UGC Testing · Awareness</p>
-            </div>
-          </article>
-
-          <article class="card tool reveal">
-            <div class="tool-icon">A</div>
-            <div>
-              <h3>GA4 & GTM</h3>
-              <p>Tracking · Events · Reports</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="method">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">METHOD</div>
-            <h2>طريقة عمل واضحة من أول أسبوع.</h2>
-          </div>
-          <p class="desc">
-            بدل تغييرات عشوائية، كل خطوة لها هدف ومؤشر وقرار بعد فترة اختبار محددة.
-          </p>
-        </div>
-
-        <div class="method">
-          <article class="method-row reveal">
-            <div class="method-num">01</div>
-            <div class="method-text">
-              <h3>تحليل الحساب والعرض</h3>
-              <p>مراجعة الحملات الحالية، التتبع، الصفحة، المنافسين، والرسائل المستخدمة.</p>
-            </div>
-            <div class="method-tag">Audit Report</div>
-          </article>
-
-          <article class="method-row reveal">
-            <div class="method-num">02</div>
-            <div class="method-text">
-              <h3>خطة اختبار الكرياتيف</h3>
-              <p>تحديد زوايا بيع مختلفة، Hooks، Formats، وجدول اختبار واضح بدون حرق ميزانية.</p>
-            </div>
-            <div class="method-tag">Creative Map</div>
-          </article>
-
-          <article class="method-row reveal">
-            <div class="method-num">03</div>
-            <div class="method-text">
-              <h3>تحسين وتوسيع</h3>
-              <p>إيقاف الخاسر، دعم الرابح، وتحسين Funnel كاملًا من الإعلان حتى التحويل.</p>
-            </div>
-            <div class="method-tag">Scale Plan</div>
-          </article>
-        </div>
-      </section>
-
-      <section id="pricing">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">PACKAGES</div>
-            <h2>باقات تعاون مرنة حسب مرحلة مشروعك.</h2>
-          </div>
-          <p class="desc">
-            يمكن تعديل الباقات حسب حجم الحساب والمنصات المطلوبة وعدد الحملات الشهرية.
-          </p>
-        </div>
-
-        <div class="pricing">
-          <article class="card price reveal">
-            <h3>Audit فقط</h3>
-            <span class="amount">2,500 ج</span>
-            <ul>
-              <li>مراجعة الحساب الإعلاني</li>
-              <li>تقرير مشاكل وفرص</li>
-              <li>خطة أول 14 يوم</li>
-            </ul>
-          </article>
-
-          <article class="card price featured reveal">
-            <h3>إدارة شهرية</h3>
-            <span class="amount">8,000 ج</span>
-            <ul>
-              <li>إدارة Meta أو Google</li>
-              <li>اختبارات أسبوعية</li>
-              <li>تقرير أداء أسبوعي</li>
-            </ul>
-          </article>
-
-          <article class="card price reveal">
-            <h3>Growth Partner</h3>
-            <span class="amount">حسب المشروع</span>
-            <ul>
-              <li>أكثر من منصة إعلانية</li>
-              <li>Tracking + Funnel</li>
-              <li>خطة Scaling شهرية</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="contact">
-          <article class="card contact-card reveal">
-            <div class="kicker">CONTACT</div>
-            <h2>جاهز تعرف أين تضيع ميزانيتك؟</h2>
-            <p>
-              ابعت تفاصيل مشروعك والميزانية الحالية، وسأجهز لك أول خطوة عملية لتحسين الأداء.
-            </p>
-
-            <div class="contact-list">
-              <a class="contact-link" href="https://wa.me/201012345678" target="_blank" rel="noreferrer">
-                <span>WhatsApp / 01012345678</span>
-                <strong>↗</strong>
-              </a>
-              <a class="contact-link" href="mailto:hello@saranaser.media">
-                <span>hello@saranaser.media</span>
-                <strong>✉</strong>
-              </a>
-              <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-                <span>LinkedIn</span>
-                <strong>↗</strong>
-              </a>
-            </div>
-          </article>
-
-          <form class="card form reveal" id="auditForm">
-            <div class="field">
-              <label for="name">اسمك / اسم الشركة</label>
-              <input id="name" type="text" placeholder="مثال: متجر نور" required>
-            </div>
-
-            <div class="field">
-              <label for="platform">المنصة المستخدمة حاليًا</label>
-              <select id="platform" required>
-                <option value="">اختر المنصة</option>
-                <option>Meta Ads</option>
-                <option>Google Ads</option>
-                <option>TikTok Ads</option>
-                <option>أكثر من منصة</option>
-                <option>لم أبدأ بعد</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="budget">الميزانية الشهرية التقريبية</label>
-              <input id="budget" type="text" placeholder="مثال: 30,000 جنيه">
-            </div>
-
-            <div class="field">
-              <label for="problem">أكبر مشكلة حاليًا</label>
-              <textarea id="problem" placeholder="مثال: تكلفة العميل عالية / لا توجد مبيعات / التتبع غير واضح..." required></textarea>
-            </div>
-
-            <button class="btn primary" type="submit">تجهيز رسالة واتساب</button>
-            <p class="result" id="result"></p>
-          </form>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <strong>سارة ناصر</strong> — Performance Media Buyer ©
-      </footer>
-    </main>
-  </div>
-
-  <button class="top" id="topBtn" aria-label="العودة للأعلى">↑</button>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> آدم الشافعي — Performance Media Buyer</div>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="#">Behance</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const body = document.body;
-    const progress = document.getElementById('progress');
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.getElementById('nav');
-    const topBtn = document.getElementById('topBtn');
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const links = document.querySelectorAll(".nav-links a");
 
-    menuBtn.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      menuBtn.textContent = nav.classList.contains('open') ? 'إغلاق' : 'القائمة';
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
     });
 
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuBtn.textContent = 'القائمة';
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
       });
     });
 
-    function updateProgress(){
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const width = max > 0 ? (window.scrollY / max) * 100 : 0;
-      progress.style.width = width + '%';
-      topBtn.classList.toggle('show', window.scrollY > 520);
-    }
+    const sections = document.querySelectorAll("section[id]");
+    window.addEventListener("scroll", () => {
+      let current = "home";
 
-    window.addEventListener('scroll', updateProgress);
-    updateProgress();
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) current = section.getAttribute("id");
+      });
 
-    topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+      links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
 
+    const revealElements = document.querySelectorAll(".reveal");
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
           revealObserver.unobserve(entry.target);
         }
       });
-    }, {threshold:.12});
+    }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => revealObserver.observe(el));
 
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const caseCards = document.querySelectorAll(".case-card");
 
-        const el = entry.target;
-        const target = Number(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        const decimal = String(target).includes('.');
-        const start = performance.now();
-        const duration = 1000;
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
 
-        function tick(now){
-          const p = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - p, 3);
-          const value = target * eased;
-          el.textContent = (decimal ? value.toFixed(1) : Math.round(value)) + suffix;
+        const filter = btn.dataset.filter;
 
-          if(p < 1) requestAnimationFrame(tick);
-          else el.textContent = (decimal ? target.toFixed(1) : target) + suffix;
-        }
-
-        requestAnimationFrame(tick);
-        counterObserver.unobserve(el);
-      });
-    }, {threshold:.65});
-
-    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
-
-    document.querySelectorAll('.filter').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-        document.querySelectorAll('.case').forEach(card => {
-          card.style.display = filter === 'all' || card.dataset.cat === filter ? '' : 'none';
+        caseCards.forEach(card => {
+          const match = filter === "all" || card.dataset.category === filter;
+          card.style.display = match ? "block" : "none";
         });
       });
     });
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
 
-        const id = entry.target.id;
-        document.querySelectorAll('.nav a').forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
+    function animateCounters() {
+      if (countersStarted) return;
+
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count);
+        const suffix = counter.dataset.suffix || "";
+        const isDollar = counter.textContent.trim().startsWith("$");
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 55));
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+
+          counter.textContent = `${isDollar ? "$" : ""}${current}${suffix}`;
+        }, 24);
       });
-    }, {rootMargin:'-35% 0px -55% 0px', threshold:.01});
 
-    document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+      countersStarted = true;
+    }
 
-    document.getElementById('auditForm').addEventListener('submit', function(event){
-      event.preventDefault();
+    const statsSection = document.querySelector(".stats-grid");
+    const statsObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        statsObserver.disconnect();
+      }
+    }, { threshold: 0.35 });
 
-      const name = document.getElementById('name').value.trim();
-      const platform = document.getElementById('platform').value.trim();
-      const budget = document.getElementById('budget').value.trim() || 'غير محددة';
-      const problem = document.getElementById('problem').value.trim();
+    statsObserver.observe(statsSection);
 
-      const message =
-        `مرحبًا سارة، أنا ${name}.` + "\n" +
-        `المنصة المستخدمة: ${platform}` + "\n" +
-        `الميزانية الشهرية: ${budget}` + "\n" +
-        `المشكلة الحالية: ${problem}` + "\n\n" +
-        `أريد حجز Audit للحساب الإعلاني ومعرفة فرص التحسين.`;
+    const form = document.getElementById("contactForm");
 
-      const link = 'https://wa.me/201012345678?text=' + encodeURIComponent(message);
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-      document.getElementById('result').innerHTML =
-        'تم تجهيز الرسالة: <a href="' + link + '" target="_blank" rel="noreferrer" style="font-weight:1000;color:var(--green)">افتح واتساب الآن</a><br><br>' +
-        '<strong style="white-space:pre-line;color:var(--ink)">' +
-        message.replace(/</g,'&lt;').replace(/>/g,'&gt;') +
-        '</strong>';
+      const name = document.getElementById("name").value.trim();
+      const business = document.getElementById("business").value.trim();
+      const budget = document.getElementById("budget").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappText = `
+مرحبًا آدم،
+أنا ${name}
+
+نوع النشاط: ${business}
+الميزانية الشهرية: ${budget}
+
+الهدف من الحملة:
+${message}
+
+أرغب في مراجعة الحساب الإعلاني ومعرفة أفضل خطة بداية.
+      `.trim();
+
+      const url = `https://wa.me/201024587619?text=${encodeURIComponent(whatsappText)}`;
+      window.open(url, "_blank");
     });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

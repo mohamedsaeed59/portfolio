@@ -50,7 +50,8 @@
     }
 
     img,
-    video {
+    video,
+    iframe {
       max-width: 100%;
       display: block;
     }
@@ -431,12 +432,13 @@
       backdrop-filter: blur(12px);
     }
 
-    .video-card video {
-        width: 100%;
-        height: 430px;
-        object-fit: cover;
-        background: #fff1f5;
-        pointer-events: none;
+    .video-card iframe {
+      width: 100%;
+      height: 430px;
+      border: 0;
+      display: block;
+      background: #fff1f5;
+      pointer-events: none;
     }
 
     .video-popup {
@@ -490,10 +492,11 @@
       font-family: inherit;
     }
 
-    .popup-content video {
+    .popup-content iframe {
       width: 100%;
-      max-height: 82vh;
-      object-fit: contain;
+      height: min(82vh, 760px);
+      border: 0;
+      display: block;
       background: #000;
     }
 
@@ -904,7 +907,7 @@
       }
 
       .video-card,
-      .video-card video {
+      .video-card iframe {
         min-height: 480px;
         height: 480px;
       }
@@ -941,7 +944,7 @@
       }
 
       .video-card,
-      .video-card video {
+      .video-card iframe {
         min-height: 440px;
         height: 440px;
       }
@@ -1032,98 +1035,307 @@
             <h2>نماذج من فيديوهاتي</h2>
           </div>
           <p>
-            دي نماذج من فيديوهات صورتها بأسلوب طبيعي وهادي، كل فيديو معمول عشان يوضح المنتج ويحسّس العميل إنه قريب منه.
+            دي نماذج من فيديوهات صورتها بأسلوب طبيعي وهادي، مقسمة حسب نوع البراند والسوق المستهدف، وكل فيديو معمول عشان يوضح المنتج ويحسّس العميل إنه قريب منه.
           </p>
         </div>
 
         <div class="filter-tabs reveal">
           <button class="filter-btn active" data-filter="all">الكل</button>
-          <button class="filter-btn" data-filter="beauty">جمال</button>
-          <button class="filter-btn" data-filter="lifestyle">لايف ستايل</button>
-          <button class="filter-btn" data-filter="fashion">فاشون</button>
-          <button class="filter-btn" data-filter="food">أكل ومشروبات</button>
+          <button class="filter-btn" data-filter="cafe">كافيه</button>
+          <button class="filter-btn" data-filter="education-egypt">خدمات تعليمية مصر</button>
+          <button class="filter-btn" data-filter="food">Food</button>
+          <button class="filter-btn" data-filter="mattress-gulf">دار المراتب - سوق خليجي</button>
+          <button class="filter-btn" data-filter="perfect-weight">Perfect Weight Product</button>
+          <button class="filter-btn" data-filter="role-professional">Role Professional</button>
+          <button class="filter-btn" data-filter="saudi-products">منتجات سوق سعودي</button>
         </div>
 
         <div class="video-grid reveal">
-            <article class="video-card" data-category="beauty">
-            <video muted playsinline preload="metadata">
-            <source src="videos/beauty-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="food" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1hOriXNTMOHcHi7Y50RSdT8tXNRX9OjHa/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1hOriXNTMOHcHi7Y50RSdT8tXNRX9OjHa/preview"
+              title="Shot UX"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Beauty UGC</small>
-            <h3>تجربة سكين كير بروتين صباحي</h3>
+              <small>Food</small>
+              <h3>Shot UX</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="lifestyle">
-            <video muted playsinline preload="metadata">
-            <source src="videos/lifestyle-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="perfect-weight" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1GF58lhx93Wl6LYVgq5p-GvwLa6jq6pXF/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1GF58lhx93Wl6LYVgq5p-GvwLa6jq6pXF/preview"
+              title="Microground Coffee - سوق قطري"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Lifestyle</small>
-            <h3>روتين يومي بستايل لايف ستايل</h3>
+              <small>Perfect Weight Product</small>
+              <h3>Microground Coffee - سوق قطري</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="fashion">
-            <video muted playsinline preload="metadata">
-            <source src="videos/beauty-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="perfect-weight" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1oPLr-K4cw1ksb1JEfjxnEof7NC6dTeDv/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1oPLr-K4cw1ksb1JEfjxnEof7NC6dTeDv/preview"
+              title="Perfect Tea - سوق قطري"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Fashion</small>
-            <h3>تصوير فاشون بإحساس إعلاني</h3>
+              <small>Perfect Weight Product</small>
+              <h3>Perfect Tea - سوق قطري</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="food">
-            <video muted playsinline preload="metadata">
-            <source src="videos/lifestyle-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="role-professional" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1JkTvlyKTtUM4OcBxUcrkGiSNPD1PXG_C/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1JkTvlyKTtUM4OcBxUcrkGiSNPD1PXG_C/preview"
+              title="خليجي"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Food & Beverage</small>
-            <h3>تجربة منتج أكل بطريقة طبيعية</h3>
+              <small>Role Professional</small>
+              <h3>خليجي</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="beauty">
-            <video muted playsinline preload="metadata">
-            <source src="videos/beauty-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="role-professional" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1BwTfrheE7u4MxevAvjOZG6PVwSPg5PZe/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1BwTfrheE7u4MxevAvjOZG6PVwSPg5PZe/preview"
+              title="تصوير + ساوند إيفيكت"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Skincare</small>
-            <h3>Skincare Texture & Application</h3>
+              <small>Role Professional</small>
+              <h3>تصوير + ساوند إيفيكت</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="lifestyle">
-            <video muted playsinline preload="metadata">
-            <source src="videos/lifestyle-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="education-egypt" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1wA2RNWDd4tyCliDezVqQ6EwbfdEZ0hdW/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1wA2RNWDd4tyCliDezVqQ6EwbfdEZ0hdW/preview"
+              title="ورك شوب"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>UGC Ad</small>
-            <h3>إعلان قصير لمنتج بيحل مشكلة يومية</h3>
+              <small>خدمات تعليمية مصر</small>
+              <h3>ورك شوب</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="fashion">
-            <video muted playsinline preload="metadata">
-            <source src="videos/beauty-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="mattress-gulf" data-video-type="drive" data-video-url="https://drive.google.com/file/d/17Ho4RzXlYTB35UVGV4FnEd1NHzh_NANJ/preview">
+            <iframe
+              src="https://drive.google.com/file/d/17Ho4RzXlYTB35UVGV4FnEd1NHzh_NANJ/preview"
+              title="سرير أوف وايت"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Commercial</small>
-            <h3>لقطات Commercial ناعمة للمنتج</h3>
+              <small>دار المراتب - فويس أوفر خليجي</small>
+              <h3>سرير أوف وايت</h3>
             </div>
-            </article>
+          </article>
 
-            <article class="video-card" data-category="food">
-            <video muted playsinline preload="metadata">
-            <source src="videos/lifestyle-1.mp4" type="video/mp4">
-            </video>
+          <article class="video-card" data-category="mattress-gulf" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1YKkb2ZLwAdpTBkqLfqoqrbIXjjJGFXJR/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1YKkb2ZLwAdpTBkqLfqoqrbIXjjJGFXJR/preview"
+              title="سرير لورا"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
             <div class="video-info">
-            <small>Product Content</small>
-            <h3>Ad Creative قصير للريلز</h3>
+              <small>دار المراتب - فويس أوفر خليجي</small>
+              <h3>سرير لورا</h3>
             </div>
-            </article>
+          </article>
+
+          <article class="video-card" data-category="mattress-gulf" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1KBqTcmmuf_oK0hVGzmRrmZqNMq7lPUZ0/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1KBqTcmmuf_oK0hVGzmRrmZqNMq7lPUZ0/preview"
+              title="سرير وايت المضخم"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>دار المراتب - فويس أوفر خليجي</small>
+              <h3>سرير وايت المضخم</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="mattress-gulf" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1ye6iX43c-sKrZ2cf92V8jDETOnNn6lFl/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1ye6iX43c-sKrZ2cf92V8jDETOnNn6lFl/preview"
+              title="مفرش داني"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>دار المراتب - فويس أوفر خليجي</small>
+              <h3>مفرش داني</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="mattress-gulf" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1o4hHxg8Qa-vXj0Q4epD08W2AYrok-Fkb/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1o4hHxg8Qa-vXj0Q4epD08W2AYrok-Fkb/preview"
+              title="مفرش HD"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>دار المراتب - فويس أوفر خليجي</small>
+              <h3>مفرش HD</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="cafe" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1khnnpxcROcxquPjnxja4kvALYwnabQAi/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1khnnpxcROcxquPjnxja4kvALYwnabQAi/preview"
+              title="كافيه عسكر"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>كافيه</small>
+              <h3>كافيه عسكر</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1go5SJoG7nF6Si9-PBn6zaQ7cOsxTcJ2G/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1go5SJoG7nF6Si9-PBn6zaQ7cOsxTcJ2G/preview"
+              title="تصوير كامل"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تصوير كامل</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/109hM3wVNYBrsUuiImq-0ERDDd0v6XMd8/preview">
+            <iframe
+              src="https://drive.google.com/file/d/109hM3wVNYBrsUuiImq-0ERDDd0v6XMd8/preview"
+              title="تسجيل صوتي وتصوير 1"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تسجيل صوتي وتصوير 1</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/19aIHXJBbnj-FPdeTdtKd-I65dnbkqkrm/preview">
+            <iframe
+              src="https://drive.google.com/file/d/19aIHXJBbnj-FPdeTdtKd-I65dnbkqkrm/preview"
+              title="تسجيل صوتي وتصوير 2"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تسجيل صوتي وتصوير 2</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1aViAyxNQLdyWYQPsTO8J7PLxHxc129fj/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1aViAyxNQLdyWYQPsTO8J7PLxHxc129fj/preview"
+              title="تسجيل صوتي وتصوير 3"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تسجيل صوتي وتصوير 3</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1kzbOKo1NFLIuP6GihNqcWwwVVO9scbZw/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1kzbOKo1NFLIuP6GihNqcWwwVVO9scbZw/preview"
+              title="تسجيل صوتي وتصوير 4"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تسجيل صوتي وتصوير 4</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1Mjfvnp4QT_HrBbH8QTlzqitNBPLRxYwu/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1Mjfvnp4QT_HrBbH8QTlzqitNBPLRxYwu/preview"
+              title="تصوير كامل 2"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تصوير كامل 2</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1nCVmJGMrmPRE0KIPLgzUyEQiCxjbDITA/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1nCVmJGMrmPRE0KIPLgzUyEQiCxjbDITA/preview"
+              title="تصوير كامل 3"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تصوير كامل 3</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1d-OBxCy4G_-ZMw-YDkyZ8R5RrRdru5eq/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1d-OBxCy4G_-ZMw-YDkyZ8R5RrRdru5eq/preview"
+              title="تصوير كامل مرايا"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>تصوير كامل مرايا</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/12PaIWZnuyRb2Y_OKXIGU9jjW3LWs66vq/preview">
+            <iframe
+              src="https://drive.google.com/file/d/12PaIWZnuyRb2Y_OKXIGU9jjW3LWs66vq/preview"
+              title="عطور 1"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>عطور 1</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-category="saudi-products" data-video-type="drive" data-video-url="https://drive.google.com/file/d/1UNgEeaeyMRQPK-vvnk3YKXEh74kKWyA9/preview">
+            <iframe
+              src="https://drive.google.com/file/d/1UNgEeaeyMRQPK-vvnk3YKXEh74kKWyA9/preview"
+              title="عطور 2"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+            <div class="video-info">
+              <small>منتجات سوق سعودي - لهجة خليجي</small>
+              <h3>عطور 2</h3>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1302,7 +1514,12 @@
   <div class="video-popup" id="videoPopup" aria-hidden="true">
     <div class="popup-content" role="dialog" aria-modal="true" aria-label="مشاهدة الفيديو">
       <button class="popup-close" id="popupClose" aria-label="إغلاق الفيديو">×</button>
-      <video id="popupVideo" controls playsinline></video>
+      <iframe
+        id="popupVideo"
+        title="مشاهدة الفيديو"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
       <div class="popup-caption">
         <small id="popupCategory"></small>
         <h3 id="popupTitle"></h3>
@@ -1343,39 +1560,55 @@
 
     revealElements.forEach(el => revealOnScroll.observe(el));
 
-    const videos = document.querySelectorAll(".video-card video");
     const videoPopup = document.getElementById("videoPopup");
     const popupVideo = document.getElementById("popupVideo");
     const popupClose = document.getElementById("popupClose");
     const popupCategory = document.getElementById("popupCategory");
     const popupTitle = document.getElementById("popupTitle");
 
-    videos.forEach(video => {
-      video.pause();
-      video.currentTime = 0;
-      video.removeAttribute("controls");
-    });
+    const getVideoEmbedUrl = (url) => {
+      if (!url) return "";
+
+      if (url.includes("watch?v=")) {
+        const videoId = url.split("watch?v=")[1].split("&")[0];
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+      }
+
+      if (url.includes("youtu.be/")) {
+        const videoId = url.split("youtu.be/")[1].split("?")[0];
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+      }
+
+      if (url.includes("/embed/")) {
+        return url.includes("?") ? `${url}&autoplay=1` : `${url}?autoplay=1`;
+      }
+
+      /*
+        Google Drive preview links do not need conversion.
+        Example:
+        https://drive.google.com/file/d/FILE_ID/preview
+      */
+      return url;
+    };
 
     const openVideoPopup = (card) => {
-      const source = card.querySelector("source");
       const category = card.querySelector(".video-info small");
       const title = card.querySelector(".video-info h3");
 
-      if (!source) return;
+      const videoUrl = card.dataset.videoUrl || card.dataset.youtube;
 
-      popupVideo.src = source.src || source.getAttribute("src");
+      if (!videoUrl) return;
+
+      popupVideo.src = getVideoEmbedUrl(videoUrl);
       popupCategory.textContent = category ? category.textContent : "";
       popupTitle.textContent = title ? title.textContent : "";
       videoPopup.classList.add("active");
       videoPopup.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
-      popupVideo.play().catch(() => {});
     };
 
     const closeVideoPopup = () => {
-      popupVideo.pause();
       popupVideo.removeAttribute("src");
-      popupVideo.load();
       videoPopup.classList.remove("active");
       videoPopup.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";

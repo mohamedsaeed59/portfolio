@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>يوسف نادر | Medical Marketing Specialist</title>
+  <meta name="description" content="يوسف نادر، ماركتير طبي متخصص في نمو العيادات والمراكز الطبية من خلال الحملات الإعلانية، المحتوى الطبي، تحسين الحجوزات، وبناء الثقة الرقمية." />
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5fbfb;
+      --surface: #ffffff;
+      --surface-soft: #ecf8f8;
+      --text: #102027;
+      --muted: #667985;
+      --line: #dcebed;
+      --primary: #0f9f9a;
+      --primary-dark: #087d7a;
+      --blue: #1f7ae0;
+      --navy: #0f2f3a;
+      --green: #22a06b;
+      --orange: #f59e0b;
+      --shadow: 0 24px 70px rgba(15, 47, 58, 0.09);
+      --radius: 26px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15, 159, 154, 0.14), transparent 32%),
+        radial-gradient(circle at 85% 20%, rgba(31, 122, 224, 0.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(245, 251, 251, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(220, 235, 237, 0.85);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--blue));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 35px rgba(15, 159, 154, 0.24);
+    }
+
+    .brand span:last-child {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(15, 159, 154, 0.10);
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      border: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 36px rgba(15, 159, 154, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--navy);
+    }
+
+    .btn-light:hover {
+      border-color: rgba(15, 159, 154, 0.45);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(15, 47, 58, 0.08);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 78px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15, 159, 154, 0.10);
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 8px rgba(34, 160, 107, 0.13);
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 600;
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .chip b {
+      color: var(--navy);
+    }
+
+    .hero-card-wrap {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      height: 520px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background: var(--surface-soft);
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 47, 58, 0.72), transparent 58%);
+    }
+
+    .hero-badge {
+      position: absolute;
+      z-index: 3;
+      right: 34px;
+      left: 34px;
+      bottom: 34px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 24px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .hero-badge h3 {
+      font-size: 19px;
+      color: var(--navy);
+    }
+
+    .hero-badge p {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .badge-status {
+      color: var(--primary-dark);
+      background: rgba(15, 159, 154, 0.10);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 5;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: 0 20px 50px rgba(15, 47, 58, 0.13);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.15;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .fc-1 {
+      top: 44px;
+      right: -24px;
+    }
+
+    .fc-2 {
+      left: -28px;
+      bottom: 118px;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 26px;
+      margin-bottom: 30px;
+    }
+
+    .kicker {
+      color: var(--primary-dark);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      color: var(--navy);
+      letter-spacing: -0.7px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 610px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(15, 47, 58, 0.05);
+    }
+
+    .stat-card .num {
+      color: var(--navy);
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .trust-strip {
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      box-shadow: 0 14px 35px rgba(15, 47, 58, 0.04);
+    }
+
+    .trust-item {
+      background: var(--surface-soft);
+      border-radius: 18px;
+      padding: 14px;
+      color: var(--navy);
+      font-weight: 900;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 14px 35px rgba(15, 47, 58, 0.05);
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(15, 159, 154, 0.30);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 19px;
+      background: rgba(15, 159, 154, 0.10);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .service-list {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      color: #36515a;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(15, 47, 58, 0.05);
+      transition: 0.25s;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .case-img {
+      height: 225px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-soft);
+    }
+
+    .case-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s;
+    }
+
+    .case-card:hover .case-img img {
+      transform: scale(1.06);
+    }
+
+    .case-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      color: var(--navy);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .case-body {
+      padding: 22px;
+    }
+
+    .case-body h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .case-body p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .case-metric {
+      background: var(--surface-soft);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .case-metric strong {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .case-metric span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .process-visual {
+      min-height: 520px;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .process-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.74;
+    }
+
+    .process-note {
+      position: absolute;
+      right: 24px;
+      left: 24px;
+      bottom: 24px;
+      background: rgba(15, 47, 58, 0.72);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .process-note h3 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .process-note p {
+      color: rgba(255,255,255,0.76);
+      font-weight: 700;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      box-shadow: 0 12px 30px rgba(15, 47, 58, 0.04);
+    }
+
+    .step-num {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: rgba(15, 159, 154, 0.10);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(15, 47, 58, 0.04);
+    }
+
+    .content-card span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: rgba(31, 122, 224, 0.10);
+      color: var(--blue);
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .content-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(15, 47, 58, 0.05);
+    }
+
+    .stars {
+      color: var(--orange);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial p {
+      color: #36515a;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface-soft);
+      flex: none;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .person h4 {
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at left bottom, rgba(15, 159, 154, 0.38), transparent 34%),
+        var(--navy);
+      border-radius: 38px;
+      padding: 46px;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.22;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.74);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-line {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 14px 16px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 800;
+    }
+
+    .contact-form {
+      background: #fff;
+      color: var(--text);
+      border-radius: 28px;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      color: #36515a;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .field input,
+    .field textarea {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 15px;
+      outline: none;
+      color: var(--text);
+      background: #fff;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .field textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(15, 159, 154, 0.62);
+      box-shadow: 0 0 0 4px rgba(15, 159, 154, 0.09);
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 26px 0 38px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .footer-inner {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: #36515a;
+      font-size: 13px;
+      font-weight: 900;
+      transition: 0.25s;
+    }
+
+    .socials a:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.35);
+      transition: 0.25s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .process-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid,
+      .trust-strip,
+      .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .cases-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-img {
+        height: 460px;
+      }
+
+      .fc-1 {
+        right: 12px;
+      }
+
+      .fc-2 {
+        left: 12px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        height: 72px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .nav .btn-primary {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-head,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats-grid,
+      .trust-strip,
+      .services-grid,
+      .cases-grid,
+      .case-metrics,
+      .content-grid,
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-img {
+        height: 420px;
+      }
+
+      .hero-badge {
+        right: 24px;
+        left: 24px;
+        bottom: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 28px;
+        border-radius: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="يوسف نادر">
+        <span class="brand-mark">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M8.5 6.5h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" opacity=".55"/>
+          </svg>
+        </span>
+        <span>
+          يوسف نادر
+          <small>Medical Marketing Specialist</small>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">الرئيسية</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#results">النتائج</a></li>
+        <li><a href="#process">طريقة العمل</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+
+      <a class="btn btn-primary" href="#contact">طلب تحليل تسويقي</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="#102027" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span class="pulse"></span>
+            نمو طبي أخلاقي مبني على الثقة والبيانات
+          </div>
+
+          <h1>أسوّق للعيادات والمراكز الطبية بطريقة <span class="gradient-text">تجلب حجوزات حقيقية</span></h1>
+
+          <p class="hero-text">
+            أساعد الأطباء والعيادات والمراكز الطبية على بناء حضور رقمي موثوق، تحسين جودة الاستفسارات، وزيادة الحجوزات من خلال حملات إعلانية ومحتوى طبي واضح يراعي حساسية القطاع الصحي وثقة المريض.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#results">شاهد نتائج الحملات</a>
+            <a class="btn btn-light" href="#services">الخدمات الطبية التسويقية</a>
+          </div>
+
+          <div class="hero-chips">
+            <span class="chip"><b>Clinics</b> Patient Acquisition</span>
+            <span class="chip"><b>Healthcare</b> Content Strategy</span>
+            <span class="chip"><b>Medical Ads</b> Ethical Growth</span>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap reveal">
+          <div class="floating-card fc-1">
+            <strong>+41%</strong>
+            <span>زيادة متوسط الحجوزات</span>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-img">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=85" alt="تسويق طبي للعيادات والمراكز الطبية" loading="eager">
+              <div class="hero-badge">
+                <div>
+                  <h3>يوسف نادر</h3>
+                  <p>Medical Marketer · القاهرة · دبي · الرياض</p>
+                </div>
+                <span class="badge-status">حملات طبية نشطة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card fc-2">
+            <strong>18K+</strong>
+            <span>استفسار طبي مؤهل</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="الأرقام">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="num" data-count="52" data-suffix="+">0</div>
+            <p>عيادة ومركز طبي تم العمل معهم</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="num" data-count="18" data-suffix="K+">0</div>
+            <p>استفسار طبي مؤهل من الحملات</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="num" data-count="37" data-suffix="%">0</div>
+            <p>انخفاض متوسط تكلفة الحجز</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="num" data-count="6" data-suffix="+">0</div>
+            <p>تخصصات طبية مختلفة</p>
+          </div>
+        </div>
+
+        <div class="trust-strip reveal">
+          <div class="trust-item">عيادات جلدية وتجميل</div>
+          <div class="trust-item">مراكز أسنان</div>
+          <div class="trust-item">عيادات علاج طبيعي</div>
+          <div class="trust-item">مختبرات وتحاليل</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">الخدمات</div>
+            <h2 class="section-title">تسويق طبي يحترم قرار المريض</h2>
+          </div>
+
+          <p class="section-desc">
+            التسويق الطبي لا يعتمد فقط على إعلان جيد، بل على رسالة آمنة، محتوى موثوق، تجربة حجز سهلة، ومتابعة دقيقة لكل مرحلة من رحلة المريض.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+                <path d="M8 15l3-4 3 2 5-7" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>إعلانات العيادات والمراكز</h3>
+            <p>إدارة حملات Meta وGoogle لجذب حجوزات واستفسارات طبية بجودة عالية مع تقليل الهدر في الميزانية.</p>
+            <ul class="service-list">
+              <li>حملات حجوزات واستفسارات</li>
+              <li>تقسيم الجمهور حسب التخصص</li>
+              <li>تحسين تكلفة الحجز والمتابعة</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M7 4h10a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M8 9h8M8 13h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>محتوى طبي تثقيفي</h3>
+            <p>بناء خطة محتوى تساعد المريض يفهم الخدمة بدون مبالغة أو وعود غير واقعية، مع الحفاظ على صورة الطبيب.</p>
+            <ul class="service-list">
+              <li>أفكار Reels ومنشورات طبية</li>
+              <li>رسائل تثقيفية سهلة</li>
+              <li>تحسين الثقة قبل الحجز</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>إدارة السمعة الرقمية</h3>
+            <p>تحسين ظهور العيادة وبناء ثقة قبل الزيارة من خلال مراجعات المرضى، Google Business، وصفحات الخدمات.</p>
+            <ul class="service-list">
+              <li>تحسين Google Business Profile</li>
+              <li>إدارة تقييمات المرضى</li>
+              <li>صفحات خدمات طبية مقنعة</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M5 5h14v14H5V5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M9 9h6M9 13h6M9 17h3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Landing Pages طبية</h3>
+            <p>تصميم صفحات هبوط لخدمات محددة مثل زراعة الأسنان، الليزر، العلاج الطبيعي، أو التحاليل المنزلية.</p>
+            <ul class="service-list">
+              <li>CTA واضح للحجز</li>
+              <li>أسئلة شائعة طبية</li>
+              <li>ربط واتساب ونماذج الحجز</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="currentColor" stroke-width="2.2"/>
+                <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>متابعة رحلة المريض</h3>
+            <p>تحسين الردود والمتابعة مع الاستفسارات لضمان عدم خسارة المرضى المحتملين بعد وصولهم من الإعلان.</p>
+            <ul class="service-list">
+              <li>سكريبتات رد واتساب</li>
+              <li>تصنيف الليدز حسب الجدية</li>
+              <li>تقارير جودة الاستفسارات</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M4 18h16M7 18V9M12 18V5M17 18v-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>تقارير وتحليل أداء</h3>
+            <p>تقارير أسبوعية توضح تكلفة الحجز، جودة الاستفسارات، أفضل الخدمات أداءً، ونقاط التحسين القادمة.</p>
+            <ul class="service-list">
+              <li>Dashboard للحملات</li>
+              <li>تحليل CPL وBooking Rate</li>
+              <li>قرارات تحسين أسبوعية</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">نتائج مختارة</div>
+            <h2 class="section-title">حملات طبية بنت ثقة ورفعت الحجوزات</h2>
+          </div>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="derma">جلدية وتجميل</button>
+            <button class="filter-btn" data-filter="dental">أسنان</button>
+            <button class="filter-btn" data-filter="physio">علاج طبيعي</button>
+          </div>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card reveal" data-category="derma">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85" alt="عيادة جلدية وتجميل" loading="lazy">
+              <span class="case-tag">Dermatology Clinic</span>
+            </div>
+            <div class="case-body">
+              <h3>عيادة Aurora Derma</h3>
+              <p>إعادة بناء حملات الليزر والعناية بالبشرة مع محتوى تثقيفي قبل البيع وتحسين رسائل المتابعة.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>2,840</strong><span>Leads</span></div>
+                <div class="case-metric"><strong>-39%</strong><span>CPL</span></div>
+                <div class="case-metric"><strong>34%</strong><span>Booking</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="dental">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=85" alt="مركز أسنان" loading="lazy">
+              <span class="case-tag">Dental Center</span>
+            </div>
+            <div class="case-body">
+              <h3>مركز Nova Dental</h3>
+              <p>حملات مخصصة لزراعة الأسنان والتقويم مع صفحات هبوط منفصلة لكل خدمة ومتابعة دقيقة للاستفسارات.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>+47%</strong><span>Calls</span></div>
+                <div class="case-metric"><strong>-31%</strong><span>CPA</span></div>
+                <div class="case-metric"><strong>22%</strong><span>Visit Rate</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="physio">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1571019613914-85f342c6a11e?auto=format&fit=crop&w=900&q=85" alt="مركز علاج طبيعي" loading="lazy">
+              <span class="case-tag">Physiotherapy</span>
+            </div>
+            <div class="case-body">
+              <h3>مركز Motion Care</h3>
+              <p>حملة توعية لعلاج آلام الظهر والرقبة مع محتوى فيديو قصير ورسائل واتساب مخصصة للحجز.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>1,120</strong><span>Leads</span></div>
+                <div class="case-metric"><strong>29%</strong><span>Booking</span></div>
+                <div class="case-metric"><strong>-26%</strong><span>Cost</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="derma">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85" alt="تجميل وليزر" loading="lazy">
+              <span class="case-tag">Laser Services</span>
+            </div>
+            <div class="case-body">
+              <h3>عيادة SkinLab</h3>
+              <p>اختبار زوايا إعلانية لخدمات إزالة الشعر بالليزر مع تحسين صور العروض وجدولة الردود.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>+63%</strong><span>Bookings</span></div>
+                <div class="case-metric"><strong>4.1%</strong><span>CVR</span></div>
+                <div class="case-metric"><strong>-35%</strong><span>CPL</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="dental">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85" alt="عيادة أسنان حديثة" loading="lazy">
+              <span class="case-tag">Cosmetic Dentistry</span>
+            </div>
+            <div class="case-body">
+              <h3>Smile Avenue</h3>
+              <p>حملة ابتسامة هوليوود وتنظيف الأسنان مع تحسين Funnel الحجز وربط الإعلانات بنماذج متابعة.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>890</strong><span>Leads</span></div>
+                <div class="case-metric"><strong>18%</strong><span>Visits</span></div>
+                <div class="case-metric"><strong>-24%</strong><span>CPA</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal" data-category="physio">
+            <div class="case-img">
+              <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=85" alt="رعاية صحية ولياقة علاجية" loading="lazy">
+              <span class="case-tag">Rehab Program</span>
+            </div>
+            <div class="case-body">
+              <h3>Rehab Plus</h3>
+              <p>خطة محتوى وحملات Lead Gen لبرامج التأهيل بعد الإصابات الرياضية مع تحسين جودة الاستفسارات.</p>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>+52%</strong><span>MQLs</span></div>
+                <div class="case-metric"><strong>27%</strong><span>Qualified</span></div>
+                <div class="case-metric"><strong>-21%</strong><span>Cost</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">طريقة العمل</div>
+            <h2 class="section-title">خطة نمو تناسب حساسية المجال الطبي</h2>
+          </div>
+
+          <p class="section-desc">
+            لا يتم إطلاق أي حملة قبل فهم التخصص، الخدمة، الجمهور، رحلة الحجز، وطريقة استقبال الاستفسارات داخل العيادة.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-visual reveal">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=900&q=85" alt="تحليل تسويقي طبي" loading="lazy">
+            <div class="process-note">
+              <h3>التسويق الطبي يبدأ بالثقة</h3>
+              <p>كل رسالة إعلانية يجب أن تطمئن المريض، تشرح الخدمة بوضوح، وتدفعه للحجز بدون ضغط أو مبالغة.</p>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-num">01</div>
+              <div>
+                <h3>تحليل العيادة والخدمة</h3>
+                <p>مراجعة التخصص، الخدمات الأعلى ربحية، نقاط قوة الطبيب، المنافسين، وطريقة استقبال الحجوزات.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">02</div>
+              <div>
+                <h3>بناء الرسالة الطبية</h3>
+                <p>تحويل الخدمة الطبية إلى رسالة مفهومة للمريض مع محتوى يشرح المشكلة، الحل، وخطوة الحجز.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">03</div>
+              <div>
+                <h3>إطلاق الحملات والمتابعة</h3>
+                <p>تشغيل الحملات على Meta وGoogle مع متابعة يومية لتكلفة الليد، جودة المحادثات، ونسبة الحجز.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">04</div>
+              <div>
+                <h3>تحسين رحلة المريض</h3>
+                <p>تحسين الردود، الصفحات، المحتوى، والتذكير بالمواعيد لزيادة التحويل من استفسار إلى زيارة فعلية.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">المحتوى الطبي</div>
+            <h2 class="section-title">أنواع محتوى أستخدمها داخل الخطة</h2>
+          </div>
+        </div>
+
+        <div class="content-grid reveal">
+          <div class="content-card">
+            <span>01</span>
+            <h3>أسئلة شائعة</h3>
+            <p>إجابات مبسطة عن مخاوف المريض قبل الحجز.</p>
+          </div>
+
+          <div class="content-card">
+            <span>02</span>
+            <h3>شرح الخدمة</h3>
+            <p>توضيح خطوات الإجراء أو الجلسة بدون وعود مبالغ فيها.</p>
+          </div>
+
+          <div class="content-card">
+            <span>03</span>
+            <h3>قبل الزيارة</h3>
+            <p>محتوى يجهز المريض ويقلل التردد قبل الموعد.</p>
+          </div>
+
+          <div class="content-card">
+            <span>04</span>
+            <h3>ثقة الطبيب</h3>
+            <p>إظهار الخبرة، الفريق، العيادة، وطريقة الرعاية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">آراء العملاء</div>
+            <h2 class="section-title">تجارب عيادات اعتمدت على نمو منظم</h2>
+          </div>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>يوسف ساعدنا نفصل بين الليد الكثير والليد الجيد. بعد أول شهر أصبحت المحادثات أكثر جدية، وفريق الاستقبال أصبح يعرف كيف يتعامل مع كل نوع استفسار.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="دكتورة مريم حسام" loading="lazy">
+              </div>
+              <div>
+                <h4>د. مريم حسام</h4>
+                <span>Dermatology Consultant</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>أهم شيء كان وضوح التقارير. عرفنا أي خدمة تجيب حجوزات فعلية وأي إعلان يستهلك ميزانية بدون نتيجة، وده غيّر قراراتنا التسويقية بالكامل.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="دكتور أحمد كمال" loading="lazy">
+              </div>
+              <div>
+                <h4>د. أحمد كمال</h4>
+                <span>Dental Center Owner</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>الخطة لم تكن إعلانات فقط. تم تحسين صفحة الحجز، رسائل واتساب، وطريقة عرض الخدمات. النتيجة كانت حجوزات أكثر واستفسارات أوضح.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=200&q=80" alt="دكتور عمر سليم" loading="lazy">
+              </div>
+              <div>
+                <h4>د. عمر سليم</h4>
+                <span>Physiotherapy Director</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact-grid">
+            <div>
+              <h2>ابدأ بتحليل تسويقي لعيادتك</h2>
+              <p>
+                أرسل بيانات العيادة والتخصص والهدف الحالي، وسيتم تجهيز مراجعة مختصرة توضح أفضل نقطة بداية للحملات والمحتوى.
+              </p>
+
+              <div class="contact-lines">
+                <div class="contact-line">البريد: hello@youssefnader.health</div>
+                <div class="contact-line">واتساب: 0109 734 5182</div>
+                <div class="contact-line">التخصصات: عيادات، مراكز طبية، أسنان، جلدية، علاج طبيعي، مختبرات</div>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="اكتب اسمك" required>
+              </div>
+
+              <div class="field">
+                <label for="specialty">تخصص العيادة</label>
+                <input id="specialty" type="text" placeholder="جلدية، أسنان، علاج طبيعي، مختبر..." required>
+              </div>
+
+              <div class="field">
+                <label for="goal">الهدف الحالي</label>
+                <input id="goal" type="text" placeholder="زيادة الحجوزات، تحسين جودة الليدز، بناء محتوى..." required>
+              </div>
+
+              <div class="field">
+                <label for="message">تفاصيل مختصرة</label>
+                <textarea id="message" placeholder="اذكر المدينة، الخدمات الأساسية، وهل يوجد حملات حالية..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">إرسال عبر واتساب</button>
+              <div class="form-note">سيتم فتح واتساب برسالة منظمة تحتوي على تفاصيل العيادة والهدف التسويقي.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/201097345182" target="_blank" aria-label="تواصل عبر واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M12 3.2A8.7 8.7 0 0 0 4.5 16.3L3.6 20.4L7.8 19.4A8.7 8.7 0 1 0 12 3.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M8.7 8.4C8.9 8 9.1 8 9.4 8H10C10.2 8 10.4 8.1 10.5 8.4L11.1 9.8C11.2 10.1 11.1 10.3 10.9 10.5L10.5 11C10.4 11.1 10.4 11.3 10.5 11.5C10.9 12.3 11.6 13 12.5 13.5C12.7 13.6 12.9 13.6 13 13.4L13.5 12.9C13.7 12.7 13.9 12.6 14.2 12.7L15.7 13.4C16 13.5 16.1 13.7 16.1 14V14.5C16.1 15 15.8 15.4 15.4 15.6C14.8 15.9 13.6 16 12.1 15.2C10.5 14.4 9.2 13.1 8.5 11.6C7.8 10.1 8.2 9.1 8.7 8.4Z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> يوسف نادر — Medical Marketing Specialist</div>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="#">Behance</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const links = document.querySelectorAll(".nav-links a");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    const sections = document.querySelectorAll("section[id]");
+
+    window.addEventListener("scroll", () => {
+      let current = "home";
+
+      sections.forEach(section => {
+        const top = section.offsetTop - 130;
+        if (scrollY >= top) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const caseCards = document.querySelectorAll(".case-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        caseCards.forEach(card => {
+          const match = filter === "all" || card.dataset.category === filter;
+          card.style.display = match ? "block" : "none";
+        });
+      });
+    });
+
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    function animateCounters() {
+      if (countersStarted) return;
+
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count);
+        const suffix = counter.dataset.suffix || "";
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 55));
+
+        const timer = setInterval(() => {
+          current += step;
+
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+
+          counter.textContent = `${current}${suffix}`;
+        }, 24);
+      });
+
+      countersStarted = true;
+    }
+
+    const statsGrid = document.querySelector(".stats-grid");
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        statsObserver.disconnect();
+      }
+    }, { threshold: 0.35 });
+
+    statsObserver.observe(statsGrid);
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const specialty = document.getElementById("specialty").value.trim();
+      const goal = document.getElementById("goal").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappText = `
+مرحبًا يوسف،
+أنا ${name}
+
+تخصص العيادة: ${specialty}
+الهدف الحالي: ${goal}
+
+تفاصيل مختصرة:
+${message}
+
+أرغب في تحليل تسويقي مبدئي للعيادة ومعرفة أفضل خطة للنمو.
+      `.trim();
+
+      const url = `https://wa.me/201097345182?text=${encodeURIComponent(whatsappText)}`;
+      window.open(url, "_blank");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
