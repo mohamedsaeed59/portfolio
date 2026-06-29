@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>محمود عادل | Data Entry Specialist</title>
+  <meta name="description" content="محمود عادل، متخصص إدخال بيانات وتنظيم قواعد البيانات، تنظيف الجداول، تجهيز ملفات Excel وGoogle Sheets، وإدارة بيانات المنتجات والعملاء." />
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --surface-2: #eef4ff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --green: #16a34a;
+      --teal: #0f766e;
+      --orange: #f97316;
+      --navy: #101828;
+      --shadow: 0 24px 70px rgba(16, 24, 40, 0.08);
+      --radius: 26px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
+        radial-gradient(circle at 85% 12%, rgba(15, 118, 110, 0.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(246, 248, 252, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(228, 231, 236, 0.9);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.24);
+    }
+
+    .brand span:last-child {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(37, 99, 235, 0.09);
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--navy);
+    }
+
+    .btn-light:hover {
+      border-color: rgba(37, 99, 235, 0.45);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.08);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 78px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.09);
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 8px rgba(22, 163, 74, 0.13);
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 600;
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .chip b {
+      color: var(--navy);
+    }
+
+    .hero-card-wrap {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      height: 520px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background: var(--surface-2);
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(16, 24, 40, 0.72), transparent 58%);
+    }
+
+    .hero-badge {
+      position: absolute;
+      z-index: 3;
+      right: 34px;
+      left: 34px;
+      bottom: 34px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 24px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .hero-badge h3 {
+      font-size: 19px;
+      color: var(--navy);
+    }
+
+    .hero-badge p {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .badge-status {
+      color: var(--green);
+      background: rgba(22, 163, 74, 0.10);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 5;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: 0 20px 50px rgba(16, 24, 40, 0.13);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.15;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .fc-1 {
+      top: 44px;
+      right: -24px;
+    }
+
+    .fc-2 {
+      left: -28px;
+      bottom: 118px;
+    }
+
+    .sheet-preview {
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.05);
+    }
+
+    .sheet-bar {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .sheet-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #cbd5e1;
+    }
+
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .sheet-grid div {
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: #fff;
+      color: #475467;
+    }
+
+    .sheet-grid .head {
+      background: #eef4ff;
+      color: var(--navy);
+    }
+
+    .sheet-grid div:nth-last-child(-n+3) {
+      border-bottom: 0;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 26px;
+      margin-bottom: 30px;
+    }
+
+    .kicker {
+      color: var(--primary-dark);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      color: var(--navy);
+      letter-spacing: -0.7px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 610px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(16, 24, 40, 0.05);
+    }
+
+    .stat-card .num {
+      color: var(--navy);
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .trust-strip {
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      box-shadow: 0 14px 35px rgba(16, 24, 40, 0.04);
+    }
+
+    .trust-item {
+      background: var(--surface-2);
+      border-radius: 18px;
+      padding: 14px;
+      color: var(--navy);
+      font-weight: 900;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 14px 35px rgba(16, 24, 40, 0.05);
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(37, 99, 235, 0.30);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 19px;
+      background: rgba(37, 99, 235, 0.10);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .service-list {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      color: #344054;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(16, 24, 40, 0.05);
+      transition: 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-img {
+      height: 225px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.06);
+    }
+
+    .project-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      color: var(--navy);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-body h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .project-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .project-metric {
+      background: var(--surface-2);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .project-metric strong {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .project-metric span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .process-visual {
+      min-height: 520px;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .process-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.76;
+    }
+
+    .process-note {
+      position: absolute;
+      right: 24px;
+      left: 24px;
+      bottom: 24px;
+      background: rgba(16, 24, 40, 0.74);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .process-note h3 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .process-note p {
+      color: rgba(255,255,255,0.76);
+      font-weight: 700;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      box-shadow: 0 12px 30px rgba(16, 24, 40, 0.04);
+    }
+
+    .step-num {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: rgba(37, 99, 235, 0.10);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(16, 24, 40, 0.04);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #344054;
+      font-weight: 900;
+    }
+
+    .tool-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 999px;
+      background: var(--primary);
+      flex: none;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(16, 24, 40, 0.05);
+    }
+
+    .stars {
+      color: var(--orange);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial p {
+      color: #344054;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface-2);
+      flex: none;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .person h4 {
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at left bottom, rgba(37, 99, 235, 0.36), transparent 34%),
+        var(--navy);
+      border-radius: 38px;
+      padding: 46px;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.22;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.74);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-line {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 14px 16px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 800;
+    }
+
+    .contact-form {
+      background: #fff;
+      color: var(--text);
+      border-radius: 28px;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      color: #344054;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .field input,
+    .field textarea {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 15px;
+      outline: none;
+      color: var(--text);
+      background: #fff;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .field textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(37, 99, 235, 0.62);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 26px 0 38px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .footer-inner {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: #344054;
+      font-size: 13px;
+      font-weight: 900;
+      transition: 0.25s;
+    }
+
+    .socials a:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.35);
+      transition: 0.25s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .process-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid,
+      .trust-strip,
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .projects-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-img {
+        height: 460px;
+      }
+
+      .fc-1 {
+        right: 12px;
+      }
+
+      .fc-2 {
+        left: 12px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        height: 72px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .nav .btn-primary {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-head,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats-grid,
+      .trust-strip,
+      .services-grid,
+      .projects-grid,
+      .project-metrics,
+      .tools-grid,
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-img {
+        height: 420px;
+      }
+
+      .hero-badge {
+        right: 24px;
+        left: 24px;
+        bottom: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 28px;
+        border-radius: 28px;
+      }
+
+      .sheet-grid {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="محمود عادل">
+        <span class="brand-mark">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
+            <path d="M4 5h16M4 10h16M4 15h16M4 20h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M8 5v15M16 5v15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+          </svg>
+        </span>
+        <span>
+          محمود عادل
+          <small>Data Entry Specialist</small>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">الرئيسية</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#projects">الأعمال</a></li>
+        <li><a href="#process">طريقة العمل</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+
+      <a class="btn btn-primary" href="#contact">اطلب تنفيذ ملف</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="#111827" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span class="pulse"></span>
+            إدخال بيانات دقيق ومنظم بسرعة تنفيذ عالية
+          </div>
+
+          <h1>أحوّل الملفات المتفرقة إلى <span class="gradient-text">بيانات مرتبة وجاهزة للاستخدام</span></h1>
+
+          <p class="hero-text">
+            متخصص في إدخال البيانات، تنظيف الجداول، تنسيق ملفات Excel وGoogle Sheets، تجهيز قواعد بيانات العملاء والمنتجات، وتحويل البيانات من PDF أو صور أو ملفات غير منظمة إلى جداول واضحة قابلة للبحث والتحليل.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">شاهد نماذج الأعمال</a>
+            <a class="btn btn-light" href="#services">الخدمات المتاحة</a>
+          </div>
+
+          <div class="hero-chips">
+            <span class="chip"><b>Excel</b> Data Cleaning</span>
+            <span class="chip"><b>Google Sheets</b> Formatting</span>
+            <span class="chip"><b>CRM</b> Data Management</span>
+          </div>
+
+          <div class="sheet-preview reveal">
+            <div class="sheet-bar">
+              <span></span><span></span><span></span>
+            </div>
+
+            <div class="sheet-grid">
+              <div class="head">اسم العميل</div>
+              <div class="head">الحالة</div>
+              <div class="head">آخر تحديث</div>
+
+              <div>Omar Hassan</div>
+              <div>Verified</div>
+              <div>Today</div>
+
+              <div>Nour Clinic</div>
+              <div>Cleaned</div>
+              <div>Yesterday</div>
+
+              <div>Casa Store</div>
+              <div>Ready</div>
+              <div>2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap reveal">
+          <div class="floating-card fc-1">
+            <strong>99.7%</strong>
+            <span>متوسط دقة التسليم</span>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-img">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1100&q=85" alt="تنظيم ملفات وجداول بيانات" loading="eager">
+              <div class="hero-badge">
+                <div>
+                  <h3>محمود عادل</h3>
+                  <p>Data Entry & Data Cleaning Specialist · القاهرة</p>
+                </div>
+                <span class="badge-status">متاح لمشاريع جديدة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card fc-2">
+            <strong>420K+</strong>
+            <span>سجل تم تنظيمه</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="الأرقام">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="num" data-count="420" data-suffix="K+">0</div>
+            <p>سجل تم إدخاله وتنظيمه</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="num" data-count="99" data-suffix=".7%">0</div>
+            <p>متوسط دقة الملفات المسلمة</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="num" data-count="86" data-suffix="+">0</div>
+            <p>مشروع مكتمل في إدخال البيانات</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="num" data-count="24" data-suffix="h">0</div>
+            <p>تسليم للملفات العاجلة</p>
+          </div>
+        </div>
+
+        <div class="trust-strip reveal">
+          <div class="trust-item">Excel & Google Sheets</div>
+          <div class="trust-item">Product Catalogs</div>
+          <div class="trust-item">CRM Data</div>
+          <div class="trust-item">PDF to Spreadsheet</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">الخدمات</div>
+            <h2 class="section-title">خدمات إدخال وتنظيم بيانات للشركات والفرق</h2>
+          </div>
+
+          <p class="section-desc">
+            تنفيذ منظم للمهام التي تحتاج دقة وتركيز: إدخال بيانات، تنظيف أخطاء، توحيد تنسيق، مراجعة مكررات، وتجهيز ملفات قابلة للاستخدام المباشر.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M4 5h16v14H4V5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M4 10h16M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.2"/>
+              </svg>
+            </div>
+            <h3>إدخال بيانات Excel</h3>
+            <p>إدخال وترتيب البيانات داخل ملفات Excel وGoogle Sheets مع تنسيق الأعمدة، الفلاتر، والقوائم.</p>
+            <ul class="service-list">
+              <li>تنسيق الجداول والأعمدة</li>
+              <li>إضافة فلاتر وقوائم منسدلة</li>
+              <li>تجهيز ملفات قابلة للبحث</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M6 4h9l3 3v13H6V4Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M9 11h6M9 15h6M9 8h3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>تحويل PDF وصور إلى جداول</h3>
+            <p>تحويل فواتير، قوائم أسعار، كتالوجات، أو مستندات ممسوحة ضوئيًا إلى ملفات منظمة.</p>
+            <ul class="service-list">
+              <li>PDF to Excel</li>
+              <li>Image to Spreadsheet</li>
+              <li>مراجعة يدوية بعد التحويل</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z" stroke="currentColor" stroke-width="2.2"/>
+                <path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7" stroke="currentColor" stroke-width="2.2"/>
+                <path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5" stroke="currentColor" stroke-width="2.2"/>
+              </svg>
+            </div>
+            <h3>تنظيف قواعد البيانات</h3>
+            <p>مراجعة البيانات، حذف المكرر، توحيد الصيغ، تصحيح الأخطاء، وتجهيز قاعدة بيانات مرتبة.</p>
+            <ul class="service-list">
+              <li>Duplicate Removal</li>
+              <li>Data Validation</li>
+              <li>Standard Formatting</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M6 7h12l-1 13H7L6 7Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M9 7a3 3 0 0 1 6 0" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>إدارة بيانات المنتجات</h3>
+            <p>إدخال بيانات منتجات المتاجر الإلكترونية: أسماء، أسعار، وصف، صور، SKU، تصنيفات، ومخزون.</p>
+            <ul class="service-list">
+              <li>Product Listings</li>
+              <li>SKU Organization</li>
+              <li>Price & Stock Updates</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM16.5 12a3.5 3.5 0 1 0 0-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M3 21c.7-4 3-6 5-6s4.3 2 5 6M14 21c.4-2.3 1.7-3.8 3.5-3.8 1.5 0 2.8 1.2 3.5 3.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>إدارة بيانات العملاء</h3>
+            <p>تنظيم بيانات العملاء والليدز داخل CRM أو Sheets مع تصنيف الحالة ومصدر العميل وآخر متابعة.</p>
+            <ul class="service-list">
+              <li>Lead Lists</li>
+              <li>CRM Updates</li>
+              <li>Follow-up Status</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                <path d="M4 18h16M7 18V9M12 18V5M17 18v-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>تقارير وتجهيز Dashboard</h3>
+            <p>تجهيز ملفات ملخصة تعرض الأرقام المهمة بوضوح للفرق الإدارية أو فرق المبيعات.</p>
+            <ul class="service-list">
+              <li>Summary Sheets</li>
+              <li>Pivot Tables</li>
+              <li>Clean Reporting Layouts</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">الأعمال</div>
+            <h2 class="section-title">مشاريع بيانات تم تنفيذها بدقة</h2>
+          </div>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="catalog">كتالوجات</button>
+            <button class="filter-btn" data-filter="crm">عملاء CRM</button>
+            <button class="filter-btn" data-filter="finance">فواتير</button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" data-category="catalog">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=85" alt="تنظيم كتالوج منتجات" loading="lazy">
+              <span class="project-tag">Product Catalog</span>
+            </div>
+            <div class="project-body">
+              <h3>كتالوج متجر Casa Home</h3>
+              <p>تنظيم بيانات منتجات أثاث منزلي داخل Google Sheets مع SKU، أسعار، مقاسات، تصنيفات، وروابط صور.</p>
+              <div class="project-metrics">
+                <div class="project-metric"><strong>8,400</strong><span>Products</span></div>
+                <div class="project-metric"><strong>5 Days</strong><span>Delivery</span></div>
+                <div class="project-metric"><strong>99%</strong><span>Accuracy</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="crm">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="تنظيم بيانات عملاء CRM" loading="lazy">
+              <span class="project-tag">CRM Cleanup</span>
+            </div>
+            <div class="project-body">
+              <h3>تنظيف بيانات Growth Leads</h3>
+              <p>مراجعة قاعدة بيانات عملاء محتملين، إزالة المكرر، توحيد أرقام الهاتف، وتصنيف الحالة التسويقية.</p>
+              <div class="project-metrics">
+                <div class="project-metric"><strong>32K</strong><span>Records</span></div>
+                <div class="project-metric"><strong>-18%</strong><span>Duplicates</span></div>
+                <div class="project-metric"><strong>4 Days</strong><span>Work</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="finance">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85" alt="إدخال فواتير وملفات مالية" loading="lazy">
+              <span class="project-tag">Invoices Entry</span>
+            </div>
+            <div class="project-body">
+              <h3>أرشفة فواتير شركة توريدات</h3>
+              <p>إدخال بيانات فواتير PDF في ملف Excel مع رقم الفاتورة، المورد، التاريخ، الضريبة، والإجمالي.</p>
+              <div class="project-metrics">
+                <div class="project-metric"><strong>4,750</strong><span>Invoices</span></div>
+                <div class="project-metric"><strong>7 Days</strong><span>Delivery</span></div>
+                <div class="project-metric"><strong>0.3%</strong><span>Error</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="catalog">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=85" alt="تنظيم قوائم أسعار" loading="lazy">
+              <span class="project-tag">Price Lists</span>
+            </div>
+            <div class="project-body">
+              <h3>قائمة أسعار Tech Supplies</h3>
+              <p>تحويل قوائم أسعار موردين من ملفات PDF غير موحدة إلى ملف قابل للفرز حسب البراند والفئة والسعر.</p>
+              <div class="project-metrics">
+                <div class="project-metric"><strong>12K</strong><span>Rows</span></div>
+                <div class="project-metric"><strong>3</strong><span>Sources</span></div>
+                <div class="project-metric"><strong>Clean</strong><span>Output</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="crm">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="إدارة بيانات مبيعات" loading="lazy">
+              <span class="project-tag">Sales Data</span>
+            </div>
+            <div class="project-body">
+              <h3>تحديث بيانات فريق مبيعات</h3>
+              <p>إعادة ترتيب Sheet متابعة عملاء لفريق مبيعات، وإضافة حالات متابعة وتواريخ آخر تواصل.</p>
+              <div class="project-metrics">
+                <div class="project-metric"><strong>14</strong><span>Agents</span></div>
+                <div class="project-metric"><strong>9.6K</strong><span>Leads</span></div>
+                <div class="project-metric"><strong>2 Days</strong><span>Delivery</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="finance">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=85" alt="إدخال مصروفات وتقارير" loading="lazy">
+              <span class="project-tag">Expense Sheets</span>
+            </div>
+            <div class="project-body">
+              <h3>تجميع مصروفات تشغيلية</h3>
+              <p>إدخال وتصنيف مصروفات شهرية من إيصالات وصور داخل ملف منظم حسب التاريخ والبند والقيمة.</p>
+              <div class="project-metrics">
+                <div class="project-metric"><strong>1,980</strong><span>Entries</span></div>
+                <div class="project-metric"><strong>12</strong><span>Categories</span></div>
+                <div class="project-metric"><strong>Ready</strong><span>Report</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">طريقة العمل</div>
+            <h2 class="section-title">خطوات واضحة قبل تسليم أي ملف</h2>
+          </div>
+
+          <p class="section-desc">
+            كل مهمة تمر بمراجعة للمصدر، تحديد شكل الإخراج، تنفيذ منظم، ثم تدقيق نهائي قبل التسليم.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-visual reveal">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="تنظيم ومراجعة بيانات" loading="lazy">
+            <div class="process-note">
+              <h3>البيانات النظيفة تختصر وقت الفريق</h3>
+              <p>الهدف ليس إدخال البيانات فقط، بل تسليم ملف واضح يمكن الاعتماد عليه في البحث، المتابعة، التحليل، واتخاذ القرار.</p>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-num">01</div>
+              <div>
+                <h3>فهم مصدر البيانات</h3>
+                <p>مراجعة الملفات الأصلية، نوع البيانات، حجم العمل، وطريقة الإخراج المطلوبة قبل البدء.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">02</div>
+              <div>
+                <h3>بناء هيكل الملف</h3>
+                <p>تحديد الأعمدة، نوع كل حقل، تنسيق التواريخ والأرقام، وطريقة ترتيب السجلات.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">03</div>
+              <div>
+                <h3>إدخال وتنظيف البيانات</h3>
+                <p>تنفيذ الإدخال بدقة مع إزالة التكرار، توحيد الصيغ، وتصحيح الأخطاء الواضحة.</p>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-num">04</div>
+              <div>
+                <h3>مراجعة وتسليم نهائي</h3>
+                <p>فحص عينة من البيانات، مراجعة التنسيق، وإرسال ملف نهائي منظم مع ملاحظات عند الحاجة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">الأدوات</div>
+            <h2 class="section-title">أدوات أستخدمها يوميًا</h2>
+          </div>
+        </div>
+
+        <div class="tools-grid reveal">
+          <div class="tool-card"><span class="tool-dot"></span>Microsoft Excel</div>
+          <div class="tool-card"><span class="tool-dot"></span>Google Sheets</div>
+          <div class="tool-card"><span class="tool-dot"></span>Google Drive</div>
+          <div class="tool-card"><span class="tool-dot"></span>Microsoft Word</div>
+          <div class="tool-card"><span class="tool-dot"></span>PDF Tools</div>
+          <div class="tool-card"><span class="tool-dot"></span>Notion</div>
+          <div class="tool-card"><span class="tool-dot"></span>Airtable</div>
+          <div class="tool-card"><span class="tool-dot"></span>CRM Systems</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">آراء العملاء</div>
+            <h2 class="section-title">ثقة مبنية على دقة التسليم</h2>
+          </div>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>محمود استلم ملف منتجات كبير جدًا وكان مليان اختلافات في التنسيق. التسليم النهائي كان مرتب وسهل الاستيراد على المتجر بدون مشاكل.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="مريم عادل" loading="lazy">
+              </div>
+              <div>
+                <h4>مريم عادل</h4>
+                <span>Operations Manager · Casa Home</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>كان عندنا بيانات عملاء مكررة ومش منظمة. بعد التنظيف أصبح فريق المبيعات يقدر يفلتر ويتابع كل عميل بسهولة.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="أحمد كمال" loading="lazy">
+              </div>
+              <div>
+                <h4>أحمد كمال</h4>
+                <span>Sales Lead · Growth Leads</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>أفضل شيء كان الالتزام بالتفاصيل. الفواتير كانت كثيرة ومصادرها مختلفة، لكن الملف النهائي كان منظم وواضح للمحاسبة.</p>
+            <div class="person">
+              <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="يوسف ماهر" loading="lazy">
+              </div>
+              <div>
+                <h4>يوسف ماهر</h4>
+                <span>Finance Coordinator · SupplyLine</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact-grid">
+            <div>
+              <h2>عندك ملف محتاج ترتيب أو إدخال؟</h2>
+              <p>
+                أرسل نوع البيانات، حجم الملف، وصيغة التسليم المطلوبة، وسيتم تقدير الوقت المناسب وتنفيذ الملف بدقة.
+              </p>
+
+              <div class="contact-lines">
+                <div class="contact-line">البريد: hello@mahmouddata.work</div>
+                <div class="contact-line">واتساب: 0106 214 7783</div>
+                <div class="contact-line">الخدمات: Excel، Google Sheets، PDF to Excel، Product Data، CRM Data</div>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="اكتب اسمك" required>
+              </div>
+
+              <div class="field">
+                <label for="task">نوع المهمة</label>
+                <input id="task" type="text" placeholder="إدخال بيانات، تنظيف ملف، كتالوج منتجات..." required>
+              </div>
+
+              <div class="field">
+                <label for="size">حجم البيانات</label>
+                <input id="size" type="text" placeholder="مثال: 500 صف / 20 ملف PDF / 3000 منتج" required>
+              </div>
+
+              <div class="field">
+                <label for="message">تفاصيل مختصرة</label>
+                <textarea id="message" placeholder="اذكر صيغة الملف الحالي وصيغة التسليم المطلوبة..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">إرسال عبر واتساب</button>
+              <div class="form-note">سيتم فتح واتساب برسالة منظمة تحتوي على تفاصيل مهمة إدخال البيانات.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/201062147783" target="_blank" aria-label="تواصل عبر واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M12 3.2A8.7 8.7 0 0 0 4.5 16.3L3.6 20.4L7.8 19.4A8.7 8.7 0 1 0 12 3.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M8.7 8.4C8.9 8 9.1 8 9.4 8H10C10.2 8 10.4 8.1 10.5 8.4L11.1 9.8C11.2 10.1 11.1 10.3 10.9 10.5L10.5 11C10.4 11.1 10.4 11.3 10.5 11.5C10.9 12.3 11.6 13 12.5 13.5C12.7 13.6 12.9 13.6 13 13.4L13.5 12.9C13.7 12.7 13.9 12.6 14.2 12.7L15.7 13.4C16 13.5 16.1 13.7 16.1 14V14.5C16.1 15 15.8 15.4 15.4 15.6C14.8 15.9 13.6 16 12.1 15.2C10.5 14.4 9.2 13.1 8.5 11.6C7.8 10.1 8.2 9.1 8.7 8.4Z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> محمود عادل — Data Entry Specialist</div>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">Upwork</a>
+        <a href="#">Freelancer</a>
+        <a href="#">Google Drive</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const links = document.querySelectorAll(".nav-links a");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    const sections = document.querySelectorAll("section[id]");
+
+    window.addEventListener("scroll", () => {
+      let current = "home";
+
+      sections.forEach(section => {
+        const top = section.offsetTop - 130;
+        if (scrollY >= top) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          const match = filter === "all" || card.dataset.category === filter;
+          card.style.display = match ? "block" : "none";
+        });
+      });
+    });
+
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    function animateCounters() {
+      if (countersStarted) return;
+
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count);
+        const suffix = counter.dataset.suffix || "";
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 55));
+
+        const timer = setInterval(() => {
+          current += step;
+
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+
+          counter.textContent = `${current}${suffix}`;
+        }, 24);
+      });
+
+      countersStarted = true;
+    }
+
+    const statsGrid = document.querySelector(".stats-grid");
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        statsObserver.disconnect();
+      }
+    }, { threshold: 0.35 });
+
+    statsObserver.observe(statsGrid);
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const task = document.getElementById("task").value.trim();
+      const size = document.getElementById("size").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappText = `
+مرحبًا محمود،
+أنا ${name}
+
+نوع المهمة: ${task}
+حجم البيانات: ${size}
+
+تفاصيل مختصرة:
+${message}
+
+أرغب في تنفيذ مهمة إدخال أو تنظيم بيانات ومعرفة الوقت والتكلفة المناسبة.
+      `.trim();
+
+      const url = `https://wa.me/201062147783?text=${encodeURIComponent(whatsappText)}`;
+      window.open(url, "_blank");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
