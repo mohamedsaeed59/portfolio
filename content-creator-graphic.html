@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ملك سامي | Content Creator & Graphic Designer</title>
+  <meta name="description" content="بورتفوليو ملك سامي، صانعة محتوى ومصممة جرافيك متخصصة في صناعة المحتوى، تصميم السوشيال ميديا، الهوية البصرية، الريلز، والإعلانات الرقمية." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbf7f2;
+      --card: #ffffff;
+      --text: #231f20;
+      --muted: #746b66;
+      --primary: #e85d75;
+      --primary-dark: #cf3f5b;
+      --secondary: #f7b267;
+      --soft: #fff0f3;
+      --border: #f0e3db;
+      --dark: #191416;
+      --shadow: 0 22px 55px rgba(35, 31, 32, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, video {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 247, 242, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(240, 227, 219, 0.85);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(232, 93, 117, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--dark);
+      color: #fff;
+      padding: 11px 19px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      transition: 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--card);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 9px 12px;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(35, 31, 32, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      padding: 76px 0 42px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      background: rgba(232, 93, 117, 0.16);
+      filter: blur(54px);
+      border-radius: 50%;
+      top: 70px;
+      inset-inline-start: -170px;
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(247, 178, 103, 0.18);
+      filter: blur(58px);
+      border-radius: 50%;
+      bottom: 10px;
+      inset-inline-end: -130px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      padding: 9px 15px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(35px, 5vw, 63px);
+      line-height: 1.16;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 23px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(232, 93, 117, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-light:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 610px;
+    }
+
+    .mini-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 17px;
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .mini-stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      height: 455px;
+      border-radius: 26px;
+      object-fit: cover;
+      position: relative;
+      z-index: 2;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(240, 227, 219, 0.95);
+      box-shadow: 0 18px 34px rgba(35, 31, 32, 0.12);
+      border-radius: 21px;
+      padding: 15px 17px;
+      max-width: 230px;
+    }
+
+    .floating-card.top {
+      top: 34px;
+      inset-inline-start: 34px;
+    }
+
+    .floating-card.bottom {
+      bottom: 34px;
+      inset-inline-end: 34px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 43px);
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 460px;
+      font-size: 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: rgba(232, 93, 117, 0.35);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--soft);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 18px 44px rgba(35, 31, 32, 0.06);
+    }
+
+    .about-img {
+      height: 410px;
+      border-radius: 26px;
+      object-fit: cover;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin: 14px 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .work-media {
+      height: 235px;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .work-body {
+      padding: 21px;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .work-body h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .results {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 36px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .results p {
+      color: rgba(255,255,255,0.74);
+      margin-top: 12px;
+    }
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .result-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 24px;
+      padding: 21px;
+    }
+
+    .result-item strong {
+      display: block;
+      color: var(--secondary);
+      font-size: 30px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .result-item span {
+      color: rgba(255,255,255,0.76);
+      font-size: 14px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .process-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      width: 43px;
+      height: 43px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 17px;
+    }
+
+    .process-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .testimonial {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .person img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .person strong {
+      display: block;
+      line-height: 1.3;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: 38px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.13);
+      bottom: -120px;
+      inset-inline-end: -90px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.88);
+      margin-top: 12px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-link {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 19px;
+      padding: 15px 17px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: 0.65s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-card,
+      .results,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .work-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-img {
+        height: 390px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 76px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .mini-stats,
+      .services-grid,
+      .work-grid,
+      .result-list,
+      .process-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 10px;
+      }
+
+      .hero-img,
+      .about-img {
+        height: 330px;
+      }
+
+      .floating-card {
+        position: static;
+        max-width: 100%;
+        margin-top: 12px;
+      }
+
+      .results,
+      .contact-card {
+        padding: 30px;
+        border-radius: 30px;
+      }
+
+      .contact-link {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">M</span>
+        <span>ملك سامي</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">عنّي</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#results">النتائج</a>
+        <a href="#contact">تواصل</a>
+      </div>
+
+      <a class="nav-cta" href="https://wa.me/201012345678" target="_blank">ابدأ مشروعك</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <div class="eyebrow"><span></span> متاحة للتعاون مع براندات جديدة</div>
+
+        <h1>محتوى بصري جذاب يحكي قصة البراند ويقربه من جمهوره.</h1>
+
+        <p>
+          أنا ملك سامي، Content Creator وGraphic Designer. أساعد البراندات على بناء حضور بصري قوي من خلال أفكار محتوى واضحة، تصميمات سوشيال ميديا احترافية، فيديوهات قصيرة، وهوية بصرية تناسب شخصية كل مشروع.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">شوفي الأعمال</a>
+          <a class="btn btn-light" href="#contact">تواصلي معي</a>
+        </div>
+
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <strong>95+</strong>
+            <span>مشروع محتوى وتصميم</span>
+          </div>
+
+          <div class="mini-stat">
+            <strong>3.8M</strong>
+            <span>مشاهدات لمحتوى قصير</span>
+          </div>
+
+          <div class="mini-stat">
+            <strong>42+</strong>
+            <span>براند تم تطوير ظهوره</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=85"
+          alt="ملك سامي صانعة محتوى ومصممة جرافيك"
+          loading="lazy"
+        >
+
+        <div class="floating-card top">
+          <strong>Content Creation</strong>
+          <span>أفكار · تصوير · Reels · Storytelling</span>
+        </div>
+
+        <div class="floating-card bottom">
+          <strong>Graphic Design</strong>
+          <span>Social Media · Branding · Ads</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الخدمات</div>
+          <h2>كل ما يحتاجه البراند ليظهر بشكل أقوى</h2>
+        </div>
+
+        <p>
+          تنفيذ محتوى وتصميمات مناسبة للسوشيال ميديا، تجمع بين الشكل الجذاب والرسالة الواضحة والهدف التسويقي.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="icon">✍️</div>
+          <h3>Content Strategy</h3>
+          <p>تخطيط أفكار شهرية، تحديد زوايا المحتوى، كتابة سكريبتات قصيرة، وتنظيم جدول نشر يناسب الجمهور.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>تصميم بوستات، إعلانات، ستوريز، قوالب سوشيال ميديا، وعروض بصرية متناسقة مع هوية البراند.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🎬</div>
+          <h3>Reels & Short Videos</h3>
+          <p>أفكار فيديوهات قصيرة، تصوير بسيط، مونتاج سريع، ترجمات، وCTA واضح يناسب إنستجرام وتيك توك.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">✨</div>
+          <h3>Brand Visuals</h3>
+          <p>تطوير الستايل البصري، اختيار ألوان وخطوط، وبناء شكل موحد يخلي الصفحة أكثر احترافية وثقة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-card reveal">
+        <img
+          class="about-img"
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
+          alt="مساحة عمل إبداعية لصناعة المحتوى والتصميم"
+          loading="lazy"
+        >
+
+        <div class="about-content">
+          <div class="section-label">عنّي</div>
+          <h2>أجمع بين الفكرة، التصميم، وطريقة عرض المحتوى</h2>
+
+          <p>
+            بدأت شغلي في صناعة المحتوى من حبّي للتفاصيل البصرية وطريقة تأثيرها على قرار الجمهور. مع الوقت اشتغلت مع براندات في مجالات الأزياء، التجميل، الإكسسوارات، المطاعم، التعليم، والخدمات المحلية.
+          </p>
+
+          <p>
+            طريقتي في العمل تبدأ بفهم شخصية البراند والجمهور، ثم تحويل الرسالة إلى محتوى سهل، جذاب، وقابل للمشاركة. كل تصميم أو فيديو يتم تنفيذه بهدف واضح: جذب الانتباه، بناء الثقة، وزيادة التفاعل أو الطلبات.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Adobe Photoshop</span>
+            <span class="skill">Illustrator</span>
+            <span class="skill">Canva Pro</span>
+            <span class="skill">CapCut</span>
+            <span class="skill">Premiere Pro</span>
+            <span class="skill">Content Calendar</span>
+            <span class="skill">Copywriting</span>
+            <span class="skill">Reels Ideas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">الأعمال</div>
+          <h2>مختارات من مشاريع محتوى وتصميم</h2>
+        </div>
+
+        <p>
+          أعمال متنوعة بين تصميمات سوشيال ميديا، حملات إعلانية، محتوى فيديو، وهوية بصرية لبراندات مختلفة.
+        </p>
+      </div>
+
+      <div class="filters reveal">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="design">تصميم</button>
+        <button class="filter-btn" data-filter="content">محتوى</button>
+        <button class="filter-btn" data-filter="video">فيديو</button>
+        <button class="filter-btn" data-filter="branding">هوية</button>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card reveal" data-category="design">
+          <img
+            class="work-media"
+            src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1000&q=85"
+            alt="تصميمات سوشيال ميديا"
+            loading="lazy"
+          >
+
+          <div class="work-body">
+            <span class="tag">Social Media Design</span>
+            <h3>حملة عروض لمتجر أزياء</h3>
+            <p>تصميمات شهرية موحدة للبوستات والستوريز، مع رسائل بيع قصيرة وألوان مناسبة لطبيعة البراند النسائي.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-category="video">
+          <video class="work-media" muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?auto=format&fit=crop&w=1000&q=85">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-recording-content-for-her-vlog-45517-large.mp4" type="video/mp4">
+          </video>
+
+          <div class="work-body">
+            <span class="tag">Reels</span>
+            <h3>Reels لمنتجات عناية شخصية</h3>
+            <p>أفكار فيديوهات قصيرة تعتمد على قبل/بعد، إظهار تفاصيل المنتج، وترجمة واضحة تساعد على زيادة المشاهدات.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-category="content">
+          <img
+            class="work-media"
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=85"
+            alt="خطة محتوى شهرية"
+            loading="lazy"
+          >
+
+          <div class="work-body">
+            <span class="tag">Content Plan</span>
+            <h3>خطة محتوى لعيادة تجميل</h3>
+            <p>تقسيم المحتوى بين توعية، نتائج، أسئلة شائعة، عروض، وثقة، مع كابشن مناسب لكل نوع محتوى.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-category="branding">
+          <img
+            class="work-media"
+            src="https://images.unsplash.com/photo-1602576666092-bf6447a729fc?auto=format&fit=crop&w=1000&q=85"
+            alt="هوية بصرية لمشروع"
+            loading="lazy"
+          >
+
+          <div class="work-body">
+            <span class="tag">Visual Identity</span>
+            <h3>هوية بصرية لبراند إكسسوارات</h3>
+            <p>اختيار ألوان وخطوط، تصميم شعار بسيط، وقوالب محتوى جاهزة للنشر اليومي على إنستجرام.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-category="design">
+          <img
+            class="work-media"
+            src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1000&q=85"
+            alt="تصميم إعلانات رقمية"
+            loading="lazy"
+          >
+
+          <div class="work-body">
+            <span class="tag">Ad Creatives</span>
+            <h3>تصميمات إعلانية لكورس أونلاين</h3>
+            <p>كرياتيفات متعددة لاختبار أفضل عنوان وصورة، مع تركيز على الوعد الأساسي والنتيجة التي يحصل عليها العميل.</p>
+          </div>
+        </article>
+
+        <article class="work-card reveal" data-category="video">
+          <video class="work-media" muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=85">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-using-a-smartphone-3444-large.mp4" type="video/mp4">
+          </video>
+
+          <div class="work-body">
+            <span class="tag">Video Ads</span>
+            <h3>إعلانات قصيرة لمتجر هدايا</h3>
+            <p>سكريبت قصير، لقطات منتجات، مونتاج سريع، وموسيقى مناسبة مع دعوة واضحة للطلب عبر واتساب.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container">
+      <div class="results reveal">
+        <div>
+          <div class="section-label">نتائج مختارة</div>
+          <h2>محتوى جميل ومرتبط بهدف واضح</h2>
+          <p>
+            أتابع تأثير المحتوى من خلال التفاعل، الحفظ، الرسائل، المشاهدات، وتحسن شكل الصفحة أمام العملاء.
+          </p>
+        </div>
+
+        <div class="result-list">
+          <div class="result-item">
+            <strong>+165%</strong>
+            <span>زيادة في التفاعل بعد تطوير شكل المحتوى لمتجر أزياء</span>
+          </div>
+
+          <div class="result-item">
+            <strong>2.4M</strong>
+            <span>مشاهدات لفيديوهات قصيرة خلال 3 أشهر</span>
+          </div>
+
+          <div class="result-item">
+            <strong>38</strong>
+            <span>تصميم سوشيال ميديا تم تسليمه في شهر واحد</span>
+          </div>
+
+          <div class="result-item">
+            <strong>71%</strong>
+            <span>زيادة في حفظ المنشورات التعليمية لعيادة تجميل</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">طريقة العمل</div>
+          <h2>خطوات بسيطة من الفكرة للنشر</h2>
+        </div>
+
+        <p>
+          كل مشروع يتم تنفيذه بطريقة منظمة تساعد على سرعة التسليم وثبات جودة المحتوى.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <h3>فهم البراند</h3>
+          <p>مراجعة المنتج، الجمهور، المنافسين، شكل الصفحة الحالي، ونبرة الكلام المناسبة.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <h3>تخطيط الأفكار</h3>
+          <p>تحديد أفكار البوستات والفيديوهات، كتابة السكريبتات، وتجهيز جدول محتوى واضح.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <h3>التصميم والتنفيذ</h3>
+          <p>تصميم البوستات، مونتاج الفيديوهات، كتابة الكابشن، وتجهيز الملفات للنشر.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <h3>المراجعة والتحسين</h3>
+          <p>مراجعة الأداء، معرفة أفضل أنواع المحتوى، وتطوير الأفكار حسب تفاعل الجمهور.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-label">آراء العملاء</div>
+          <h2>تجارب تعاون ناجحة</h2>
+        </div>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial reveal">
+          <p>
+            “ملك قدرت تفهم ستايل البراند بسرعة جدًا. التصميمات بقت أنضف، والصفحة بقت شكلها موحد واحترافي.”
+          </p>
+
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=85" alt="عميلة" loading="lazy">
+            <div>
+              <strong>يارا خالد</strong>
+              <span>Founder - Lora Accessories</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <p>
+            “أفكار الريلز كانت مختلفة وسهلة التنفيذ، وبدأنا نلاحظ زيادة في المشاهدات والرسائل من أول أسبوعين.”
+          </p>
+
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=85" alt="عميل" loading="lazy">
+            <div>
+              <strong>أحمد ناصر</strong>
+              <span>Marketing Lead - Glow Clinic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <p>
+            “التعامل كان منظم جدًا. كل شهر بيكون في خطة واضحة، تصميمات جاهزة، وأفكار مناسبة للمناسبات والعروض.”
+          </p>
+
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&q=85" alt="عميلة" loading="lazy">
+            <div>
+              <strong>سلمى عادل</strong>
+              <span>Owner - Maison Wear</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <div>
+          <h2>جاهزة أطلع شكل البراند بتاعك لمستوى أقوى؟</h2>
+          <p>
+            للتعاون في صناعة المحتوى، تصميم السوشيال ميديا، الفيديوهات القصيرة، أو تطوير الهوية البصرية، ابعتي تفاصيل المشروع وهرد عليك خلال اليوم.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-link" href="https://wa.me/201012345678" target="_blank">
+            <span>WhatsApp</span>
+            <span>+20 101 234 5678</span>
+          </a>
+
+          <a class="contact-link" href="mailto:malak.samy.creative@gmail.com">
+            <span>Email</span>
+            <span>malak.samy.creative@gmail.com</span>
+          </a>
+
+          <a class="contact-link" href="https://www.instagram.com/" target="_blank">
+            <span>Instagram</span>
+            <span>@malaksamy.creative</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 ملك سامي — Content Creator & Graphic Designer
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const workCards = document.querySelectorAll(".work-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const selected = button.dataset.filter;
+
+        workCards.forEach(card => {
+          const matched = selected === "all" || card.dataset.category === selected;
+          card.classList.toggle("hide", !matched);
+        });
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+
+    const videos = document.querySelectorAll("video");
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.45 });
+
+    videos.forEach(video => videoObserver.observe(video));
+  </script>
+
+</body>
+</html>
