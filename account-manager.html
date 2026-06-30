@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سيف خالد | Account Manager</title>
+  <meta name="description" content="بورتفوليو سيف خالد، Account Manager متخصص في إدارة العملاء، تطوير الحسابات، متابعة المشاريع، وتحسين تجربة العميل." />
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #16181d;
+      --muted: #667085;
+      --line: rgba(16, 24, 40, 0.10);
+      --primary: #2457c5;
+      --primary-dark: #153777;
+      --accent: #14b8a6;
+      --accent-dark: #0f766e;
+      --warm: #ffb547;
+      --soft-blue: #eaf1ff;
+      --soft-green: #e9fbf7;
+      --soft-warm: #fff4df;
+      --radius: 28px;
+      --shadow: 0 24px 70px rgba(21, 55, 119, 0.12);
+      --shadow-sm: 0 14px 34px rgba(21, 55, 119, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(36, 87, 197, 0.13), transparent 34%),
+        radial-gradient(circle at top left, rgba(20, 184, 166, 0.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 14px;
+      z-index: 1000;
+      margin-top: 14px;
+    }
+
+    .nav {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 14px 38px rgba(21, 55, 119, 0.08);
+      border-radius: 999px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 14px 28px rgba(36, 87, 197, 0.20);
+      letter-spacing: -1px;
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: #2e3542;
+      font-size: 14px;
+      transition: 0.22s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--soft-blue);
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 12px 17px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: 0 14px 30px rgba(36, 87, 197, 0.20);
+      transition: 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--soft-blue);
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .hero {
+      padding: 82px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(36, 87, 197, 0.10);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(20, 184, 166, 0.13);
+    }
+
+    h1 {
+      color: var(--primary-dark);
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      max-width: 850px;
+    }
+
+    h1 span {
+      color: var(--accent-dark);
+    }
+
+    .hero-lead {
+      margin-top: 22px;
+      color: #46505f;
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 15px 30px rgba(36, 87, 197, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 15px 30px rgba(20, 184, 166, 0.22);
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.70);
+      border: 1px solid var(--line);
+      color: var(--primary-dark);
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .hero-meta {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 610px;
+      border-radius: 38px;
+      overflow: hidden;
+      background: #dce8ff;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(9, 22, 48, 0.66), transparent 52%);
+      z-index: 1;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 610px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .floating-kpis {
+      position: absolute;
+      z-index: 3;
+      top: 24px;
+      left: 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .kpi-chip {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.70);
+      border-radius: 20px;
+      padding: 12px 15px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .kpi-chip strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .kpi-chip span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .hero-card {
+      position: absolute;
+      z-index: 3;
+      right: 22px;
+      left: 22px;
+      bottom: 22px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.70);
+      backdrop-filter: blur(18px);
+      border-radius: 26px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 58px 1fr auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-green);
+      color: var(--accent-dark);
+      font-size: 25px;
+    }
+
+    .hero-card small {
+      display: block;
+      color: var(--muted);
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+
+    .hero-card strong {
+      color: var(--primary-dark);
+      font-size: 18px;
+    }
+
+    .hero-card button {
+      border: 0;
+      background: var(--soft-blue);
+      color: var(--primary);
+      font-weight: 900;
+      padding: 10px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      font-size: clamp(28px, 3.5vw, 48px);
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .logo-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      padding: 20px 0 6px;
+    }
+
+    .logo-item {
+      background: rgba(255, 255, 255, 0.80);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 22px;
+      padding: 18px 12px;
+      text-align: center;
+      color: var(--primary-dark);
+      font-weight: 900;
+      box-shadow: 0 12px 26px rgba(21, 55, 119, 0.05);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 28px;
+      padding: 25px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-card strong {
+      display: block;
+      color: var(--primary);
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .stat-card span {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      border-radius: 36px;
+      overflow: hidden;
+      min-height: 535px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 36px;
+      padding: 34px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-content p {
+      color: #46505f;
+      margin-top: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--soft-blue);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .tag:nth-child(even) {
+      background: var(--soft-green);
+      color: var(--accent-dark);
+    }
+
+    .about-footer {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .about-footer strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 18px;
+    }
+
+    .about-footer span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 19px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-blue);
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .service-card:nth-child(even) .service-icon {
+      background: var(--soft-green);
+      color: var(--accent-dark);
+    }
+
+    .service-card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(36, 87, 197, 0.12);
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--primary-dark);
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.24s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: 0.28s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .work-media {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+      background: #dce8ff;
+    }
+
+    .work-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.45s ease;
+    }
+
+    .work-card:hover .work-media img {
+      transform: scale(1.06);
+    }
+
+    .work-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .work-result {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(9, 22, 48, 0.74);
+      color: #fff;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .work-body {
+      padding: 22px;
+    }
+
+    .work-body h3 {
+      color: var(--primary-dark);
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .work-footer {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .work-footer span {
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .view-btn {
+      border: 0;
+      background: var(--soft-blue);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: 0.22s ease;
+    }
+
+    .view-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .case-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 34px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .case-card img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 26px;
+    }
+
+    .case-card h3 {
+      color: var(--primary-dark);
+      font-size: 24px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .case-results div {
+      background: var(--soft-blue);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .case-results div:nth-child(even) {
+      background: var(--soft-green);
+    }
+
+    .case-results strong {
+      display: block;
+      color: var(--primary);
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .case-results span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: "0" counter(step);
+      position: absolute;
+      top: 14px;
+      left: 20px;
+      color: rgba(36, 87, 197, 0.13);
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .step h3 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 34px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+
+    .timeline-year {
+      color: var(--accent-dark);
+      font-weight: 900;
+    }
+
+    .timeline-item h3 {
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .review-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 28px;
+      padding: 25px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stars {
+      color: var(--warm);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .review-card p {
+      color: #46505f;
+      font-size: 15px;
+    }
+
+    .review-person {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-person img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .review-person strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 14px;
+    }
+
+    .review-person span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .contact-form {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(36, 87, 197, 0.08);
+      border-radius: 34px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary-dark);
+      font-weight: 900;
+    }
+
+    .contact-list i {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-blue);
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid rgba(36, 87, 197, 0.13);
+      background: #fff;
+      color: var(--text);
+      border-radius: 18px;
+      padding: 14px;
+      outline: 0;
+      transition: 0.2s ease;
+    }
+
+    .field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(36, 87, 197, 0.55);
+      box-shadow: 0 0 0 4px rgba(36, 87, 197, 0.10);
+    }
+
+    .site-footer {
+      padding: 30px 0 42px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(9, 22, 48, 0.62);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-card {
+      position: relative;
+      width: min(920px, 100%);
+      background: #fff;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 32px 110px rgba(0,0,0,0.28);
+      animation: pop 0.24s ease;
+    }
+
+    @keyframes pop {
+      from {
+        transform: translateY(16px) scale(0.98);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      color: var(--primary-dark);
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .modal-media {
+      position: relative;
+      height: 430px;
+      background: #0b1728;
+      overflow: hidden;
+    }
+
+    .modal-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.90;
+    }
+
+    .modal-body {
+      padding: 28px;
+    }
+
+    .modal-body h3 {
+      color: var(--primary-dark);
+      font-size: 28px;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .modal-body p {
+      color: var(--muted);
+    }
+
+    .modal-info {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .modal-info div {
+      background: var(--soft-blue);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .modal-info div:nth-child(even) {
+      background: var(--soft-green);
+    }
+
+    .modal-info span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .modal-info strong {
+      color: var(--primary-dark);
+      font-size: 14px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.65s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual,
+      .hero-visual img {
+        min-height: auto;
+        height: 560px;
+      }
+
+      .portfolio-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .process,
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .logo-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .case-grid,
+      .case-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 830px) {
+      .site-header {
+        top: 8px;
+        margin-top: 8px;
+      }
+
+      .nav {
+        border-radius: 28px;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        left: 0;
+        width: min(100%, calc(100vw - 32px));
+        margin-inline: auto;
+        background: rgba(255,255,255,0.97);
+        border: 1px solid rgba(36, 87, 197, 0.10);
+        border-radius: 26px;
+        box-shadow: var(--shadow-sm);
+        padding: 10px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        text-align: center;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      .portfolio-grid,
+      .reviews-grid,
+      .services-grid,
+      .process,
+      .stats-grid,
+      .logo-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual,
+      .hero-visual img {
+        height: 470px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-media {
+        height: 300px;
+      }
+
+      .modal-info,
+      .case-results {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-meta {
+        gap: 10px;
+      }
+
+      .hero-visual,
+      .hero-visual img {
+        height: 420px;
+        border-radius: 28px;
+      }
+
+      .hero-card {
+        grid-template-columns: 52px 1fr;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        border-radius: 22px;
+      }
+
+      .hero-card button {
+        grid-column: 1 / -1;
+      }
+
+      .floating-kpis {
+        top: 14px;
+        left: 14px;
+      }
+
+      .kpi-chip {
+        padding: 10px 12px;
+      }
+
+      .about-content,
+      .contact-card,
+      .contact-form,
+      .case-card {
+        padding: 22px;
+        border-radius: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#home" aria-label="سيف خالد">
+          <div class="brand-mark">SK</div>
+          <div>
+            <strong>سيف خالد</strong>
+            <span>Account Manager</span>
+          </div>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">الرئيسية</a></li>
+          <li><a href="#about">عن سيف</a></li>
+          <li><a href="#services">الخبرات</a></li>
+          <li><a href="#works">الحسابات</a></li>
+          <li><a href="#cases">النتائج</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+
+        <a class="nav-cta" href="https://wa.me/201020445318" target="_blank">تواصل مباشر</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Client Growth & Account Leadership</div>
+          <h1>إدارة حسابات العملاء بعلاقة قوية و<span>نتائج قابلة للقياس.</span></h1>
+          <p class="hero-lead">
+            أنا سيف خالد، Account Manager متخصص في إدارة علاقات العملاء، متابعة المشاريع، التنسيق بين الفرق، وتطوير الحسابات التجارية. أركز على تحويل احتياجات العميل إلى خطة واضحة، تنفيذ منظم، ونتائج تحفظ الثقة وتفتح فرص نمو جديدة.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#works" class="btn btn-primary">شاهد الحسابات المُدارة</a>
+            <a href="#contact" class="btn btn-outline">احجز مكالمة تعارف</a>
+          </div>
+
+          <div class="hero-meta">
+            <span><strong>+42</strong> حساب عميل مُدار</span>
+            <span><strong>93%</strong> Retention Rate</span>
+            <span><strong>+18M</strong> ميزانيات مشاريع منسقة</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Account Manager في اجتماع مع فريق عمل" loading="lazy">
+
+          <div class="floating-kpis">
+            <div class="kpi-chip">
+              <strong>93%</strong>
+              <span>Client Retention</span>
+            </div>
+            <div class="kpi-chip">
+              <strong>27%</strong>
+              <span>Account Growth</span>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-icon">🤝</div>
+            <div>
+              <small>Client Portfolio</small>
+              <strong>B2B, SaaS, Agencies & Service Brands</strong>
+            </div>
+            <button data-open-project="6">عرض الملخص</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="الشركات">
+      <div class="container">
+        <div class="logo-strip reveal">
+          <div class="logo-item">NEXA</div>
+          <div class="logo-item">FLOW CRM</div>
+          <div class="logo-item">MEDORA</div>
+          <div class="logo-item">URBAN ADS</div>
+          <div class="logo-item">BAYTLY</div>
+          <div class="logo-item">ORBIT</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="الأرقام">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <strong data-count="42">0</strong>
+            <span>حساب عميل تمت إدارته</span>
+          </div>
+          <div class="stat-card">
+            <strong data-count="93">0</strong>
+            <span>معدل احتفاظ بالعملاء</span>
+          </div>
+          <div class="stat-card">
+            <strong data-count="118">0</strong>
+            <span>مشروع تم تسليمه</span>
+          </div>
+          <div class="stat-card">
+            <strong data-count="27">0</strong>
+            <span>متوسط نمو الحسابات</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85" alt="اجتماع إدارة حسابات العملاء" loading="lazy">
+        </div>
+
+        <div class="about-content reveal">
+          <div class="section-kicker">عن سيف</div>
+          <h2>أؤمن أن إدارة الحساب الناجحة تبدأ من فهم العميل قبل إدارة الطلبات.</h2>
+          <p>
+            خلال السنوات الماضية عملت مع شركات خدمية، وكالات تسويق، منتجات SaaS، وفرق مبيعات. دوري دائمًا كان في المساحة بين العميل والفريق الداخلي: أفهم التوقعات، أحدد الأولويات، أرتب التسليم، وأحافظ على علاقة طويلة المدى مبنية على وضوح ونتائج.
+          </p>
+          <p>
+            أتعامل مع كل حساب كفرصة نمو، وليس مجرد مشروع مفتوح. أراجع الأداء، أقرأ مؤشرات الرضا، أتابع مواعيد التسليم، وأقترح فرص Upsell أو تحسين الخدمة عندما تكون مناسبة فعلًا لاحتياج العميل.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Client Communication</span>
+            <span class="tag">Account Growth</span>
+            <span class="tag">Project Coordination</span>
+            <span class="tag">Stakeholder Management</span>
+            <span class="tag">Retention Strategy</span>
+            <span class="tag">CRM Reporting</span>
+            <span class="tag">Upselling</span>
+            <span class="tag">SLA Follow-up</span>
+          </div>
+
+          <div class="about-footer">
+            <div>
+              <strong>سيف خالد</strong>
+              <span>Account Manager — Cairo, Egypt</span>
+            </div>
+            <a href="#contact" class="btn btn-accent">ابدأ محادثة</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Core Strengths</div>
+            <h2>خبرات أساسية في إدارة العملاء ونمو الحسابات.</h2>
+          </div>
+          <p>
+            مزيج بين التواصل الواضح، التنظيم الداخلي، قراءة الأرقام، والحفاظ على تجربة عميل مستقرة من أول اجتماع حتى تجديد التعاقد.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">🤝</div>
+            <h3>إدارة علاقات العملاء</h3>
+            <p>بناء علاقة مهنية مستمرة، متابعة التوقعات، حل الاعتراضات، والحفاظ على مستوى ثقة عالي مع العميل.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">📋</div>
+            <h3>متابعة المشاريع والتسليم</h3>
+            <p>تنظيم المهام بين الفرق، تحديد الأولويات، متابعة المواعيد، وضمان تسليم واضح وفق المتفق عليه.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">📈</div>
+            <h3>تطوير الحسابات</h3>
+            <p>اكتشاف فرص النمو داخل الحساب، اقتراح خدمات إضافية مناسبة، وتحويل الرضا إلى تعاقدات أطول.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">📊</div>
+            <h3>تقارير وقياس الأداء</h3>
+            <p>إعداد تقارير مفهومة للعميل، تلخيص التقدم، عرض المخاطر، وتحديد الخطوات التالية بوضوح.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Managed Accounts</div>
+            <h2>نماذج من حسابات ومشاريع تمت إدارتها.</h2>
+          </div>
+          <p>
+            كل حساب هنا كان له تحدي مختلف: تحسين التواصل، تقليل التأخير، رفع الرضا، أو تحويل العميل من مشروع قصير إلى شراكة طويلة.
+          </p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="b2b">B2B</button>
+          <button class="filter-btn" data-filter="saas">SaaS</button>
+          <button class="filter-btn" data-filter="agency">Agency</button>
+          <button class="filter-btn" data-filter="service">Service Brands</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="work-card reveal" data-category="b2b">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="اجتماع B2B مع عميل" loading="lazy">
+              <span class="work-tag">B2B Account</span>
+              <span class="work-result">+31% Renewal Value</span>
+            </div>
+            <div class="work-body">
+              <h3>Nexa Business Solutions</h3>
+              <p>إدارة حساب B2B لخدمات تشغيلية، مع تحسين دورة المتابعة وتقليل وقت الرد بين العميل والفريق الداخلي.</p>
+              <div class="work-footer">
+                <span>Client Success + Renewal</span>
+                <button class="view-btn" data-open-project="0">التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="saas">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="لوحة بيانات SaaS" loading="lazy">
+              <span class="work-tag">SaaS</span>
+              <span class="work-result">93% Retention</span>
+            </div>
+            <div class="work-body">
+              <h3>Flow CRM — Client Onboarding</h3>
+              <p>تنظيم رحلة Onboarding لعملاء نظام CRM، مع تقليل أسئلة الدعم المتكررة وتحسين سرعة التفعيل.</p>
+              <div class="work-footer">
+                <span>Onboarding + CRM Reports</span>
+                <button class="view-btn" data-open-project="1">التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="agency">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=85" alt="فريق وكالة تسويق" loading="lazy">
+              <span class="work-tag">Agency</span>
+              <span class="work-result">118 Deliverables</span>
+            </div>
+            <div class="work-body">
+              <h3>Urban Ads — Multi-Client Delivery</h3>
+              <p>إدارة تسليمات شهرية لعدة عملاء وكالة تسويق، تشمل محتوى، حملات، تقارير، واجتماعات متابعة.</p>
+              <div class="work-footer">
+                <span>Coordination + Reporting</span>
+                <button class="view-btn" data-open-project="2">التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="service">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=85" alt="إدارة حساب عيادة" loading="lazy">
+              <span class="work-tag">Service Brand</span>
+              <span class="work-result">+46% Satisfaction</span>
+            </div>
+            <div class="work-body">
+              <h3>Medora Clinic — Service Account</h3>
+              <p>متابعة حساب عيادة طبية، تنسيق طلبات التسويق، تنظيم اجتماعات شهرية، وتوثيق ملاحظات العميل.</p>
+              <div class="work-footer">
+                <span>Client Care + SLA</span>
+                <button class="view-btn" data-open-project="3">التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="b2b">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=900&q=85" alt="شراكة تجارية" loading="lazy">
+              <span class="work-tag">Partnership</span>
+              <span class="work-result">4 Upsells</span>
+            </div>
+            <div class="work-body">
+              <h3>Baytly Partners — Growth Plan</h3>
+              <p>تطوير حساب شراكة عقارية من خدمة واحدة إلى باقة شهرية تشمل تقارير، متابعة، وحملات دعم للمبيعات.</p>
+              <div class="work-footer">
+                <span>Upsell + Account Growth</span>
+                <button class="view-btn" data-open-project="4">التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="agency">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=85" alt="اجتماع فريق مشروع" loading="lazy">
+              <span class="work-tag">Operations</span>
+              <span class="work-result">-38% Delays</span>
+            </div>
+            <div class="work-body">
+              <h3>Orbit Projects — Delivery System</h3>
+              <p>تطوير نظام متابعة داخلي لتقليل التأخير، توضيح الملكيات، وتسهيل متابعة حالة كل مشروع مع العميل.</p>
+              <div class="work-footer">
+                <span>Process Design + Delivery</span>
+                <button class="view-btn" data-open-project="5">التفاصيل</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Case Studies</div>
+            <h2>نتائج مختصرة من إدارة حسابات فعلية.</h2>
+          </div>
+          <p>
+            الأرقام هنا تعكس تأثير إدارة الحساب على التجديد، رضا العميل، سرعة التسليم، وفرص النمو داخل الحساب.
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card reveal">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=85" alt="مناقشة نتائج حساب عميل" loading="lazy">
+            <div>
+              <h3>Nexa — تحسين التجديد السنوي</h3>
+              <p>
+                تم إعادة تنظيم التواصل مع العميل، توثيق التوقعات، بناء تقرير شهري واضح، وتقديم خطة تحسين ربع سنوية ساعدت في رفع قيمة التجديد.
+              </p>
+              <div class="case-results">
+                <div>
+                  <strong>+31%</strong>
+                  <span>Renewal Value</span>
+                </div>
+                <div>
+                  <strong>96%</strong>
+                  <span>SLA Commitment</span>
+                </div>
+                <div>
+                  <strong>8</strong>
+                  <span>Quarterly Reviews</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <img src="https://images.unsplash.com/photo-1551836022-8b2858c9c69b?auto=format&fit=crop&w=800&q=85" alt="فريق يراجع خطة تسليم" loading="lazy">
+            <div>
+              <h3>Urban Ads — تقليل تأخير التسليم</h3>
+              <p>
+                تم بناء نظام متابعة أسبوعي يوضح حالة كل تسليم، الشخص المسؤول، تاريخ المراجعة، وملاحظات العميل، مما قلل التأخير ورفع وضوح التواصل.
+              </p>
+              <div class="case-results">
+                <div>
+                  <strong>-38%</strong>
+                  <span>Delivery Delays</span>
+                </div>
+                <div>
+                  <strong>118</strong>
+                  <span>Deliverables</span>
+                </div>
+                <div>
+                  <strong>4.7/5</strong>
+                  <span>Client Rating</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Workflow</div>
+            <h2>طريقة عمل منظمة لإدارة الحساب من أول يوم.</h2>
+          </div>
+          <p>
+            الهدف هو أن يعرف العميل أين يقف المشروع، ويعرف الفريق ماذا عليه أن يسلّم، وتظهر النتائج بدون ضغط غير ضروري.
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="step reveal">
+            <h3>فهم الحساب</h3>
+            <p>تحديد هدف العميل، تاريخ العلاقة، نقاط الألم، أصحاب القرار، ومعايير النجاح.</p>
+          </article>
+
+          <article class="step reveal">
+            <h3>تنظيم الأولويات</h3>
+            <p>تحويل الطلبات إلى مهام واضحة، تحديد المواعيد، وتوزيع المسؤوليات بين الفرق.</p>
+          </article>
+
+          <article class="step reveal">
+            <h3>متابعة وشفافية</h3>
+            <p>تحديثات منتظمة، اجتماعات مختصرة، تقارير واضحة، وتوثيق كل قرار مهم.</p>
+          </article>
+
+          <article class="step reveal">
+            <h3>نمو وتجديد</h3>
+            <p>مراجعة النتائج، اقتراح فرص تطوير، تجهيز خطة تجديد، وتحويل الرضا إلى شراكة أطول.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Experience Timeline</div>
+            <h2>خبرة عملية في إدارة الحسابات والتواصل التجاري.</h2>
+          </div>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <div>
+              <h3>Client Coordinator — وكالة تسويق</h3>
+              <p>متابعة تسليمات المحتوى والحملات، تنسيق الملاحظات بين العملاء والفريق، وتنظيم تقارير أسبوعية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div>
+              <h3>Account Executive — خدمات B2B</h3>
+              <p>إدارة حسابات شركات متوسطة، تحسين التواصل، متابعة العقود، وتقديم تقارير أداء شهرية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div>
+              <h3>Account Manager — SaaS & Service Brands</h3>
+              <p>قيادة حسابات متعددة، تطوير خطط تجديد، تقليل التأخير، وزيادة فرص Upsell داخل الحسابات الحالية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div>
+              <h3>Senior Account Manager — Client Growth</h3>
+              <p>التركيز على إدارة الحسابات عالية القيمة، تحسين تجربة العميل، وتنفيذ Quarterly Business Reviews.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">آراء العملاء</div>
+            <h2>توصيات من عملاء ومديري فرق.</h2>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              سيف كان نقطة التواصل الأوضح في المشروع. كان يعرف يهدّي الضغط، يرتب الأولويات، ويرجع لنا بإجابات دقيقة بدل وعود عامة.
+            </p>
+            <div class="review-person">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=85" alt="نهى عادل" loading="lazy">
+              <div>
+                <strong>نهى عادل</strong>
+                <span>Marketing Manager — Medora</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              أكثر شيء مميز أنه يفهم احتياج العميل التجاري، وليس فقط الطلب المكتوب. ساعدنا نطور الحساب بدل ما نكتفي بالتسليم الشهري.
+            </p>
+            <div class="review-person">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=85" alt="كريم شريف" loading="lazy">
+              <div>
+                <strong>كريم شريف</strong>
+                <span>Founder — Baytly Partners</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>
+              وجود سيف بيننا وبين الفرق الفنية قلل سوء الفهم جدًا. التقارير كانت واضحة والاجتماعات مختصرة ومفيدة.
+            </p>
+            <div class="review-person">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=85" alt="ملك فؤاد" loading="lazy">
+              <div>
+                <strong>ملك فؤاد</strong>
+                <span>Operations Lead — Nexa</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-card reveal">
+          <div class="section-kicker">تواصل</div>
+          <h2>هل تحتاج Account Manager يدير العلاقة وينظم النمو؟</h2>
+          <p>
+            ابعت تفاصيل الشركة، نوع العملاء، حجم الحسابات، والتحدي الحالي في التواصل أو التسليم، وسيتم الرد بخطوات مبدئية واضحة.
+          </p>
+
+          <ul class="contact-list">
+            <li><i>☎</i> 01020445318</li>
+            <li><i>✉</i> hello@saifkhaled.co</li>
+            <li><i>⌖</i> القاهرة، مصر</li>
+            <li><i>⏱</i> متاح للتعاون داخل مصر والخليج</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/201020445318" target="_blank">راسلني واتساب</a>
+            <a class="btn btn-outline" href="mailto:hello@saifkhaled.co">إرسال إيميل</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">الاسم</label>
+              <input id="name" type="text" placeholder="اسمك" required>
+            </div>
+
+            <div class="field">
+              <label for="company">اسم الشركة</label>
+              <input id="company" type="text" placeholder="اسم الشركة أو البراند" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">رقم التواصل</label>
+              <input id="phone" type="tel" placeholder="01000000000" required>
+            </div>
+
+            <div class="field">
+              <label for="need">نوع الاحتياج</label>
+              <select id="need" required>
+                <option value="">اختر الاحتياج</option>
+                <option>إدارة حسابات عملاء</option>
+                <option>تحسين تجربة العملاء</option>
+                <option>تنظيم متابعة المشاريع</option>
+                <option>تطوير وتجديد الحسابات</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">تفاصيل مختصرة</label>
+              <textarea id="message" placeholder="اكتب عدد العملاء، طبيعة الخدمة، وأهم مشكلة حالية في المتابعة أو التواصل" required></textarea>
+            </div>
+
+            <div class="field full">
+              <button class="btn btn-accent" type="submit">إرسال التفاصيل</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 سيف خالد — Account Management & Client Growth
+    </div>
+  </footer>
+
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="إغلاق">×</button>
+
+      <div class="modal-media">
+        <img id="modalImg" src="" alt="">
+      </div>
+
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+
+        <div class="modal-info">
+          <div>
+            <span>الدور</span>
+            <strong id="modalRole"></strong>
+          </div>
+          <div>
+            <span>مدة الإدارة</span>
+            <strong id="modalTime"></strong>
+          </div>
+          <div>
+            <span>النتيجة</span>
+            <strong id="modalDeliverables"></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+
+      sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    const revealItems = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    const countItems = document.querySelectorAll('[data-count]');
+    let counted = false;
+
+    function animateCount() {
+      if (counted) return;
+
+      const stats = document.querySelector('.stats-grid');
+      if (!stats) return;
+
+      const top = stats.getBoundingClientRect().top;
+
+      if (top < window.innerHeight - 80) {
+        counted = true;
+
+        countItems.forEach(item => {
+          const target = Number(item.dataset.count);
+          let current = 0;
+          const increment = Math.max(1, Math.floor(target / 55));
+
+          const timer = setInterval(() => {
+            current += increment;
+
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+
+            if (target === 93 || target === 27) {
+              item.textContent = current + '%';
+            } else {
+              item.textContent = '+' + current;
+            }
+          }, 22);
+        });
+      }
+    }
+
+    window.addEventListener('scroll', animateCount);
+    window.addEventListener('load', animateCount);
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const workCards = document.querySelectorAll('.work-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(item => item.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        workCards.forEach(card => {
+          const matched = filter === 'all' || card.dataset.category === filter;
+          card.style.display = matched ? 'block' : 'none';
+
+          if (matched) {
+            setTimeout(() => card.classList.add('show'), 50);
+          }
+        });
+      });
+    });
+
+    const projects = [
+      {
+        title: 'Nexa Business Solutions — Renewal Growth',
+        img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1300&q=90',
+        desc: 'إدارة حساب B2B لخدمات تشغيلية، مع إعادة تنظيم التواصل، تحديد مؤشرات نجاح شهرية، وتقديم مراجعات ربع سنوية ساعدت في رفع قيمة التجديد.',
+        role: 'Account Management، QBR، Renewal Planning',
+        time: '9 أشهر',
+        deliverables: '+31% Renewal Value'
+      },
+      {
+        title: 'Flow CRM — Client Onboarding',
+        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1300&q=90',
+        desc: 'تنظيم رحلة انضمام عملاء SaaS بداية من Kickoff Call حتى تفعيل النظام، مع تقليل الأسئلة المتكررة وتحسين معدل الاستخدام الأول.',
+        role: 'Onboarding، CRM Follow-up، Client Education',
+        time: '6 أشهر',
+        deliverables: '93% Retention'
+      },
+      {
+        title: 'Urban Ads — Multi-Client Delivery',
+        img: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1300&q=90',
+        desc: 'إدارة تسليمات شهرية لعدة عملاء داخل وكالة تسويق، مع تطوير لوحة متابعة توضح حالة كل مشروع وملاحظات كل عميل.',
+        role: 'Client Coordination، Reporting، Delivery Management',
+        time: '12 شهر',
+        deliverables: '118 Deliverables'
+      },
+      {
+        title: 'Medora Clinic — Service Account',
+        img: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1300&q=90',
+        desc: 'إدارة حساب عيادة طبية، ترتيب اجتماعات المتابعة، توثيق ملاحظات الإدارة، وضمان سرعة الرد على طلبات التسويق والخدمة.',
+        role: 'Client Care، SLA Follow-up، Feedback Loop',
+        time: '8 أشهر',
+        deliverables: '+46% Satisfaction'
+      },
+      {
+        title: 'Baytly Partners — Account Growth',
+        img: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1300&q=90',
+        desc: 'تطوير علاقة شراكة عقارية من خدمة واحدة إلى باقة شهرية متكاملة، مع اقتراح خدمات إضافية مرتبطة بأهداف المبيعات.',
+        role: 'Upselling، Growth Planning، Partnership Management',
+        time: '7 أشهر',
+        deliverables: '4 Upsell Deals'
+      },
+      {
+        title: 'Orbit Projects — Delivery System',
+        img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1300&q=90',
+        desc: 'تصميم نظام متابعة داخلي يحدد المسؤوليات والمواعيد وحالة كل طلب، مما قلل التأخير ورفع وضوح التواصل بين الفريق والعميل.',
+        role: 'Process Design، Internal Coordination، Client Updates',
+        time: '5 أشهر',
+        deliverables: '-38% Delivery Delays'
+      },
+      {
+        title: 'Client Growth Portfolio Summary',
+        img: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1300&q=90',
+        desc: 'ملخص لمسار إدارة الحسابات، يشمل تحسين الاحتفاظ بالعملاء، تطوير فرص النمو، تنظيم التسليمات، ورفع وضوح التواصل مع أصحاب القرار.',
+        role: 'Account Management & Client Growth',
+        time: '2021 — 2026',
+        deliverables: '42+ Managed Accounts'
+      }
+    ];
+
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalRole = document.getElementById('modalRole');
+    const modalTime = document.getElementById('modalTime');
+    const modalDeliverables = document.getElementById('modalDeliverables');
+
+    function openProject(index) {
+      const project = projects[index];
+
+      modalImg.src = project.img;
+      modalImg.alt = project.title;
+      modalTitle.textContent = project.title;
+      modalDesc.textContent = project.desc;
+      modalRole.textContent = project.role;
+      modalTime.textContent = project.time;
+      modalDeliverables.textContent = project.deliverables;
+
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-open-project]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openProject(Number(btn.dataset.openProject));
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const need = document.getElementById('need').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const text =
+        `مرحبًا سيف، أنا ${name}%0A` +
+        `اسم الشركة: ${company}%0A` +
+        `رقم التواصل: ${phone}%0A` +
+        `نوع الاحتياج: ${need}%0A` +
+        `تفاصيل مختصرة: ${message}`;
+
+      window.open(`https://wa.me/201020445318?text=${text}`, '_blank');
+    });
+  </script>
+</body>
+</html>
