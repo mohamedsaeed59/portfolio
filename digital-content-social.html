@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كريم عادل | Digital Marketing Specialist</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #f97316;
+      --green: #16a34a;
+      --soft-blue: #eaf1ff;
+      --soft-orange: #fff3e8;
+      --border: #e5e7eb;
+      --shadow: 0 22px 60px rgba(16, 24, 40, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.11), transparent 32%),
+        radial-gradient(circle at top left, rgba(249, 115, 22, 0.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 248, 252, 0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--text);
+      color: white;
+      padding: 11px 18px;
+      border-radius: 999px;
+      transition: 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: white;
+      border-radius: 14px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 82px 0 64px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 34px rgba(16, 24, 40, 0.05);
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 5vw, 66px);
+      line-height: 1.13;
+      letter-spacing: -1.8px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 strong {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.26);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 580px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.05);
+    }
+
+    .stat h3 {
+      color: var(--primary);
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      transform: rotate(-1deg);
+      overflow: hidden;
+    }
+
+    .hero-card video {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 25px;
+      background: #111827;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -16px;
+      bottom: 36px;
+      width: 250px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 16px;
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .growth-line {
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      height: 46px;
+      margin-top: 14px;
+    }
+
+    .growth-line span {
+      flex: 1;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+
+    .growth-line span:nth-child(1) { height: 28%; }
+    .growth-line span:nth-child(2) { height: 42%; }
+    .growth-line span:nth-child(3) { height: 58%; }
+    .growth-line span:nth-child(4) { height: 74%; }
+    .growth-line span:nth-child(5) { height: 90%; }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.22;
+      letter-spacing: -1px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 16px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-photo {
+      min-height: 440px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: white;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 14px 40px rgba(16, 24, 40, 0.04);
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tool {
+      padding: 9px 13px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.04);
+      transition: 0.25s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--soft-blue), var(--soft-orange));
+      color: var(--primary);
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .service h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--muted);
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 900;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.04);
+      transition: 0.25s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .work-media {
+      position: relative;
+      height: 230px;
+      overflow: hidden;
+      background: #111827;
+    }
+
+    .work-media img,
+    .work-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #111827;
+      transition: 0.35s;
+    }
+
+    .work-card:hover .work-media img,
+    .work-card:hover .work-media video {
+      transform: scale(1.05);
+    }
+
+    .work-label {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      z-index: 2;
+    }
+
+    .work-body {
+      padding: 20px;
+    }
+
+    .work-body h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .process {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.04);
+    }
+
+    .result-card h3 {
+      color: var(--primary);
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .result-card p {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 14px 36px rgba(16, 24, 40, 0.04);
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .client img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .client h4 {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .client span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #111827, #1e3a8a);
+      color: white;
+      border-radius: 36px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      left: -110px;
+      bottom: -130px;
+    }
+
+    .contact-card h2 {
+      position: relative;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      position: relative;
+      color: rgba(255, 255, 255, 0.76);
+      max-width: 640px;
+    }
+
+    .contact-actions {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-actions .btn {
+      background: white;
+      color: var(--text);
+    }
+
+    .contact-actions .btn:hover {
+      background: var(--soft-blue);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .work-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid,
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-card video {
+        height: 430px;
+      }
+
+      .floating-card {
+        left: 18px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: 16px;
+        left: 16px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 18px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .work-grid,
+      .process-grid,
+      .results-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-desc {
+        margin-top: 12px;
+      }
+
+      .hero-card video {
+        height: 360px;
+      }
+
+      .floating-card {
+        position: static;
+        width: 100%;
+        margin-top: 14px;
+      }
+
+      .contact-card {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-mark">↗</span>
+        <span>كريم عادل</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#process">المنهجية</a>
+        <a href="#contact" class="nav-cta">تواصل الآن</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+          <div class="badge"><span></span> متاح للتعاون مع البراندات والمشاريع الجديدة</div>
+
+          <h1>
+            تسويق رقمي ومحتوى سوشيال ميديا <strong>يصنع حضور حقيقي</strong> ويحوّل المتابع لعميل.
+          </h1>
+
+          <p>
+            أنا كريم عادل، Digital Marketing Specialist, Social Media Specialist and Content Creator. أساعد البراندات في بناء حضور قوي على المنصات من خلال استراتيجية محتوى واضحة، أفكار جذابة، حملات إعلانية منظمة، ومتابعة دقيقة للأداء.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">شاهد الأعمال</a>
+            <a href="https://wa.me/201001234567" target="_blank" class="btn btn-outline">تواصل واتساب</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <h3>65+</h3>
+              <span>حملة تسويقية</span>
+            </div>
+
+            <div class="stat">
+              <h3>7.8M+</h3>
+              <span>وصول للمحتوى</span>
+            </div>
+
+            <div class="stat">
+              <h3>4</h3>
+              <span>سنوات خبرة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-card">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80">
+              <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="floating-card">
+            <strong>Monthly Growth</strong>
+            <p style="color: var(--muted); font-size: 14px; margin-top: 4px;">
+              محتوى منتظم، تحسين مستمر، وقرارات مبنية على الأرقام.
+            </p>
+
+            <div class="growth-line">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+
+        <div class="about-photo reveal">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Digital marketing workspace">
+        </div>
+
+        <div class="about-content reveal">
+          <div class="section-kicker">نبذة عني</div>
+          <h2 class="section-title">أجمع بين الاستراتيجية، صناعة المحتوى، وفهم سلوك الجمهور.</h2>
+
+          <p>
+            أشتغل على بناء محتوى يخدم هدف واضح: زيادة الوعي، تحسين التفاعل، جذب عملاء محتملين، أو دعم المبيعات. خبرتي تجمع بين التخطيط التسويقي، إدارة حسابات السوشيال ميديا، كتابة المحتوى، صناعة الفيديوهات القصيرة، وتحليل نتائج الحملات.
+          </p>
+
+          <p>
+            أتعامل مع كل براند من نقطة فهم السوق والجمهور والمنافسين، ثم بناء خطة محتوى قابلة للتنفيذ، وتجربة أفكار مختلفة، وقياس النتائج بشكل مستمر للوصول لأفضل أداء ممكن.
+          </p>
+
+          <div class="tools">
+            <span class="tool">Meta Ads</span>
+            <span class="tool">Google Analytics</span>
+            <span class="tool">Content Strategy</span>
+            <span class="tool">Social Media Management</span>
+            <span class="tool">Copywriting</span>
+            <span class="tool">Reels Creation</span>
+            <span class="tool">Canva</span>
+            <span class="tool">CapCut</span>
+            <span class="tool">Meta Business Suite</span>
+            <span class="tool">Performance Reports</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">الخدمات</div>
+            <h2 class="section-title">خدمات تسويق ومحتوى تغطي رحلة البراند كاملة.</h2>
+          </div>
+
+          <p class="section-desc">
+            من بناء الخطة وحتى النشر والتحليل، كل خدمة مصممة لمساعدة البراند على النمو بشكل واضح ومنظم.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service reveal">
+            <div class="service-icon">📈</div>
+            <h3>Digital Marketing Strategy</h3>
+            <p>
+              بناء استراتيجية تسويق واضحة تشمل الجمهور المستهدف، الرسائل الأساسية، القنوات المناسبة، وخطة التنفيذ.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">📱</div>
+            <h3>Social Media Management</h3>
+            <p>
+              إدارة حسابات السوشيال ميديا، تنظيم المحتوى، كتابة الكابشن، جدولة المنشورات، ومتابعة التفاعل.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">🎬</div>
+            <h3>Content Creation</h3>
+            <p>
+              صناعة أفكار وفيديوهات قصيرة ومنشورات مناسبة لطبيعة كل منصة ولطريقة تفاعل الجمهور معها.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">✍️</div>
+            <h3>Copywriting</h3>
+            <p>
+              كتابة نصوص إعلانية، كابشنات، Hooks للفيديوهات، وCTA واضح يدفع الجمهور للتفاعل أو التواصل.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">🎯</div>
+            <h3>Paid Ads</h3>
+            <p>
+              إعداد حملات إعلانية على Meta، تحديد الجمهور، اختبار الإعلانات، وتحسين الأداء حسب النتائج.
+            </p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-icon">📊</div>
+            <h3>Analytics & Reports</h3>
+            <p>
+              تحليل مؤشرات الأداء، معرفة أفضل أنواع المحتوى، وتقديم توصيات عملية لتحسين الشهر القادم.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">الأعمال</div>
+            <h2 class="section-title">نماذج من حملات ومشاريع محتوى حقيقية.</h2>
+          </div>
+
+          <p class="section-desc">
+            مشاريع متنوعة بين إدارة حسابات، حملات إعلانية، ريلز، محتوى براند، واستراتيجيات نمو.
+          </p>
+        </div>
+
+        <div class="tabs reveal">
+          <button class="tab-btn active" data-filter="all">كل الأعمال</button>
+          <button class="tab-btn" data-filter="ads">إعلانات</button>
+          <button class="tab-btn" data-filter="social">سوشيال ميديا</button>
+          <button class="tab-btn" data-filter="content">محتوى</button>
+          <button class="tab-btn" data-filter="strategy">استراتيجية</button>
+        </div>
+
+        <div class="work-grid">
+
+          <article class="work-card reveal" data-category="ads">
+            <div class="work-media">
+              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+              </video>
+              <span class="work-label">Paid Ads</span>
+            </div>
+
+            <div class="work-body">
+              <h3>Urban Wear Campaign</h3>
+              <p>
+                حملة إعلانات لمتجر ملابس ركزت على عروض الموسم، اختبار أكثر من زاوية إعلانية، وتحسين تكلفة الرسائل.
+              </p>
+              <div class="work-meta">
+                <span>Meta Ads</span>
+                <span>Fashion</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="social">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=900&q=80" alt="Social media planning">
+              <span class="work-label">Social Media</span>
+            </div>
+
+            <div class="work-body">
+              <h3>Café Social System</h3>
+              <p>
+                إدارة محتوى شهري لمقهى محلي شملت أفكار ريلز، ستوريز يومية، منشورات عروض، وتحسين شكل الحساب.
+              </p>
+              <div class="work-meta">
+                <span>30 يوم</span>
+                <span>F&B</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="content">
+            <div class="work-media">
+              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+              </video>
+              <span class="work-label">Content</span>
+            </div>
+
+            <div class="work-body">
+              <h3>Fitness Reels Series</h3>
+              <p>
+                سلسلة فيديوهات قصيرة لمدرب لياقة اعتمدت على Hooks قوية، نصوص واضحة، ومونتاج سريع مناسب للريلز.
+              </p>
+              <div class="work-meta">
+                <span>18 فيديو</span>
+                <span>Instagram</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="strategy">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Marketing strategy meeting">
+              <span class="work-label">Strategy</span>
+            </div>
+
+            <div class="work-body">
+              <h3>Clinic Growth Plan</h3>
+              <p>
+                خطة محتوى وتسويق لعيادة طبية ركزت على التوعية، بناء الثقة، وتبسيط الخدمات للجمهور المستهدف.
+              </p>
+              <div class="work-meta">
+                <span>8 أسابيع</span>
+                <span>Healthcare</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="content">
+            <div class="work-media">
+              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+              </video>
+              <span class="work-label">Reels</span>
+            </div>
+
+            <div class="work-body">
+              <h3>Real Estate Content</h3>
+              <p>
+                إنتاج محتوى قصير لمشروع عقاري شمل جولات داخل الوحدات، عرض المميزات، ونسخ مناسبة للإعلانات.
+              </p>
+              <div class="work-meta">
+                <span>12 فيديو</span>
+                <span>Real Estate</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="ads">
+            <div class="work-media">
+              <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80" alt="Digital ads dashboard">
+              <span class="work-label">Campaign</span>
+            </div>
+
+            <div class="work-body">
+              <h3>E-commerce Promo Funnel</h3>
+              <p>
+                إعداد Funnel بسيط لمتجر إلكتروني شمل إعلان جذب، إعادة استهداف، ومحتوى يوضح مميزات المنتجات.
+              </p>
+              <div class="work-meta">
+                <span>3 حملات</span>
+                <span>E-commerce</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">المنهجية</div>
+            <h2 class="section-title">طريقة عمل منظمة من التحليل إلى التحسين.</h2>
+          </div>
+
+          <p class="section-desc">
+            كل مشروع يبدأ بفهم واضح وينتهي بخطة قابلة للقياس والتطوير.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <h3>Research</h3>
+            <p>
+              دراسة البراند، الجمهور، المنافسين، المنصات الحالية، ونقاط القوة التي يمكن البناء عليها.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <h3>Strategy</h3>
+            <p>
+              تحديد الرسائل الأساسية، أعمدة المحتوى، شكل المنشورات، وزوايا الحملات التسويقية.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">03</div>
+            <h3>Creation</h3>
+            <p>
+              تنفيذ المحتوى، كتابة النصوص، تجهيز الفيديوهات، تصميم الأفكار، وتحضير الجدول الشهري.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">04</div>
+            <h3>Optimization</h3>
+            <p>
+              متابعة النتائج، تحليل الأداء، اختبار أفكار جديدة، وتحسين الخطة بناءً على البيانات.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">نتائج</div>
+            <h2 class="section-title">أرقام من مشاريع وحملات سابقة.</h2>
+          </div>
+        </div>
+
+        <div class="results-grid">
+
+          <div class="result-card reveal">
+            <h3>+230%</h3>
+            <p>زيادة في التفاعل لحساب تجاري بعد إعادة بناء خطة المحتوى.</p>
+          </div>
+
+          <div class="result-card reveal">
+            <h3>3.2M</h3>
+            <p>وصول لحملة ريلز خلال 45 يومًا على إنستجرام وتيك توك.</p>
+          </div>
+
+          <div class="result-card reveal">
+            <h3>-38%</h3>
+            <p>خفض في تكلفة الرسالة بعد اختبار زوايا إعلانية مختلفة.</p>
+          </div>
+
+          <div class="result-card reveal">
+            <h3>420+</h3>
+            <p>قطعة محتوى بين منشورات، ريلز، ستوريز، وكابشنات خلال عام.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">آراء العملاء</div>
+            <h2 class="section-title">تجارب تعاون مبنية على التزام ونتائج واضحة.</h2>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonial reveal">
+            <p>
+              "كريم قدر يرتب حساباتنا من أول الخطة لحد النشر. المحتوى بقى أوضح، والتفاعل اتحسن بشكل ملحوظ خلال أول شهر."
+            </p>
+
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Client">
+              <div>
+                <h4>سارة عادل</h4>
+                <span>Founder - Urban Wear</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              "أكثر شيء مميز كان فهم الجمهور بسرعة. الأفكار كانت مناسبة للبراند، والإعلانات اتحسنت بعد أول أسبوعين."
+            </p>
+
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Client">
+              <div>
+                <h4>أحمد سامي</h4>
+                <span>Marketing Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              "اشتغلنا على سلسلة ريلز وكانت النتيجة ممتازة. السكريبتات واضحة، التنفيذ سريع، والتسليم منظم."
+            </p>
+
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client">
+              <div>
+                <h4>مريم فؤاد</h4>
+                <span>Content Creator</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+
+          <div>
+            <h2>جاهز تبني حضور أقوى لبراندك؟</h2>
+            <p>
+              شارك تفاصيل المشروع، المنصات المستهدفة، والهدف التسويقي الحالي، وسيتم تجهيز تصور واضح لخطة المحتوى أو الحملة المناسبة.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a href="https://wa.me/201001234567" target="_blank" class="btn">تواصل واتساب</a>
+            <a href="mailto:kareem.marketing@email.com" class="btn">إرسال إيميل</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 كريم عادل — Digital Marketing Specialist, Social Media Specialist & Content Creator
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const workCards = document.querySelectorAll(".work-card");
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        workCards.forEach(card => {
+          if (filter === "all" || card.dataset.category === filter) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+
+    const workVideos = document.querySelectorAll(".work-card video");
+
+    workVideos.forEach(video => {
+      const card = video.closest(".work-card");
+
+      card.addEventListener("mouseenter", () => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
+
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+
+</body>
+</html>
