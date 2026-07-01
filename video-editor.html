@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أحمد نادر | Video Editor</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --soft: #e8efff;
+      --border: #e5e7eb;
+      --shadow: 0 20px 50px rgba(17, 24, 39, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 248, 251, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), #7c3aed);
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-btn {
+      background: var(--text);
+      color: white;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary);
+      color: white;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: var(--card);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 82px 0 60px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 1.12;
+      margin-bottom: 20px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero h1 strong {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 560px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.04);
+    }
+
+    .stat h3 {
+      font-size: 26px;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .main-video-card {
+      background: var(--card);
+      border-radius: 32px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transform: rotate(-1.2deg);
+    }
+
+    .main-video-card video {
+      border-radius: 24px;
+      height: 510px;
+      width: 100%;
+      object-fit: cover;
+      background: #111827;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -18px;
+      bottom: 36px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      width: 230px;
+    }
+
+    .timeline {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .timeline span {
+      display: block;
+      height: 100%;
+      width: 74%;
+      background: linear-gradient(90deg, var(--primary), #7c3aed);
+      border-radius: inherit;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 16px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 430px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      background: var(--card);
+      padding: 34px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 40px rgba(17, 24, 39, 0.04);
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .skill {
+      padding: 9px 13px;
+      background: #f3f4f6;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--card);
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 36px rgba(17, 24, 39, 0.04);
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(17, 24, 39, 0.04);
+      transition: 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-media {
+      position: relative;
+      height: 230px;
+      overflow: hidden;
+      background: #111827;
+    }
+
+    .project-media video,
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s;
+      background: #111827;
+    }
+
+    .project-card:hover .project-media video,
+    .project-card:hover .project-media img {
+      transform: scale(1.05);
+    }
+
+    .project-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      z-index: 2;
+    }
+
+    .project-body {
+      padding: 20px;
+    }
+
+    .project-body h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .process {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      background: var(--primary);
+      color: white;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: var(--card);
+      padding: 26px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 36px rgba(17, 24, 39, 0.04);
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .client img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .client h4 {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .client span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #111827, #1e3a8a);
+      color: white;
+      border-radius: 34px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      left: -100px;
+      bottom: -120px;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.76);
+      max-width: 620px;
+      position: relative;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .contact-actions .btn {
+      background: white;
+      color: var(--text);
+    }
+
+    .contact-actions .btn:hover {
+      background: var(--soft);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 30px 0;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .main-video-card video {
+        height: 430px;
+      }
+
+      .floating-card {
+        left: 18px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: 16px;
+        left: 16px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: var(--shadow);
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-btn {
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .portfolio-grid,
+      .testimonials-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-desc {
+        margin-top: 12px;
+      }
+
+      .contact-card {
+        padding: 30px;
+      }
+
+      .main-video-card video {
+        height: 360px;
+      }
+
+      .floating-card {
+        position: static;
+        margin-top: 14px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-mark">▶</span>
+        <span>أحمد نادر</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#portfolio">الأعمال</a>
+        <a href="#process">طريقة العمل</a>
+        <a href="#contact" class="nav-btn">ابدأ مشروعك</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="badge"><span></span> متاح لمشاريع المونتاج الجديدة</div>
+
+          <h1>
+            مونتاج فيديو يصنع <strong>قصة واضحة</strong> ويخلي المشاهد يكمل للآخر.
+          </h1>
+
+          <p>
+            أنا أحمد نادر، Video Editor متخصص في صناعة فيديوهات السوشيال ميديا، الإعلانات، الريلز، اليوتيوب، والفيديوهات التعريفية للبراندات. أشتغل على تحويل اللقطات الخام إلى محتوى سريع، مرتب، وجاهز للنشر.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">شاهد الأعمال</a>
+            <a href="https://wa.me/201001234567" target="_blank" class="btn btn-outline">تواصل واتساب</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <h3>120+</h3>
+              <span>فيديو مكتمل</span>
+            </div>
+            <div class="stat">
+              <h3>35+</h3>
+              <span>عميل وبراند</span>
+            </div>
+            <div class="stat">
+              <h3>4</h3>
+              <span>سنوات خبرة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media reveal">
+          <div class="main-video-card">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?auto=format&fit=crop&w=900&q=80">
+              <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="floating-card">
+            <strong>Average Retention</strong>
+            <p style="color: var(--muted); font-size: 14px; margin-top: 4px;">
+              تحسين الإيقاع البصري واختيار أفضل اللقطات.
+            </p>
+            <div class="timeline"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?auto=format&fit=crop&w=900&q=80" alt="Video editor workspace">
+        </div>
+
+        <div class="about-content reveal">
+          <div class="section-kicker">نبذة عني</div>
+          <h2 class="section-title">مونتير يهتم بالتفاصيل الصغيرة قبل اللقطة الكبيرة.</h2>
+
+          <p>
+            خلال السنوات الأخيرة اشتغلت على محتوى متنوع بين إعلانات قصيرة، ريلز، فيديوهات يوتيوب، محتوى تعليمي، وفيديوهات براندينج. هدفي في كل مشروع إن الفيديو يكون مفهوم، سريع، ومناسب للمنصة اللي هيتنشر عليها.
+          </p>
+
+          <p>
+            أتعامل مع كل فيديو كقصة لها بداية وإيقاع ونهاية. بشتغل على اختيار اللقطات، القص، تصحيح الألوان، المؤثرات البسيطة، الموشن، تحسين الصوت، وإخراج نسخة نهائية جاهزة للنشر بجودة عالية.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Adobe Premiere Pro</span>
+            <span class="skill">After Effects</span>
+            <span class="skill">DaVinci Resolve</span>
+            <span class="skill">Color Correction</span>
+            <span class="skill">Sound Design</span>
+            <span class="skill">Reels Editing</span>
+            <span class="skill">YouTube Editing</span>
+            <span class="skill">Motion Graphics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">الخدمات</div>
+            <h2 class="section-title">خدمات مونتاج جاهزة للمحتوى التجاري والشخصي.</h2>
+          </div>
+          <p class="section-desc">
+            أقدم حلول مونتاج مرنة حسب نوع المحتوى والمنصة والجمهور المستهدف.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="icon">🎬</div>
+            <h3>مونتاج ريلز وتيك توك</h3>
+            <p>
+              فيديوهات قصيرة بإيقاع سريع، كابشن واضح، انتقالات نظيفة، ونسخ مناسبة لإنستجرام وتيك توك ويوتيوب شورتس.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📺</div>
+            <h3>مونتاج يوتيوب</h3>
+            <p>
+              ترتيب اللقطات، حذف الفراغات، إضافة نصوص، تحسين الصوت، وإخراج فيديو متماسك يحافظ على انتباه المشاهد.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📢</div>
+            <h3>إعلانات فيديو</h3>
+            <p>
+              مونتاج إعلانات قصيرة للمنتجات والخدمات مع بداية قوية، عرض واضح للقيمة، ونهاية تدفع المشاهد للتواصل.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">✨</div>
+            <h3>موشن جرافيك بسيط</h3>
+            <p>
+              إضافة عناوين، أيقونات، Lower Thirds، حركات خفيفة، وتفاصيل بصرية تجعل الفيديو أكثر احترافية.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🎧</div>
+            <h3>تحسين الصوت</h3>
+            <p>
+              تنظيف الصوت، ضبط المستويات، إضافة مؤثرات صوتية مناسبة، وموسيقى خلفية متوازنة مع الكلام.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🎨</div>
+            <h3>تصحيح ألوان</h3>
+            <p>
+              تحسين شكل اللقطات، توحيد الألوان، وضبط الإضاءة للحصول على صورة أنظف وأكثر جاذبية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">الأعمال</div>
+            <h2 class="section-title">مختارات من مشاريع المونتاج.</h2>
+          </div>
+          <p class="section-desc">
+            نماذج متنوعة من محتوى قصير، إعلانات، فيديوهات براند، ومحتوى يوتيوب.
+          </p>
+        </div>
+
+        <div class="filters reveal">
+          <button class="filter-btn active" data-filter="all">كل الأعمال</button>
+          <button class="filter-btn" data-filter="reels">ريلز</button>
+          <button class="filter-btn" data-filter="ads">إعلانات</button>
+          <button class="filter-btn" data-filter="youtube">يوتيوب</button>
+          <button class="filter-btn" data-filter="brand">براند</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="project-card reveal" data-category="reels">
+            <div class="project-media">
+              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+              </video>
+              <span class="project-tag">Reels</span>
+            </div>
+            <div class="project-body">
+              <h3>Fitness Coach Reels</h3>
+              <p>
+                سلسلة ريلز لمدرب لياقة ركزت على القص السريع، النصوص المتحركة، واختيار لقطات الحركة الأقوى.
+              </p>
+              <div class="project-meta">
+                <span>12 فيديو</span>
+                <span>Instagram</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ads">
+            <div class="project-media">
+              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+              </video>
+              <span class="project-tag">Ads</span>
+            </div>
+            <div class="project-body">
+              <h3>Tech Product Ad</h3>
+              <p>
+                إعلان قصير لمنتج رقمي بتسلسل واضح: مشكلة، حل، مميزات، ودعوة مباشرة لاتخاذ إجراء.
+              </p>
+              <div class="project-meta">
+                <span>30 ثانية</span>
+                <span>Meta Ads</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="youtube">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1497015289639-54688650d173?auto=format&fit=crop&w=900&q=80" alt="YouTube editing project">
+              <span class="project-tag">YouTube</span>
+            </div>
+            <div class="project-body">
+              <h3>Podcast Highlights</h3>
+              <p>
+                تحويل حلقة طويلة إلى مقاطع مختصرة مع تحسين الصوت، إضافة عناوين، وتجهيز نسخ للسوشيال ميديا.
+              </p>
+              <div class="project-meta">
+                <span>8 مقاطع</span>
+                <span>YouTube</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="brand">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80" alt="Brand film project">
+              <span class="project-tag">Brand</span>
+            </div>
+            <div class="project-body">
+              <h3>Café Brand Film</h3>
+              <p>
+                فيديو تعريفي لمقهى محلي اعتمد على لقطات المكان، تفاصيل التحضير، والموسيقى الهادئة لبناء إحساس مميز.
+              </p>
+              <div class="project-meta">
+                <span>60 ثانية</span>
+                <span>Branding</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="reels">
+            <div class="project-media">
+              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+              </video>
+              <span class="project-tag">Reels</span>
+            </div>
+            <div class="project-body">
+              <h3>Fashion Collection</h3>
+              <p>
+                مونتاج ريلز لمجموعة ملابس جديدة مع انتقالات خفيفة، إيقاع مناسب للموسيقى، ونسخ قصيرة للحملات.
+              </p>
+              <div class="project-meta">
+                <span>9 فيديوهات</span>
+                <span>TikTok</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ads">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80" alt="Product ad editing">
+              <span class="project-tag">Ads</span>
+            </div>
+            <div class="project-body">
+              <h3>E-commerce Promo</h3>
+              <p>
+                إعلان منتج لمتجر إلكتروني مع إبراز المميزات، الأسعار، العروض، ونهاية واضحة للتواصل والشراء.
+              </p>
+              <div class="project-meta">
+                <span>20 ثانية</span>
+                <span>Campaign</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">طريقة العمل</div>
+            <h2 class="section-title">خطوات واضحة من استلام الملفات حتى التسليم.</h2>
+          </div>
+          <p class="section-desc">
+            كل مشروع له مسار بسيط يضمن سرعة التنفيذ وجودة النتيجة النهائية.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step reveal">
+            <div class="step-number">01</div>
+            <h3>استلام البريف</h3>
+            <p>
+              تحديد هدف الفيديو، المنصة، الجمهور، مدة الفيديو، والأسلوب المطلوب.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">02</div>
+            <h3>ترتيب اللقطات</h3>
+            <p>
+              مراجعة المواد الخام، اختيار أفضل اللقطات، وبناء تسلسل مناسب للقصة.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">03</div>
+            <h3>المونتاج النهائي</h3>
+            <p>
+              قص، صوت، ألوان، نصوص، انتقالات، وموشن بسيط حسب احتياج الفيديو.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number">04</div>
+            <h3>التسليم والمراجعة</h3>
+            <p>
+              تسليم نسخة جاهزة للنشر مع تنفيذ التعديلات المتفق عليها بدقة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">آراء العملاء</div>
+            <h2 class="section-title">تجارب تعاون مبنية على الالتزام والوضوح.</h2>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial reveal">
+            <p>
+              "أحمد فهم طبيعة البراند بسرعة وطلع الفيديوهات بنفس الإحساس المطلوب. التسليم كان منظم والتعديلات اتنفذت بدقة."
+            </p>
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Client">
+              <div>
+                <h4>سارة منصور</h4>
+                <span>Marketing Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              "اشتغلنا على حملة ريلز كاملة، والنتيجة كانت ممتازة من ناحية الإيقاع، ترتيب الكلام، وشكل الكابشن على الفيديو."
+            </p>
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Client">
+              <div>
+                <h4>محمود عادل</h4>
+                <span>Founder - FitLab</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              "أكثر شيء مميز كان الاهتمام بالتفاصيل الصغيرة في الصوت والألوان. الفيديو النهائي كان جاهز للنشر بدون مجهود إضافي."
+            </p>
+            <div class="client">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client">
+              <div>
+                <h4>ليلى هشام</h4>
+                <span>Content Creator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <h2>جاهز تطلع الفيديو القادم بشكل أقوى؟</h2>
+            <p>
+              ابعت تفاصيل المشروع، نوع الفيديو، مدة اللقطات، والمنصة المستهدفة، وهرد عليك بخطة تنفيذ واضحة ومدة تسليم مناسبة.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a href="https://wa.me/201001234567" target="_blank" class="btn">تواصل واتساب</a>
+            <a href="mailto:ahmed.editor@email.com" class="btn">إرسال إيميل</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 أحمد نادر — Video Editing & Post Production
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        projects.forEach(project => {
+          const category = project.dataset.category;
+
+          if (filter === "all" || category === filter) {
+            project.classList.remove("hidden");
+          } else {
+            project.classList.add("hidden");
+          }
+        });
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+
+    const projectVideos = document.querySelectorAll(".project-card video");
+
+    projectVideos.forEach(video => {
+      const card = video.closest(".project-card");
+
+      card.addEventListener("mouseenter", () => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
+
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+
+</body>
+</html>
