@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>م. عمر الحداد | تصميم معماري وإنشائي</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --card: #ffffff;
+      --dark: #171717;
+      --text: #5b5b5b;
+      --muted: #777;
+      --line: rgba(23, 23, 23, 0.1);
+      --primary: #b88a44;
+      --primary-dark: #8d672e;
+      --green: #344e41;
+      --soft: #efe7da;
+      --shadow: 0 24px 70px rgba(23, 23, 23, 0.09);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(184, 138, 68, 0.18), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(52, 78, 65, 0.13), transparent 32%),
+        var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border: 1px solid rgba(184, 138, 68, 0.18);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 74px);
+      line-height: 1.13;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .lead {
+      max-width: 690px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-family: inherit;
+      font-weight: 900;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: #fff;
+      box-shadow: 0 18px 36px rgba(23, 23, 23, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #000;
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.7);
+      border-color: var(--line);
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    /* Navbar */
+    .nav {
+      position: fixed;
+      top: 18px;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: auto;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 50px rgba(23, 23, 23, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--dark), var(--green));
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 900;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--soft);
+      color: var(--primary-dark);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--dark);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 150px 0 80px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero h1 span {
+      color: var(--primary-dark);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 16px 44px rgba(23, 23, 23, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 31px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .stat small {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .project-frame {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      transform: rotate(-1.4deg);
+    }
+
+    .project-img {
+      height: 500px;
+      border-radius: 26px;
+      background:
+        linear-gradient(to top, rgba(23,23,23,0.62), transparent 55%),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .float-card {
+      position: absolute;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 20px;
+      box-shadow: 0 18px 42px rgba(23,23,23,0.16);
+      padding: 16px;
+      min-width: 170px;
+    }
+
+    .float-card.one {
+      top: 24px;
+      right: 24px;
+    }
+
+    .float-card.two {
+      bottom: 24px;
+      left: 24px;
+    }
+
+    .float-card strong {
+      display: block;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .float-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .profile-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--dark);
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+
+    .profile-img {
+      height: 390px;
+      background:
+        linear-gradient(to top, rgba(23,23,23,0.55), transparent),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1100&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .profile-info {
+      padding: 26px;
+      color: #fff;
+    }
+
+    .profile-info p {
+      color: #d6d3cd;
+      margin-top: 8px;
+    }
+
+    .about-content {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 16px 50px rgba(23, 23, 23, 0.05);
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .about-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .about-item b {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 900;
+    }
+
+    .about-item span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* Services */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 16px 50px rgba(23,23,23,0.045);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: rgba(184, 138, 68, 0.35);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .service-card p {
+      margin-top: 10px;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(23,23,23,0.05);
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-cover {
+      height: 255px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .project-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(23,23,23,0.72), transparent);
+    }
+
+    .project-tag {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1;
+      background: #fff;
+      color: var(--primary-dark);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .project-body {
+      padding: 26px;
+    }
+
+    .project-body p {
+      margin-top: 8px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: #fbfaf8;
+      border-radius: 16px;
+      padding: 13px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Process */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 16px 45px rgba(23,23,23,0.045);
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: "0" counter(step);
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step p {
+      margin-top: 8px;
+      font-size: 15px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 16px 50px rgba(23,23,23,0.045);
+    }
+
+    .skill {
+      margin-top: 22px;
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .bar {
+      height: 10px;
+      background: #ece6dc;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--green));
+      border-radius: inherit;
+      transition: width 1.2s ease;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tool {
+      padding: 10px 14px;
+      background: #fbfaf8;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    /* Numbers */
+    .numbers-box {
+      background:
+        linear-gradient(135deg, rgba(23,23,23,0.96), rgba(52,78,65,0.94)),
+        url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      border-radius: 38px;
+      padding: 38px;
+      color: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .numbers-box h2 {
+      color: #fff;
+    }
+
+    .numbers-box p {
+      color: #e7e5df;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .number {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .number strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .number span {
+      color: #ddd7cd;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 16px 45px rgba(23,23,23,0.045);
+    }
+
+    .stars {
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .person b {
+      display: block;
+      font-weight: 900;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* Contact */
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 38px;
+      padding: 46px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(184,138,68,0.35), transparent 65%);
+      top: -190px;
+      left: -120px;
+    }
+
+    .contact-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-box h2 {
+      color: #fff;
+    }
+
+    .contact-box p {
+      color: #d6d3cd;
+      margin-top: 12px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      font-weight: 900;
+      transition: 0.25s ease;
+    }
+
+    .contact-link:hover {
+      background: #fff;
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .skills-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .cards-grid,
+      .projects-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .numbers-grid,
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        padding: 12px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links a {
+        padding: 13px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 130px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero-stats,
+      .cards-grid,
+      .projects-grid,
+      .metrics,
+      .numbers-grid,
+      .process,
+      .testimonials,
+      .about-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-img {
+        height: 370px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .numbers-box,
+      .contact-box {
+        padding: 28px;
+        border-radius: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">OH</span>
+        <span>م. عمر الحداد</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">الرئيسية</a>
+        <a href="#about">نبذة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#projects">الأعمال</a>
+        <a href="#process">طريقة العمل</a>
+        <a href="#contact">تواصل</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="eyebrow">تصميم معماري وإنشائي</span>
+        <h1>
+          تصميمات معمارية وخرسانية تجمع بين <span>الجمال والقوة والدقة</span>
+        </h1>
+        <p class="lead">
+          أقدم حلول تصميم متكاملة للمشاريع السكنية والتجارية، بداية من الفكرة المعمارية وتوزيع المساحات، وحتى اللوحات الإنشائية وحسابات الخرسانات والتنسيق مع مراحل التنفيذ.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">عرض المشاريع</a>
+          <a href="#contact" class="btn btn-outline">طلب معاينة مشروع</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong class="counter" data-target="8">0</strong>
+            <small>سنوات خبرة</small>
+          </div>
+          <div class="stat">
+            <strong>+<span class="counter" data-target="120">0</span></strong>
+            <small>مشروع تصميم</small>
+          </div>
+          <div class="stat">
+            <strong>+<span class="counter" data-target="65000">0</span>م²</strong>
+            <small>مساحات مصممة</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="project-frame">
+          <div class="project-img">
+            <div class="float-card one">
+              <strong>G+4</strong>
+              <span>تصميم معماري وإنشائي</span>
+            </div>
+            <div class="float-card two">
+              <strong>100%</strong>
+              <span>لوحات تنفيذية متكاملة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="profile-card reveal">
+        <div class="profile-img"></div>
+        <div class="profile-info">
+          <h3>م. عمر الحداد</h3>
+          <p>
+            مهندس تصميم معماري وإنشائي متخصص في تصميم المباني السكنية والتجارية والخرسانات المسلحة واللوحات التنفيذية.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <span class="eyebrow">نبذة مهنية</span>
+        <h2>تصميم واضح قابل للتنفيذ، وتفاصيل إنشائية محسوبة بدقة</h2>
+        <p>
+          أعمل على تحويل احتياجات المالك إلى تصميم معماري عملي ومتوازن، مع ربط الشكل الجمالي بالحل الإنشائي المناسب. أعتمد على دراسة دقيقة للمساحات، الحركة، التهوية، الإضاءة، الأحمال، والاشتراطات الفنية للوصول إلى مشروع قابل للتنفيذ بكفاءة وبدون تعقيدات غير ضرورية أثناء الموقع.
+        </p>
+
+        <div class="about-list">
+          <div class="about-item">
+            <b>التخصص الأساسي</b>
+            <span>تصميم معماري وإنشائي</span>
+          </div>
+
+          <div class="about-item">
+            <b>نوع المشاريع</b>
+            <span>فلل، عمارات، وحدات تجارية، مباني إدارية</span>
+          </div>
+
+          <div class="about-item">
+            <b>المخرجات</b>
+            <span>مخططات، واجهات، قطاعات، لوحات خرسانية</span>
+          </div>
+
+          <div class="about-item">
+            <b>منهج التنفيذ</b>
+            <span>دراسة، تصميم، مراجعة، تسليم منظم</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">الخدمات</span>
+          <h2>خدمات تصميم متكاملة للمباني</h2>
+        </div>
+        <p class="lead">
+          حلول هندسية تغطي احتياجات المشروع من الفكرة الأولى حتى تسليم اللوحات التنفيذية.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="service-card reveal">
+          <div class="icon">🏛️</div>
+          <h3>تصميم معماري</h3>
+          <p>
+            توزيع داخلي، مساقط أفقية، واجهات، قطاعات، حلول حركة، ودراسة علاقة الفراغات حسب احتياجات المالك وطبيعة الأرض.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🏗️</div>
+          <h3>تصميم إنشائي وخرسانات</h3>
+          <p>
+            تصميم القواعد، الأعمدة، الكمرات، البلاطات، السلالم، والعناصر الخرسانية مع مراعاة الأمان والتكلفة وسهولة التنفيذ.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">📐</div>
+          <h3>لوحات تنفيذية</h3>
+          <p>
+            تجهيز لوحات واضحة للموقع تشمل الأبعاد، المحاور، المناسيب، التفاصيل، التسليح، والجداول الإنشائية اللازمة للتنفيذ.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🏡</div>
+          <h3>تصميم فلل ومنازل</h3>
+          <p>
+            تصميم سكني يوازن بين الخصوصية، الراحة، الإضاءة الطبيعية، الحركة اليومية، والواجهة المناسبة لطبيعة المشروع.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🏢</div>
+          <h3>تصميم مباني متعددة الأدوار</h3>
+          <p>
+            حلول تصميم للعمارات السكنية والإدارية مع دراسة التكرار، مواقف السيارات، النواة الرأسية، والتوزيع الاقتصادي.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🔍</div>
+          <h3>مراجعة هندسية</h3>
+          <p>
+            مراجعة المخططات والتفاصيل قبل التنفيذ لاكتشاف التعارضات وتقليل التعديلات المكلفة أثناء العمل بالموقع.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="numbers-box reveal">
+        <span class="eyebrow">أرقام العمل</span>
+        <h2>خبرة عملية في تصميمات قابلة للتنفيذ</h2>
+        <p class="lead">
+          الأرقام تعكس حجم المشاريع التي تم العمل عليها في التصميم المعماري والإنشائي وإعداد اللوحات التنفيذية.
+        </p>
+
+        <div class="numbers-grid">
+          <div class="number">
+            <strong>120+</strong>
+            <span>مشروع تصميم</span>
+          </div>
+
+          <div class="number">
+            <strong>65K+</strong>
+            <span>متر مربع</span>
+          </div>
+
+          <div class="number">
+            <strong>38</strong>
+            <span>مشروع خرسانات</span>
+          </div>
+
+          <div class="number">
+            <strong>14</strong>
+            <span>مدينة ومحافظة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">الأعمال المختارة</span>
+          <h2>مشاريع تصميم معماري وإنشائي</h2>
+        </div>
+        <p class="lead">
+          نماذج من مشاريع سكنية وتجارية تم تنفيذ تصميمها بمخرجات هندسية واضحة وقابلة للتنفيذ.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-cover" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80');">
+            <span class="project-tag">فيلا سكنية</span>
+          </div>
+
+          <div class="project-body">
+            <h3>فيلا عائلية بتصميم حديث</h3>
+            <p>
+              تصميم معماري متكامل لفيلا خاصة مع توزيع داخلي يحقق الخصوصية، واجهة حديثة، وربط واضح بين الاستقبال والمعيشة والحديقة.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>520م²</strong>
+                <span>مساحة الأرض</span>
+              </div>
+
+              <div class="metric">
+                <strong>G+1</strong>
+                <span>عدد الأدوار</span>
+              </div>
+
+              <div class="metric">
+                <strong>18</strong>
+                <span>لوحة تنفيذية</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-cover" style="background-image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80');">
+            <span class="project-tag">عمارة سكنية</span>
+          </div>
+
+          <div class="project-body">
+            <h3>عمارة سكنية متعددة الأدوار</h3>
+            <p>
+              تصميم معماري وإنشائي لعمارة سكنية مع دراسة الأعمدة، القواعد، توزيع الشقق، السلم، والمناور لتحقيق أقصى استفادة من المساحة.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>G+5</strong>
+                <span>نظام المبنى</span>
+              </div>
+
+              <div class="metric">
+                <strong>24</strong>
+                <span>وحدة سكنية</span>
+              </div>
+
+              <div class="metric">
+                <strong>32</strong>
+                <span>لوحة هندسية</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-cover" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80');">
+            <span class="project-tag">تصميم داخلي</span>
+          </div>
+
+          <div class="project-body">
+            <h3>وحدة سكنية بتوزيع عملي</h3>
+            <p>
+              إعادة توزيع داخلي لشقة سكنية مع تحسين مسارات الحركة، تكبير مناطق التخزين، وفصل واضح بين منطقة الضيوف والمعيشة الخاصة.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>185م²</strong>
+                <span>مساحة الوحدة</span>
+              </div>
+
+              <div class="metric">
+                <strong>3</strong>
+                <span>غرف نوم</span>
+              </div>
+
+              <div class="metric">
+                <strong>9</strong>
+                <span>مخططات تفصيلية</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-cover" style="background-image: url('https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=1200&q=80');">
+            <span class="project-tag">خرسانات</span>
+          </div>
+
+          <div class="project-body">
+            <h3>تصميم إنشائي لمبنى تجاري</h3>
+            <p>
+              إعداد النظام الإنشائي الكامل لمبنى تجاري مع تصميم العناصر الخرسانية ومراعاة البحور المطلوبة ومرونة الاستخدام الداخلي.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>1,800م²</strong>
+                <span>مساحة بنائية</span>
+              </div>
+
+              <div class="metric">
+                <strong>Flat Slab</strong>
+                <span>النظام الإنشائي</span>
+              </div>
+
+              <div class="metric">
+                <strong>21</strong>
+                <span>لوحة خرسانية</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">طريقة العمل</span>
+          <h2>خطوات منظمة من الفكرة حتى اللوحات النهائية</h2>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="step reveal">
+          <h3>دراسة المشروع</h3>
+          <p>
+            مراجعة الأرض، المساحة، الاشتراطات، احتياجات المالك، الميزانية التقريبية، وطبيعة الاستخدام.
+          </p>
+        </div>
+
+        <div class="step reveal">
+          <h3>المقترح المعماري</h3>
+          <p>
+            إعداد تصور أولي للمساقط والتوزيع والواجهات مع مراجعة نقاط القوة والبدائل المناسبة.
+          </p>
+        </div>
+
+        <div class="step reveal">
+          <h3>الحل الإنشائي</h3>
+          <p>
+            اختيار النظام الإنشائي المناسب وتصميم العناصر الخرسانية بما يخدم التصميم المعماري والتنفيذ.
+          </p>
+        </div>
+
+        <div class="step reveal">
+          <h3>تسليم اللوحات</h3>
+          <p>
+            تجهيز ملفات المشروع النهائية بشكل واضح ومنظم للمراجعة أو الترخيص أو التنفيذ بالموقع.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container skills-grid">
+      <div class="panel reveal">
+        <span class="eyebrow">المهارات</span>
+        <h2>مهارات التصميم والتحليل</h2>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Architectural Design</span>
+            <span>96%</span>
+          </div>
+          <div class="bar"><span data-width="96%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Structural Design</span>
+            <span>92%</span>
+          </div>
+          <div class="bar"><span data-width="92%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Concrete Detailing</span>
+            <span>90%</span>
+          </div>
+          <div class="bar"><span data-width="90%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Execution Drawings</span>
+            <span>94%</span>
+          </div>
+          <div class="bar"><span data-width="94%"></span></div>
+        </div>
+      </div>
+
+      <div class="panel reveal">
+        <span class="eyebrow">البرامج والأدوات</span>
+        <h2>أدوات هندسية مستخدمة</h2>
+
+        <div class="tools">
+          <span class="tool">AutoCAD</span>
+          <span class="tool">Revit</span>
+          <span class="tool">ETABS</span>
+          <span class="tool">SAFE</span>
+          <span class="tool">SAP2000</span>
+          <span class="tool">SketchUp</span>
+          <span class="tool">Lumion</span>
+          <span class="tool">Photoshop</span>
+          <span class="tool">Excel Sheets</span>
+          <span class="tool">Quantity Review</span>
+          <span class="tool">Concrete Details</span>
+          <span class="tool">Shop Drawings</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">آراء العملاء</span>
+          <h2>ثقة مبنية على وضوح التصميم ودقة التسليم</h2>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <p>
+            التصميم كان منظم وواضح جدًا، والمهندس قدر يطلع توزيع عملي للمساحة مع واجهة شيك ومناسبة لطبيعة البيت.
+          </p>
+          <div class="person">
+            <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80');"></div>
+            <div>
+              <b>أحمد نبيل</b>
+              <span>مالك فيلا سكنية</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <p>
+            أكثر شيء مميز كان الاهتمام بتفاصيل الخرسانات واللوحات التنفيذية. الموقع اشتغل بدون أسئلة كثيرة أو تعديلات مرهقة.
+          </p>
+          <div class="person">
+            <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80');"></div>
+            <div>
+              <b>محمود فاروق</b>
+              <span>مقاول تنفيذ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <p>
+            استلمنا التصميم في الميعاد، وكان فيه مرونة في التعديلات ومراعاة جيدة للتكلفة وشكل الواجهة النهائي.
+          </p>
+          <div class="person">
+            <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80');"></div>
+            <div>
+              <b>نهى عادل</b>
+              <span>مشروع سكني خاص</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div>
+          <span class="eyebrow">ابدأ مشروعك</span>
+          <h2>جاهز لتحويل فكرتك إلى تصميم هندسي واضح؟</h2>
+          <p>
+            تواصل لمناقشة مساحة الأرض، طبيعة المشروع، عدد الأدوار، المتطلبات المعمارية، والمرحلة الحالية من العمل.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a class="contact-link" href="https://wa.me/201000000000" target="_blank">واتساب: 01000000000</a>
+          <a class="contact-link" href="mailto:omar.design@example.com">omar.design@example.com</a>
+          <a class="contact-link" href="tel:+201000000000">اتصال مباشر</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 م. عمر الحداد — تصميم معماري وإنشائي وخرسانات
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    const counters = document.querySelectorAll(".counter");
+    let countersStarted = false;
+
+    function startCounters() {
+      if (countersStarted) return;
+      countersStarted = true;
+
+      counters.forEach((counter) => {
+        const target = Number(counter.dataset.target);
+        let current = 0;
+        const increment = Math.max(1, target / 70);
+
+        function update() {
+          current += increment;
+
+          if (current < target) {
+            counter.textContent = Math.floor(current).toLocaleString("en-US");
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target.toLocaleString("en-US");
+          }
+        }
+
+        update();
+      });
+    }
+
+    const stats = document.querySelector(".hero-stats");
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCounters();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (stats) counterObserver.observe(stats);
+
+    const bars = document.querySelectorAll(".bar span");
+
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    bars.forEach((bar) => barObserver.observe(bar));
+
+    const sections = document.querySelectorAll("header[id], section[id]");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "home";
+
+      sections.forEach((section) => {
+        const top = section.offsetTop - 150;
+        if (window.scrollY >= top) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("href") === `#${current}`) {
+          item.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
