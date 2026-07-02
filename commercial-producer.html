@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سلمى عادل | Reels & Commercial Producer</title>
+  <meta name="description" content="بورتفوليو سلمى عادل، متخصصة في إنتاج الريلز، البروموهات، والإعلانات التجارية للبراندات." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f4ef;
+      --card:#ffffff;
+      --text:#171717;
+      --muted:#6c6c6c;
+      --soft:#eee7dc;
+      --line:#e5ded3;
+      --dark:#18120d;
+      --accent:#c87941;
+      --accent2:#945f3d;
+      --green:#627b62;
+      --shadow: 0 24px 70px rgba(40, 26, 14, .10);
+      --radius: 28px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Cairo", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200,121,65,.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(98,123,98,.16), transparent 35%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.75;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(1180px, calc(100% - 34px));
+      margin:auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:99;
+      backdrop-filter: blur(18px);
+      background:rgba(247,244,239,.84);
+      border-bottom:1px solid rgba(229,222,211,.72);
+    }
+
+    .nav-inner{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:-.7px;
+    }
+
+    .brand-mark{
+      width:44px;
+      height:44px;
+      border-radius:16px;
+      background:linear-gradient(135deg, var(--dark), var(--accent));
+      display:grid;
+      place-items:center;
+      color:white;
+      font-weight:900;
+      box-shadow:0 10px 30px rgba(200,121,65,.25);
+    }
+
+    .brand span small{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:600;
+      margin-top:-5px;
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      color:#3d352f;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .links a{
+      position:relative;
+      transition:.25s;
+    }
+
+    .links a:hover{
+      color:var(--accent2);
+    }
+
+    .nav-cta{
+      background:var(--dark);
+      color:white;
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+      transition:.25s;
+    }
+
+    .nav-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 30px rgba(24,18,13,.18);
+    }
+
+    .menu-btn{
+      display:none;
+      border:0;
+      background:var(--dark);
+      color:white;
+      border-radius:14px;
+      width:44px;
+      height:44px;
+      font-size:22px;
+      cursor:pointer;
+    }
+
+    .hero{
+      padding:72px 0 44px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items:center;
+      gap:44px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,.64);
+      border:1px solid var(--line);
+      padding:8px 14px;
+      border-radius:999px;
+      color:#5a4b3e;
+      font-weight:800;
+      font-size:14px;
+      box-shadow:0 10px 30px rgba(40,26,14,.04);
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      background:var(--accent);
+      border-radius:50%;
+      box-shadow:0 0 0 6px rgba(200,121,65,.13);
+    }
+
+    h1{
+      font-size:clamp(44px, 7vw, 86px);
+      line-height:1.08;
+      letter-spacing:-3px;
+      margin:24px 0 18px;
+      color:var(--dark);
+    }
+
+    .highlight{
+      color:var(--accent2);
+      position:relative;
+      white-space:nowrap;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#514940;
+      max-width:650px;
+      font-weight:500;
+    }
+
+    .hero-actions{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:999px;
+      padding:14px 22px;
+      font-weight:900;
+      border:1px solid transparent;
+      transition:.25s;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+      box-shadow:0 18px 42px rgba(200,121,65,.28);
+    }
+
+    .btn-dark{
+      background:var(--dark);
+      color:white;
+    }
+
+    .btn-light{
+      background:white;
+      color:var(--dark);
+      border-color:var(--line);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:36px;
+      max-width:650px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.68);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 16px 45px rgba(40,26,14,.05);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:28px;
+      color:var(--dark);
+      letter-spacing:-1px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .hero-visual{
+      position:relative;
+    }
+
+    .phone-wrap{
+      position:relative;
+      width:min(430px,100%);
+      margin:auto;
+    }
+
+    .phone{
+      border:12px solid #18120d;
+      border-radius:46px;
+      overflow:hidden;
+      background:#111;
+      box-shadow:var(--shadow);
+      aspect-ratio:9/16;
+      position:relative;
+    }
+
+    .phone img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(1.02) contrast(1.02);
+    }
+
+    .phone::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.65), transparent 52%);
+    }
+
+    .reel-caption{
+      position:absolute;
+      bottom:24px;
+      right:22px;
+      left:22px;
+      z-index:2;
+      color:white;
+    }
+
+    .reel-caption b{
+      display:block;
+      font-size:22px;
+      line-height:1.4;
+    }
+
+    .reel-caption span{
+      color:rgba(255,255,255,.76);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .float-card{
+      position:absolute;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:16px;
+      box-shadow:0 20px 55px rgba(40,26,14,.12);
+      z-index:3;
+    }
+
+    .float-card.one{
+      top:12%;
+      right:-32px;
+      width:178px;
+    }
+
+    .float-card.two{
+      bottom:12%;
+      left:-35px;
+      width:200px;
+    }
+
+    .float-card small{
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+    }
+
+    .float-card strong{
+      display:block;
+      font-size:26px;
+      color:var(--accent2);
+      line-height:1.3;
+    }
+
+    .section{
+      padding:74px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:34px;
+    }
+
+    .section-title{
+      max-width:680px;
+    }
+
+    .section-title span{
+      color:var(--accent2);
+      font-weight:900;
+      font-size:14px;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .section-title h2{
+      font-size:clamp(30px, 4vw, 52px);
+      line-height:1.2;
+      letter-spacing:-1.5px;
+      color:var(--dark);
+    }
+
+    .section-note{
+      color:var(--muted);
+      max-width:420px;
+      font-weight:600;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:26px;
+      align-items:stretch;
+    }
+
+    .about-img{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:520px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .about-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .about-content{
+      display:grid;
+      gap:18px;
+    }
+
+    .big-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:32px;
+      box-shadow:0 18px 60px rgba(40,26,14,.06);
+    }
+
+    .big-card p{
+      color:#4d453d;
+      font-size:17px;
+      font-weight:500;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+    }
+
+    .mini-card h3{
+      font-size:18px;
+      margin-bottom:8px;
+      color:var(--dark);
+    }
+
+    .mini-card p{
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .service{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:26px;
+      min-height:245px;
+      transition:.25s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service::before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      background:rgba(200,121,65,.10);
+      border-radius:50%;
+      top:-40px;
+      left:-40px;
+    }
+
+    .service:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow);
+    }
+
+    .icon{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:var(--soft);
+      font-size:24px;
+      margin-bottom:18px;
+    }
+
+    .service h3{
+      font-size:20px;
+      line-height:1.4;
+      margin-bottom:10px;
+      color:var(--dark);
+    }
+
+    .service p{
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .work-controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+
+    .filter-btn{
+      border:1px solid var(--line);
+      background:white;
+      color:#514940;
+      padding:10px 16px;
+      border-radius:999px;
+      font-family:inherit;
+      font-weight:800;
+      cursor:pointer;
+      transition:.25s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover{
+      background:var(--dark);
+      color:white;
+      border-color:var(--dark);
+    }
+
+    .work-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .work-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 18px 50px rgba(40,26,14,.06);
+      transition:.25s;
+    }
+
+    .work-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow);
+    }
+
+    .work-media{
+      position:relative;
+      aspect-ratio:4/5;
+      overflow:hidden;
+      background:#ddd;
+    }
+
+    .work-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.5s;
+    }
+
+    .work-card:hover img{
+      transform:scale(1.07);
+    }
+
+    .play{
+      position:absolute;
+      inset:auto 18px 18px auto;
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:rgba(255,255,255,.92);
+      display:grid;
+      place-items:center;
+      color:var(--dark);
+      font-weight:900;
+      box-shadow:0 14px 35px rgba(0,0,0,.18);
+    }
+
+    .tag{
+      position:absolute;
+      top:16px;
+      right:16px;
+      background:rgba(24,18,13,.82);
+      color:white;
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .work-body{
+      padding:22px;
+    }
+
+    .work-body h3{
+      font-size:21px;
+      color:var(--dark);
+      margin-bottom:8px;
+      line-height:1.4;
+    }
+
+    .work-body p{
+      color:var(--muted);
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .metrics{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:15px;
+    }
+
+    .metric{
+      background:var(--soft);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      color:#554233;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      counter-reset:steps;
+    }
+
+    .step{
+      counter-increment:steps;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:26px;
+      position:relative;
+    }
+
+    .step::before{
+      content:counter(steps);
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      background:var(--dark);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .step h3{
+      margin-bottom:8px;
+      color:var(--dark);
+    }
+
+    .step p{
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .results-wrap{
+      background:var(--dark);
+      border-radius:36px;
+      padding:36px;
+      color:white;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .results-wrap::before{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:rgba(200,121,65,.22);
+      border-radius:50%;
+      top:-140px;
+      left:-110px;
+    }
+
+    .results-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .result{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:24px;
+      padding:24px;
+    }
+
+    .result strong{
+      display:block;
+      font-size:38px;
+      line-height:1.2;
+      color:#f3c59c;
+      letter-spacing:-1px;
+    }
+
+    .result span{
+      color:rgba(255,255,255,.74);
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .clients{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:14px;
+    }
+
+    .client{
+      height:92px;
+      border-radius:24px;
+      background:white;
+      border:1px solid var(--line);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      font-weight:900;
+      color:#4b4038;
+      box-shadow:0 15px 40px rgba(40,26,14,.04);
+    }
+
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .quote{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:0 18px 50px rgba(40,26,14,.05);
+    }
+
+    .quote p{
+      color:#4d453d;
+      font-weight:600;
+      margin-bottom:22px;
+    }
+
+    .person{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .avatar{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      background:var(--soft);
+      overflow:hidden;
+      flex:none;
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .person b{
+      display:block;
+      color:var(--dark);
+    }
+
+    .person span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .contact{
+      padding-bottom:40px;
+    }
+
+    .contact-box{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:38px;
+      padding:38px;
+      display:grid;
+      grid-template-columns:1fr .85fr;
+      gap:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h2{
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.25;
+      letter-spacing:-1.4px;
+      color:var(--dark);
+      margin-bottom:14px;
+    }
+
+    .contact-box p{
+      color:var(--muted);
+      font-weight:600;
+      max-width:620px;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:#453b33;
+      font-weight:800;
+    }
+
+    .contact-item i{
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      background:var(--soft);
+      display:grid;
+      place-items:center;
+      font-style:normal;
+    }
+
+    form{
+      display:grid;
+      gap:12px;
+    }
+
+    input, textarea, select{
+      width:100%;
+      border:1px solid var(--line);
+      background:#fbfaf7;
+      border-radius:18px;
+      padding:14px 16px;
+      font-family:inherit;
+      font-weight:700;
+      outline:none;
+      color:var(--dark);
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .footer{
+      padding:26px 0 34px;
+      color:var(--muted);
+      font-weight:700;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.62);
+      z-index:999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .modal.show{
+      display:flex;
+    }
+
+    .modal-card{
+      width:min(760px,100%);
+      background:white;
+      border-radius:32px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 30px 90px rgba(0,0,0,.32);
+    }
+
+    .modal-visual{
+      aspect-ratio:16/9;
+      background:#111;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .modal-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.9;
+    }
+
+    .modal-visual::after{
+      content:"مشاهدة المشروع";
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:white;
+      font-size:34px;
+      font-weight:900;
+      background:linear-gradient(120deg, rgba(24,18,13,.76), rgba(200,121,65,.25));
+    }
+
+    .modal-content{
+      padding:26px;
+    }
+
+    .modal-content h3{
+      font-size:26px;
+      color:var(--dark);
+      margin-bottom:8px;
+    }
+
+    .modal-content p{
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .close{
+      position:absolute;
+      top:14px;
+      left:14px;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:0;
+      background:white;
+      cursor:pointer;
+      z-index:3;
+      font-size:22px;
+      font-weight:900;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .about-grid,
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+
+      .services,
+      .process,
+      .results-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .work-grid,
+      .testimonials{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .clients{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .float-card.one{
+        right:4px;
+      }
+
+      .float-card.two{
+        left:4px;
+      }
+    }
+
+    @media (max-width: 760px){
+      .links{
+        position:fixed;
+        top:78px;
+        right:17px;
+        left:17px;
+        background:white;
+        border:1px solid var(--line);
+        border-radius:24px;
+        padding:18px;
+        flex-direction:column;
+        align-items:stretch;
+        box-shadow:var(--shadow);
+        display:none;
+      }
+
+      .links.show{
+        display:flex;
+      }
+
+      .nav-cta{
+        display:none;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .hero{
+        padding-top:44px;
+      }
+
+      h1{
+        letter-spacing:-1.8px;
+      }
+
+      .hero-stats,
+      .services,
+      .process,
+      .results-grid,
+      .work-grid,
+      .testimonials,
+      .mini-grid{
+        grid-template-columns:1fr;
+      }
+
+      .clients{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-note{
+        margin-top:12px;
+      }
+
+      .about-img{
+        min-height:390px;
+      }
+
+      .float-card{
+        display:none;
+      }
+
+      .results-wrap,
+      .contact-box{
+        padding:24px;
+        border-radius:28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark">س</div>
+        <span>
+          سلمى عادل
+          <small>Reels · Promos · Commercials</small>
+        </span>
+      </a>
+
+      <div class="links" id="navLinks">
+        <a href="#about">عنّي</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#results">النتائج</a>
+        <a href="#contact">تواصل</a>
+      </div>
+
+      <a href="#contact" class="nav-cta">ابدأ مشروعك</a>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> صناعة محتوى تجاري يبيع قبل ما يشرح</div>
+        <h1>
+          ريلز وبروموهات
+          <br>
+          بإحساس <span class="highlight">كومرشيال</span>
+          واضح
+        </h1>
+        <p>
+          سلمى عادل، متخصصة في إنتاج الريلز، البروموهات، والإعلانات التجارية للبراندات.
+          أعمل على تحويل الفكرة إلى فيديو قصير جذاب، سريع، ومناسب للمنصة والجمهور والهدف البيعي.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">شاهد الأعمال</a>
+          <a href="#contact" class="btn btn-light">طلب تعاون</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>130+</strong>
+            <span>فيديو تجاري</span>
+          </div>
+          <div class="stat">
+            <strong>42M+</strong>
+            <span>مشاهدات للحملات</span>
+          </div>
+          <div class="stat">
+            <strong>28</strong>
+            <span>براند في مصر والخليج</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="phone-wrap">
+          <div class="phone">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="Commercial video production">
+            <div class="reel-caption">
+              <b>Promo Campaign — Glow Café</b>
+              <span>Script · Direction · Editing · Motion Cut</span>
+            </div>
+          </div>
+
+          <div class="float-card one">
+            <small>Average Watch Time</small>
+            <strong>+61%</strong>
+          </div>
+
+          <div class="float-card two">
+            <small>Best Performing Reel</small>
+            <strong>3.8M Views</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span>عن سلمى</span>
+          <h2>إنتاج فيديوهات قصيرة تجمع بين الفكرة، الإيقاع، والهدف التجاري.</h2>
+        </div>
+        <p class="section-note">
+          أشتغل مع البراند من أول فهم المنتج والجمهور، مرورًا بالسكريبت والتصوير، حتى المونتاج النهائي وتجهيز النسخ المناسبة للإعلانات والمنصات.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85" alt="Salma Adel">
+        </div>
+
+        <div class="about-content">
+          <div class="big-card">
+            <p>
+              خلال السنوات الأخيرة عملت على حملات فيديو لقطاعات مختلفة مثل المطاعم، التجميل، الموضة، العيادات، المنتجات المنزلية، والكورسات الرقمية.
+              تركيزي الأساسي هو بناء فيديو قصير يلفت الانتباه في أول ثانيتين، يوضح القيمة بسرعة، ويقود المشاهد لاتخاذ خطوة واضحة.
+            </p>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini-card">
+              <h3>Commercial Thinking</h3>
+              <p>كل فيديو له هدف واضح: مبيعات، رسائل، حجوزات، أو بناء ثقة حول البراند.</p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Platform Native</h3>
+              <p>محتوى مناسب لطبيعة TikTok وInstagram Reels وFacebook Ads.</p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Fast Hooks</h3>
+              <p>افتتاحيات قوية، نصوص مختصرة، وإيقاع بصري يحافظ على المشاهدة.</p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Clean Delivery</h3>
+              <p>تسليم نسخ جاهزة للنشر والإعلانات بأكثر من مقاس وصيغة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span>الخدمات</span>
+          <h2>حلول فيديو كاملة للبراندات التي تحتاج ظهور أقوى ومبيعات أكثر.</h2>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <div class="icon">🎬</div>
+          <h3>إنتاج الريلز</h3>
+          <p>أفكار، سكريبت، تصوير، ومونتاج ريلز قصيرة مناسبة للسوشيال والإعلانات.</p>
+        </div>
+
+        <div class="service">
+          <div class="icon">📢</div>
+          <h3>بروموهات تجارية</h3>
+          <p>فيديوهات تعريفية وإعلانية للمنتجات والخدمات بستايل سريع واحترافي.</p>
+        </div>
+
+        <div class="service">
+          <div class="icon">✍️</div>
+          <h3>سكريبت إعلاني</h3>
+          <p>كتابة Hooks، سيناريوهات قصيرة، Call To Action، ونصوص صوتية للحملات.</p>
+        </div>
+
+        <div class="service">
+          <div class="icon">⚡</div>
+          <h3>مونتاج Commercial</h3>
+          <p>قص سريع، Text Animation، Color Tone، Sound Design، وتجهيز نسخ الإعلانات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span>الأعمال المختارة</span>
+          <h2>مشاريع صنعت حضورًا أقوى ونتائج أوضح للبراندات.</h2>
+        </div>
+        <p class="section-note">اختيارات من ريلز، بروموهات، وإعلانات تجارية لقطاعات مختلفة.</p>
+      </div>
+
+      <div class="work-controls">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="reels">Reels</button>
+        <button class="filter-btn" data-filter="promo">Promos</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card" data-category="reels">
+          <div class="work-media">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85" alt="Restaurant Reel">
+            <span class="tag">Reels</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="work-body">
+            <h3>Bite House — Food Reels Campaign</h3>
+            <p>سلسلة ريلز قصيرة لمنتجات المطعم مع Hooks موجهة للطلبات السريعة.</p>
+            <div class="metrics">
+              <span class="metric">2.4M Views</span>
+              <span class="metric">+37% Orders</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="commercial">
+          <div class="work-media">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=85" alt="Beauty Commercial">
+            <span class="tag">Commercial</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="work-body">
+            <h3>Luma Skin — Product Ad</h3>
+            <p>إعلان منتج تجميلي بإيقاع هادئ ولقطات Close-up لزيادة الثقة والرغبة.</p>
+            <div class="metrics">
+              <span class="metric">4.1 ROAS</span>
+              <span class="metric">+58% CTR</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="promo">
+          <div class="work-media">
+            <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=900&q=85" alt="Clinic Promo">
+            <span class="tag">Promo</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="work-body">
+            <h3>Nova Clinic — Service Promo</h3>
+            <p>برومو تعريفي لخدمة تجميلية مع Storyline بسيط يشرح النتيجة والتجربة.</p>
+            <div class="metrics">
+              <span class="metric">920K Reach</span>
+              <span class="metric">+312 Leads</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="reels">
+          <div class="work-media">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85" alt="Fashion Reels">
+            <span class="tag">Reels</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="work-body">
+            <h3>Maison Wear — Launch Reels</h3>
+            <p>إطلاق مجموعة ملابس موسمية من خلال 8 فيديوهات قصيرة بتنسيق UGC تجاري.</p>
+            <div class="metrics">
+              <span class="metric">1.7M Views</span>
+              <span class="metric">+44% Sales</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="commercial">
+          <div class="work-media">
+            <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=900&q=85" alt="App Commercial">
+            <span class="tag">Commercial</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="work-body">
+            <h3>Payly App — Digital Ad</h3>
+            <p>فيديو إعلان تطبيقي يوضح سهولة الاستخدام خلال 20 ثانية مع CTA مباشر.</p>
+            <div class="metrics">
+              <span class="metric">+21K Installs</span>
+              <span class="metric">CPA -29%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="promo">
+          <div class="work-media">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Real Estate Promo">
+            <span class="tag">Promo</span>
+            <span class="play">▶</span>
+          </div>
+          <div class="work-body">
+            <h3>Ora Residence — Real Estate Promo</h3>
+            <p>برومو عقاري سريع يبرز أسلوب الحياة، الموقع، والتفاصيل التي تهم العميل.</p>
+            <div class="metrics">
+              <span class="metric">680K Views</span>
+              <span class="metric">+190 Calls</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span>طريقة العمل</span>
+          <h2>من الفكرة إلى فيديو جاهز للنشر والإعلانات.</h2>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="step">
+          <h3>فهم البراند</h3>
+          <p>تحليل المنتج، الجمهور، المنافسين، والهدف المطلوب من الفيديو.</p>
+        </div>
+
+        <div class="step">
+          <h3>بناء الفكرة</h3>
+          <p>صياغة Hook، Message، Storyline، وCTA مناسب للمنصة.</p>
+        </div>
+
+        <div class="step">
+          <h3>التصوير والتنفيذ</h3>
+          <p>تجهيز الشوت ليست، الزوايا، الحركة، ومود الصورة المطلوب.</p>
+        </div>
+
+        <div class="step">
+          <h3>المونتاج والتسليم</h3>
+          <p>قص، ألوان، موسيقى، نصوص، نسخ متعددة، وتسليم نهائي جاهز.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container">
+      <div class="results-wrap">
+        <div class="section-head" style="position:relative;z-index:2;margin-bottom:28px;">
+          <div class="section-title">
+            <span style="color:#f3c59c;">نتائج الحملات</span>
+            <h2 style="color:white;">أرقام صنعت فرقًا في الظهور والتحويلات.</h2>
+          </div>
+        </div>
+
+        <div class="results-grid">
+          <div class="result">
+            <strong>42M+</strong>
+            <span>إجمالي مشاهدات للمشاريع المنفذة</span>
+          </div>
+
+          <div class="result">
+            <strong>6.8%</strong>
+            <span>أفضل متوسط CTR لحملة تجارية</span>
+          </div>
+
+          <div class="result">
+            <strong>4.7x</strong>
+            <span>أفضل عائد إنفاق إعلاني ROAS</span>
+          </div>
+
+          <div class="result">
+            <strong>71%</strong>
+            <span>تحسن في Retention لأول 5 ثواني</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span>براندات وقطاعات</span>
+          <h2>خبرة مع مشاريع متنوعة وسرعة في فهم كل سوق.</h2>
+        </div>
+      </div>
+
+      <div class="clients">
+        <div class="client">Glow Café</div>
+        <div class="client">Luma Skin</div>
+        <div class="client">Nova Clinic</div>
+        <div class="client">Maison Wear</div>
+        <div class="client">Payly App</div>
+        <div class="client">Ora Residence</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <span>آراء العملاء</span>
+          <h2>تجارب تعاون مبنية على وضوح، سرعة، ونتيجة.</h2>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="quote">
+          <p>
+            سلمى قدرت تحول المنتج لفيديو بسيط وقوي. أول حملة اشتغلت بالفيديوهات الجديدة جابت رسائل أكتر وتكلفة أقل من المعتاد.
+          </p>
+          <div class="person">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Client">
+            </div>
+            <div>
+              <b>أحمد منصور</b>
+              <span>Founder — Bite House</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>
+            أكتر حاجة مميزة إن كل فيديو كان له فكرة واضحة وهدف. التسليم منظم والنسخ كانت جاهزة للإعلانات مباشرة.
+          </p>
+          <div class="person">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Client">
+            </div>
+            <div>
+              <b>ريم خالد</b>
+              <span>Marketing Lead — Luma Skin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>
+            شغل سريع ومفهوم تجاريًا. الفيديوهات كانت مناسبة جدًا للريلز والإعلانات، والنتائج ظهرت من أول أسبوع.
+          </p>
+          <div class="person">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Client">
+            </div>
+            <div>
+              <b>كريم يوسف</b>
+              <span>Growth Manager — Payly App</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <h2>جاهز نحول فكرتك لفيديو يلفت الانتباه ويحقق نتيجة؟</h2>
+          <p>
+            ارسل تفاصيل البراند أو المنتج، والهدف من الفيديو، وسيتم تحديد أنسب شكل للمحتوى:
+            ريلز، برومو، إعلان تجاري، أو باكدج شهرية كاملة.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <i>✉️</i>
+              <span>hello@salmaadelstudio.com</span>
+            </div>
+
+            <div class="contact-item">
+              <i>📱</i>
+              <span>+20 112 458 9073</span>
+            </div>
+
+            <div class="contact-item">
+              <i>📍</i>
+              <span>القاهرة، مصر — متاح للعمل مع مصر والخليج</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="contactForm">
+          <input type="text" placeholder="الاسم" required>
+          <input type="email" placeholder="البريد الإلكتروني" required>
+          <select required>
+            <option value="">نوع المشروع</option>
+            <option>Reels Package</option>
+            <option>Promo Video</option>
+            <option>Commercial Ad</option>
+            <option>Monthly Content</option>
+          </select>
+          <textarea placeholder="اكتب تفاصيل المشروع"></textarea>
+          <button type="submit" class="btn btn-dark">إرسال الطلب</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 Salma Adel Studio — Reels, Promos & Commercial Video Production
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <div class="modal-visual">
+        <img id="modalImg" src="" alt="Project preview">
+      </div>
+      <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    document.querySelectorAll(".links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".work-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          const match = filter === "all" || card.dataset.category === filter;
+          card.style.display = match ? "block" : "none";
+        });
+      });
+    });
+
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+
+    document.querySelectorAll(".work-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const img = card.querySelector("img").src;
+        const title = card.querySelector("h3").textContent;
+        const text = card.querySelector("p").textContent;
+
+        modalImg.src = img;
+        modalTitle.textContent = title;
+        modalText.textContent = text;
+        modal.classList.add("show");
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal){
+        modal.classList.remove("show");
+      }
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const btn = this.querySelector("button");
+      btn.textContent = "تم إرسال الطلب";
+      btn.style.background = "#627b62";
+
+      setTimeout(() => {
+        btn.textContent = "إرسال الطلب";
+        btn.style.background = "";
+        this.reset();
+      }, 2200);
+    });
+  </script>
+
+</body>
+</html>
