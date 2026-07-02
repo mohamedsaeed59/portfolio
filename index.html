@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="نماذج بورتفوليو جاهزة حسب التخصص." />
+  <meta name="description" content="نماذج بورتفوليو جاهزة حسب التخصص والخدمة." />
   <title>نماذج البورتفوليو</title>
 
   <style>
@@ -15,7 +15,8 @@
       --line: rgba(15, 23, 42, 0.1);
       --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
       --radius: 22px;
-      --container: 1120px;
+      --container: 1160px;
+
       --blue: #2563eb;
       --green: #22c55e;
       --gold: #d4af37;
@@ -23,9 +24,10 @@
       --pink: #ec4899;
       --orange: #f97316;
       --cyan: #06b6d4;
-      --photo: #b45309;
-      --furniture: #e3221a;
-      --cleaning: #14b8a6;
+      --brown: #b45309;
+      --red: #ef4444;
+      --teal: #14b8a6;
+      --dark: #0f172a;
     }
 
     * {
@@ -69,7 +71,7 @@
       align-items: end;
       justify-content: space-between;
       gap: 18px;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
 
     .brand {
@@ -100,6 +102,37 @@
       font-weight: 900;
       color: var(--blue);
       font-size: 2.2rem;
+    }
+
+    .search-box {
+      margin-bottom: 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 58px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
+      padding: 0 18px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: rgba(37, 99, 235, 0.45);
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12);
+    }
+
+    .search-box small {
+      color: var(--muted);
+      font-weight: 700;
     }
 
     .specialties {
@@ -188,6 +221,8 @@
       color: var(--muted);
       font-size: 0.78rem;
       font-weight: 800;
+      direction: ltr;
+      text-align: right;
     }
 
     .view {
@@ -210,22 +245,37 @@
     }
 
     .media .icon { color: var(--green); }
-    .digital .icon { color: var(--blue); }
+    .marketing .icon { color: var(--blue); }
     .copy .icon { color: var(--gold); }
     .design .icon { color: var(--purple); }
     .social .icon { color: var(--pink); }
     .content .icon { color: var(--orange); }
     .ugc .icon { color: var(--cyan); }
-    .photo .icon { color: var(--photo); }
-    .furniture .icon { color: var(--furniture); }
-    .cleaning .icon { color: var(--cleaning); }
-@media (min-width: 760px) {
+    .photo .icon { color: var(--brown); }
+    .services .icon { color: var(--teal); }
+    .company .icon { color: var(--red); }
+    .video .icon { color: var(--dark); }
+    .other .icon { color: var(--blue); }
+
+    .empty {
+      display: none;
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px dashed rgba(15, 23, 42, 0.22);
+      border-radius: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 900;
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .empty.show {
+      display: block;
+    }
+
+    @media (min-width: 760px) {
       .models {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .content .models {
-        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -266,157 +316,500 @@
       <header class="top">
         <div class="brand">
           <h1>نماذج البورتفوليو</h1>
-          <span>اختر النموذج المناسب</span>
+          <span>اختر النموذج المناسب حسب التخصص أو نوع الخدمة</span>
         </div>
-        <div class="count" aria-label="عدد النماذج">26</div>
+
+        <div class="count" id="totalCount" aria-label="عدد النماذج">0</div>
       </header>
 
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="ابحث عن نموذج مثل: Media Buyer, Graphic Designer, UGC..." />
+        <small>تم استبعاد الصفحات الشخصية والاكتفاء بالنماذج المهنية والخدمية.</small>
+      </div>
+
       <section class="specialties" aria-label="النماذج المتاحة">
-        <article class="specialty design">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">🎨</span> Graphic Designer</div>
-            <span class="badge">3 نماذج</span>
-          </div>
-          <div class="models">
-            <a class="model" href="graphic-designer.html"><span class="model-name">نموذج 01<small>Graphic Designer</small></span><span class="view">عرض</span></a>
-            <a class="model" href="graphic-designer-2.html"><span class="model-name">نموذج 02<small>Graphic Designer</small></span><span class="view">عرض</span></a>
-            <a class="model" href="graphic-designer-3.html"><span class="model-name">نموذج 03<small>Graphic Designer</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
 
-        <article class="specialty photo">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">📷</span> Photographers</div>
-            <span class="badge">3 نماذج</span>
-          </div>
-          <div class="models">
-            <a class="model" href="https://mina-lens-cinematography.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <span class="model-name">نموذج 01<small>Wedding Cinematography - رابط خارجي</small></span>
-              <span class="view">عرض</span>
-            </a>
-            <a class="model" href="photographers-2.html">
-              <span class="model-name">نموذج 02<small>Photographers Portfolio</small></span>
-              <span class="view">عرض</span>
-            </a>
-            <a class="model" href="photographers-3.html">
-              <span class="model-name">نموذج 03<small>Photographers Portfolio</small></span>
-              <span class="view">عرض</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="specialty media">
+        <article class="specialty media" data-category>
           <div class="specialty-head">
             <div class="specialty-title"><span class="icon">🎯</span> Media Buyer</div>
-            <span class="badge">3 نماذج</span>
+            <span class="badge">6 نماذج</span>
           </div>
-          <div class="models">
-            <a class="model" href="media-buyer.html"><span class="model-name">نموذج 01<small>Media Buyer</small></span><span class="view">عرض</span></a>
-            <a class="model" href="media-buyer-2.html"><span class="model-name">نموذج 02<small>Media Buyer</small></span><span class="view">عرض</span></a>
-            <a class="model" href="media-buyer-3.html"><span class="model-name">نموذج 03<small>Media Buyer</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
 
-        <article class="specialty digital">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">📊</span> Digital Marketing</div>
-            <span class="badge">3 نماذج</span>
-          </div>
           <div class="models">
-            <a class="model" href="digital-marketing.html"><span class="model-name">نموذج 01<small>Digital Marketing</small></span><span class="view">عرض</span></a>
-            <a class="model" href="digital-marketing-2.html"><span class="model-name">نموذج 02<small>Digital Marketing</small></span><span class="view">عرض</span></a>
-            <a class="model" href="digital-marketing-3.html"><span class="model-name">نموذج 03<small>Digital Marketing</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
-
-        <article class="specialty copy">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">✍️</span> Copywriter and Content Creator</div>
-            <span class="badge">4 نماذج</span>
-          </div>
-          <div class="models">
-            <a class="model" href="copywriter.html"><span class="model-name">نموذج 01<small>Copywriter</small></span><span class="view">عرض</span></a>
-            <a class="model" href="copywriter-2.html"><span class="model-name">نموذج 02<small>Copywriter</small></span><span class="view">عرض</span></a>
-            <a class="model" href="copywriter-3.html"><span class="model-name">نموذج 03<small>Copywriter</small></span><span class="view">عرض</span></a>
-            <a class="model" href="content-creator.html"><span class="model-name">نموذج 04<small>Content Creator</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
-
-        <article class="specialty social">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">📱</span> Social Media Specialist</div>
-            <span class="badge">2 نماذج</span>
-          </div>
-          <div class="models">
-            <a class="model" href="social-media.html"><span class="model-name">نموذج 01<small>Social Media</small></span><span class="view">عرض</span></a>
-            <a class="model" href="social-management.html"><span class="model-name">نموذج 02<small>Social Media Management</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
-
-        <article class="specialty cleaning">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">🧹</span> Home Services</div>
-            <span class="badge">3 نماذج</span>
-          </div>
-          <div class="models">
-            <a class="model" href="https://elhana-service.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <span class="model-name">Elhana Service Portfolio<small>خدمات منزلية - رابط خارجي</small></span>
+            <a class="model" href="media-buyer.html">
+              <span class="model-name">نموذج 01<small>media-buyer.html</small></span>
               <span class="view">عرض</span>
             </a>
-            <a class="model" href="home-services-2.html">
-              <span class="model-name">نموذج 02<small>Home Services Portfolio</small></span>
+
+            <a class="model" href="media-buyer-2.html">
+              <span class="model-name">نموذج 02<small>media-buyer-2.html</small></span>
               <span class="view">عرض</span>
             </a>
-            <a class="model" href="home-services-3.html">
-              <span class="model-name">نموذج 03<small>Home Services Portfolio</small></span>
+
+            <a class="model" href="media-buyer-3.html">
+              <span class="model-name">نموذج 03<small>media-buyer-3.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="media-buyer-4.html">
+              <span class="model-name">نموذج 04<small>media-buyer-4.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="media-buyer-cs.html">
+              <span class="model-name">Case Study<small>media-buyer-cs.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="social-and-media-buyer.html">
+              <span class="model-name">Social & Media Buyer<small>social-and-media-buyer.html</small></span>
               <span class="view">عرض</span>
             </a>
           </div>
         </article>
 
-        <article class="specialty ugc">
+        <article class="specialty marketing" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">📊</span> Marketing & Digital Marketing</div>
+            <span class="badge">11 نموذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="digital-marketing.html">
+              <span class="model-name">Digital Marketing 01<small>digital-marketing.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="digital-marketing-2.html">
+              <span class="model-name">Digital Marketing 02<small>digital-marketing-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="digital-marketing-3.html">
+              <span class="model-name">Digital Marketing 03<small>digital-marketing-3.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="digital-content-social.html">
+              <span class="model-name">Digital Content Social<small>digital-content-social.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="content-marketing.html">
+              <span class="model-name">Content Marketing<small>content-marketing.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="marketing-manager.html">
+              <span class="model-name">Marketing Manager 01<small>marketing-manager.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="marketing-manager-1.html">
+              <span class="model-name">Marketing Manager 02<small>marketing-manager-1.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="medical-marketing.html">
+              <span class="model-name">Medical Marketing<small>medical-marketing.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="media-production-digital-marketing.html">
+              <span class="model-name">Media Production & Digital Marketing<small>media-production-digital-marketing.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="media-production-social-media.html">
+              <span class="model-name">Media Production & Social Media<small>media-production-social-media.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="media.html">
+              <span class="model-name">Media Portfolio<small>media.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty design" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">🎨</span> Design & Creative</div>
+            <span class="badge">8 نماذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="graphic-designe.html">
+              <span class="model-name">Graphic Design Variant<small>graphic-designe.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="graphic-designer.html">
+              <span class="model-name">Graphic Designer 01<small>graphic-designer.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="graphic-designer-2.html">
+              <span class="model-name">Graphic Designer 02<small>graphic-designer-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="graphic-designer-3.html">
+              <span class="model-name">Graphic Designer 03<small>graphic-designer-3.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="graphic-designer-4.html">
+              <span class="model-name">Graphic Designer 04<small>graphic-designer-4.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="graphic-motion-video.html">
+              <span class="model-name">Graphic Motion Video<small>graphic-motion-video.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="creative-media.html">
+              <span class="model-name">Creative Media<small>creative-media.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="interior-designer.html">
+              <span class="model-name">Interior Designer<small>interior-designer.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty copy" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">✍️</span> Content Creator & Copywriter</div>
+            <span class="badge">9 نماذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="content-creator.html">
+              <span class="model-name">Content Creator 01<small>content-creator.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="content-creator-2.html">
+              <span class="model-name">Content Creator 02<small>content-creator-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="content-creator-graphic.html">
+              <span class="model-name">Content Creator & Graphic<small>content-creator-graphic.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="contact-creator-social-media.html">
+              <span class="model-name">Content Creator Social Media<small>contact-creator-social-media.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="copywriter.html">
+              <span class="model-name">Copywriter 01<small>copywriter.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="copywriter-2.html">
+              <span class="model-name">Copywriter 02<small>copywriter-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="copywriter-3.html">
+              <span class="model-name">Copywriter 03<small>copywriter-3.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="commercial-producer.html">
+              <span class="model-name">Commercial Producer<small>commercial-producer.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="director-editor.html">
+              <span class="model-name">Director & Editor<small>director-editor.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty social" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">📱</span> Social Media</div>
+            <span class="badge">3 نماذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="social-media.html">
+              <span class="model-name">Social Media<small>social-media.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="social-management.html">
+              <span class="model-name">Social Management<small>social-management.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="digital-content-social.html">
+              <span class="model-name">Digital Content Social<small>digital-content-social.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty ugc" data-category>
           <div class="specialty-head">
             <div class="specialty-title"><span class="icon">🎬</span> UGC Creator</div>
             <span class="badge">3 نماذج</span>
           </div>
-          <div class="models">
-            <a class="model" href="ugc-creator.html"><span class="model-name">نموذج 01<small>UGC Creator</small></span><span class="view">عرض</span></a>
-            <a class="model" href="ugc-creator-2.html"><span class="model-name">نموذج 02<small>UGC Creator</small></span><span class="view">عرض</span></a>
-            <a class="model" href="ugc-creator-3.html"><span class="model-name">نموذج 03<small>UGC Creator</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
 
-        <article class="specialty content">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">🟠</span> Content Marketing Specialist</div>
-            <span class="badge">نموذج واحد</span>
-          </div>
           <div class="models">
-            <a class="model" href="content-marketing.html"><span class="model-name">نموذج 01<small>Content Marketing</small></span><span class="view">عرض</span></a>
-          </div>
-        </article>
+            <a class="model" href="ugc-creator.html">
+              <span class="model-name">UGC Creator 01<small>ugc-creator.html</small></span>
+              <span class="view">عرض</span>
+            </a>
 
-        <article class="specialty furniture">
-          <div class="specialty-head">
-            <div class="specialty-title"><span class="icon">🪑</span> Furniture Brand</div>
-            <span class="badge">نموذج واحد</span>
-          </div>
-          <div class="models">
-            <a class="model" href="furniture.html">
-              <span class="model-name">Nita Furniture Portfolio<small>أثاث الكافيهات والمطاعم</small></span>
+            <a class="model" href="ugc-creator-2.html">
+              <span class="model-name">UGC Creator 02<small>ugc-creator-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="ugc-creator-3.html">
+              <span class="model-name">UGC Creator 03<small>ugc-creator-3.html</small></span>
               <span class="view">عرض</span>
             </a>
           </div>
         </article>
+
+        <article class="specialty video" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">🎥</span> Video & Production</div>
+            <span class="badge">5 نماذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="video-editor.html">
+              <span class="model-name">Video Editor<small>video-editor.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="graphic-motion-video.html">
+              <span class="model-name">Motion Video<small>graphic-motion-video.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="commercial-producer.html">
+              <span class="model-name">Commercial Producer<small>commercial-producer.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="director-editor.html">
+              <span class="model-name">Director & Editor<small>director-editor.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="media-production-social-media.html">
+              <span class="model-name">Media Production Social Media<small>media-production-social-media.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty photo" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">📷</span> Photographers</div>
+            <span class="badge">2 نماذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="photographers-2.html">
+              <span class="model-name">Photographers 02<small>photographers-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="photographers-3.html">
+              <span class="model-name">Photographers 03<small>photographers-3.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty services" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">🧰</span> Services & Local Business</div>
+            <span class="badge">11 نموذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="home-services.html">
+              <span class="model-name">Home Services 01<small>home-services.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="home-services-2.html">
+              <span class="model-name">Home Services 02<small>home-services-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="home-services-3.html">
+              <span class="model-name">Home Services 03<small>home-services-3.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="air-house.html">
+              <span class="model-name">Air House<small>air-house.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="furniture.html">
+              <span class="model-name">Furniture<small>furniture.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="finishing-company.html">
+              <span class="model-name">Finishing Company<small>finishing-company.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="medical-marketing.html">
+              <span class="model-name">Medical Marketing<small>medical-marketing.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="psychologist.html">
+              <span class="model-name">Psychologist 01<small>psychologist.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="psychologist-2.html">
+              <span class="model-name">Psychologist 02<small>psychologist-2.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="interior-designer.html">
+              <span class="model-name">Interior Designer<small>interior-designer.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="data-entry.html">
+              <span class="model-name">Data Entry<small>data-entry.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="specialty company" data-category>
+          <div class="specialty-head">
+            <div class="specialty-title"><span class="icon">🏢</span> Companies & Agencies</div>
+            <span class="badge">5 نماذج</span>
+          </div>
+
+          <div class="models">
+            <a class="model" href="digital-company.html">
+              <span class="model-name">Digital Company<small>digital-company.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="marketing-company.html">
+              <span class="model-name">Marketing Company<small>marketing-company.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="finishing-company.html">
+              <span class="model-name">Finishing Company<small>finishing-company.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="account-manager.html">
+              <span class="model-name">Account Manager<small>account-manager.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+
+            <a class="model" href="commercial-producer.html">
+              <span class="model-name">Commercial Producer<small>commercial-producer.html</small></span>
+              <span class="view">عرض</span>
+            </a>
+          </div>
+        </article>
+
       </section>
+
+      <div class="empty" id="emptyState">لا توجد نتائج مطابقة للبحث.</div>
     </div>
   </main>
+
   <script>
-    document.querySelectorAll('.model').forEach((card) => {
-      card.addEventListener('click', () => {
-        card.style.opacity = '0.82';
+    const searchInput = document.getElementById("searchInput");
+    const totalCount = document.getElementById("totalCount");
+    const emptyState = document.getElementById("emptyState");
+
+    const allModels = Array.from(document.querySelectorAll(".model"));
+    const categories = Array.from(document.querySelectorAll("[data-category]"));
+
+    function updateTotalCount() {
+      totalCount.textContent = allModels.length;
+    }
+
+    function updateCategoryBadges() {
+      categories.forEach((category) => {
+        const models = category.querySelectorAll(".model");
+        const badge = category.querySelector(".badge");
+        const count = models.length;
+
+        if (badge) {
+          badge.textContent = count === 1 ? "نموذج واحد" : `${count} نماذج`;
+        }
+      });
+    }
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .replace(/[أإآ]/g, "ا")
+        .replace(/[ة]/g, "ه")
+        .replace(/[ى]/g, "ي")
+        .trim();
+    }
+
+    function handleSearch() {
+      const query = normalizeText(searchInput.value);
+      let visibleModels = 0;
+
+      categories.forEach((category) => {
+        let categoryHasVisibleItems = false;
+        const models = Array.from(category.querySelectorAll(".model"));
+
+        models.forEach((model) => {
+          const modelText = normalizeText(model.innerText + " " + model.getAttribute("href"));
+
+          if (!query || modelText.includes(query)) {
+            model.style.display = "";
+            categoryHasVisibleItems = true;
+            visibleModels++;
+          } else {
+            model.style.display = "none";
+          }
+        });
+
+        category.style.display = categoryHasVisibleItems ? "" : "none";
+      });
+
+      emptyState.classList.toggle("show", visibleModels === 0);
+      totalCount.textContent = visibleModels;
+    }
+
+    allModels.forEach((card) => {
+      card.addEventListener("click", () => {
+        card.style.opacity = "0.82";
       });
     });
+
+    searchInput.addEventListener("input", handleSearch);
+
+    updateCategoryBadges();
+    updateTotalCount();
   </script>
 </body>
 </html>
