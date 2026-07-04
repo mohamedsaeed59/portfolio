@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كريم عادل | Video Editor & Graphic Designer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6d28d9;
+      --primary-dark: #4c1d95;
+      --accent: #f97316;
+      --dark: #111827;
+      --text: #334155;
+      --muted: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --soft: #f1f5f9;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: #ffffff;
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(109, 40, 217, 0.08);
+      color: var(--primary);
+      border: 1px solid rgba(109, 40, 217, 0.13);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.35;
+      color: #0f172a;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 74px);
+      font-weight: 900;
+      letter-spacing: -1.6px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: -0.7px;
+    }
+
+    h3 {
+      font-weight: 900;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(109, 40, 217, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: #0f172a;
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      inset-inline: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 22px;
+      font-weight: 900;
+      color: #0f172a;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 17px;
+      background:
+        radial-gradient(circle at 70% 25%, #f97316 0 10%, transparent 11%),
+        linear-gradient(135deg, #6d28d9, #9333ea);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 30px rgba(109, 40, 217, 0.25);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      color: #334155;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 0;
+      background: #f1f5f9;
+      font-size: 25px;
+      cursor: pointer;
+      color: #0f172a;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 130px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(109, 40, 217, 0.14), transparent 30%),
+        radial-gradient(circle at 12% 75%, rgba(249, 115, 22, 0.13), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .hero-content p {
+      font-size: 19px;
+      margin: 22px 0 30px;
+      max-width: 650px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tags span {
+      background: #fff;
+      border: 1px solid var(--border);
+      color: #334155;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .main-showcase {
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+      min-height: 620px;
+      box-shadow: var(--shadow);
+      background: #000;
+      isolation: isolate;
+    }
+
+    .main-showcase video {
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+    }
+
+    .main-showcase::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(15, 23, 42, 0.72));
+      z-index: 1;
+    }
+
+    .showcase-caption {
+      position: absolute;
+      z-index: 3;
+      right: 24px;
+      left: 24px;
+      bottom: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .showcase-caption h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .showcase-caption p {
+      font-size: 14px;
+      color: #475569;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .rating-card {
+      top: 36px;
+      left: -28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .rating-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #fff7ed;
+      color: #f97316;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+    }
+
+    .rating-card strong {
+      display: block;
+      font-size: 20px;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .rating-card span {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .project-card {
+      right: -24px;
+      top: 250px;
+      width: 230px;
+    }
+
+    .project-card strong {
+      display: block;
+      font-size: 28px;
+      color: var(--primary);
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .project-card span {
+      display: block;
+      color: #475569;
+      font-weight: 800;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .stats-strip {
+      transform: translateY(-50%);
+      position: relative;
+      z-index: 50;
+    }
+
+    .stats-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat {
+      border-inline-start: 1px solid var(--border);
+      padding-inline-start: 22px;
+    }
+
+    .stat:last-child {
+      border-inline-start: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: var(--primary);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .about {
+      padding-top: 20px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-images {
+      display: grid;
+      grid-template-columns: 1fr 0.82fr;
+      gap: 18px;
+      align-items: end;
+    }
+
+    .about-images img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-images img:first-child {
+      height: 500px;
+    }
+
+    .about-images img:last-child {
+      height: 360px;
+      margin-bottom: 44px;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      margin: 18px 0 24px;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 15px;
+      color: #1e293b;
+      font-weight: 900;
+    }
+
+    .skill-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(109, 40, 217, 0.10);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      flex: 0 0 30px;
+      font-size: 14px;
+    }
+
+    .services {
+      background: #f8fafc;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      min-height: 270px;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: rgba(109, 40, 217, 0.24);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 19px;
+      background: rgba(109, 40, 217, 0.09);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+    }
+
+    .portfolio-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: #334155;
+      padding: 11px 17px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: 0.25s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .work-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+      transition: 0.25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .work-media {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      background: #111827;
+    }
+
+    .work-media img,
+    .work-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .work-card:hover .work-media img,
+    .work-card:hover .work-media video {
+      transform: scale(1.05);
+    }
+
+    .work-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 900;
+      z-index: 2;
+    }
+
+    .play-badge {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--primary);
+      font-size: 18px;
+      z-index: 2;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+    }
+
+    .work-content {
+      padding: 22px;
+    }
+
+    .work-content h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .work-content p {
+      font-size: 15px;
+      min-height: 58px;
+    }
+
+    .work-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 16px;
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      color: #475569;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .case-section {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(109, 40, 217, 0.14), transparent 30%),
+        radial-gradient(circle at 82% 15%, rgba(249, 115, 22, 0.13), transparent 28%),
+        #111827;
+      color: #fff;
+    }
+
+    .case-section h2,
+    .case-section h3,
+    .case-section p {
+      color: #fff;
+    }
+
+    .case-section p {
+      opacity: 0.82;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .case-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .case-item {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+    }
+
+    .case-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--accent);
+      color: #111827;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+    }
+
+    .case-item h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .case-item p {
+      font-size: 15px;
+    }
+
+    .case-visual {
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.24);
+      min-height: 460px;
+    }
+
+    .case-visual img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .case-overlay {
+      position: absolute;
+      right: 22px;
+      left: 22px;
+      bottom: 22px;
+      background: rgba(255, 255, 255, 0.93);
+      color: #0f172a;
+      border-radius: 22px;
+      padding: 18px;
+      backdrop-filter: blur(14px);
+    }
+
+    .case-overlay h3 {
+      color: #0f172a;
+      font-size: 22px;
+    }
+
+    .case-overlay p {
+      color: #475569;
+      opacity: 1;
+      font-size: 14px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .process-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 25px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+    }
+
+    .process-card span {
+      color: var(--accent);
+      font-size: 35px;
+      font-weight: 900;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .process-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .tools {
+      background: #f8fafc;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    .tool-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px 14px;
+      text-align: center;
+      font-weight: 900;
+      color: #1e293b;
+      transition: 0.25s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      color: var(--primary);
+    }
+
+    .tool-card span {
+      display: grid;
+      place-items: center;
+      margin: 0 auto 10px;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(109, 40, 217, 0.08);
+      color: var(--primary);
+      font-size: 22px;
+    }
+
+    .testimonials {
+      background: #fff;
+    }
+
+    .testimonial-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      min-height: 335px;
+      transition: 0.25s ease;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 22px;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .review-card p {
+      color: #334155;
+      font-size: 19px;
+      margin-bottom: 24px;
+    }
+
+    .review-person {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .review-person img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .review-person strong {
+      display: block;
+      color: #0f172a;
+      font-size: 17px;
+    }
+
+    .review-person span {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .slider-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .slider-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-size: 22px;
+      transition: 0.25s ease;
+    }
+
+    .slider-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(249, 115, 22, 0.11), transparent 30%),
+        radial-gradient(circle at 86% 10%, rgba(109, 40, 217, 0.13), transparent 30%),
+        #ffffff;
+    }
+
+    .contact-box {
+      background: #111827;
+      color: #fff;
+      border-radius: 36px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 38px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      width: 370px;
+      height: 370px;
+      border-radius: 50%;
+      background: rgba(109, 40, 217, 0.25);
+      top: -150px;
+      left: -120px;
+    }
+
+    .contact-box h2,
+    .contact-box p {
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-box p {
+      opacity: 0.82;
+      margin: 16px 0 26px;
+      font-size: 18px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 18px;
+      padding: 15px 17px;
+      font-weight: 900;
+    }
+
+    .contact-form {
+      background: #fff;
+      border-radius: 26px;
+      padding: 24px;
+      display: grid;
+      gap: 13px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: #0f172a;
+      border-radius: 16px;
+      padding: 14px 15px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary);
+      background: #fff;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-content p {
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 900;
+      transition: 0.25s ease;
+    }
+
+    .socials a:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      box-shadow: 0 16px 35px rgba(34, 197, 94, 0.35);
+      transition: 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .about-grid,
+      .case-grid,
+      .testimonial-layout,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stats-box {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-inline-start: 0;
+      }
+
+      .rating-card {
+        left: 20px;
+      }
+
+      .project-card {
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: 16px;
+        left: 16px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: 18px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: #f8fafc;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 115px;
+      }
+
+      .main-showcase,
+      .main-showcase video {
+        min-height: auto;
+        height: 500px;
+      }
+
+      .about-images {
+        grid-template-columns: 1fr;
+      }
+
+      .about-images img:first-child,
+      .about-images img:last-child {
+        height: 340px;
+        margin: 0;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .process-grid,
+      .tools-grid,
+      .skills-list,
+      .stats-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stat,
+      .stat:nth-child(2) {
+        border-inline-start: 0;
+        border-bottom: 1px solid var(--border);
+        padding: 0 0 15px 0;
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .contact-box {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .main-showcase,
+      .main-showcase video {
+        height: 430px;
+      }
+
+      .showcase-caption {
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+      }
+
+      .rating-card,
+      .project-card {
+        display: none;
+      }
+
+      .stats-strip {
+        transform: translateY(-25px);
+      }
+
+      .work-media {
+        height: 250px;
+      }
+
+      .case-visual,
+      .case-visual img {
+        min-height: 360px;
+        height: 360px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-mark">K</span>
+        <span>كريم عادل</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عن كريم</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#portfolio">الأعمال</a></li>
+        <li><a href="#process">طريقة العمل</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="https://wa.me/201000000000" target="_blank">ابدأ مشروعك</a>
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <span class="eyebrow">Video Editor & Graphic Designer</span>
+          <h1>أصمم محتوى بصري يلفت الانتباه ويحوّل الفكرة إلى تجربة تُشاهد وتُتذكر.</h1>
+          <p>
+            أنا كريم عادل، فيديو إيديتور وجرافيك ديزاينر متخصص في صناعة محتوى السوشيال ميديا، الإعلانات القصيرة، الهوية البصرية، وتصميمات الحملات الرقمية للعلامات التجارية وصناع المحتوى.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">شاهد الأعمال</a>
+            <a href="#contact" class="btn btn-outline">اطلب عرض سعر</a>
+          </div>
+
+          <div class="hero-tags">
+            <span>Reels Editing</span>
+            <span>Motion Graphics</span>
+            <span>Brand Identity</span>
+            <span>Social Media Designs</span>
+            <span>Ad Creatives</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="main-showcase">
+            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=85">
+              <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            </video>
+
+            <div class="showcase-caption">
+              <h3>Commercial Reel — Fashion Brand</h3>
+              <p>مونتاج سريع، Color Grading، انتقالات ديناميكية، وتحضير نسخة مناسبة للإعلانات المدفوعة.</p>
+            </div>
+          </div>
+
+          <div class="floating-card rating-card">
+            <div class="rating-icon">★</div>
+            <div>
+              <strong>4.9 / 5</strong>
+              <span>متوسط تقييم العملاء</span>
+            </div>
+          </div>
+
+          <div class="floating-card project-card">
+            <strong>260+</strong>
+            <span>مشروع فيديو وتصميم تم تسليمه خلال آخر 3 سنوات</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="container stats-strip">
+      <div class="stats-box">
+        <div class="stat">
+          <strong data-count="260">0</strong>
+          <span>مشروع مكتمل</span>
+        </div>
+
+        <div class="stat">
+          <strong data-count="74">0</strong>
+          <span>عميل وعلامة تجارية</span>
+        </div>
+
+        <div class="stat">
+          <strong data-count="1200">0</strong>
+          <span>تصميم سوشيال ميديا</span>
+        </div>
+
+        <div class="stat">
+          <strong data-count="38">0</strong>
+          <span>حملة إعلانية بمواد بصرية كاملة</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=900&q=85" alt="Video editing workspace">
+          <img src="https://images.unsplash.com/photo-1602576666092-bf6447a729fc?auto=format&fit=crop&w=700&q=85" alt="Graphic design process">
+        </div>
+
+        <div class="about-text">
+          <span class="eyebrow">عن كريم</span>
+          <h2>أجمع بين الإحساس البصري، سرعة الإيقاع، وفهم هدف المحتوى قبل تنفيذه.</h2>
+          <p>
+            أعمل في صناعة المحتوى البصري منذ أكثر من 4 سنوات، بين مونتاج الفيديوهات القصيرة، إعلانات المنتجات، فيديوهات البراندات، وتصميم بوستات وهوية بصرية للسوشيال ميديا.
+          </p>
+
+          <p>
+            أسلوبي يعتمد على فهم الجمهور المستهدف، طبيعة المنصة، ورسالة العلامة التجارية، ثم تحويلها إلى محتوى واضح، جذاب، وقابل للاستخدام في الحملات الإعلانية أو النشر اليومي.
+          </p>
+
+          <div class="skills-list">
+            <div class="skill-item">
+              <span class="skill-icon">✓</span>
+              <span>مونتاج Reels و TikTok</span>
+            </div>
+
+            <div class="skill-item">
+              <span class="skill-icon">✓</span>
+              <span>تصميم حملات سوشيال ميديا</span>
+            </div>
+
+            <div class="skill-item">
+              <span class="skill-icon">✓</span>
+              <span>Motion Graphics للإعلانات</span>
+            </div>
+
+            <div class="skill-item">
+              <span class="skill-icon">✓</span>
+              <span>هوية بصرية و Brand Kit</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">الخدمات</span>
+          <h2>خدمات بصرية متكاملة للمحتوى والإعلانات.</h2>
+          <p>
+            تنفيذ عملي يناسب صناع المحتوى، المتاجر الإلكترونية، الشركات الناشئة، العيادات، المطاعم، والبراندات الشخصية.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-icon">▶</div>
+            <h3>مونتاج فيديوهات قصيرة</h3>
+            <p>
+              مونتاج ريلز، تيك توك، شورتس، وفيديوهات إعلانية بإيقاع سريع، كابشن متحرك، مؤثرات صوتية، وانتقالات مناسبة.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Motion Graphics</h3>
+            <p>
+              تحريك عناصر التصميم، Intro، Outro، Lower Thirds، عرض منتجات، وتحريك نصوص بشكل احترافي للإعلانات.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">▣</div>
+            <h3>تصميم سوشيال ميديا</h3>
+            <p>
+              تصميم بوستات، كاروسيل، ستوري، أغلفة ريلز، بنرات إعلانية، وتصميمات مناسبة لهوية كل علامة تجارية.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">◆</div>
+            <h3>هوية بصرية</h3>
+            <p>
+              تصميم لوجو، ألوان، خطوط، نمط بصري، Brand Guidelines مبسط، وتجهيز شكل موحد للظهور الرقمي.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">الأعمال المختارة</span>
+          <h2>مشاريع نفذت لتخدم هدفًا واضحًا: جذب الانتباه، شرح الفكرة، وتحسين شكل العلامة.</h2>
+          <p>
+            مجموعة من أعمال الفيديو، التصميمات الإعلانية، الهوية البصرية، ومحتوى السوشيال ميديا.
+          </p>
+        </div>
+
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="video">Video Editing</button>
+          <button class="filter-btn" data-filter="design">Graphic Design</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="ads">Ads</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="work-card" data-category="video ads">
+            <div class="work-media">
+              <span class="work-tag">Video Ad</span>
+              <span class="play-badge">▶</span>
+              <video muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/853870/853870-hd_1920_1080_25fps.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="work-content">
+              <h3>Fashion Campaign Reel</h3>
+              <p>
+                إعلان قصير لبراند ملابس بإيقاع سريع، Match Cuts، تصحيح ألوان، وتجهيز مقاسات Reels و Stories.
+              </p>
+              <div class="work-meta">
+                <span>Instagram / TikTok</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="design ads">
+            <div class="work-media">
+              <span class="work-tag">Ad Creative</span>
+              <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=85" alt="Ecommerce design">
+            </div>
+            <div class="work-content">
+              <h3>E-commerce Sale Campaign</h3>
+              <p>
+                تصميمات حملة تخفيضات لمتجر إلكتروني مع إبراز العرض، المنتج، والسعر بشكل واضح ومناسب للإعلانات.
+              </p>
+              <div class="work-meta">
+                <span>Meta Ads</span>
+                <span>12 Design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="branding design">
+            <div class="work-media">
+              <span class="work-tag">Brand Identity</span>
+              <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=900&q=85" alt="Brand identity">
+            </div>
+            <div class="work-content">
+              <h3>Bean Story Café Identity</h3>
+              <p>
+                تطوير هوية بصرية لكافيه محلي تشمل الشعار، الألوان، نمط التصوير، وقوالب السوشيال ميديا.
+              </p>
+              <div class="work-meta">
+                <span>Logo / Brand Kit</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="video">
+            <div class="work-media">
+              <span class="work-tag">Reels Editing</span>
+              <span class="play-badge">▶</span>
+              <video muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/2795744/2795744-uhd_2560_1440_25fps.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="work-content">
+              <h3>Restaurant Food Reel</h3>
+              <p>
+                مونتاج فيديو قصير لمطعم مع Sound Design، لقطات قريبة، كابشن متحرك، ونهاية CTA واضحة.
+              </p>
+              <div class="work-meta">
+                <span>Food Content</span>
+                <span>35 sec</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="design">
+            <div class="work-media">
+              <span class="work-tag">Social Media</span>
+              <img src="https://images.unsplash.com/photo-1613909207039-6b173b755cc1?auto=format&fit=crop&w=900&q=85" alt="Social media design">
+            </div>
+            <div class="work-content">
+              <h3>Medical Clinic Visuals</h3>
+              <p>
+                تصميم باقة منشورات لعيادة جلدية بتوجه نظيف وواضح، مع تقسيم المحتوى بين معلومات وعروض وثقة.
+              </p>
+              <div class="work-meta">
+                <span>18 Post</span>
+                <span>Clinic</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="video ads">
+            <div class="work-media">
+              <span class="work-tag">Product Video</span>
+              <span class="play-badge">▶</span>
+              <video muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/5084001/5084001-uhd_2560_1440_30fps.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="work-content">
+              <h3>Skincare Product Ad</h3>
+              <p>
+                فيديو إعلاني لمنتج عناية بالبشرة مع عرض المميزات، لقطات ناعمة، Text Animation، ونهاية للبيع.
+              </p>
+              <div class="work-meta">
+                <span>Product Ad</span>
+                <span>25 sec</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section case-section">
+      <div class="container case-grid">
+
+        <div>
+          <span class="eyebrow">نتائج مختارة</span>
+          <h2>أعمال مصممة للاستخدام الحقيقي في النشر والإعلانات.</h2>
+          <p>
+            كل مشروع يبدأ بهدف: زيادة الظهور، تحسين شكل البراند، توصيل رسالة أو دعم حملة إعلانية. لذلك لا يكون التنفيذ مجرد شكل جميل، بل محتوى يخدم منصة النشر والجمهور المستهدف.
+          </p>
+
+          <div class="case-list">
+
+            <div class="case-item">
+              <div class="case-num">01</div>
+              <div>
+                <h3>حملة منتجات عناية</h3>
+                <p>
+                  تجهيز 6 فيديوهات قصيرة و10 تصميمات إعلانية، مع توحيد شكل الرسالة البصرية للمنتج.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-item">
+              <div class="case-num">02</div>
+              <div>
+                <h3>إطلاق هوية كافيه</h3>
+                <p>
+                  تصميم شعار، ألوان، قوالب منشورات، ومواد افتتاح مناسبة للنشر على Instagram و Facebook.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-item">
+              <div class="case-num">03</div>
+              <div>
+                <h3>محتوى Reels لصانع محتوى</h3>
+                <p>
+                  إنتاج 24 فيديو قصير خلال شهر واحد مع أسلوب مونتاج ثابت وبناء Hook واضح في أول 3 ثوانٍ.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="case-visual">
+          <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=1100&q=85" alt="Creative work setup">
+          <div class="case-overlay">
+            <h3>Visual Content System</h3>
+            <p>
+              نظام بصري موحد للريلز، التصميمات، الأغلفة، والإعلانات حتى يظهر البراند بشكل احترافي ومتناسق.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">طريقة العمل</span>
+          <h2>خطوات واضحة من الفكرة حتى التسليم النهائي.</h2>
+          <p>
+            تنفيذ منظم يوفر وقت العميل ويضمن خروج المحتوى مناسبًا للنشر أو الحملات الإعلانية.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+            <span>01</span>
+            <h3>فهم الهدف</h3>
+            <p>
+              تحديد نوع المحتوى، الجمهور، المنصة، الرسالة، والمطلوب من التصميم أو الفيديو.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>02</span>
+            <h3>بناء الاتجاه البصري</h3>
+            <p>
+              اختيار أسلوب الألوان، الإيقاع، الخطوط، طريقة عرض المنتج، والنمط المناسب للبراند.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>03</span>
+            <h3>التنفيذ والمراجعة</h3>
+            <p>
+              تنفيذ النسخة الأولى، مراجعة التفاصيل، تعديل الإيقاع أو التصميم حسب الملاحظات.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span>04</span>
+            <h3>التسليم النهائي</h3>
+            <p>
+              تسليم الملفات بالمقاسات والصيغ المناسبة للنشر، الإعلانات، أو الأرشفة.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section tools">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">الأدوات</span>
+          <h2>أدوات احترافية لتنفيذ محتوى بجودة ثابتة.</h2>
+          <p>
+            أستخدم الأدوات المناسبة لكل مرحلة: مونتاج، تصميم، تحريك، ألوان، وتجهيز ملفات نهائية.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span>Pr</span>
+            Premiere Pro
+          </div>
+
+          <div class="tool-card">
+            <span>Ae</span>
+            After Effects
+          </div>
+
+          <div class="tool-card">
+            <span>Ps</span>
+            Photoshop
+          </div>
+
+          <div class="tool-card">
+            <span>Ai</span>
+            Illustrator
+          </div>
+
+          <div class="tool-card">
+            <span>Fg</span>
+            Figma
+          </div>
+
+          <div class="tool-card">
+            <span>Da</span>
+            DaVinci
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container testimonial-layout">
+
+        <div>
+          <span class="eyebrow">آراء العملاء</span>
+          <h2>تعاون مبني على وضوح، سرعة، واهتمام بالتفاصيل.</h2>
+          <p>
+            جزء كبير من المشاريع مستمر شهريًا لأن جودة المحتوى تحتاج شخص يفهم العلامة ويطور معها.
+          </p>
+
+          <div class="slider-actions">
+            <button class="slider-btn" id="prevReview">‹</button>
+            <button class="slider-btn" id="nextReview">›</button>
+          </div>
+        </div>
+
+        <div class="review-card" id="reviewCard">
+          <div class="stars">★★★★★</div>
+
+          <p id="reviewText">
+            كريم فهم طبيعة البراند بسرعة، وحوّل لقطات بسيطة إلى إعلان شكله احترافي. أكثر شيء فرق معنا هو سرعة التسليم والاهتمام بتفاصيل النصوص والحركة.
+          </p>
+
+          <div class="review-person">
+            <img id="reviewImg" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Client">
+            <div>
+              <strong id="reviewName">ندى سامي</strong>
+              <span id="reviewRole">Brand Manager — Glow Skin</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+            <h2>خلّي مشروعك القادم يظهر بشكل أقوى.</h2>
+            <p>
+              ارسل تفاصيل المشروع، نوع المحتوى المطلوب، عدد التصميمات أو الفيديوهات، والمنصة التي سيتم النشر عليها، وسيتم تجهيز عرض مناسب لطبيعة العمل.
+            </p>
+
+            <div class="contact-info">
+              <div class="contact-row">📍 القاهرة، مصر</div>
+              <div class="contact-row">📞 0100 000 0000</div>
+              <div class="contact-row">✉️ hello@karimadel.studio</div>
+              <div class="contact-row">⏱️ مواعيد العمل: من 11 صباحًا حتى 8 مساءً</div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="projectForm">
+            <input type="text" name="name" placeholder="الاسم بالكامل" required>
+            <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+
+            <select name="service" required>
+              <option value="">نوع الخدمة</option>
+              <option>مونتاج فيديو</option>
+              <option>تصميم سوشيال ميديا</option>
+              <option>هوية بصرية</option>
+              <option>Motion Graphics</option>
+              <option>باقة شهرية</option>
+            </select>
+
+            <select name="platform" required>
+              <option value="">منصة النشر</option>
+              <option>Instagram</option>
+              <option>TikTok</option>
+              <option>Facebook</option>
+              <option>YouTube</option>
+              <option>أكثر من منصة</option>
+            </select>
+
+            <textarea name="message" placeholder="اكتب تفاصيل المشروع، عدد القطع المطلوبة، وموعد التسليم المناسب"></textarea>
+
+            <button class="btn btn-primary" type="submit">إرسال تفاصيل المشروع</button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-mark">K</span>
+          <span>كريم عادل</span>
+        </a>
+        <p>© 2026 كريم عادل. جميع الحقوق محفوظة.</p>
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="TikTok">tk</a>
+        <a href="#" aria-label="Behance">be</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/201000000000" target="_blank" aria-label="WhatsApp">☘</a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuBtn.textContent = navLinks.classList.contains("show") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    function startCounters() {
+      if (countersStarted) return;
+
+      const statsBox = document.querySelector(".stats-box");
+      const rect = statsBox.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight - 90) {
+        countersStarted = true;
+
+        counters.forEach(counter => {
+          const target = Number(counter.dataset.count);
+          let current = 0;
+          const duration = 1600;
+          const stepTime = 16;
+          const steps = duration / stepTime;
+          const increment = target / steps;
+
+          const timer = setInterval(() => {
+            current += increment;
+
+            if (current >= target) {
+              counter.textContent = target.toLocaleString("ar-EG");
+              clearInterval(timer);
+            } else {
+              counter.textContent = Math.floor(current).toLocaleString("ar-EG");
+            }
+          }, stepTime);
+        });
+      }
+    }
+
+    window.addEventListener("scroll", startCounters);
+    window.addEventListener("load", startCounters);
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const workCards = document.querySelectorAll(".work-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(item => item.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        workCards.forEach(card => {
+          const categories = card.dataset.category;
+
+          if (filter === "all" || categories.includes(filter)) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+
+    const workVideos = document.querySelectorAll(".work-media video");
+
+    workVideos.forEach(video => {
+      const card = video.closest(".work-card");
+
+      card.addEventListener("mouseenter", () => {
+        video.play();
+      });
+
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+
+    const reviews = [
+      {
+        text: "كريم فهم طبيعة البراند بسرعة، وحوّل لقطات بسيطة إلى إعلان شكله احترافي. أكثر شيء فرق معنا هو سرعة التسليم والاهتمام بتفاصيل النصوص والحركة.",
+        name: "ندى سامي",
+        role: "Brand Manager — Glow Skin",
+        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+      },
+      {
+        text: "اشتغلنا مع كريم على محتوى شهر كامل للمطعم. الفيديوهات طلعت جذابة ومناسبة جدًا للريلز، والتصميمات حافظت على شكل موحد للصفحة.",
+        name: "محمود يوسف",
+        role: "Owner — Urban Bites",
+        img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+      },
+      {
+        text: "في حملة المنتجات الجديدة، كريم جهز لنا فيديوهات وتصميمات للإعلانات بسرعة وجودة عالية. كان فاهم الفرق بين تصميم للنشر وتصميم للإعلان.",
+        name: "ريم خالد",
+        role: "Marketing Lead — Nova Store",
+        img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80"
+      }
+    ];
+
+    let reviewIndex = 0;
+
+    const reviewCard = document.getElementById("reviewCard");
+    const reviewText = document.getElementById("reviewText");
+    const reviewName = document.getElementById("reviewName");
+    const reviewRole = document.getElementById("reviewRole");
+    const reviewImg = document.getElementById("reviewImg");
+
+    function showReview(index) {
+      reviewCard.style.opacity = "0";
+      reviewCard.style.transform = "translateY(10px)";
+
+      setTimeout(() => {
+        reviewText.textContent = reviews[index].text;
+        reviewName.textContent = reviews[index].name;
+        reviewRole.textContent = reviews[index].role;
+        reviewImg.src = reviews[index].img;
+
+        reviewCard.style.opacity = "1";
+        reviewCard.style.transform = "translateY(0)";
+      }, 180);
+    }
+
+    document.getElementById("nextReview").addEventListener("click", () => {
+      reviewIndex = (reviewIndex + 1) % reviews.length;
+      showReview(reviewIndex);
+    });
+
+    document.getElementById("prevReview").addEventListener("click", () => {
+      reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
+      showReview(reviewIndex);
+    });
+
+    setInterval(() => {
+      reviewIndex = (reviewIndex + 1) % reviews.length;
+      showReview(reviewIndex);
+    }, 6500);
+
+    const projectForm = document.getElementById("projectForm");
+
+    projectForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(projectForm);
+      const name = formData.get("name");
+      const phone = formData.get("phone");
+      const service = formData.get("service");
+      const platform = formData.get("platform");
+      const message = formData.get("message") || "لا توجد تفاصيل إضافية";
+
+      const whatsappMessage =
+        `طلب مشروع جديد من البورتفوليو%0A%0A` +
+        `الاسم: ${name}%0A` +
+        `رقم الهاتف: ${phone}%0A` +
+        `الخدمة المطلوبة: ${service}%0A` +
+        `منصة النشر: ${platform}%0A` +
+        `تفاصيل المشروع: ${message}`;
+
+      window.open(`https://wa.me/201000000000?text=${whatsappMessage}`, "_blank");
+    });
+  </script>
+
+</body>
+</html>
