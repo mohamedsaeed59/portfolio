@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | إدارة البورتفوليو</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#182230;
+      --muted:#667085;
+      --line:#e4e7ec;
+      --dark:#101828;
+      --main:#2563eb;
+      --main2:#0ea5e9;
+      --green:#12b76a;
+      --red:#ef4444;
+      --orange:#f59e0b;
+      --soft:#eef6ff;
+      --shadow:0 18px 50px rgba(16,24,40,.08);
+      --radius:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Cairo,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh}
+    button,input,textarea,select{font-family:inherit}
+    button{cursor:pointer}
+    a{text-decoration:none;color:inherit}
+    .app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+    .sidebar{position:sticky;top:0;height:100vh;background:var(--dark);color:#fff;padding:24px;display:flex;flex-direction:column;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .logo{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--main),var(--main2));font-weight:900;box-shadow:0 14px 34px rgba(37,99,235,.25)}
+    .brand h1{font-size:1.05rem;line-height:1.4}
+    .brand p{color:rgba(255,255,255,.60);font-size:.82rem;font-weight:700}
+    .warning{background:rgba(239,68,68,.13);border:1px solid rgba(239,68,68,.25);color:#fff;border-radius:18px;padding:13px;font-size:.84rem;font-weight:800}
+    .nav{display:grid;gap:8px;margin-top:8px}
+    .nav button,.side-link{width:100%;border:0;border-radius:16px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);padding:12px 14px;text-align:right;font-weight:900;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .nav button.active{background:#fff;color:var(--dark)}
+    .nav small{opacity:.65;font-weight:900}
+    .side-footer{margin-top:auto;color:rgba(255,255,255,.58);font-size:.82rem;font-weight:700}
+    .main{padding:28px;overflow:hidden}
+    .top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
+    .top h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.25;font-weight:900;letter-spacing:-.02em}
+    .top p{color:var(--muted);font-weight:700;margin-top:6px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:0;border-radius:999px;padding:11px 17px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;transition:.2s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+    .primary{background:linear-gradient(135deg,var(--main),var(--main2));color:#fff;box-shadow:0 14px 32px rgba(37,99,235,.18)}
+    .ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+    .danger{background:#fff;color:var(--red);border:1px solid #fecaca}
+    .success{background:#ecfdf3;color:#027a48;border:1px solid #abefc6}
+    .muted{background:#f8fafc;color:#475467;border:1px solid var(--line)}
+    .stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:22px}
+    .metric{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 10px 30px rgba(16,24,40,.04)}
+    .metric strong{display:block;font-size:1.7rem;line-height:1;font-weight:900}
+    .metric span{display:block;color:var(--muted);font-weight:800;font-size:.86rem;margin-top:6px}
+    .panel{display:none}
+    .panel.active{display:block}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:18px}
+    .card-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;align-items:center;background:#fff}
+    .card-head h3{font-size:1.08rem;font-weight:900}
+    .card-head p{color:var(--muted);font-size:.88rem;font-weight:700}
+    .card-body{padding:20px}
+    .form-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;align-items:end}
+    .field.full{grid-column:1/-1}
+    .field.double{grid-column:span 2}
+    label{display:block;font-weight:900;font-size:.86rem;color:#344054;margin-bottom:6px}
+    input,select,textarea{width:100%;border:1px solid var(--line);background:#f8fafc;border-radius:14px;padding:12px 13px;font-size:.92rem;color:var(--text);outline:none}
+    textarea{min-height:96px;resize:vertical}
+    input:focus,select:focus,textarea:focus{background:#fff;border-color:#93c5fd;box-shadow:0 0 0 4px rgba(37,99,235,.10)}
+    .checkbox-row{display:flex;align-items:center;gap:9px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 13px;min-height:48px;font-weight:900;color:#344054}
+    .checkbox-row input{width:auto;accent-color:var(--main)}
+    .list{display:grid;gap:14px}
+    .item{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px rgba(16,24,40,.04);overflow:hidden}
+    .item-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);background:#fbfdff}
+    .item-title{display:flex;align-items:center;gap:10px;font-weight:900;min-width:0}
+    .badge{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 10px;font-weight:900;font-size:.78rem;border:1px solid var(--line);background:#fff;color:#344054;white-space:nowrap}
+    .badge.on{background:#ecfdf3;color:#027a48;border-color:#abefc6}
+    .badge.off{background:#fff1f3;color:#c01048;border-color:#fecdd3}
+    .item-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .mini-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font-weight:900;color:#344054}
+    .mini-btn.save{background:#eff6ff;border-color:#bfdbfe;color:#175cd3}
+    .mini-btn.delete{background:#fff1f3;border-color:#fecdd3;color:#c01048}
+    .mini-btn.toggle{background:#f8fafc}
+    .item-body{padding:16px}
+    .empty{background:#fff;border:1px dashed #cbd5e1;border-radius:22px;padding:28px;text-align:center;color:var(--muted);font-weight:900}
+    .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .lead-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 10px 30px rgba(16,24,40,.04)}
+    .lead-card h4{font-size:1rem;font-weight:900;margin-bottom:5px}
+    .lead-card p{color:var(--muted);font-weight:700;margin-top:8px;white-space:pre-wrap}
+    .lead-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+    .lead-meta span{background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:5px 9px;font-size:.78rem;font-weight:900;color:#344054}
+    .toast{position:fixed;left:22px;bottom:22px;background:var(--dark);color:#fff;border-radius:999px;padding:12px 16px;font-weight:900;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.25s;z-index:1200;max-width:calc(100% - 44px)}
+    .toast.show{opacity:1;transform:translateY(0)}
+    .loader{height:4px;background:linear-gradient(90deg,var(--main),var(--main2));position:fixed;top:0;right:0;width:0;z-index:2000;transition:.25s}
+    .config-box{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:18px;padding:14px;font-weight:800;margin-bottom:18px}
+    .config-box code{direction:ltr;display:inline-block;background:#fff;border:1px solid #fed7aa;border-radius:8px;padding:2px 6px;color:#7c2d12}
+    @media(max-width:1180px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.stats-row{grid-template-columns:repeat(2,1fr)}.form-grid{grid-template-columns:1fr 1fr}.lead-grid{grid-template-columns:1fr}}
+    @media(max-width:720px){.main{padding:18px}.top{display:block}.actions{margin-top:14px}.stats-row,.form-grid{grid-template-columns:1fr}.field.double{grid-column:auto}.item-top{align-items:flex-start;flex-direction:column}.item-actions{justify-content:flex-start}.sidebar{padding:18px}}
+  </style>
+</head>
+<body>
+  <div class="loader" id="loader"></div>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">DB</div>
+        <div>
+          <h1>Dashboard البورتفوليو</h1>
+          <p>إدارة المحتوى من Supabase</p>
+        </div>
+      </div>
+      <div class="warning">تنبيه: هذه النسخة بدون تسجيل دخول، مناسبة للتجربة فقط. لا تنشر رابط الداشبورد علنًا.</div>
+      <nav class="nav" id="navTabs">
+        <button class="active" data-tab="stats">الأرقام <small id="count-stats">0</small></button>
+        <button data-tab="services">الخدمات <small id="count-services">0</small></button>
+        <button data-tab="experience">قطاعات الخبرة <small id="count-experience">0</small></button>
+        <button data-tab="caseStudies">Case Studies <small id="count-caseStudies">0</small></button>
+        <button data-tab="leads">رسائل العملاء <small id="count-leads">0</small></button>
+      </nav>
+      <a class="side-link" href="./index.html" target="_blank">فتح الموقع <small>↗</small></a>
+      <div class="side-footer">ارفع هذا الملف باسم <b>admin.html</b> بجانب ملف الموقع على Vercel.</div>
+    </aside>
+
+    <main class="main">
+      <div class="top">
+        <div>
+          <h2>تحكم في كل محتوى البورتفوليو</h2>
+          <p>إضافة، تعديل، حذف، أو إخفاء أي عنصر بدون تعديل الكود.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" id="refreshBtn">تحديث البيانات</button>
+          <button class="btn primary" id="saveAllHint">احفظ كل كارت من زر حفظ الخاص به</button>
+        </div>
+      </div>
+
+      <div class="config-box">
+        إعدادات Supabase موجودة أسفل الملف داخل <code>SUPABASE_URL</code> و <code>SUPABASE_ANON_KEY</code>. لا تضع Service Role Key هنا.
+      </div>
+
+      <section class="stats-row">
+        <div class="metric"><strong id="metric-stats">0</strong><span>أرقام</span></div>
+        <div class="metric"><strong id="metric-services">0</strong><span>خدمات</span></div>
+        <div class="metric"><strong id="metric-experience">0</strong><span>قطاعات</span></div>
+        <div class="metric"><strong id="metric-caseStudies">0</strong><span>Case Studies</span></div>
+        <div class="metric"><strong id="metric-leads">0</strong><span>رسائل</span></div>
+      </section>
+
+      <section class="panel active" id="panel-stats"></section>
+      <section class="panel" id="panel-services"></section>
+      <section class="panel" id="panel-experience"></section>
+      <section class="panel" id="panel-caseStudies"></section>
+      <section class="panel" id="panel-leads"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">تم الحفظ</div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    /* ==============================
+       Supabase Settings
+       عدّل القيم هنا فقط لو غيرت المشروع.
+       ============================== */
+    const SUPABASE_URL = 'https://viabcmsasyocmwcbkeow.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_0niZ9qbV8XMaij7ZA7sJDw_dj7BUjpk';
+
+    const TABLES = {
+      stats: 'portfolio_stats',
+      services: 'portfolio_services',
+      experience: 'portfolio_experience',
+      caseStudies: 'portfolio_case_studies',
+      leads: 'portfolio_leads'
+    };
+
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const $ = (selector, parent = document) => parent.querySelector(selector);
+    const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
+
+    const state = {
+      stats: [],
+      services: [],
+      experience: [],
+      caseStudies: [],
+      leads: []
+    };
+
+    const resources = {
+      stats: {
+        title: 'الأرقام',
+        description: 'الأرقام التي تظهر في Hero section مثل سنوات الخبرة وعدد المشاريع.',
+        table: TABLES.stats,
+        order: 'sort_order',
+        fields: [
+          { name:'value', label:'الرقم', type:'number', required:true },
+          { name:'label', label:'النص', type:'text', required:true },
+          { name:'sort_order', label:'الترتيب', type:'number', required:true },
+          { name:'is_active', label:'ظاهر في الموقع', type:'boolean' }
+        ],
+        summary: row => `${row.value ?? ''}+ — ${row.label ?? ''}`
+      },
+      services: {
+        title: 'الخدمات',
+        description: 'الخدمات التي تظهر في قسم الخدمات.',
+        table: TABLES.services,
+        order: 'sort_order',
+        fields: [
+          { name:'icon_label', label:'رقم/أيقونة', type:'text' },
+          { name:'title', label:'عنوان الخدمة', type:'text', required:true },
+          { name:'description', label:'الوصف', type:'textarea', required:true, wide:true },
+          { name:'sort_order', label:'الترتيب', type:'number', required:true },
+          { name:'is_active', label:'ظاهر في الموقع', type:'boolean' }
+        ],
+        summary: row => `${row.icon_label ?? ''} — ${row.title ?? ''}`
+      },
+      experience: {
+        title: 'قطاعات الخبرة',
+        description: 'القطاعات التي تظهر في قسم خبرة في أكثر من نوع مشروع.',
+        table: TABLES.experience,
+        order: 'sort_order',
+        fields: [
+          { name:'emoji', label:'Emoji', type:'text' },
+          { name:'title', label:'اسم القطاع', type:'text', required:true },
+          { name:'sort_order', label:'الترتيب', type:'number', required:true },
+          { name:'is_active', label:'ظاهر في الموقع', type:'boolean' }
+        ],
+        summary: row => `${row.emoji ?? ''} ${row.title ?? ''}`
+      },
+      caseStudies: {
+        title: 'Case Studies / الخبرات المختارة',
+        description: 'الكروت التي تظهر في قسم خبرات مختارة.',
+        table: TABLES.caseStudies,
+        order: 'sort_order',
+        fields: [
+          { name:'category', label:'التصنيف', type:'text', required:true },
+          { name:'title', label:'العنوان', type:'text', required:true },
+          { name:'problem', label:'المشكلة', type:'textarea', required:true, wide:true },
+          { name:'solution', label:'الحل', type:'textarea', required:true, wide:true },
+          { name:'result', label:'النتيجة', type:'textarea', required:true, wide:true },
+          { name:'sort_order', label:'الترتيب', type:'number', required:true },
+          { name:'is_active', label:'ظاهر في الموقع', type:'boolean' }
+        ],
+        summary: row => `${row.category ?? ''} — ${row.title ?? ''}`
+      }
+    };
+
+    function setLoading(isLoading){
+      $('#loader').style.width = isLoading ? '70%' : '0';
+      if(!isLoading){ setTimeout(()=> $('#loader').style.width = '0', 250); }
+    }
+
+    function toast(text){
+      const t = $('#toast');
+      t.textContent = text;
+      t.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=> t.classList.remove('show'), 2600);
+    }
+
+    function escapeHtml(value){
+      return String(value ?? '')
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'",'&#039;');
+    }
+
+    function formatDate(value){
+      if(!value) return '';
+      try{
+        return new Intl.DateTimeFormat('ar-EG', { dateStyle:'medium', timeStyle:'short' }).format(new Date(value));
+      }catch(e){ return value; }
+    }
+
+    function getNextSort(resourceKey){
+      const rows = state[resourceKey] || [];
+      const max = rows.reduce((acc,row)=> Math.max(acc, Number(row.sort_order || 0)), 0);
+      return max + 1;
+    }
+
+    function buildField(field, value = '', scope = 'edit'){
+      const inputId = `${scope}-${field.name}-${Math.random().toString(16).slice(2)}`;
+      const wideClass = field.wide ? 'field full' : 'field';
+
+      if(field.type === 'boolean'){
+        return `
+          <div class="${wideClass}">
+            <label>${escapeHtml(field.label)}</label>
+            <label class="checkbox-row" for="${inputId}">
+              <input id="${inputId}" type="checkbox" data-field="${escapeHtml(field.name)}" ${value ? 'checked' : ''}>
+              <span>${escapeHtml(field.label)}</span>
+            </label>
+          </div>
+        `;
+      }
+
+      if(field.type === 'textarea'){
+        return `
+          <div class="${wideClass}">
+            <label for="${inputId}">${escapeHtml(field.label)}</label>
+            <textarea id="${inputId}" data-field="${escapeHtml(field.name)}" ${field.required ? 'required' : ''}>${escapeHtml(value)}</textarea>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="${wideClass}">
+          <label for="${inputId}">${escapeHtml(field.label)}</label>
+          <input id="${inputId}" type="${field.type === 'number' ? 'number' : 'text'}" data-field="${escapeHtml(field.name)}" value="${escapeHtml(value)}" ${field.required ? 'required' : ''}>
+        </div>
+      `;
+    }
+
+    function buildAddForm(resourceKey){
+      const config = resources[resourceKey];
+      const fields = config.fields.map(field => {
+        const defaultValue = field.name === 'sort_order' ? getNextSort(resourceKey) : field.name === 'is_active' ? true : '';
+        return buildField(field, defaultValue, `add-${resourceKey}`);
+      }).join('');
+
+      return `
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3>إضافة عنصر جديد</h3>
+              <p>${escapeHtml(config.description)}</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <form class="form-grid add-form" data-resource="${resourceKey}">
+              ${fields}
+              <div class="field full">
+                <button class="btn primary" type="submit">إضافة</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+    }
+
+    function buildRow(resourceKey, row){
+      const config = resources[resourceKey];
+      const fields = config.fields.map(field => buildField(field, row[field.name], `edit-${resourceKey}`)).join('');
+      const active = row.is_active !== false;
+
+      return `
+        <article class="item" data-resource="${resourceKey}" data-id="${escapeHtml(row.id)}">
+          <div class="item-top">
+            <div class="item-title">
+              <span class="badge">#${escapeHtml(row.sort_order ?? '')}</span>
+              <span title="${escapeHtml(config.summary(row))}">${escapeHtml(config.summary(row))}</span>
+              <span class="badge ${active ? 'on' : 'off'}">${active ? 'ظاهر' : 'مخفي'}</span>
+            </div>
+            <div class="item-actions">
+              <button class="mini-btn save" data-action="save">حفظ</button>
+              <button class="mini-btn toggle" data-action="toggle">${active ? 'إخفاء' : 'إظهار'}</button>
+              <button class="mini-btn delete" data-action="delete">حذف</button>
+            </div>
+          </div>
+          <div class="item-body">
+            <div class="form-grid">
+              ${fields}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderResource(resourceKey){
+      const config = resources[resourceKey];
+      const rows = state[resourceKey] || [];
+      const panel = $(`#panel-${resourceKey}`);
+
+      const rowsHtml = rows.length
+        ? rows.map(row => buildRow(resourceKey, row)).join('')
+        : '<div class="empty">لا توجد عناصر حتى الآن.</div>';
+
+      panel.innerHTML = `
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3>${escapeHtml(config.title)}</h3>
+              <p>${escapeHtml(config.description)}</p>
+            </div>
+            <span class="badge">${rows.length} عنصر</span>
+          </div>
+        </div>
+        ${buildAddForm(resourceKey)}
+        <div class="list">${rowsHtml}</div>
+      `;
+    }
+
+    function renderLeads(){
+      const panel = $('#panel-leads');
+      const rows = state.leads || [];
+      const html = rows.length ? rows.map(row => `
+        <article class="lead-card" data-id="${escapeHtml(row.id)}">
+          <h4>${escapeHtml(row.name)}</h4>
+          <div class="lead-meta">
+            <span>${escapeHtml(row.business)}</span>
+            <span>${escapeHtml(row.service)}</span>
+            <span>${escapeHtml(row.stage)}</span>
+            <span>${formatDate(row.created_at)}</span>
+          </div>
+          <p>${escapeHtml(row.message)}</p>
+          ${row.page_url ? `<p><b>Page:</b> <span dir="ltr">${escapeHtml(row.page_url)}</span></p>` : ''}
+          <div class="item-actions" style="margin-top:14px">
+            <button class="mini-btn delete" data-action="delete-lead">حذف الرسالة</button>
+          </div>
+        </article>
+      `).join('') : '<div class="empty">لا توجد رسائل عملاء حتى الآن.</div>';
+
+      panel.innerHTML = `
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3>رسائل العملاء</h3>
+              <p>الطلبات المحفوظة من فورم التواصل في الموقع.</p>
+            </div>
+            <span class="badge">${rows.length} رسالة</span>
+          </div>
+        </div>
+        <div class="lead-grid">${html}</div>
+      `;
+    }
+
+    function renderAll(){
+      Object.keys(resources).forEach(renderResource);
+      renderLeads();
+
+      const keys = ['stats','services','experience','caseStudies','leads'];
+      keys.forEach(key => {
+        const count = (state[key] || []).length;
+        const metric = $(`#metric-${key}`);
+        const sideCount = $(`#count-${key}`);
+        if(metric) metric.textContent = count;
+        if(sideCount) sideCount.textContent = count;
+      });
+    }
+
+    function collectPayload(container, config){
+      const payload = {};
+      config.fields.forEach(field => {
+        const input = $(`[data-field="${field.name}"]`, container);
+        if(!input) return;
+
+        if(field.type === 'boolean') payload[field.name] = input.checked;
+        else if(field.type === 'number') payload[field.name] = Number(input.value || 0);
+        else payload[field.name] = input.value.trim();
+      });
+      return payload;
+    }
+
+    function validatePayload(payload, config){
+      for(const field of config.fields){
+        if(field.required && (payload[field.name] === '' || payload[field.name] === null || Number.isNaN(payload[field.name]))){
+          toast(`من فضلك املأ حقل: ${field.label}`);
+          return false;
+        }
+      }
+      return true;
+    }
+
+    async function loadData(){
+      setLoading(true);
+      try{
+        const requests = [
+          supabaseClient.from(TABLES.stats).select('*').order('sort_order', { ascending:true }),
+          supabaseClient.from(TABLES.services).select('*').order('sort_order', { ascending:true }),
+          supabaseClient.from(TABLES.experience).select('*').order('sort_order', { ascending:true }),
+          supabaseClient.from(TABLES.caseStudies).select('*').order('sort_order', { ascending:true }),
+          supabaseClient.from(TABLES.leads).select('*').order('created_at', { ascending:false })
+        ];
+
+        const [stats, services, experience, caseStudies, leads] = await Promise.all(requests);
+        const responses = { stats, services, experience, caseStudies, leads };
+
+        for(const [key, response] of Object.entries(responses)){
+          if(response.error) throw new Error(`${key}: ${response.error.message}`);
+          state[key] = response.data || [];
+        }
+
+        renderAll();
+      }catch(error){
+        console.error(error);
+        toast('حدث خطأ في تحميل البيانات. راجع سياسات Supabase.');
+      }finally{
+        setLoading(false);
+      }
+    }
+
+    async function addItem(resourceKey, form){
+      const config = resources[resourceKey];
+      const payload = collectPayload(form, config);
+      if(!validatePayload(payload, config)) return;
+
+      setLoading(true);
+      const { error } = await supabaseClient.from(config.table).insert(payload);
+      setLoading(false);
+
+      if(error){
+        console.error(error);
+        toast('لم يتم الإضافة. قد يكون رقم الترتيب مستخدم بالفعل.');
+        return;
+      }
+
+      toast('تمت الإضافة بنجاح');
+      await loadData();
+    }
+
+    async function saveItem(resourceKey, item){
+      const config = resources[resourceKey];
+      const id = item.dataset.id;
+      const payload = collectPayload(item, config);
+      if(!validatePayload(payload, config)) return;
+
+      setLoading(true);
+      const { error } = await supabaseClient.from(config.table).update(payload).eq('id', id);
+      setLoading(false);
+
+      if(error){
+        console.error(error);
+        toast('لم يتم الحفظ. قد يكون رقم الترتيب مستخدم بالفعل.');
+        return;
+      }
+
+      toast('تم الحفظ');
+      await loadData();
+    }
+
+    async function toggleItem(resourceKey, item){
+      const config = resources[resourceKey];
+      const id = item.dataset.id;
+      const current = (state[resourceKey] || []).find(row => row.id === id);
+      if(!current) return;
+
+      setLoading(true);
+      const { error } = await supabaseClient.from(config.table).update({ is_active: !current.is_active }).eq('id', id);
+      setLoading(false);
+
+      if(error){
+        console.error(error);
+        toast('لم يتم تغيير حالة الظهور');
+        return;
+      }
+
+      toast(current.is_active ? 'تم إخفاء العنصر' : 'تم إظهار العنصر');
+      await loadData();
+    }
+
+    async function deleteItem(resourceKey, item){
+      const config = resources[resourceKey];
+      const id = item.dataset.id;
+      if(!confirm('هل أنت متأكد من حذف هذا العنصر؟')) return;
+
+      setLoading(true);
+      const { error } = await supabaseClient.from(config.table).delete().eq('id', id);
+      setLoading(false);
+
+      if(error){
+        console.error(error);
+        toast('لم يتم الحذف');
+        return;
+      }
+
+      toast('تم الحذف');
+      await loadData();
+    }
+
+    async function deleteLead(card){
+      const id = card.dataset.id;
+      if(!confirm('هل تريد حذف هذه الرسالة؟')) return;
+
+      setLoading(true);
+      const { error } = await supabaseClient.from(TABLES.leads).delete().eq('id', id);
+      setLoading(false);
+
+      if(error){
+        console.error(error);
+        toast('لم يتم حذف الرسالة');
+        return;
+      }
+
+      toast('تم حذف الرسالة');
+      await loadData();
+    }
+
+    $('#navTabs').addEventListener('click', e => {
+      const btn = e.target.closest('button[data-tab]');
+      if(!btn) return;
+      const tab = btn.dataset.tab;
+      $$('#navTabs button').forEach(b => b.classList.toggle('active', b === btn));
+      $$('.panel').forEach(panel => panel.classList.toggle('active', panel.id === `panel-${tab}`));
+    });
+
+    document.addEventListener('submit', e => {
+      const form = e.target.closest('.add-form');
+      if(!form) return;
+      e.preventDefault();
+      addItem(form.dataset.resource, form);
+    });
+
+    document.addEventListener('click', e => {
+      const actionBtn = e.target.closest('[data-action]');
+      if(!actionBtn) return;
+      const action = actionBtn.dataset.action;
+      const item = actionBtn.closest('.item');
+      const lead = actionBtn.closest('.lead-card');
+
+      if(action === 'save' && item) saveItem(item.dataset.resource, item);
+      if(action === 'toggle' && item) toggleItem(item.dataset.resource, item);
+      if(action === 'delete' && item) deleteItem(item.dataset.resource, item);
+      if(action === 'delete-lead' && lead) deleteLead(lead);
+    });
+
+    $('#refreshBtn').addEventListener('click', loadData);
+    $('#saveAllHint').addEventListener('click', () => toast('استخدم زر حفظ داخل الكارت الذي تريد تعديله'));
+
+    loadData();
+  </script>
+</body>
+</html>

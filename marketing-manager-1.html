@@ -41,6 +41,7 @@
     .menu{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:14px;font-size:1.2rem;cursor:pointer}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font-weight:900;cursor:pointer;transition:.22s;min-height:48px}
     .btn:hover{transform:translateY(-2px)}
+    .btn:disabled{opacity:.72;cursor:not-allowed;transform:none}
     .primary{background:linear-gradient(135deg,var(--main),var(--main2));color:#fff;box-shadow:0 14px 32px rgba(37,99,235,.22)}
     .ghost{background:#fff;border:1px solid var(--line);color:var(--text)}
     .dark{background:var(--dark);color:#fff}
@@ -160,7 +161,7 @@
             <a class="btn ghost" href="#services">الخدمات</a>
             <a class="btn dark" href="#contact">تواصل الآن</a>
           </div>
-          <div class="numbers">
+          <div class="numbers" id="statsGrid">
             <div class="number"><strong data-count="10">0</strong><span>سنوات خبرة</span></div>
             <div class="number"><strong data-count="65">0</strong><span>مشروع وحملة</span></div>
             <div class="number"><strong data-count="8">0</strong><span>قطاعات مختلفة</span></div>
@@ -225,7 +226,7 @@
           </div>
           <p class="lead">كل خدمة يمكن تنفيذها منفصلة أو ضمن إدارة تسويقية كاملة حسب احتياج المشروع.</p>
         </div>
-        <div class="grid-3">
+        <div class="grid-3" id="servicesGrid">
           <article class="card reveal"><div class="icon">01</div><h3>إدارة السوشيال ميديا</h3><p>تنظيم الحسابات، جدولة المحتوى، متابعة التفاعل، وتحسين طريقة ظهور البراند.</p></article>
           <article class="card reveal"><div class="icon">02</div><h3>استراتيجية المحتوى</h3><p>خطة محتوى شهرية مبنية على أهداف واضحة: وعي، ثقة، تفاعل، وطلبات.</p></article>
           <article class="card reveal"><div class="icon">03</div><h3>كتابة الإعلانات</h3><p>صياغة Hooks، بوستات، سكريبتات فيديو، ورسائل واتساب تساعد العميل على اتخاذ قرار.</p></article>
@@ -245,7 +246,7 @@
           </div>
           <p class="lead">اختلاف القطاع يعني اختلاف الرسالة، المنصة، العرض، وطريقة قياس النتيجة.</p>
         </div>
-        <div class="sectors reveal">
+        <div class="sectors reveal" id="experienceSectorsGrid">
           <div class="sector"><span>🍽️</span>مطاعم وكافيهات</div>
           <div class="sector"><span>🏥</span>عيادات وخدمات طبية</div>
           <div class="sector"><span>🏠</span>عقارات وتشطيبات</div>
@@ -267,7 +268,7 @@
           </div>
           <p class="lead">ملخصات عملية توضّح طبيعة التحديات، أسلوب التنفيذ، والنتائج التي تم العمل عليها.</p>
         </div>
-        <div class="grid-3">
+        <div class="grid-3" id="caseStudiesGrid">
           <article class="card case reveal">
             <div class="case-top"><span class="case-label">مطاعم</span><h3>حملة طلبات موسمية</h3></div>
             <div class="case-body">
@@ -385,7 +386,7 @@
               <div><label>الخدمة المطلوبة</label><select id="service" required><option value="">اختر الخدمة</option><option>إدارة سوشيال ميديا</option><option>خطة محتوى</option><option>Media Buying</option><option>تحليل وتحسين حملات</option><option>إدارة تسويق كاملة</option></select></div>
               <div><label>مرحلة المشروع</label><select id="stage" required><option value="">اختر المرحلة</option><option>بداية جديدة</option><option>شغال ونحتاج تنظيم</option><option>لدينا حملات ونريد تحسينها</option><option>إطلاق منتج أو خدمة جديدة</option></select></div>
               <div class="full"><label>تفاصيل مختصرة</label><textarea id="message" required placeholder="اكتب الهدف الحالي، المنصات المستخدمة، وأهم تحدي في التسويق..."></textarea></div>
-              <div class="full"><button class="btn primary" type="submit">تجهيز رسالة واتساب</button></div>
+              <div class="full"><button class="btn primary" type="submit">إرسال الطلب وتجهيز واتساب</button></div>
             </div>
           </form>
         </div>
@@ -402,62 +403,303 @@
 
   <div class="toast" id="toast">تم تجهيز الرسالة</div>
 
-  <script>
-    const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
-    const menu=$('#menu'), links=$('#links');
-    menu.addEventListener('click',()=>links.classList.toggle('show'));
-    $$('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('show')));
+    <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-    window.addEventListener('scroll',()=>{
-      const h=document.documentElement.scrollHeight-innerHeight;
-      $('#topbar').style.width=(scrollY/h*100)+'%';
-      let current='';
-      $$('.links a').forEach(a=>{
-        const sec=$(a.getAttribute('href'));
-        if(sec && scrollY>=sec.offsetTop-120) current=a.getAttribute('href');
-      });
-      $$('.links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')===current));
-    });
+    /* ==============================
+       Supabase + WhatsApp Settings
+       ==============================
+       ضع بيانات Supabase هنا فقط.
+       هذه القيم عادية في pure HTML لأنها Public/Publishable Key.
+       لا تضع Service Role Key هنا نهائيًا.
+    */
+    const SUPABASE_URL = 'https://viabcmsasyocmwcbkeow.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_0niZ9qbV8XMaij7ZA7sJDw_dj7BUjpk';
 
-    const revealObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){entry.target.classList.add('in');revealObserver.unobserve(entry.target)}
-      })
-    },{threshold:.12});
-    $$('.reveal').forEach(el=>revealObserver.observe(el));
+    const TABLES = {
+      leads: 'portfolio_leads',
+      stats: 'portfolio_stats',
+      services: 'portfolio_services',
+      experience: 'portfolio_experience',
+      caseStudies: 'portfolio_case_studies'
+    };
 
-    const counterObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting)return;
-        const el=entry.target, target=Number(el.dataset.count);
-        let value=0, step=Math.max(1,Math.ceil(target/45));
-        const tick=()=>{
-          value+=step;
-          if(value>=target){el.textContent=target+'+';return}
-          el.textContent=value;
-          requestAnimationFrame(tick);
-        };
-        tick();
-        counterObserver.unobserve(el);
-      })
-    },{threshold:.4});
-    $$('[data-count]').forEach(el=>counterObserver.observe(el));
+    const WHATSAPP_NUMBER = '201000000000';
 
-    $('#year').textContent=new Date().getFullYear();
+    const supabaseConfigured =
+      SUPABASE_URL.startsWith('https://') &&
+      SUPABASE_URL.includes('.supabase.co') &&
+      SUPABASE_ANON_KEY.length > 20 &&
+      !SUPABASE_URL.includes('YOUR_PROJECT_ID') &&
+      !SUPABASE_ANON_KEY.includes('YOUR_SUPABASE_ANON_PUBLIC_KEY');
 
-    function toast(text){
-      const t=$('#toast');
-      t.textContent=text;
-      t.classList.add('show');
-      setTimeout(()=>t.classList.remove('show'),2500);
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const $ = (s, p = document) => p.querySelector(s);
+    const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+    const menu = $('#menu');
+    const links = $('#links');
+
+    if (menu && links) {
+      menu.addEventListener('click', () => links.classList.toggle('show'));
+      $$('.links a').forEach(a => a.addEventListener('click', () => links.classList.remove('show')));
     }
 
-    $('#contactForm').addEventListener('submit',e=>{
-      e.preventDefault();
-      const text=`مرحبًا أحمد، أريد الاستفسار عن خدمة تسويق.\n\nالاسم: ${$('#name').value}\nنوع النشاط: ${$('#business').value}\nالخدمة المطلوبة: ${$('#service').value}\nمرحلة المشروع: ${$('#stage').value}\n\nالتفاصيل:\n${$('#message').value}`;
-      toast('تم تجهيز رسالة واتساب');
-      setTimeout(()=>{window.open('https://wa.me/201000000000?text='+encodeURIComponent(text),'_blank')},500);
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      if ($('#topbar')) $('#topbar').style.width = h > 0 ? (scrollY / h * 100) + '%' : '0%';
+
+      let current = '';
+      $$('.links a').forEach(a => {
+        const sec = $(a.getAttribute('href'));
+        if (sec && scrollY >= sec.offsetTop - 120) current = a.getAttribute('href');
+      });
+      $$('.links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === current));
     });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    function observeReveals(scope = document) {
+      $$('.reveal', scope).forEach(el => {
+        if (!el.dataset.revealObserved && !el.classList.contains('in')) {
+          el.dataset.revealObserved = 'true';
+          revealObserver.observe(el);
+        }
+      });
+    }
+
+    function initCounters(scope = document) {
+      const counters = $$('[data-count]', scope).filter(el => !el.dataset.counterObserved);
+      if (!counters.length) return;
+
+      const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
+          const el = entry.target;
+          const target = Number(el.dataset.count || 0);
+          let value = 0;
+          const step = Math.max(1, Math.ceil(target / 45));
+
+          const tick = () => {
+            value += step;
+            if (value >= target) {
+              el.textContent = target + '+';
+              return;
+            }
+            el.textContent = value;
+            requestAnimationFrame(tick);
+          };
+
+          tick();
+          counterObserver.unobserve(el);
+        });
+      }, { threshold: .4 });
+
+      counters.forEach(el => {
+        el.dataset.counterObserved = 'true';
+        counterObserver.observe(el);
+      });
+    }
+
+    if ($('#year')) $('#year').textContent = new Date().getFullYear();
+
+    function toast(text) {
+      const t = $('#toast');
+      if (!t) return;
+      t.textContent = text;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    function escapeHTML(value = '') {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function renderStats(rows) {
+      const grid = $('#statsGrid');
+      if (!grid || !rows?.length) return;
+
+      grid.innerHTML = rows.map(item => `
+        <div class="number">
+          <strong data-count="${Number(item.value) || 0}">0</strong>
+          <span>${escapeHTML(item.label)}</span>
+        </div>
+      `).join('');
+
+      initCounters(grid);
+    }
+
+    function renderServices(rows) {
+      const grid = $('#servicesGrid');
+      if (!grid || !rows?.length) return;
+
+      grid.innerHTML = rows.map(item => `
+        <article class="card reveal">
+          <div class="icon">${escapeHTML(item.icon_label || '')}</div>
+          <h3>${escapeHTML(item.title)}</h3>
+          <p>${escapeHTML(item.description)}</p>
+        </article>
+      `).join('');
+
+      observeReveals(grid);
+    }
+
+    function renderExperience(rows) {
+      const grid = $('#experienceSectorsGrid');
+      if (!grid || !rows?.length) return;
+
+      grid.innerHTML = rows.map(item => `
+        <div class="sector"><span>${escapeHTML(item.emoji || '')}</span>${escapeHTML(item.title)}</div>
+      `).join('');
+    }
+
+    function renderCaseStudies(rows) {
+      const grid = $('#caseStudiesGrid');
+      if (!grid || !rows?.length) return;
+
+      grid.innerHTML = rows.map(item => `
+        <article class="card case reveal">
+          <div class="case-top">
+            <span class="case-label">${escapeHTML(item.category)}</span>
+            <h3>${escapeHTML(item.title)}</h3>
+          </div>
+          <div class="case-body">
+            <p>${escapeHTML(item.problem)}</p>
+            <div class="mini">
+              <div><b>الحل</b><span>${escapeHTML(item.solution)}</span></div>
+              <div><b>النتيجة</b><span>${escapeHTML(item.result)}</span></div>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      observeReveals(grid);
+    }
+
+    async function fetchActiveRows(tableName, columns = '*') {
+      const { data, error } = await supabaseClient
+        .from(tableName)
+        .select(columns)
+        .eq('is_active', true)
+        .order('sort_order', { ascending: true });
+
+      if (error) throw error;
+      return data || [];
+    }
+
+    async function loadDynamicSections() {
+      if (!supabaseConfigured) {
+        console.warn('Supabase is not configured. Static fallback content is still visible.');
+        initCounters();
+        observeReveals();
+        return;
+      }
+
+      try {
+        const [stats, services, experience, caseStudies] = await Promise.all([
+          fetchActiveRows(TABLES.stats, 'value,label,sort_order,is_active'),
+          fetchActiveRows(TABLES.services, 'icon_label,title,description,sort_order,is_active'),
+          fetchActiveRows(TABLES.experience, 'emoji,title,sort_order,is_active'),
+          fetchActiveRows(TABLES.caseStudies, 'category,title,problem,solution,result,sort_order,is_active')
+        ]);
+
+        renderStats(stats);
+        renderServices(services);
+        renderExperience(experience);
+        renderCaseStudies(caseStudies);
+      } catch (error) {
+        console.error('Dynamic content load error:', error);
+        toast('تعذر تحميل بعض بيانات البورتفوليو من Supabase');
+      } finally {
+        initCounters();
+        observeReveals();
+      }
+    }
+
+    function buildWhatsappMessage(lead) {
+      return `مرحبًا أحمد، أريد الاستفسار عن خدمة تسويق.
+
+الاسم: ${lead.name}
+نوع النشاط: ${lead.business}
+الخدمة المطلوبة: ${lead.service}
+مرحلة المشروع: ${lead.stage}
+
+التفاصيل:
+${lead.message}`;
+    }
+
+    const contactForm = $('#contactForm');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!supabaseConfigured) {
+          toast('أضف بيانات Supabase الصحيحة داخل الكود أولًا');
+          return;
+        }
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.textContent : '';
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'جارٍ إرسال الطلب...';
+        }
+
+        const lead = {
+          name: $('#name').value.trim(),
+          business: $('#business').value.trim(),
+          service: $('#service').value,
+          stage: $('#stage').value,
+          message: $('#message').value.trim(),
+          source: 'portfolio',
+          page_url: window.location.href,
+          user_agent: navigator.userAgent
+        };
+
+        try {
+          const { error } = await supabaseClient
+            .from(TABLES.leads)
+            .insert([lead]);
+
+          if (error) throw error;
+
+          const whatsappText = buildWhatsappMessage(lead);
+
+          toast('تم حفظ البيانات وتجهيز رسالة واتساب');
+          contactForm.reset();
+
+          setTimeout(() => {
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappText)}`, '_blank', 'noopener,noreferrer');
+          }, 500);
+        } catch (error) {
+          console.error('Supabase insert error:', error);
+          toast('حدث خطأ أثناء حفظ البيانات. راجع RLS واسم الجدول');
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+        }
+      });
+    }
+
+    loadDynamicSections();
   </script>
 </body>
 </html>
