@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أحمد نبيل | Account Manager</title>
+
+  <style>
+    :root {
+      --bg: #f7f5f1;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --primary: #355c7d;
+      --primary-dark: #25435c;
+      --border: #e6e1d8;
+      --soft: #eef3f6;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(31, 41, 51, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 245, 241, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 84px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: var(--soft);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -1px;
+    }
+
+    .job-title {
+      color: var(--primary);
+      font-size: clamp(18px, 3vw, 25px);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .hero-image img {
+      height: 440px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-head {
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(25px, 4vw, 34px);
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 700px;
+      font-size: 16px;
+    }
+
+    .about-card {
+      background: var(--card);
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .experience-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+    }
+
+    .experience-card h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .experience-card .role {
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .period {
+      color: var(--muted);
+      background: var(--soft);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      white-space: nowrap;
+      align-self: start;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .project-card img {
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .project-type {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .project-role {
+      font-size: 14px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      padding: 8px 10px;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 700;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      background: var(--card);
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .tool {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 10px;
+      border-radius: 14px;
+      background: var(--soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    .tool span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial strong {
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .contact-card {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 28px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .contact-card h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.78);
+      max-width: 650px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .contact-links a {
+      background: #fff;
+      color: var(--primary-dark);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-2px);
+      background: #f4f7f9;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image img {
+        height: 360px;
+      }
+
+      .projects,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .contact-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+      }
+
+      .projects,
+      .testimonials,
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image img {
+        height: 300px;
+      }
+
+      .about-card,
+      .contact-card {
+        padding: 24px;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">أحمد نبيل</a>
+
+        <div class="nav-links">
+          <a href="#about">نبذة</a>
+          <a href="#experience">الخبرات</a>
+          <a href="#work">الأعمال</a>
+          <a href="#skills">المهارات</a>
+          <a href="#contact">التواصل</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <span class="eyebrow">Portfolio</span>
+            <h1>أحمد نبيل</h1>
+            <div class="job-title">Account Manager | Social Media Specialist</div>
+            <p>
+              أعمل في إدارة حسابات السوشيال ميديا منذ أكثر من 6 سنوات، بين التخطيط للمحتوى،
+              تنسيق الحملات، متابعة فرق التصميم والكتابة، والتواصل المباشر مع العملاء لضمان تنفيذ العمل بوضوح واحترافية.
+            </p>
+            <a href="#contact" class="btn">تواصل معي</a>
+          </div>
+
+          <div class="hero-image reveal">
+            <img 
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" 
+              alt="اجتماع عمل لإدارة حسابات السوشيال ميديا"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>نبذة</h2>
+        </div>
+
+        <div class="about-card reveal">
+          أمتلك خبرة عملية في إدارة حسابات السوشيال ميديا لبراندات تجارية وخدمية، بداية من فهم احتياجات العميل،
+          وتنظيم خطة المحتوى، ومتابعة تنفيذ التصميمات والريلز والإعلانات، وصولًا إلى إعداد التقارير الشهرية.
+          أركز دائمًا على وضوح التواصل بين العميل والفريق، وتحويل أهداف البراند إلى خطوات تنفيذية سهلة القياس والمتابعة.
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>الخبرات</h2>
+          <p>خبرات مباشرة في إدارة الحسابات، متابعة العملاء، وتنظيم سير العمل اليومي بين الفريق والبراند.</p>
+        </div>
+
+        <div class="experience-list">
+
+          <div class="experience-card reveal">
+            <div>
+              <h3>Bright Media House</h3>
+              <div class="role">Senior Account Manager</div>
+              <p>
+                إدارة حسابات لبراندات في مجالات المطاعم، العيادات، والمنتجات المحلية.
+                متابعة خطط المحتوى والحملات والتقارير مع فريق التصميم والميديا باينج.
+              </p>
+            </div>
+            <span class="period">2023 - حتى الآن</span>
+          </div>
+
+          <div class="experience-card reveal">
+            <div>
+              <h3>Grow Social Agency</h3>
+              <div class="role">Social Media Account Executive</div>
+              <p>
+                التنسيق اليومي مع العملاء، تجهيز Briefs واضحة للفريق، ومتابعة تنفيذ المحتوى الأسبوعي
+                مع مراجعة جودة النشر والردود والتقارير.
+              </p>
+            </div>
+            <span class="period">2020 - 2023</span>
+          </div>
+
+          <div class="experience-card reveal">
+            <div>
+              <h3>Nabil Digital Studio</h3>
+              <div class="role">Founder & Social Media Manager</div>
+              <p>
+                تأسيس وإدارة شركة صغيرة لخدمات السوشيال ميديا، مع التعامل المباشر مع العملاء،
+                التسعير، إدارة الفريق، وجدولة الحملات والمحتوى.
+              </p>
+            </div>
+            <span class="period">2018 - 2020</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>أبرز الأعمال</h2>
+          <p>مجموعة مختصرة من المشاريع التي توليت فيها إدارة الحسابات والمتابعة بين العميل والفريق.</p>
+        </div>
+
+        <div class="projects">
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" alt="مطعم كاسا بلانكا" />
+            <div class="project-content">
+              <h3>Casa Blanca Restaurant</h3>
+              <div class="project-type">مطعم ومقهى</div>
+              <p>تنظيم خطة محتوى شهرية للمنيو والعروض وتجهيز حملات موسمية لزيادة الزيارات.</p>
+              <span class="project-role">الدور: Account Manager</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="عيادة سكين بلس" />
+            <div class="project-content">
+              <h3>Skin Plus Clinic</h3>
+              <div class="project-type">عيادة تجميل</div>
+              <p>متابعة المحتوى الطبي المبسط، تنسيق التصوير، وتنظيم رسائل الحملات الإعلانية.</p>
+              <span class="project-role">الدور: Client Communication</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=80" alt="متجر مودا ستايل" />
+            <div class="project-content">
+              <h3>Moda Style Store</h3>
+              <div class="project-type">Fashion E-commerce</div>
+              <p>تنظيم إطلاق كولكشن جديد، متابعة منشورات المنتجات، وربط المحتوى بالعروض الأسبوعية.</p>
+              <span class="project-role">الدور: Campaign Coordination</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="شركة هوم لاين" />
+            <div class="project-content">
+              <h3>Home Line Furniture</h3>
+              <div class="project-type">أثاث وديكور</div>
+              <p>تخطيط محتوى يعرض المنتجات بشكل بسيط مع متابعة التصاميم والرسائل البيعية.</p>
+              <span class="project-role">الدور: Content Planning</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" alt="أكاديمية سكِل آب" />
+            <div class="project-content">
+              <h3>Skill Up Academy</h3>
+              <div class="project-type">تعليم وتدريب</div>
+              <p>إدارة محتوى الدورات، تنسيق التقويم الشهري، ومتابعة أداء الحملات مع فريق الإعلانات.</p>
+              <span class="project-role">الدور: Reporting</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="شركة فينكس سوليوشنز" />
+            <div class="project-content">
+              <h3>Phoenix Solutions</h3>
+              <div class="project-type">خدمات تقنية</div>
+              <p>تنظيم المحتوى التعريفي بالخدمات، إعداد Briefs للفريق، ومراجعة التقارير الشهرية.</p>
+              <span class="project-role">الدور: Account Management</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>المهارات</h2>
+        </div>
+
+        <div class="chips reveal">
+          <span class="chip">Client Communication</span>
+          <span class="chip">Account Management</span>
+          <span class="chip">Content Planning</span>
+          <span class="chip">Campaign Coordination</span>
+          <span class="chip">Reporting</span>
+          <span class="chip">Team Management</span>
+          <span class="chip">Problem Solving</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>الأدوات</h2>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool reveal">
+            <div class="tool-icon">M</div>
+            <span>Meta Business Suite</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool-icon">C</div>
+            <span>Canva</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool-icon">N</div>
+            <span>Notion</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool-icon">S</div>
+            <span>Google Sheets</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool-icon">D</div>
+            <span>Google Drive</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool-icon">T</div>
+            <span>Trello</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>آراء العملاء</h2>
+        </div>
+
+        <div class="testimonials">
+
+          <div class="testimonial reveal">
+            <p>
+              “أحمد كان منظم جدًا في المتابعة، وكل خطوة في المحتوى كانت واضحة قبل التنفيذ.”
+            </p>
+            <strong>منة خالد — Skin Plus Clinic</strong>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              “التقارير الشهرية ساعدتنا نفهم الأداء ونقرر نركز على إيه في الشهر اللي بعده.”
+            </p>
+            <strong>كريم عادل — Casa Blanca Restaurant</strong>
+          </div>
+
+          <div class="testimonial reveal">
+            <p>
+              “أكثر شيء مميز كان سرعة التواصل وترتيب المهام بيننا وبين فريق التصميم.”
+            </p>
+            <strong>هبة سامي — Home Line Furniture</strong>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <h2>جاهز للتواصل</h2>
+            <p>
+              للتعاون أو مناقشة فرصة عمل في إدارة الحسابات والسوشيال ميديا، يمكن التواصل مباشرة عبر واتساب أو البريد الإلكتروني أو LinkedIn.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a href="https://wa.me/201001234567" target="_blank">واتساب</a>
+            <a href="mailto:ahmed.nabil.accounts@gmail.com">البريد الإلكتروني</a>
+            <a href="https://www.linkedin.com/in/ahmed-nabil-account-manager" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 أحمد نبيل — Account Manager Portfolio
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => observer.observe(element));
+  </script>
+
+</body>
+</html>
