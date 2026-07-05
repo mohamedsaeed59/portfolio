@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بورتفوليو إعلانات ممولة ونمو حسابات</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --text: #1e293b;
+      --muted: #64748b;
+      --soft: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --green: #16a34a;
+      --orange: #f97316;
+      --radius: 24px;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Tahoma", "Arial", sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--secondary);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      transition: 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 14px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 70px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.12), transparent 32%),
+        radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.18), transparent 26%),
+        linear-gradient(180deg, #ffffff, #f8fafc);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      color: var(--primary-dark);
+      border: 1px solid #bfdbfe;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.18;
+      color: var(--secondary);
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 strong {
+      color: var(--primary);
+      position: relative;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--secondary);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+    }
+
+    .ad-preview {
+      border-radius: 26px;
+      overflow: hidden;
+      background: var(--secondary);
+      min-height: 440px;
+      position: relative;
+    }
+
+    .ad-cover {
+      height: 260px;
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0.78)),
+        url("https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1000&q=80");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .play {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 22px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    }
+
+    .ad-body {
+      padding: 24px;
+      color: white;
+    }
+
+    .ad-body h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .ad-body p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .mini-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .mini-metric {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .mini-metric b {
+      display: block;
+      color: white;
+      font-size: 20px;
+    }
+
+    .mini-metric span {
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .floating-stat {
+      position: absolute;
+      right: -18px;
+      top: 64px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);
+      border-radius: 22px;
+      padding: 16px;
+      width: 170px;
+    }
+
+    .floating-stat b {
+      display: block;
+      color: var(--green);
+      font-size: 25px;
+    }
+
+    .floating-stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      color: var(--secondary);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(15,23,42,0.04);
+    }
+
+    .stat-card b {
+      display: block;
+      color: var(--secondary);
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .services {
+      background: var(--soft);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card,
+    .case-card,
+    .process-card,
+    .platform-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(15,23,42,0.04);
+      transition: 0.25s;
+    }
+
+    .service-card:hover,
+    .case-card:hover,
+    .process-card:hover,
+    .platform-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: #eff6ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3,
+    .case-card h3,
+    .process-card h3,
+    .platform-card h3 {
+      color: var(--secondary);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p,
+    .case-card p,
+    .process-card p,
+    .platform-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .platforms-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .platform-card {
+      text-align: center;
+      padding: 22px 16px;
+    }
+
+    .platform-logo {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 12px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+    }
+
+    .cases {
+      background: #ffffff;
+    }
+
+    .case-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .case-image {
+      height: 190px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .case-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.92);
+      color: var(--secondary);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .case-content {
+      padding: 24px;
+    }
+
+    .result-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    .result-item span {
+      color: var(--muted);
+    }
+
+    .result-item b {
+      color: var(--secondary);
+    }
+
+    .growth {
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.08), rgba(56,189,248,.08)),
+        #f8fafc;
+    }
+
+    .growth-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .growth-panel {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .growth-panel h3 {
+      font-size: 28px;
+      color: var(--secondary);
+      margin-bottom: 14px;
+    }
+
+    .growth-panel p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .growth-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .growth-list li {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text);
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: var(--green);
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 24px;
+      font-weight: 900;
+    }
+
+    .chart-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .chart-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
+
+    .chart-head h3 {
+      color: var(--secondary);
+    }
+
+    .chart-head span {
+      color: var(--green);
+      background: #dcfce7;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .bars {
+      display: grid;
+      gap: 16px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 60px;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .bar-track {
+      height: 13px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--primary), #38bdf8);
+      border-radius: inherit;
+      transition: 1.4s ease;
+    }
+
+    .process {
+      background: white;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: steps;
+    }
+
+    .process-card {
+      position: relative;
+    }
+
+    .process-card::before {
+      counter-increment: steps;
+      content: "0" counter(steps);
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--secondary);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .portfolio {
+      background: var(--soft);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .creative-card {
+      min-height: 430px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(15,23,42,0.05), rgba(15,23,42,0.86)),
+        url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .creative-card h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .creative-card p {
+      color: #e2e8f0;
+      max-width: 650px;
+    }
+
+    .creative-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .creative-mini {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .creative-mini img {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    .creative-mini h4 {
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+
+    .creative-mini p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      padding-bottom: 90px;
+    }
+
+    .contact-box {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(56,189,248,.22), transparent 28%),
+        linear-gradient(135deg, #0f172a, #1e3a8a);
+      border-radius: 38px;
+      padding: 46px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      max-width: 650px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--secondary);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255,255,255,.28);
+      color: white;
+      background: rgba(255,255,255,.08);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+      background: white;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 920px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        right: 16px;
+        left: 16px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .growth-grid,
+      .portfolio-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-stat {
+        right: 14px;
+        top: 20px;
+      }
+
+      .stats-grid,
+      .cards-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .platforms-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 58px;
+      }
+
+      .stats-grid,
+      .cards-grid,
+      .process-grid,
+      .platforms-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .ad-preview {
+        min-height: 390px;
+      }
+
+      .mini-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .bar-row {
+        grid-template-columns: 74px 1fr 46px;
+      }
+
+      .contact-box {
+        padding: 30px 22px;
+        border-radius: 28px;
+      }
+
+      .creative-mini {
+        align-items: flex-start;
+      }
+
+      .creative-mini img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">AG</span>
+        <span>Ad Growth</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">الخدمات</a>
+        <a href="#results">النتائج</a>
+        <a href="#growth">نمو المتابعين</a>
+        <a href="#work">الأعمال</a>
+        <a href="#contact" class="nav-cta">ابدأ حملتك</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="badge"><span></span> إدارة إعلانات ممولة ونمو حسابات</div>
+          <h1>
+            حملات إعلانية ذكية تساعد البراندات على <strong>الانتشار والبيع</strong>
+          </h1>
+          <p>
+            إدارة إعلانات ممولة على فيسبوك، إنستجرام، تيك توك وجوجل، مع خطط نمو حقيقية للحسابات، تحسين المحتوى، زيادة التفاعل، وتحويل الجمهور إلى عملاء فعليين.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">احجز استشارة مجانية</a>
+            <a href="#results" class="btn btn-outline">شاهد النتائج</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="floating-stat">
+            <b>+312%</b>
+            <span>نمو متوسط الوصول خلال 60 يوم</span>
+          </div>
+
+          <div class="ad-preview">
+            <div class="ad-cover">
+              <div class="play">▶</div>
+            </div>
+            <div class="ad-body">
+              <h3>حملة إطلاق متجر أونلاين</h3>
+              <p>
+                استراتيجية إعلانات كاملة من الوعي بالعلامة التجارية حتى رسائل واتساب وطلبات شراء مباشرة.
+              </p>
+
+              <div class="mini-metrics">
+                <div class="mini-metric">
+                  <b>1.8M</b>
+                  <span>وصول</span>
+                </div>
+                <div class="mini-metric">
+                  <b>12.4K</b>
+                  <span>تفاعل</span>
+                </div>
+                <div class="mini-metric">
+                  <b>3.6x</b>
+                  <span>عائد إنفاق</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <b data-count="86">0</b>
+            <span>حملة إعلانية مُدارة</span>
+          </div>
+          <div class="stat-card">
+            <b data-count="42">0</b>
+            <span>عميل في مجالات مختلفة</span>
+          </div>
+          <div class="stat-card">
+            <b data-count="7">0</b>
+            <span>منصات إعلانية وتسويقية</span>
+          </div>
+          <div class="stat-card">
+            <b data-count="540">0</b>
+            <span>ألف متابع حقيقي تم الوصول لهم</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">الخدمات</div>
+          <h2>حلول واضحة لنمو البراند وزيادة المبيعات</h2>
+          <p>
+            شغل منظم يبدأ من فهم المنتج والجمهور، مرورًا بإطلاق الحملات، حتى تحليل النتائج وتحسين الأداء بشكل مستمر.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="service-card reveal">
+            <div class="icon">📣</div>
+            <h3>إدارة الإعلانات الممولة</h3>
+            <p>
+              إعداد وإدارة حملات فيسبوك وإنستجرام وتيك توك وجوجل باحترافية، مع تقسيم الجمهور واختبار الإعلانات وتحسين الميزانية.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📈</div>
+            <h3>نمو الحسابات والمتابعين</h3>
+            <p>
+              خطط نمو تعتمد على محتوى مناسب، تفاعل يومي، تحسين البايو والهوية البصرية، وزيادة المتابعين المهتمين فعليًا بالخدمة.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🎯</div>
+            <h3>استراتيجية الجمهور</h3>
+            <p>
+              تحديد الشرائح المناسبة، دراسة المنافسين، بناء رسائل إعلانية مقنعة، وتجهيز Funnel بسيط يناسب هدف الحملة.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">✍️</div>
+            <h3>كتابة محتوى الإعلانات</h3>
+            <p>
+              صياغة نصوص إعلانية واضحة ومباشرة، Hooks قوية، Call To Action مناسب، ونسخ متعددة للاختبار والتحسين.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🧪</div>
+            <h3>اختبار وتحسين الأداء</h3>
+            <p>
+              متابعة CTR وCPC وCPM والرسائل والتحويلات، ثم تعديل الاستهداف والكرياتيفات للوصول لأفضل تكلفة ممكنة.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📊</div>
+            <h3>تقارير شهرية مبسطة</h3>
+            <p>
+              تقرير واضح يشرح المصروفات، النتائج، أفضل إعلان، أقل تكلفة، التوصيات، وخطة الشهر القادم بدون تعقيد.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">المنصات</div>
+          <h2>إدارة حملات متعددة حسب طبيعة كل بيزنس</h2>
+        </div>
+
+        <div class="platforms-row reveal">
+          <div class="platform-card">
+            <div class="platform-logo">Meta</div>
+            <h3>Meta Ads</h3>
+            <p>فيسبوك وإنستجرام</p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-logo">Tik</div>
+            <h3>TikTok Ads</h3>
+            <p>انتشار ومحتوى سريع</p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-logo">G</div>
+            <h3>Google Ads</h3>
+            <p>بحث وزيارات وتحويل</p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-logo">IG</div>
+            <h3>Instagram</h3>
+            <p>نمو حسابات وتفاعل</p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-logo">WA</div>
+            <h3>WhatsApp</h3>
+            <p>رسائل وطلبات مباشرة</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cases" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">نتائج مختارة</div>
+          <h2>أمثلة من حملات حققت نمو واضح</h2>
+          <p>
+            النتائج تختلف حسب قوة العرض، الميزانية، المجال، جودة الصفحة، وسرعة الرد على العملاء، لكن الأساس دائمًا هو القياس والتحسين.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="case-card reveal">
+            <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80')">
+              <span class="case-tag">متجر أونلاين</span>
+            </div>
+            <div class="case-content">
+              <h3>حملة رسائل وطلبات شراء</h3>
+              <p>
+                إطلاق حملة Meta Ads لمتجر منتجات يومية مع تحسين الرسائل وتقليل تكلفة المحادثة.
+              </p>
+              <div class="result-list">
+                <div class="result-item"><span>مدة الحملة</span><b>30 يوم</b></div>
+                <div class="result-item"><span>الرسائل</span><b>+2,430</b></div>
+                <div class="result-item"><span>انخفاض تكلفة الرسالة</span><b>41%</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card reveal">
+            <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=900&q=80')">
+              <span class="case-tag">خدمات رقمية</span>
+            </div>
+            <div class="case-content">
+              <h3>حملة Leads لخدمة B2B</h3>
+              <p>
+                بناء Funnel بسيط يبدأ بإعلان تعريفي وينتهي بنموذج تواصل لعملاء مهتمين بالخدمة.
+              </p>
+              <div class="result-list">
+                <div class="result-item"><span>Leads مؤهلة</span><b>318</b></div>
+                <div class="result-item"><span>متوسط تكلفة العميل</span><b>18.7 ج</b></div>
+                <div class="result-item"><span>نسبة التحويل</span><b>12.6%</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card reveal">
+            <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')">
+              <span class="case-tag">نمو حساب</span>
+            </div>
+            <div class="case-content">
+              <h3>نمو حساب إنستجرام</h3>
+              <p>
+                تحسين شكل الحساب، تنظيم المحتوى، تشغيل Boosting ذكي، وزيادة التفاعل على المنشورات الأساسية.
+              </p>
+              <div class="result-list">
+                <div class="result-item"><span>متابعين جدد</span><b>+18,900</b></div>
+                <div class="result-item"><span>زيادة الوصول</span><b>+287%</b></div>
+                <div class="result-item"><span>مدة التنفيذ</span><b>60 يوم</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="growth" id="growth">
+      <div class="container growth-grid">
+        <div class="growth-panel reveal">
+          <div class="eyebrow">نمو المتابعين</div>
+          <h3>متابعين مهتمين، مش مجرد أرقام</h3>
+          <p>
+            النمو الحقيقي يبدأ من حساب واضح، محتوى مفهوم، استهداف صحيح، وتفاعل مستمر مع الجمهور المناسب.
+          </p>
+
+          <ul class="growth-list">
+            <li><span class="check">✓</span> تحسين البايو والهايلايتس وطريقة عرض الخدمة.</li>
+            <li><span class="check">✓</span> اقتراح أفكار Reels ومنشورات مناسبة للجمهور.</li>
+            <li><span class="check">✓</span> تشغيل حملات نمو على جمهور مهتم بنفس المجال.</li>
+            <li><span class="check">✓</span> متابعة معدل التفاعل وحفظ المنشورات والزيارات.</li>
+          </ul>
+        </div>
+
+        <div class="chart-card reveal">
+          <div class="chart-head">
+            <h3>مؤشرات نمو آخر حملة</h3>
+            <span>أداء مرتفع</span>
+          </div>
+
+          <div class="bars">
+            <div class="bar-row">
+              <span>الوصول</span>
+              <div class="bar-track"><div class="bar-fill" data-width="92%"></div></div>
+              <b>92%</b>
+            </div>
+            <div class="bar-row">
+              <span>التفاعل</span>
+              <div class="bar-track"><div class="bar-fill" data-width="76%"></div></div>
+              <b>76%</b>
+            </div>
+            <div class="bar-row">
+              <span>الزيارات</span>
+              <div class="bar-track"><div class="bar-fill" data-width="68%"></div></div>
+              <b>68%</b>
+            </div>
+            <div class="bar-row">
+              <span>المتابعة</span>
+              <div class="bar-track"><div class="bar-fill" data-width="84%"></div></div>
+              <b>84%</b>
+            </div>
+            <div class="bar-row">
+              <span>الرسائل</span>
+              <div class="bar-track"><div class="bar-fill" data-width="71%"></div></div>
+              <b>71%</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">طريقة العمل</div>
+          <h2>خطوات واضحة من أول يوم</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal">
+            <h3>تحليل سريع</h3>
+            <p>
+              مراجعة الحساب، المنتج، الجمهور، المنافسين، ونقاط القوة قبل صرف أي ميزانية.
+            </p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>خطة الحملة</h3>
+            <p>
+              تحديد الهدف، المنصة، الميزانية، الرسالة الإعلانية، والجمهور المناسب.
+            </p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>إطلاق وتجربة</h3>
+            <p>
+              تشغيل أكثر من نسخة إعلانية لاختبار الصور، النصوص، الاستهداف، والعروض.
+            </p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>تحسين وتقرير</h3>
+            <p>
+              متابعة يومية، إيقاف الضعيف، تقوية الأفضل، وتسليم تقرير واضح بالنتائج.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">نماذج العمل</div>
+          <h2>إعلانات، محتوى، وحسابات تم تحسينها للنمو</h2>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="creative-card reveal">
+            <div>
+              <h3>Creative Direction لحملات البيع</h3>
+              <p>
+                تجهيز أفكار إعلانات مرئية، نصوص قصيرة، زوايا بيع مختلفة، وتجربة أكثر من Hook للوصول لأفضل أداء بأقل تكلفة.
+              </p>
+            </div>
+          </div>
+
+          <div class="creative-side">
+            <div class="creative-mini reveal">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80" alt="Advertising meeting">
+              <div>
+                <h4>تقارير أداء مبسطة</h4>
+                <p>أرقام واضحة وتوصيات مباشرة تساعد صاحب البيزنس يفهم أين تُصرف الميزانية.</p>
+              </div>
+            </div>
+
+            <div class="creative-mini reveal">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" alt="Marketing team">
+              <div>
+                <h4>تحسين الحسابات</h4>
+                <p>تنظيم الواجهة، كتابة Bio واضح، ترتيب Highlights، وتحسين أول انطباع للعميل.</p>
+              </div>
+            </div>
+
+            <div class="creative-mini reveal">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=400&q=80" alt="Campaign planning">
+              <div>
+                <h4>خطط محتوى شهرية</h4>
+                <p>أفكار منشورات وريلز تساعد على زيادة الوعي، التفاعل، والثقة في البراند.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div>
+            <h2>جاهز تبدأ حملة تحقق نتيجة واضحة؟</h2>
+            <p>
+              ابعت تفاصيل مشروعك، المجال، الهدف، والميزانية المتاحة، وسيتم تجهيز تصور مبدئي للحملة وخطوات التنفيذ المناسبة.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-white" href="https://wa.me/201000000000" target="_blank">تواصل واتساب</a>
+            <a class="btn btn-ghost" href="mailto:hello@adgrowth.com">hello@adgrowth.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Ad Growth — Paid Ads & Social Growth</span>
+      <span>Meta Ads · TikTok Ads · Google Ads · Instagram Growth</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.textContent = navLinks.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const bars = document.querySelectorAll(".bar-fill");
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+
+          if (entry.target.querySelectorAll) {
+            entry.target.querySelectorAll(".bar-fill").forEach(bar => {
+              bar.style.width = bar.dataset.width;
+            });
+          }
+        }
+      });
+    }, {
+      threshold: 0.18
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersStarted) {
+          countersStarted = true;
+          startCounters();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const statsGrid = document.querySelector(".stats-grid");
+    if (statsGrid) counterObserver.observe(statsGrid);
+
+    function startCounters() {
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count);
+        const duration = 1400;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+
+          if (target >= 100) {
+            counter.textContent = value + "+";
+          } else {
+            counter.textContent = value + "+";
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target + "+";
+          }
+        }
+
+        requestAnimationFrame(update);
+      });
+    }
+
+    const chartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bars.forEach(bar => {
+            bar.style.width = bar.dataset.width;
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const chartCard = document.querySelector(".chart-card");
+    if (chartCard) chartObserver.observe(chartCard);
+  </script>
+
+</body>
+</html>
