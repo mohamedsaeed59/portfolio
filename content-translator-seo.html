@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Writer, Translator & SEO Portfolio</title>
+
+  <style>
+    :root {
+      --primary: #7c3aed;
+      --primary-dark: #5b21b6;
+      --accent: #06b6d4;
+      --dark: #111827;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --light: #f9fafb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --green: #16a34a;
+      --orange: #f97316;
+      --radius: 24px;
+      --shadow: 0 20px 55px rgba(17, 24, 39, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Tahoma", "Arial", sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 14px 32px rgba(124, 58, 237, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--dark);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 999px;
+      transition: 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--dark);
+    }
+
+    .hero {
+      padding: 88px 0 72px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(124, 58, 237, 0.12), transparent 34%),
+        radial-gradient(circle at 85% 10%, rgba(6, 182, 212, 0.16), transparent 30%),
+        linear-gradient(180deg, #ffffff, #f9fafb);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5f3ff;
+      color: var(--primary-dark);
+      border: 1px solid #ddd6fe;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.2;
+      color: var(--dark);
+      letter-spacing: -1.4px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 strong {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 15px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 18px 38px rgba(124, 58, 237, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--dark);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .floating-note {
+      position: absolute;
+      top: 42px;
+      right: -20px;
+      width: 178px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 15px;
+      box-shadow: 0 20px 45px rgba(17, 24, 39, 0.14);
+      z-index: 3;
+    }
+
+    .floating-note b {
+      display: block;
+      color: var(--green);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .floating-note span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .writer-preview {
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--dark);
+      min-height: 440px;
+      position: relative;
+    }
+
+    .writer-cover {
+      height: 250px;
+      background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.04), rgba(17, 24, 39, 0.78)),
+        url("https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .file-chip {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      background: white;
+      color: var(--dark);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+    }
+
+    .writer-body {
+      padding: 24px;
+      color: white;
+    }
+
+    .writer-body h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .writer-body p {
+      color: #d1d5db;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .mini-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .mini-card b {
+      display: block;
+      font-size: 20px;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .mini-card span {
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      color: var(--dark);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(17, 24, 39, 0.04);
+    }
+
+    .stat-card b {
+      display: block;
+      color: var(--dark);
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .services {
+      background: var(--light);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card,
+    .case-card,
+    .process-card,
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(17, 24, 39, 0.04);
+      transition: 0.25s;
+    }
+
+    .service-card:hover,
+    .case-card:hover,
+    .process-card:hover,
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: #f5f3ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3,
+    .case-card h3,
+    .process-card h3,
+    .skill-card h3 {
+      color: var(--dark);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p,
+    .case-card p,
+    .process-card p,
+    .skill-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tools-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    .tool-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px 14px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.04);
+    }
+
+    .tool-logo {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 12px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .tool-card h3 {
+      color: var(--dark);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .tool-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .cases {
+      background: white;
+    }
+
+    .case-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .case-img {
+      height: 190px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .case-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.92);
+      color: var(--dark);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .case-content {
+      padding: 24px;
+    }
+
+    .result-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    .result-item span {
+      color: var(--muted);
+    }
+
+    .result-item b {
+      color: var(--dark);
+    }
+
+    .seo-section {
+      background:
+        linear-gradient(135deg, rgba(124, 58, 237, 0.07), rgba(6, 182, 212, 0.08)),
+        #f9fafb;
+    }
+
+    .seo-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .seo-panel,
+    .chart-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .seo-panel h3 {
+      color: var(--dark);
+      font-size: 28px;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .seo-panel p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      list-style: none;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: var(--green);
+      display: inline-grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 24px;
+    }
+
+    .chart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .chart-head h3 {
+      color: var(--dark);
+    }
+
+    .chart-head span {
+      background: #dcfce7;
+      color: var(--green);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .bars {
+      display: grid;
+      gap: 16px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 58px;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .bar-row span {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .bar-row b {
+      color: var(--dark);
+      text-align: left;
+    }
+
+    .bar-track {
+      height: 13px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: 1.3s ease;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: steps;
+    }
+
+    .process-card::before {
+      counter-increment: steps;
+      content: "0" counter(steps);
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--dark);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .samples {
+      background: var(--light);
+    }
+
+    .samples-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .main-sample {
+      min-height: 430px;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.05), rgba(17, 24, 39, 0.86)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      padding: 28px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: var(--shadow);
+    }
+
+    .main-sample h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .main-sample p {
+      color: #e5e7eb;
+      max-width: 680px;
+    }
+
+    .side-samples {
+      display: grid;
+      gap: 18px;
+    }
+
+    .mini-sample {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.04);
+    }
+
+    .mini-sample img {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    .mini-sample h4 {
+      color: var(--dark);
+      margin-bottom: 4px;
+      font-size: 17px;
+    }
+
+    .mini-sample p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      padding-bottom: 90px;
+    }
+
+    .contact-box {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, .25), transparent 28%),
+        linear-gradient(135deg, #111827, #4c1d95);
+      border-radius: 38px;
+      padding: 46px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #d1d5db;
+      max-width: 650px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--dark);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255,255,255,.28);
+      color: white;
+      background: rgba(255,255,255,.08);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,.14);
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      background: white;
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 950px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        right: 16px;
+        left: 16px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-grid,
+      .seo-grid,
+      .samples-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid,
+      .cards-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tools-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .floating-note {
+        right: 14px;
+        top: 20px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 56px;
+      }
+
+      .stats-grid,
+      .cards-grid,
+      .process-grid,
+      .tools-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .writer-preview {
+        min-height: 390px;
+      }
+
+      .bar-row {
+        grid-template-columns: 86px 1fr 42px;
+      }
+
+      .contact-box {
+        padding: 30px 22px;
+        border-radius: 28px;
+      }
+
+      .mini-sample {
+        align-items: flex-start;
+      }
+
+      .mini-sample img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">CW</span>
+        <span>Content Studio</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#seo">SEO</a>
+        <a href="#workflow">طريقة العمل</a>
+        <a href="#contact" class="nav-cta">ابدأ مشروعك</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+          <div class="badge"><span></span> Content Writing · Translation · SEO</div>
+
+          <h1>
+            محتوى واضح ومترجم باحتراف يساعد علامتك على <strong>الظهور والإقناع</strong>
+          </h1>
+
+          <p>
+            كتابة محتوى عربي وإنجليزي، ترجمة تسويقية واحترافية، وتحسين صفحات ومقالات لمحركات البحث، مع أسلوب مناسب لهوية البراند والجمهور المستهدف.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">اطلب كتابة محتوى</a>
+            <a href="#work" class="btn btn-outline">شاهد نماذج الأعمال</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="floating-note">
+            <b>+142%</b>
+            <span>زيادة في الزيارات العضوية لمقالات محسنة</span>
+          </div>
+
+          <div class="writer-preview">
+            <div class="writer-cover">
+              <span class="file-chip">SEO Article Draft.docx</span>
+            </div>
+
+            <div class="writer-body">
+              <h3>مقال SEO لبراند تعليمي</h3>
+              <p>
+                مقال طويل منظم بالكلمات المفتاحية، عناوين واضحة، Meta Description، وروابط داخلية مناسبة.
+              </p>
+
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <b>1,800</b>
+                  <span>كلمة</span>
+                </div>
+                <div class="mini-card">
+                  <b>12</b>
+                  <span>عنوان فرعي</span>
+                </div>
+                <div class="mini-card">
+                  <b>94%</b>
+                  <span>SEO Score</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <b data-count="186">0</b>
+            <span>قطعة محتوى مكتوبة ومحررة</span>
+          </div>
+
+          <div class="stat-card">
+            <b data-count="72">0</b>
+            <span>مقال SEO تم تحسينه</span>
+          </div>
+
+          <div class="stat-card">
+            <b data-count="48">0</b>
+            <span>ملف ترجمة عربي وإنجليزي</span>
+          </div>
+
+          <div class="stat-card">
+            <b data-count="15">0</b>
+            <span>مجال عمل مختلف</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">الخدمات</div>
+          <h2>كتابة، ترجمة، وتحسين محتوى منظم للظهور والثقة</h2>
+          <p>
+            محتوى جاهز للنشر، مكتوب بلغة مفهومة، متوافق مع هدف الصفحة، ومناسب للجمهور سواء كان المحتوى تسويقي، تعليمي، رسمي، أو موجه لمحركات البحث.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="service-card reveal">
+            <div class="icon">✍️</div>
+            <h3>كتابة محتوى تسويقي</h3>
+            <p>
+              كتابة صفحات خدمات، نصوص إعلانية، وصف منتجات، محتوى سوشيال ميديا، ورسائل تسويقية تساعد العميل يفهم القيمة بسرعة.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🌍</div>
+            <h3>ترجمة عربية وإنجليزية</h3>
+            <p>
+              ترجمة احترافية تحافظ على المعنى والسياق والأسلوب، مع صياغة طبيعية تناسب القارئ بدل الترجمة الحرفية الجافة.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🔎</div>
+            <h3>كتابة مقالات SEO</h3>
+            <p>
+              مقالات محسنة لمحركات البحث تشمل Keyword Research، عناوين منظمة، Meta Description، أسئلة شائعة، وروابط داخلية.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🧠</div>
+            <h3>تحرير وإعادة صياغة</h3>
+            <p>
+              تحسين النصوص الضعيفة، تقليل التكرار، ترتيب الأفكار، ضبط النبرة، وتحويل الكلام العام إلى محتوى واضح ومقنع.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">📱</div>
+            <h3>محتوى السوشيال ميديا</h3>
+            <p>
+              كتابة Captions، أفكار Reels، Scripts قصيرة، محتوى تعريفي، وبوستات تبني ثقة وتشرح الخدمة بطريقة بسيطة.
+            </p>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="icon">🧾</div>
+            <h3>محتوى المواقع</h3>
+            <p>
+              كتابة Home Page، About، Services، FAQs، Landing Pages، وصف أقسام، ونصوص CTA واضحة مناسبة لتجربة المستخدم.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">الأدوات</div>
+          <h2>أدوات تساعد على كتابة أدق ونتائج أفضل</h2>
+        </div>
+
+        <div class="tools-row reveal">
+          <div class="tool-card">
+            <div class="tool-logo">SEO</div>
+            <h3>Keyword Research</h3>
+            <p>اختيار كلمات مناسبة</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-logo">GA</div>
+            <h3>Analytics</h3>
+            <p>قراءة الزيارات والأداء</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-logo">SC</div>
+            <h3>Search Console</h3>
+            <p>متابعة الظهور والنقرات</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-logo">DOC</div>
+            <h3>Google Docs</h3>
+            <p>كتابة ومراجعة منظمة</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-logo">TR</div>
+            <h3>Translation</h3>
+            <p>تعريب وترجمة احترافية</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-logo">UX</div>
+            <h3>UX Writing</h3>
+            <p>نصوص واضحة للمواقع</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cases" id="work">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">نماذج أعمال</div>
+          <h2>مشروعات محتوى تم تنفيذها بأسلوب واضح وعملي</h2>
+          <p>
+            أعمال تجمع بين الكتابة الجيدة، تنظيم الأفكار، تحسين الظهور، وترجمة المعنى بطريقة مناسبة للقارئ.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <div class="case-card reveal">
+            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80')">
+              <span class="case-tag">SEO Article</span>
+            </div>
+
+            <div class="case-content">
+              <h3>مقالات SEO لمدونة تعليمية</h3>
+              <p>
+                كتابة سلسلة مقالات تعليمية طويلة، منظمة بالكلمات المفتاحية، مع عناوين واضحة وأسئلة شائعة مناسبة للبحث.
+              </p>
+
+              <div class="result-list">
+                <div class="result-item"><span>عدد المقالات</span><b>24 مقال</b></div>
+                <div class="result-item"><span>متوسط الكلمات</span><b>1,500 كلمة</b></div>
+                <div class="result-item"><span>زيادة الزيارات</span><b>+142%</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card reveal">
+            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80')">
+              <span class="case-tag">Translation</span>
+            </div>
+
+            <div class="case-content">
+              <h3>ترجمة موقع شركة خدمات</h3>
+              <p>
+                ترجمة صفحات الموقع من العربية إلى الإنجليزية مع الحفاظ على النبرة التسويقية والوضوح في عرض الخدمات.
+              </p>
+
+              <div class="result-list">
+                <div class="result-item"><span>عدد الصفحات</span><b>11 صفحة</b></div>
+                <div class="result-item"><span>اتجاه الترجمة</span><b>AR → EN</b></div>
+                <div class="result-item"><span>نوع المحتوى</span><b>Website Copy</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card reveal">
+            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80')">
+              <span class="case-tag">Social Content</span>
+            </div>
+
+            <div class="case-content">
+              <h3>خطة محتوى سوشيال ميديا</h3>
+              <p>
+                تجهيز أفكار منشورات، Captions، Scripts قصيرة، وجدول نشر لبراند يقدم خدمات رقمية.
+              </p>
+
+              <div class="result-list">
+                <div class="result-item"><span>مدة الخطة</span><b>30 يوم</b></div>
+                <div class="result-item"><span>عدد الأفكار</span><b>45 فكرة</b></div>
+                <div class="result-item"><span>نوع المحتوى</span><b>تعليمي وبيعي</b></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="seo-section" id="seo">
+      <div class="container seo-grid">
+
+        <div class="seo-panel reveal">
+          <div class="eyebrow">SEO Content</div>
+          <h3>محتوى مكتوب للناس ومحسن لمحركات البحث</h3>
+          <p>
+            المقال أو الصفحة الناجحة لا تعتمد على تكرار الكلمات المفتاحية فقط، بل على فهم نية الباحث وتنظيم الإجابة بشكل واضح ومفيد.
+          </p>
+
+          <ul class="check-list">
+            <li><span class="check">✓</span> تحليل نية البحث واختيار زاوية كتابة مناسبة.</li>
+            <li><span class="check">✓</span> توزيع الكلمات المفتاحية بطريقة طبيعية داخل النص.</li>
+            <li><span class="check">✓</span> كتابة عناوين H1 وH2 وH3 منظمة وسهلة القراءة.</li>
+            <li><span class="check">✓</span> تجهيز Meta Title وMeta Description وFAQ عند الحاجة.</li>
+          </ul>
+        </div>
+
+        <div class="chart-card reveal">
+          <div class="chart-head">
+            <h3>مؤشرات جودة المحتوى</h3>
+            <span>جاهز للنشر</span>
+          </div>
+
+          <div class="bars">
+            <div class="bar-row">
+              <span>Clarity</span>
+              <div class="bar-track"><div class="bar-fill" data-width="95%"></div></div>
+              <b>95%</b>
+            </div>
+
+            <div class="bar-row">
+              <span>SEO</span>
+              <div class="bar-track"><div class="bar-fill" data-width="91%"></div></div>
+              <b>91%</b>
+            </div>
+
+            <div class="bar-row">
+              <span>Translation</span>
+              <div class="bar-track"><div class="bar-fill" data-width="88%"></div></div>
+              <b>88%</b>
+            </div>
+
+            <div class="bar-row">
+              <span>UX Copy</span>
+              <div class="bar-track"><div class="bar-fill" data-width="86%"></div></div>
+              <b>86%</b>
+            </div>
+
+            <div class="bar-row">
+              <span>Editing</span>
+              <div class="bar-track"><div class="bar-fill" data-width="93%"></div></div>
+              <b>93%</b>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">طريقة العمل</div>
+          <h2>خطوات واضحة من فهم الهدف حتى التسليم</h2>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card reveal">
+            <h3>فهم البراند</h3>
+            <p>
+              مراجعة الخدمة، الجمهور، المنافسين، النبرة المناسبة، والهدف المطلوب من المحتوى.
+            </p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>بحث وتنظيم</h3>
+            <p>
+              تجميع الأفكار، تحديد الكلمات المفتاحية، بناء Outline واضح، وترتيب الرسالة الأساسية.
+            </p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>كتابة ومراجعة</h3>
+            <p>
+              كتابة النص بأسلوب طبيعي، مراجعة اللغة، تحسين العناوين، وضبط الوضوح والإقناع.
+            </p>
+          </div>
+
+          <div class="process-card reveal">
+            <h3>تسليم نهائي</h3>
+            <p>
+              تسليم ملف منظم جاهز للنشر، مع ملاحظات تحسين عند الحاجة وتنسيق مناسب للاستخدام.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="samples">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">عينات المحتوى</div>
+          <h2>محتوى مناسب للمواقع، المدونات، والسوشيال ميديا</h2>
+        </div>
+
+        <div class="samples-grid">
+
+          <div class="main-sample reveal">
+            <div>
+              <h3>كتابة صفحات مواقع بطريقة تقنع وتوضح</h3>
+              <p>
+                صياغة محتوى صفحات رئيسية، خدمات، نبذة، أسئلة شائعة، وصف منتجات، ورسائل CTA تساعد الزائر يعرف الخدمة ويتخذ خطوة واضحة.
+              </p>
+            </div>
+          </div>
+
+          <div class="side-samples">
+
+            <div class="mini-sample reveal">
+              <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=400&q=80" alt="Blog writing">
+              <div>
+                <h4>Blog Articles</h4>
+                <p>مقالات منظمة بعناوين واضحة، مقدمة قوية، فقرات قصيرة، وخاتمة قابلة للتحويل.</p>
+              </div>
+            </div>
+
+            <div class="mini-sample reveal">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Website copy">
+              <div>
+                <h4>Website Copy</h4>
+                <p>محتوى صفحات يعرض الخدمة بشكل مباشر ويقود الزائر لطلب التواصل أو الشراء.</p>
+              </div>
+            </div>
+
+            <div class="mini-sample reveal">
+              <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=400&q=80" alt="Translation work">
+              <div>
+                <h4>Translation & Editing</h4>
+                <p>ترجمة طبيعية ومراجعة لغوية تعطي النص نفس المعنى بنبرة مناسبة للقارئ.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+
+          <div>
+            <h2>محتاج محتوى واضح أو ترجمة احترافية أو مقالات SEO؟</h2>
+            <p>
+              ابعت تفاصيل المشروع، نوع المحتوى، اللغة المطلوبة، والهدف من النص، وسيتم تجهيز محتوى منظم وجاهز للاستخدام.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-white" href="https://wa.me/201000000000" target="_blank">تواصل واتساب</a>
+            <a class="btn btn-ghost" href="mailto:content.studio.work@gmail.com">content.studio.work@gmail.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Content Studio Portfolio</span>
+      <span>Content Writing · Translation · SEO · UX Copy</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuBtn.textContent = navLinks.classList.contains("active") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const barFills = document.querySelectorAll(".bar-fill");
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+
+          if (entry.target.classList.contains("chart-card")) {
+            animateBars();
+          }
+        }
+      });
+    }, {
+      threshold: 0.18
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    function animateBars() {
+      barFills.forEach(bar => {
+        bar.style.width = bar.dataset.width;
+      });
+    }
+
+    const chartCard = document.querySelector(".chart-card");
+
+    if (chartCard) {
+      const chartObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateBars();
+          }
+        });
+      }, { threshold: 0.35 });
+
+      chartObserver.observe(chartCard);
+    }
+
+    const statsGrid = document.querySelector(".stats-grid");
+
+    if (statsGrid) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !countersStarted) {
+            countersStarted = true;
+            startCounters();
+          }
+        });
+      }, { threshold: 0.4 });
+
+      counterObserver.observe(statsGrid);
+    }
+
+    function startCounters() {
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count);
+        const duration = 1400;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+
+          counter.textContent = value + "+";
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target + "+";
+          }
+        }
+
+        requestAnimationFrame(update);
+      });
+    }
+  </script>
+
+</body>
+</html>
