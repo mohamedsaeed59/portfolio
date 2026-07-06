@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كريم منصور | بورتفوليو بزنس وميديا باينج</title>
+  <meta name="description" content="بورتفوليو كريم منصور في تطوير الأعمال، إدارة الحملات الإعلانية، وتحسين الأداء التسويقي للعلامات التجارية." />
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --ink:#111827; --muted:#64748b; --line:#e5e7eb;
+      --primary:#2157ff; --primary-dark:#173ec2; --accent:#ff7a1a; --soft:#eef3ff;
+      --green:#16a34a; --shadow:0 24px 70px rgba(15,23,42,.10); --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: Tahoma, Arial, sans-serif; color:var(--ink); line-height:1.8;
+      background:radial-gradient(circle at top right, rgba(33,87,255,.11), transparent 32%),
+                 radial-gradient(circle at top left, rgba(255,122,26,.10), transparent 30%), var(--bg);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px, calc(100% - 40px)); margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:rgba(247,248,251,.82);border-bottom:1px solid rgba(226,232,240,.75)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.5px}
+    .brand-mark{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:0 12px 28px rgba(33,87,255,.25)}
+    .links{display:flex;align-items:center;gap:8px;color:#334155;font-size:14px;font-weight:700}
+    .links a{padding:9px 13px;border-radius:999px;transition:.25s ease}
+    .links a:hover{background:#fff;color:var(--primary);box-shadow:0 12px 24px rgba(15,23,42,.06)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:999px;border:1px solid transparent;font-weight:900;cursor:pointer;transition:.25s ease;white-space:nowrap}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-dark));box-shadow:0 18px 36px rgba(33,87,255,.25)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(33,87,255,.32)}
+    .btn-ghost{background:#fff;border-color:var(--line);color:#1e293b}
+    .btn-ghost:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(15,23,42,.08)}
+    .hero{padding:82px 0 60px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--primary);border:1px solid #dbe5ff;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:900;box-shadow:0 12px 28px rgba(33,87,255,.08)}
+    .dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 0 6px rgba(22,163,74,.12)}
+    h1{margin:20px 0 18px;font-size:clamp(42px, 6vw, 76px);line-height:1.08;letter-spacing:-2.5px}
+    h1 span{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{margin:0 0 30px;color:#475569;font-size:18px;max-width:660px}
+    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:680px}
+    .stat{background:rgba(255,255,255,.88);border:1px solid rgba(226,232,240,.9);border-radius:22px;padding:18px;box-shadow:0 18px 40px rgba(15,23,42,.06)}
+    .stat strong{display:block;font-size:27px;letter-spacing:-.8px;color:#0f172a;line-height:1.2}
+    .stat small{color:var(--muted);font-weight:700}
+    .visual{position:relative;min-height:560px}
+    .dashboard-card{position:absolute;inset:24px 0 auto auto;width:min(485px,100%);background:rgba(255,255,255,.92);border:1px solid rgba(226,232,240,.92);border-radius:34px;padding:20px;box-shadow:var(--shadow);overflow:hidden}
+    .dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:14px}
+    .avatar{width:58px;height:58px;border-radius:20px;background:linear-gradient(135deg,#111827,#334155);color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px}
+    .dash-title b{display:block;font-size:18px}.dash-title span{color:var(--muted);font-size:13px;font-weight:700}
+    .pill{background:#ecfdf5;color:#15803d;border:1px solid #bbf7d0;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:900}
+    .chart{height:205px;border-radius:26px;background:linear-gradient(180deg, rgba(33,87,255,.08), transparent),repeating-linear-gradient(to top, #edf2f7 0 1px, transparent 1px 41px);padding:22px 20px 16px;display:flex;align-items:end;gap:12px;margin-bottom:16px}
+    .bar{flex:1;border-radius:999px 999px 8px 8px;background:linear-gradient(180deg,var(--primary),#8da6ff);min-height:36px;animation:grow 1.3s ease both}
+    .bar:nth-child(2){height:56%;animation-delay:.05s}.bar:nth-child(3){height:74%;animation-delay:.1s}.bar:nth-child(4){height:48%;animation-delay:.15s;background:linear-gradient(180deg,var(--accent),#ffc18e)}.bar:nth-child(5){height:88%;animation-delay:.2s}.bar:nth-child(6){height:63%;animation-delay:.25s}.bar:nth-child(7){height:95%;animation-delay:.3s;background:linear-gradient(180deg,var(--accent),#ffc18e)}
+    @keyframes grow{from{height:10%;opacity:.35}to{opacity:1}}
+    .metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .metric{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:14px}
+    .metric span{display:block;color:var(--muted);font-size:12px;font-weight:800}.metric b{font-size:22px;letter-spacing:-.4px}
+    .floating-card{position:absolute;left:0;bottom:34px;width:285px;background:#111827;color:#fff;padding:18px;border-radius:28px;box-shadow:0 28px 70px rgba(15,23,42,.28)}
+    .floating-card p{margin:0;color:#cbd5e1;font-size:13px}.floating-card strong{display:block;font-size:26px;margin:5px 0 8px}
+    .mini-row{display:flex;gap:8px;margin-top:14px}.mini{height:8px;border-radius:999px;background:rgba(255,255,255,.2);flex:1;overflow:hidden}.mini:before{content:"";display:block;height:100%;width:72%;background:linear-gradient(90deg,var(--accent),#fff);border-radius:999px}
+    section{padding:70px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:30px}
+    .section-head h2{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-1.5px;line-height:1.15}
+    .section-head p{margin:0;color:var(--muted);max-width:580px;font-weight:700}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:rgba(255,255,255,.92);border:1px solid rgba(226,232,240,.9);border-radius:var(--radius);padding:24px;box-shadow:0 18px 45px rgba(15,23,42,.06);transition:.25s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(15,23,42,.10)}
+    .icon{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;background:var(--soft);color:var(--primary);font-size:24px;margin-bottom:16px}
+    .card h3{margin:0 0 10px;font-size:21px;letter-spacing:-.3px}.card p{margin:0;color:var(--muted);font-weight:700}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+    .profile{background:linear-gradient(145deg,#0f172a,#1e293b);color:#fff;border-radius:34px;padding:30px;min-height:420px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .profile:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(33,87,255,.34);left:-80px;top:-70px;filter:blur(4px)}
+    .profile:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,122,26,.28);right:-70px;bottom:-70px;filter:blur(4px)}
+    .profile>*{position:relative;z-index:1}.profile h2{font-size:42px;line-height:1.15;margin:0 0 18px}.profile p{color:#dbe4f0;margin:0 0 24px;font-weight:700}
+    .tags{display:flex;flex-wrap:wrap;gap:10px}.tag{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:13px;font-weight:900;color:#fff}
+    .timeline{display:grid;gap:16px}.job{background:#fff;border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 18px 38px rgba(15,23,42,.05)}
+    .job-top{display:flex;justify-content:space-between;gap:18px;align-items:start;margin-bottom:10px}.job h3{margin:0;font-size:22px}.job .date{color:var(--primary);background:var(--soft);padding:6px 11px;border-radius:999px;font-size:12px;font-weight:900;white-space:nowrap}.job p{margin:0;color:var(--muted);font-weight:700}
+    .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.case{background:#fff;border:1px solid var(--line);border-radius:34px;overflow:hidden;box-shadow:0 20px 55px rgba(15,23,42,.08)}
+    .case-cover{min-height:250px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,rgba(33,87,255,.92),rgba(15,23,42,.92));color:#fff;position:relative;overflow:hidden}
+    .case:nth-child(2) .case-cover{background:linear-gradient(135deg,rgba(255,122,26,.94),rgba(17,24,39,.92))}.case:nth-child(3) .case-cover{background:linear-gradient(135deg,rgba(20,184,166,.92),rgba(15,23,42,.92))}.case:nth-child(4) .case-cover{background:linear-gradient(135deg,rgba(124,58,237,.92),rgba(15,23,42,.92))}
+    .case-cover:after{content:"";position:absolute;inset:auto -60px -80px auto;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.14)}
+    .case-cover small{position:relative;z-index:1;display:inline-flex;width:max-content;padding:7px 12px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.18);border-radius:999px;font-weight:900}
+    .case-cover strong{position:relative;z-index:1;font-size:34px;max-width:360px;line-height:1.2;letter-spacing:-1px}
+    .case-body{padding:24px}.case-body h3{margin:0 0 10px;font-size:23px}.case-body p{margin:0 0 18px;color:var(--muted);font-weight:700}
+    .results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.result{padding:13px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px}.result b{display:block;font-size:20px;color:#0f172a}.result span{display:block;font-size:12px;color:var(--muted);font-weight:900}
+    .work-gallery{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:18px}.mock{min-height:310px;border-radius:32px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(15,23,42,.07);position:relative}.mock.large{grid-row:span 2;min-height:640px}
+    .mock-screen{position:absolute;inset:18px;border-radius:24px;background:#f8fafc;border:1px solid #e2e8f0;overflow:hidden;display:flex;flex-direction:column}.mock-header{height:58px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;padding:0 16px}.circle{width:10px;height:10px;border-radius:50%;background:#cbd5e1}.mock-content{padding:18px;display:grid;gap:14px;flex:1}.post{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:14px}.post-media{height:150px;border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--accent));margin-bottom:12px;display:grid;place-items:center;color:#fff;font-size:34px;font-weight:900}.post-line{height:10px;border-radius:999px;background:#e2e8f0;margin:8px 0}.post-line.short{width:60%}
+    .ad-board{background:#0f172a;color:#fff;min-height:100%;padding:22px;display:flex;flex-direction:column;justify-content:space-between}.ad-board h3{font-size:30px;line-height:1.2;margin:0}.ad-board .num{font-size:56px;font-weight:900;letter-spacing:-2px}.ad-board p{color:#cbd5e1;margin:0}
+    .contact{background:linear-gradient(135deg,#101827,#1e293b);color:#fff;border-radius:42px;padding:44px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr .9fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+    .contact:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(33,87,255,.23);top:-120px;left:-90px}.contact>*{position:relative;z-index:1}.contact h2{font-size:44px;line-height:1.15;margin:0 0 12px}.contact p{color:#cbd5e1;margin:0;font-weight:700}.contact-list{display:grid;gap:12px}.contact-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:16px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center;font-weight:900}
+    footer{padding:28px 0 46px;color:var(--muted);text-align:center;font-weight:800}
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.active{opacity:1;transform:translateY(0)}
+    @media (max-width:980px){.links{display:none}.hero-grid,.about-grid,.contact{grid-template-columns:1fr}.visual{min-height:610px}.dashboard-card{right:0}.cards{grid-template-columns:1fr 1fr}.case-grid{grid-template-columns:1fr}.work-gallery{grid-template-columns:1fr}.mock.large{grid-row:auto;min-height:520px}}
+    @media (max-width:620px){.container{width:min(100% - 28px,1180px)}.nav{height:68px}.brand span{font-size:14px}.hero{padding:48px 0 40px}.hero-stats,.cards,.results{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}.visual{min-height:560px}.floating-card{width:250px;bottom:0}.dashboard-card{padding:14px}.metric-grid{grid-template-columns:1fr}.contact{padding:28px;border-radius:30px}.contact h2{font-size:32px}.job-top{display:block}.job .date{display:inline-flex;margin-top:10px}h1{letter-spacing:-1px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="brand-mark">KM</span><span>كريم منصور</span></a>
+      <nav class="links">
+        <a href="#about">نبذة</a><a href="#services">الخدمات</a><a href="#experience">الخبرات</a><a href="#cases">دراسات الحالة</a><a href="#work">الأعمال</a><a href="#contact">تواصل</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">ابدأ التعاون</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="dot"></span> Business Growth & Media Buying</div>
+          <h1>أحوّل الإعلانات إلى <span>نمو واضح</span> وقرارات بزنس قابلة للقياس.</h1>
+          <p class="lead">متخصص في تطوير الأعمال وإدارة الحملات الإعلانية المدفوعة، أعمل على بناء مسار تسويقي كامل يبدأ من فهم السوق والجمهور، وينتهي بأرقام مبيعات ورسائل عملاء ونتائج قابلة للتطوير.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#cases">استعراض النتائج</a><a class="btn btn-ghost" href="#work">مشاهدة الأعمال</a></div>
+          <div class="hero-stats"><div class="stat"><strong>+4.8M</strong><small>وصول للحملات</small></div><div class="stat"><strong>31%</strong><small>تحسن متوسط تكلفة الرسالة</small></div><div class="stat"><strong>18+</strong><small>علامة تجارية</small></div></div>
+        </div>
+        <div class="visual reveal">
+          <div class="dashboard-card">
+            <div class="dash-head"><div style="display:flex;align-items:center;gap:12px"><div class="avatar">ك</div><div class="dash-title"><b>لوحة أداء الحملات</b><span>Meta Ads / Google Ads / Sales Funnel</span></div></div><span class="pill">نشط</span></div>
+            <div class="chart"><span class="bar" style="height:42%"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <div class="metric-grid"><div class="metric"><span>متوسط تكلفة الرسالة</span><b>8.70 ج</b></div><div class="metric"><span>نسبة التحويل</span><b>14.6%</b></div><div class="metric"><span>الرسائل المؤهلة</span><b>1,240</b></div><div class="metric"><span>تحسن الأداء</span><b>+37%</b></div></div>
+          </div>
+          <div class="floating-card"><p>أفضل نتيجة خلال آخر ربع</p><strong>ROAS 5.2x</strong><p>بعد إعادة بناء الجمهور، تحسين الرسائل الإعلانية، وفصل الحملات حسب نية الشراء.</p><div class="mini-row"><span class="mini"></span><span class="mini"></span><span class="mini"></span></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="services"><div class="container"><div class="section-head reveal"><h2>ما أقدمه للعلامات التجارية</h2><p>خدمات مبنية على الربط بين رؤية البزنس، سلوك العميل، وتنفيذ الحملات الرقمية بأهداف واضحة.</p></div><div class="cards">
+      <article class="card reveal"><div class="icon">📈</div><h3>استراتيجية نمو</h3><p>تحليل السوق، تحديد الجمهور، بناء عروض بيع واضحة، ووضع خطة نمو شهرية قابلة للقياس.</p></article>
+      <article class="card reveal"><div class="icon">🎯</div><h3>Media Buying</h3><p>إدارة حملات Meta وGoogle بداية من هيكلة الحساب وحتى الاختبار، التحسين، وتوسيع الميزانية.</p></article>
+      <article class="card reveal"><div class="icon">🧠</div><h3>تحليل الأداء</h3><p>قراءة الأرقام، اكتشاف أسباب الهدر، وتحويل التقارير إلى قرارات عملية لتحسين النتائج.</p></article>
+      <article class="card reveal"><div class="icon">✍️</div><h3>رسائل إعلانية</h3><p>كتابة زوايا إعلانية مبنية على الألم، الرغبة، الاعتراضات، ونقاط تميّز المنتج أو الخدمة.</p></article>
+      <article class="card reveal"><div class="icon">🛒</div><h3>مسار مبيعات</h3><p>تنظيم رحلة العميل من الإعلان إلى الرسالة أو الطلب، مع تحسين صفحات الهبوط وطرق التواصل.</p></article>
+      <article class="card reveal"><div class="icon">🤝</div><h3>تطوير شراكات</h3><p>بناء فرص تعاون، عروض للشركاء، وآليات متابعة تساعد على تحويل العلاقات إلى مبيعات مستمرة.</p></article>
+    </div></div></section>
+    <section id="about"><div class="container about-grid"><div class="profile reveal"><h2>ملف مهني يجمع بين التفكير التجاري والتنفيذ الإعلاني.</h2><p>أعمل مع الشركات والمتاجر والخدمات المحلية على تحويل أهداف البيع إلى حملات منظمة، مع متابعة يومية للأرقام وتطوير مستمر في الرسائل والجمهور والعروض.</p><div class="tags"><span class="tag">Meta Ads</span><span class="tag">Google Ads</span><span class="tag">Sales Funnel</span><span class="tag">Business Development</span><span class="tag">Lead Generation</span><span class="tag">Reporting</span><span class="tag">CRM Follow-up</span></div></div>
+    <div class="timeline" id="experience">
+      <article class="job reveal"><div class="job-top"><div><h3>Business & Media Buying Specialist</h3><p>Growth Partners</p></div><span class="date">2024 - الآن</span></div><p>إدارة حملات توليد العملاء المحتملين للقطاعات الخدمية، بناء عروض تسويقية، وتحسين تكلفة الرسالة من خلال اختبار الجمهور والكرياتيف والنسخ الإعلانية.</p></article>
+      <article class="job reveal"><div class="job-top"><div><h3>Performance Marketing Executive</h3><p>Market House Agency</p></div><span class="date">2023 - 2024</span></div><p>تنفيذ حملات مبيعات ورسائل على Meta، متابعة الأداء اليومي، إعداد تقارير أسبوعية، وتحسين هيكل الحملات حسب المرحلة الشرائية لكل جمهور.</p></article>
+      <article class="job reveal"><div class="job-top"><div><h3>Business Development Coordinator</h3><p>Retail & Services Accounts</p></div><span class="date">2022 - 2023</span></div><p>إدارة علاقات العملاء، متابعة الفرص البيعية، تجهيز عروض تجارية، وتحسين طريقة التواصل بين فرق التسويق والمبيعات.</p></article>
+    </div></div></section>
+    <section id="cases"><div class="container"><div class="section-head reveal"><h2>دراسات حالة مختارة</h2><p>نماذج من حملات تم بناؤها على هدف واضح، اختبار سريع، وتحسين مستمر بناءً على بيانات الأداء.</p></div><div class="case-grid">
+      <article class="case reveal"><div class="case-cover"><small>Lead Generation</small><strong>حملة رسائل لخدمة B2B</strong></div><div class="case-body"><h3>توليد عملاء محتملين لشركة خدمات</h3><p>تم تقسيم الجمهور إلى شرائح حسب حجم النشاط، مع كتابة رسائل مختلفة لكل شريحة وربط الحملة بمتابعة مبيعات منظمة.</p><div class="results"><div class="result"><b>1,240</b><span>رسالة مؤهلة</span></div><div class="result"><b>8.70 ج</b><span>تكلفة الرسالة</span></div><div class="result"><b>+42%</b><span>تحسن التحويل</span></div></div></div></article>
+      <article class="case reveal"><div class="case-cover"><small>E-Commerce</small><strong>إطلاق منتج لمتجر إلكتروني</strong></div><div class="case-body"><h3>زيادة مبيعات منتج موسمي</h3><p>تم بناء حملة على مراحل: Awareness ثم Engagement ثم Conversion، مع اختبار 6 زوايا إعلانية وتحسين صفحة المنتج.</p><div class="results"><div class="result"><b>5.2x</b><span>ROAS</span></div><div class="result"><b>36%</b><span>انخفاض CPA</span></div><div class="result"><b>+78%</b><span>زيادة الطلبات</span></div></div></div></article>
+      <article class="case reveal"><div class="case-cover"><small>Local Business</small><strong>حجوزات لعيادة متخصصة</strong></div><div class="case-body"><h3>حملة حجوزات عبر واتساب</h3><p>تم تحسين الرسائل الإعلانية لتوضيح الخدمة والنتيجة، مع إعادة استهداف المهتمين وتقليل الجمهور غير المناسب.</p><div class="results"><div class="result"><b>620</b><span>محادثة</span></div><div class="result"><b>19%</b><span>نسبة حجز</span></div><div class="result"><b>11.30 ج</b><span>تكلفة المحادثة</span></div></div></div></article>
+      <article class="case reveal"><div class="case-cover"><small>Business Growth</small><strong>إعادة بناء عرض تجاري</strong></div><div class="case-body"><h3>تحسين عرض خدمة شهرية</h3><p>تمت إعادة صياغة الباقات، توضيح نقاط القيمة، وبناء مسار متابعة يساعد فريق المبيعات على إغلاق العملاء بشكل أسرع.</p><div class="results"><div class="result"><b>+31%</b><span>معدل الإغلاق</span></div><div class="result"><b>12 يوم</b><span>دورة بيع أقل</span></div><div class="result"><b>+2.4x</b><span>قيمة العميل</span></div></div></div></article>
+    </div></div></section>
+    <section id="work"><div class="container"><div class="section-head reveal"><h2>لقطات من أسلوب العمل</h2><p>دمج بين التخطيط، الكرياتيف، الأرقام، والمتابعة التجارية لضمان أن كل حملة تخدم هدفًا واضحًا.</p></div><div class="work-gallery">
+      <article class="mock large reveal"><div class="mock-screen"><div class="mock-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span></div><div class="mock-content"><div class="post"><div class="post-media">Campaign Plan</div><div class="post-line"></div><div class="post-line short"></div></div><div class="post"><div class="post-media" style="background:linear-gradient(135deg,#0f172a,#2157ff)">Audience Test</div><div class="post-line"></div><div class="post-line short"></div></div><div class="post"><div class="post-media" style="background:linear-gradient(135deg,#ff7a1a,#111827)">Sales Angle</div><div class="post-line"></div><div class="post-line short"></div></div></div></div></article>
+      <article class="mock reveal"><div class="ad-board"><div><p>Monthly Report</p><h3>تحليل أداء إعلاني مبني على قرارات تنفيذية</h3></div><div><div class="num">37%</div><p>تحسن في جودة العملاء المحتملين بعد تغيير الرسالة والجمهور.</p></div></div></article>
+      <article class="mock reveal"><div class="mock-screen"><div class="mock-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span></div><div class="mock-content"><div class="post"><div class="post-media" style="height:125px;background:linear-gradient(135deg,#14b8a6,#0f172a)">Landing Page</div><div class="post-line"></div><div class="post-line short"></div></div></div></div></article>
+      <article class="mock reveal"><div class="mock-screen"><div class="mock-header"><span class="circle"></span><span class="circle"></span><span class="circle"></span></div><div class="mock-content"><div class="post"><div class="post-media" style="height:125px;background:linear-gradient(135deg,#7c3aed,#ff7a1a)">CRM Flow</div><div class="post-line"></div><div class="post-line short"></div></div></div></div></article>
+      <article class="mock reveal"><div class="ad-board" style="background:linear-gradient(135deg,#fff,#eef3ff);color:#111827"><div><p style="color:#64748b">Business Offer</p><h3>تطوير العرض التجاري بناءً على احتياج العميل الحقيقي</h3></div><div><div class="num" style="font-size:44px">3 Offers</div><p style="color:#64748b">باقة دخول، باقة نمو، وباقة أداء للشركات الجاهزة للتوسع.</p></div></div></article>
+    </div></div></section>
+    <section id="contact"><div class="container"><div class="contact reveal"><div><h2>جاهز لتحويل الميزانية الإعلانية إلى نمو فعلي؟</h2><p>التعاون يبدأ بتحليل سريع للوضع الحالي، مراجعة الأهداف، ثم وضع خطة تنفيذية للحملات ومسار المتابعة.</p></div><div class="contact-list">
+      <a class="contact-item" href="mailto:kareem.mansour.growth@gmail.com"><span>البريد الإلكتروني</span><span>kareem.mansour.growth@gmail.com</span></a>
+      <a class="contact-item" href="tel:+201002345678"><span>الهاتف</span><span>+20 100 234 5678</span></a>
+      <a class="contact-item" href="https://wa.me/201002345678" target="_blank" rel="noreferrer"><span>واتساب</span><span>مناقشة مشروع جديد</span></a>
+      <a class="contact-item" href="https://www.linkedin.com/in/kareem-mansour-growth" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>kareem-mansour-growth</span></a>
+    </div></div></div></section>
+  </main>
+  <footer><div class="container">© 2026 كريم منصور — Business Growth & Media Buying Portfolio</div></footer>
+  <script>
+    const observer = new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('active')}})}, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach((el)=>observer.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach((link)=>{link.addEventListener('click',(event)=>{const target=document.querySelector(link.getAttribute('href'));if(target){event.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+  </script>
+</body>
+</html>
