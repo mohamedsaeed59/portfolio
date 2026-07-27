@@ -1,0 +1,3630 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>أفق للدعاية الخارجية | Outdoor Advertising Agency</title>
+
+  <meta
+    name="description"
+    content="أفق للدعاية الخارجية، وكالة متخصصة في تصميم وتنفيذ الحملات الإعلانية الخارجية، اللوحات الإعلانية، الشاشات الرقمية، إعلانات الطرق والواجهات التجارية."
+  >
+
+  <meta name="theme-color" content="#12233f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --primary: #12233f;
+      --primary-dark: #09152a;
+      --accent: #ff6b35;
+      --accent-dark: #e7531e;
+      --yellow: #ffc857;
+
+      --accent-soft: #fff1eb;
+      --yellow-soft: #fff8e7;
+      --blue-soft: #eef4fb;
+
+      --text: #172033;
+      --text-soft: #667085;
+      --text-light: #98a2b3;
+
+      --background: #ffffff;
+      --background-soft: #f7f9fc;
+      --surface: #ffffff;
+      --border: #e4e9f0;
+
+      --success: #1c8364;
+      --success-soft: #eaf8f3;
+      --danger: #ce4545;
+
+      --shadow-sm: 0 10px 28px rgba(18, 35, 63, 0.07);
+      --shadow-md: 0 20px 50px rgba(18, 35, 63, 0.12);
+      --shadow-lg: 0 30px 75px rgba(18, 35, 63, 0.18);
+
+      --radius-sm: 13px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --container: 1160px;
+      --header-height: 78px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 20px);
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      background: var(--background);
+      font-family: "Cairo", sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open,
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ::selection {
+      color: #ffffff;
+      background: var(--accent);
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(255, 107, 53, 0.3);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 95px 0;
+    }
+
+    .section-soft {
+      background: var(--background-soft);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 42px;
+    }
+
+    .section-header.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .section-label::before {
+      width: 26px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      content: "";
+    }
+
+    .section-title {
+      margin-bottom: 14px;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+    }
+
+    .section-description {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      padding: 11px 22px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: 700;
+      transition:
+        transform var(--transition),
+        color var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      color: #ffffff;
+      background: var(--accent);
+      box-shadow: 0 14px 30px rgba(255, 107, 53, 0.25);
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 18px 36px rgba(255, 107, 53, 0.32);
+    }
+
+    .button-secondary {
+      color: var(--primary);
+      background: #ffffff;
+      border-color: var(--border);
+    }
+
+    .button-secondary:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Header */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      height: var(--header-height);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(16px);
+      transition:
+        height var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .site-header.scrolled {
+      height: 70px;
+      border-color: rgba(228, 233, 240, 0.95);
+      box-shadow: 0 8px 28px rgba(18, 35, 63, 0.07);
+    }
+
+    .header-inner {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      overflow: hidden;
+      color: #ffffff;
+      background: linear-gradient(145deg, var(--accent), var(--yellow));
+      border-radius: 14px;
+      font-weight: 800;
+      box-shadow: 0 11px 24px rgba(255, 107, 53, 0.22);
+    }
+
+    .brand-mark::after {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .brand-name {
+      display: block;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .brand-role {
+      display: block;
+      color: var(--text-light);
+      font-size: 0.68rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      padding: 10px 11px;
+      color: var(--text-soft);
+      font-size: 0.86rem;
+      font-weight: 700;
+      transition: color var(--transition);
+    }
+
+    .nav-link::after {
+      position: absolute;
+      right: 11px;
+      bottom: 2px;
+      left: 11px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+      content: "";
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .header-cta {
+      min-height: 44px;
+      padding: 9px 17px;
+      font-size: 0.83rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      background: var(--background-soft);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      cursor: pointer;
+    }
+
+    .menu-lines {
+      position: relative;
+      width: 20px;
+      height: 14px;
+    }
+
+    .menu-lines span {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 999px;
+      transition:
+        top var(--transition),
+        transform var(--transition),
+        opacity var(--transition);
+    }
+
+    .menu-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .menu-lines span:nth-child(2) {
+      top: 6px;
+    }
+
+    .menu-lines span:nth-child(3) {
+      top: 12px;
+    }
+
+    .menu-toggle.active .menu-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.active .menu-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .menu-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      overflow: hidden;
+      padding: calc(var(--header-height) + 70px) 0 85px;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(255, 200, 87, 0.18), transparent 27%),
+        radial-gradient(circle at 88% 17%, rgba(255, 107, 53, 0.14), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      top: 145px;
+      left: -90px;
+      width: 230px;
+      height: 230px;
+      border: 36px solid rgba(18, 35, 63, 0.06);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(400px, 0.95fr);
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      margin-bottom: 20px;
+      padding: 7px 13px;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #ffd9ca;
+      border-radius: 999px;
+      font-size: 0.81rem;
+      font-weight: 700;
+    }
+
+    .hero-label-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(255, 200, 87, 0.17);
+    }
+
+    .hero-title {
+      max-width: 780px;
+      margin-bottom: 21px;
+      color: var(--primary-dark);
+      font-size: clamp(2.7rem, 6.3vw, 5.1rem);
+      line-height: 1.16;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 670px;
+      margin-bottom: 31px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-stats {
+      display: grid;
+      max-width: 620px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+
+    .hero-stat {
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-stat strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+
+    .hero-stat span {
+      color: var(--text-soft);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 555px;
+    }
+
+    .billboard-stage {
+      position: absolute;
+      inset: 20px 25px 25px 35px;
+      overflow: hidden;
+      background: var(--primary);
+      border-radius: 34px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .billboard-stage img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .billboard-stage::after {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8, 20, 38, 0.08), rgba(8, 20, 38, 0.52));
+      content: "";
+    }
+
+    .billboard-copy {
+      position: absolute;
+      right: 28px;
+      bottom: 27px;
+      left: 28px;
+      z-index: 3;
+      color: #ffffff;
+    }
+
+    .billboard-copy span {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .billboard-copy strong {
+      display: block;
+      max-width: 350px;
+      font-size: 1.35rem;
+      line-height: 1.4;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 4;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-card.top {
+      top: 0;
+      left: 0;
+    }
+
+    .floating-card.bottom {
+      right: 0;
+      bottom: 6px;
+    }
+
+    .floating-card span {
+      display: block;
+    }
+
+    .floating-label {
+      color: var(--text-light);
+      font-size: 0.66rem;
+      font-weight: 700;
+    }
+
+    .floating-value {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .reach-bars {
+      display: flex;
+      height: 42px;
+      margin-top: 8px;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .reach-bars i {
+      width: 9px;
+      background: var(--accent);
+      border-radius: 4px 4px 0 0;
+    }
+
+    .reach-bars i:nth-child(1) {
+      height: 15px;
+    }
+
+    .reach-bars i:nth-child(2) {
+      height: 22px;
+    }
+
+    .reach-bars i:nth-child(3) {
+      height: 30px;
+      background: var(--yellow);
+    }
+
+    .reach-bars i:nth-child(4) {
+      height: 39px;
+      background: var(--primary);
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(330px, 0.78fr) minmax(0, 1.22fr);
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .about-image {
+      position: absolute;
+      inset: 20px 50px 45px 0;
+      overflow: hidden;
+      background: var(--blue-soft);
+      border-radius: 30px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .about-shape {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      width: 110px;
+      height: 110px;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          rgba(255, 107, 53, 0.2) 0,
+          rgba(255, 107, 53, 0.2) 3px,
+          transparent 3px,
+          transparent 12px
+        );
+      border-radius: 25px;
+    }
+
+    .about-badge {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      max-width: 220px;
+      padding: 19px;
+      color: #ffffff;
+      background: var(--primary);
+      border-radius: 19px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-badge strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--yellow);
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .about-badge span {
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .about-content p {
+      margin-bottom: 16px;
+      color: var(--text-soft);
+    }
+
+    .about-quote {
+      margin: 25px 0;
+      padding: 17px 18px;
+      color: var(--primary);
+      background: var(--accent-soft);
+      border-right: 4px solid var(--accent);
+      border-radius: 12px 0 0 12px;
+      font-weight: 700;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .about-stat {
+      padding: 17px 13px;
+      text-align: center;
+      background: var(--background-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .about-stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+
+    .about-stat span {
+      color: var(--text-soft);
+      font-size: 0.71rem;
+      font-weight: 700;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 19px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 230px;
+      overflow: hidden;
+      padding: 27px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .service-card:hover {
+      border-color: rgba(255, 107, 53, 0.35);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+    }
+
+    .service-icon {
+      display: grid;
+      width: 53px;
+      height: 53px;
+      margin-bottom: 20px;
+      place-items: center;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 16px;
+    }
+
+    .service-card:nth-child(2n) .service-icon {
+      color: #b47800;
+      background: var(--yellow-soft);
+    }
+
+    .service-title {
+      margin-bottom: 9px;
+      font-size: 1.06rem;
+    }
+
+    .service-text {
+      color: var(--text-soft);
+      font-size: 0.86rem;
+    }
+
+    .service-number {
+      position: absolute;
+      bottom: 8px;
+      left: 15px;
+      color: rgba(18, 35, 63, 0.06);
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    /* Portfolio */
+
+    .portfolio-toolbar {
+      display: flex;
+      margin-bottom: 34px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-button {
+      padding: 8px 16px;
+      color: var(--text-soft);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.81rem;
+      font-weight: 700;
+      transition:
+        color var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .filter-button:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .filter-button.active {
+      color: #ffffff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .portfolio-count {
+      color: var(--text-light);
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .project-card.hidden {
+      display: none;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+    }
+
+    .project-image {
+      position: relative;
+      height: 235px;
+      overflow: hidden;
+      background: var(--background-soft);
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-image::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 48%, rgba(9, 21, 42, 0.35));
+      content: "";
+    }
+
+    .project-type {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      padding: 6px 10px;
+      color: #ffffff;
+      background: rgba(18, 35, 63, 0.86);
+      border-radius: 999px;
+      font-size: 0.69rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .project-content {
+      padding: 21px;
+    }
+
+    .project-title {
+      margin-bottom: 7px;
+      font-size: 1.05rem;
+    }
+
+    .project-description {
+      min-height: 64px;
+      margin-bottom: 14px;
+      color: var(--text-soft);
+      font-size: 0.82rem;
+    }
+
+    .project-meta {
+      display: flex;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-meta span {
+      padding: 5px 8px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: 0.66rem;
+      font-weight: 700;
+    }
+
+    .project-open {
+      width: 100%;
+    }
+
+    /* Process */
+
+    .process-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .process-grid::before {
+      position: absolute;
+      top: 27px;
+      right: 8%;
+      left: 8%;
+      height: 2px;
+      background: rgba(255, 107, 53, 0.16);
+      content: "";
+    }
+
+    .process-item {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .process-number {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 17px;
+      place-items: center;
+      color: var(--accent);
+      background: #ffffff;
+      border: 2px solid var(--accent-soft);
+      border-radius: 17px;
+      box-shadow: var(--shadow-sm);
+      font-weight: 800;
+      transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition);
+    }
+
+    .process-item:hover .process-number {
+      color: #ffffff;
+      background: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .process-title {
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+    }
+
+    .process-text {
+      color: var(--text-soft);
+      font-size: 0.76rem;
+    }
+
+    /* Clients */
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+    }
+
+    .client-card {
+      display: grid;
+      min-height: 100px;
+      padding: 20px;
+      place-items: center;
+      color: var(--text-soft);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-align: center;
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        color var(--transition);
+    }
+
+    .client-card:hover {
+      color: var(--accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-4px);
+    }
+
+    /* Testimonials */
+
+    .testimonial-wrapper {
+      position: relative;
+      max-width: 880px;
+      margin-inline: auto;
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 5px;
+    }
+
+    .testimonial-card {
+      padding: 36px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+
+    .testimonial-stars {
+      margin-bottom: 16px;
+      color: #f1b43e;
+      letter-spacing: 3px;
+    }
+
+    .testimonial-text {
+      max-width: 700px;
+      margin: 0 auto 22px;
+      color: var(--text-soft);
+      font-size: 0.97rem;
+    }
+
+    .testimonial-person {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .testimonial-avatar {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      color: #ffffff;
+      background: var(--accent);
+      border-radius: 14px;
+      font-weight: 800;
+    }
+
+    .testimonial-name {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .testimonial-role {
+      display: block;
+      color: var(--text-light);
+      font-size: 0.7rem;
+    }
+
+    .slider-controls {
+      display: flex;
+      margin-top: 19px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .slider-button {
+      display: grid;
+      width: 41px;
+      height: 41px;
+      place-items: center;
+      color: var(--primary);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition:
+        color var(--transition),
+        background var(--transition);
+    }
+
+    .slider-button:hover {
+      color: #ffffff;
+      background: var(--accent);
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      background: #c9cfd8;
+      border-radius: 50%;
+      cursor: pointer;
+      transition:
+        width var(--transition),
+        background var(--transition);
+    }
+
+    .slider-dot.active {
+      width: 22px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+      gap: 55px;
+    }
+
+    .contact-info {
+      padding: 33px;
+      color: #ffffff;
+      background: linear-gradient(145deg, var(--primary), #21375b);
+      border-radius: 26px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info h3 {
+      margin-bottom: 10px;
+      font-size: 1.7rem;
+    }
+
+    .contact-info > p {
+      margin-bottom: 27px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.88rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 11px;
+      margin-bottom: 27px;
+    }
+
+    .contact-item {
+      display: flex;
+      padding: 13px;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      transition:
+        background var(--transition),
+        transform var(--transition);
+    }
+
+    .contact-item:hover {
+      background: rgba(255, 255, 255, 0.13);
+      transform: translateX(-4px);
+    }
+
+    .contact-item-icon {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: var(--accent);
+      background: #ffffff;
+      border-radius: 12px;
+    }
+
+    .contact-item-label {
+      display: block;
+      color: rgba(255, 255, 255, 0.57);
+      font-size: 0.64rem;
+      font-weight: 700;
+    }
+
+    .contact-item-value {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .social-link {
+      padding: 8px 12px;
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 11px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      transition:
+        color var(--transition),
+        background var(--transition);
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+      background: #ffffff;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 51px;
+      padding: 11px 14px;
+      color: var(--text);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      outline: none;
+      transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+    }
+
+    .form-control.invalid {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 4px rgba(206, 69, 69, 0.08);
+    }
+
+    textarea.form-control {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    .field-error {
+      display: none;
+      margin-top: 5px;
+      color: var(--danger);
+      font-size: 0.69rem;
+      font-weight: 600;
+    }
+
+    .field-error.visible {
+      display: block;
+    }
+
+    .form-footer {
+      display: flex;
+      margin-top: 21px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .form-note {
+      max-width: 390px;
+      color: var(--text-light);
+      font-size: 0.69rem;
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 17px;
+      padding: 13px 15px;
+      color: var(--success);
+      background: var(--success-soft);
+      border: 1px solid #cce9df;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .form-success.visible {
+      display: block;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      padding: 60px 0 24px;
+      color: rgba(255, 255, 255, 0.72);
+      background: var(--primary-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 60px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      margin-bottom: 15px;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+    }
+
+    .footer-description {
+      max-width: 450px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.81rem;
+    }
+
+    .footer-title {
+      margin-bottom: 16px;
+      color: #ffffff;
+      font-size: 0.88rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-link {
+      font-size: 0.77rem;
+      transition:
+        color var(--transition),
+        transform var(--transition);
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+      transform: translateX(-4px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      padding-top: 21px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      font-size: 0.71rem;
+    }
+
+    .footer-note {
+      color: rgba(255, 255, 255, 0.46);
+    }
+
+    /* Modal */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      padding: 22px;
+      place-items: center;
+      visibility: hidden;
+      opacity: 0;
+      background: rgba(8, 17, 32, 0.78);
+      backdrop-filter: blur(8px);
+      transition:
+        opacity var(--transition),
+        visibility var(--transition);
+    }
+
+    .modal.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-dialog {
+      width: min(850px, 100%);
+      max-height: calc(100vh - 44px);
+      overflow-y: auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(24px) scale(0.98);
+      transition: transform var(--transition);
+    }
+
+    .modal.open .modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      display: flex;
+      padding: 17px 21px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal-label {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .modal-close {
+      display: grid;
+      width: 41px;
+      height: 41px;
+      place-items: center;
+      color: var(--primary);
+      background: var(--background-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition:
+        color var(--transition),
+        background var(--transition);
+    }
+
+    .modal-close:hover {
+      color: #ffffff;
+      background: var(--accent);
+    }
+
+    .modal-content {
+      padding: 30px;
+    }
+
+    .modal-title {
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: clamp(1.8rem, 5vw, 2.75rem);
+      line-height: 1.3;
+    }
+
+    .modal-intro {
+      margin-bottom: 24px;
+      color: var(--text-soft);
+    }
+
+    .modal-preview {
+      height: 330px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      background: var(--primary);
+      border-radius: 18px;
+    }
+
+    .modal-preview img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .modal-detail {
+      padding: 18px;
+      background: var(--background-soft);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .modal-detail h4 {
+      margin-bottom: 7px;
+      font-size: 0.88rem;
+    }
+
+    .modal-detail p {
+      color: var(--text-soft);
+      font-size: 0.8rem;
+    }
+
+    .modal-tags {
+      display: flex;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .modal-tag {
+      padding: 6px 10px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 900;
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      visibility: hidden;
+      color: #ffffff;
+      background: var(--accent);
+      border-radius: 14px;
+      box-shadow: 0 14px 28px rgba(255, 107, 53, 0.3);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(15px);
+      transition:
+        visibility var(--transition),
+        opacity var(--transition),
+        transform var(--transition);
+    }
+
+    .back-to-top.visible {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1050px) {
+      .nav-list,
+      .header-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 20px;
+        left: 20px;
+        display: grid;
+        max-height: 0;
+        padding: 0 17px;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--border);
+        border-radius: 19px;
+        box-shadow: var(--shadow-md);
+        transition:
+          max-height 0.4s ease,
+          padding 0.4s ease,
+          opacity var(--transition),
+          visibility var(--transition);
+      }
+
+      .nav-list.open {
+        max-height: 500px;
+        padding: 17px;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 11px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-description,
+      .hero-stats {
+        margin-inline: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        width: min(620px, 100%);
+        margin-inline: auto;
+      }
+
+      .services-grid,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .about-visual {
+        width: min(540px, 100%);
+        margin-inline: auto;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 15px;
+      }
+
+      .process-grid::before {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 650px) {
+      :root {
+        --header-height: 70px;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .brand-role {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 120px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.3rem, 13vw, 3.35rem);
+      }
+
+      .hero-description {
+        font-size: 0.94rem;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-stats,
+      .about-stats,
+      .services-grid,
+      .portfolio-grid,
+      .clients-grid,
+      .form-grid,
+      .modal-details {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 440px;
+      }
+
+      .billboard-stage {
+        inset: 30px 0;
+      }
+
+      .floating-card {
+        padding: 11px 13px;
+      }
+
+      .floating-card.top {
+        left: -4px;
+      }
+
+      .floating-card.bottom {
+        right: -4px;
+      }
+
+      .about-visual {
+        min-height: 440px;
+      }
+
+      .about-image {
+        inset: 18px 15px 48px 0;
+      }
+
+      .portfolio-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .filters {
+        flex-wrap: nowrap;
+        width: 100%;
+        padding-bottom: 6px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .filters::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-button {
+        flex: 0 0 auto;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card {
+        padding: 27px 19px;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .form-footer {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .form-footer .button {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-about {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .modal {
+        padding: 10px;
+      }
+
+      .modal-dialog {
+        max-height: calc(100vh - 20px);
+      }
+
+      .modal-content {
+        padding: 22px 16px;
+      }
+
+      .modal-preview {
+        height: 220px;
+      }
+
+      .back-to-top {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="العودة إلى الرئيسية">
+        <span class="brand-mark" aria-hidden="true">أ</span>
+
+        <span>
+          <span class="brand-name">أفق</span>
+          <span class="brand-role">وكالة الدعاية الخارجية</span>
+        </span>
+      </a>
+
+      <nav aria-label="التنقل الرئيسي">
+        <ul class="nav-list" id="navList">
+          <li><a class="nav-link active" href="#home">الرئيسية</a></li>
+          <li><a class="nav-link" href="#about">من نحن</a></li>
+          <li><a class="nav-link" href="#services">الخدمات</a></li>
+          <li><a class="nav-link" href="#portfolio">أعمالنا</a></li>
+          <li><a class="nav-link" href="#process">طريقة العمل</a></li>
+          <li><a class="nav-link" href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="button button-primary header-cta" href="#contact">
+          اطلب عرض سعر
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="فتح قائمة التنقل"
+          aria-controls="navList"
+          aria-expanded="false"
+        >
+          <span class="menu-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-label">
+            <span class="hero-label-dot" aria-hidden="true"></span>
+            حملات خارجية تصل إلى جمهورك في المكان المناسب
+          </div>
+
+          <h1 class="hero-title">
+            نصنع حضورًا إعلانيًا
+            <span>لا يمكن تجاهله</span>
+          </h1>
+
+          <p class="hero-description">
+            وكالة متخصصة في تخطيط وتصميم وتنفيذ حملات الدعاية الخارجية،
+            بداية من اختيار المواقع وتصميم الرسالة، وصولًا إلى الطباعة
+            والتركيب والمتابعة الميدانية في القاهرة والمحافظات.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#portfolio">
+              استعرض الحملات
+
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <a class="button button-secondary" href="#contact">
+              خطط لحملتك
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>9+</strong>
+              <span>سنوات خبرة</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>240+</strong>
+              <span>حملة تم تنفيذها</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>85+</strong>
+              <span>علامة وشركة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="billboard-stage">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85"
+              alt="لوحة إعلانية خارجية لحملة منتج رياضي"
+              fetchpriority="high"
+              onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85'"
+            >
+
+            <div class="billboard-copy">
+              <span>حملة إطلاق منتج</span>
+              <strong>
+                من فكرة واضحة إلى حضور قوي في الشوارع والمواقع الحيوية
+              </strong>
+            </div>
+          </div>
+
+          <div class="floating-card top">
+            <span class="floating-label">تغطية الحملة</span>
+            <span class="floating-value">القاهرة والجيزة والساحل</span>
+          </div>
+
+          <div class="floating-card bottom">
+            <span class="floating-label">الوصول المتوقع</span>
+            <span class="floating-value">أكثر من 2.4 مليون مشاهدة</span>
+
+            <div class="reach-bars" aria-hidden="true">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-shape" aria-hidden="true"></div>
+
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+              alt="فريق أفق يخطط لحملة دعاية خارجية"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85'"
+            >
+          </div>
+
+          <div class="about-badge">
+            <strong>حل متكامل</strong>
+            <span>تخطيط وتصميم وطباعة وتركيب ومتابعة من فريق واحد</span>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="section-label">من نحن</span>
+
+          <h2 class="section-title">
+            نربط العلامات بجمهورها خارج الشاشات
+          </h2>
+
+          <p>
+            أفق وكالة مصرية متخصصة في الدعاية الخارجية، نعمل مع الشركات
+            والعلامات التجارية على تخطيط حملات تحقق حضورًا واضحًا داخل
+            الشوارع والمناطق التجارية والطرق الرئيسية.
+          </p>
+
+          <p>
+            يجمع فريقنا بين التخطيط الإعلامي والتصميم والإنتاج والتنفيذ
+            الميداني، لذلك نحافظ على اتساق الحملة من أول فكرة حتى آخر نقطة
+            تركيب، مع متابعة الجودة والمواعيد والتغطية.
+          </p>
+
+          <div class="about-quote">
+            الإعلان الخارجي الناجح لا يعتمد على الحجم فقط، بل على الموقع
+            والرسالة والتوقيت وقدرة التصميم على الوصول خلال ثوانٍ.
+          </div>
+
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>32</strong>
+              <span>منطقة تغطية</span>
+            </div>
+
+            <div class="about-stat">
+              <strong>1200+</strong>
+              <span>وجه إعلاني</span>
+            </div>
+
+            <div class="about-stat">
+              <strong>18</strong>
+              <span>قطاع أعمال</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">خدماتنا</span>
+
+          <h2 class="section-title">
+            كل ما تحتاجه لإطلاق حملة خارجية متكاملة
+          </h2>
+
+          <p class="section-description">
+            حلول تبدأ من دراسة المواقع والجمهور وتنتهي بالتنفيذ والمتابعة
+            وقياس أداء الحملة.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 6h16v10H4V6Zm4 10v3M16 16v3M7 19h10"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+            <h3 class="service-title">اللوحات الإعلانية</h3>
+
+            <p class="service-text">
+              تخطيط وتنفيذ حملات اللوحات الكبيرة على الطرق والمحاور الرئيسية
+              وفقًا للجمهور ونطاق التغطية المطلوب.
+            </p>
+
+            <span class="service-number">01</span>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="4"
+                  y="4"
+                  width="16"
+                  height="16"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <path
+                  d="M8 8h8v8H8V8Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+              </svg>
+            </span>
+
+            <h3 class="service-title">الشاشات الرقمية</h3>
+
+            <p class="service-text">
+              عرض الحملات على شاشات LED داخل المناطق الحيوية والمراكز التجارية
+              مع مرونة في المحتوى ومدة العرض.
+            </p>
+
+            <span class="service-number">02</span>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 5h14v14H5V5Zm3 10 3-3 2 2 3-4 2 3"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+            <h3 class="service-title">التصميم الإعلاني</h3>
+
+            <p class="service-text">
+              تصميمات مخصصة للعرض الخارجي تعتمد على رسالة مختصرة وتكوين واضح
+              يمكن إدراكه بسرعة أثناء الحركة.
+            </p>
+
+            <span class="service-number">03</span>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7h16M7 4h10v16H7V4Zm3 6h4M10 14h6"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+            <h3 class="service-title">واجهات المحلات</h3>
+
+            <p class="service-text">
+              تصميم وتنفيذ الواجهات واللافتات والحروف المضيئة بما يناسب هوية
+              النشاط والموقع وطبيعة الاستخدام.
+            </p>
+
+            <span class="service-number">04</span>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 18h16M6 18V9l6-5 6 5v9M9 18v-5h6v5"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+            <h3 class="service-title">إعلانات المولات</h3>
+
+            <p class="service-text">
+              مساحات إعلانية داخل المراكز التجارية تشمل الشاشات والستاندات
+              والمداخل والممرات عالية الحركة.
+            </p>
+
+            <span class="service-number">05</span>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 18h16M6 18V8h12v10M9 8V5h6v3M8 12h8"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+            <h3 class="service-title">الطباعة والتركيب</h3>
+
+            <p class="service-text">
+              إنتاج الخامات المناسبة لكل موقع، مع فرق تركيب محترفة ومتابعة
+              للجودة والسلامة والمواعيد.
+            </p>
+
+            <span class="service-number">06</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">أعمالنا</span>
+
+          <h2 class="section-title">
+            حملات صنعت حضورًا قويًا في المواقع الحيوية
+          </h2>
+
+          <p class="section-description">
+            مجموعة مختارة من حملات اللوحات والشاشات والواجهات والإعلانات
+            الميدانية لقطاعات مختلفة.
+          </p>
+        </div>
+
+        <div class="portfolio-toolbar reveal">
+          <div class="filters" role="group" aria-label="فلترة المشروعات">
+            <button class="filter-button active" type="button" data-filter="all">
+              الكل
+            </button>
+
+            <button class="filter-button" type="button" data-filter="billboards">
+              لوحات
+            </button>
+
+            <button class="filter-button" type="button" data-filter="digital">
+              شاشات رقمية
+            </button>
+
+            <button class="filter-button" type="button" data-filter="facades">
+              واجهات
+            </button>
+          </div>
+
+          <span class="portfolio-count" id="portfolioCount">6 حملات</span>
+        </div>
+
+        <div class="portfolio-grid">
+          <article
+            class="project-card reveal"
+            data-category="billboards"
+            data-project="motion"
+          >
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+                alt="حملة لوحات خارجية لعلامة موشن الرياضية"
+                loading="lazy"
+              >
+
+              <span class="project-type">لوحات طرق</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">حملة موشن الرياضية</h3>
+
+              <p class="project-description">
+                حملة إطلاق منتج جديد على المحاور الرئيسية في القاهرة والجيزة.
+              </p>
+
+              <div class="project-meta">
+                <span>18 موقعًا</span>
+                <span>4 أسابيع</span>
+                <span>القاهرة الكبرى</span>
+              </div>
+
+              <button class="button button-secondary project-open" type="button">
+                عرض التفاصيل
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="project-card reveal"
+            data-category="digital"
+            data-project="nova"
+          >
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                alt="حملة شاشات رقمية لشركة نوفا للتكنولوجيا"
+                loading="lazy"
+              >
+
+              <span class="project-type">شاشات رقمية</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">إطلاق تطبيق نوفا</h3>
+
+              <p class="project-description">
+                حملة فيديوهات قصيرة على شاشات المولات والمناطق التجارية.
+              </p>
+
+              <div class="project-meta">
+                <span>12 شاشة</span>
+                <span>3 أسابيع</span>
+                <span>القاهرة الجديدة</span>
+              </div>
+
+              <button class="button button-secondary project-open" type="button">
+                عرض التفاصيل
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="project-card reveal"
+            data-category="facades"
+            data-project="sora"
+          >
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85"
+                alt="واجهة متجر سورا للأزياء"
+                loading="lazy"
+              >
+
+              <span class="project-type">واجهة تجارية</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">واجهة متجر سورا</h3>
+
+              <p class="project-description">
+                تصميم وتنفيذ واجهة وحروف مضيئة لفرع جديد داخل منطقة تجارية.
+              </p>
+
+              <div class="project-meta">
+                <span>حروف LED</span>
+                <span>كلادينج</span>
+                <span>الشيخ زايد</span>
+              </div>
+
+              <button class="button button-secondary project-open" type="button">
+                عرض التفاصيل
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="project-card reveal"
+            data-category="billboards"
+            data-project="estate"
+          >
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=85"
+                alt="حملة عقارية على لوحات الطرق"
+                loading="lazy"
+              >
+
+              <span class="project-type">حملة عقارية</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">مشروع ريفر ريزيدنس</h3>
+
+              <p class="project-description">
+                حملة تعريفية لمرحلة جديدة من مشروع سكني في شرق القاهرة.
+              </p>
+
+              <div class="project-meta">
+                <span>25 لوحة</span>
+                <span>6 أسابيع</span>
+                <span>شرق القاهرة</span>
+              </div>
+
+              <button class="button button-secondary project-open" type="button">
+                عرض التفاصيل
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="project-card reveal"
+            data-category="digital"
+            data-project="taste"
+          >
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85"
+                alt="إعلان مطعم تيست على شاشات رقمية"
+                loading="lazy"
+              >
+
+              <span class="project-type">إعلانات مولات</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">افتتاح مطعم تيست</h3>
+
+              <p class="project-description">
+                حملة افتتاح فرع جديد على شاشات ومداخل مركز تجاري.
+              </p>
+
+              <div class="project-meta">
+                <span>8 شاشات</span>
+                <span>ستاندات</span>
+                <span>مول تجاري</span>
+              </div>
+
+              <button class="button button-secondary project-open" type="button">
+                عرض التفاصيل
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="project-card reveal"
+            data-category="facades"
+            data-project="clinic"
+          >
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=85"
+                alt="واجهة مركز طبي حديث"
+                loading="lazy"
+              >
+
+              <span class="project-type">هوية واجهة</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">مركز أورا الطبي</h3>
+
+              <p class="project-description">
+                تطوير الشكل الخارجي واللافتات الإرشادية لمركز طبي متكامل.
+              </p>
+
+              <div class="project-meta">
+                <span>واجهة كاملة</span>
+                <span>إرشادات</span>
+                <span>مصر الجديدة</span>
+              </div>
+
+              <button class="button button-secondary project-open" type="button">
+                عرض التفاصيل
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="process">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">طريقة العمل</span>
+
+          <h2 class="section-title">
+            من هدف الحملة إلى الظهور في الشارع
+          </h2>
+
+          <p class="section-description">
+            خطوات منظمة تضمن اختيار المواقع المناسبة، وضوح الرسالة، وجودة
+            التنفيذ.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-item reveal">
+            <span class="process-number">01</span>
+            <h3 class="process-title">فهم الهدف</h3>
+            <p class="process-text">
+              تحديد الجمهور ونطاق الحملة والرسالة والميزانية.
+            </p>
+          </article>
+
+          <article class="process-item reveal">
+            <span class="process-number">02</span>
+            <h3 class="process-title">اختيار المواقع</h3>
+            <p class="process-text">
+              ترشيح المساحات المناسبة وفق الحركة والتغطية والجمهور.
+            </p>
+          </article>
+
+          <article class="process-item reveal">
+            <span class="process-number">03</span>
+            <h3 class="process-title">التصميم والإنتاج</h3>
+            <p class="process-text">
+              تطوير التصميم وتجهيز الخامات والمقاسات الخاصة بكل موقع.
+            </p>
+          </article>
+
+          <article class="process-item reveal">
+            <span class="process-number">04</span>
+            <h3 class="process-title">التركيب والمتابعة</h3>
+            <p class="process-text">
+              تنفيذ الحملة وتوثيق المواقع ومتابعة الجودة طوال المدة.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="clients">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">قطاعات عملنا</span>
+
+          <h2 class="section-title">
+            خبرة مع علامات من مجالات متنوعة
+          </h2>
+        </div>
+
+        <div class="clients-grid reveal">
+          <div class="client-card">التطوير العقاري</div>
+          <div class="client-card">الأغذية والمطاعم</div>
+          <div class="client-card">التجزئة والأزياء</div>
+          <div class="client-card">التكنولوجيا</div>
+          <div class="client-card">الرعاية الصحية</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="testimonials">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">آراء العملاء</span>
+
+          <h2 class="section-title">
+            شراكات مبنية على الالتزام وجودة التنفيذ
+          </h2>
+        </div>
+
+        <div class="testimonial-wrapper reveal">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-slide">
+              <article class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+
+                <p class="testimonial-text">
+                  فريق أفق ساعدنا في اختيار المواقع المناسبة بدلًا من توزيع
+                  الميزانية بشكل عشوائي، وكان التنفيذ منظمًا والتوثيق يصلنا
+                  بعد كل تركيب مباشرة.
+                </p>
+
+                <div class="testimonial-person">
+                  <span class="testimonial-avatar">مح</span>
+
+                  <span>
+                    <span class="testimonial-name">محمود حمدي</span>
+                    <span class="testimonial-role">مدير تسويق في موشن</span>
+                  </span>
+                </div>
+              </article>
+            </div>
+
+            <div class="testimonial-slide">
+              <article class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+
+                <p class="testimonial-text">
+                  تم تنفيذ واجهة الفرع بجودة ممتازة وفي الموعد المحدد. الفريق
+                  كان واضحًا في الخامات والمقاسات، والنتيجة النهائية متناسقة
+                  جدًا مع هوية المتجر.
+                </p>
+
+                <div class="testimonial-person">
+                  <span class="testimonial-avatar">نه</span>
+
+                  <span>
+                    <span class="testimonial-name">ندى هشام</span>
+                    <span class="testimonial-role">مديرة علامة سورا</span>
+                  </span>
+                </div>
+              </article>
+            </div>
+
+            <div class="testimonial-slide">
+              <article class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+
+                <p class="testimonial-text">
+                  الحملة العقارية كانت متكاملة من التصميم حتى التركيب. تم
+                  توزيع اللوحات على المحاور التي تهم جمهور المشروع، وكانت
+                  المتابعة طوال مدة الحملة ممتازة.
+                </p>
+
+                <div class="testimonial-person">
+                  <span class="testimonial-avatar">سا</span>
+
+                  <span>
+                    <span class="testimonial-name">سامح عزت</span>
+                    <span class="testimonial-role">مدير مبيعات ريفر ريزيدنس</span>
+                  </span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <button
+              class="slider-button"
+              id="testimonialPrev"
+              type="button"
+              aria-label="الرأي السابق"
+            >
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="m14 6-6 6 6 6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div class="slider-dots">
+              <button class="slider-dot active" type="button" aria-label="الرأي الأول"></button>
+              <button class="slider-dot" type="button" aria-label="الرأي الثاني"></button>
+              <button class="slider-dot" type="button" aria-label="الرأي الثالث"></button>
+            </div>
+
+            <button
+              class="slider-button"
+              id="testimonialNext"
+              type="button"
+              aria-label="الرأي التالي"
+            >
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="m10 6 6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">تواصل معنا</span>
+
+          <h2 class="section-title">
+            خطط لحملتك الإعلانية القادمة
+          </h2>
+
+          <p class="section-description">
+            أرسل تفاصيل الحملة والمناطق والمدة المتوقعة، وسيتواصل معك فريقنا
+            بمقترح للمواقع والتكلفة.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-info reveal">
+            <h3>اجعل علامتك جزءًا من المشهد</h3>
+
+            <p>
+              نغطي حملات اللوحات والشاشات الرقمية والواجهات والمولات في
+              القاهرة والجيزة وعدد من المحافظات.
+            </p>
+
+            <div class="contact-list">
+              <a class="contact-item" href="tel:+201001234567">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M8.5 4H6a2 2 0 0 0-2 2c0 7.7 6.3 14 14 14a2 2 0 0 0 2-2v-2.5l-4-1-1.2 2.2a12 12 0 0 1-7.5-7.5L9.5 8l-1-4Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span>
+                  <span class="contact-item-label">الهاتف</span>
+                  <span class="contact-item-value">+20 100 123 4567</span>
+                </span>
+              </a>
+
+              <a class="contact-item" href="mailto:hello@ofoqoutdoor.com">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 6h16v12H4V6Zm1 1 7 6 7-6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span>
+                  <span class="contact-item-label">البريد الإلكتروني</span>
+                  <span class="contact-item-value">hello@ofoqoutdoor.com</span>
+                </span>
+              </a>
+
+              <div class="contact-item">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    />
+                  </svg>
+                </span>
+
+                <span>
+                  <span class="contact-item-label">المقر</span>
+                  <span class="contact-item-value">مدينة نصر، القاهرة</span>
+                </span>
+              </div>
+
+              <a
+                class="contact-item"
+                href="https://wa.me/201001234567"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span>
+                  <span class="contact-item-label">واتساب</span>
+                  <span class="contact-item-value">تواصل مع فريق المبيعات</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="social-links">
+              <a class="social-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+
+              <a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+
+              <a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a>
+            </div>
+          </aside>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="name">الاسم</label>
+
+                <input
+                  class="form-control"
+                  id="name"
+                  type="text"
+                  placeholder="اكتب اسمك"
+                  autocomplete="name"
+                  required
+                >
+
+                <span class="field-error" id="nameError">
+                  يرجى كتابة الاسم.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="company">اسم الشركة</label>
+
+                <input
+                  class="form-control"
+                  id="company"
+                  type="text"
+                  placeholder="اسم العلامة أو الشركة"
+                  required
+                >
+
+                <span class="field-error" id="companyError">
+                  يرجى كتابة اسم الشركة.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="phone">رقم الهاتف</label>
+
+                <input
+                  class="form-control"
+                  id="phone"
+                  type="tel"
+                  placeholder="01xxxxxxxxx"
+                  autocomplete="tel"
+                  required
+                >
+
+                <span class="field-error" id="phoneError">
+                  يرجى كتابة رقم هاتف صحيح.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">البريد الإلكتروني</label>
+
+                <input
+                  class="form-control"
+                  id="email"
+                  type="email"
+                  placeholder="name@company.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <span class="field-error" id="emailError">
+                  يرجى كتابة بريد إلكتروني صحيح.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="campaign">نوع الحملة</label>
+
+                <select class="form-control" id="campaign" required>
+                  <option value="">اختر نوع الحملة</option>
+                  <option value="لوحات">لوحات طرق ومحاور</option>
+                  <option value="رقمية">شاشات رقمية</option>
+                  <option value="واجهات">واجهات ولافتات</option>
+                  <option value="مولات">إعلانات مولات</option>
+                  <option value="متكاملة">حملة متكاملة</option>
+                </select>
+
+                <span class="field-error" id="campaignError">
+                  يرجى اختيار نوع الحملة.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="duration">مدة الحملة</label>
+
+                <select class="form-control" id="duration" required>
+                  <option value="">اختر المدة</option>
+                  <option value="أسبوعان">أسبوعان</option>
+                  <option value="شهر">شهر</option>
+                  <option value="شهران">شهران</option>
+                  <option value="ثلاثة أشهر">ثلاثة أشهر أو أكثر</option>
+                </select>
+
+                <span class="field-error" id="durationError">
+                  يرجى اختيار مدة الحملة.
+                </span>
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label" for="message">تفاصيل الحملة</label>
+
+                <textarea
+                  class="form-control"
+                  id="message"
+                  placeholder="اكتب نبذة عن المنتج أو الخدمة، المناطق المستهدفة، عدد المواقع، والموعد المطلوب..."
+                  required
+                ></textarea>
+
+                <span class="field-error" id="messageError">
+                  يرجى كتابة تفاصيل لا تقل عن 20 حرفًا.
+                </span>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <p class="form-note">
+                تستخدم البيانات لإعداد مقترح الحملة والتواصل معك فقط.
+              </p>
+
+              <button class="button button-primary" type="submit">
+                طلب عرض سعر
+
+                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="m4 5 16 7-16 7 3-7-3-7Zm3 7h13"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="form-success" id="formSuccess" role="status">
+              تم استلام تفاصيل حملتك بنجاح. سيتواصل معك فريقنا خلال يوم عمل
+              واحد.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="footer-brand" href="#home">
+            <span class="brand-mark" aria-hidden="true">أ</span>
+            <strong>أفق للدعاية الخارجية</strong>
+          </a>
+
+          <p class="footer-description">
+            وكالة متخصصة في تخطيط وتصميم وتنفيذ حملات الدعاية الخارجية،
+            اللوحات الإعلانية، الشاشات الرقمية، الواجهات وإعلانات المولات.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">روابط سريعة</h3>
+
+          <div class="footer-links">
+            <a class="footer-link" href="#about">من نحن</a>
+            <a class="footer-link" href="#services">الخدمات</a>
+            <a class="footer-link" href="#portfolio">أعمالنا</a>
+            <a class="footer-link" href="#process">طريقة العمل</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-title">تواصل</h3>
+
+          <div class="footer-links">
+            <a class="footer-link" href="mailto:hello@ofoqoutdoor.com">
+              البريد الإلكتروني
+            </a>
+
+            <a class="footer-link" href="tel:+201001234567">
+              رقم الهاتف
+            </a>
+
+            <a class="footer-link" href="https://wa.me/201001234567" target="_blank" rel="noopener noreferrer">
+              واتساب
+            </a>
+
+            <a class="footer-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="currentYear"></span> أفق للدعاية الخارجية. جميع الحقوق محفوظة.
+        </span>
+
+        <span class="footer-note">
+          حضور أقوى في الشارع، وتأثير أبقى في ذهن الجمهور.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <div
+    class="modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span class="modal-label" id="modalType">تفاصيل الحملة</span>
+
+        <button
+          class="modal-close"
+          id="modalClose"
+          type="button"
+          aria-label="إغلاق النافذة"
+        >
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path
+              d="m6 6 12 12M18 6 6 18"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-content">
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-intro" id="modalIntro"></p>
+
+        <div class="modal-preview">
+          <img id="modalImage" src="" alt="">
+        </div>
+
+        <div class="modal-details">
+          <article class="modal-detail">
+            <h4>العميل</h4>
+            <p id="modalClient"></p>
+          </article>
+
+          <article class="modal-detail">
+            <h4>هدف الحملة</h4>
+            <p id="modalChallenge"></p>
+          </article>
+
+          <article class="modal-detail">
+            <h4>ما تم تنفيذه</h4>
+            <p id="modalSolution"></p>
+          </article>
+
+          <article class="modal-detail">
+            <h4>النتيجة</h4>
+            <p id="modalResult"></p>
+          </article>
+        </div>
+
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="العودة إلى أعلى الصفحة"
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none">
+      <path
+        d="m6 14 6-6 6 6"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <script>
+    "use strict";
+
+    const siteHeader = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navList = document.getElementById("navList");
+    const navLinks = [...document.querySelectorAll(".nav-link")];
+    const backToTop = document.getElementById("backToTop");
+
+    const projectCards = [...document.querySelectorAll(".project-card")];
+    const filterButtons = [...document.querySelectorAll(".filter-button")];
+    const portfolioCount = document.getElementById("portfolioCount");
+
+    const projectModal = document.getElementById("projectModal");
+    const modalDialog = projectModal.querySelector(".modal-dialog");
+    const modalClose = document.getElementById("modalClose");
+
+    let lastFocusedElement = null;
+
+    const projects = {
+      motion: {
+        title: "حملة موشن الرياضية",
+        type: "حملة لوحات طرق",
+        intro:
+          "حملة إطلاق لمجموعة أحذية رياضية جديدة استهدفت الشباب في القاهرة والجيزة خلال موسم الصيف.",
+        client:
+          "موشن، علامة مصرية متخصصة في الملابس والأحذية الرياضية.",
+        challenge:
+          "إطلاق المنتج في سوق مزدحم والوصول إلى جمهور متحرك بالقرب من النوادي والمناطق التجارية.",
+        solution:
+          "تم اختيار 18 موقعًا على المحاور المؤدية للمناطق الرياضية والتجارية، مع تصميم بصري مختصر يركز على المنتج والحركة.",
+        result:
+          "حققت الحملة تغطية واسعة، وتم استخدامها بالتوازي مع الحملة الرقمية وإطلاق المتاجر.",
+        tags: ["18 موقعًا", "القاهرة والجيزة", "4 أسابيع"],
+        image:
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85"
+      },
+
+      nova: {
+        title: "إطلاق تطبيق نوفا",
+        type: "حملة شاشات رقمية",
+        intro:
+          "حملة تعريفية لتطبيق تقني جديد تم عرضها على شاشات رقمية داخل مناطق العمل والمراكز التجارية.",
+        client:
+          "نوفا، منصة لإدارة المصروفات والمدفوعات للأفراد.",
+        challenge:
+          "شرح فكرة التطبيق خلال ثوانٍ مع الحفاظ على وضوح الدعوة إلى التحميل.",
+        solution:
+          "تم إنتاج مقاطع قصيرة متحركة وتوزيعها على 12 شاشة في القاهرة الجديدة ومدينة نصر.",
+        result:
+          "دعمت الحملة الإطلاق الرقمي ورفعت معرفة الجمهور باسم التطبيق داخل المناطق المستهدفة.",
+        tags: ["12 شاشة", "محتوى متحرك", "3 أسابيع"],
+        image:
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
+      },
+
+      sora: {
+        title: "واجهة متجر سورا",
+        type: "واجهة تجارية",
+        intro:
+          "تصميم وتنفيذ واجهة متكاملة لفرع جديد لعلامة أزياء داخل منطقة تجارية في الشيخ زايد.",
+        client:
+          "سورا، علامة أزياء نسائية محلية.",
+        challenge:
+          "الحفاظ على بساطة الهوية مع جعل الواجهة واضحة وجذابة من مسافة بعيدة ليلًا ونهارًا.",
+        solution:
+          "تم تنفيذ كلادينج بدرجات محايدة مع حروف بارزة مضيئة وإضاءة مخفية حول المدخل.",
+        result:
+          "خرجت الواجهة متناسقة مع الهوية وسهلة الرؤية من اتجاهات الحركة المختلفة.",
+        tags: ["حروف LED", "كلادينج", "إضاءة واجهة"],
+        image:
+          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=85"
+      },
+
+      estate: {
+        title: "مشروع ريفر ريزيدنس",
+        type: "حملة عقارية",
+        intro:
+          "حملة لوحات لتعريف السوق بمرحلة جديدة من مشروع سكني في شرق القاهرة.",
+        client:
+          "ريفربانك للتطوير العقاري.",
+        challenge:
+          "الوصول إلى الباحثين عن السكن والاستثمار على المحاور المؤدية إلى المشروع والمناطق المحيطة.",
+        solution:
+          "تم توزيع 25 لوحة بأحجام مختلفة مع تطوير ثلاثة تصميمات حسب موقع اللوحة وسرعة الحركة.",
+        result:
+          "قدمت الحملة حضورًا مستمرًا خلال فترة الإطلاق ودعمت فعاليات البيع والعروض الرقمية.",
+        tags: ["25 لوحة", "شرق القاهرة", "6 أسابيع"],
+        image:
+          "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=85"
+      },
+
+      taste: {
+        title: "افتتاح مطعم تيست",
+        type: "إعلانات مولات",
+        intro:
+          "حملة افتتاح فرع جديد داخل مركز تجاري باستخدام الشاشات والستاندات والمداخل.",
+        client:
+          "تيست، سلسلة مطاعم تقدم وجبات عصرية.",
+        challenge:
+          "توجيه زوار المول إلى الفرع الجديد وإبراز عرض الافتتاح داخل مساحة مزدحمة بالإعلانات.",
+        solution:
+          "تم استخدام تصميمات موحدة على الشاشات والمداخل مع رسائل قصيرة واتجاهات واضحة إلى موقع الفرع.",
+        result:
+          "حققت الحملة حضورًا واضحًا داخل المول وساعدت في دعم أيام الافتتاح الأولى.",
+        tags: ["8 شاشات", "مداخل المول", "ستاندات"],
+        image:
+          "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85"
+      },
+
+      clinic: {
+        title: "مركز أورا الطبي",
+        type: "هوية واجهة وإرشادات",
+        intro:
+          "تطوير الشكل الخارجي واللافتات الإرشادية لمركز طبي متعدد التخصصات.",
+        client:
+          "أورا، مركز طبي في مصر الجديدة.",
+        challenge:
+          "تنظيم واجهة المبنى وتسهيل وصول الزوار إلى الأقسام والخدمات المختلفة.",
+        solution:
+          "تم تصميم واجهة موحدة مع لافتات خارجية وداخلية وحروف مضيئة وتوزيع واضح للمعلومات.",
+        result:
+          "أصبحت الهوية الخارجية أكثر احترافية، وتحسنت وضوح المداخل والمسارات للزوار.",
+        tags: ["واجهة كاملة", "Wayfinding", "حروف مضيئة"],
+        image:
+          "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=85"
+      }
+    };
+
+    function updateHeader() {
+      siteHeader.classList.toggle("scrolled", window.scrollY > 30);
+      backToTop.classList.toggle("visible", window.scrollY > 650);
+    }
+
+    function openMenu() {
+      navList.classList.add("open");
+      menuToggle.classList.add("active");
+      menuToggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+    }
+
+    function closeMenu() {
+      navList.classList.remove("open");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      navList.classList.contains("open") ? closeMenu() : openMenu();
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        navList.classList.contains("open") &&
+        !navList.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1050) {
+        closeMenu();
+      }
+    });
+
+    const sections = [...document.querySelectorAll("main section[id]")];
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${entry.target.id}`
+            );
+          });
+        });
+      },
+      {
+        rootMargin: "-35% 0px -55% 0px",
+        threshold: 0
+      }
+    );
+
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        let visibleCount = 0;
+
+        filterButtons.forEach((item) => {
+          item.classList.toggle("active", item === button);
+        });
+
+        projectCards.forEach((card) => {
+          const categories = card.dataset.category.split(" ");
+          const shouldShow =
+            filter === "all" || categories.includes(filter);
+
+          card.classList.toggle("hidden", !shouldShow);
+
+          if (shouldShow) {
+            visibleCount += 1;
+          }
+        });
+
+        portfolioCount.textContent =
+          visibleCount === 1 ? "حملة واحدة" : `${visibleCount} حملات`;
+      });
+    });
+
+    function populateModal(project) {
+      document.getElementById("modalTitle").textContent = project.title;
+      document.getElementById("modalType").textContent = project.type;
+      document.getElementById("modalIntro").textContent = project.intro;
+      document.getElementById("modalClient").textContent = project.client;
+      document.getElementById("modalChallenge").textContent = project.challenge;
+      document.getElementById("modalSolution").textContent = project.solution;
+      document.getElementById("modalResult").textContent = project.result;
+
+      const modalImage = document.getElementById("modalImage");
+      modalImage.src = project.image;
+      modalImage.alt = `صورة من حملة ${project.title}`;
+
+      const modalTags = document.getElementById("modalTags");
+      modalTags.innerHTML = "";
+
+      project.tags.forEach((tag) => {
+        const item = document.createElement("span");
+        item.className = "modal-tag";
+        item.textContent = tag;
+        modalTags.appendChild(item);
+      });
+    }
+
+    function openModal(projectKey, trigger) {
+      const project = projects[projectKey];
+
+      if (!project) return;
+
+      lastFocusedElement = trigger;
+      populateModal(project);
+
+      projectModal.classList.add("open");
+      projectModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      requestAnimationFrame(() => modalClose.focus());
+    }
+
+    function closeModal() {
+      projectModal.classList.remove("open");
+      projectModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    projectCards.forEach((card) => {
+      const button = card.querySelector(".project-open");
+
+      button.addEventListener("click", () => {
+        openModal(card.dataset.project, button);
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+
+    projectModal.addEventListener("click", (event) => {
+      if (event.target === projectModal) {
+        closeModal();
+      }
+    });
+
+    modalDialog.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+        closeMenu();
+      }
+    });
+
+    const testimonialTrack = document.getElementById("testimonialTrack");
+    const testimonialSlides = [
+      ...document.querySelectorAll(".testimonial-slide")
+    ];
+    const sliderDots = [...document.querySelectorAll(".slider-dot")];
+    const testimonialPrev = document.getElementById("testimonialPrev");
+    const testimonialNext = document.getElementById("testimonialNext");
+
+    let currentSlide = 0;
+    let sliderTimer;
+
+    function updateSlider() {
+      testimonialTrack.style.transform =
+        `translateX(${currentSlide * 100}%)`;
+
+      sliderDots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    function goToSlide(index) {
+      currentSlide =
+        (index + testimonialSlides.length) % testimonialSlides.length;
+
+      updateSlider();
+    }
+
+    function restartSlider() {
+      clearInterval(sliderTimer);
+
+      sliderTimer = setInterval(() => {
+        goToSlide(currentSlide + 1);
+      }, 6000);
+    }
+
+    testimonialPrev.addEventListener("click", () => {
+      goToSlide(currentSlide - 1);
+      restartSlider();
+    });
+
+    testimonialNext.addEventListener("click", () => {
+      goToSlide(currentSlide + 1);
+      restartSlider();
+    });
+
+    sliderDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+        restartSlider();
+      });
+    });
+
+    updateSlider();
+    restartSlider();
+
+    const contactForm = document.getElementById("contactForm");
+    const formSuccess = document.getElementById("formSuccess");
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePhone(phone) {
+      return /^[0-9+\s()-]{8,18}$/.test(phone.trim());
+    }
+
+    const fields = {
+      name: {
+        element: document.getElementById("name"),
+        error: document.getElementById("nameError"),
+        validate: (value) => value.trim().length >= 2
+      },
+
+      company: {
+        element: document.getElementById("company"),
+        error: document.getElementById("companyError"),
+        validate: (value) => value.trim().length >= 2
+      },
+
+      phone: {
+        element: document.getElementById("phone"),
+        error: document.getElementById("phoneError"),
+        validate: validatePhone
+      },
+
+      email: {
+        element: document.getElementById("email"),
+        error: document.getElementById("emailError"),
+        validate: (value) => validateEmail(value.trim())
+      },
+
+      campaign: {
+        element: document.getElementById("campaign"),
+        error: document.getElementById("campaignError"),
+        validate: (value) => value !== ""
+      },
+
+      duration: {
+        element: document.getElementById("duration"),
+        error: document.getElementById("durationError"),
+        validate: (value) => value !== ""
+      },
+
+      message: {
+        element: document.getElementById("message"),
+        error: document.getElementById("messageError"),
+        validate: (value) => value.trim().length >= 20
+      }
+    };
+
+    function validateField(field) {
+      const isValid = field.validate(field.element.value);
+
+      field.element.classList.toggle("invalid", !isValid);
+      field.error.classList.toggle("visible", !isValid);
+      field.element.setAttribute("aria-invalid", String(!isValid));
+
+      return isValid;
+    }
+
+    Object.values(fields).forEach((field) => {
+      field.element.addEventListener("input", () => {
+        if (field.element.classList.contains("invalid")) {
+          validateField(field);
+        }
+
+        formSuccess.classList.remove("visible");
+      });
+
+      field.element.addEventListener("change", () => {
+        validateField(field);
+        formSuccess.classList.remove("visible");
+      });
+    });
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const results = Object.values(fields).map(validateField);
+      const isValid = results.every(Boolean);
+
+      if (!isValid) {
+        const firstInvalid = Object.values(fields).find((field) =>
+          field.element.classList.contains("invalid")
+        );
+
+        firstInvalid?.element.focus();
+        return;
+      }
+
+      contactForm.reset();
+      formSuccess.classList.add("visible");
+
+      Object.values(fields).forEach((field) => {
+        field.element.classList.remove("invalid");
+        field.error.classList.remove("visible");
+        field.element.setAttribute("aria-invalid", "false");
+      });
+
+      formSuccess.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    window.addEventListener("scroll", updateHeader, {
+      passive: true
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    updateHeader();
+  </script>
+</body>
+</html>
