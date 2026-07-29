@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="البورتفوليو الرسمي للأستاذ أحمد سامح، مدرس لغة إنجليزية متخصص في المحادثة وتطوير مهارات الطلاب والاستعداد للاختبارات الدولية." />
+  <title>أحمد سامح | مدرس لغة إنجليزية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root{
+      --primary:#173B57;
+      --primary-2:#245B7A;
+      --accent:#F0A24B;
+      --accent-soft:#FFF1DF;
+      --ink:#15232E;
+      --muted:#60717D;
+      --surface:#FFFFFF;
+      --surface-2:#F5F8FA;
+      --line:#DFE7EC;
+      --success:#2D8B67;
+      --shadow:0 20px 50px rgba(23,59,87,.10);
+      --radius:26px;
+      --container:min(1180px, calc(100% - 40px));
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Cairo",sans-serif;
+      color:var(--ink);
+      background:var(--surface);
+      line-height:1.8;
+      overflow-x:hidden;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    section{scroll-margin-top:90px}
+
+    .container{width:var(--container);margin-inline:auto}
+    .section{padding:100px 0}
+    .section-soft{background:var(--surface-2)}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:var(--primary-2);
+      font-size:.9rem;
+      font-weight:800;
+      letter-spacing:.02em;
+      margin-bottom:14px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:28px;
+      height:3px;
+      border-radius:99px;
+      background:var(--accent);
+    }
+
+    .section-heading{
+      max-width:720px;
+      margin-bottom:45px;
+    }
+    .section-heading.center{
+      text-align:center;
+      margin-inline:auto;
+    }
+    .section-heading h2{
+      margin:0 0 14px;
+      font-size:clamp(2rem,4vw,3.3rem);
+      line-height:1.25;
+      color:var(--primary);
+    }
+    .section-heading p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 23px;
+      border:none;
+      border-radius:14px;
+      cursor:pointer;
+      transition:.25s ease;
+      font-weight:800;
+    }
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 12px 26px rgba(23,59,87,.22);
+    }
+    .btn-primary:hover{transform:translateY(-3px);background:var(--primary-2)}
+    .btn-light{
+      background:#fff;
+      color:var(--primary);
+      border:1px solid var(--line);
+    }
+    .btn-light:hover{transform:translateY(-3px);border-color:var(--primary-2)}
+    .btn-accent{
+      background:var(--accent);
+      color:#1B2730;
+    }
+    .btn-accent:hover{transform:translateY(-3px);filter:brightness(.97)}
+
+    .header{
+      position:fixed;
+      inset:0 0 auto;
+      z-index:1000;
+      height:76px;
+      background:rgba(255,255,255,.90);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(223,231,236,.75);
+    }
+    .nav{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:max-content;
+    }
+    .brand-mark{
+      width:45px;
+      height:45px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:linear-gradient(145deg,var(--primary),var(--primary-2));
+      font-family:"Playfair Display",serif;
+      font-size:1.2rem;
+      box-shadow:0 10px 22px rgba(23,59,87,.18);
+    }
+    .brand-text strong{display:block;color:var(--primary);font-size:1rem;line-height:1.3}
+    .brand-text span{font-size:.72rem;color:var(--muted)}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:.91rem;
+      font-weight:700;
+      color:#425661;
+    }
+    .nav-links a{
+      position:relative;
+      padding:8px 0;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      right:0;
+      bottom:1px;
+      width:0;
+      height:2px;
+      border-radius:99px;
+      background:var(--accent);
+      transition:.25s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{color:var(--primary)}
+    .nav-links a:hover::after,
+    .nav-links a.active::after{width:100%}
+    .menu-toggle{
+      display:none;
+      width:44px;height:44px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--primary);
+      border-radius:12px;
+      cursor:pointer;
+      font-size:1.1rem;
+    }
+
+    .hero{
+      min-height:100vh;
+      padding:130px 0 70px;
+      display:grid;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(240,162,75,.14), transparent 23%),
+        radial-gradient(circle at 85% 20%, rgba(36,91,122,.12), transparent 24%),
+        linear-gradient(180deg,#FBFDFE,#F5F8FA);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:520px;height:520px;
+      left:-270px;bottom:-250px;
+      border-radius:50%;
+      border:85px solid rgba(23,59,87,.035);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:70px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .hero-copy h1{
+      margin:0 0 20px;
+      font-size:clamp(2.8rem,6vw,5.7rem);
+      line-height:1.08;
+      color:var(--primary);
+      letter-spacing:-.04em;
+    }
+    .hero-copy h1 span{
+      display:block;
+      color:var(--accent);
+      font-family:"Playfair Display",serif;
+      font-size:.74em;
+      letter-spacing:0;
+      margin-top:10px;
+    }
+    .hero-copy > p{
+      max-width:650px;
+      margin:0 0 28px;
+      color:var(--muted);
+      font-size:1.1rem;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:26px;
+      color:#4D626F;
+      font-size:.9rem;
+    }
+    .hero-note .avatars{display:flex}
+    .hero-note .avatars img{
+      width:34px;height:34px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid #fff;
+      margin-left:-9px;
+    }
+    .hero-note .stars{color:#F1A23A;font-size:.78rem}
+
+    .hero-visual{position:relative;min-height:590px}
+    .portrait-wrap{
+      position:absolute;
+      inset:16px 28px 0;
+      border-radius:42px 42px 150px 42px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:#DCE8EE;
+    }
+    .portrait-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      filter:saturate(.85);
+    }
+    .portrait-wrap::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 55%,rgba(23,59,87,.20));
+    }
+    .floating-card{
+      position:absolute;
+      z-index:3;
+      background:rgba(255,255,255,.95);
+      border:1px solid rgba(223,231,236,.9);
+      border-radius:18px;
+      padding:14px 17px;
+      box-shadow:0 18px 38px rgba(23,59,87,.14);
+      display:flex;
+      align-items:center;
+      gap:12px;
+      animation:float 5s ease-in-out infinite;
+    }
+    .floating-card .icon{
+      width:42px;height:42px;
+      border-radius:12px;
+      display:grid;place-items:center;
+      color:var(--primary);
+      background:var(--accent-soft);
+    }
+    .floating-card strong{display:block;color:var(--primary);font-size:.92rem}
+    .floating-card span{display:block;color:var(--muted);font-size:.75rem}
+    .card-top{top:15px;left:-15px}
+    .card-bottom{bottom:28px;right:-20px;animation-delay:-2s}
+    .experience-badge{
+      position:absolute;
+      left:18px;
+      bottom:95px;
+      width:125px;height:125px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      color:#fff;
+      background:var(--primary);
+      border:8px solid #fff;
+      z-index:4;
+      box-shadow:0 14px 30px rgba(23,59,87,.25);
+    }
+    .experience-badge strong{display:block;font-size:1.65rem;line-height:1}
+    .experience-badge span{font-size:.72rem;line-height:1.5}
+    @keyframes float{50%{transform:translateY(-10px)}}
+
+    .stats{
+      margin-top:-35px;
+      position:relative;
+      z-index:5;
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .stat{
+      padding:28px 20px;
+      text-align:center;
+      position:relative;
+    }
+    .stat:not(:last-child)::after{
+      content:"";
+      position:absolute;
+      left:0;top:25%;
+      width:1px;height:50%;
+      background:var(--line);
+    }
+    .stat strong{
+      display:block;
+      color:var(--primary);
+      font-size:2rem;
+      line-height:1.3;
+    }
+    .stat span{color:var(--muted);font-size:.86rem}
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:70px;
+      align-items:center;
+    }
+    .about-image{
+      position:relative;
+      min-height:520px;
+    }
+    .about-image .main{
+      position:absolute;
+      inset:0 55px 0 0;
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .about-image .main img{width:100%;height:100%;object-fit:cover}
+    .about-image .small{
+      position:absolute;
+      width:210px;height:240px;
+      left:0;bottom:-28px;
+      border:8px solid #fff;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 16px 35px rgba(23,59,87,.16);
+    }
+    .about-image .small img{width:100%;height:100%;object-fit:cover}
+    .about-copy h2{
+      margin:0 0 18px;
+      font-size:clamp(2rem,4vw,3.2rem);
+      color:var(--primary);
+      line-height:1.3;
+    }
+    .about-copy p{color:var(--muted);margin:0 0 16px}
+    .credentials{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:13px;
+      margin:28px 0;
+    }
+    .credential{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:15px;
+      border:1px solid var(--line);
+      border-radius:15px;
+      background:#fff;
+    }
+    .credential i{color:var(--accent);margin-top:6px}
+    .credential strong{display:block;font-size:.9rem;color:var(--primary)}
+    .credential span{display:block;font-size:.77rem;color:var(--muted)}
+
+    .approach-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .approach-card{
+      padding:27px 23px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      transition:.3s;
+    }
+    .approach-card:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow);
+      border-color:transparent;
+    }
+    .approach-icon{
+      width:54px;height:54px;
+      border-radius:16px;
+      display:grid;place-items:center;
+      background:var(--accent-soft);
+      color:var(--primary);
+      font-size:1.2rem;
+      margin-bottom:19px;
+    }
+    .approach-card h3{margin:0 0 9px;color:var(--primary);font-size:1.1rem}
+    .approach-card p{margin:0;color:var(--muted);font-size:.88rem}
+
+    .programs-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .program-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      transition:.3s;
+    }
+    .program-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+    .program-image{
+      height:220px;
+      overflow:hidden;
+      position:relative;
+    }
+    .program-image img{width:100%;height:100%;object-fit:cover;transition:.45s}
+    .program-card:hover .program-image img{transform:scale(1.05)}
+    .program-label{
+      position:absolute;
+      top:15px;right:15px;
+      background:rgba(255,255,255,.94);
+      color:var(--primary);
+      padding:6px 11px;
+      border-radius:99px;
+      font-size:.73rem;
+      font-weight:800;
+    }
+    .program-body{padding:23px}
+    .program-body h3{margin:0 0 8px;color:var(--primary);font-size:1.2rem}
+    .program-body p{margin:0 0 18px;color:var(--muted);font-size:.88rem}
+    .program-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:19px;
+    }
+    .program-meta span{
+      padding:6px 10px;
+      border-radius:9px;
+      background:var(--surface-2);
+      color:#526773;
+      font-size:.72rem;
+      font-weight:700;
+    }
+    .text-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary-2);
+      font-size:.88rem;
+      font-weight:800;
+    }
+
+    .results-wrap{
+      background:var(--primary);
+      border-radius:34px;
+      padding:55px;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+    }
+    .results-wrap::before{
+      content:"";
+      position:absolute;
+      width:300px;height:300px;
+      left:-120px;top:-140px;
+      border-radius:50%;
+      border:55px solid rgba(255,255,255,.045);
+    }
+    .results-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:55px;
+      align-items:center;
+    }
+    .results-copy h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.25;margin:0 0 17px}
+    .results-copy p{margin:0;color:rgba(255,255,255,.72)}
+    .progress-list{display:grid;gap:20px}
+    .progress-item .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:8px;
+      font-size:.86rem;
+      font-weight:700;
+    }
+    .progress-track{
+      height:10px;
+      border-radius:99px;
+      background:rgba(255,255,255,.12);
+      overflow:hidden;
+    }
+    .progress-fill{
+      width:0;
+      height:100%;
+      border-radius:99px;
+      background:linear-gradient(90deg,var(--accent),#FFD39D);
+      transition:width 1.2s ease;
+    }
+
+    .timeline{
+      position:relative;
+      max-width:850px;
+      margin-inline:auto;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      top:8px;bottom:8px;
+      right:20px;
+      width:2px;
+      background:var(--line);
+    }
+    .timeline-item{
+      position:relative;
+      padding-right:70px;
+      margin-bottom:30px;
+    }
+    .timeline-dot{
+      position:absolute;
+      right:5px;top:6px;
+      width:32px;height:32px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      color:#fff;
+      background:var(--primary);
+      border:6px solid #fff;
+      box-shadow:0 0 0 2px var(--accent);
+      font-size:.65rem;
+    }
+    .timeline-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px 24px;
+    }
+    .timeline-card .period{color:var(--accent);font-size:.78rem;font-weight:800}
+    .timeline-card h3{margin:3px 0 5px;color:var(--primary);font-size:1.08rem}
+    .timeline-card p{margin:0;color:var(--muted);font-size:.88rem}
+
+    .testimonial-shell{
+      display:grid;
+      grid-template-columns:.75fr 1.25fr;
+      gap:35px;
+      align-items:stretch;
+    }
+    .testimonial-intro{
+      padding:38px;
+      border-radius:25px;
+      background:var(--accent-soft);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .testimonial-intro h2{margin:0 0 13px;color:var(--primary);font-size:2rem;line-height:1.3}
+    .testimonial-intro p{margin:0;color:var(--muted)}
+    .testimonial-slider{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:25px;
+      padding:36px;
+      min-height:330px;
+      box-shadow:var(--shadow);
+    }
+    .quote-mark{
+      width:52px;height:52px;
+      display:grid;place-items:center;
+      border-radius:15px;
+      background:var(--primary);
+      color:#fff;
+      margin-bottom:20px;
+    }
+    .testimonial{display:none}
+    .testimonial.active{display:block;animation:fade .35s ease}
+    .testimonial p{margin:0 0 25px;color:#3E525F;font-size:1rem}
+    .person{display:flex;align-items:center;gap:12px}
+    .person img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+    .person strong{display:block;color:var(--primary);font-size:.9rem}
+    .person span{display:block;color:var(--muted);font-size:.76rem}
+    .slider-controls{
+      position:absolute;
+      left:28px;bottom:28px;
+      display:flex;gap:8px;
+    }
+    .slider-controls button{
+      width:40px;height:40px;
+      border-radius:11px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--primary);
+      cursor:pointer;
+      transition:.2s;
+    }
+    .slider-controls button:hover{background:var(--primary);color:#fff}
+
+    .faq-list{max-width:860px;margin-inline:auto;display:grid;gap:12px}
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      overflow:hidden;
+    }
+    .faq-question{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:19px 21px;
+      border:0;
+      background:transparent;
+      color:var(--primary);
+      font-weight:800;
+      cursor:pointer;
+      text-align:right;
+    }
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .faq-answer p{
+      margin:0;
+      padding:0 21px 20px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .faq-item.open .faq-answer{max-height:220px}
+    .faq-item.open .faq-question i{transform:rotate(45deg)}
+    .faq-question i{transition:.25s}
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:35px;
+      background:var(--primary);
+      border-radius:32px;
+      padding:50px;
+      color:#fff;
+    }
+    .contact-info h2{margin:0 0 12px;font-size:2.3rem;line-height:1.25}
+    .contact-info > p{margin:0 0 25px;color:rgba(255,255,255,.72)}
+    .contact-list{display:grid;gap:13px}
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:rgba(255,255,255,.88);
+      font-size:.9rem;
+    }
+    .contact-item i{
+      width:38px;height:38px;
+      border-radius:11px;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.10);
+      color:var(--accent);
+    }
+    .contact-form{
+      background:#fff;
+      border-radius:22px;
+      padding:28px;
+      color:var(--ink);
+    }
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.78rem;font-weight:800;color:var(--primary)}
+    .field input,.field select,.field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:11px;
+      padding:12px 13px;
+      outline:none;
+      background:#FBFDFE;
+      color:var(--ink);
+      transition:.2s;
+    }
+    .field textarea{min-height:105px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{
+      border-color:var(--primary-2);
+      box-shadow:0 0 0 3px rgba(36,91,122,.09);
+    }
+    .form-message{
+      display:none;
+      margin-top:13px;
+      color:var(--success);
+      font-size:.82rem;
+      font-weight:800;
+    }
+
+    .footer{padding:30px 0;background:#102A3C;color:rgba(255,255,255,.70)}
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .socials{display:flex;gap:9px}
+    .socials a{
+      width:38px;height:38px;
+      display:grid;place-items:center;
+      border-radius:10px;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      transition:.2s;
+    }
+    .socials a:hover{background:var(--accent);color:#182733;transform:translateY(-2px)}
+    .copyright{font-size:.78rem}
+
+    .whatsapp{
+      position:fixed;
+      left:22px;
+      bottom:22px;
+      z-index:999;
+      width:55px;height:55px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      color:#fff;
+      background:#25D366;
+      box-shadow:0 12px 25px rgba(37,211,102,.3);
+      font-size:1.35rem;
+      transition:.25s;
+    }
+    .whatsapp:hover{transform:translateY(-4px) scale(1.03)}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @keyframes fade{
+      from{opacity:0;transform:translateY(8px)}
+      to{opacity:1;transform:none}
+    }
+
+    @media (max-width:1020px){
+      .nav-links{
+        position:fixed;
+        top:76px;
+        right:20px;
+        left:20px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:5px;
+        padding:18px;
+        border:1px solid var(--line);
+        border-radius:18px;
+        background:#fff;
+        box-shadow:var(--shadow);
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:10px 12px;border-radius:9px}
+      .nav-links a:hover{background:var(--surface-2)}
+      .nav .btn{display:none}
+      .menu-toggle{display:block}
+
+      .hero-grid,.about-grid,.results-grid,.testimonial-shell,.contact-wrap{
+        grid-template-columns:1fr;
+      }
+      .hero-copy{text-align:center}
+      .hero-copy > p{margin-inline:auto}
+      .hero-actions,.hero-note{justify-content:center}
+      .hero-visual{max-width:590px;width:100%;margin-inline:auto}
+      .about-grid{gap:90px}
+      .about-image{max-width:600px;width:100%;margin-inline:auto}
+      .approach-grid{grid-template-columns:1fr 1fr}
+      .programs-grid{grid-template-columns:1fr 1fr}
+      .results-copy{text-align:center}
+    }
+
+    @media (max-width:720px){
+      :root{--container:min(100% - 28px,1180px)}
+      .section{padding:76px 0}
+      .hero{padding-top:108px}
+      .hero-grid{gap:35px}
+      .hero-copy h1{font-size:2.85rem}
+      .hero-copy > p{font-size:.96rem}
+      .hero-visual{min-height:480px}
+      .portrait-wrap{inset:0 8px 0}
+      .card-top{left:0}
+      .card-bottom{right:0;bottom:10px}
+      .experience-badge{width:105px;height:105px;left:8px;bottom:80px}
+      .experience-badge strong{font-size:1.35rem}
+      .stats{margin-top:20px}
+      .stats-grid{grid-template-columns:1fr 1fr}
+      .stat:nth-child(2)::after{display:none}
+      .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .about-image{min-height:430px}
+      .about-image .main{inset:0 20px 0 0}
+      .about-image .small{width:155px;height:185px}
+      .credentials,.approach-grid,.programs-grid,.form-grid{grid-template-columns:1fr}
+      .results-wrap{padding:34px 22px}
+      .testimonial-slider{padding:28px 22px 80px}
+      .contact-wrap{padding:32px 20px}
+      .field.full{grid-column:auto}
+      .footer-inner{flex-direction:column;text-align:center}
+      .whatsapp{left:15px;bottom:15px}
+    }
+
+    @media (max-width:440px){
+      .brand-text span{display:none}
+      .hero-copy h1{font-size:2.45rem}
+      .hero-actions .btn{width:100%}
+      .floating-card{padding:10px 12px}
+      .floating-card .icon{width:36px;height:36px}
+      .floating-card strong{font-size:.8rem}
+      .floating-card span{font-size:.66rem}
+      .stats-grid{grid-template-columns:1fr}
+      .stat:not(:last-child)::after{display:none}
+      .stat:not(:last-child){border-bottom:1px solid var(--line)}
+      .about-image .small{display:none}
+      .about-image .main{inset:0}
+      .section-heading h2,.about-copy h2{font-size:2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="العودة إلى الرئيسية">
+        <div class="brand-mark">AS</div>
+        <div class="brand-text">
+          <strong>أحمد سامح</strong>
+          <span>English Language Educator</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="القائمة الرئيسية">
+        <a href="#home" class="active">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#approach">منهجي</a>
+        <a href="#programs">البرامج</a>
+        <a href="#experience">الخبرة</a>
+        <a href="#testimonials">آراء الطلاب</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">
+        <i class="fa-regular fa-calendar"></i>
+        احجز جلسة تقييم
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">مدرس لغة إنجليزية معتمد</span>
+          <h1>
+            تعلّم الإنجليزية بثقة،
+            <span>Speak with purpose.</span>
+          </h1>
+          <p>
+            أساعد الطلاب والمهنيين على تطوير المحادثة، تحسين النطق، وبناء لغة عملية
+            يستخدمونها بثقة في الدراسة والعمل والمواقف اليومية.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programs">
+              استكشف البرامج
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a class="btn btn-light" href="#contact">
+              احجز جلسة تعارف
+              <i class="fa-regular fa-comments"></i>
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <div class="avatars">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="طالبة">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="طالب">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="طالبة">
+            </div>
+            <div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              أكثر من 450 طالبًا حققوا تقدمًا ملموسًا
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="portrait-wrap">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=88" alt="الأستاذ أحمد سامح مدرس اللغة الإنجليزية">
+          </div>
+
+          <div class="floating-card card-top">
+            <div class="icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <div>
+              <strong>محادثة عملية</strong>
+              <span>جلسات تعتمد على التفاعل</span>
+            </div>
+          </div>
+
+          <div class="floating-card card-bottom">
+            <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <strong>تقدم قابل للقياس</strong>
+              <span>خطة واضحة وتقارير دورية</span>
+            </div>
+          </div>
+
+          <div class="experience-badge">
+            <div>
+              <strong>8+</strong>
+              <span>سنوات خبرة<br>في تدريس الإنجليزية</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats">
+      <div class="stats-grid reveal">
+        <div class="stat">
+          <strong class="counter" data-target="450" data-suffix="+">0</strong>
+          <span>طالب وطالبة</span>
+        </div>
+        <div class="stat">
+          <strong class="counter" data-target="6200" data-suffix="+">0</strong>
+          <span>ساعة تدريبية</span>
+        </div>
+        <div class="stat">
+          <strong class="counter" data-target="94" data-suffix="%">0</strong>
+          <span>معدل رضا الطلاب</span>
+        </div>
+        <div class="stat">
+          <strong class="counter" data-target="18" data-suffix="">0</strong>
+          <span>برنامجًا تدريبيًا</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <div class="main">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1100&q=85" alt="شرح اللغة الإنجليزية داخل قاعة تدريب">
+          </div>
+          <div class="small">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=85" alt="جلسة تعليم تفاعلية">
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">عن أحمد سامح</span>
+          <h2>اللغة لا تُحفظ فقط، بل تُمارس حتى تصبح جزءًا من يومك.</h2>
+          <p>
+            بدأت رحلتي في تدريس اللغة الإنجليزية عام 2018، ومنذ ذلك الوقت عملت مع
+            طلاب مدارس وجامعات، وباحثين عن فرص عمل، وموظفين يحتاجون إلى لغة أكثر
+            ثقة ووضوحًا في بيئة العمل.
+          </p>
+          <p>
+            أعتمد على تقييم دقيق للمستوى، ثم أبني لكل طالب خطة تعلم تناسب أهدافه
+            وسرعة تقدمه. داخل الجلسات نركز على الاستخدام الحقيقي للغة، مع متابعة
+            منتظمة للنطق، المفردات، القواعد، والطلاقة.
+          </p>
+
+          <div class="credentials">
+            <div class="credential">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div>
+                <strong>بكالوريوس الآداب – لغة إنجليزية</strong>
+                <span>جامعة عين شمس، 2017</span>
+              </div>
+            </div>
+            <div class="credential">
+              <i class="fa-solid fa-certificate"></i>
+              <div>
+                <strong>CELTA Certified</strong>
+                <span>Cambridge English</span>
+              </div>
+            </div>
+            <div class="credential">
+              <i class="fa-solid fa-globe"></i>
+              <div>
+                <strong>IELTS Academic – Band 8</strong>
+                <span>خبرة في الإعداد للاختبار</span>
+              </div>
+            </div>
+            <div class="credential">
+              <i class="fa-solid fa-laptop"></i>
+              <div>
+                <strong>Online Teaching Specialist</strong>
+                <span>جلسات فردية وجماعية عن بُعد</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#experience" class="btn btn-light">
+            تعرف على خبرتي
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="approach">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">منهجي في التدريس</span>
+          <h2>تعلّم منظّم، عملي، ومبني على هدف واضح</h2>
+          <p>
+            كل مرحلة في الرحلة التعليمية لها غرض محدد، من تقييم المستوى وحتى
+            استخدام اللغة بثقة في المواقف الحقيقية.
+          </p>
+        </div>
+
+        <div class="approach-grid">
+          <article class="approach-card reveal">
+            <div class="approach-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>تقييم دقيق للمستوى</h3>
+            <p>تحليل لمهارات الاستماع، المحادثة، القراءة والكتابة لتحديد نقطة البداية بدقة.</p>
+          </article>
+
+          <article class="approach-card reveal">
+            <div class="approach-icon"><i class="fa-solid fa-route"></i></div>
+            <h3>خطة تعلم شخصية</h3>
+            <p>مسار تدريبي يناسب هدف الطالب، مستواه، والوقت المتاح له أسبوعيًا.</p>
+          </article>
+
+          <article class="approach-card reveal">
+            <div class="approach-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>تطبيق ومحادثة</h3>
+            <p>مواقف عملية، تمثيل أدوار، وأنشطة تساعد على استخدام اللغة دون تردد.</p>
+          </article>
+
+          <article class="approach-card reveal">
+            <div class="approach-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <h3>متابعة مستمرة</h3>
+            <p>تقييمات قصيرة وتقارير تقدم توضح نقاط القوة وما يحتاج إلى مزيد من التدريب.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">البرامج التعليمية</span>
+          <h2>برامج مصممة لأهداف مختلفة ومستويات متعددة</h2>
+          <p>
+            اختر البرنامج الأقرب لهدفك، وسيتم تحديد نقطة البداية المناسبة بعد جلسة التقييم.
+          </p>
+        </div>
+
+        <div class="programs-grid">
+          <article class="program-card reveal">
+            <div class="program-image">
+              <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=900&q=85" alt="برنامج المحادثة الإنجليزية">
+              <span class="program-label">الأكثر طلبًا</span>
+            </div>
+            <div class="program-body">
+              <h3>English Conversation</h3>
+              <p>برنامج عملي لتطوير الطلاقة، تحسين النطق، وتوسيع المفردات المستخدمة في الحياة اليومية.</p>
+              <div class="program-meta">
+                <span>12 أسبوعًا</span>
+                <span>A2 – B2</span>
+                <span>فردي أو مجموعة</span>
+              </div>
+              <a class="text-link" href="#contact">احجز تقييمك <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <article class="program-card reveal">
+            <div class="program-image">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="اللغة الإنجليزية للعمل">
+              <span class="program-label">للمهنيين</span>
+            </div>
+            <div class="program-body">
+              <h3>Business English</h3>
+              <p>تدريب على الاجتماعات، البريد الإلكتروني، العروض التقديمية، والمقابلات الوظيفية.</p>
+              <div class="program-meta">
+                <span>10 أسابيع</span>
+                <span>B1 – C1</span>
+                <span>تطبيقات عملية</span>
+              </div>
+              <a class="text-link" href="#contact">احجز تقييمك <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <article class="program-card reveal">
+            <div class="program-image">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=85" alt="الاستعداد لاختبار IELTS">
+              <span class="program-label">اختبارات دولية</span>
+            </div>
+            <div class="program-body">
+              <h3>IELTS Preparation</h3>
+              <p>خطة متكاملة لتطوير المهارات الأربع، التدريب على نماذج الاختبار، وإدارة الوقت بفاعلية.</p>
+              <div class="program-meta">
+                <span>8–14 أسبوعًا</span>
+                <span>B1+</span>
+                <span>Academic & General</span>
+              </div>
+              <a class="text-link" href="#contact">احجز تقييمك <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <article class="program-card reveal">
+            <div class="program-image">
+              <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=85" alt="لغة إنجليزية لطلاب المدارس">
+              <span class="program-label">طلاب المدارس</span>
+            </div>
+            <div class="program-body">
+              <h3>School Support</h3>
+              <p>دعم دراسي يربط منهج المدرسة بالفهم الحقيقي للغة، مع تطوير القواعد والكتابة والمحادثة.</p>
+              <div class="program-meta">
+                <span>خطة فصلية</span>
+                <span>إعدادي وثانوي</span>
+                <span>متابعة ولي الأمر</span>
+              </div>
+              <a class="text-link" href="#contact">احجز تقييمك <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <article class="program-card reveal">
+            <div class="program-image">
+              <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=85" alt="برنامج قواعد اللغة الإنجليزية">
+              <span class="program-label">تأسيس قوي</span>
+            </div>
+            <div class="program-body">
+              <h3>Grammar Made Simple</h3>
+              <p>شرح مبسط للقواعد مع تطبيقات عملية تساعد على استخدامها في الكلام والكتابة دون تعقيد.</p>
+              <div class="program-meta">
+                <span>8 أسابيع</span>
+                <span>A1 – B1</span>
+                <span>تدريبات أسبوعية</span>
+              </div>
+              <a class="text-link" href="#contact">احجز تقييمك <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <article class="program-card reveal">
+            <div class="program-image">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85" alt="جلسات محادثة جماعية">
+              <span class="program-label">تدريب جماعي</span>
+            </div>
+            <div class="program-body">
+              <h3>Speaking Club</h3>
+              <p>لقاءات أسبوعية لممارسة المحادثة في موضوعات متنوعة داخل بيئة داعمة وتفاعلية.</p>
+              <div class="program-meta">
+                <span>لقاء أسبوعي</span>
+                <span>B1 – C1</span>
+                <span>مجموعات صغيرة</span>
+              </div>
+              <a class="text-link" href="#contact">انضم للنادي <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="results-wrap reveal">
+          <div class="results-grid">
+            <div class="results-copy">
+              <span class="eyebrow" style="color:#fff">نتائج طلابي</span>
+              <h2>تقدم حقيقي يظهر في طريقة استخدام اللغة</h2>
+              <p>
+                تعتمد النتائج على تقييمات دورية ومهام تطبيقية تقيس قدرة الطالب
+                على الفهم والتعبير، وليس فقط حفظ الكلمات والقواعد.
+              </p>
+            </div>
+
+            <div class="progress-list">
+              <div class="progress-item">
+                <div class="head"><span>تحسن الثقة في المحادثة</span><span>92%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-width="92%"></div></div>
+              </div>
+              <div class="progress-item">
+                <div class="head"><span>تحسن دقة النطق والاستماع</span><span>87%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-width="87%"></div></div>
+              </div>
+              <div class="progress-item">
+                <div class="head"><span>الالتزام بالخطة التعليمية</span><span>90%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
+              </div>
+              <div class="progress-item">
+                <div class="head"><span>تحقيق الهدف الأساسي للبرنامج</span><span>89%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-width="89%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="experience">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">الخبرة المهنية</span>
+          <h2>خبرة تجمع بين التعليم الأكاديمي والتدريب العملي</h2>
+          <p>مسيرة تدريسية شملت الطلاب، الخريجين، والمهنيين داخل مصر وعبر الإنترنت.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="timeline-card">
+              <span class="period">2023 – حتى الآن</span>
+              <h3>Senior English Instructor — Bridge Learning Center</h3>
+              <p>تقديم برامج المحادثة وBusiness English، والإشراف على تقييم مستويات المتعلمين وخطط تقدمهم.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-laptop"></i></div>
+            <div class="timeline-card">
+              <span class="period">2021 – حتى الآن</span>
+              <h3>Online English Coach</h3>
+              <p>جلسات فردية وجماعية لطلاب من مصر والسعودية والإمارات، مع خطط تعليم مخصصة ومتابعة شهرية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+            <div class="timeline-card">
+              <span class="period">2019 – 2023</span>
+              <h3>English Teacher — Horizon Language School</h3>
+              <p>تدريس اللغة الإنجليزية للمرحلتين الإعدادية والثانوية، وإعداد أنشطة تفاعلية لتحسين المشاركة والمهارات اللغوية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><i class="fa-solid fa-book-open"></i></div>
+            <div class="timeline-card">
+              <span class="period">2018 – 2019</span>
+              <h3>English Teaching Assistant</h3>
+              <p>دعم الطلاب في القواعد والكتابة الأكاديمية، وإعداد مواد تدريبية ومراجعات أسبوعية للمستويات المبتدئة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container testimonial-shell">
+        <div class="testimonial-intro reveal">
+          <span class="eyebrow">آراء الطلاب</span>
+          <h2>قصص تقدم بدأت بخطوة بسيطة</h2>
+          <p>
+            أعتز بكل طالب استطاع أن يتجاوز خوفه من اللغة ويستخدمها بثقة في دراسته أو عمله.
+          </p>
+        </div>
+
+        <div class="testimonial-slider reveal">
+          <div class="quote-mark"><i class="fa-solid fa-quote-right"></i></div>
+
+          <article class="testimonial active">
+            <p>
+              بدأت مع مستر أحمد وأنا مترددة جدًا في الكلام، وبعد ثلاثة أشهر أصبحت أشارك
+              في اجتماعات العمل بالإنجليزية وأشرح أفكاري بدون توتر. أكثر شيء فرق معي هو
+              أن كل جلسة كانت مرتبطة بمواقف حقيقية من شغلي.
+            </p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=85" alt="سارة مجدي">
+              <div>
+                <strong>سارة مجدي</strong>
+                <span>Marketing Specialist</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <p>
+              طريقة الشرح منظمة وبسيطة، خصوصًا في القواعد والكتابة. قدرت أرفع درجتي في
+              IELTS من 5.5 إلى 7 خلال أربعة أشهر، والأهم أنني فهمت كيف أتعامل مع كل جزء
+              من الاختبار بثقة.
+            </p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=85" alt="عمر حسام">
+              <div>
+                <strong>عمر حسام</strong>
+                <span>Mechanical Engineer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <p>
+              ابني كان يذاكر القواعد ويحفظها لكنه لا يستطيع استخدامها. خلال الفصل الدراسي
+              تحسن مستواه في الكتابة والمحادثة بشكل واضح، وأصبح أكثر مشاركة داخل المدرسة.
+              المتابعة والتواصل كانا ممتازين.
+            </p>
+            <div class="person">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=85" alt="والدة يوسف">
+              <div>
+                <strong>دينا فوزي</strong>
+                <span>والدة الطالب يوسف</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="slider-controls">
+            <button id="prevTestimonial" aria-label="الرأي السابق"><i class="fa-solid fa-arrow-right"></i></button>
+            <button id="nextTestimonial" aria-label="الرأي التالي"><i class="fa-solid fa-arrow-left"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="faq">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">الأسئلة الشائعة</span>
+          <h2>قبل أن تبدأ رحلتك التعليمية</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              كيف يتم تحديد المستوى المناسب؟
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>تبدأ الرحلة بجلسة تقييم قصيرة تشمل المحادثة والاستماع والقواعد، ثم أرسل لك تقريرًا واضحًا بمستواك ونقاط القوة والخطة المناسبة لهدفك.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              هل الجلسات فردية أم جماعية؟
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>تتوفر جلسات فردية، ومجموعات صغيرة لا تتجاوز ستة طلاب. يتم اختيار النظام وفق طبيعة البرنامج والهدف الشخصي للمتعلم.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              هل يمكن الدراسة بالكامل عبر الإنترنت؟
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>نعم، تُقدَّم الجلسات عبر Zoom مع مواد رقمية، تدريبات منزلية، تسجيلات مساعدة، ومتابعة مباشرة طوال مدة البرنامج.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              كم أحتاج من الوقت لألاحظ تحسنًا؟
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>يبدأ معظم الطلاب في ملاحظة فرق واضح خلال أربعة إلى ستة أسابيع عند الالتزام بجلستين أسبوعيًا والتدريب المنتظم بين الجلسات.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              هل توجد متابعة بين الجلسات؟
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>نعم، تشمل الخطة واجبات قصيرة، ملاحظات صوتية، تصحيحًا للمهام، ورسالة متابعة أسبوعية تساعدك على الالتزام وتحقيق تقدم مستمر.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div class="contact-info">
+            <span class="eyebrow" style="color:#fff">ابدأ الآن</span>
+            <h2>خطوتك الأولى نحو إنجليزية أكثر ثقة</h2>
+            <p>
+              أرسل بياناتك وهدفك من تعلم اللغة، وسأتواصل معك لتحديد موعد جلسة التقييم المناسبة.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span dir="ltr">+20 100 845 7621</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <span>ahmed.sameh.english@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>القاهرة، مصر — جلسات حضورية وأونلاين</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>السبت إلى الخميس، 10 صباحًا – 9 مساءً</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="bookingForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">الاسم الكامل</label>
+                <input id="name" name="name" type="text" placeholder="اكتب اسمك" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">رقم الهاتف</label>
+                <input id="phone" name="phone" type="tel" placeholder="01xxxxxxxxx" required>
+              </div>
+
+              <div class="field">
+                <label for="level">المستوى الحالي</label>
+                <select id="level" name="level" required>
+                  <option value="">اختر المستوى</option>
+                  <option>مبتدئ</option>
+                  <option>متوسط</option>
+                  <option>فوق المتوسط</option>
+                  <option>غير متأكد</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="program">البرنامج المطلوب</label>
+                <select id="program" name="program" required>
+                  <option value="">اختر البرنامج</option>
+                  <option>English Conversation</option>
+                  <option>Business English</option>
+                  <option>IELTS Preparation</option>
+                  <option>School Support</option>
+                  <option>Grammar Made Simple</option>
+                  <option>Speaking Club</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="goal">ما هدفك من تعلم الإنجليزية؟</label>
+                <textarea id="goal" name="goal" placeholder="اكتب هدفك باختصار"></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="btn btn-accent" type="submit">
+                  إرسال طلب التقييم
+                  <i class="fa-brands fa-whatsapp"></i>
+                </button>
+                <div class="form-message" id="formMessage">
+                  تم تجهيز رسالتك، سيتم تحويلك إلى واتساب الآن.
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="copyright">
+        © <span id="year"></span> أحمد سامح — جميع الحقوق محفوظة.
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="لينكدإن"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="إنستجرام"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:ahmed.sameh.english@gmail.com" aria-label="البريد الإلكتروني"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/201008457621" target="_blank" rel="noopener" aria-label="التواصل عبر واتساب">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.innerHTML = navLinks.classList.contains('open')
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navItems = [...document.querySelectorAll('.nav-links a')];
+
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 140) current = section.id;
+      });
+
+      navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === '#' + current);
+      });
+    });
+
+    let countersStarted = false;
+    const statsSection = document.querySelector('.stats');
+
+    const statsObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !countersStarted) {
+        countersStarted = true;
+        document.querySelectorAll('.counter').forEach(counter => {
+          const target = Number(counter.dataset.target);
+          const suffix = counter.dataset.suffix || '';
+          const duration = 1500;
+          const start = performance.now();
+
+          function update(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.floor(target * eased).toLocaleString('en-US') + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        });
+        statsObserver.disconnect();
+      }
+    }, { threshold: .35 });
+
+    statsObserver.observe(statsSection);
+
+    const progressObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.progress-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width;
+        });
+        progressObserver.disconnect();
+      }
+    }, { threshold: .35 });
+
+    progressObserver.observe(document.querySelector('.results-wrap'));
+
+    const testimonials = [...document.querySelectorAll('.testimonial')];
+    let testimonialIndex = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((item, i) => item.classList.toggle('active', i === index));
+    }
+
+    document.getElementById('nextTestimonial').addEventListener('click', () => {
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+      showTestimonial(testimonialIndex);
+    });
+
+    document.getElementById('prevTestimonial').addEventListener('click', () => {
+      testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(testimonialIndex);
+    });
+
+    setInterval(() => {
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+      showTestimonial(testimonialIndex);
+    }, 6500);
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    const bookingForm = document.getElementById('bookingForm');
+    const formMessage = document.getElementById('formMessage');
+
+    bookingForm.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const level = document.getElementById('level').value;
+      const program = document.getElementById('program').value;
+      const goal = document.getElementById('goal').value.trim();
+
+      const message =
+`مرحبًا أستاذ أحمد،
+أرغب في حجز جلسة تقييم للغة الإنجليزية.
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+المستوى الحالي: ${level}
+البرنامج المطلوب: ${program}
+الهدف: ${goal || 'سأوضحه خلال التواصل'}`;
+
+      formMessage.style.display = 'block';
+
+      setTimeout(() => {
+        window.open(`https://wa.me/201008457621?text=${encodeURIComponent(message)}`, '_blank');
+      }, 450);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
