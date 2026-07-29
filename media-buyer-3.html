@@ -991,6 +991,160 @@
       border-color: var(--primary);
     }
 
+
+    .demo-note {
+      margin-top: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .demo-note svg {
+      flex: none;
+      margin-top: 2px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .proof-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+    }
+
+    .proof-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--primary);
+      background: rgba(37, 99, 235, 0.08);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .proof-screen {
+      background: #0f172a;
+      border-radius: 18px;
+      padding: 16px;
+      color: #fff;
+      min-height: 180px;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .proof-screen-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .proof-bars {
+      display: grid;
+      gap: 10px;
+      align-content: end;
+    }
+
+    .proof-bar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      overflow: hidden;
+    }
+
+    .proof-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), #38bdf8);
+    }
+
+    .proof-card h3 {
+      color: var(--secondary);
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .proof-card p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      color: #344054;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .proof-list li::before {
+      content: "✓";
+      color: var(--green);
+      margin-left: 7px;
+      font-weight: 900;
+    }
+
+    .case-card::after {
+      content: "مثال توضيحي";
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 3;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .case-card {
+      position: relative;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .trust-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      color: #344054;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+    }
+
     .whatsapp-float {
       position: fixed;
       left: 20px;
@@ -1065,7 +1219,8 @@
 
       .services-grid,
       .cases-grid,
-      .testimonials {
+      .testimonials,
+      .proof-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -1119,7 +1274,9 @@
       .cases-grid,
       .tools-grid,
       .testimonials,
-      .logos {
+      .logos,
+      .proof-grid,
+      .trust-strip {
         grid-template-columns: 1fr;
       }
 
@@ -1176,13 +1333,14 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="active">الرئيسية</a></li>
         <li><a href="#services">الخدمات</a></li>
-        <li><a href="#cases">النتائج</a></li>
+        <li><a href="#proof">إثبات النتائج</a></li>
+        <li><a href="#cases">دراسات الحالة</a></li>
         <li><a href="#process">طريقة العمل</a></li>
         <li><a href="#contact">تواصل</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a class="btn btn-primary" href="#contact">ابدأ حملة</a>
+        <a class="btn btn-primary" href="#contact">اطلب مراجعة الحساب</a>
         <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M4 7H20M4 12H20M4 17H20" stroke="#111827" stroke-width="2.3" stroke-linecap="round"/>
@@ -1197,20 +1355,26 @@
       <div class="container hero-grid">
         <div class="hero-content reveal">
           <div class="eyebrow"><span class="pulse"></span> متاح للتعاون مع 3 علامات جديدة هذا الشهر</div>
-          <h1>أحوّل الميزانية الإعلانية إلى <span class="gradient-text">مبيعات قابلة للقياس</span></h1>
+          <h1>أحوّل بيانات حملاتك إلى <span class="gradient-text">قرارات تزيد المبيعات</span></h1>
           <p class="hero-text">
-            ميديا باير متخصص في بناء وإدارة حملات الأداء على Meta وGoogle وTikTok، مع تركيز واضح على تقليل تكلفة الاكتساب، تحسين جودة العملاء، ورفع العائد على الإنفاق الإعلاني للمتاجر والخدمات.
+            ميديا باير متخصص في بناء وإدارة حملات الأداء على Meta وGoogle وTikTok، من تحليل العرض والتتبع إلى اختبار الكرياتيف وتحسين تكلفة الاكتساب وجودة العملاء.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#cases">شاهد نتائج الحملات</a>
-            <a class="btn btn-ghost" href="#contact">احجز مكالمة تحليل</a>
+            <a class="btn btn-primary" href="#proof">شاهد طريقة توثيق النتائج</a>
+            <a class="btn btn-ghost" href="#contact">اطلب مراجعة مجانية</a>
           </div>
 
           <div class="hero-mini">
             <div class="mini-chip"><b>Meta Ads</b> Scaling</div>
             <div class="mini-chip"><b>Google Ads</b> Search & PMax</div>
             <div class="mini-chip"><b>TikTok Ads</b> Creative Testing</div>
+          </div>
+          <div class="demo-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 9V13M12 17H12.01M10.3 4.6L2.8 17.6C2.1 18.8 3 20.3 4.4 20.3H19.6C21 20.3 21.9 18.8 21.2 17.6L13.7 4.6C13 3.4 11 3.4 10.3 4.6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>هذا نموذج عرض تجريبي. عند تنفيذ الموقع يتم استبدال الأرقام والصور ودراسات الحالة ببيانات العميل الحقيقية فقط.</span>
           </div>
         </div>
 
@@ -1273,6 +1437,11 @@
           <div class="logo-pill">DermaLine</div>
           <div class="logo-pill">Bloom Kids</div>
           <div class="logo-pill">Urban Roast</div>
+        </div>
+        <div class="trust-strip reveal">
+          <div class="trust-item">نتائج موثقة بلقطات من Ads Manager</div>
+          <div class="trust-item">إخفاء بيانات العملاء الحساسة</div>
+          <div class="trust-item">توضيح ما قبل وما بعد التحسين</div>
         </div>
       </div>
     </section>
@@ -1342,12 +1511,89 @@
       </div>
     </section>
 
+
+    <section class="section" id="proof">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">إثبات النتائج</div>
+            <h2 class="section-title">لا نعرض رقمًا بدون سياق أو دليل</h2>
+          </div>
+          <p class="section-desc">
+            في النسخة النهائية يتم استبدال هذه المساحات بلقطات حقيقية من الحسابات الإعلانية والتقارير، مع إخفاء أسماء العملاء والبيانات الحساسة.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card reveal">
+            <span class="proof-label">01 · Ads Manager</span>
+            <div class="proof-screen" aria-label="مكان مخصص للقطات مدير الإعلانات">
+              <div class="proof-screen-head"><span>Campaign Performance</span><span>Last 30 days</span></div>
+              <div class="proof-bars">
+                <div class="proof-bar"><span style="width:88%"></span></div>
+                <div class="proof-bar"><span style="width:67%"></span></div>
+                <div class="proof-bar"><span style="width:46%"></span></div>
+                <div class="proof-bar"><span style="width:74%"></span></div>
+              </div>
+            </div>
+            <h3>لقطة من الحساب الإعلاني</h3>
+            <p>تُظهر الإنفاق، النتائج، تكلفة النتيجة، والفترة الزمنية بدل عرض رقم منفصل بدون إثبات.</p>
+            <ul class="proof-list">
+              <li>إخفاء اسم العميل عند الحاجة</li>
+              <li>إظهار الفترة بوضوح</li>
+              <li>ذكر هدف الحملة</li>
+            </ul>
+          </article>
+
+          <article class="proof-card reveal">
+            <span class="proof-label">02 · Before / After</span>
+            <div class="proof-screen" aria-label="مكان مخصص لمقارنة الأداء">
+              <div class="proof-screen-head"><span>CPA Comparison</span><span>Before → After</span></div>
+              <div class="proof-bars">
+                <div class="proof-bar"><span style="width:92%"></span></div>
+                <div class="proof-bar"><span style="width:52%"></span></div>
+                <div class="proof-bar"><span style="width:78%"></span></div>
+                <div class="proof-bar"><span style="width:40%"></span></div>
+              </div>
+            </div>
+            <h3>مقارنة قبل وبعد</h3>
+            <p>توضّح المشكلة الأصلية، ما الذي تغير، وما النتيجة بعد فترة محددة من التحسين.</p>
+            <ul class="proof-list">
+              <li>المؤشر قبل التحسين</li>
+              <li>الإجراء الذي تم تنفيذه</li>
+              <li>المؤشر بعد التحسين</li>
+            </ul>
+          </article>
+
+          <article class="proof-card reveal">
+            <span class="proof-label">03 · Client Feedback</span>
+            <div class="proof-screen" aria-label="مكان مخصص لمراجعة العميل">
+              <div class="proof-screen-head"><span>Verified Feedback</span><span>WhatsApp / Email</span></div>
+              <div class="proof-bars">
+                <div class="proof-bar"><span style="width:84%"></span></div>
+                <div class="proof-bar"><span style="width:71%"></span></div>
+                <div class="proof-bar"><span style="width:58%"></span></div>
+                <div class="proof-bar"><span style="width:76%"></span></div>
+              </div>
+            </div>
+            <h3>رأي عميل موثّق</h3>
+            <p>لقطة أو شهادة يمكن التحقق منها، بدل استخدام أسماء وصور تجريبية كأنها مراجعات حقيقية.</p>
+            <ul class="proof-list">
+              <li>إذن العميل قبل النشر</li>
+              <li>بيانات تواصل مخفية</li>
+              <li>ربط الرأي بنتيجة محددة</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="cases">
       <div class="container">
         <div class="cases-top reveal">
           <div>
-            <div class="section-kicker">نتائج مختارة</div>
-            <h2 class="section-title">حملات حققت نمو فعلي</h2>
+            <div class="section-kicker">أمثلة لدراسات الحالة</div>
+            <h2 class="section-title">هكذا تُعرض النتائج عند توفر الأدلة</h2>
           </div>
 
           <div class="filters">
@@ -1366,7 +1612,7 @@
             </div>
             <div class="case-body">
               <h3>CasaMart Apparel</h3>
-              <p>إعادة بناء حملات Meta للمتجر، تقسيم الجمهور حسب نية الشراء، واختبار 18 كرياتيف خلال 45 يومًا.</p>
+              <p>مثال توضيحي: إعادة بناء حملات Meta، تقسيم الجمهور حسب نية الشراء، واختبار عدة زوايا إعلانية خلال فترة محددة.</p>
               <div class="case-metrics">
                 <div class="case-metric"><strong>5.6x</strong><span>ROAS</span></div>
                 <div class="case-metric"><strong>-42%</strong><span>CPA</span></div>
@@ -1382,7 +1628,7 @@
             </div>
             <div class="case-body">
               <h3>DermaLine Clinic</h3>
-              <p>حملة Lead Generation لعيادة جلدية مع تحسين جودة الاستفسارات وربط الحملات بنظام متابعة المبيعات.</p>
+              <p>مثال توضيحي: حملة Lead Generation مع تحسين جودة الاستفسارات وربط الحملات بنظام متابعة المبيعات.</p>
               <div class="case-metrics">
                 <div class="case-metric"><strong>1,240</strong><span>Leads</span></div>
                 <div class="case-metric"><strong>-36%</strong><span>CPL</span></div>
@@ -1398,7 +1644,7 @@
             </div>
             <div class="case-body">
               <h3>SkillHub Academy</h3>
-              <p>إطلاق فانل بيع لكورس تدريبي، بداية من Awareness حتى Retargeting مع تحسين صفحة التسجيل.</p>
+              <p>مثال توضيحي: بناء فانل بيع من Awareness حتى Retargeting مع تحسين صفحة التسجيل.</p>
               <div class="case-metrics">
                 <div class="case-metric"><strong>3.9x</strong><span>ROAS</span></div>
                 <div class="case-metric"><strong>612</strong><span>Sales</span></div>
@@ -1414,7 +1660,7 @@
             </div>
             <div class="case-body">
               <h3>NourFit Store</h3>
-              <p>توسيع حملات متجر منتجات رياضية من ميزانية صغيرة إلى Scaling تدريجي مع الحفاظ على Profit Margin.</p>
+              <p>مثال توضيحي: Scaling تدريجي مع متابعة تكلفة الشراء وهامش الربح.</p>
               <div class="case-metrics">
                 <div class="case-metric"><strong>4.7x</strong><span>ROAS</span></div>
                 <div class="case-metric"><strong>+189%</strong><span>Orders</span></div>
@@ -1430,7 +1676,7 @@
             </div>
             <div class="case-body">
               <h3>GrowthOps B2B</h3>
-              <p>حملة بحث على Google لخدمة B2B عالية التذكرة مع كلمات مفتاحية دقيقة وصفحات هبوط منفصلة.</p>
+              <p>مثال توضيحي: حملة بحث لخدمة B2B مع كلمات مفتاحية دقيقة وصفحات هبوط منفصلة.</p>
               <div class="case-metrics">
                 <div class="case-metric"><strong>214</strong><span>MQLs</span></div>
                 <div class="case-metric"><strong>19%</strong><span>Close Rate</span></div>
@@ -1446,7 +1692,7 @@
             </div>
             <div class="case-body">
               <h3>Urban Roast</h3>
-              <p>اختبار عروض Bundles وSubscriptions لبراند قهوة محلي مع Retargeting مبني على سلوك الزائر.</p>
+              <p>مثال توضيحي: اختبار عروض مختلفة وRetargeting مبني على سلوك الزائر.</p>
               <div class="case-metrics">
                 <div class="case-metric"><strong>4.2x</strong><span>ROAS</span></div>
                 <div class="case-metric"><strong>+71%</strong><span>AOV</span></div>
@@ -1542,11 +1788,14 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">آراء العملاء</div>
-            <h2 class="section-title">شراكات مستمرة وليست حملات مؤقتة</h2>
+            <div class="section-kicker">مكان آراء العملاء الموثقة</div>
+            <h2 class="section-title">استبدل هذه الأمثلة بآراء حقيقية قبل النشر</h2>
           </div>
         </div>
 
+        <div class="demo-note reveal" style="margin:0 0 18px">
+          <span>المراجعات الحالية أمثلة نصية للمعاينة فقط. في النسخة النهائية تُستخدم شهادات حقيقية أو يُحذف القسم بالكامل.</span>
+        </div>
         <div class="testimonials">
           <article class="testimonial reveal">
             <div class="stars">★★★★★</div>
@@ -1598,9 +1847,9 @@
         <div class="contact reveal">
           <div class="contact-grid">
             <div>
-              <h2>جاهز تبني حملة تحقق أرقام أوضح؟</h2>
+              <h2>هل حسابك الإعلاني يصرف أكثر مما يحقق؟</h2>
               <p>
-                أرسل تفاصيل مشروعك، وسأراجع الحساب الإعلاني أو فكرة الحملة وأقترح أفضل نقطة بداية خلال مكالمة قصيرة.
+                أرسل بيانات نشاطك، وسأحدد لك أول ثلاث نقاط تحتاج إلى مراجعة في التتبع، العرض، أو هيكل الحملات خلال مكالمة قصيرة.
               </p>
 
               <div class="contact-info">
@@ -1631,7 +1880,7 @@
                 <textarea id="message" placeholder="مبيعات، حجوزات، ليدز، زيادة ROAS..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary">إرسال عبر واتساب</button>
+              <button type="submit" class="btn btn-primary">اطلب مراجعة حسابك عبر واتساب</button>
               <div class="form-note">سيتم فتح واتساب برسالة منظمة تحتوي على بيانات المشروع.</div>
             </form>
           </div>
@@ -1777,7 +2026,7 @@
 الهدف من الحملة:
 ${message}
 
-أرغب في مراجعة الحساب الإعلاني ومعرفة أفضل خطة بداية.
+أرغب في مراجعة الحساب الإعلاني ومعرفة أول نقاط التحسين.
       `.trim();
 
       const url = `https://wa.me/201024587619?text=${encodeURIComponent(whatsappText)}`;
