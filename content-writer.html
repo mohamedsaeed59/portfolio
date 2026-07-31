@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بورتفوليو سارة الحسيني، كاتبة محتوى ومقالات وقصص ونصوص أدبية." />
+  <meta name="theme-color" content="#6d3f52" />
+  <title>سارة الحسيني | كاتبة محتوى وأديبة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Reem+Kufi+Fun:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #f8f4f1;
+  --surface: #fffdfb;
+  --surface-2: #f0e8e4;
+  --primary: #6d3f52;
+  --primary-dark: #4d2838;
+  --accent: #c99570;
+  --accent-soft: #ead4c3;
+  --text: #2d2529;
+  --muted: #746a6e;
+  --line: rgba(77, 40, 56, 0.13);
+  --white: #ffffff;
+  --shadow: 0 24px 70px rgba(77, 40, 56, 0.12);
+  --radius-lg: 32px;
+  --radius-md: 22px;
+  --radius-sm: 14px;
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+body {
+  font-family: "Alexandria", Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 110px 0;
+  position: relative;
+}
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  z-index: 2000;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(248, 244, 241, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(77, 40, 56, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 50% 50% 15%;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: var(--white);
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 1.35rem;
+  transform: rotate(-5deg);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.brand-copy strong {
+  font-size: 0.98rem;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+.main-nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.main-nav .nav-cta {
+  color: var(--white);
+  background: var(--primary);
+  padding: 11px 20px;
+  border-radius: 999px;
+  box-shadow: 0 12px 25px rgba(109, 63, 82, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: transparent;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--primary);
+  margin: 6px 0;
+  transition: 0.25s ease;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 140px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 149, 112, 0.16), transparent 67%);
+  top: 4%;
+  left: -10%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 38px;
+  height: 1px;
+  background: currentColor;
+}
+
+.eyebrow.light {
+  color: #f4dcca;
+}
+
+.hero h1 {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: clamp(3.5rem, 6vw, 6.4rem);
+  line-height: 1.13;
+  letter-spacing: -0.04em;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.hero h1 span {
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+}
+
+.hero h1 span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 7px;
+  height: 13px;
+  background: var(--accent-soft);
+  z-index: -1;
+  border-radius: 50%;
+  transform: rotate(-1deg);
+}
+
+.hero-text {
+  color: var(--muted);
+  font-size: 1.04rem;
+  max-width: 660px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.btn {
+  min-height: 52px;
+  padding: 13px 25px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 18px 35px rgba(109, 63, 82, 0.24);
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--primary-dark);
+  width: 100%;
+}
+
+.hero-stats {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero-stats div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 5px;
+  width: 1px;
+  height: 45px;
+  background: var(--line);
+}
+
+.hero-stats strong {
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.hero-stats span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.hero-visual {
+  min-height: 610px;
+  display: grid;
+  place-items: center;
+}
+
+.portrait-frame {
+  width: min(100%, 465px);
+  height: 560px;
+  border-radius: 240px 240px 36px 36px;
+  background: linear-gradient(145deg, #d8b89e, #8a5367);
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: inherit;
+}
+
+.portrait-card {
+  position: absolute;
+  inset: 78px 62px 70px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255,255,255,0.92) 0 17%, transparent 17.5%),
+    radial-gradient(ellipse at 50% 78%, rgba(255,255,255,0.88) 0 33%, transparent 33.5%),
+    linear-gradient(160deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+  border-radius: 170px 170px 35px 35px;
+  border: 1px solid rgba(255,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portrait-initial {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 8rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1;
+  transform: translateY(-15px);
+}
+
+.portrait-lines {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portrait-lines span {
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.48);
+}
+
+.portrait-lines span:nth-child(2) {
+  width: 78%;
+}
+
+.portrait-lines span:nth-child(3) {
+  width: 52%;
+}
+
+.floating-note {
+  position: absolute;
+  background: rgba(255, 253, 251, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 18px 45px rgba(77, 40, 56, 0.18);
+  color: var(--text);
+}
+
+.note-one {
+  bottom: 52px;
+  right: -72px;
+  width: 255px;
+  border-radius: 22px 22px 6px 22px;
+  padding: 20px;
+  font-size: 0.82rem;
+}
+
+.note-one span {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--accent);
+  line-height: 0.7;
+}
+
+.note-two {
+  top: 90px;
+  left: -68px;
+  border-radius: 17px;
+  padding: 16px 18px;
+}
+
+.note-two small,
+.note-two strong {
+  display: block;
+}
+
+.note-two small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.note-two strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+  margin-top: 4px;
+}
+
+.hero-shape {
+  position: absolute;
+  border: 1px solid var(--accent-soft);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.hero-shape-one {
+  width: 120px;
+  height: 120px;
+  right: 4%;
+  top: 19%;
+}
+
+.hero-shape-two {
+  width: 55px;
+  height: 55px;
+  right: 46%;
+  bottom: 15%;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 28px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.scroll-hint span {
+  width: 4px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 99px;
+  animation: scrollHint 1.8s infinite;
+}
+
+@keyframes scrollHint {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(16px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+.section-heading {
+  max-width: 700px;
+}
+
+.section-heading.centered {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-heading.centered .eyebrow {
+  justify-content: center;
+}
+
+.section-heading h2 {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.about {
+  background: var(--surface);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+}
+
+.about-content {
+  padding-top: 8px;
+}
+
+.about-content p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.about-content .lead {
+  color: var(--text);
+  font-size: 1.18rem;
+  line-height: 2;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.skills-list span {
+  padding: 9px 14px;
+  background: var(--surface-2);
+  color: var(--primary);
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.services-grid {
+  margin-top: 55px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+}
+
+.service-card.featured {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.service-card.featured p,
+.service-card.featured li,
+.service-card.featured .service-number {
+  color: rgba(255,255,255,0.75);
+}
+
+.service-number {
+  position: absolute;
+  left: 25px;
+  top: 20px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(109, 63, 82, 0.08);
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--primary);
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.service-card.featured .service-icon {
+  background: rgba(255,255,255,0.13);
+  color: var(--white);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.service-card p,
+.service-card li {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.service-card ul {
+  list-style: none;
+  margin-top: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.service-card li::before {
+  content: "•";
+  color: var(--accent);
+  margin-left: 8px;
+}
+
+.quote-section {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 95px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-section::before,
+.quote-section::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+
+.quote-section::before {
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: -180px;
+}
+
+.quote-section::after {
+  width: 280px;
+  height: 280px;
+  left: -100px;
+  bottom: -150px;
+}
+
+blockquote {
+  max-width: 850px;
+  margin-inline: auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 7rem;
+  color: var(--accent);
+  line-height: 0.5;
+}
+
+blockquote p {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3.6rem);
+  line-height: 1.55;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 20px;
+  color: rgba(255,255,255,0.65);
+  font-style: normal;
+  font-size: 0.8rem;
+}
+
+.works {
+  background: var(--surface);
+}
+
+.work-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 38px 0;
+}
+
+.filter-btn {
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  transition: 0.25s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.work-card {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+}
+
+.work-card.hidden {
+  display: none;
+}
+
+.work-cover {
+  min-height: 250px;
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.work-cover::after {
+  content: "س";
+  position: absolute;
+  left: 25px;
+  bottom: -45px;
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 11rem;
+  opacity: 0.08;
+  transform: rotate(-10deg);
+}
+
+.work-cover > * {
+  position: relative;
+  z-index: 2;
+}
+
+.work-cover span {
+  align-self: flex-start;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.62);
+  backdrop-filter: blur(8px);
+  font-size: 0.7rem;
+  color: var(--primary-dark);
+}
+
+.cover-title {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.cover-one { background: #e8cdbb; }
+.cover-two { background: #c2b2c8; }
+.cover-three { background: #cbd5cf; }
+.cover-four { background: #e6d6a9; }
+.cover-five { background: #bfcdd7; }
+.cover-six { background: #d7b7b1; }
+
+.work-body {
+  padding: 25px;
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.67rem;
+  margin-bottom: 10px;
+}
+
+.work-body h3 {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+}
+
+.work-body p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  min-height: 82px;
+}
+
+.read-btn {
+  background: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-top: 18px;
+}
+
+.read-btn::after {
+  content: "←";
+  margin-right: 8px;
+  transition: 0.25s ease;
+  display: inline-block;
+}
+
+.read-btn:hover::after {
+  transform: translateX(-5px);
+}
+
+.process {
+  background: var(--bg);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 55px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  right: 12%;
+  left: 12%;
+  height: 1px;
+  background: var(--line);
+}
+
+.process-item {
+  text-align: center;
+  position: relative;
+}
+
+.process-item > span {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--primary);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.process-item h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.process-item p {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.testimonials {
+  background: var(--surface);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.slider-controls button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--primary);
+  transition: 0.25s ease;
+}
+
+.slider-controls button:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.testimonial-slider {
+  position: relative;
+  min-height: 390px;
+}
+
+.testimonial-card {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 50px;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-20px);
+  transition: 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.stars {
+  color: #e6bd79;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.testimonial-card > p {
+  font-size: 1.05rem;
+  line-height: 2.1;
+  color: rgba(255,255,255,0.9);
+}
+
+.client {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.client > span {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.14);
+  font-weight: 700;
+}
+
+.client div {
+  display: flex;
+  flex-direction: column;
+}
+
+.client small {
+  color: rgba(255,255,255,0.62);
+  font-size: 0.72rem;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  display: flex;
+  gap: 7px;
+  z-index: 5;
+}
+
+.slider-dots button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+}
+
+.slider-dots button.active {
+  width: 22px;
+  border-radius: 99px;
+  background: var(--white);
+}
+
+.contact {
+  background: var(--bg);
+}
+
+.contact-wrapper {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-radius: 40px;
+  padding: 65px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.09);
+  right: -160px;
+  bottom: -220px;
+}
+
+.contact-copy,
+.contact-form {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-copy h2 {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.contact-copy > p {
+  color: rgba(255,255,255,0.7);
+}
+
+.contact-links {
+  margin-top: 35px;
+  display: grid;
+  gap: 16px;
+}
+
+.contact-links a {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.contact-links span {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.7rem;
+}
+
+.contact-links strong {
+  font-size: 0.92rem;
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 25px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 15px;
+  color: rgba(255,255,255,0.76);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  padding: 13px 14px;
+  border-radius: 12px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.contact-form select option {
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.12);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.form-status {
+  min-height: 24px;
+  font-size: 0.78rem;
+  margin-top: 10px;
+  color: #f4dcca;
+}
+
+.site-footer {
+  background: var(--surface);
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-inner > p {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(32, 22, 27, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  width: min(100%, 650px);
+  background: var(--surface);
+  border-radius: 30px;
+  padding: 48px;
+  position: relative;
+  z-index: 1;
+  transform: translateY(20px) scale(0.98);
+  transition: 0.25s ease;
+  box-shadow: var(--shadow);
+}
+
+.modal.open .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+.modal-content h3 {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  padding-left: 30px;
+}
+
+.modal-content p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 2.2;
+}
+
+.modal-signature {
+  color: var(--primary);
+  margin-top: 25px;
+  font-family: "Reem Kufi Fun", sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 0.86fr;
+    gap: 35px;
+  }
+
+  .portrait-frame {
+    height: 500px;
+  }
+
+  .note-one {
+    right: -25px;
+  }
+
+  .note-two {
+    left: -20px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid,
+  .contact-wrapper {
+    gap: 45px;
+  }
+}
+
+@media (max-width: 820px) {
+  .section {
+    padding: 85px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .main-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(82vw, 360px);
+    background: var(--surface);
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 50px;
+    transform: translateX(105%);
+    transition: 0.3s ease;
+    box-shadow: -20px 0 50px rgba(77, 40, 56, 0.12);
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+    padding: 9px 0;
+  }
+
+  .main-nav .nav-cta {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .hero {
+    padding-top: 125px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-inline: auto;
+  }
+
+  .hero-actions,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+    margin-top: 20px;
+  }
+
+  .portrait-frame {
+    height: 470px;
+    max-width: 390px;
+  }
+
+  .about-grid,
+  .testimonials-grid,
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 35px;
+  }
+
+  .process-grid::before {
+    display: none;
+  }
+
+  .testimonial-slider {
+    min-height: 430px;
+  }
+
+  .contact-wrapper {
+    padding: 45px 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .site-header {
+    height: 74px;
+  }
+
+  .brand-copy strong {
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-stats {
+    gap: 22px;
+  }
+
+  .hero-stats div:not(:last-child)::after {
+    left: -12px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.08rem;
+  }
+
+  .hero-stats span {
+    font-size: 0.64rem;
+  }
+
+  .hero-visual {
+    min-height: 445px;
+  }
+
+  .portrait-frame {
+    height: 420px;
+    max-width: 330px;
+  }
+
+  .portrait-card {
+    inset: 62px 45px 55px;
+  }
+
+  .portrait-initial {
+    font-size: 6rem;
+  }
+
+  .note-one {
+    right: -5px;
+    width: 215px;
+    bottom: 25px;
+  }
+
+  .note-two {
+    left: -3px;
+    top: 50px;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  .section-heading h2 {
+    font-size: 2.3rem;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-filters {
+    gap: 7px;
+  }
+
+  .filter-btn {
+    padding: 8px 13px;
+    font-size: 0.75rem;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-slider {
+    min-height: 520px;
+  }
+
+  .testimonial-card {
+    padding: 35px 25px 55px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-wrapper {
+    border-radius: 28px;
+    padding: 38px 20px;
+  }
+
+  .contact-form {
+    padding: 22px 16px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-brand {
+    display: none;
+  }
+
+  .modal-content {
+    padding: 38px 24px;
+  }
+
+  .modal-content h3 {
+    font-size: 1.6rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="العودة إلى الرئيسية">
+        <span class="brand-mark">س</span>
+        <span class="brand-copy">
+          <strong>سارة الحسيني</strong>
+          <small>كاتبة محتوى وأديبة</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+        <a href="#home" class="active">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#services">الخدمات</a>
+        <a href="#works">أعمالي</a>
+        <a href="#testimonials">آراء العملاء</a>
+        <a href="#contact" class="nav-cta">ابدأ مشروعك</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-shape hero-shape-one"></div>
+      <div class="hero-shape hero-shape-two"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="eyebrow">الكلمة الجيدة تبدأ بفهمٍ حقيقي</span>
+          <h1>
+            أكتب محتوى
+            <span>يُقرأ بشغف</span>
+            ويترك أثرًا.
+          </h1>
+          <p class="hero-text">
+            أساعد العلامات التجارية وأصحاب المشاريع على التعبير عن أفكارهم بصوت واضح،
+            وأحوّل التفاصيل اليومية إلى مقالات وقصص ونصوص أدبية تحمل معنى وتصل إلى القارئ.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#works" class="btn btn-primary">استعرض أعمالي</a>
+            <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong>+180</strong>
+              <span>مقالًا منشورًا</span>
+            </div>
+            <div>
+              <strong>+65</strong>
+              <span>مشروع محتوى</span>
+            </div>
+            <div>
+              <strong>4.9/5</strong>
+              <span>متوسط التقييم</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="portrait-frame">
+            <div class="portrait-card">
+              <span class="portrait-initial">س</span>
+              <div class="portrait-lines">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="floating-note note-one">
+              <span>“</span>
+              النص الصادق لا يمرّ بالقارئ فقط، بل يبقى معه.
+            </div>
+
+            <div class="floating-note note-two">
+              <small>مجالات الكتابة</small>
+              <strong>مقالات · قصص · خواطر</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="انتقل إلى القسم التالي">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">من أنا</span>
+          <h2>أصنع من الفكرة نصًا واضحًا، ومن الشعور حكاية.</h2>
+        </div>
+
+        <div class="about-content reveal">
+          <p class="lead">
+            أنا سارة الحسيني، كاتبة محتوى ومقالات وقصص قصيرة، أؤمن أن لكل مشروع
+            نبرة خاصة، ولكل فكرة طريقة تستحق أن تُروى بها.
+          </p>
+          <p>
+            بدأت رحلتي مع الكتابة من دفاتر الخواطر، ثم انتقلت إلى صناعة المحتوى
+            للمنصات الرقمية والمواقع والمدونات. عملت مع مشاريع في مجالات التعليم،
+            الثقافة، الصحة النفسية، ريادة الأعمال، والمنتجات الإبداعية.
+          </p>
+          <p>
+            أوازن في كتابتي بين بساطة الأسلوب وعمق المعنى، وأحرص على أن يكون كل نص
+            منظمًا، دقيقًا، ومتوافقًا مع هدف المشروع والجمهور الذي يخاطبه.
+          </p>
+
+          <div class="skills-list">
+            <span>الكتابة الإبداعية</span>
+            <span>تحرير المقالات</span>
+            <span>السرد القصصي</span>
+            <span>كتابة المواقع</span>
+            <span>التدقيق اللغوي</span>
+            <span>بناء نبرة العلامة</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="eyebrow">ما الذي أقدمه؟</span>
+          <h2>خدمات كتابية تجمع بين الوضوح والإحساس</h2>
+          <p>كل خدمة تبدأ بفهم الهدف، وتنتهي بنص جاهز للنشر يعكس شخصية المشروع.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-number">01</span>
+            <div class="service-icon">م</div>
+            <h3>كتابة المقالات</h3>
+            <p>
+              مقالات أصلية ومنظمة للمواقع والمدونات، مبنية على بحث دقيق،
+              بعناوين جذابة وتسلسل يساعد القارئ على الوصول للمعلومة بسهولة.
+            </p>
+            <ul>
+              <li>مقالات معرفية وتسويقية</li>
+              <li>محتوى متوافق مع محركات البحث</li>
+              <li>تحرير وإعادة صياغة المقالات</li>
+            </ul>
+          </article>
+
+          <article class="service-card featured reveal">
+            <span class="service-number">02</span>
+            <div class="service-icon">ق</div>
+            <h3>القصص والنصوص الأدبية</h3>
+            <p>
+              قصص قصيرة ونصوص إنسانية ذات بناء متماسك، وشخصيات قريبة،
+              ولغة تحافظ على جمالها دون تكلف.
+            </p>
+            <ul>
+              <li>قصص قصيرة للكبار والناشئة</li>
+              <li>نصوص سردية للمبادرات</li>
+              <li>مراجعة وتطوير الأعمال الأدبية</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">03</span>
+            <div class="service-icon">خ</div>
+            <h3>تجميع وتحرير الخواطر</h3>
+            <p>
+              ترتيب الخواطر المتفرقة، تنقيحها، وتوحيد أسلوبها لتخرج في صورة
+              مجموعة أدبية متماسكة قابلة للنشر أو الطباعة.
+            </p>
+            <ul>
+              <li>تقسيم النصوص إلى أبواب</li>
+              <li>صياغة العناوين والمقدمات</li>
+              <li>تدقيق لغوي وأسلوب موحّد</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">04</span>
+            <div class="service-icon">هـ</div>
+            <h3>محتوى المواقع والهوية</h3>
+            <p>
+              كتابة صفحات المواقع والتعريف بالخدمات بلغة مقنعة وواضحة،
+              مع بناء نبرة تواصل ثابتة تناسب شخصية العلامة.
+            </p>
+            <ul>
+              <li>الصفحة الرئيسية ومن نحن</li>
+              <li>وصف الخدمات والمنتجات</li>
+              <li>الرسائل التعريفية ونبرة العلامة</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container">
+        <blockquote class="reveal">
+          <span class="quote-mark">“</span>
+          <p>
+            أبحث دائمًا عن الجملة التي تقول المعنى كاملًا،
+            دون أن ترفع صوتها.
+          </p>
+          <cite>— سارة الحسيني</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="works section" id="works">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">مختارات من أعمالي</span>
+          <h2>نصوص كُتبت لأهداف مختلفة، بصوت واحد صادق</h2>
+        </div>
+
+        <div class="work-filters reveal" role="group" aria-label="تصفية الأعمال">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="articles">مقالات</button>
+          <button class="filter-btn" data-filter="stories">قصص</button>
+          <button class="filter-btn" data-filter="reflections">خواطر</button>
+          <button class="filter-btn" data-filter="web">محتوى مواقع</button>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card reveal" data-category="articles">
+            <div class="work-cover cover-one">
+              <span>مقال</span>
+              <div class="cover-title">حين يصبح البطء طريقة للنجاة</div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span>الصحة النفسية</span>
+                <span>8 دقائق قراءة</span>
+              </div>
+              <h3>حين يصبح البطء طريقة للنجاة</h3>
+              <p>
+                مقال إنساني يناقش علاقتنا المتوترة بالوقت، وكيف يمكن للتمهل
+                الواعي أن يعيد ترتيب علاقتنا بأنفسنا وبالإنجاز.
+              </p>
+              <button class="read-btn" data-title="حين يصبح البطء طريقة للنجاة"
+                data-text="نعيش أيامنا وكأن هناك صافرة خفية تعلن بداية سباق لا نعرف خط نهايته. نستيقظ على قوائم طويلة، وننام وفي داخلنا شعور بأننا تأخرنا عن شيء ما. لكن الحياة لا تُقاس دائمًا بعدد المهام المنجزة؛ أحيانًا تكون النجاة في أن نبطئ قليلًا، أن نسمع ما أخفته الضوضاء، وأن نمنح أرواحنا فرصة للحاق بنا.">
+                اقرأ مقتطفًا
+              </button>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="stories">
+            <div class="work-cover cover-two">
+              <span>قصة قصيرة</span>
+              <div class="cover-title">المقعد المقابل للنافذة</div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span>أدب اجتماعي</span>
+                <span>12 دقيقة قراءة</span>
+              </div>
+              <h3>المقعد المقابل للنافذة</h3>
+              <p>
+                قصة عن رجل يعود إلى المقهى نفسه كل خميس، منتظرًا رسالة
+                تأخرت سبعة عشر عامًا.
+              </p>
+              <button class="read-btn" data-title="المقعد المقابل للنافذة"
+                data-text="كان يصل قبل موعده بنصف ساعة، يختار المقعد المقابل للنافذة، ويضع ظرفًا أبيض إلى جواره كأنه يحجز مكانًا لشخص آخر. لم يسأله النادل يومًا عن سر الظرف، ولم يخبره الرجل أن الرسائل القديمة لا تموت، بل تغيّر فقط العنوان الذي تنتظره.">
+                اقرأ مقتطفًا
+              </button>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="reflections">
+            <div class="work-cover cover-three">
+              <span>خاطرة</span>
+              <div class="cover-title">ما تبقّى من الضوء</div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span>مجموعة أدبية</span>
+                <span>نص وجداني</span>
+              </div>
+              <h3>ما تبقّى من الضوء</h3>
+              <p>
+                نص عن الفقد الهادئ، والأشياء الصغيرة التي تظل حاضرة
+                بعد رحيل أصحابها.
+              </p>
+              <button class="read-btn" data-title="ما تبقّى من الضوء"
+                data-text="لا يرحل الناس دفعة واحدة. يبقى منهم فنجان في الخزانة، وضحكة عالقة في ممر البيت، وطريقة خاصة في نطق أسمائنا. الرحيل الحقيقي يحدث ببطء، كلما نسينا تفصيلًا، وكلما صار الضوء الذي تركوه أقل وضوحًا.">
+                اقرأ مقتطفًا
+              </button>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="web">
+            <div class="work-cover cover-four">
+              <span>محتوى موقع</span>
+              <div class="cover-title">مساحة أمان للاستشارات النفسية</div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span>هوية وموقع</span>
+                <span>12 صفحة</span>
+              </div>
+              <h3>منصة «مساحة أمان»</h3>
+              <p>
+                كتابة المحتوى الكامل لمنصة دعم نفسي، من الصفحة الرئيسية
+                وحتى وصف الجلسات والأسئلة الشائعة.
+              </p>
+              <button class="read-btn" data-title="منصة مساحة أمان"
+                data-text="لا تحتاج إلى ترتيب كل شيء قبل أن تطلب المساعدة. في مساحة أمان، نبدأ معك من النقطة التي تقف عندها الآن، ونمنحك وقتًا حقيقيًا للكلام والفهم، ضمن جلسات مهنية تحترم خصوصيتك وتساعدك على اتخاذ خطوات أكثر اتزانًا.">
+                اقرأ مقتطفًا
+              </button>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="articles">
+            <div class="work-cover cover-five">
+              <span>مقال</span>
+              <div class="cover-title">لماذا نتذكر الحكايات أكثر من الأرقام؟</div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span>تسويق بالمحتوى</span>
+                <span>6 دقائق قراءة</span>
+              </div>
+              <h3>لماذا نتذكر الحكايات أكثر من الأرقام؟</h3>
+              <p>
+                مقال يشرح دور السرد القصصي في بناء الثقة وتحويل المعلومات
+                الجامدة إلى تجربة قريبة من الجمهور.
+              </p>
+              <button class="read-btn" data-title="لماذا نتذكر الحكايات أكثر من الأرقام؟"
+                data-text="قد ينسى العميل أن منتجك أسرع بنسبة ثلاثين بالمئة، لكنه سيتذكر كيف ساعد شخصًا يشبهه على إنهاء يومه دون توتر. الأرقام تقنع العقل، أما الحكايات فتمنح المعلومة وجهًا وصوتًا ومكانًا في الذاكرة.">
+                اقرأ مقتطفًا
+              </button>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="stories">
+            <div class="work-cover cover-six">
+              <span>قصة ناشئة</span>
+              <div class="cover-title">مدينة الأبواب السبعة</div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span>أدب ناشئة</span>
+                <span>الفئة 10–14</span>
+              </div>
+              <h3>مدينة الأبواب السبعة</h3>
+              <p>
+                مغامرة خيالية عن طفلة تبحث عن شقيقها داخل مدينة لا يفتح
+                كل باب فيها إلا بإجابة صادقة.
+              </p>
+              <button class="read-btn" data-title="مدينة الأبواب السبعة"
+                data-text="توقفت ليان أمام الباب الأول. لم يكن له مقبض، بل عين زرقاء في منتصفه. قال الباب بصوت يشبه حفيف الأشجار: لن أعبر بكِ حتى تخبريني عن أكثر شيء تخافين خسارته. نظرت ليان خلفها، ثم همست باسم أخيها، فانفتح الباب ببطء.">
+                اقرأ مقتطفًا
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="eyebrow">طريقة العمل</span>
+          <h2>من الفكرة الأولى إلى النص النهائي</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-item reveal">
+            <span>01</span>
+            <h3>فهم المشروع</h3>
+            <p>نتحدث عن الهدف، الجمهور، الرسالة، ونبرة الكتابة المناسبة.</p>
+          </div>
+          <div class="process-item reveal">
+            <span>02</span>
+            <h3>البحث والتخطيط</h3>
+            <p>أجمع المعلومات وأبني هيكلًا واضحًا قبل بدء الكتابة.</p>
+          </div>
+          <div class="process-item reveal">
+            <span>03</span>
+            <h3>الكتابة والمراجعة</h3>
+            <p>أكتب المسودة، أراجع اللغة والإيقاع، ثم أرسلها للمراجعة.</p>
+          </div>
+          <div class="process-item reveal">
+            <span>04</span>
+            <h3>التسليم النهائي</h3>
+            <p>تسليم نص منسق وجاهز للنشر بعد تنفيذ الملاحظات المتفق عليها.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section" id="testimonials">
+      <div class="container testimonials-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">آراء العملاء</span>
+          <h2>تجارب صنعتها شراكات ناجحة</h2>
+          <p>
+            أتعامل مع كل مشروع باعتباره صوتًا يحتاج إلى من يفهمه قبل أن يكتبه.
+          </p>
+
+          <div class="slider-controls">
+            <button id="prevTestimonial" aria-label="الرأي السابق">←</button>
+            <button id="nextTestimonial" aria-label="الرأي التالي">→</button>
+          </div>
+        </div>
+
+        <div class="testimonial-slider reveal" id="testimonialSlider">
+          <article class="testimonial-card active">
+            <div class="stars">★★★★★</div>
+            <p>
+              “سارة فهمت روح المشروع من أول اجتماع، وكتبت محتوى الموقع بطريقة
+              دافئة وواضحة. أكثر ما أعجبني أنها لم تكتب كلامًا جميلًا فقط،
+              بل رتبت الرسالة وساعدتنا نحدد نبرة العلامة.”
+            </p>
+            <div class="client">
+              <span>ن</span>
+              <div>
+                <strong>ندى سامي</strong>
+                <small>مؤسسة منصة مساحة أمان</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              “تسلمنا سلسلة مقالات جاهزة للنشر وفي موعدها، والمحتوى كان عميقًا
+              وسهل القراءة في نفس الوقت. نسبة بقاء الزوار داخل المدونة تحسنت
+              بوضوح بعد نشر السلسلة.”
+            </p>
+            <div class="client">
+              <span>أ</span>
+              <div>
+                <strong>أحمد فوزي</strong>
+                <small>مدير محتوى — أثر للتعليم</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              “كان عندي أكثر من خمسين خاطرة مكتوبة في أوقات مختلفة،
+              وسارة أعادت ترتيبها وتحريرها حتى أصبحت مجموعة متماسكة
+              لها بداية وصوت واضح ونهاية حقيقية.”
+            </p>
+            <div class="client">
+              <span>ر</span>
+              <div>
+                <strong>ريم علاء</strong>
+                <small>مؤلفة مجموعة ما بين سطرين</small>
+              </div>
+            </div>
+          </article>
+
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact-wrapper">
+        <div class="contact-copy reveal">
+          <span class="eyebrow light">لنكتب شيئًا يستحق القراءة</span>
+          <h2>لديك فكرة تحتاج إلى صوت واضح؟</h2>
+          <p>
+            أرسل تفاصيل مشروعك، وسأعود إليك بخطة مناسبة تشمل نطاق العمل،
+            المدة المتوقعة، والتكلفة.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:contact@sarahwrites.me">
+              <span>البريد الإلكتروني</span>
+              <strong>contact@sarahwrites.me</strong>
+            </a>
+            <a href="tel:+201024587316">
+              <span>الهاتف وواتساب</span>
+              <strong dir="ltr">+20 10 2458 7316</strong>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <label>
+              الاسم
+              <input type="text" name="name" placeholder="اكتب اسمك" required />
+            </label>
+            <label>
+              البريد الإلكتروني
+              <input type="email" name="email" placeholder="name@example.com" required />
+            </label>
+          </div>
+
+          <label>
+            نوع المشروع
+            <select name="project" required>
+              <option value="">اختر نوع المشروع</option>
+              <option>كتابة مقالات</option>
+              <option>قصة أو نص أدبي</option>
+              <option>تجميع وتحرير خواطر</option>
+              <option>محتوى موقع أو علامة تجارية</option>
+              <option>مشروع آخر</option>
+            </select>
+          </label>
+
+          <label>
+            تفاصيل المشروع
+            <textarea name="message" rows="5" placeholder="اكتب نبذة عن مشروعك والموعد المناسب للتسليم" required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-light">إرسال تفاصيل المشروع</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand footer-brand">
+        <span class="brand-mark">س</span>
+        <span class="brand-copy">
+          <strong>سارة الحسيني</strong>
+          <small>كاتبة محتوى وأديبة</small>
+        </span>
+      </div>
+
+      <p>© <span id="currentYear"></span> سارة الحسيني. جميع الحقوق محفوظة.</p>
+
+      <div class="footer-links">
+        <a href="#about">عني</a>
+        <a href="#works">أعمالي</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="readingModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close-modal aria-label="إغلاق">×</button>
+      <span class="eyebrow">مقتطف من العمل</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <div class="modal-signature">سارة الحسيني</div>
+    </div>
+  </div>
+  <script>
+const header = document.getElementById("header");
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+const navLinks = [...document.querySelectorAll(".main-nav a")];
+const sections = [...document.querySelectorAll("main section[id]")];
+const progressBar = document.getElementById("readingProgress");
+
+function updateHeader() {
+  header.classList.toggle("scrolled", window.scrollY > 20);
+
+  const scrollableHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0
+    ? (window.scrollY / scrollableHeight) * 100
+    : 0;
+  progressBar.style.width = `${progress}%`;
+}
+
+function updateActiveLink() {
+  const position = window.scrollY + 150;
+  let current = "home";
+
+  sections.forEach((section) => {
+    if (position >= section.offsetTop) current = section.id;
+  });
+
+  navLinks.forEach((link) => {
+    const target = link.getAttribute("href");
+    link.classList.toggle("active", target === `#${current}`);
+  });
+}
+
+window.addEventListener("scroll", () => {
+  updateHeader();
+  updateActiveLink();
+});
+
+updateHeader();
+updateActiveLink();
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const clickedInsideMenu = mainNav.contains(event.target);
+  const clickedToggle = menuToggle.contains(event.target);
+
+  if (!clickedInsideMenu && !clickedToggle) {
+    mainNav.classList.remove("open");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+const revealItems = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.14 }
+);
+
+revealItems.forEach((item) => revealObserver.observe(item));
+
+const filterButtons = [...document.querySelectorAll(".filter-btn")];
+const workCards = [...document.querySelectorAll(".work-card")];
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    workCards.forEach((card) => {
+      const shouldShow =
+        filter === "all" || card.dataset.category === filter;
+
+      card.classList.toggle("hidden", !shouldShow);
+    });
+  });
+});
+
+const modal = document.getElementById("readingModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const readButtons = document.querySelectorAll(".read-btn");
+const closeModalButtons = document.querySelectorAll("[data-close-modal]");
+
+function openModal(title, text) {
+  modalTitle.textContent = title;
+  modalText.textContent = text;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+readButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    openModal(button.dataset.title, button.dataset.text);
+  });
+});
+
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", closeModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal.classList.contains("open")) {
+    closeModal();
+  }
+});
+
+const testimonials = [...document.querySelectorAll(".testimonial-card")];
+const dotsContainer = document.getElementById("sliderDots");
+const prevButton = document.getElementById("prevTestimonial");
+const nextButton = document.getElementById("nextTestimonial");
+let currentTestimonial = 0;
+let sliderTimer;
+
+testimonials.forEach((_, index) => {
+  const dot = document.createElement("button");
+  dot.setAttribute("aria-label", `عرض الرأي رقم ${index + 1}`);
+  dot.addEventListener("click", () => showTestimonial(index));
+  dotsContainer.appendChild(dot);
+});
+
+const dots = [...dotsContainer.children];
+
+function showTestimonial(index) {
+  currentTestimonial = (index + testimonials.length) % testimonials.length;
+
+  testimonials.forEach((card, cardIndex) => {
+    card.classList.toggle("active", cardIndex === currentTestimonial);
+  });
+
+  dots.forEach((dot, dotIndex) => {
+    dot.classList.toggle("active", dotIndex === currentTestimonial);
+  });
+
+  restartSlider();
+}
+
+function restartSlider() {
+  clearInterval(sliderTimer);
+  sliderTimer = setInterval(() => {
+    showTestimonial(currentTestimonial + 1);
+  }, 6500);
+}
+
+prevButton.addEventListener("click", () => {
+  showTestimonial(currentTestimonial - 1);
+});
+
+nextButton.addEventListener("click", () => {
+  showTestimonial(currentTestimonial + 1);
+});
+
+showTestimonial(0);
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const data = new FormData(contactForm);
+  const name = String(data.get("name") || "").trim();
+  const email = String(data.get("email") || "").trim();
+  const project = String(data.get("project") || "").trim();
+  const message = String(data.get("message") || "").trim();
+
+  if (!name || !email || !project || !message) {
+    formStatus.textContent = "من فضلك أكمل جميع البيانات المطلوبة.";
+    return;
+  }
+
+  const subject = encodeURIComponent(`طلب مشروع جديد: ${project}`);
+  const body = encodeURIComponent(
+    `الاسم: ${name}
+البريد: ${email}
+نوع المشروع: ${project}
+
+تفاصيل المشروع:
+${message}`
+  );
+
+  formStatus.textContent = "سيتم فتح تطبيق البريد لإرسال رسالتك.";
+  window.location.href =
+    `mailto:contact@sarahwrites.me?subject=${subject}&body=${body}`;
+});
+
+document.getElementById("currentYear").textContent =
+  new Date().getFullYear();
+
+  </script>
+</body>
+</html>
