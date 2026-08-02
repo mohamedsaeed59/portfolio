@@ -34,7 +34,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       scrollbar-color: var(--primary) var(--bg);
     }
 
@@ -1686,6 +1686,110 @@
         transition-duration: .01ms !important;
       }
     }
+  
+    /* Latest requested updates */
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    .art-frame {
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        linear-gradient(to top, rgba(14,13,17,.35), rgba(14,13,17,.04)),
+        url("https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1400&q=88") center / cover no-repeat;
+      transform: none;
+    }
+
+    .art-frame::before {
+      display: none;
+    }
+
+    .about-card-main {
+      background:
+        linear-gradient(to top, rgba(14,13,17,.18), rgba(14,13,17,.02)),
+        url("https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1400&q=88") center / cover no-repeat;
+    }
+
+    .about-card-main::before,
+    .about-card-main::after {
+      display: none;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card,
+    .project-card:nth-child(3n) {
+      grid-column: auto;
+      min-height: 330px;
+      border-radius: 22px;
+    }
+
+    .project-art.has-image {
+      background: #201e27;
+    }
+
+    .project-art.has-image::before,
+    .project-art.has-image::after {
+      display: none !important;
+    }
+
+    .project-art.has-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+    }
+
+    .project-card:hover .project-art.has-image {
+      transform: none;
+    }
+
+    .project-card:hover .project-art.has-image img {
+      transform: scale(1.055);
+      filter: saturate(1.08);
+    }
+
+    .project-overlay {
+      padding: 75px 20px 20px;
+    }
+
+    .project-title {
+      font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+    }
+
+    .project-arrow {
+      width: 43px;
+      height: 43px;
+    }
+
+    @media (max-width: 980px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-card,
+      .project-card:nth-child(3n) {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card,
+      .project-card:nth-child(3n) {
+        min-height: 310px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1761,7 +1865,7 @@
         </div>
 
         <div class="hero-art reveal">
-          <div class="art-frame"></div>
+          <div class="art-frame" role="img" aria-label="مساحة عمل لمصممة جرافيك تضم نماذج تصميم وألوان"></div>
           <div class="art-label">Graphic Designer ✦</div>
           <div class="art-sticker"><span>IDEAS<br>TO VISUALS<br>✦</span></div>
         </div>
@@ -1784,7 +1888,7 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div class="about-visual reveal">
-          <div class="about-card-main"></div>
+          <div class="about-card-main" role="img" aria-label="تفاصيل من عملية تطوير هوية بصرية"></div>
           <div class="about-floating">
             <p>التصميم الناجح لا يكتفي بأن يكون جميلًا، بل يقدّم رسالة واضحة ويمنح العلامة حضورًا يمكن تمييزه.</p>
             <strong>— فلسفتي في التصميم</strong>
@@ -1885,7 +1989,7 @@
 
         <div class="projects-grid">
           <article class="project-card reveal" data-category="branding" data-title="NOVA Tech" data-type="هوية بصرية لمنتج تقني" data-word="NOVA" data-description="تطوير هوية مرنة لمنصة تقنية ناشئة تستهدف فرق العمل الصغيرة. بُني النظام البصري على فكرة السرعة والترابط، مع شعار هندسي ولغة ألوان رقمية قوية." data-tags="استراتيجية العلامة,تصميم الشعار,نظام الألوان,دليل الهوية">
-            <div class="project-art art-nova"></div>
+            <div class="project-art has-image"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85" alt="نماذج هوية بصرية ومطبوعات لعلامة تجارية" loading="lazy"></div>
             <div class="project-overlay">
               <div class="project-meta">
                 <div><span class="project-category">هوية بصرية</span><h3 class="project-title">NOVA Tech</h3></div>
@@ -1895,7 +1999,7 @@
           </article>
 
           <article class="project-card reveal" data-category="branding packaging" data-title="LUNE Café" data-type="هوية وتغليف لمقهى ومخبز" data-word="LUNE" data-description="هوية هادئة تجمع بين الطابع الفرنسي واللمسة المعاصرة. شمل المشروع تصميم الشعار، العبوات، أكواب المشروبات، القائمة، ولافتات الفرع." data-tags="هوية بصرية,تصميم عبوات,قائمة المنتجات,مواد مطبوعة">
-            <div class="project-art art-lune"></div>
+            <div class="project-art has-image"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=85" alt="مشروع تصميم هوية وتغليف لعلامة تجارية" loading="lazy"></div>
             <div class="project-overlay">
               <div class="project-meta">
                 <div><span class="project-category">هوية وتغليف</span><h3 class="project-title">LUNE Café</h3></div>
@@ -1905,7 +2009,7 @@
           </article>
 
           <article class="project-card reveal" data-category="social" data-title="VIVA Summer" data-type="حملة صيفية لعلامة أزياء" data-word="VIVA" data-description="اتجاه فني جريء لحملة موسمية استهدفت فئة الشباب. تم بناء سلسلة من الإعلانات والمنشورات والقصص المتحركة حول ألوان عالية التباين وتايبوجرافي حيوي." data-tags="Art Direction,تصميم حملة,إعلانات رقمية,قوالب سوشيال">
-            <div class="project-art art-viva"></div>
+            <div class="project-art has-image"><img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85" alt="تصميمات إبداعية لحملة سوشيال ميديا" loading="lazy"></div>
             <div class="project-overlay">
               <div class="project-meta">
                 <div><span class="project-category">حملة سوشيال ميديا</span><h3 class="project-title">VIVA Summer Campaign</h3></div>
@@ -1915,7 +2019,7 @@
           </article>
 
           <article class="project-card reveal" data-category="packaging branding" data-title="TERRA Botanics" data-type="تغليف منتجات عناية طبيعية" data-word="TERRA" data-description="تصميم مجموعة عبوات لمنتجات عناية مستوحاة من الطبيعة. اعتمدت الهوية على خامات عضوية، ألوان ترابية، ونظام ملصقات يسهّل تمييز المنتجات." data-tags="تصميم التغليف,تطوير الملصقات,نظام المنتجات,إخراج للطباعة">
-            <div class="project-art art-terra"></div>
+            <div class="project-art has-image"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85" alt="نماذج تصميم عبوات وهوية منتجات" loading="lazy"></div>
             <div class="project-overlay">
               <div class="project-meta">
                 <div><span class="project-category">تصميم تغليف</span><h3 class="project-title">TERRA Botanics</h3></div>
@@ -1925,7 +2029,7 @@
           </article>
 
           <article class="project-card reveal" data-category="editorial social" data-title="Data Makes Decisions" data-type="إنفوجرافيك لحملة توعوية" data-word="72%" data-description="سلسلة إنفوجرافيك تشرح أثر البيانات في تحسين القرارات التسويقية. تم تبسيط الأرقام والمفاهيم داخل نظام مرئي مناسب للنشر الرقمي والعروض." data-tags="إنفوجرافيك,تصميم معلومات,محتوى رقمي,عرض بيانات">
-            <div class="project-art art-data"></div>
+            <div class="project-art has-image"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=85" alt="تصميم إنفوجرافيك وعرض معلومات بصري" loading="lazy"></div>
             <div class="project-overlay">
               <div class="project-meta">
                 <div><span class="project-category">إنفوجرافيك</span><h3 class="project-title">Data Makes Decisions</h3></div>
@@ -1935,7 +2039,7 @@
           </article>
 
           <article class="project-card reveal" data-category="branding editorial" data-title="Dar Kids" data-type="هوية دار نشر للأطفال" data-word="دار" data-description="هوية مرحة لدار نشر عربية متخصصة في قصص الأطفال. شمل المشروع تصميم الشعار، نظام الأغلفة، القوالب الداخلية، والمواد الترويجية للمعارض." data-tags="هوية بصرية,تصميم أغلفة,قوالب نشر,مواد ترويجية">
-            <div class="project-art art-dar"></div>
+            <div class="project-art has-image"><img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1200&q=85" alt="مطبوعات وأغلفة ضمن مشروع هوية بصرية" loading="lazy"></div>
             <div class="project-overlay">
               <div class="project-meta">
                 <div><span class="project-category">هوية ومطبوعات</span><h3 class="project-title">Dar Kids Publishing</h3></div>
