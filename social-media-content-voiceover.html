@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="بورتفوليو مريم خالد، متخصصة في إدارة صفحات السوشيال ميديا وكتابة المحتوى والتعليق الصوتي.">
+  <meta name="theme-color" content="#fff8f3">
+  <title>مريم خالد | Social Media & Content</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #fffaf6;
+      --bg-soft: #fff3ed;
+      --surface: #ffffff;
+      --surface-soft: #fff8f4;
+      --text: #2d2230;
+      --muted: #746876;
+      --primary: #d45c79;
+      --primary-dark: #a73f5b;
+      --secondary: #745b8f;
+      --accent: #f2a46f;
+      --sage: #779d8a;
+      --border: #eadde2;
+      --shadow: 0 24px 70px rgba(83, 55, 71, .12);
+      --shadow-soft: 0 14px 36px rgba(83, 55, 71, .08);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --container: min(1180px, calc(100% - 40px));
+      --transition: 260ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "Alexandria", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 8%, rgba(212, 92, 121, .09), transparent 24%),
+        radial-gradient(circle at 100% 26%, rgba(116, 91, 143, .09), transparent 24%),
+        linear-gradient(180deg, #fffaf6 0%, #fffdfb 48%, #fff8f4 100%);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    ::selection {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: var(--container);
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 105px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, rgba(255, 243, 237, .72), rgba(255, 250, 246, .35));
+      border-block: 1px solid rgba(234, 221, 226, .75);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 44px;
+    }
+
+    .section-copy {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 13px;
+      color: var(--primary);
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 50px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.35;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -.05em;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #e57792);
+      box-shadow: 0 14px 28px rgba(212, 92, 121, .23);
+    }
+
+    .btn-outline {
+      color: var(--text);
+      background: rgba(255, 255, 255, .7);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      color: var(--primary-dark);
+      border-color: rgba(212, 92, 121, .38);
+      background: #fff;
+    }
+
+    .pill {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 12px;
+      color: #665a68;
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 500;
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    .nav-shell {
+      width: var(--container);
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-inline: auto;
+      padding: 10px 14px 10px 18px;
+      background: rgba(255, 250, 246, .82);
+      border: 1px solid rgba(234, 221, 226, .88);
+      border-radius: 20px;
+      box-shadow: 0 12px 38px rgba(83, 55, 71, .08);
+      backdrop-filter: blur(17px);
+      -webkit-backdrop-filter: blur(17px);
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .site-header.scrolled .nav-shell {
+      background: rgba(255, 255, 255, .94);
+      box-shadow: 0 16px 46px rgba(83, 55, 71, .13);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 48px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 10px 24px rgba(116, 91, 143, .18);
+      font-weight: 800;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: .94rem;
+    }
+
+    .brand-text span {
+      display: block;
+      margin-top: -2px;
+      color: var(--muted);
+      font-size: .67rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #665a68;
+      font-size: .84rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -9px;
+      width: 0;
+      height: 2px;
+      border-radius: 50px;
+      background: var(--primary);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-dark);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      min-height: 44px;
+      padding-inline: 17px;
+      font-size: .8rem;
+    }
+
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1.05rem;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 145px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 90px;
+      right: -180px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(212, 92, 121, .14);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 70px rgba(212, 92, 121, .025),
+        0 0 0 140px rgba(212, 92, 121, .015);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .availability {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 0 14px;
+      color: #436e5b;
+      background: rgba(119, 157, 138, .11);
+      border: 1px solid rgba(119, 157, 138, .22);
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      box-shadow: 0 0 0 7px rgba(119, 157, 138, .11);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      50% {
+        box-shadow: 0 0 0 11px rgba(119, 157, 138, 0);
+      }
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(2.7rem, 6.3vw, 5.55rem);
+      letter-spacing: -.065em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .handwritten {
+      display: inline-block;
+      color: var(--secondary);
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-style: italic;
+      transform: rotate(-3deg);
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin-top: 23px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.14rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 33px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 28px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 590px;
+      display: grid;
+      place-items: center;
+    }
+
+    .portrait-card {
+      width: min(100%, 418px);
+      padding: 15px;
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid rgba(234, 221, 226, .9);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      transform: rotate(1.8deg);
+    }
+
+    .portrait {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 25px;
+      background: var(--bg-soft);
+    }
+
+    .portrait img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .portrait::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      background: linear-gradient(to top, rgba(45, 34, 48, .68), transparent);
+    }
+
+    .portrait-caption {
+      position: absolute;
+      right: 34px;
+      bottom: 34px;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .portrait-caption strong {
+      display: block;
+      font-size: 1.32rem;
+    }
+
+    .portrait-caption span {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, .84);
+      font-size: .76rem;
+    }
+
+    .float-card {
+      position: absolute;
+      z-index: 3;
+      min-width: 188px;
+      padding: 16px;
+      background: rgba(255, 255, 255, .94);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      box-shadow: var(--shadow-soft);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .float-card i {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      color: var(--primary);
+      background: rgba(212, 92, 121, .1);
+      border-radius: 12px;
+    }
+
+    .float-card strong {
+      display: block;
+      font-size: 1.24rem;
+    }
+
+    .float-card span {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+    }
+
+    .float-card.one {
+      top: 72px;
+      right: -10px;
+    }
+
+    .float-card.two {
+      left: -25px;
+      bottom: 92px;
+      animation-delay: -2.3s;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-11px);
+      }
+    }
+
+    .voice-bubble {
+      position: absolute;
+      top: 88px;
+      left: 8px;
+      z-index: 2;
+      width: 78px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--secondary), #a07ab2);
+      border-radius: 24px 24px 24px 8px;
+      box-shadow: 0 15px 35px rgba(116, 91, 143, .2);
+      font-size: 1.5rem;
+      transform: rotate(-7deg);
+    }
+
+    /* Stats */
+    .stats-wrap {
+      position: relative;
+      z-index: 4;
+      margin-top: -26px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      background: rgba(255, 255, 255, .9);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(15px);
+    }
+
+    .stat {
+      padding: 28px 22px;
+      border-left: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-left: 0;
+    }
+
+    .stat-number {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 3px;
+      direction: ltr;
+      color: var(--text);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .stat-number span:last-child {
+      color: var(--primary);
+      font-size: .55em;
+    }
+
+    .stat p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+      border: 12px solid #fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .about-visual img {
+      min-height: 500px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-note {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      max-width: 230px;
+      padding: 17px;
+      color: #fff;
+      background: rgba(45, 34, 48, .82);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 17px;
+      backdrop-filter: blur(10px);
+      font-size: .77rem;
+    }
+
+    .about-note i {
+      margin-left: 7px;
+      color: #ffc9d7;
+    }
+
+    .about-text p {
+      margin-top: 17px;
+      color: var(--muted);
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      color: #5d505f;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(83, 55, 71, .04);
+      font-size: .8rem;
+    }
+
+    .feature i {
+      width: 37px;
+      height: 37px;
+      flex: 0 0 37px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: rgba(212, 92, 121, .09);
+      border-radius: 11px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 310px;
+      padding: 26px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(83, 55, 71, .05);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(212, 92, 121, .32);
+      box-shadow: 0 22px 42px rgba(83, 55, 71, .1);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 23px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #e98aa0);
+      border-radius: 17px;
+      font-size: 1.24rem;
+    }
+
+    .service-card:nth-child(2) .service-icon {
+      background: linear-gradient(135deg, var(--secondary), #9c7caf);
+    }
+
+    .service-card:nth-child(3) .service-icon {
+      background: linear-gradient(135deg, var(--accent), #ed865e);
+    }
+
+    .service-card h3 {
+      margin-bottom: 11px;
+      font-size: 1.15rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .service-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 20px;
+      color: #655866;
+      font-size: .76rem;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-list i {
+      color: var(--sage);
+      font-size: .72rem;
+    }
+
+    /* Social portfolio */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      min-height: 41px;
+      padding: 0 14px;
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      grid-column: span 6;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 14px 34px rgba(83, 55, 71, .06);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px rgba(83, 55, 71, .1);
+    }
+
+    .project-card.hidden {
+      display: none;
+    }
+
+    .project-card.large {
+      grid-column: span 7;
+    }
+
+    .project-card.small {
+      grid-column: span 5;
+    }
+
+    .project-image {
+      position: relative;
+      height: 285px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 700ms ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-type {
+      position: absolute;
+      top: 17px;
+      right: 17px;
+      z-index: 2;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      color: #fff;
+      background: rgba(45, 34, 48, .76);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 999px;
+      backdrop-filter: blur(9px);
+      font-size: .69rem;
+      font-weight: 600;
+    }
+
+    .project-body {
+      padding: 23px;
+    }
+
+    .project-title {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .project-title h3 {
+      font-size: 1.22rem;
+    }
+
+    .project-title i {
+      color: var(--primary);
+      transform: rotate(45deg);
+    }
+
+    .project-body > p {
+      min-height: 50px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 19px;
+    }
+
+    .result {
+      padding: 11px 9px;
+      background: var(--surface-soft);
+      border: 1px solid #f0e4e7;
+      border-radius: 13px;
+    }
+
+    .result strong {
+      display: block;
+      font-size: .92rem;
+    }
+
+    .result span {
+      color: var(--muted);
+      font-size: .62rem;
+    }
+
+    /* Content samples */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .content-card {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 25px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(83, 55, 71, .05);
+    }
+
+    .content-card::after {
+      content: "“";
+      position: absolute;
+      left: 18px;
+      top: -22px;
+      color: rgba(212, 92, 121, .07);
+      font-family: Georgia, serif;
+      font-size: 10rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .content-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .content-tag {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      color: var(--primary-dark);
+      background: rgba(212, 92, 121, .09);
+      border-radius: 999px;
+      font-size: .66rem;
+      font-weight: 600;
+    }
+
+    .content-card h3 {
+      position: relative;
+      z-index: 2;
+      margin-top: 24px;
+      font-size: 1.15rem;
+    }
+
+    .content-excerpt {
+      position: relative;
+      z-index: 2;
+      margin-top: 15px;
+      color: #625563;
+      font-size: .84rem;
+      line-height: 1.95;
+    }
+
+    .content-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 26px;
+      padding-top: 17px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .7rem;
+    }
+
+    .content-footer button {
+      color: var(--primary-dark);
+      background: transparent;
+      border: 0;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    /* Voice over */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .voice-card {
+      min-height: 355px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(83, 55, 71, .05);
+    }
+
+    .voice-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .voice-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--secondary), #9f7caf);
+      border-radius: 16px;
+      font-size: 1.2rem;
+    }
+
+    .voice-duration {
+      color: var(--muted);
+      font-size: .7rem;
+      direction: ltr;
+    }
+
+    .voice-card h3 {
+      margin-top: 24px;
+      font-size: 1.15rem;
+    }
+
+    .voice-card p {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .waveform {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 25px;
+      padding: 0 5px;
+    }
+
+    .waveform span {
+      flex: 1;
+      min-width: 3px;
+      height: var(--h);
+      background: linear-gradient(180deg, rgba(212, 92, 121, .8), rgba(116, 91, 143, .7));
+      border-radius: 999px;
+      transform-origin: center;
+    }
+
+    .voice-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .voice-tag {
+      min-height: 29px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      color: #655868;
+      background: var(--surface-soft);
+      border-radius: 999px;
+      font-size: .63rem;
+    }
+
+    .script-btn {
+      width: 100%;
+      min-height: 44px;
+      margin-top: 21px;
+      color: var(--secondary);
+      background: rgba(116, 91, 143, .07);
+      border: 1px solid rgba(116, 91, 143, .13);
+      border-radius: 12px;
+      font-size: .76rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .script-btn:hover {
+      color: #fff;
+      background: var(--secondary);
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: process;
+    }
+
+    .process-card {
+      min-height: 238px;
+      padding: 23px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      counter-increment: process;
+    }
+
+    .process-card::before {
+      content: "0" counter(process);
+      display: block;
+      margin-bottom: 35px;
+      color: rgba(212, 92, 121, .18);
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      min-height: 292px;
+      padding: 25px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 23px;
+      box-shadow: 0 12px 30px rgba(83, 55, 71, .05);
+    }
+
+    .stars {
+      display: flex;
+      gap: 4px;
+      direction: ltr;
+      justify-content: flex-end;
+      margin-bottom: 18px;
+      color: #eba45b;
+      font-size: .75rem;
+    }
+
+    .testimonial > p {
+      min-height: 134px;
+      color: #5f5360;
+      font-size: .83rem;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .client-avatar {
+      width: 47px;
+      height: 47px;
+      flex: 0 0 47px;
+      overflow: hidden;
+      border: 2px solid #f3d8df;
+      border-radius: 50%;
+    }
+
+    .client-avatar img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .client strong {
+      display: block;
+      font-size: .8rem;
+    }
+
+    .client span {
+      display: block;
+      color: var(--muted);
+      font-size: .65rem;
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .84fr 1.16fr;
+      gap: 22px;
+      padding: 25px;
+      background: rgba(255, 255, 255, .9);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info {
+      position: relative;
+      overflow: hidden;
+      padding: 29px;
+      color: #fff;
+      background:
+        linear-gradient(150deg, rgba(212, 92, 121, .98), rgba(116, 91, 143, .96));
+      border-radius: 25px;
+    }
+
+    .contact-info::after {
+      content: "";
+      position: absolute;
+      left: -90px;
+      bottom: -120px;
+      width: 250px;
+      height: 250px;
+      border: 45px solid rgba(255, 255, 255, .06);
+      border-radius: 50%;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+    }
+
+    .contact-info > p {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, .78);
+      font-size: .82rem;
+    }
+
+    .contact-list {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .contact-item {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 14px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 14px;
+      font-size: .75rem;
+    }
+
+    .contact-item i {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .12);
+      border-radius: 10px;
+    }
+
+    .contact-form {
+      padding: 28px;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 20px;
+      font-size: 1.32rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: #5e5260;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      color: var(--text);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .field textarea {
+      min-height: 126px;
+      resize: vertical;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #a296a3;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      background: #fff;
+      border-color: rgba(212, 92, 121, .48);
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 14px;
+      border: 0;
+    }
+
+    .form-status {
+      min-height: 22px;
+      margin-top: 10px;
+      color: var(--sage);
+      font-size: .72rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 33px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: #5f5260;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: transform var(--transition), background var(--transition), color var(--transition);
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      background: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .whatsapp {
+      position: fixed;
+      left: 24px;
+      bottom: 24px;
+      z-index: 900;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: #25d366;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, .25);
+      font-size: 1.55rem;
+      transition: transform var(--transition);
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-5px) rotate(-3deg);
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(45, 34, 48, .45);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      width: min(620px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      padding: 26px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      transform: translateY(20px) scale(.98);
+      transition: var(--transition);
+    }
+
+    .modal.open .modal-card {
+      transform: none;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .modal-head h3 {
+      font-size: 1.25rem;
+    }
+
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+    }
+
+    .modal-copy {
+      margin-top: 20px;
+      padding: 20px;
+      color: #5d515e;
+      background: var(--surface-soft);
+      border-right: 3px solid var(--primary);
+      border-radius: 14px;
+      font-size: .86rem;
+      line-height: 2;
+      white-space: pre-line;
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1080px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        gap: 40px;
+      }
+
+      .services-grid,
+      .content-grid,
+      .voice-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        top: 10px;
+      }
+
+      .nav-shell {
+        min-height: 66px;
+        border-radius: 17px;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 86px 20px auto;
+        max-height: calc(100vh - 106px);
+        overflow: auto;
+        display: grid;
+        gap: 0;
+        padding: 12px;
+        background: rgba(255, 255, 255, .98);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-15px);
+        transition: var(--transition);
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 13px 12px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .hero {
+        padding-top: 126px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 20px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .availability,
+      .hero h1,
+      .hero-subtitle {
+        margin-inline: auto;
+      }
+
+      .hero-actions,
+      .hero-pills {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        min-height: 560px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-left: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .project-card,
+      .project-card.large,
+      .project-card.small {
+        grid-column: span 12;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial > p {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --container: min(100% - 28px, 1180px);
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 32px;
+      }
+
+      .section-head .filters {
+        margin-top: 20px;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.35rem, 12.5vw, 3.9rem);
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 495px;
+      }
+
+      .portrait-card {
+        width: min(88%, 385px);
+      }
+
+      .float-card {
+        min-width: 156px;
+        padding: 13px;
+      }
+
+      .float-card.one {
+        top: 54px;
+        right: -2px;
+      }
+
+      .float-card.two {
+        left: -2px;
+        bottom: 45px;
+      }
+
+      .voice-bubble {
+        width: 65px;
+        top: 57px;
+        left: 1px;
+      }
+
+      .stats-grid,
+      .services-grid,
+      .content-grid,
+      .voice-grid,
+      .process-grid,
+      .about-features,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-left: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .stat-number {
+        justify-content: center;
+      }
+
+      .stat p {
+        text-align: center;
+      }
+
+      .project-image {
+        height: 230px;
+      }
+
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-wrap {
+        padding: 11px;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .whatsapp {
+        left: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-shell" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#home" aria-label="الرئيسية">
+        <span class="brand-mark">MK</span>
+        <span class="brand-text">
+          <strong>مريم خالد</strong>
+          <span>Social Media · Content · Voice Over</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">نبذة عني</a></li>
+        <li><a href="#services">خدماتي</a></li>
+        <li><a href="#work">إدارة الصفحات</a></li>
+        <li><a href="#content">كتابة المحتوى</a></li>
+        <li><a href="#voice">التعليق الصوتي</a></li>
+        <li><a href="#contact">تواصل معي</a></li>
+      </ul>
+
+      <a class="btn btn-primary nav-cta" href="#contact">
+        <i class="fa-regular fa-paper-plane"></i>
+        ابدئي مشروعك
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="availability">
+            <span class="availability-dot"></span>
+            متاحة لفرص العمل والمشروعات الجديدة
+          </div>
+
+          <h1>
+            أصنع للعلامات التجارية
+            <span>صوتًا واضحًا</span>
+            وحضورًا لا يُنسى.
+          </h1>
+
+          <p class="hero-subtitle">
+            أنا مريم خالد، متخصصة في إدارة صفحات السوشيال ميديا وكتابة المحتوى والتعليق الصوتي.
+            أساعد المشروعات على الظهور بصورة احترافية، والتواصل مع جمهورها بلغة إنسانية تحقق تفاعلًا ونتائج حقيقية.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              شاهدي أعمالي
+            </a>
+            <a class="btn btn-outline" href="mailto:hello@mariamkhaled.co">
+              <i class="fa-regular fa-envelope"></i>
+              تواصلي عبر البريد
+            </a>
+          </div>
+
+          <div class="hero-pills">
+            <span class="pill"><i class="fa-solid fa-check"></i> إدارة الحسابات</span>
+            <span class="pill"><i class="fa-solid fa-check"></i> كتابة المحتوى</span>
+            <span class="pill"><i class="fa-solid fa-check"></i> Voice Over</span>
+            <span class="pill"><i class="fa-solid fa-check"></i> تقارير وتحليل</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="portrait-card">
+            <div class="portrait">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=88" alt="مريم خالد - متخصصة سوشيال ميديا وكتابة محتوى" />
+              <div class="portrait-caption">
+                <strong>مريم خالد</strong>
+                <span>Social Media Manager &amp; Content Creator</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card one">
+            <i class="fa-solid fa-chart-line"></i>
+            <strong>+176%</strong>
+            <span>نمو متوسط في الوصول</span>
+          </div>
+
+          <div class="float-card two">
+            <i class="fa-solid fa-pen-nib"></i>
+            <strong>480+</strong>
+            <span>قطعة محتوى مكتوبة</span>
+          </div>
+
+          <div class="voice-bubble" aria-hidden="true">
+            <i class="fa-solid fa-microphone-lines"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats-wrap reveal">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number"><span data-count="4">0</span><span>+</span></div>
+          <p>سنوات من الخبرة العملية</p>
+        </div>
+        <div class="stat">
+          <div class="stat-number"><span data-count="36">0</span><span>+</span></div>
+          <p>علامة تجارية تمت إدارتها</p>
+        </div>
+        <div class="stat">
+          <div class="stat-number"><span data-count="480">0</span><span>+</span></div>
+          <p>منشور وسكريبت مكتوب</p>
+        </div>
+        <div class="stat">
+          <div class="stat-number"><span data-count="75">0</span><span>+</span></div>
+          <p>مشروع تعليق صوتي</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=86" alt="اجتماع تخطيط محتوى وتسويق" loading="lazy">
+          <div class="about-note">
+            <i class="fa-solid fa-quote-right"></i>
+            المحتوى الناجح لا يملأ الصفحة فقط، بل يعبّر عن العلامة ويقرّبها من جمهورها.
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <span class="eyebrow">نبذة عني</span>
+          <h2>أجمع بين التخطيط الجيد، الكلمة المؤثرة والصوت المناسب.</h2>
+
+          <p>
+            بدأت عملي في كتابة المحتوى للصفحات الصغيرة، ثم تطورت خبرتي لتشمل إدارة الحسابات بالكامل:
+            من تحليل الجمهور وتخطيط الأفكار، إلى كتابة المنشورات وتوجيه التصميم ومتابعة النشر والردود وقراءة النتائج.
+          </p>
+
+          <p>
+            ساعدني عملي في التعليق الصوتي على فهم الإيقاع ونبرة الرسالة بصورة أعمق، لذلك أكتب المحتوى والسكريبتات
+            بطريقة طبيعية تصلح للقراءة والمشاهدة والاستماع، وتحافظ في الوقت نفسه على شخصية كل علامة تجارية.
+          </p>
+
+          <div class="about-features">
+            <div class="feature">
+              <i class="fa-solid fa-layer-group"></i>
+              إدارة متكاملة من الفكرة إلى التقرير
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-feather-pointed"></i>
+              كتابة عربية واضحة ومتنوعة الأساليب
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-microphone"></i>
+              أداء صوتي مرن حسب طبيعة المشروع
+            </div>
+            <div class="feature">
+              <i class="fa-solid fa-users"></i>
+              تواصل احترافي مع العملاء والجمهور
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-copy">
+            <span class="eyebrow">الخدمات</span>
+            <h2>ثلاث خدمات تكمل بعضها لصناعة حضور متماسك.</h2>
+            <p class="lead">
+              أقدّم للعلامة التجارية إدارة واضحة، محتوى يعكس هويتها وصوتًا يقدّم رسالتها بصورة احترافية.
+            </p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>إدارة صفحات السوشيال ميديا</h3>
+            <p>إدارة يومية وشهرية للحسابات بما يضمن انتظام النشر، وضوح الرسالة وتحسين الأداء باستمرار.</p>
+            <ul class="service-list">
+              <li><i class="fa-solid fa-circle-check"></i> استراتيجية وتقويم محتوى شهري</li>
+              <li><i class="fa-solid fa-circle-check"></i> تنسيق التصميم والنشر والردود</li>
+              <li><i class="fa-solid fa-circle-check"></i> تحليل النتائج وإعداد التقارير</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+            <h3>كتابة المحتوى والسكريبتات</h3>
+            <p>كتابة محتوى تسويقي وتوعوي يعبّر عن هوية المشروع ويشجّع الجمهور على التفاعل واتخاذ خطوة.</p>
+            <ul class="service-list">
+              <li><i class="fa-solid fa-circle-check"></i> منشورات وكابشن وإعلانات</li>
+              <li><i class="fa-solid fa-circle-check"></i> سكريبتات Reels وفيديوهات</li>
+              <li><i class="fa-solid fa-circle-check"></i> محتوى المواقع والملفات التعريفية</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h3>التعليق الصوتي</h3>
+            <p>أداء صوتي عربي واضح ودافئ يناسب الإعلانات، الفيديوهات التعريفية والمحتوى التعليمي.</p>
+            <ul class="service-list">
+              <li><i class="fa-solid fa-circle-check"></i> إعلانات ومنتجات وخدمات</li>
+              <li><i class="fa-solid fa-circle-check"></i> فيديوهات تعليمية وتوعوية</li>
+              <li><i class="fa-solid fa-circle-check"></i> قصص ومحتوى هادئ وملهم</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-copy">
+            <span class="eyebrow">إدارة صفحات السوشيال ميديا</span>
+            <h2>حسابات انتقلت من النشر العشوائي إلى حضور منظم وفعّال.</h2>
+            <p class="lead">
+              نماذج مختارة من مشروعات شملت التخطيط، إدارة المحتوى، المتابعة وتحسين النتائج.
+            </p>
+          </div>
+
+          <div class="filters" aria-label="فلترة المشروعات">
+            <button class="filter-btn active" type="button" data-filter="all">الكل</button>
+            <button class="filter-btn" type="button" data-filter="beauty">تجميل</button>
+            <button class="filter-btn" type="button" data-filter="education">تعليم</button>
+            <button class="filter-btn" type="button" data-filter="food">مطاعم</button>
+          </div>
+        </div>
+
+        <div class="work-grid">
+          <article class="project-card large reveal" data-category="beauty">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=86" alt="إدارة محتوى علامة عناية بالبشرة" loading="lazy">
+              <span class="project-type">Beauty · Instagram &amp; TikTok</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title">
+                <h3>إعادة تقديم علامة Lunea للعناية بالبشرة</h3>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <p>تطوير نبرة المحتوى وبناء محاور تعليمية وتجريبية أعادت التوازن بين التوعية بالمنتج والبيع.</p>
+              <div class="results">
+                <div class="result"><strong>+176%</strong><span>الوصول العضوي</span></div>
+                <div class="result"><strong>+83%</strong><span>الرسائل الواردة</span></div>
+                <div class="result"><strong>21K</strong><span>متابع جديد</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card small reveal" data-category="education">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=86" alt="إدارة صفحة أكاديمية تعليمية" loading="lazy">
+              <span class="project-type">Education · Facebook &amp; Instagram</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title">
+                <h3>حملة التسجيل لأكاديمية خطوة</h3>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <p>خطة محتوى موجهة لأولياء الأمور تجمع بين إثبات الجودة، الإجابة عن المخاوف وتحفيز التسجيل.</p>
+              <div class="results">
+                <div class="result"><strong>1.4M</strong><span>وصول خلال الحملة</span></div>
+                <div class="result"><strong>+68%</strong><span>طلبات التسجيل</span></div>
+                <div class="result"><strong>9.2K</strong><span>حفظ ومشاركة</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card small reveal" data-category="food">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=86" alt="إدارة محتوى مطعم" loading="lazy">
+              <span class="project-type">F&amp;B · Content Campaign</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title">
+                <h3>إطلاق فرع جديد لمطعم Yara Table</h3>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <p>محتوى قبل الافتتاح وبعده باستخدام الفيديو القصير، كواليس التحضير وتجارب الزوار.</p>
+              <div class="results">
+                <div class="result"><strong>980K</strong><span>مشاهدة فيديو</span></div>
+                <div class="result"><strong>+142%</strong><span>التفاعل</span></div>
+                <div class="result"><strong>7.8K</strong><span>زيارة للملف</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card large reveal" data-category="education">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=86" alt="محتوى منصة تعليم إلكتروني" loading="lazy">
+              <span class="project-type">E-learning · Content Strategy</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title">
+                <h3>بناء مجتمع محتوى لمنصة Learnora</h3>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <p>تحويل المنصات من قناة عروض إلى مجتمع تعليمي يعتمد على النصائح والقصص ونتائج المتدربين.</p>
+              <div class="results">
+                <div class="result"><strong>+204%</strong><span>التفاعل الشهري</span></div>
+                <div class="result"><strong>34K</strong><span>متابع متخصص</span></div>
+                <div class="result"><strong>+47%</strong><span>زيارات الموقع</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="content">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-copy">
+            <span class="eyebrow">نماذج كتابة المحتوى</span>
+            <h2>كلمات تتغيّر نبرتها حسب الجمهور والهدف.</h2>
+            <p class="lead">
+              عينات قصيرة توضّح أسلوبي في المحتوى التسويقي والتوعوي والقصصي.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <article class="content-card reveal">
+            <div>
+              <div class="content-meta">
+                <span class="content-tag">محتوى تسويقي</span>
+                <span class="content-tag">عناية بالبشرة</span>
+              </div>
+              <h3>منشور إطلاق منتج جديد</h3>
+              <p class="content-excerpt">
+                بشرتك لا تحتاج خطوات أكثر، بل تحتاج ما يناسبها فعلًا. سيروم Lunea الجديد يجمع بين الترطيب العميق
+                والملمس الخفيف، ليمنحك روتينًا أبسط ونتيجة يمكنك ملاحظتها كل صباح.
+              </p>
+            </div>
+            <div class="content-footer">
+              <span>Instagram Caption</span>
+              <button class="open-content" type="button"
+                data-title="منشور إطلاق منتج جديد"
+                data-copy="بشرتك لا تحتاج خطوات أكثر، بل تحتاج ما يناسبها فعلًا.&#10;&#10;سيروم Lunea الجديد يجمع بين الترطيب العميق والملمس الخفيف، ليمنحك روتينًا أبسط ونتيجة يمكنك ملاحظتها كل صباح.&#10;&#10;ثلاث قطرات فقط بعد تنظيف البشرة، وخطوة واحدة أقرب لإطلالة صحية وهادئة.&#10;&#10;اكتشفيه الآن عبر المتجر.">
+                قراءة النص كاملًا
+              </button>
+            </div>
+          </article>
+
+          <article class="content-card reveal">
+            <div>
+              <div class="content-meta">
+                <span class="content-tag">محتوى توعوي</span>
+                <span class="content-tag">تعليم</span>
+              </div>
+              <h3>منشور موجه لأولياء الأمور</h3>
+              <p class="content-excerpt">
+                عندما يتردد طفلك في الإجابة، فهو لا يحتاج أن يسمع الحل بسرعة. يحتاج مساحة آمنة للمحاولة،
+                وسؤالًا يساعده على التفكير بدلًا من الخوف من الخطأ.
+              </p>
+            </div>
+            <div class="content-footer">
+              <span>Facebook Post</span>
+              <button class="open-content" type="button"
+                data-title="منشور موجه لأولياء الأمور"
+                data-copy="عندما يتردد طفلك في الإجابة، فهو لا يحتاج أن يسمع الحل بسرعة.&#10;&#10;يحتاج مساحة آمنة للمحاولة، وسؤالًا يساعده على التفكير بدلًا من الخوف من الخطأ.&#10;&#10;في أكاديمية خطوة، نعامل الخطأ كجزء طبيعي من التعلّم، ونبني داخل الفصل ثقة تساعد كل طفل على التعبير والسؤال والتجربة.">
+                قراءة النص كاملًا
+              </button>
+            </div>
+          </article>
+
+          <article class="content-card reveal">
+            <div>
+              <div class="content-meta">
+                <span class="content-tag">سكريبت Reels</span>
+                <span class="content-tag">مطاعم</span>
+              </div>
+              <h3>سكريبت فيديو لتجربة طبق</h3>
+              <p class="content-excerpt">
+                أول ما الطبق وصل، عرفنا إننا مش قدام وجبة عادية. ريحة التوابل، صوت القرمشة،
+                والصوص اللي بيتحضر يوميًا في مطبخنا… كلها تفاصيل تستحق التجربة.
+              </p>
+            </div>
+            <div class="content-footer">
+              <span>30-sec Reel Script</span>
+              <button class="open-content" type="button"
+                data-title="سكريبت فيديو لتجربة طبق"
+                data-copy="أول ما الطبق وصل، عرفنا إننا مش قدام وجبة عادية.&#10;&#10;ريحة التوابل، صوت القرمشة، والصوص اللي بيتحضر يوميًا في مطبخنا… كلها تفاصيل تستحق التجربة.&#10;&#10;الطبق الجديد من Yara Table متاح دلوقتي. جرّبه، وقول لنا أول حاجة لفتت انتباهك.">
+                قراءة النص كاملًا
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-copy">
+            <span class="eyebrow">التعليق الصوتي</span>
+            <h2>أداء صوتي يقدّم الرسالة بإحساسها الصحيح.</h2>
+            <p class="lead">
+              أقدّم التعليق الصوتي بالعربية الفصحى واللهجة المصرية، بنبرات تجارية وتعليمية وقصصية.
+            </p>
+          </div>
+        </div>
+
+        <div class="voice-grid">
+          <article class="voice-card reveal">
+            <div class="voice-top">
+              <div class="voice-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <span class="voice-duration">00:30</span>
+            </div>
+            <h3>إعلان تجاري لمنتج عناية</h3>
+            <p>أداء أنثوي دافئ وواثق، مناسب لإعلانات المنتجات والحملات الرقمية القصيرة.</p>
+
+            <div class="waveform" aria-hidden="true">
+              <span style="--h:24%"></span><span style="--h:52%"></span><span style="--h:75%"></span><span style="--h:38%"></span><span style="--h:68%"></span><span style="--h:92%"></span><span style="--h:46%"></span><span style="--h:72%"></span><span style="--h:34%"></span><span style="--h:86%"></span><span style="--h:58%"></span><span style="--h:29%"></span><span style="--h:63%"></span><span style="--h:82%"></span><span style="--h:44%"></span><span style="--h:70%"></span><span style="--h:31%"></span><span style="--h:55%"></span>
+            </div>
+
+            <div class="voice-tags">
+              <span class="voice-tag">لهجة مصرية</span>
+              <span class="voice-tag">تجاري</span>
+              <span class="voice-tag">دافئ</span>
+            </div>
+
+            <button class="script-btn open-content" type="button"
+              data-title="سكريبت إعلان تجاري"
+              data-copy="لأن كل صباح يستحق بداية هادئة… اخترنا لك مكونات تمنح بشرتك الترطيب الذي تحتاجه، دون ملمس ثقيل.&#10;&#10;Lunea Daily Serum… ثلاث قطرات، وخطوة أبسط نحو بشرة أكثر نضارة.">
+              عرض السكريبت
+            </button>
+          </article>
+
+          <article class="voice-card reveal">
+            <div class="voice-top">
+              <div class="voice-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <span class="voice-duration">01:10</span>
+            </div>
+            <h3>مقدمة فيديو تعليمي</h3>
+            <p>نبرة واضحة وهادئة تساعد على شرح المعلومات والحفاظ على تركيز المستمع.</p>
+
+            <div class="waveform" aria-hidden="true">
+              <span style="--h:38%"></span><span style="--h:63%"></span><span style="--h:47%"></span><span style="--h:80%"></span><span style="--h:56%"></span><span style="--h:72%"></span><span style="--h:91%"></span><span style="--h:44%"></span><span style="--h:61%"></span><span style="--h:77%"></span><span style="--h:35%"></span><span style="--h:66%"></span><span style="--h:87%"></span><span style="--h:49%"></span><span style="--h:72%"></span><span style="--h:54%"></span><span style="--h:82%"></span><span style="--h:40%"></span>
+            </div>
+
+            <div class="voice-tags">
+              <span class="voice-tag">فصحى</span>
+              <span class="voice-tag">تعليمي</span>
+              <span class="voice-tag">واضح</span>
+            </div>
+
+            <button class="script-btn open-content" type="button"
+              data-title="سكريبت فيديو تعليمي"
+              data-copy="في هذا الدرس سنتعرّف إلى ثلاث خطوات بسيطة تساعدنا على تنظيم الوقت، والبدء في المهام دون شعور بالضغط.&#10;&#10;ابدأ بتحديد مهمة واحدة، ثم قسّمها إلى أجزاء صغيرة، وحدد لكل جزء وقتًا واقعيًا للتنفيذ.">
+              عرض السكريبت
+            </button>
+          </article>
+
+          <article class="voice-card reveal">
+            <div class="voice-top">
+              <div class="voice-icon"><i class="fa-solid fa-book-open"></i></div>
+              <span class="voice-duration">00:55</span>
+            </div>
+            <h3>قصة قصيرة للأطفال</h3>
+            <p>أداء قصصي لطيف بتغييرات بسيطة في النبرة، مناسب للحكايات والمحتوى الهادف.</p>
+
+            <div class="waveform" aria-hidden="true">
+              <span style="--h:50%"></span><span style="--h:86%"></span><span style="--h:43%"></span><span style="--h:71%"></span><span style="--h:57%"></span><span style="--h:93%"></span><span style="--h:37%"></span><span style="--h:68%"></span><span style="--h:81%"></span><span style="--h:46%"></span><span style="--h:75%"></span><span style="--h:52%"></span><span style="--h:89%"></span><span style="--h:39%"></span><span style="--h:65%"></span><span style="--h:78%"></span><span style="--h:48%"></span><span style="--h:60%"></span>
+            </div>
+
+            <div class="voice-tags">
+              <span class="voice-tag">فصحى مبسطة</span>
+              <span class="voice-tag">قصصي</span>
+              <span class="voice-tag">لطيف</span>
+            </div>
+
+            <button class="script-btn open-content" type="button"
+              data-title="سكريبت قصة قصيرة"
+              data-copy="في صباحٍ مشمس، استيقظت لُمى على صوت عصفور صغير يقف فوق نافذتها.&#10;&#10;كان يحمل في منقاره خيطًا أزرق، وينظر إليها كأنه يريد أن يقول شيئًا. اقتربت لُمى بهدوء، وبدأت مغامرتهما الأولى.">
+              عرض السكريبت
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-copy">
+            <span class="eyebrow">طريقة العمل</span>
+            <h2>تنفيذ منظم وتواصل واضح في كل مرحلة.</h2>
+          </div>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <h3>فهم المشروع</h3>
+            <p>مراجعة الهوية والخدمة والجمهور والأهداف، وتحديد الأولويات المطلوبة.</p>
+          </article>
+          <article class="process-card reveal">
+            <h3>إعداد الخطة</h3>
+            <p>تحديد محاور المحتوى، أسلوب الكتابة، شكل التنفيذ والجدول الزمني.</p>
+          </article>
+          <article class="process-card reveal">
+            <h3>الإنتاج والمراجعة</h3>
+            <p>كتابة المحتوى وتنسيق التصميم أو تسجيل الصوت، ثم المراجعة قبل النشر.</p>
+          </article>
+          <article class="process-card reveal">
+            <h3>المتابعة والتطوير</h3>
+            <p>متابعة ردود الجمهور والنتائج، ثم تحسين الأفكار والأداء بصورة مستمرة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-copy">
+            <span class="eyebrow">آراء العملاء</span>
+            <h2>تعاون يعتمد على الالتزام وفهم تفاصيل المشروع.</h2>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial reveal">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p>
+              مريم فهمت شخصية البراند بسرعة، وخلّت المحتوى أبسط وأقرب للعميلات. لاحظنا فرقًا واضحًا في الرسائل والتفاعل،
+              والأهم أن الصفحة أصبحت متناسقة ولها صوت معروف.
+            </p>
+            <div class="client">
+              <div class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="نهى سمير" loading="lazy">
+              </div>
+              <div>
+                <strong>نهى سمير</strong>
+                <span>Founder · Lunea Skincare</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p>
+              أسلوبها في الكتابة مناسب جدًا للجمهور التعليمي، واضح من غير تعقيد، وفي الوقت نفسه لا يبدو تقليديًا.
+              كانت ملتزمة بالخطة ومتابعة كل التفاصيل معنا.
+            </p>
+            <div class="client">
+              <div class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="أحمد سامي" loading="lazy">
+              </div>
+              <div>
+                <strong>أحمد سامي</strong>
+                <span>Marketing Manager · Learnora</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p>
+              أداؤها الصوتي كان طبيعيًا ودافئًا، ونفذت الملاحظات بدقة من أول مرة. التسجيل النهائي وصل بجودة ممتازة
+              وأعطى الفيديو الإحساس الذي كنا نبحث عنه.
+            </p>
+            <div class="client">
+              <div class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="كريم عادل" loading="lazy">
+              </div>
+              <div>
+                <strong>كريم عادل</strong>
+                <span>Creative Producer · Frame Studio</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div class="contact-info">
+            <span class="eyebrow" style="color:#fff">لنتعاون</span>
+            <h2>هل يحتاج مشروعك إلى محتوى أكثر وضوحًا وحضور أكثر احترافية؟</h2>
+            <p>
+              متاحة لفرص العمل عن بُعد، إدارة الحسابات الشهرية، مشروعات كتابة المحتوى والتعليق الصوتي.
+            </p>
+
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:hello@mariamkhaled.co">
+                <i class="fa-regular fa-envelope"></i>
+                hello@mariamkhaled.co
+              </a>
+              <a class="contact-item" href="tel:+201097346521">
+                <i class="fa-solid fa-phone"></i>
+                +20 109 734 6521
+              </a>
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                القاهرة، مصر · متاحة للعمل عن بُعد
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <h3>أرسلي تفاصيل الفرصة أو المشروع</h3>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" name="name" type="text" placeholder="اكتبي اسمك" required>
+              </div>
+
+              <div class="field">
+                <label for="email">البريد الإلكتروني</label>
+                <input id="email" name="email" type="email" placeholder="name@company.com" required>
+              </div>
+
+              <div class="field full">
+                <label for="subject">الخدمة المطلوبة</label>
+                <input id="subject" name="subject" type="text" placeholder="إدارة صفحات، كتابة محتوى، تعليق صوتي..." required>
+              </div>
+
+              <div class="field full">
+                <label for="message">تفاصيل المشروع</label>
+                <textarea id="message" name="message" placeholder="اكتبي نبذة عن المشروع والهدف والمدة المتوقعة..." required></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary submit-btn" type="submit">
+              <i class="fa-regular fa-paper-plane"></i>
+              إرسال الرسالة
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> مريم خالد. جميع الحقوق محفوظة.</p>
+
+      <div class="social-links" aria-label="روابط التواصل الاجتماعي">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+          <i class="fa-brands fa-behance"></i>
+        </a>
+        <a href="mailto:hello@mariamkhaled.co" aria-label="Email">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/201097346521" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="modal" id="contentModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">نموذج محتوى</span>
+          <h3 id="modalTitle">عنوان النموذج</h3>
+        </div>
+        <button class="modal-close" id="modalClose" type="button" aria-label="إغلاق">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-copy" id="modalCopy"></div>
+    </div>
+  </div>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const navAnchors = [...document.querySelectorAll(".nav-links a")];
+
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.innerHTML = open
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navAnchors.forEach(link => link.addEventListener("click", closeMenu));
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 18);
+    });
+
+    // Reveal animation
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
+
+    // Counters
+    const counters = document.querySelectorAll("[data-count]");
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const element = entry.target;
+        const target = Number(element.dataset.count);
+        const duration = 1350;
+        const start = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = Math.floor(target * eased);
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            element.textContent = target;
+          }
+        }
+
+        requestAnimationFrame(update);
+        observer.unobserve(element);
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Work filters
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+          const show = filter === "all" || card.dataset.category === filter;
+          card.classList.toggle("hidden", !show);
+        });
+      });
+    });
+
+    // Active section links
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        navAnchors.forEach(link => {
+          const target = link.getAttribute("href").replace("#", "");
+          link.classList.toggle("active", target === entry.target.id);
+        });
+      });
+    }, {
+      rootMargin: "-35% 0px -55% 0px",
+      threshold: 0
+    });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Content modal
+    const modal = document.getElementById("contentModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalCopy = document.getElementById("modalCopy");
+    const openButtons = document.querySelectorAll(".open-content");
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("menu-open");
+    }
+
+    openButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        modalTitle.textContent = button.dataset.title;
+        modalCopy.textContent = button.dataset.copy;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("menu-open");
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeModal();
+    });
+
+    // Contact form via mail client
+    const form = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const data = new FormData(form);
+      const name = data.get("name").trim();
+      const email = data.get("email").trim();
+      const subject = data.get("subject").trim();
+      const message = data.get("message").trim();
+
+      const mailSubject = encodeURIComponent(`${subject} - من ${name}`);
+      const mailBody = encodeURIComponent(
+        `الاسم: ${name}\nالبريد الإلكتروني: ${email}\n\nتفاصيل المشروع:\n${message}`
+      );
+
+      formStatus.textContent = "سيتم فتح تطبيق البريد لإكمال إرسال الرسالة.";
+      window.location.href = `mailto:hello@mariamkhaled.co?subject=${mailSubject}&body=${mailBody}`;
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
