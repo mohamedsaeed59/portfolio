@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="نورهان سامح — Lead Generation Strategist. أبني أنظمة جذب عملاء تحول الاهتمام إلى فرص بيع مؤهلة وقابلة للمتابعة والقياس." />
+  <meta name="theme-color" content="#0c111d" />
+  <title>نورهان سامح | Lead Generation Strategist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0c111d;
+      --bg-2:#121a2a;
+      --panel:#151f31;
+      --paper:#f5f7fb;
+      --paper-2:#e9eef6;
+      --white:#ffffff;
+      --ink:#101827;
+      --muted:#8f9bae;
+      --muted-dark:#667085;
+      --violet:#7557ff;
+      --violet-2:#9b84ff;
+      --mint:#57f0bf;
+      --coral:#ff6b5f;
+      --blue:#59b8ff;
+      --line:rgba(255,255,255,.11);
+      --dark-line:rgba(16,24,39,.12);
+      --shadow:0 30px 90px rgba(5,10,20,.28);
+      --radius:28px;
+      --container:1240px;
+      --ease:cubic-bezier(.2,.75,.25,1);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{
+      font-family:"Cairo",system-ui,sans-serif;
+      color:var(--white);
+      background:var(--bg);
+      line-height:1.8;
+      overflow-x:hidden;
+    }
+    body.menu-open{overflow:hidden}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--mint);color:var(--ink)}
+
+    .container{width:min(calc(100% - 36px),var(--container));margin-inline:auto}
+    .section{padding:118px 0;position:relative}
+    .section-light{background:var(--paper);color:var(--ink)}
+    .section-soft{background:var(--paper-2);color:var(--ink)}
+    .section-dark{background:var(--bg-2)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      color:var(--mint);font-size:.78rem;font-weight:900;letter-spacing:1.6px;
+      text-transform:uppercase;margin-bottom:16px
+    }
+    .eyebrow::before{content:"";width:32px;height:2px;background:currentColor}
+    .section-light .eyebrow,.section-soft .eyebrow{color:var(--violet)}
+    .section-head{max-width:780px;margin-bottom:52px}
+    .section-head.center{text-align:center;margin-inline:auto}
+    .section-head.center .eyebrow::before{display:none}
+    .section-title{
+      font-size:clamp(2.2rem,5vw,4.55rem);
+      font-weight:900;line-height:1.15;letter-spacing:-1.4px;margin-bottom:18px
+    }
+    .section-desc{max-width:670px;color:var(--muted);font-size:1.02rem}
+    .section-light .section-desc,.section-soft .section-desc{color:var(--muted-dark)}
+    .section-head.center .section-desc{margin-inline:auto}
+
+    .btn{
+      min-height:56px;padding:0 24px;border-radius:999px;border:1px solid transparent;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      font-weight:900;transition:.3s var(--ease)
+    }
+    .btn-primary{background:var(--violet);color:#fff;box-shadow:0 16px 36px rgba(117,87,255,.3)}
+    .btn-primary:hover{transform:translateY(-4px);background:var(--violet-2)}
+    .btn-outline{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.04);color:#fff}
+    .btn-outline:hover{background:#fff;color:var(--ink);transform:translateY(-4px)}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-dark:hover{transform:translateY(-4px);background:#202a3b}
+    .btn-mint{background:var(--mint);color:var(--ink)}
+    .btn-mint:hover{transform:translateY(-4px) rotate(-1deg)}
+
+    /* Header */
+    .header{
+      position:fixed;inset:0 0 auto;z-index:1000;
+      transition:.3s var(--ease)
+    }
+    .header.scrolled{background:rgba(12,17,29,.88);backdrop-filter:blur(18px);box-shadow:0 8px 38px rgba(0,0,0,.24)}
+    .nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;line-height:1.2}
+    .brand-mark{
+      width:48px;height:48px;border-radius:16px;display:grid;place-items:center;
+      font-family:"Space Grotesk";font-weight:700;color:var(--ink);
+      background:linear-gradient(145deg,var(--mint),#b8ffe9);
+      transform:rotate(-7deg);box-shadow:0 12px 30px rgba(87,240,191,.18)
+    }
+    .brand small{display:block;color:var(--muted);font-size:.62rem;letter-spacing:.8px;font-weight:700}
+    .nav-links{list-style:none;display:flex;align-items:center;gap:24px;color:#d2d8e1;font-size:.86rem;font-weight:800}
+    .nav-links a{position:relative}
+    .nav-links a::after{
+      content:"";position:absolute;right:0;left:100%;bottom:-8px;height:2px;background:var(--mint);transition:.25s
+    }
+    .nav-links a:hover::after,.nav-links a.active::after{left:0}
+    .nav-cta{
+      min-height:45px;padding:0 18px;border-radius:999px;border:1px solid var(--line);
+      display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:900;transition:.25s
+    }
+    .nav-cta:hover{background:var(--mint);border-color:var(--mint);color:var(--ink)}
+    .menu-btn{
+      display:none;width:46px;height:46px;border:0;border-radius:14px;
+      background:rgba(255,255,255,.08);color:#fff
+    }
+
+    /* Hero */
+    .hero{
+      min-height:930px;padding:145px 0 90px;position:relative;overflow:hidden;
+      display:flex;align-items:center;
+      background:
+      radial-gradient(circle at 74% 17%,rgba(117,87,255,.18),transparent 28%),
+      radial-gradient(circle at 17% 77%,rgba(87,240,191,.11),transparent 26%),
+      linear-gradient(180deg,#0c111d,#0c111d)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:62px;align-items:center;position:relative;z-index:2}
+    .hero-copy{position:relative;z-index:4}
+    .availability{
+      display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.04);
+      color:#d7dce4;font-size:.78rem;font-weight:800;margin-bottom:25px
+    }
+    .availability i{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 6px rgba(87,240,191,.1)}
+    .hero h1{
+      font-size:clamp(3.25rem,7.4vw,7.2rem);line-height:1;letter-spacing:-3px;
+      font-weight:900;margin-bottom:27px
+    }
+    .hero h1 span{display:block}
+    .hero h1 .accent{color:var(--mint)}
+    .hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.62)}
+    .hero p{max-width:700px;color:#aeb7c4;font-size:clamp(1rem,2vw,1.22rem);margin-bottom:31px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .hero-proof{display:flex;gap:18px;flex-wrap:wrap;margin-top:38px;color:#8f9aab;font-size:.76rem;font-weight:700}
+    .hero-proof span{display:flex;align-items:center;gap:8px}
+    .hero-proof span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--violet)}
+
+    /* Lead flow visual */
+    .lead-console{
+      min-height:650px;border-radius:34px;padding:22px;background:
+      linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      border:1px solid var(--line);box-shadow:var(--shadow);position:relative;overflow:hidden
+    }
+    .console-top{
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      padding:6px 3px 20px;border-bottom:1px solid var(--line)
+    }
+    .console-title{display:flex;align-items:center;gap:10px;font-weight:900;font-size:.88rem}
+    .console-live{padding:5px 10px;border-radius:999px;background:rgba(87,240,191,.11);color:var(--mint);font-size:.68rem;font-weight:900}
+    .console-dots{display:flex;gap:6px}
+    .console-dots i{width:8px;height:8px;border-radius:50%;background:#465064}
+    .console-dots i:first-child{background:var(--coral)}
+    .pipeline{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px
+    }
+    .stage{
+      min-height:520px;border-radius:22px;background:rgba(6,10,18,.44);border:1px solid rgba(255,255,255,.07);padding:14px
+    }
+    .stage-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+    .stage-head strong{font-size:.72rem}
+    .stage-head span{
+      min-width:26px;height:26px;padding:0 7px;border-radius:999px;display:grid;place-items:center;
+      background:rgba(255,255,255,.08);font-family:"Space Grotesk";font-size:.65rem;color:#cbd2dc
+    }
+    .lead-card{
+      padding:13px;border-radius:16px;background:#172237;border:1px solid rgba(255,255,255,.08);
+      margin-bottom:10px;transition:.3s var(--ease);position:relative
+    }
+    .lead-card:hover{transform:translateY(-4px);border-color:rgba(87,240,191,.28)}
+    .lead-card b{display:block;font-size:.76rem;margin-bottom:3px}
+    .lead-card small{display:block;color:#8793a5;font-size:.61rem}
+    .lead-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+    .lead-tags span{padding:4px 7px;border-radius:999px;background:rgba(117,87,255,.14);color:#b7aaff;font-size:.55rem;font-weight:800}
+    .lead-tags span.hot{background:rgba(255,107,95,.14);color:#ff9a91}
+    .lead-score{
+      position:absolute;left:10px;top:10px;width:25px;height:25px;border-radius:8px;
+      display:grid;place-items:center;background:rgba(87,240,191,.12);color:var(--mint);
+      font-family:"Space Grotesk";font-size:.58rem;font-weight:700
+    }
+    .pulse{
+      position:absolute;width:130px;height:130px;border-radius:50%;border:1px solid rgba(87,240,191,.2);
+      right:-50px;top:170px;animation:pulse 3.3s ease-out infinite
+    }
+    .pulse::before,.pulse::after{content:"";position:absolute;inset:18px;border-radius:inherit;border:1px solid rgba(87,240,191,.16)}
+    .pulse::after{inset:36px}
+    @keyframes pulse{50%{transform:scale(1.08);opacity:.55}}
+    .console-floating{
+      position:absolute;left:-14px;bottom:28px;z-index:4;padding:16px 18px;border-radius:18px;
+      border:1px solid var(--line);background:rgba(19,29,46,.88);backdrop-filter:blur(14px);
+      box-shadow:0 20px 55px rgba(0,0,0,.26);animation:floatY 4.7s ease-in-out infinite
+    }
+    .console-floating small{display:block;color:#8f9bae;font-size:.62rem}
+    .console-floating strong{font-family:"Space Grotesk";font-size:1.45rem;color:#fff}
+    .console-floating em{font-style:normal;color:var(--mint);font-size:.65rem;font-weight:900;margin-right:7px}
+    @keyframes floatY{50%{transform:translateY(-10px) rotate(.5deg)}}
+
+    /* Marquee */
+    .marquee{overflow:hidden;border-block:1px solid var(--line);background:#0f1624}
+    .marquee-track{width:max-content;display:flex;padding:17px 0;animation:marquee 25s linear infinite}
+    .marquee-track span{white-space:nowrap;font-family:"Space Grotesk";font-size:.8rem;font-weight:700;color:#c8d0dc;letter-spacing:1px}
+    .marquee-track b{color:var(--mint);padding:0 25px}
+    @keyframes marquee{to{transform:translateX(50%)}}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}
+    .about-sticky{position:sticky;top:120px}
+    .about-number{
+      font-family:"Space Grotesk";font-size:clamp(5rem,11vw,9rem);line-height:.82;
+      letter-spacing:-6px;color:var(--violet);font-weight:700
+    }
+    .about-label{margin-top:20px;color:#676e7b;font-size:.88rem;font-weight:800}
+    .about-copy h2{font-size:clamp(2rem,4.5vw,4.3rem);line-height:1.24;letter-spacing:-1.3px;margin-bottom:25px}
+    .about-copy p{color:#616a78;font-size:1.06rem;margin-bottom:17px}
+    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px}
+    .principle{padding:20px;border-top:1px solid var(--dark-line)}
+    .principle strong{display:block;margin-bottom:4px;font-size:1rem}
+    .principle span{color:#69717d;font-size:.84rem}
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .service-card{
+      min-height:360px;padding:35px;border-radius:var(--radius);border:1px solid var(--line);
+      background:#141e30;display:flex;flex-direction:column;justify-content:space-between;
+      position:relative;overflow:hidden;transition:.35s var(--ease)
+    }
+    .service-card:hover{transform:translateY(-8px);border-color:rgba(87,240,191,.35)}
+    .service-card:nth-child(2){background:var(--violet)}
+    .service-card:nth-child(3){background:var(--mint);color:var(--ink)}
+    .service-card:nth-child(4){background:linear-gradient(140deg,#112d3b,#141e30)}
+    .service-index{font-family:"Space Grotesk";font-size:.72rem;letter-spacing:1.4px;opacity:.58}
+    .service-icon{
+      position:absolute;left:24px;top:22px;width:62px;height:62px;border-radius:19px;
+      display:grid;place-items:center;border:1px solid currentColor;font-family:"Space Grotesk";
+      font-weight:700;font-size:1.35rem;opacity:.82;transform:rotate(-8deg)
+    }
+    .service-card h3{font-size:clamp(1.6rem,3vw,2.45rem);line-height:1.26;margin:46px 0 16px}
+    .service-card p{max-width:560px;color:#9da8b6;font-size:.92rem}
+    .service-card:nth-child(2) p{color:rgba(255,255,255,.82)}
+    .service-card:nth-child(3) p{color:#35463f}
+    .service-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}
+    .service-tools span{padding:7px 11px;border:1px solid currentColor;border-radius:999px;font-size:.67rem;font-weight:800;opacity:.8}
+
+    /* Lead systems */
+    .systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .system-card{
+      padding:28px;border-radius:24px;border:1px solid var(--dark-line);background:#fff;
+      min-height:300px;display:flex;flex-direction:column;justify-content:space-between;
+      transition:.3s var(--ease);position:relative;overflow:hidden
+    }
+    .system-card:hover{transform:translateY(-7px);box-shadow:0 24px 60px rgba(24,35,54,.1)}
+    .system-card::after{
+      content:"";position:absolute;width:120px;height:120px;border-radius:50%;
+      left:-55px;top:-55px;background:rgba(117,87,255,.08)
+    }
+    .system-no{font-family:"Space Grotesk";font-size:.75rem;color:var(--violet);font-weight:700}
+    .system-card h3{font-size:1.45rem;line-height:1.35;margin:35px 0 12px}
+    .system-card p{color:#667085;font-size:.88rem}
+    .system-flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:22px}
+    .system-flow span{padding:6px 9px;border-radius:10px;background:#eef1f7;font-size:.62rem;font-weight:800}
+    .system-flow i{font-style:normal;color:var(--violet)}
+
+    /* Case studies */
+    .case-list{display:grid;gap:24px}
+    .case{
+      display:grid;grid-template-columns:1.08fr .92fr;min-height:570px;
+      background:#fff;color:var(--ink);border-radius:32px;overflow:hidden;border:1px solid var(--dark-line);
+      transition:.35s var(--ease)
+    }
+    .case:hover{transform:translateY(-6px);box-shadow:0 28px 70px rgba(0,0,0,.12)}
+    .case:nth-child(even){grid-template-columns:.92fr 1.08fr}
+    .case:nth-child(even) .case-media{order:2}
+    .case-media{position:relative;overflow:hidden;min-height:470px;background:#dfe4ec}
+    .case-media img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+    .case:hover .case-media img{transform:scale(1.045)}
+    .case-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,23,.6),transparent 58%)}
+    .case-overlay{
+      position:absolute;right:25px;left:25px;bottom:25px;z-index:2;color:#fff;
+      display:flex;align-items:flex-end;justify-content:space-between;gap:14px
+    }
+    .case-brand{font-family:"Space Grotesk";font-size:2rem;font-weight:700}
+    .case-type{padding:7px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.32);font-size:.68rem;font-weight:800;backdrop-filter:blur(10px)}
+    .case-content{padding:42px;display:flex;flex-direction:column;justify-content:center}
+    .case-num{font-family:"Space Grotesk";font-size:.72rem;color:var(--violet);letter-spacing:1.4px;font-weight:700}
+    .case h3{font-size:clamp(1.85rem,3.4vw,3.35rem);line-height:1.2;margin:12px 0 17px;letter-spacing:-1px}
+    .case p{color:#606a78;font-size:.95rem;margin-bottom:25px}
+    .case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+    .case-stat{padding:15px;border-radius:16px;background:#eff2f8}
+    .case-stat strong{display:block;font-family:"Space Grotesk";font-size:1.32rem;line-height:1.1}
+    .case-stat span{display:block;color:#757f8e;font-size:.66rem;font-weight:700}
+    .case-link{display:inline-flex;align-items:center;gap:9px;background:none;border:0;width:max-content;font-weight:900}
+    .case-link i{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:var(--violet);color:#fff;font-style:normal;transition:.25s}
+    .case-link:hover i{transform:translateX(-5px)}
+
+    /* Interactive audit */
+    .audit-shell{
+      display:grid;grid-template-columns:.82fr 1.18fr;border-radius:34px;overflow:hidden;
+      border:1px solid var(--line);background:#111a29;box-shadow:var(--shadow)
+    }
+    .audit-copy{padding:50px;background:linear-gradient(145deg,var(--violet),#5b3ef3)}
+    .audit-copy h2{font-size:clamp(2rem,4.2vw,4rem);line-height:1.12;margin-bottom:18px}
+    .audit-copy p{color:rgba(255,255,255,.8)}
+    .audit-note{
+      margin-top:30px;padding:18px;border-radius:18px;background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);font-size:.82rem
+    }
+    .audit-tool{padding:42px}
+    .audit-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+    .audit-tab{
+      border:1px solid var(--line);background:rgba(255,255,255,.04);color:#cbd3de;
+      border-radius:999px;padding:9px 14px;font-size:.74rem;font-weight:800;transition:.2s
+    }
+    .audit-tab.active,.audit-tab:hover{background:var(--mint);border-color:var(--mint);color:var(--ink)}
+    .audit-panel{display:none}
+    .audit-panel.active{display:block;animation:fadeIn .35s ease}
+    .audit-panel h3{font-size:1.45rem;margin-bottom:9px}
+    .audit-panel>p{color:#94a0b2;font-size:.87rem;margin-bottom:20px}
+    .audit-checks{display:grid;gap:10px}
+    .audit-check{
+      padding:14px 15px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+      display:flex;align-items:center;justify-content:space-between;gap:16px
+    }
+    .audit-check span{font-size:.8rem;color:#d2d9e2}
+    .status{font-size:.65rem;font-weight:900;padding:5px 9px;border-radius:999px}
+    .status.good{background:rgba(87,240,191,.12);color:var(--mint)}
+    .status.warn{background:rgba(255,107,95,.12);color:#ff9c94}
+    .status.mid{background:rgba(89,184,255,.12);color:#8fd0ff}
+
+    /* Results */
+    .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .result-card{
+      min-height:235px;padding:26px;border:1px solid var(--line);border-radius:24px;
+      background:#141e30;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .result-card strong{font-family:"Space Grotesk";font-size:clamp(2.25rem,4vw,3.9rem);line-height:1;color:var(--mint)}
+    .result-card:nth-child(2) strong{color:var(--violet-2)}
+    .result-card:nth-child(3) strong{color:var(--coral)}
+    .result-card p{color:#a5afbd;font-size:.83rem}
+
+    /* Testimonials */
+    .testimonial-wrap{max-width:980px;margin-inline:auto}
+    .testimonial{
+      display:none;padding:50px;border-radius:30px;background:#fff;color:var(--ink);
+      border:1px solid var(--dark-line);box-shadow:0 24px 70px rgba(0,0,0,.08)
+    }
+    .testimonial.active{display:block;animation:fadeIn .42s ease}
+    .quote-mark{font-family:Georgia,serif;font-size:5rem;line-height:.55;color:var(--violet)}
+    .testimonial blockquote{font-size:clamp(1.15rem,2.3vw,1.62rem);line-height:1.9;font-weight:800;margin:25px 0}
+    .client{display:flex;align-items:center;gap:12px}
+    .client-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover}
+    .client strong{display:block}
+    .client span{display:block;color:#727b88;font-size:.75rem}
+    .slider-dots{display:flex;justify-content:center;gap:8px;margin-top:23px}
+    .slider-dot{width:10px;height:10px;border:0;border-radius:50%;background:#c4c9d1;transition:.2s}
+    .slider-dot.active{width:30px;border-radius:999px;background:var(--violet)}
+
+    /* Contact */
+    .contact-shell{
+      border-radius:36px;overflow:hidden;display:grid;grid-template-columns:.9fr 1.1fr;
+      background:var(--violet);color:#fff
+    }
+    .contact-copy{padding:54px;position:relative;overflow:hidden}
+    .contact-copy::after{
+      content:"";position:absolute;width:350px;height:350px;border-radius:50%;
+      left:-160px;bottom:-170px;border:1px solid rgba(255,255,255,.28)
+    }
+    .contact-copy h2{font-size:clamp(2.3rem,5vw,4.7rem);line-height:1.06;letter-spacing:-1.8px;margin-bottom:19px}
+    .contact-copy p{color:rgba(255,255,255,.8);max-width:500px}
+    .contact-info{display:grid;gap:12px;margin-top:34px;position:relative;z-index:2}
+    .contact-info a,.contact-info span{display:flex;align-items:center;gap:10px;font-weight:800}
+    .contact-form{padding:50px;background:#fff;color:var(--ink)}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.78rem;font-weight:900}
+    .field input,.field select,.field textarea{
+      width:100%;border:1px solid var(--dark-line);border-radius:14px;background:#f5f7fb;
+      padding:13px 14px;outline:none;transition:.2s
+    }
+    .field textarea{min-height:130px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{
+      border-color:var(--violet);box-shadow:0 0 0 4px rgba(117,87,255,.08);background:#fff
+    }
+    .form-note{font-size:.7rem;color:#777;margin-top:10px}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;z-index:2000;display:none;place-items:center;padding:20px;
+      background:rgba(0,0,0,.72);backdrop-filter:blur(12px)
+    }
+    .modal.open{display:grid}
+    .modal-box{
+      width:min(920px,100%);max-height:90vh;overflow:auto;border-radius:30px;
+      background:var(--paper);color:var(--ink);box-shadow:var(--shadow);animation:modalIn .35s var(--ease)
+    }
+    .modal-cover{height:300px;position:relative;overflow:hidden}
+    .modal-cover img{width:100%;height:100%;object-fit:cover}
+    .modal-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.58),transparent)}
+    .modal-close{
+      position:absolute;left:16px;top:16px;z-index:3;width:44px;height:44px;border:0;border-radius:50%;
+      background:#fff;color:var(--ink);font-size:1.2rem
+    }
+    .modal-body{padding:36px}
+    .modal-body h3{font-size:clamp(1.85rem,4vw,3rem);line-height:1.2;margin-bottom:15px}
+    .modal-body p{color:#5f6875;margin-bottom:18px}
+    .modal-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .modal-point{padding:16px;border-radius:16px;background:#e8edf5}
+    .modal-point b{display:block;margin-bottom:4px}
+    .modal-point span{color:#6c7480;font-size:.77rem}
+
+    /* Footer */
+    .footer{padding:45px 0 25px;background:#090d16;border-top:1px solid var(--line)}
+    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;color:#97a2b1;font-size:.79rem;font-weight:700}
+    .footer-socials{display:flex;gap:8px}
+    .social{
+      width:42px;height:42px;border-radius:13px;border:1px solid var(--line);
+      display:grid;place-items:center;font-weight:900;transition:.2s
+    }
+    .social:hover{background:var(--mint);color:var(--ink);border-color:var(--mint);transform:translateY(-3px)}
+    .footer-bottom{padding-top:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#6f7886;font-size:.74rem}
+    .wa{
+      position:fixed;left:22px;bottom:22px;z-index:900;width:58px;height:58px;border-radius:50%;
+      display:grid;place-items:center;background:#25d366;color:#fff;
+      box-shadow:0 16px 38px rgba(37,211,102,.32);transition:.25s
+    }
+    .wa:hover{transform:translateY(-5px) scale(1.04)}
+
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    @keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+
+    @media(max-width:1050px){
+      .nav-links{gap:15px;font-size:.78rem}
+      .hero-grid{gap:30px}
+      .pipeline{gap:7px}.stage{padding:10px}.lead-card{padding:11px}
+      .systems-grid{grid-template-columns:repeat(2,1fr)}
+      .results-grid{grid-template-columns:repeat(2,1fr)}
+      .case,.case:nth-child(even){grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:880px){
+      .menu-btn{display:grid}.nav-cta{display:none}
+      .nav-links{
+        position:fixed;top:0;right:0;width:min(82vw,360px);height:100vh;
+        padding:110px 28px 35px;background:#121a2a;flex-direction:column;align-items:stretch;gap:2px;
+        transform:translateX(105%);transition:.3s var(--ease);box-shadow:-22px 0 60px rgba(0,0,0,.4)
+      }
+      .nav-links.open{transform:none}
+      .nav-links a{display:block;padding:13px 3px;border-bottom:1px solid var(--line)}
+      .hero{min-height:auto;padding-top:125px}
+      .hero-grid,.about-grid,.audit-shell,.contact-shell{grid-template-columns:1fr}
+      .lead-console{min-height:auto}
+      .about-sticky{position:static}
+      .about-number{font-size:6rem}
+      .case,.case:nth-child(even){grid-template-columns:1fr}
+      .case:nth-child(even) .case-media{order:0}
+      .case-media{min-height:420px}
+      .case-content{padding:35px}
+      .contact-copy,.contact-form{padding:42px}
+    }
+
+    @media(max-width:640px){
+      .section{padding:84px 0}
+      .hero h1{font-size:clamp(3rem,14vw,5rem)}
+      .hero-actions .btn{width:100%}
+      .pipeline{grid-template-columns:1fr}
+      .stage{min-height:auto}
+      .lead-card:nth-child(n+3){display:none}
+      .console-floating{position:relative;left:auto;bottom:auto;margin-top:14px}
+      .principles,.services-grid,.systems-grid,.form-grid{grid-template-columns:1fr}
+      .case-stats,.modal-points{grid-template-columns:1fr}
+      .case-media{min-height:330px}
+      .case-content{padding:28px 22px}
+      .results-grid{grid-template-columns:1fr}
+      .audit-copy,.audit-tool,.contact-copy,.contact-form{padding:32px 22px}
+      .testimonial{padding:35px 22px}
+      .footer-top{flex-direction:column;align-items:flex-start}
+      .footer-bottom{justify-content:center;text-align:center}
+      .modal-cover{height:220px}.modal-body{padding:25px 20px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-mark">NS</span>
+        <span>نورهان سامح<small>LEAD GENERATION STRATEGIST</small></span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عنّي</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#systems">أنظمة الجذب</a></li>
+        <li><a href="#cases">النتائج</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#contact">ابني نظام جذبك <span>↙</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="availability"><i></i> متاحة لمشروعات جذب عملاء جديدة</div>
+          <h1>
+            <span>لا أبحث عن</span>
+            <span class="outline">أي عميل.</span>
+            <span class="accent">أجذب العميل المناسب.</span>
+          </h1>
+          <p>
+            أبني أنظمة جذب عملاء تجمع بين العرض، الرسالة، القناة، التأهيل والمتابعة؛
+            حتى تتحول الزيارات والمحادثات إلى فرص بيع واضحة يمكن للفريق متابعتها وإغلاقها.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cases">شاهد أنظمة الجذب والنتائج <span>↙</span></a>
+            <a class="btn btn-outline" href="#contact">ناقش مشروعك</a>
+          </div>
+
+          <div class="hero-proof">
+            <span>B2B Lead Generation</span>
+            <span>Funnels & Landing Pages</span>
+            <span>Outreach Systems</span>
+            <span>Lead Qualification</span>
+          </div>
+        </div>
+
+        <div class="lead-console reveal">
+          <div class="console-top">
+            <div class="console-title"><span class="console-live">LIVE PIPELINE</span> نظام فرص العملاء</div>
+            <div class="console-dots"><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="pipeline">
+            <div class="stage">
+              <div class="stage-head"><strong>New Leads</strong><span>12</span></div>
+
+              <div class="lead-card">
+                <span class="lead-score">82</span>
+                <b>شركة حلول تعليمية</b>
+                <small>طلب عرض لنظام تسجيل طلاب</small>
+                <div class="lead-tags"><span>Website</span><span class="hot">Hot</span></div>
+              </div>
+
+              <div class="lead-card">
+                <span class="lead-score">76</span>
+                <b>عيادة تجميل</b>
+                <small>حملة حجوزات واستشارات</small>
+                <div class="lead-tags"><span>Meta</span><span>Qualified</span></div>
+              </div>
+
+              <div class="lead-card">
+                <span class="lead-score">68</span>
+                <b>شركة SaaS ناشئة</b>
+                <small>Demo requests من الخليج</small>
+                <div class="lead-tags"><span>LinkedIn</span><span>B2B</span></div>
+              </div>
+            </div>
+
+            <div class="stage">
+              <div class="stage-head"><strong>Qualified</strong><span>7</span></div>
+
+              <div class="lead-card">
+                <span class="lead-score">91</span>
+                <b>مركز تدريب مهني</b>
+                <small>150–200 Lead شهريًا</small>
+                <div class="lead-tags"><span class="hot">Priority</span><span>Call Set</span></div>
+              </div>
+
+              <div class="lead-card">
+                <span class="lead-score">87</span>
+                <b>شركة أثاث مكتبي</b>
+                <small>B2B outreach للشركات</small>
+                <div class="lead-tags"><span>Email</span><span>Decision Maker</span></div>
+              </div>
+
+              <div class="lead-card">
+                <span class="lead-score">79</span>
+                <b>منصة توظيف</b>
+                <small>تجربة مجانية للشركات</small>
+                <div class="lead-tags"><span>Landing Page</span><span>Demo</span></div>
+              </div>
+            </div>
+
+            <div class="stage">
+              <div class="stage-head"><strong>Sales Ready</strong><span>4</span></div>
+
+              <div class="lead-card">
+                <span class="lead-score">96</span>
+                <b>مجموعة عيادات</b>
+                <small>توسّع إلى فرعين جديدين</small>
+                <div class="lead-tags"><span class="hot">Proposal</span><span>High Value</span></div>
+              </div>
+
+              <div class="lead-card">
+                <span class="lead-score">89</span>
+                <b>أكاديمية أونلاين</b>
+                <small>برنامج Lead Nurturing</small>
+                <div class="lead-tags"><span>Ready</span><span>Meeting</span></div>
+              </div>
+
+              <div class="lead-card">
+                <span class="lead-score">85</span>
+                <b>شركة استشارات</b>
+                <small>Executive outreach</small>
+                <div class="lead-tags"><span>LinkedIn</span><span>Proposal</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pulse"></div>
+
+          <div class="console-floating">
+            <small>Qualified Lead Rate</small>
+            <strong>34.8%</strong><em>+12.6%</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>LEAD GENERATION <b>✦</b> FUNNEL STRATEGY <b>✦</b> LINKEDIN OUTREACH <b>✦</b> LEAD MAGNETS <b>✦</b> QUALIFICATION SYSTEMS <b>✦</b> CRM WORKFLOWS <b>✦</b></span>
+        <span>LEAD GENERATION <b>✦</b> FUNNEL STRATEGY <b>✦</b> LINKEDIN OUTREACH <b>✦</b> LEAD MAGNETS <b>✦</b> QUALIFICATION SYSTEMS <b>✦</b> CRM WORKFLOWS <b>✦</b></span>
+      </div>
+    </div>
+
+    <section class="section section-light" id="about">
+      <div class="container about-grid">
+        <div class="about-sticky reveal">
+          <div class="about-number">05+</div>
+          <div class="about-label">سنوات في بناء قنوات جذب وفرص بيع للشركات والخدمات.</div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">عنّي</span>
+          <h2>أنا نورهان سامح، أعمل على تحويل “الاهتمام” إلى Pipeline حقيقي يستطيع فريق المبيعات الاعتماد عليه.</h2>
+          <p>
+            بدأت من التسويق الرقمي، لكنني وجدت أن المشكلة في أغلب المشروعات ليست نقص الوصول؛
+            بل غياب نظام واضح يربط بين الرسالة، العرض، صفحة الهبوط، نموذج التأهيل وطريقة المتابعة.
+          </p>
+          <p>
+            لذلك أعمل على تصميم رحلة جذب متكاملة تناسب طبيعة المشروع: حملات Lead Generation،
+            Outreach عبر LinkedIn والبريد، Lead Magnets، صفحات هبوط، نماذج تأهيل، ورسائل متابعة تساعد الفريق على الوصول إلى العميل المناسب في الوقت المناسب.
+          </p>
+
+          <div class="principles">
+            <div class="principle"><strong>الجودة قبل العدد</strong><span>Lead أقل لكن مؤهل أفضل من مئات الأسماء غير الجاهزة.</span></div>
+            <div class="principle"><strong>الرسالة قبل القناة</strong><span>اختيار القناة يبدأ بعد فهم من نخاطبه ولماذا يهتم.</span></div>
+            <div class="principle"><strong>التأهيل جزء من الجذب</strong><span>النموذج والأسئلة يحددان جودة الفرصة منذ البداية.</span></div>
+            <div class="principle"><strong>المتابعة لا تقل أهمية</strong><span>النظام الجيد يمنع ضياع العملاء بعد وصولهم.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What I Build</span>
+          <h2 class="section-title">أنظمة جذب مصممة حول طريقة شراء العميل، لا حول منصة واحدة.</h2>
+          <p class="section-desc">
+            أختار المزيج المناسب من الإعلانات، الـOutreach، المحتوى، صفحات الهبوط والأتمتة حسب طبيعة السوق وقيمة الخدمة ودورة البيع.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-index">01 / ACQUISITION</span>
+            <span class="service-icon">↗</span>
+            <div>
+              <h3>حملات جذب العملاء المحتملين</h3>
+              <p>بناء وإدارة حملات Meta وLinkedIn وGoogle لجذب فرص بيع واضحة، مع اختبار الرسائل والعروض والنماذج للوصول إلى أفضل تكلفة وجودة.</p>
+              <div class="service-tools"><span>Lead Ads</span><span>Search</span><span>Retargeting</span><span>Tracking</span></div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-index">02 / OUTREACH</span>
+            <span class="service-icon">◎</span>
+            <div>
+              <h3>Outreach للشركات وصناع القرار</h3>
+              <p>تحديد الحسابات المستهدفة، كتابة رسائل شخصية، بناء تسلسل تواصل ومتابعة عبر LinkedIn والبريد حتى حجز الاجتماعات المؤهلة.</p>
+              <div class="service-tools"><span>ICP</span><span>LinkedIn</span><span>Email Sequences</span><span>ABM</span></div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-index">03 / CONVERSION</span>
+            <span class="service-icon">◇</span>
+            <div>
+              <h3>صفحات الهبوط ونماذج التأهيل</h3>
+              <p>صياغة رسالة الصفحة، ترتيب الحجج، إبراز الدليل، وتصميم نموذج يجمع المعلومات الضرورية بدون أن يقتل التحويل.</p>
+              <div class="service-tools"><span>Landing Pages</span><span>Lead Forms</span><span>CRO</span><span>Qualification</span></div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-index">04 / NURTURE</span>
+            <span class="service-icon">✦</span>
+            <div>
+              <h3>متابعة وتنمية العملاء المحتملين</h3>
+              <p>تحويل العملاء غير الجاهزين الآن إلى فرص مستقبلية من خلال رسائل بريد، محتوى، WhatsApp follow-up وتدفقات CRM واضحة.</p>
+              <div class="service-tools"><span>Nurturing</span><span>CRM</span><span>WhatsApp</span><span>Automation</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="systems">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">أنظمة الجذب</span>
+          <h2 class="section-title">ليست كل شركة تحتاج نفس الطريق.</h2>
+          <p class="section-desc">أبني النظام حسب قيمة الخدمة، طول دورة البيع، جمهور القرار، وقدرة الفريق على المتابعة والإغلاق.</p>
+        </div>
+
+        <div class="systems-grid">
+          <article class="system-card reveal">
+            <span class="system-no">SYSTEM 01</span>
+            <div>
+              <h3>نظام حجز الاستشارات</h3>
+              <p>مناسب للعيادات، المدربين، الوكالات والخدمات التي تحتاج مكالمة قبل البيع.</p>
+            </div>
+            <div class="system-flow"><span>Ad</span><i>←</i><span>Landing</span><i>←</i><span>Qualify</span><i>←</i><span>Booking</span></div>
+          </article>
+
+          <article class="system-card reveal">
+            <span class="system-no">SYSTEM 02</span>
+            <div>
+              <h3>نظام طلب العروض B2B</h3>
+              <p>للشركات التي تبيع حلولًا مرتفعة القيمة وتحتاج الوصول إلى أصحاب القرار.</p>
+            </div>
+            <div class="system-flow"><span>ICP</span><i>←</i><span>Outreach</span><i>←</i><span>Discovery</span><i>←</i><span>Proposal</span></div>
+          </article>
+
+          <article class="system-card reveal">
+            <span class="system-no">SYSTEM 03</span>
+            <div>
+              <h3>نظام Lead Magnet</h3>
+              <p>لبناء قاعدة عملاء محتملين وتعليمهم قبل تقديم العرض الرئيسي.</p>
+            </div>
+            <div class="system-flow"><span>Content</span><i>←</i><span>Resource</span><i>←</i><span>Email</span><i>←</i><span>Offer</span></div>
+          </article>
+
+          <article class="system-card reveal">
+            <span class="system-no">SYSTEM 04</span>
+            <div>
+              <h3>نظام إطلاق البرامج</h3>
+              <p>للأكاديميات والبرامج التدريبية التي تعمل بمواعيد إطلاق ودُفعات محددة.</p>
+            </div>
+            <div class="system-flow"><span>Waitlist</span><i>←</i><span>Warm-up</span><i>←</i><span>Launch</span><i>←</i><span>Close</span></div>
+          </article>
+
+          <article class="system-card reveal">
+            <span class="system-no">SYSTEM 05</span>
+            <div>
+              <h3>نظام الاستهداف بالحسابات</h3>
+              <p>لعدد محدود من الشركات عالية القيمة بدل جذب Leads عامة.</p>
+            </div>
+            <div class="system-flow"><span>Accounts</span><i>←</i><span>Research</span><i>←</i><span>Personalize</span><i>←</i><span>Meeting</span></div>
+          </article>
+
+          <article class="system-card reveal">
+            <span class="system-no">SYSTEM 06</span>
+            <div>
+              <h3>نظام إعادة تنشيط العملاء</h3>
+              <p>لإعادة التواصل مع Leads قديمة لم تكمل البيع أو توقفت متابعتها.</p>
+            </div>
+            <div class="system-flow"><span>Segment</span><i>←</i><span>Reactivate</span><i>←</i><span>Qualify</span><i>←</i><span>Close</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="cases">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section-title">مشروعات تحوّل فيها الجذب من محاولات متفرقة إلى نظام يمكن تطويره.</h2>
+          <p class="section-desc">دراسات حالة من قطاعات مختلفة، مع تركيز على جودة العميل، وضوح الرحلة، وسهولة المتابعة داخل فريق المبيعات.</p>
+        </div>
+
+        <div class="case-list">
+          <article class="case reveal">
+            <div class="case-media">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=90" alt="حملة جذب عملاء لشركة B2B" loading="lazy">
+              <div class="case-overlay"><span class="case-brand">NEXORA.</span><span class="case-type">B2B / SOFTWARE</span></div>
+            </div>
+            <div class="case-content">
+              <span class="case-num">CASE 01</span>
+              <h3>من حملات عامة إلى اجتماعات مع أصحاب القرار.</h3>
+              <p>تم تحديد الحسابات المستهدفة، بناء عرض Demo واضح، وتصميم Outreach شخصي مع صفحة حالة استخدام لكل قطاع.</p>
+              <div class="case-stats">
+                <div class="case-stat"><strong>41</strong><span>Qualified Meetings</span></div>
+                <div class="case-stat"><strong>18.6%</strong><span>Reply Rate</span></div>
+                <div class="case-stat"><strong>7</strong><span>New Accounts</span></div>
+              </div>
+              <button class="case-link" data-case="nexora"><i>↙</i> تفاصيل النظام</button>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-media">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=90" alt="حملة حجوزات عيادة" loading="lazy">
+              <div class="case-overlay"><span class="case-brand">LUMA.</span><span class="case-type">CLINICS / BOOKINGS</span></div>
+            </div>
+            <div class="case-content">
+              <span class="case-num">CASE 02</span>
+              <h3>رفع جودة الحجوزات بدل مطاردة المحادثات غير الجادة.</h3>
+              <p>تم تغيير الرسالة من خصم مباشر إلى استشارة وتقييم، مع أسئلة تأهيل قصيرة ورسائل متابعة حسب اهتمام كل عميلة.</p>
+              <div class="case-stats">
+                <div class="case-stat"><strong>128</strong><span>Bookings / Month</span></div>
+                <div class="case-stat"><strong>−32%</strong><span>No-show Rate</span></div>
+                <div class="case-stat"><strong>+47%</strong><span>Qualified Leads</span></div>
+              </div>
+              <button class="case-link" data-case="luma"><i>↙</i> تفاصيل النظام</button>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-media">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=90" alt="حملة أكاديمية تعليمية" loading="lazy">
+              <div class="case-overlay"><span class="case-brand">EDUCRAFT.</span><span class="case-type">EDUCATION / LAUNCH</span></div>
+            </div>
+            <div class="case-content">
+              <span class="case-num">CASE 03</span>
+              <h3>قائمة انتظار صغيرة حققت دفعة مكتملة قبل نهاية الإطلاق.</h3>
+              <p>بُني Lead Magnet، سلسلة محتوى ورسائل بريد قصيرة، ثم إطلاق على جمهور سبق تأهيله بدل الاعتماد على الإعلان وقت البيع فقط.</p>
+              <div class="case-stats">
+                <div class="case-stat"><strong>1,860</strong><span>Waitlist Leads</span></div>
+                <div class="case-stat"><strong>11.4%</strong><span>Enrollment Rate</span></div>
+                <div class="case-stat"><strong>8 Days</strong><span>Sold Out</span></div>
+              </div>
+              <button class="case-link" data-case="educraft"><i>↙</i> تفاصيل النظام</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="audit">
+      <div class="container">
+        <div class="audit-shell reveal">
+          <div class="audit-copy">
+            <span class="eyebrow">Mini Lead Audit</span>
+            <h2>أين يضيع العميل المحتمل داخل رحلتك؟</h2>
+            <p>اضغطي على كل مرحلة لتشاهدي أهم النقاط التي أراجعها قبل زيادة الميزانية أو إضافة قناة جديدة.</p>
+            <div class="audit-note">أحيانًا لا تكون المشكلة في عدد العملاء، بل في الرسالة أو التأهيل أو سرعة المتابعة.</div>
+          </div>
+
+          <div class="audit-tool">
+            <div class="audit-tabs">
+              <button class="audit-tab active" data-panel="message">الرسالة</button>
+              <button class="audit-tab" data-panel="page">الصفحة</button>
+              <button class="audit-tab" data-panel="form">النموذج</button>
+              <button class="audit-tab" data-panel="follow">المتابعة</button>
+            </div>
+
+            <div class="audit-panel active" id="message">
+              <h3>وضوح الرسالة والعرض</h3>
+              <p>هل يفهم العميل بسرعة ما الذي تقدميه، لمن، ولماذا يجب أن يهتم الآن؟</p>
+              <div class="audit-checks">
+                <div class="audit-check"><span>العرض يركز على نتيجة واضحة وليس وصف الخدمة فقط</span><span class="status good">قوي</span></div>
+                <div class="audit-check"><span>الرسالة مخصصة لفئة محددة وليست عامة للجميع</span><span class="status warn">يحتاج ضبط</span></div>
+                <div class="audit-check"><span>يوجد إثبات أو حالة استخدام تدعم الوعد</span><span class="status mid">متوسط</span></div>
+              </div>
+            </div>
+
+            <div class="audit-panel" id="page">
+              <h3>صفحة الهبوط</h3>
+              <p>هل تساعد الصفحة العميل على اتخاذ خطوة واحدة بدون تشتيت أو اعتراضات غير مجابة؟</p>
+              <div class="audit-checks">
+                <div class="audit-check"><span>العنوان يطابق الإعلان أو الرسالة التي وصل منها العميل</span><span class="status good">قوي</span></div>
+                <div class="audit-check"><span>CTA واضح ويتكرر في مواضع منطقية</span><span class="status mid">متوسط</span></div>
+                <div class="audit-check"><span>الدليل الاجتماعي قريب من نقطة القرار</span><span class="status warn">ناقص</span></div>
+              </div>
+            </div>
+
+            <div class="audit-panel" id="form">
+              <h3>نموذج التأهيل</h3>
+              <p>هل يجمع النموذج المعلومات المهمة بدون أن يصبح اختبارًا طويلًا يطرد العملاء؟</p>
+              <div class="audit-checks">
+                <div class="audit-check"><span>الأسئلة مرتبطة فعلًا بقرار البيع</span><span class="status good">قوي</span></div>
+                <div class="audit-check"><span>يوجد توازن بين التحويل وجودة البيانات</span><span class="status mid">متوسط</span></div>
+                <div class="audit-check"><span>يتم توجيه العميل للخطوة التالية فور الإرسال</span><span class="status warn">يحتاج ضبط</span></div>
+              </div>
+            </div>
+
+            <div class="audit-panel" id="follow">
+              <h3>سرعة المتابعة والتنمية</h3>
+              <p>هل يحصل كل Lead على متابعة مناسبة حسب جاهزيته وقيمته واهتمامه؟</p>
+              <div class="audit-checks">
+                <div class="audit-check"><span>أول رد يتم خلال وقت قصير وواضح</span><span class="status good">قوي</span></div>
+                <div class="audit-check"><span>الـLeads غير الجاهزة تدخل مسار متابعة</span><span class="status warn">ناقص</span></div>
+                <div class="audit-check"><span>الفريق يسجل الحالة والاعتراضات داخل CRM</span><span class="status mid">متوسط</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Performance Snapshot</span>
+          <h2 class="section-title">أثر أنظمة تم تنفيذها خلال آخر 18 شهرًا.</h2>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card reveal"><strong data-count="13800" data-prefix="+">0</strong><p>Lead تم جذبها عبر حملات، صفحات هبوط وOutreach.</p></div>
+          <div class="result-card reveal"><strong data-count="930" data-prefix="+">0</strong><p>فرصة بيع تم تأهيلها وتحويلها إلى فريق المبيعات.</p></div>
+          <div class="result-card reveal"><strong data-count="214" data-prefix="+">0</strong><p>اجتماع أو استشارة تم حجزها من أنظمة B2B والخدمات.</p></div>
+          <div class="result-card reveal"><strong data-count="36" data-prefix="">0</strong><p>نظام جذب وإطلاق ومتابعة تم تصميمه وتنفيذه.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="testimonials">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Client Notes</span>
+          <h2 class="section-title">الفرق الحقيقي ظهر في جودة الفرص ووضوح المتابعة.</h2>
+        </div>
+
+        <div class="testimonial-wrap reveal">
+          <article class="testimonial active">
+            <div class="quote-mark">“</div>
+            <blockquote>نورهان لم تبدأ بالإعلانات. بدأت من فهم العميل المثالي وطريقة البيع، ثم بنت لنا مسارًا واضحًا من أول الرسالة حتى الاجتماع. عدد الـLeads لم يكن الهدف الوحيد، لكن الاجتماعات الفعلية زادت بوضوح.</blockquote>
+            <div class="client">
+              <img class="client-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80" alt="عمر فوزي">
+              <div><strong>عمر فوزي</strong><span>Co-Founder — Nexora Systems</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="quote-mark">“</div>
+            <blockquote>أهم نتيجة بالنسبة لنا كانت تقليل المواعيد غير الجادة. الأسئلة، طريقة الرد والتذكير قبل الحجز جعلت الفريق يركز على عميلات حقيقيات بدل إضاعة الوقت في محادثات كثيرة.</blockquote>
+            <div class="client">
+              <img class="client-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="دينا عادل">
+              <div><strong>دينا عادل</strong><span>Marketing Manager — Luma Clinics</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="quote-mark">“</div>
+            <blockquote>أصبح لدينا لأول مرة نظام إطلاق حقيقي، وليس مجرد إعلانات وقت فتح التسجيل. بنينا قائمة انتظار، حضّرنا الجمهور، وأغلقنا الدفعة قبل الموعد المتوقع.</blockquote>
+            <div class="client">
+              <img class="client-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="هالة محمود">
+              <div><strong>هالة محمود</strong><span>Program Director — EduCraft</span></div>
+            </div>
+          </article>
+
+          <div class="slider-dots">
+            <button class="slider-dot active" aria-label="الرأي الأول"></button>
+            <button class="slider-dot" aria-label="الرأي الثاني"></button>
+            <button class="slider-dot" aria-label="الرأي الثالث"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="contact">
+      <div class="container">
+        <div class="contact-shell reveal">
+          <div class="contact-copy">
+            <span class="eyebrow" style="color:#fff">Let’s Build Your Pipeline</span>
+            <h2>عندك خدمة قوية؟ خلّينا نبني لها طريقًا واضحًا إلى العميل المناسب.</h2>
+            <p>أرسلي تفاصيل المشروع، وسأراجع طبيعة الخدمة، دورة البيع والقنوات الحالية ثم أقترح نقطة البداية الأنسب.</p>
+
+            <div class="contact-info">
+              <a href="mailto:hello@norhansameh.co">✉ hello@norhansameh.co</a>
+              <a href="tel:+201011234567">☎ +20 101 123 4567</a>
+              <span>⌖ Cairo, Egypt — Working across MENA</span>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="الاسم بالكامل" required>
+              </div>
+
+              <div class="field">
+                <label for="company">الشركة أو المشروع</label>
+                <input id="company" type="text" placeholder="اسم الشركة" required>
+              </div>
+
+              <div class="field">
+                <label for="service">الخدمة المطلوبة</label>
+                <select id="service" required>
+                  <option value="">اختر الخدمة</option>
+                  <option>حملات جذب عملاء</option>
+                  <option>B2B Outreach</option>
+                  <option>Landing Page + Qualification</option>
+                  <option>Lead Nurturing & CRM</option>
+                  <option>نظام جذب متكامل</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="target">الهدف الشهري</label>
+                <select id="target" required>
+                  <option value="">اختر الهدف</option>
+                  <option>20–50 Lead مؤهلة</option>
+                  <option>50–100 Lead مؤهلة</option>
+                  <option>100–300 Lead مؤهلة</option>
+                  <option>اجتماعات B2B عالية القيمة</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">تفاصيل المشروع</label>
+                <textarea id="message" placeholder="الخدمة، السوق، الجمهور المستهدف، طريقة البيع الحالية وأهم تحدٍ في جذب العملاء..." required></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="btn btn-dark" type="submit">إرسال التفاصيل عبر واتساب ↙</button>
+                <p class="form-note">سيتم فتح واتساب برسالة مرتبة تحتوي على البيانات المدخلة.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="caseModal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-cover">
+        <button class="modal-close" id="modalClose" aria-label="إغلاق">×</button>
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="eyebrow" id="modalLabel">CASE STUDY</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <div class="modal-points" id="modalPoints"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#home" class="brand">
+          <span class="brand-mark">NS</span>
+          <span>نورهان سامح<small>LEAD GENERATION STRATEGIST</small></span>
+        </a>
+
+        <div class="footer-links">
+          <a href="#about">عنّي</a>
+          <a href="#services">الخدمات</a>
+          <a href="#systems">أنظمة الجذب</a>
+          <a href="#cases">النتائج</a>
+          <a href="#contact">تواصل</a>
+        </div>
+
+        <div class="footer-socials">
+          <a class="social" href="#" aria-label="LinkedIn">in</a>
+          <a class="social" href="#" aria-label="Instagram">ig</a>
+          <a class="social" href="#" aria-label="Email">✉</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Norhan Sameh. All rights reserved.</span>
+        <span>Attract. Qualify. Nurture. Convert.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/201011234567" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.3-1.65a11.86 11.86 0 0 0 5.69 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.23-6.16-3.46-8.42ZM12.08 21.8h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.52-5.27C2.19 6.44 6.62 2 12.08 2a9.82 9.82 0 0 1 7 2.9 9.82 9.82 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const header = document.getElementById("header");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    function updateHeader(){
+      header.classList.toggle("scrolled", window.scrollY > 25);
+    }
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, {passive:true});
+
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Reveal animation
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting || entry.target.dataset.done) return;
+
+        const el = entry.target;
+        el.dataset.done = "1";
+
+        const target = Number(el.dataset.count || 0);
+        const prefix = el.dataset.prefix || "";
+        const duration = 1600;
+        const start = performance.now();
+
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(target * eased);
+          el.textContent = prefix + value.toLocaleString("en-US");
+
+          if(progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+      });
+    }, {threshold:.55});
+
+    document.querySelectorAll("[data-count]").forEach(el => counterObserver.observe(el));
+
+    // Active navigation item
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navAnchors = [...document.querySelectorAll(".nav-links a")];
+
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navAnchors.forEach(link => {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+          });
+        }
+      });
+    }, {rootMargin:"-42% 0px -52% 0px"});
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Audit tabs
+    const auditTabs = [...document.querySelectorAll(".audit-tab")];
+    const auditPanels = [...document.querySelectorAll(".audit-panel")];
+
+    auditTabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        auditTabs.forEach(item => item.classList.remove("active"));
+        auditPanels.forEach(panel => panel.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.panel).classList.add("active");
+      });
+    });
+
+    // Testimonials
+    const testimonials = [...document.querySelectorAll(".testimonial")];
+    const dots = [...document.querySelectorAll(".slider-dot")];
+    let slide = 0;
+    let timer;
+
+    function showSlide(index){
+      testimonials.forEach((item, i) => item.classList.toggle("active", i === index));
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+      slide = index;
+    }
+
+    function startSlider(){
+      clearInterval(timer);
+      timer = setInterval(() => showSlide((slide + 1) % testimonials.length), 5600);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        startSlider();
+      });
+    });
+
+    startSlider();
+
+    // Case study modal
+    const cases = {
+      nexora:{
+        image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=90",
+        title:"Nexora Systems — من Lead Generation عامة إلى Account-Based Pipeline",
+        text:"كان الفريق يحصل على طلبات كثيرة من شركات صغيرة لا تناسب قيمة الحل. تم تحديد 3 قطاعات رئيسية، بناء قوائم حسابات مستهدفة، كتابة رسائل مخصصة، وإنشاء صفحات حالة استخدام تدعم كل رسالة.",
+        points:[
+          ["التحدي","حجم Leads جيد لكن جودة منخفضة."],
+          ["النظام","ICP + LinkedIn + Email + Use-case Pages."],
+          ["النتيجة","41 اجتماعًا مؤهلًا و7 حسابات جديدة."]
+        ]
+      },
+      luma:{
+        image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=90",
+        title:"Luma Clinics — حجوزات أكثر جدية ومتابعة أسرع",
+        text:"تم تحليل المحادثات السابقة واكتشاف أن أغلب العملاء لا يفهمون الفرق بين الخدمة والاستشارة. أعيدت صياغة العرض، تم تبسيط الأسئلة، وتفعيل تذكيرات ورسائل مختلفة حسب الخدمة المطلوبة.",
+        points:[
+          ["التحدي","No-show مرتفع ومحادثات غير مؤهلة."],
+          ["النظام","Ads + Qualification + WhatsApp Follow-up."],
+          ["النتيجة","128 حجزًا شهريًا وانخفاض الغياب 32%."]
+        ]
+      },
+      educraft:{
+        image:"https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=90",
+        title:"EduCraft — إطلاق يبدأ قبل فتح التسجيل",
+        text:"تم إنشاء دليل مجاني كـLead Magnet، بناء قائمة انتظار، ثم إرسال سلسلة قصيرة من المحتوى والإجابات على الاعتراضات قبل فتح التسجيل. الإعلانات وقت الإطلاق استهدفت جمهورًا دافئًا يعرف البرنامج مسبقًا.",
+        points:[
+          ["التحدي","الاعتماد الكامل على الإعلانات وقت البيع."],
+          ["النظام","Lead Magnet + Waitlist + Nurture + Launch."],
+          ["النتيجة","1,860 Lead وإغلاق الدفعة خلال 8 أيام."]
+        ]
+      }
+    };
+
+    const modal = document.getElementById("caseModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const modalPoints = document.getElementById("modalPoints");
+
+    document.querySelectorAll(".case-link").forEach(button => {
+      button.addEventListener("click", () => {
+        const data = cases[button.dataset.case];
+
+        modalImage.src = data.image;
+        modalTitle.textContent = data.title;
+        modalText.textContent = data.text;
+        modalPoints.innerHTML = data.points.map(point =>
+          `<div class="modal-point"><b>${point[0]}</b><span>${point[1]}</span></div>`
+        ).join("");
+
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("menu-open");
+      });
+    });
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("menu-open");
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", event => {
+      if(event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", event => {
+      if(event.key === "Escape") closeModal();
+    });
+
+    // WhatsApp contact form
+    document.getElementById("contactForm").addEventListener("submit", function(event){
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const service = document.getElementById("service").value;
+      const target = document.getElementById("target").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+`مرحبًا نورهان،
+أرغب في مناقشة نظام جذب عملاء لمشروعي.
+
+الاسم: ${name}
+الشركة أو المشروع: ${company}
+الخدمة المطلوبة: ${service}
+الهدف الشهري: ${target}
+
+تفاصيل المشروع:
+${message}`;
+
+      window.open(
+        "https://wa.me/201011234567?text=" + encodeURIComponent(text),
+        "_blank",
+        "noopener"
+      );
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
