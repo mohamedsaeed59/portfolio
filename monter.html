@@ -1867,6 +1867,83 @@
       transform: translateY(0);
     }
 
+
+    /* Simple hero + real video previews */
+    .hero {
+      min-height: 760px;
+      padding: calc(var(--header-height) + 90px) 0 100px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(118, 87, 255, 0.11), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f8f8fc 100%);
+    }
+
+    .hero::before {
+      display: none;
+    }
+
+    .hero-grid {
+      display: block;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .hero-title,
+    .hero-description,
+    .hero-stats {
+      margin-inline: auto;
+    }
+
+    .hero-title {
+      max-width: 850px;
+      font-size: clamp(2.7rem, 7vw, 5rem);
+    }
+
+    .hero-description {
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-stats {
+      max-width: 650px;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+
+    .project-image video,
+    .modal-preview video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #11111f;
+    }
+
+    .project-image video {
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-image::after,
+    .project-play {
+      display: none;
+    }
+
+    .modal-preview::after,
+    .modal-preview-play {
+      display: none;
+    }
+
     @media (max-width: 1050px) {
       .nav-list,
       .header-cta {
@@ -2256,67 +2333,6 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="واجهة برنامج مونتاج فيديو">
-          <div class="editor-stage">
-            <div class="editing-window">
-              <div class="window-bar">
-                <div class="window-dots" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-
-                <span class="window-title">Campaign_Edit_v07</span>
-              </div>
-
-              <div class="editor-content">
-                <div class="preview">
-                  <span class="preview-play" aria-hidden="true">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="m9 7 8 5-8 5V7Z"/>
-                    </svg>
-                  </span>
-
-                  <div class="preview-copy">
-                    <small>BRAND FILM</small>
-                    <strong>كل لقطة لها دور في الحكاية</strong>
-                  </div>
-                </div>
-
-                <div class="timeline">
-                  <div class="timeline-track">
-                    <span class="timeline-clip"></span>
-                    <span class="timeline-cursor"></span>
-                  </div>
-
-                  <div class="timeline-track">
-                    <span class="timeline-clip"></span>
-                  </div>
-
-                  <div class="timeline-track">
-                    <span class="timeline-clip"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="floating-card top">
-            <span class="floating-label">المشروع الحالي</span>
-            <span class="floating-value">حملة إطلاق منتج رياضي</span>
-          </div>
-
-          <div class="floating-card bottom">
-            <span class="floating-label">مقاسات التسليم</span>
-            <span class="floating-value">جميع منصات التواصل</span>
-
-            <div class="format-list" aria-hidden="true">
-              <i>16:9</i>
-              <i>9:16</i>
-              <i>1:1</i>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -2591,11 +2607,10 @@
             data-project="stride"
           >
             <div class="project-image">
-              <img
-                src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85"
-                alt="فيديو إعلاني لحذاء رياضي من علامة سترايد"
-                loading="lazy"
-              >
+              <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85" aria-label="فيديو إعلاني لحذاء رياضي من علامة سترايد">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
 
               <span class="project-type">إعلان منتج</span>
 
@@ -2631,11 +2646,10 @@
             data-project="chef"
           >
             <div class="project-image">
-              <img
-                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85"
-                alt="فيديوهات قصيرة لصانع محتوى متخصص في الطهي"
-                loading="lazy"
-              >
+              <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85" aria-label="فيديوهات قصيرة لصانع محتوى متخصص في الطهي">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
 
               <span class="project-type">محتوى قصير</span>
 
@@ -2671,11 +2685,10 @@
             data-project="academy"
           >
             <div class="project-image">
-              <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85"
-                alt="مونتاج برنامج تعليمي لأكاديمية أونلاين"
-                loading="lazy"
-              >
+              <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85" aria-label="مونتاج برنامج تعليمي لأكاديمية أونلاين">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
 
               <span class="project-type">فيديو تعليمي</span>
 
@@ -2711,11 +2724,10 @@
             data-project="coffee"
           >
             <div class="project-image">
-              <img
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
-                alt="إعلان فيديو لمقهى مختص"
-                loading="lazy"
-              >
+              <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" aria-label="إعلان فيديو لمقهى مختص">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
 
               <span class="project-type">إعلان سوشيال</span>
 
@@ -2751,11 +2763,10 @@
             data-project="podcast"
           >
             <div class="project-image">
-              <img
-                src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=900&q=85"
-                alt="مونتاج حلقات ومقاطع قصيرة لبودكاست عربي"
-                loading="lazy"
-              >
+              <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=900&q=85" aria-label="مونتاج حلقات ومقاطع قصيرة لبودكاست عربي">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
 
               <span class="project-type">بودكاست</span>
 
@@ -2791,11 +2802,10 @@
             data-project="realestate"
           >
             <div class="project-image">
-              <img
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=85"
-                alt="فيديو ترويجي لمشروع عقاري"
-                loading="lazy"
-              >
+              <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=85" aria-label="فيديو ترويجي لمشروع عقاري">
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
 
               <span class="project-type">فيديو ترويجي</span>
 
@@ -3430,7 +3440,9 @@
         <p class="modal-intro" id="modalIntro"></p>
 
         <div class="modal-preview">
-          <img id="modalImage" src="" alt="">
+          <video id="modalVideo" controls preload="metadata" playsinline>
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
 
           <span class="modal-preview-play" aria-hidden="true">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
@@ -3517,8 +3529,8 @@
         result:
           "تم تسليم نسخة رئيسية ونسخ رأسية ومربعة للحملات الإعلانية.",
         tools: ["Premiere Pro", "After Effects", "Sound Design"],
-        image:
-          "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1200&q=85"
+        video:
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
       },
 
       chef: {
@@ -3535,8 +3547,8 @@
         result:
           "تم إنتاج 16 فيديو متناسقًا مع قالب بصري ثابت للسلسلة.",
         tools: ["Premiere Pro", "Captions", "Color Correction"],
-        image:
-          "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85"
+        video:
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
       },
 
       academy: {
@@ -3553,8 +3565,8 @@
         result:
           "تم تسليم 12 درسًا جاهزًا للرفع على المنصة التعليمية.",
         tools: ["Premiere Pro", "After Effects", "Adobe Audition"],
-        image:
-          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85"
+        video:
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
       },
 
       coffee: {
@@ -3571,8 +3583,8 @@
         result:
           "تم تسليم الفيديو في ثلاثة مقاسات لاستخدامه في الإعلانات والمنشورات والقصص.",
         tools: ["Premiere Pro", "Music Edit", "Color Grading"],
-        image:
-          "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
+        video:
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
       },
 
       podcast: {
@@ -3589,8 +3601,8 @@
         result:
           "تم تسليم الحلقة الكاملة وخمسة مقاطع قصيرة من كل حلقة.",
         tools: ["Multi-Camera", "Audio Mix", "Short-Form Editing"],
-        image:
-          "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85"
+        video:
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
       },
 
       realestate: {
@@ -3607,8 +3619,8 @@
         result:
           "خرج الفيديو بنسخة للعرض على الموقع ونسخ أقصر للإعلانات الرقمية.",
         tools: ["Premiere Pro", "Drone Footage", "Typography"],
-        image:
-          "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=85"
+        video:
+          "https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
       }
     };
 
@@ -3731,9 +3743,11 @@
       document.getElementById("modalSolution").textContent = project.solution;
       document.getElementById("modalResult").textContent = project.result;
 
-      const modalImage = document.getElementById("modalImage");
-      modalImage.src = project.image;
-      modalImage.alt = `لقطة من مشروع ${project.title}`;
+      const modalVideo = document.getElementById("modalVideo");
+      modalVideo.pause();
+      modalVideo.src = project.video;
+      modalVideo.setAttribute("aria-label", `فيديو مشروع ${project.title}`);
+      modalVideo.load();
 
       const modalTools = document.getElementById("modalTools");
       modalTools.innerHTML = "";
@@ -3762,6 +3776,8 @@
     }
 
     function closeModal() {
+      const modalVideo = document.getElementById("modalVideo");
+      modalVideo.pause();
       projectModal.classList.remove("open");
       projectModal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
