@@ -244,38 +244,9 @@
       overflow: hidden;
       padding: 150px 0 70px;
       background:
-        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat,
-        #090909;
-    }
-
-    .hero-video {
-      position: absolute;
-      inset: 0;
-      z-index: -4;
-      overflow: hidden;
-      pointer-events: none;
-      background: #090909;
-    }
-
-    .hero-video iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: max(100vw, 177.78vh);
-      height: max(56.25vw, 100vh);
-      transform: translate(-50%, -50%) scale(1.08);
-      border: 0;
-      opacity: .68;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      background:
-        linear-gradient(90deg, rgba(9,9,9,.96) 0%, rgba(9,9,9,.82) 38%, rgba(9,9,9,.24) 72%, rgba(9,9,9,.62) 100%),
-        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.25));
+        linear-gradient(90deg, rgba(9,9,9,.96) 0%, rgba(9,9,9,.84) 40%, rgba(9,9,9,.22) 72%, rgba(9,9,9,.60) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.22)),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=88") center/cover no-repeat;
     }
 
     .hero::after {
@@ -284,7 +255,7 @@
       inset: auto 0 0;
       height: 180px;
       background: linear-gradient(transparent, var(--bg));
-      z-index: -2;
+      z-index: -1;
     }
 
     .hero-content {
@@ -382,22 +353,27 @@
       isolation: isolate;
     }
 
-    .portrait iframe {
+    .about-video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
       background: #111;
+      object-fit: cover;
+    }
+
+    .about-video::-webkit-media-controls-panel {
+      background: linear-gradient(transparent, rgba(0,0,0,.72));
     }
 
     .portrait::after {
       content: "";
       position: absolute;
-      inset: 50% 0 0;
+      inset: 58% 0 0;
       z-index: 1;
       pointer-events: none;
-      background: linear-gradient(transparent, rgba(0,0,0,.82));
+      background: linear-gradient(transparent, rgba(0,0,0,.74));
     }
 
     .showreel-label {
@@ -420,7 +396,7 @@
       position: absolute;
       z-index: 3;
       left: 24px;
-      bottom: 24px;
+      bottom: 62px;
       right: 24px;
       display: flex;
       align-items: center;
@@ -1139,7 +1115,7 @@
       .portrait-badge {
         left: 14px;
         right: 14px;
-        bottom: 14px;
+        bottom: 58px;
       }
 
       .equipment-image {
@@ -1187,15 +1163,6 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-video" aria-hidden="true">
-        <iframe
-          src="https://player.vimeo.com/video/1145724729?background=1&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0"
-          title="Cinematic architecture background"
-          allow="autoplay; fullscreen; picture-in-picture"
-          loading="eager"
-          referrerpolicy="strict-origin-when-cross-origin">
-        </iframe>
-      </div>
       <div class="container">
         <div class="hero-content reveal">
           <div class="recording">
@@ -1227,13 +1194,15 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div class="portrait reveal">
-          <iframe
-            src="https://player.vimeo.com/video/255356630?title=0&byline=0&portrait=0&color=d9a441"
-            title="Interior design showreel"
-            allow="autoplay; fullscreen; picture-in-picture"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin">
-          </iframe>
+          <video
+            class="about-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=88">
+            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
           <span class="showreel-label">SHOWREEL / 2026</span>
           <div class="portrait-badge">
             <div>
