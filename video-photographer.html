@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بورتفوليو أحمد ياسين، مصور فيديو متخصص في تصوير العقارات، التصميم الداخلي، الفعاليات، الورش التعليمية، ومحتوى السوشيال ميديا." />
+  <title>أحمد ياسين | مصور فيديو</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090909;
+      --bg-soft: #101010;
+      --card: #141414;
+      --card-2: #191919;
+      --text: #f4f1eb;
+      --muted: #a8a49d;
+      --line: rgba(255,255,255,.10);
+      --accent: #d9a441;
+      --accent-2: #f4ca73;
+      --danger: #e84a3c;
+      --radius: 24px;
+      --container: 1180px;
+      --shadow: 0 20px 60px rgba(0,0,0,.30);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(217,164,65,.10), transparent 26%),
+        radial-gradient(circle at 85% 30%, rgba(255,255,255,.04), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 36px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-2);
+      font-size: .86rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      max-width: 760px;
+      letter-spacing: -.03em;
+    }
+
+    .section-copy {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .btn {
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 800;
+      transition: .25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #15110a;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(217,164,65,.55);
+      color: var(--accent-2);
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 30;
+      padding: 16px 0;
+      transition: .25s ease;
+    }
+
+    .topbar.scrolled {
+      background: rgba(9,9,9,.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 62px;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 180px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      aspect-ratio: 1;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #15110a;
+      font-weight: 900;
+      font-family: "Manrope", sans-serif;
+      box-shadow: 0 8px 26px rgba(217,164,65,.20);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      margin-top: -3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #d2cec7;
+      font-size: .92rem;
+    }
+
+    .nav-links a {
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-2);
+    }
+
+    .menu-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      display: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      padding: 150px 0 70px;
+      background:
+        linear-gradient(90deg, rgba(9,9,9,.95) 0%, rgba(9,9,9,.82) 38%, rgba(9,9,9,.22) 72%, rgba(9,9,9,.56) 100%),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 180px;
+      background: linear-gradient(transparent, var(--bg));
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 790px;
+      padding-bottom: 70px;
+    }
+
+    .recording {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #eee8dd;
+      font-size: .84rem;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      background: rgba(0,0,0,.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .record-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--danger);
+      box-shadow: 0 0 0 6px rgba(232,74,60,.13);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: .45; }
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      letter-spacing: -.055em;
+      margin-bottom: 20px;
+      max-width: 900px;
+    }
+
+    .hero h1 span {
+      color: var(--accent-2);
+    }
+
+    .hero p {
+      color: #d0ccc4;
+      max-width: 690px;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta b {
+      color: var(--text);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .portrait {
+      position: relative;
+      min-height: 640px;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, transparent 55%, rgba(0,0,0,.68)),
+        url("https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=85") center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-badge {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(12,12,12,.70);
+      backdrop-filter: blur(14px);
+    }
+
+    .portrait-badge strong {
+      font-size: 1.2rem;
+    }
+
+    .portrait-badge span {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 18px 0;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .about-list li {
+      list-style: none;
+      padding: 15px 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.025);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(217,164,65,.15);
+      color: var(--accent-2);
+      flex: 0 0 auto;
+    }
+
+    .stats {
+      border-block: 1px solid var(--line);
+      background: rgba(255,255,255,.018);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 46px 24px;
+      border-left: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-left: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      color: var(--accent-2);
+      line-height: 1;
+      margin-bottom: 12px;
+      font-family: "Manrope", "Cairo", sans-serif;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, var(--card), #111);
+      border: 1px solid var(--line);
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(217,164,65,.38);
+    }
+
+    .service-num {
+      color: var(--accent-2);
+      font-size: .82rem;
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 64px;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      max-width: 470px;
+      font-size: .94rem;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px solid rgba(217,164,65,.10);
+      left: -65px;
+      top: -60px;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--card);
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #15110a;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      grid-column: span 4;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      cursor: pointer;
+      transition: .28s ease;
+    }
+
+    .project.wide {
+      grid-column: span 8;
+    }
+
+    .project.hidden {
+      display: none;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: rgba(217,164,65,.40);
+    }
+
+    .project-media {
+      aspect-ratio: 1.35;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project.wide .project-media {
+      aspect-ratio: 2.1;
+    }
+
+    .project-media img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.045);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 45%, rgba(0,0,0,.82));
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      padding: 18px;
+      opacity: .98;
+    }
+
+    .play {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.92);
+      color: #111;
+      font-size: .9rem;
+    }
+
+    .duration {
+      padding: 5px 9px;
+      border-radius: 8px;
+      background: rgba(0,0,0,.68);
+      font-family: "Manrope", sans-serif;
+      font-size: .76rem;
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info small {
+      color: var(--accent-2);
+    }
+
+    .project-info h3 {
+      margin-top: 6px;
+      font-size: 1.15rem;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: .86rem;
+      margin-top: 8px;
+    }
+
+    .process {
+      background: var(--bg-soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      min-height: 220px;
+    }
+
+    .process-card span {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(217,164,65,.14);
+      color: var(--accent-2);
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 40px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 10px;
+    }
+
+    .equipment {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .equipment-image {
+      min-height: 500px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=85") center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .gear-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .gear-item {
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+    }
+
+    .gear-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .gear-item span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .quote {
+      padding: 90px 0;
+    }
+
+    .quote-box {
+      padding: 52px;
+      border-radius: 32px;
+      border: 1px solid rgba(217,164,65,.28);
+      background:
+        linear-gradient(135deg, rgba(217,164,65,.10), transparent 48%),
+        var(--card);
+      text-align: center;
+    }
+
+    .quote-box p {
+      font-size: clamp(1.45rem, 3vw, 2.6rem);
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.55;
+    }
+
+    .quote-box span {
+      display: block;
+      color: var(--accent-2);
+      margin-top: 20px;
+      font-size: .9rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .contact-form {
+      padding: 34px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .contact-card h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 16px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      padding: 16px 18px;
+      border-radius: 15px;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      transition: .2s ease;
+    }
+
+    .contact-link:hover {
+      border-color: rgba(217,164,65,.45);
+      color: var(--accent-2);
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      font-size: .88rem;
+      color: #d4d0c8;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #0e0e0e;
+      color: var(--text);
+      padding: 15px 16px;
+      border-radius: 13px;
+      outline: none;
+      resize: vertical;
+      transition: .2s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(217,164,65,.55);
+      box-shadow: 0 0 0 4px rgba(217,164,65,.08);
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 14px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0,0,0,.82);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal.active {
+      display: grid;
+    }
+
+    .modal-card {
+      width: min(920px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: #101010;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-media {
+      aspect-ratio: 16/8;
+    }
+
+    .modal-media img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-content {
+      padding: 28px;
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .modal-close {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card-2);
+      color: var(--text);
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .modal-content p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .modal-tags span {
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #d8d4cc;
+      font-size: .78rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 22px;
+      z-index: 80;
+      background: var(--accent);
+      color: #15110a;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      transform: translateY(140%);
+      opacity: 0;
+      transition: .3s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav .btn {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links.open {
+        display: flex;
+        position: fixed;
+        top: 86px;
+        right: 18px;
+        left: 18px;
+        padding: 22px;
+        border-radius: 18px;
+        background: rgba(14,14,14,.98);
+        border: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .nav-links.open a {
+        padding: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .about-grid,
+      .equipment,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        min-height: 540px;
+      }
+
+      .stats-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-left: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .project,
+      .project.wide {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .hero {
+        min-height: 92vh;
+        padding-top: 120px;
+        background-position: 66% center;
+      }
+
+      .hero-content {
+        padding-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 14vw, 4.5rem);
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .services-grid,
+      .stats-grid,
+      .process-grid,
+      .gear-list {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .project,
+      .project.wide {
+        grid-column: span 12;
+      }
+
+      .project.wide .project-media,
+      .project-media {
+        aspect-ratio: 1.45;
+      }
+
+      .portrait {
+        min-height: 460px;
+      }
+
+      .portrait-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .equipment-image {
+        min-height: 390px;
+      }
+
+      .quote-box,
+      .contact-card,
+      .contact-form {
+        padding: 24px;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" id="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="الصفحة الرئيسية">
+        <span class="brand-mark">AY</span>
+        <span class="brand-text">
+          <strong>أحمد ياسين</strong>
+          <span>Video Photographer</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">عني</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#process">طريقة العمل</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">احجز تصويرك</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="recording">
+            <span class="record-dot"></span>
+            متاح لمشروعات التصوير داخل القاهرة
+          </div>
+
+          <h1>أصنع صورة <span>تحكي المكان</span> قبل أن تتكلم عنه.</h1>
+
+          <p>
+            مصور فيديو محترف بخبرة عملية في تصوير الفعاليات، الورش التعليمية،
+            ريلز السوشيال ميديا، ومشروعات التشطيبات والتصميم الداخلي للشقق والفلل.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">شاهد الأعمال</a>
+            <a class="btn btn-ghost" href="#contact">ابدأ مشروعك</a>
+          </div>
+
+          <div class="hero-meta">
+            <span><b>+1 سنة</b> خبرة عملية</span>
+            <span><b>معدات خاصة</b> للتصوير الاحترافي</span>
+            <span><b>4K</b> جودة تصوير وتسليم</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="portrait reveal">
+          <div class="portrait-badge">
+            <div>
+              <strong>أحمد ياسين</strong>
+              <span>مصور فيديو وصانع محتوى بصري</span>
+            </div>
+            <span>القاهرة، مصر</span>
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">نبذة عني</span>
+          <h2 class="section-title">كل مشروع له تفاصيل تستحق أن تظهر بأفضل صورة.</h2>
+
+          <p>
+            بدأت عملي كمصور فيديو مستقل باستخدام معداتي الخاصة، وخلال قرابة عام
+            نفذت أعمالًا متنوعة شملت تغطية الفعاليات، الورش التعليمية، وتصوير
+            ريلز مخصصة لمنصات التواصل الاجتماعي.
+          </p>
+
+          <p>
+            أعمل حاليًا ضمن وكالة متخصصة في تقديم المحتوى لشركات ومهندسي
+            التشطيبات والتصميم الداخلي، حيث أتولى تصوير الشقق والفلل قبل
+            التشطيب وبعده، وإبراز الخامات، المساحات، والإضاءة بأسلوب بصري
+            احترافي يساعد العميل على رؤية قيمة المشروع بوضوح.
+          </p>
+
+          <ul class="about-list">
+            <li><span class="check">✓</span>تصوير احترافي بكاميرا ومعدات خاصة</li>
+            <li><span class="check">✓</span>فهم زوايا التصوير المناسبة للمساحات الداخلية</li>
+            <li><span class="check">✓</span>إنتاج فيديوهات قصيرة مناسبة للسوشيال ميديا</li>
+            <li><span class="check">✓</span>الالتزام بالمواعيد وهوية كل مشروع</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <strong data-count="50">0</strong>
+          <span>فيديو تم تصويره وتسليمه</span>
+        </div>
+        <div class="stat reveal">
+          <strong data-count="18">0</strong>
+          <span>مشروع تشطيبات وديكور داخلي</span>
+        </div>
+        <div class="stat reveal">
+          <strong data-count="12">0</strong>
+          <span>فعالية وورشة تعليمية</span>
+        </div>
+        <div class="stat reveal">
+          <strong data-count="30">0</strong>
+          <span>ريلز ومحتوى سوشيال ميديا</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">الخدمات</span>
+            <h2 class="section-title">تصوير يركز على التفاصيل التي تبيع الفكرة.</h2>
+          </div>
+          <p class="section-copy">
+            من التخطيط للمشهد واختيار الزوايا إلى التصوير والتسليم، أقدم تجربة
+            منظمة تناسب العلامات التجارية، المهندسين، وأصحاب المشروعات.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-num">01</span>
+            <h3>تصوير التشطيبات والتصميم الداخلي</h3>
+            <p>تصوير الشقق والفلل قبل التنفيذ وبعده، مع إبراز تطور المشروع وجودة الخامات والتفاصيل النهائية.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-num">02</span>
+            <h3>ريلز السوشيال ميديا</h3>
+            <p>فيديوهات عمودية سريعة وواضحة تناسب إنستجرام وتيك توك وتعرض الخدمة أو المكان بصورة جذابة.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-num">03</span>
+            <h3>تغطية الفعاليات</h3>
+            <p>توثيق الفعاليات واللقاءات والافتتاحات بلقطات متنوعة تنقل أجواء الحدث وتحافظ على أهم لحظاته.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-num">04</span>
+            <h3>تصوير الورش التعليمية</h3>
+            <p>تصوير المحاضر، الحضور، التفاعل، والتفاصيل العملية لإنتاج محتوى يصلح للتوثيق والتسويق.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">أعمال مختارة</span>
+            <h2 class="section-title">مشروعات صورتها بعدسة تهتم بالمكان والحركة.</h2>
+          </div>
+          <p class="section-copy">
+            مجموعة من الأعمال التي تمثل أسلوبي في تصوير العقارات، التصميم
+            الداخلي، الفعاليات، والمحتوى السريع للسوشيال ميديا.
+          </p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="interior">تشطيبات وديكور</button>
+          <button class="filter-btn" data-filter="events">فعاليات وورش</button>
+          <button class="filter-btn" data-filter="reels">ريلز</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project wide reveal"
+            data-category="interior"
+            data-title="فيلا سكنية — التجمع الخامس"
+            data-desc="تصوير المشروع بعد اكتمال التشطيبات، مع التركيز على توزيع الإضاءة، اتساع المساحات، والخامات المستخدمة في مناطق الاستقبال والمعيشة."
+            data-image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85"
+            data-tags="Interior Design, Villa, 4K, Walkthrough">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85" alt="تصوير فيلا سكنية بعد التشطيب">
+              <div class="project-overlay">
+                <span class="duration">01:24</span>
+                <span class="play">▶</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <small>تشطيبات وتصميم داخلي</small>
+              <h3>فيلا سكنية — التجمع الخامس</h3>
+              <p>جولة بصرية تبرز الإضاءة والخامات والتفاصيل النهائية.</p>
+            </div>
+          </article>
+
+          <article class="project reveal"
+            data-category="reels"
+            data-title="ريلز تفاصيل مطبخ مودرن"
+            data-desc="فيديو عمودي سريع يعرض تفاصيل المطبخ، وحدات التخزين، توزيع الإضاءة، والخامات المستخدمة بطريقة مناسبة لمنصات التواصل الاجتماعي."
+            data-image="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85"
+            data-tags="Reels, Kitchen, Vertical Video, Social Media">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85" alt="ريلز مطبخ مودرن">
+              <div class="project-overlay">
+                <span class="duration">00:32</span>
+                <span class="play">▶</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <small>ريلز سوشيال ميديا</small>
+              <h3>تفاصيل مطبخ مودرن</h3>
+              <p>فيديو عمودي سريع لمهندس تصميم داخلي.</p>
+            </div>
+          </article>
+
+          <article class="project reveal"
+            data-category="interior"
+            data-title="شقة قبل وبعد التشطيب"
+            data-desc="توثيق بصري لمراحل المشروع من حالة المحارة والتأسيس إلى النتيجة النهائية، باستخدام زوايا متقاربة تسهّل مقارنة التحول."
+            data-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+            data-tags="Before & After, Apartment, Finishing, 4K">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" alt="شقة قبل وبعد التشطيب">
+              <div class="project-overlay">
+                <span class="duration">01:10</span>
+                <span class="play">▶</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <small>قبل وبعد</small>
+              <h3>شقة سكنية — مدينة نصر</h3>
+              <p>توثيق واضح للتغيير من مرحلة التنفيذ إلى التسليم.</p>
+            </div>
+          </article>
+
+          <article class="project reveal"
+            data-category="events"
+            data-title="ورشة تدريبية لمصممي الديكور"
+            data-desc="تغطية الورشة من بداية استقبال الحضور وحتى الجلسات العملية، مع تصوير المحاضر، التفاعل، وأهم اللحظات التي تعكس قيمة الحدث."
+            data-image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85"
+            data-tags="Workshop, Event Coverage, Education, Highlights">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85" alt="تغطية ورشة تعليمية">
+              <div class="project-overlay">
+                <span class="duration">02:18</span>
+                <span class="play">▶</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <small>ورش تعليمية</small>
+              <h3>ورشة تدريبية لمصممي الديكور</h3>
+              <p>تغطية حيوية للمحاضر والحضور والتفاعل.</p>
+            </div>
+          </article>
+
+          <article class="project reveal"
+            data-category="reels"
+            data-title="جولة ريلز داخل غرفة معيشة"
+            data-desc="جولة قصيرة بحركة كاميرا هادئة تستعرض تنسيق الأثاث، الإضاءة الجانبية، والتفاصيل الديكورية في غرفة المعيشة."
+            data-image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
+            data-tags="Reels, Living Room, Interior, Camera Movement">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85" alt="ريلز غرفة معيشة">
+              <div class="project-overlay">
+                <span class="duration">00:28</span>
+                <span class="play">▶</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <small>ريلز سوشيال ميديا</small>
+              <h3>جولة داخل غرفة معيشة</h3>
+              <p>حركة هادئة تبرز توزيع الأثاث والإضاءة.</p>
+            </div>
+          </article>
+
+          <article class="project wide reveal"
+            data-category="events"
+            data-title="تغطية افتتاح استوديو تصميم"
+            data-desc="فيديو Highlights للافتتاح يجمع بين لقطات المكان، الضيوف، التفاعل، وتفاصيل الهوية البصرية، مع إيقاع سريع مناسب للنشر على السوشيال ميديا."
+            data-image="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=85"
+            data-tags="Opening Event, Highlights, Brand, Social Media">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=85" alt="تغطية افتتاح استوديو تصميم">
+              <div class="project-overlay">
+                <span class="duration">01:46</span>
+                <span class="play">▶</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <small>تغطية فعاليات</small>
+              <h3>افتتاح استوديو تصميم داخلي</h3>
+              <p>ملخص بصري سريع ينقل أجواء الافتتاح وهوية المكان.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">طريقة العمل</span>
+            <h2 class="section-title">من الفكرة إلى فيديو جاهز للنشر.</h2>
+          </div>
+          <p class="section-copy">
+            خطوات واضحة تضمن أن التصوير يخدم هدف المشروع، وليس مجرد مجموعة
+            لقطات جميلة.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal">
+            <span>01</span>
+            <h3>فهم المشروع</h3>
+            <p>نتفق على الهدف، نوع الجمهور، وطريقة استخدام الفيديو قبل يوم التصوير.</p>
+          </div>
+          <div class="process-card reveal">
+            <span>02</span>
+            <h3>تخطيط اللقطات</h3>
+            <p>تحديد الزوايا، مسار الحركة، وأهم التفاصيل التي يجب أن تظهر.</p>
+          </div>
+          <div class="process-card reveal">
+            <span>03</span>
+            <h3>يوم التصوير</h3>
+            <p>تنفيذ منظم باستخدام معدات احترافية مع الاهتمام بالإضاءة وثبات الصورة.</p>
+          </div>
+          <div class="process-card reveal">
+            <span>04</span>
+            <h3>التسليم</h3>
+            <p>تسليم الفيديو بالمقاسات والجودة المناسبة للمنصة أو الاستخدام المطلوب.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container equipment">
+        <div class="equipment-image reveal" aria-label="معدات تصوير احترافية"></div>
+
+        <div class="reveal">
+          <span class="eyebrow">المعدات</span>
+          <h2 class="section-title">أعتمد على معداتي الخاصة لتنفيذ التصوير بكفاءة.</h2>
+          <p class="section-copy" style="margin-top:18px">
+            أجهز كل مشروع بما يناسب طبيعته، سواء كان تصوير مساحة داخلية،
+            فعالية، أو فيديو عمودي سريع للسوشيال ميديا.
+          </p>
+
+          <div class="gear-list">
+            <div class="gear-item">
+              <strong>كاميرا احترافية</strong>
+              <span>تصوير عالي الجودة حتى 4K</span>
+            </div>
+            <div class="gear-item">
+              <strong>عدسات متنوعة</strong>
+              <span>للزوايا الواسعة والتفاصيل</span>
+            </div>
+            <div class="gear-item">
+              <strong>مثبت حركة</strong>
+              <span>لجولات داخلية أكثر سلاسة</span>
+            </div>
+            <div class="gear-item">
+              <strong>إضاءة محمولة</strong>
+              <span>لتحسين المشهد عند الحاجة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="container">
+        <div class="quote-box reveal">
+          <p>“أهتم أن يرى المشاهد قيمة المكان، جودة التنفيذ، وإحساس التفاصيل من أول لقطة.”</p>
+          <span>أحمد ياسين — مصور فيديو</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-card reveal">
+          <span class="eyebrow">ابدأ مشروعك</span>
+          <h2>خلينا نصور مشروعك بالشكل اللي يستحقه.</h2>
+          <p>
+            متاح لتصوير مشروعات التشطيبات والتصميم الداخلي، الفعاليات،
+            الورش، ومحتوى السوشيال ميديا داخل القاهرة والجيزة.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:ahmedyassin.visuals@gmail.com">
+              <span>ahmedyassin.visuals@gmail.com</span>
+              <b>البريد</b>
+            </a>
+            <a class="contact-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
+              <span>@ahmedyassin.visuals</span>
+              <b>إنستجرام</b>
+            </a>
+            <a class="contact-link" href="https://wa.me/201000000000" target="_blank" rel="noopener">
+              <span>تواصل مباشرة</span>
+              <b>واتساب</b>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field">
+            <label for="name">الاسم</label>
+            <input id="name" name="name" type="text" placeholder="اكتب اسمك" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">رقم الهاتف</label>
+            <input id="phone" name="phone" type="tel" placeholder="رقم واتساب للتواصل" required>
+          </div>
+
+          <div class="field">
+            <label for="project">نوع المشروع</label>
+            <input id="project" name="project" type="text" placeholder="مثال: تصوير فيلا بعد التشطيب" required>
+          </div>
+
+          <div class="field">
+            <label for="message">تفاصيل المشروع</label>
+            <textarea id="message" name="message" rows="5" placeholder="المكان، الموعد، ونوع الفيديو المطلوب"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit" style="width:100%">إرسال طلب التصوير</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> أحمد ياسين. جميع الحقوق محفوظة.</p>
+      <div class="socials">
+        <a href="#home">الرئيسية</a>
+        <a href="#work">الأعمال</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-media">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-content">
+        <div class="modal-top">
+          <div>
+            <span class="eyebrow">تفاصيل المشروع</span>
+            <h3 id="modalTitle"></h3>
+          </div>
+          <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
+        </div>
+        <p id="modalDesc"></p>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">تم تجهيز رسالتك على واتساب</div>
+
+  <script>
+    const topbar = document.getElementById("topbar");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const projectModal = document.getElementById("projectModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalTags = document.getElementById("modalTags");
+    const toast = document.getElementById("toast");
+
+    window.addEventListener("scroll", () => {
+      topbar.classList.toggle("scrolled", window.scrollY > 30);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", e => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    const counters = document.querySelectorAll("[data-count]");
+    const countObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        const end = Number(el.dataset.count);
+        const duration = 1100;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * end);
+          el.textContent = "+" + value;
+          if (progress < 1) requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.7 });
+
+    counters.forEach(counter => countObserver.observe(counter));
+
+    document.querySelectorAll(".filter-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".project").forEach(project => {
+          const match = filter === "all" || project.dataset.category === filter;
+          project.classList.toggle("hidden", !match);
+        });
+      });
+    });
+
+    document.querySelectorAll(".project").forEach(project => {
+      project.addEventListener("click", () => {
+        modalImage.src = project.dataset.image;
+        modalImage.alt = project.dataset.title;
+        modalTitle.textContent = project.dataset.title;
+        modalDesc.textContent = project.dataset.desc;
+        modalTags.innerHTML = "";
+
+        project.dataset.tags.split(",").forEach(tag => {
+          const span = document.createElement("span");
+          span.textContent = tag.trim();
+          modalTags.appendChild(span);
+        });
+
+        projectModal.classList.add("active");
+        projectModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+      });
+    });
+
+    function closeModal() {
+      projectModal.classList.remove("active");
+      projectModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    modalClose.addEventListener("click", closeModal);
+
+    projectModal.addEventListener("click", e => {
+      if (e.target === projectModal) closeModal();
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", e => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const project = document.getElementById("project").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+`أهلًا أحمد،
+أنا ${name}.
+رقم التواصل: ${phone}
+نوع المشروع: ${project}
+التفاصيل: ${message || "سأرسل التفاصيل عند التواصل."}`;
+
+      const whatsappUrl = "https://wa.me/201000000000?text=" + encodeURIComponent(text);
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        window.open(whatsappUrl, "_blank", "noopener");
+      }, 700);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
