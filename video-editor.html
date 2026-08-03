@@ -44,7 +44,8 @@
     }
 
     img,
-    video {
+    video,
+    iframe {
       max-width: 100%;
       display: block;
     }
@@ -263,11 +264,12 @@
       transform: rotate(-1.2deg);
     }
 
-    .main-video-card video {
-      border-radius: 24px;
-      height: 510px;
+    .main-video-card iframe {
+      display: block;
       width: 100%;
-      object-fit: cover;
+      height: 510px;
+      border: 0;
+      border-radius: 24px;
       background: #111827;
     }
 
@@ -474,18 +476,12 @@
       background: #111827;
     }
 
-    .project-media video,
-    .project-media img {
+    .project-media iframe {
+      display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: 0.35s;
+      border: 0;
       background: #111827;
-    }
-
-    .project-card:hover .project-media video,
-    .project-card:hover .project-media img {
-      transform: scale(1.05);
     }
 
     .project-tag {
@@ -701,7 +697,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .main-video-card video {
+      .main-video-card iframe {
         height: 430px;
       }
 
@@ -762,7 +758,7 @@
         padding: 30px;
       }
 
-      .main-video-card video {
+      .main-video-card iframe {
         height: 360px;
       }
 
@@ -834,9 +830,14 @@
 
         <div class="hero-media reveal">
           <div class="main-video-card">
-            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?auto=format&fit=crop&w=900&q=80">
-              <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
-            </video>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?autoplay=1&mute=1&loop=1&playlist=aqz-KE-bpKQ&controls=1&rel=0"
+              title="فيديو مونتاج رئيسي"
+              loading="eager"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
 
           <div class="floating-card">
@@ -970,9 +971,7 @@
 
           <article class="project-card reveal" data-category="reels">
             <div class="project-media">
-              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80">
-                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-              </video>
+              <iframe src="https://www.youtube-nocookie.com/embed/WhWc3b3KhnY?rel=0" title="Fitness Coach Reels" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <span class="project-tag">Reels</span>
             </div>
             <div class="project-body">
@@ -989,9 +988,7 @@
 
           <article class="project-card reveal" data-category="ads">
             <div class="project-media">
-              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80">
-                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-              </video>
+              <iframe src="https://www.youtube-nocookie.com/embed/R6MlUcmOul8?rel=0" title="Tech Product Ad" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <span class="project-tag">Ads</span>
             </div>
             <div class="project-body">
@@ -1008,7 +1005,7 @@
 
           <article class="project-card reveal" data-category="youtube">
             <div class="project-media">
-              <img src="https://images.unsplash.com/photo-1497015289639-54688650d173?auto=format&fit=crop&w=900&q=80" alt="YouTube editing project">
+              <iframe src="https://www.youtube-nocookie.com/embed/eRsGyueVLvQ?rel=0" title="Podcast Highlights" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <span class="project-tag">YouTube</span>
             </div>
             <div class="project-body">
@@ -1025,7 +1022,7 @@
 
           <article class="project-card reveal" data-category="brand">
             <div class="project-media">
-              <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80" alt="Brand film project">
+              <iframe src="https://www.youtube-nocookie.com/embed/Y-rmzh0PI3c?rel=0" title="Café Brand Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <span class="project-tag">Brand</span>
             </div>
             <div class="project-body">
@@ -1042,9 +1039,7 @@
 
           <article class="project-card reveal" data-category="reels">
             <div class="project-media">
-              <video muted loop playsinline preload="metadata" controls poster="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80">
-                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-              </video>
+              <iframe src="https://www.youtube-nocookie.com/embed/mN0zPOpADL4?rel=0" title="Fashion Collection" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <span class="project-tag">Reels</span>
             </div>
             <div class="project-body">
@@ -1061,7 +1056,7 @@
 
           <article class="project-card reveal" data-category="ads">
             <div class="project-media">
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80" alt="Product ad editing">
+              <iframe src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?rel=0" title="E-commerce Promo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <span class="project-tag">Ads</span>
             </div>
             <div class="project-body">
@@ -1258,21 +1253,6 @@
 
     revealElements.forEach(element => revealObserver.observe(element));
 
-    const projectVideos = document.querySelectorAll(".project-card video");
-
-    projectVideos.forEach(video => {
-      const card = video.closest(".project-card");
-
-      card.addEventListener("mouseenter", () => {
-        video.muted = true;
-        video.play().catch(() => {});
-      });
-
-      card.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0;
-      });
-    });
   </script>
 
 </body>
