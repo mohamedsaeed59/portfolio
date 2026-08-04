@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بورتفوليو عمر صالح، متخصص التجارة الإلكترونية والدروبشيبينغ وبناء المتاجر التي تحقق نموًا مستدامًا." />
+  <meta name="theme-color" content="#07111f" />
+  <title>عمر صالح | E-commerce & Dropshipping Specialist</title>
+  <style>
+    :root {
+      --navy-950: #040b14;
+      --navy-900: #07111f;
+      --navy-850: #0a1728;
+      --navy-800: #102138;
+      --navy-700: #17304f;
+      --gold-500: #d6ae58;
+      --gold-400: #e9c978;
+      --gold-300: #f3dda1;
+      --white: #ffffff;
+      --text: #f6f8fb;
+      --muted: #aeb9c8;
+      --border: rgba(255, 255, 255, 0.10);
+      --glass: rgba(255, 255, 255, 0.055);
+      --success: #46d9a3;
+      --danger: #ff7b7b;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1180px;
+      --transition: 280ms cubic-bezier(.2,.7,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(214, 174, 88, 0.10), transparent 28%),
+        radial-gradient(circle at 90% 25%, rgba(54, 104, 164, 0.14), transparent 28%),
+        var(--navy-950);
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img, svg { display: block; max-width: 100%; }
+    ::selection { color: var(--navy-950); background: var(--gold-400); }
+
+    .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
+    .section { padding: 110px 0; position: relative; }
+    .section-tight { padding: 80px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-400);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-400));
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 44px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.22;
+      max-width: 720px;
+      letter-spacing: -0.03em;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 500px;
+      font-size: 1.03rem;
+    }
+
+    .nav-shell {
+      position: fixed;
+      top: 18px;
+      inset-inline: 0;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .navbar {
+      pointer-events: auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 10px 14px 10px 18px;
+      background: rgba(7, 17, 31, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+      transition: background var(--transition), transform var(--transition);
+    }
+    .navbar.scrolled { background: rgba(4, 11, 20, 0.94); }
+
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: max-content; }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--navy-950);
+      font-weight: 900;
+      font-size: 1.05rem;
+      background: linear-gradient(145deg, var(--gold-300), var(--gold-500));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 10px 24px rgba(214,174,88,.2);
+    }
+    .brand-text strong { display: block; line-height: 1.15; font-size: 1rem; }
+    .brand-text span { display: block; color: var(--muted); font-size: 0.72rem; margin-top: 4px; }
+
+    .nav-links { display: flex; align-items: center; gap: 7px; }
+    .nav-links a {
+      color: #dce3ec;
+      font-size: 0.91rem;
+      padding: 10px 13px;
+      border-radius: 12px;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,.065); }
+
+    .nav-cta, .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      padding: 0 20px;
+      cursor: pointer;
+      font-weight: 750;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .nav-cta, .btn-primary {
+      color: var(--navy-950);
+      background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
+      box-shadow: 0 12px 30px rgba(214, 174, 88, .18);
+    }
+    .nav-cta:hover, .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(214,174,88,.26); }
+    .btn-secondary { color: var(--white); background: rgba(255,255,255,.045); border-color: var(--border); }
+    .btn-secondary:hover { transform: translateY(-2px); border-color: rgba(233,201,120,.4); background: rgba(255,255,255,.075); }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: white;
+      border-radius: 14px;
+      cursor: pointer;
+    }
+    .menu-btn span { width: 20px; height: 2px; display: block; margin: 5px auto; background: currentColor; transition: var(--transition); }
+    .menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-btn.active span:nth-child(2) { opacity: 0; }
+    .menu-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 145px 0 80px;
+      position: relative;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 680px;
+      height: 680px;
+      border-radius: 50%;
+      left: -320px;
+      top: 80px;
+      background: radial-gradient(circle, rgba(214,174,88,.14), transparent 66%);
+      filter: blur(10px);
+      z-index: -1;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 70px;
+    }
+    .hero-copy { position: relative; z-index: 2; }
+    .status-pill {
+      width: max-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #dce5ef;
+      background: rgba(255,255,255,.045);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: .84rem;
+      margin-bottom: 24px;
+    }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); box-shadow: 0 0 0 6px rgba(70,217,163,.12); }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+    .hero h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(120deg, var(--gold-300), var(--gold-500));
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .hero-description {
+      max-width: 650px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.03rem, 1.5vw, 1.18rem);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .proof-item strong { display: block; font-size: 1.35rem; color: var(--white); line-height: 1.2; }
+    .proof-item span { color: var(--muted); font-size: .83rem; }
+    .proof-separator { width: 1px; height: 36px; background: var(--border); }
+
+    .hero-visual { position: relative; min-height: 580px; perspective: 1100px; }
+    .dashboard {
+      position: absolute;
+      inset: 38px 12px 30px 22px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(145deg, rgba(16,33,56,.92), rgba(5,13,23,.96));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: rotateY(-5deg) rotateX(2deg);
+      transition: transform 700ms cubic-bezier(.2,.7,.2,1);
+    }
+    .hero-visual:hover .dashboard { transform: rotateY(-1deg) rotateX(0deg) translateY(-5px); }
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+    }
+    .window-dots { display: flex; gap: 7px; }
+    .window-dots i { width: 8px; height: 8px; display: block; border-radius: 50%; background: rgba(255,255,255,.25); }
+    .dash-title { color: var(--muted); font-size: .78rem; }
+    .dash-body { display: grid; grid-template-columns: 82px 1fr; min-height: 455px; }
+    .dash-sidebar { border-left: 1px solid var(--border); padding: 16px 12px; display: grid; align-content: start; gap: 12px; }
+    .side-logo { width: 40px; height: 40px; margin: 0 auto 8px; border-radius: 12px; background: linear-gradient(135deg, var(--gold-300), var(--gold-500)); }
+    .side-line { height: 9px; border-radius: 20px; background: rgba(255,255,255,.09); }
+    .side-line.active { background: rgba(214,174,88,.55); }
+    .dash-main { padding: 22px; }
+    .dash-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .dash-heading strong { font-size: 1.02rem; }
+    .dash-heading span { font-size: .72rem; color: var(--muted); }
+    .dash-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .mini-stat { padding: 14px; border-radius: 15px; background: rgba(255,255,255,.045); border: 1px solid var(--border); }
+    .mini-stat span { display: block; color: var(--muted); font-size: .66rem; }
+    .mini-stat strong { display: block; font-size: 1.06rem; margin-top: 5px; }
+    .mini-stat em { font-style: normal; color: var(--success); font-size: .65rem; }
+    .chart-card { margin-top: 14px; padding: 16px; border-radius: 17px; background: rgba(255,255,255,.04); border: 1px solid var(--border); }
+    .chart-head { display: flex; justify-content: space-between; font-size: .72rem; color: var(--muted); margin-bottom: 16px; }
+    .chart { height: 125px; display: flex; align-items: end; gap: 8px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .bar { flex: 1; min-width: 7px; border-radius: 7px 7px 2px 2px; background: linear-gradient(to top, rgba(214,174,88,.25), var(--gold-400)); animation: grow 1.1s both; transform-origin: bottom; }
+    @keyframes grow { from { transform: scaleY(.05); opacity: .2; } to { transform: scaleY(1); opacity: 1; } }
+    .orders { display: grid; gap: 8px; margin-top: 14px; }
+    .order { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 10px; padding: 9px; border-radius: 12px; background: rgba(255,255,255,.035); }
+    .order-thumb { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(145deg, #8d5f3e, #f0c479); }
+    .order:nth-child(2) .order-thumb { background: linear-gradient(145deg, #355a8a, #7fb2e6); }
+    .order-copy b { display: block; font-size: .66rem; }
+    .order-copy small { display: block; color: var(--muted); font-size: .58rem; }
+    .order-price { color: var(--gold-300); font-size: .66rem; font-weight: 700; }
+
+    .float-card {
+      position: absolute;
+      z-index: 4;
+      min-width: 190px;
+      padding: 15px;
+      border-radius: 17px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,17,31,.84);
+      box-shadow: 0 18px 40px rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      animation: float 5s ease-in-out infinite;
+    }
+    .float-card.one { top: 0; left: -12px; }
+    .float-card.two { right: -18px; bottom: 18px; animation-delay: -2s; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .float-card small { color: var(--muted); display: block; font-size: .72rem; }
+    .float-card strong { display: block; margin-top: 3px; font-size: 1.15rem; }
+    .float-row { display: flex; align-items: center; gap: 10px; }
+    .float-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: var(--navy-950); background: var(--gold-400); font-weight: 900; }
+
+    .trust-strip { border-block: 1px solid var(--border); background: rgba(255,255,255,.018); }
+    .trust-inner { min-height: 120px; display: grid; grid-template-columns: 1fr 2.5fr; align-items: center; gap: 42px; }
+    .trust-label { color: var(--muted); font-size: .9rem; }
+    .platforms { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .platform {
+      height: 55px;
+      display: grid;
+      place-items: center;
+      color: #cad3de;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+      font-weight: 800;
+      font-size: .86rem;
+      letter-spacing: .02em;
+    }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .portrait-card {
+      position: relative;
+      min-height: 550px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, transparent 45%, rgba(4,11,20,.96)),
+        radial-gradient(circle at 50% 28%, rgba(233,201,120,.28), transparent 25%),
+        linear-gradient(145deg, #19314f, #07111f 70%);
+      box-shadow: var(--shadow);
+    }
+    .portrait-shape {
+      position: absolute;
+      width: 290px;
+      height: 380px;
+      border-radius: 150px 150px 50px 50px;
+      background: linear-gradient(155deg, #d8b276, #7e542f 55%, #101f34 56%);
+      left: 50%;
+      top: 72px;
+      transform: translateX(-50%);
+      box-shadow: 0 30px 60px rgba(0,0,0,.25);
+    }
+    .portrait-shape::before {
+      content: "OS";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.9);
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+    .portrait-info { position: absolute; inset-inline: 26px; bottom: 24px; }
+    .portrait-info strong { display: block; font-size: 1.35rem; }
+    .portrait-info span { color: var(--muted); font-size: .9rem; }
+    .about-copy h2 { margin: 0 0 22px; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.22; }
+    .about-copy p { color: var(--muted); margin: 0 0 18px; }
+    .about-quote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-right: 3px solid var(--gold-500);
+      background: linear-gradient(90deg, transparent, rgba(214,174,88,.065));
+      border-radius: 0 16px 16px 0;
+      color: #e7edf4;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); color: #d8e0ea; background: rgba(255,255,255,.035); font-size: .83rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .metric-card {
+      min-height: 190px;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::after { content: ""; position: absolute; width: 100px; height: 100px; border-radius: 50%; left: -35px; bottom: -35px; background: rgba(214,174,88,.08); }
+    .metric-number { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1; color: var(--gold-300); }
+    .metric-label { margin-top: 15px; color: var(--muted); font-size: .92rem; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card {
+      padding: 26px;
+      min-height: 285px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.032);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .service-card:hover { transform: translateY(-8px); border-color: rgba(214,174,88,.35); background: rgba(255,255,255,.05); }
+    .service-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 16px; color: var(--gold-300); background: rgba(214,174,88,.1); border: 1px solid rgba(214,174,88,.18); }
+    .service-icon svg { width: 25px; }
+    .service-card h3 { margin: 22px 0 10px; font-size: 1.18rem; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .service-number { display: block; margin-top: 24px; color: rgba(255,255,255,.25); font-size: .78rem; }
+
+    .projects { display: grid; gap: 28px; }
+    .project-card {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 0;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .project-card:nth-child(even) .project-visual { order: 2; }
+    .project-card:nth-child(even) .project-content { order: 1; }
+    .project-visual { min-height: 440px; padding: 30px; display: grid; place-items: center; overflow: hidden; position: relative; }
+    .project-visual.beauty { background: radial-gradient(circle at 25% 20%, #f1c7bb, transparent 25%), linear-gradient(145deg, #502d2f, #1b0f15); }
+    .project-visual.home { background: radial-gradient(circle at 80% 10%, #a9d6bd, transparent 25%), linear-gradient(145deg, #18372d, #071811); }
+    .project-visual.fitness { background: radial-gradient(circle at 50% 20%, #d6ae58, transparent 22%), linear-gradient(145deg, #242a34, #0b0d12); }
+    .store-window {
+      width: min(100%, 470px);
+      border-radius: 20px;
+      background: #fbfbf8;
+      box-shadow: 0 30px 70px rgba(0,0,0,.32);
+      transform: rotate(-3deg);
+      overflow: hidden;
+      color: #111;
+    }
+    .store-top { height: 42px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid #e7e7e2; }
+    .store-brand { font-weight: 900; font-size: .8rem; }
+    .store-menu { width: 80px; height: 7px; border-radius: 20px; background: #d8d8d3; }
+    .store-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 12px; padding: 20px; }
+    .store-copy b { display: block; font-size: 1.4rem; line-height: 1.25; }
+    .store-copy p { color: #686866; font-size: .65rem; line-height: 1.5; }
+    .store-btn { display: inline-block; padding: 7px 12px; border-radius: 7px; color: white; background: #1b1b1b; font-size: .6rem; }
+    .product-art { aspect-ratio: 1; border-radius: 50% 50% 40% 40%; background: linear-gradient(145deg, #e7b69f, #794d42); box-shadow: inset 0 0 0 12px rgba(255,255,255,.14); }
+    .home .product-art { border-radius: 18px; background: linear-gradient(145deg, #c6aa78, #3c563f); }
+    .fitness .product-art { border-radius: 50%; background: linear-gradient(145deg, #d6ae58, #20242d); }
+    .store-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; padding: 0 20px 20px; }
+    .store-product { height: 72px; border-radius: 11px; background: #eeeae3; }
+    .store-product:nth-child(2) { background: #ded4c8; }
+    .store-product:nth-child(3) { background: #cbc7bb; }
+    .project-content { padding: 42px; display: flex; flex-direction: column; justify-content: center; }
+    .project-type { color: var(--gold-400); font-size: .82rem; font-weight: 750; }
+    .project-content h3 { font-size: clamp(1.65rem, 3vw, 2.4rem); margin: 9px 0 14px; line-height: 1.25; }
+    .project-content > p { color: var(--muted); margin: 0; }
+    .project-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; }
+    .result { padding: 14px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid var(--border); }
+    .result strong { display: block; color: var(--gold-300); font-size: 1.15rem; }
+    .result span { color: var(--muted); font-size: .72rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .project-tags span { padding: 6px 10px; border-radius: 999px; color: #cbd4de; background: rgba(255,255,255,.04); border: 1px solid var(--border); font-size: .72rem; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .process-grid::before { content: ""; position: absolute; height: 1px; background: linear-gradient(90deg, transparent, rgba(214,174,88,.5), transparent); left: 8%; right: 8%; top: 35px; }
+    .process-step { position: relative; padding: 0 20px; text-align: center; }
+    .process-num { width: 70px; height: 70px; margin: 0 auto 22px; border-radius: 50%; display: grid; place-items: center; color: var(--navy-950); font-weight: 900; background: linear-gradient(145deg, var(--gold-300), var(--gold-500)); border: 8px solid var(--navy-950); position: relative; z-index: 2; }
+    .process-step h3 { margin: 0 0 8px; font-size: 1.02rem; }
+    .process-step p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .testimonials-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
+    .testimonial-card { padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: rgba(255,255,255,.035); }
+    .testimonial-card.featured { min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, rgba(214,174,88,.12), rgba(255,255,255,.025)); }
+    .quote-mark { font-size: 5rem; line-height: .7; color: var(--gold-500); font-family: Georgia, serif; opacity: .8; }
+    .testimonial-card blockquote { margin: 22px 0 28px; font-size: 1.15rem; line-height: 1.9; color: #eef2f7; }
+    .client { display: flex; align-items: center; gap: 12px; }
+    .client-avatar { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: var(--navy-950); background: var(--gold-400); font-weight: 900; }
+    .client strong { display: block; font-size: .9rem; }
+    .client span { display: block; color: var(--muted); font-size: .75rem; }
+    .testimonial-stack { display: grid; gap: 18px; }
+    .testimonial-stack .testimonial-card { min-height: 166px; }
+    .testimonial-stack blockquote { margin: 0 0 18px; color: #e5ebf2; font-size: .9rem; }
+
+    .contact-shell {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 36px;
+      padding: 44px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(214,174,88,.22);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(214,174,88,.16), transparent 35%),
+        linear-gradient(145deg, rgba(16,33,56,.86), rgba(7,17,31,.95));
+      box-shadow: var(--shadow);
+    }
+    .contact-copy h2 { margin: 0 0 18px; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.2; }
+    .contact-copy p { color: var(--muted); margin: 0; }
+    .contact-list { display: grid; gap: 13px; margin-top: 28px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; color: #dbe3ec; }
+    .contact-item i { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: var(--gold-300); background: rgba(214,174,88,.1); font-style: normal; }
+    .contact-form { display: grid; gap: 13px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .field { display: grid; gap: 7px; }
+    .field label { font-size: .78rem; color: #d6dee8; }
+    .field input, .field textarea {
+      width: 100%;
+      color: white;
+      background: rgba(4,11,20,.55);
+      border: 1px solid var(--border);
+      outline: none;
+      border-radius: 13px;
+      padding: 14px 15px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .field textarea { min-height: 136px; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: rgba(214,174,88,.55); box-shadow: 0 0 0 4px rgba(214,174,88,.08); }
+    .form-note { min-height: 24px; margin: 0; font-size: .78rem; color: var(--muted); }
+    .form-note.error { color: var(--danger); }
+    .form-note.success { color: var(--success); }
+
+    footer { padding: 35px 0 45px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .footer-copy { color: var(--muted); font-size: .82rem; }
+    .socials { display: flex; gap: 8px; }
+    .socials a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,.025); color: #dfe6ee; transition: var(--transition); font-size: .72rem; font-weight: 800; }
+    .socials a:hover { transform: translateY(-3px); border-color: rgba(214,174,88,.45); color: var(--gold-300); }
+
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 700ms ease, transform 700ms ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 80ms; }
+    .delay-2 { transition-delay: 160ms; }
+    .delay-3 { transition-delay: 240ms; }
+
+    .cursor-glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(214,174,88,.07), transparent 65%);
+      pointer-events: none;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      transition: left 90ms linear, top 90ms linear;
+    }
+
+    @media (max-width: 1050px) {
+      .nav-links { display: none; position: fixed; top: 98px; right: 20px; left: 20px; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: rgba(4,11,20,.97); backdrop-filter: blur(18px); flex-direction: column; align-items: stretch; box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { text-align: center; }
+      .nav-cta { display: none; }
+      .menu-btn { display: block; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; }
+      .status-pill, .hero-description { margin-inline: auto; }
+      .hero-actions, .hero-proof { justify-content: center; }
+      .hero-visual { min-height: 560px; width: min(100%, 680px); margin-inline: auto; }
+      .trust-inner { grid-template-columns: 1fr; padding: 28px 0; gap: 20px; text-align: center; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-card { grid-template-columns: 1fr; }
+      .project-card:nth-child(even) .project-visual, .project-card:nth-child(even) .project-content { order: initial; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 35px 0; }
+      .process-grid::before { display: none; }
+      .testimonials-grid, .contact-shell { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 26px), var(--container)); }
+      .section { padding: 78px 0; }
+      .nav-shell { top: 10px; }
+      .navbar { min-height: 64px; border-radius: 17px; padding: 8px 10px; }
+      .brand-mark { width: 40px; height: 40px; border-radius: 12px; }
+      .brand-text span { display: none; }
+      .hero { padding-top: 120px; min-height: auto; }
+      .hero h1 { font-size: clamp(2.65rem, 14vw, 4.3rem); }
+      .hero-description { font-size: .98rem; }
+      .hero-actions .btn { width: 100%; }
+      .proof-separator { display: none; }
+      .hero-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .proof-item strong { font-size: 1.1rem; }
+      .proof-item span { font-size: .7rem; }
+      .hero-visual { min-height: 450px; margin-top: 15px; }
+      .dashboard { inset: 30px 0 10px; transform: none; border-radius: 22px; }
+      .dash-body { grid-template-columns: 58px 1fr; min-height: 350px; }
+      .dash-main { padding: 14px; }
+      .dash-stats { gap: 7px; }
+      .mini-stat { padding: 10px 8px; }
+      .mini-stat strong { font-size: .85rem; }
+      .mini-stat span, .mini-stat em { font-size: .53rem; }
+      .chart { height: 90px; gap: 5px; }
+      .orders { display: none; }
+      .float-card { min-width: 150px; padding: 11px; }
+      .float-card.one { left: -4px; }
+      .float-card.two { right: -4px; }
+      .float-card strong { font-size: .92rem; }
+      .platforms { grid-template-columns: repeat(2, 1fr); }
+      .platform:last-child { grid-column: 1 / -1; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .portrait-card { min-height: 460px; }
+      .portrait-shape { width: 230px; height: 310px; top: 70px; }
+      .metrics-grid, .services-grid { grid-template-columns: 1fr; }
+      .metric-card { min-height: 150px; }
+      .project-visual { min-height: 330px; padding: 18px; }
+      .project-content { padding: 28px 22px; }
+      .project-results { grid-template-columns: 1fr; }
+      .store-window { transform: none; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step { text-align: right; display: grid; grid-template-columns: 60px 1fr; column-gap: 15px; }
+      .process-num { width: 58px; height: 58px; grid-row: span 2; margin: 0; }
+      .process-step p { grid-column: 2; }
+      .testimonial-card { padding: 24px; }
+      .contact-shell { padding: 26px 20px; }
+      .field-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .cursor-glow { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav-shell">
+    <nav class="navbar container" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#home" aria-label="العودة إلى الرئيسية">
+        <span class="brand-mark">OS</span>
+        <span class="brand-text"><strong>عمر صالح</strong><span>E-commerce Growth Specialist</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">نبذة عني</a>
+        <a href="#services">الخدمات</a>
+        <a href="#projects">النتائج</a>
+        <a href="#process">منهجية العمل</a>
+        <a href="#contact">تواصل معي</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">ابدأ مشروعك</a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="status-pill"><span class="status-dot"></span> متاح لمشاريع مختارة خلال هذا الشهر</div>
+          <h1>أبني متاجر تبيع،<span>لا مجرد متاجر جميلة.</span></h1>
+          <p class="hero-description">
+            أنا عمر صالح، متخصص في التجارة الإلكترونية والدروبشيبينغ. أساعد العلامات الناشئة على اختيار المنتجات، إطلاق المتاجر، وتحويل الإعلانات إلى مبيعات قابلة للتوسع من خلال قرارات مبنية على البيانات.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">شاهد النتائج</a>
+            <a class="btn btn-secondary" href="#contact">ناقش مشروعك معي</a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-item"><strong>+4 سنوات</strong><span>خبرة عملية</span></div>
+            <span class="proof-separator"></span>
+            <div class="proof-item"><strong>+38 متجرًا</strong><span>تم إطلاقه وتحسينه</span></div>
+            <span class="proof-separator"></span>
+            <div class="proof-item"><strong>6 أسواق</strong><span>مصر والخليج وأوروبا</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="لوحة تحليلات متجر إلكتروني">
+          <div class="dashboard">
+            <div class="dashboard-top">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <span class="dash-title">Store Performance Dashboard</span>
+            </div>
+            <div class="dash-body">
+              <aside class="dash-sidebar">
+                <div class="side-logo"></div>
+                <div class="side-line active"></div>
+                <div class="side-line"></div>
+                <div class="side-line"></div>
+                <div class="side-line"></div>
+                <div class="side-line"></div>
+              </aside>
+              <div class="dash-main">
+                <div class="dash-heading"><strong>نظرة عامة</strong><span>آخر 30 يومًا</span></div>
+                <div class="dash-stats">
+                  <div class="mini-stat"><span>إجمالي المبيعات</span><strong>$84,320</strong><em>+18.4%</em></div>
+                  <div class="mini-stat"><span>معدل التحويل</span><strong>4.8%</strong><em>+1.2%</em></div>
+                  <div class="mini-stat"><span>ROAS</span><strong>4.6x</strong><em>+0.8x</em></div>
+                </div>
+                <div class="chart-card">
+                  <div class="chart-head"><span>نمو الإيرادات</span><span>$84.3K</span></div>
+                  <div class="chart">
+                    <span class="bar" style="height:29%"></span><span class="bar" style="height:42%"></span><span class="bar" style="height:37%"></span><span class="bar" style="height:58%"></span><span class="bar" style="height:49%"></span><span class="bar" style="height:72%"></span><span class="bar" style="height:66%"></span><span class="bar" style="height:88%"></span><span class="bar" style="height:77%"></span><span class="bar" style="height:96%"></span>
+                  </div>
+                </div>
+                <div class="orders">
+                  <div class="order"><span class="order-thumb"></span><span class="order-copy"><b>سيروم العناية المتقدم</b><small>طلب جديد • السعودية</small></span><span class="order-price">$129</span></div>
+                  <div class="order"><span class="order-thumb"></span><span class="order-copy"><b>منظم المنزل الذكي</b><small>طلب جديد • الإمارات</small></span><span class="order-price">$94</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card one">
+            <div class="float-row"><span class="float-icon">↑</span><span><small>مبيعات اليوم</small><strong>$3,840</strong></span></div>
+          </div>
+          <div class="float-card two">
+            <small>متوسط العائد الإعلاني</small><strong>4.6x ROAS</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-label">أعمل يوميًا على المنصات التي تصنع نمو المتاجر</div>
+        <div class="platforms">
+          <div class="platform">Shopify</div><div class="platform">Meta Ads</div><div class="platform">TikTok Ads</div><div class="platform">Google Ads</div><div class="platform">Klaviyo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="portrait-card reveal">
+          <div class="portrait-shape"></div>
+          <div class="portrait-info"><strong>عمر صالح</strong><span>E-commerce & Dropshipping Growth Specialist</span></div>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <span class="eyebrow">نبذة عني</span>
+          <h2>أحوّل المنتج الجيد إلى مشروع قابل للنمو.</h2>
+          <p>بدأت رحلتي في التجارة الإلكترونية عام 2021، ومنذ ذلك الوقت عملت على إطلاق وتطوير متاجر في مجالات العناية الشخصية، المنزل، اللياقة، والإكسسوارات.</p>
+          <p>لا أعتمد على التخمين أو مطاردة المنتجات الرائجة فقط. أبدأ من احتياج السوق، أختبر العرض والرسالة، ثم أبني نظامًا واضحًا لقياس الربحية وتحسين تجربة العميل من أول إعلان وحتى إعادة الشراء.</p>
+          <div class="about-quote">هدفي ليس تحقيق دفعة مبيعات مؤقتة، بل بناء متجر يمتلك عرضًا قويًا، هوامش صحية، وقرارات تسويقية قابلة للتكرار.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Product Research</span><span class="skill-tag">Store Strategy</span><span class="skill-tag">Shopify</span><span class="skill-tag">Conversion Optimization</span><span class="skill-tag">Paid Ads</span><span class="skill-tag">Email Marketing</span><span class="skill-tag">Analytics</span><span class="skill-tag">Supplier Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container metrics-grid">
+        <article class="metric-card reveal"><div class="metric-number" data-count="2.8" data-suffix="M$+">0</div><div class="metric-label">إيرادات ساهمت الاستراتيجيات في تحقيقها</div></article>
+        <article class="metric-card reveal delay-1"><div class="metric-number" data-count="38" data-suffix="+">0</div><div class="metric-label">متجرًا تم إطلاقه أو إعادة هيكلته</div></article>
+        <article class="metric-card reveal delay-2"><div class="metric-number" data-count="4.7" data-suffix="x">0</div><div class="metric-label">أفضل متوسط عائد إعلاني مستدام</div></article>
+        <article class="metric-card reveal delay-3"><div class="metric-number" data-count="27" data-suffix="%">0</div><div class="metric-label">تحسن متوسط في معدل التحويل</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">الخدمات</span><h2>كل ما يحتاجه المتجر من الفكرة حتى التوسع.</h2></div>
+          <p>خدمات مترابطة تساعدك على تقليل التجارب العشوائية، تسريع الإطلاق، وتحسين الربحية في كل مرحلة.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5h16v14H4Z"/><path d="m8 15 3-3 2 2 3-4"/></svg></div><h3>بحث وتحليل المنتجات</h3><p>اختيار فرص واقعية بناءً على الطلب، المنافسة، هامش الربح، سهولة التوريد، وإمكانية بناء عرض تسويقي واضح.</p><span class="service-number">01</span></article>
+          <article class="service-card reveal delay-1"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M5 7l1 13h12l1-13M9 11v5M15 11v5"/><path d="M8 7a4 4 0 0 1 8 0"/></svg></div><h3>بناء متاجر Shopify</h3><p>متاجر سريعة ومتجاوبة، صفحات منتجات مقنعة، هيكل ثقة واضح، وتجربة شراء مصممة لتقليل التردد وزيادة التحويل.</p><span class="service-number">02</span></article>
+          <article class="service-card reveal delay-2"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18h16M6 15l3-4 3 2 5-7 2 2"/><circle cx="6" cy="15" r="1"/><circle cx="9" cy="11" r="1"/><circle cx="12" cy="13" r="1"/><circle cx="17" cy="6" r="1"/></svg></div><h3>إدارة وتحسين الإعلانات</h3><p>بناء حملات Meta وTikTok واختبار الزوايا الإعلانية، ثم توسيع الحملات الرابحة مع متابعة الربحية الحقيقية.</p><span class="service-number">03</span></article>
+          <article class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6H15a3 3 0 0 1 0 6H7"/></svg></div><h3>تسعير وعروض البيع</h3><p>تصميم باقات وخصومات وUpsells ترفع متوسط قيمة الطلب دون الإضرار بالهامش أو صورة العلامة التجارية.</p><span class="service-number">04</span></article>
+          <article class="service-card reveal delay-1"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg></div><h3>البريد واستعادة العملاء</h3><p>إعداد رسائل السلة المتروكة، ما بعد الشراء، وإعادة التفعيل لتحويل قاعدة العملاء إلى مصدر إيرادات متكرر.</p><span class="service-number">05</span></article>
+          <article class="service-card reveal delay-2"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>استشارات النمو والتوسع</h3><p>مراجعة شاملة للأرقام، العرض، تجربة العميل، وسلسلة التوريد لتحديد أولويات النمو بأقل مخاطرة ممكنة.</p><span class="service-number">06</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">دراسات حالة</span><h2>نتائج صنعتها قرارات واضحة وتنفيذ منضبط.</h2></div>
+          <p>نماذج من متاجر تم تطوير عروضها وتجربة الشراء وحملاتها للوصول إلى نمو أكثر استقرارًا.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project-card reveal">
+            <div class="project-visual beauty">
+              <div class="store-window">
+                <div class="store-top"><span class="store-brand">NURA SKIN</span><span class="store-menu"></span></div>
+                <div class="store-hero"><div class="store-copy"><b>Simple care.<br>Visible results.</b><p>روتين عناية عملي بمكونات مختارة لبشرة أكثر توازنًا.</p><span class="store-btn">تسوقي الآن</span></div><div class="product-art"></div></div>
+                <div class="store-products"><div class="store-product"></div><div class="store-product"></div><div class="store-product"></div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">Beauty E-commerce • السعودية</span>
+              <h3>Nura Skin — إعادة إطلاق متجر العناية بالبشرة</h3>
+              <p>إعادة صياغة العرض، تنظيم صفحة المنتج، تطوير الباقات، وبناء نظام اختبار إعلاني يعتمد على المشكلات الحقيقية للعملاء بدل الخصومات المستمرة.</p>
+              <div class="project-results"><div class="result"><strong>4.7x</strong><span>عائد إعلاني</span></div><div class="result"><strong>+41%</strong><span>متوسط قيمة الطلب</span></div><div class="result"><strong>-23%</strong><span>تكلفة الاستحواذ</span></div></div>
+              <div class="project-tags"><span>Shopify</span><span>Meta Ads</span><span>CRO</span><span>Bundles</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual home">
+              <div class="store-window">
+                <div class="store-top"><span class="store-brand">NESTORY</span><span class="store-menu"></span></div>
+                <div class="store-hero"><div class="store-copy"><b>Organize less.<br>Live more.</b><p>حلول ذكية تجعل المساحات الصغيرة أكثر هدوءًا وعملية.</p><span class="store-btn">اكتشف المجموعة</span></div><div class="product-art"></div></div>
+                <div class="store-products"><div class="store-product"></div><div class="store-product"></div><div class="store-product"></div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">Home Products • الإمارات</span>
+              <h3>Nestory — متجر منتجات تنظيم المنزل</h3>
+              <p>اختيار مجموعة منتجات مترابطة، بناء هوية أكثر ثقة، تبسيط رحلة الشراء، وإطلاق حملات UGC ركزت على نتائج الاستخدام اليومية.</p>
+              <div class="project-results"><div class="result"><strong>$186K</strong><span>مبيعات خلال 90 يومًا</span></div><div class="result"><strong>3.9%</strong><span>معدل التحويل</span></div><div class="result"><strong>18%</strong><span>إيرادات من البريد</span></div></div>
+              <div class="project-tags"><span>Product Research</span><span>TikTok Ads</span><span>Klaviyo</span><span>UGC</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual fitness">
+              <div class="store-window">
+                <div class="store-top"><span class="store-brand">PULSE GEAR</span><span class="store-menu"></span></div>
+                <div class="store-hero"><div class="store-copy"><b>Train anywhere.<br>Stay consistent.</b><p>معدات لياقة عملية لروتين يومي أكثر استمرارية.</p><span class="store-btn">ابدأ التمرين</span></div><div class="product-art"></div></div>
+                <div class="store-products"><div class="store-product"></div><div class="store-product"></div><div class="store-product"></div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">Fitness Accessories • أوروبا</span>
+              <h3>Pulse Gear — تحسين الربحية قبل التوسع</h3>
+              <p>إيقاف المنتجات ضعيفة الهامش، رفع جودة صفحة المنتج، ضبط التسعير، وإعادة هيكلة الحملات حسب الدولة والزاوية الإعلانية.</p>
+              <div class="project-results"><div class="result"><strong>+32%</strong><span>صافي الهامش</span></div><div class="result"><strong>2.4x</strong><span>نمو الإيرادات</span></div><div class="result"><strong>9 أيام</strong><span>لاسترداد الإنفاق</span></div></div>
+              <div class="project-tags"><span>Google Ads</span><span>Pricing</span><span>Analytics</span><span>Scaling</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">منهجية العمل</span><h2>نظام واضح من التشخيص إلى النمو.</h2></div>
+          <p>كل مرحلة لها هدف ومؤشرات قياس، حتى تعرف أين يذهب الوقت والميزانية وما الذي يتحسن فعليًا.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step reveal"><div class="process-num">01</div><h3>تحليل السوق والأرقام</h3><p>فهم المنتج، المنافسين، تكلفة التشغيل، وهامش الربح قبل اتخاذ أي قرار.</p></article>
+          <article class="process-step reveal delay-1"><div class="process-num">02</div><h3>بناء العرض والمتجر</h3><p>تطوير الرسالة، التسعير، صفحات البيع، وعناصر الثقة التي تحرك قرار الشراء.</p></article>
+          <article class="process-step reveal delay-2"><div class="process-num">03</div><h3>اختبار الإعلانات</h3><p>اختبار منظم للزوايا والكرياتيف والجمهور للوصول إلى مؤشرات ربحية حقيقية.</p></article>
+          <article class="process-step reveal delay-3"><div class="process-num">04</div><h3>التحسين والتوسع</h3><p>زيادة الميزانية تدريجيًا وتحسين التحويل والتكرار مع حماية الهامش النقدي.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">آراء العملاء</span><h2>شراكات مبنية على الوضوح والنتائج.</h2></div></div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card featured reveal">
+            <div><div class="quote-mark">“</div><blockquote>عمر لم يتعامل مع المشروع كحملة إعلانية فقط. أعاد ترتيب المنتج والعرض والصفحة بالكامل، وبعد شهرين أصبح لدينا رقم واضح نستطيع التوسع عليه بدل القرارات اليومية العشوائية.</blockquote></div>
+            <div class="client"><div class="client-avatar">NS</div><div><strong>نوف السبيعي</strong><span>مؤسسة Nura Skin — الرياض</span></div></div>
+          </article>
+          <div class="testimonial-stack">
+            <article class="testimonial-card reveal delay-1"><blockquote>الفرق الأكبر كان في طريقة قراءة الأرقام. وفر علينا ميزانية كبيرة كانت تذهب لمنتجات لا تستحق التوسع.</blockquote><div class="client"><div class="client-avatar">MA</div><div><strong>محمد العوضي</strong><span>Co-founder — Nestory</span></div></div></article>
+            <article class="testimonial-card reveal delay-2"><blockquote>التنفيذ منظم، التقارير مفهومة، وكل تعديل له سبب واضح. وصلنا لمرحلة نمو أكثر هدوءًا وربحية.</blockquote><div class="client"><div class="client-avatar">LK</div><div><strong>Lucas Klein</strong><span>Founder — Pulse Gear</span></div></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-shell reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">لنتحدث عن مشروعك</span>
+            <h2>هل متجرك جاهز للمرحلة التالية؟</h2>
+            <p>أرسل نبذة عن المنتج، السوق المستهدف، والمرحلة الحالية. سأراجع التفاصيل وأرد بخطوة عملية واضحة.</p>
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:hello@omarsaleh.co"><i>@</i><span>hello@omarsaleh.co</span></a>
+              <div class="contact-item"><i>⌂</i><span>القاهرة • أعمل مع العملاء عن بُعد</span></div>
+              <div class="contact-item"><i>↗</i><span>متاح للمشاريع في الشرق الأوسط وأوروبا</span></div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field-row">
+              <div class="field"><label for="name">الاسم</label><input id="name" name="name" type="text" autocomplete="name" placeholder="اسمك الكامل" required /></div>
+              <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@email.com" required /></div>
+            </div>
+            <div class="field"><label for="project">نوع المشروع</label><input id="project" name="project" type="text" placeholder="إطلاق متجر، تحسين متجر، إدارة إعلانات..." required /></div>
+            <div class="field"><label for="message">تفاصيل المشروع</label><textarea id="message" name="message" placeholder="حدثني عن المنتج، السوق، والهدف الحالي" required></textarea></div>
+            <button class="btn btn-primary" type="submit">إرسال تفاصيل المشروع</button>
+            <p class="form-note" id="formNote" aria-live="polite">سيتم فتح تطبيق البريد برسالة جاهزة للإرسال.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">© <span id="year"></span> عمر صالح. جميع الحقوق محفوظة.</div>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="X">x</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navbar = document.querySelector('.navbar');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.classList.toggle('active', isOpen);
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const decimals = String(target).includes('.') ? 1 : 0;
+        const duration = 1300;
+        const start = performance.now();
+
+        function animate(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = (target * eased).toFixed(decimals) + suffix;
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: .6 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navAnchors = [...document.querySelectorAll('.nav-links a')];
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => navObserver.observe(section));
+
+    const glow = document.querySelector('.cursor-glow');
+    window.addEventListener('pointermove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    }, { passive: true });
+
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = String(data.get('name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const project = String(data.get('project') || '').trim();
+      const message = String(data.get('message') || '').trim();
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      note.className = 'form-note';
+      if (!name || !validEmail || !project || !message) {
+        note.textContent = 'يرجى استكمال جميع البيانات وكتابة بريد إلكتروني صحيح.';
+        note.classList.add('error');
+        return;
+      }
+
+      const subject = encodeURIComponent('طلب مشروع جديد — ' + project);
+      const body = encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\nنوع المشروع: ${project}\n\nالتفاصيل:\n${message}`);
+      note.textContent = 'تم تجهيز الرسالة، سيتم فتح تطبيق البريد الآن.';
+      note.classList.add('success');
+      window.location.href = `mailto:hello@omarsaleh.co?subject=${subject}&body=${body}`;
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
