@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOVA Care Pharmacy — صيدلية متخصصة في منتجات العناية بالبشرة والشعر والجسم ومنتجات الكوزميتكس الأصلية." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>NOVA Care Pharmacy | Beauty & Dermocosmetics</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --surface:#f7faf8;
+      --surface-2:#eef6f2;
+      --text:#17201c;
+      --muted:#68756e;
+      --line:#e2ebe6;
+      --brand:#1d7352;
+      --brand-dark:#12513a;
+      --brand-soft:#dff2e8;
+      --accent:#d59c63;
+      --white:#ffffff;
+      --shadow:0 22px 60px rgba(24, 62, 47, .10);
+      --shadow-sm:0 10px 28px rgba(24, 62, 47, .08);
+      --radius:28px;
+      --radius-md:20px;
+      --radius-sm:14px;
+      --container:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      font-family:"Cairo",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.75;
+      overflow-x:hidden;
+    }
+    body.menu-open{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    ::selection{background:var(--brand);color:white}
+    .container{width:min(calc(100% - 40px),var(--container));margin-inline:auto}
+    .section{padding:92px 0}
+    .section-soft{background:var(--surface)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:13px;font-weight:800;color:var(--brand);
+      padding:8px 13px;border:1px solid #cfe4da;border-radius:999px;background:#fbfdfc;
+      margin-bottom:18px;
+    }
+    .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand)}
+    h1,h2,h3,p{margin-top:0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:42px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.22;margin-bottom:10px;letter-spacing:-1.2px}
+    .section-head p{max-width:650px;margin:0;color:var(--muted);font-size:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:50px;padding:0 22px;border-radius:15px;border:1px solid transparent;
+      font-weight:800;transition:.25s ease;white-space:nowrap;
+    }
+    .btn-primary{background:var(--brand);color:white;box-shadow:0 12px 30px rgba(29,115,82,.23)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--brand-dark)}
+    .btn-secondary{background:white;border-color:var(--line);color:var(--text)}
+    .btn-secondary:hover{border-color:#b9d8c9;background:#f8fbf9}
+    .btn svg{width:18px;height:18px}
+    .icon{
+      width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+      background:var(--brand-soft);color:var(--brand);flex:0 0 auto;
+    }
+    .icon svg{width:21px;height:21px}
+
+    /* Header */
+    .topbar{
+      background:var(--brand-dark);color:#e9f6ef;
+      font-size:13px;text-align:center;padding:8px 14px;
+    }
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.90);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(226,235,230,.8);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .brand{display:flex;align-items:center;gap:12px;direction:ltr;flex:0 0 auto}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;background:var(--brand);position:relative;
+      display:grid;place-items:center;color:white;box-shadow:0 8px 22px rgba(29,115,82,.2);
+    }
+    .brand-mark::before,.brand-mark::after{content:"";position:absolute;background:white;border-radius:5px}
+    .brand-mark::before{width:20px;height:7px}
+    .brand-mark::after{width:7px;height:20px}
+    .brand-copy{line-height:1.1}
+    .brand-copy strong{display:block;font:800 17px/1.1 "Manrope",sans-serif;letter-spacing:.4px}
+    .brand-copy span{display:block;color:var(--muted);font-size:10px;font-weight:700;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:700}
+    .nav-links a{position:relative;color:#3d4943}
+    .nav-links a::after{
+      content:"";position:absolute;right:0;bottom:-8px;width:0;height:2px;border-radius:2px;background:var(--brand);
+      transition:.2s
+    }
+    .nav-links a:hover{color:var(--brand)}
+    .nav-links a:hover::after{width:100%}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-actions .btn{min-height:44px;padding-inline:18px;font-size:13px}
+    .menu-btn{
+      display:none;width:44px;height:44px;border-radius:13px;border:1px solid var(--line);
+      background:white;align-items:center;justify-content:center;
+    }
+    .menu-btn span,.menu-btn::before,.menu-btn::after{
+      content:"";display:block;width:19px;height:2px;background:var(--text);border-radius:5px;transition:.25s
+    }
+    .menu-btn span{margin:4px 0}
+    body.menu-open .menu-btn span{opacity:0}
+    body.menu-open .menu-btn::before{transform:translateY(6px) rotate(45deg)}
+    body.menu-open .menu-btn::after{transform:translateY(-6px) rotate(-45deg)}
+
+    /* Hero */
+    .hero{padding:52px 0 84px;position:relative;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,#deefe7 0%,rgba(222,239,231,0) 68%);
+      left:-160px;top:-180px;pointer-events:none;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+    .hero-copy{position:relative;z-index:2}
+    .hero h1{
+      font-size:clamp(44px,6vw,76px);line-height:1.08;letter-spacing:-2.7px;margin-bottom:22px;
+    }
+    .hero h1 .soft{color:var(--brand)}
+    .hero .lead{font-size:18px;color:var(--muted);max-width:660px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+    .trust-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .avatar-stack{display:flex;direction:ltr}
+    .avatar-stack img{
+      width:38px;height:38px;border-radius:50%;object-fit:cover;border:3px solid white;margin-left:-9px;
+    }
+    .avatar-stack img:first-child{margin-left:0}
+    .rating{font-size:13px;color:var(--muted)}
+    .rating strong{color:var(--text);font-size:15px}
+    .stars{color:#d79c54;letter-spacing:1px}
+    .hero-visual{position:relative;min-height:580px}
+    .hero-image{
+      position:absolute;inset:0 24px 0 0;border-radius:34px;overflow:hidden;background:#eef3f0;
+      box-shadow:var(--shadow);
+    }
+    .hero-image img{width:100%;height:100%;object-fit:cover}
+    .hero-image::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,44,30,.12),transparent 45%);
+    }
+    .hero-card{
+      position:absolute;left:-12px;bottom:34px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.9);border-radius:22px;padding:17px 18px;width:235px;
+      box-shadow:var(--shadow-sm);z-index:3;
+    }
+    .hero-card strong{display:block;font-size:14px;margin-bottom:4px}
+    .hero-card p{margin:0;color:var(--muted);font-size:12px}
+    .hero-badge{
+      position:absolute;right:0;top:34px;z-index:3;background:white;border:1px solid var(--line);
+      border-radius:18px;padding:12px 15px;box-shadow:var(--shadow-sm);font-size:12px;font-weight:800;
+      color:var(--brand);
+    }
+    .stats{
+      margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);
+      border:1px solid var(--line);border-radius:22px;overflow:hidden;background:white;
+    }
+    .stat{padding:20px 24px;border-left:1px solid var(--line)}
+    .stat:last-child{border-left:0}
+    .stat strong{display:block;font:800 25px/1.2 "Manrope",sans-serif}
+    .stat span{font-size:12px;color:var(--muted)}
+
+    /* Categories */
+    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .category-card{
+      background:white;border:1px solid var(--line);border-radius:22px;padding:23px;
+      transition:.25s ease;min-height:200px;display:flex;flex-direction:column;
+    }
+    .category-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:#c9ded4}
+    .category-card h3{font-size:19px;margin:19px 0 7px}
+    .category-card p{font-size:13px;color:var(--muted);margin:0}
+    .category-card .link{margin-top:auto;padding-top:16px;color:var(--brand);font-weight:800;font-size:13px}
+
+    /* Brands */
+    .brand-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .brand-logo{
+      min-height:90px;border:1px solid var(--line);border-radius:18px;background:white;
+      display:grid;place-items:center;padding:16px;text-align:center;
+      font:800 14px/1.3 "Manrope",sans-serif;color:#4c5752;transition:.2s;
+    }
+    .brand-logo:hover{border-color:#bdd7ca;transform:translateY(-2px);color:var(--brand)}
+
+    /* Products */
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+    .filter-btn{
+      border:1px solid var(--line);background:white;color:#526059;border-radius:999px;
+      padding:9px 16px;font-weight:800;font-size:13px;transition:.2s
+    }
+    .filter-btn.active,.filter-btn:hover{background:var(--brand);border-color:var(--brand);color:white}
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product-card{
+      border:1px solid var(--line);border-radius:24px;overflow:hidden;background:white;transition:.25s ease;
+    }
+    .product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+    .product-image{height:290px;background:var(--surface);position:relative;overflow:hidden}
+    .product-image img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
+    .product-card:hover .product-image img{transform:scale(1.04)}
+    .tag{
+      position:absolute;top:14px;right:14px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+      border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800;color:var(--brand);
+    }
+    .product-body{padding:20px}
+    .product-kicker{color:var(--brand);font:700 11px/1.3 "Manrope",sans-serif;text-transform:uppercase;letter-spacing:.7px}
+    .product-body h3{font-size:18px;margin:8px 0 7px}
+    .product-body p{color:var(--muted);font-size:13px;min-height:46px;margin-bottom:16px}
+    .product-meta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .price{font:800 17px/1.2 "Manrope",sans-serif}
+    .quick-btn{
+      border:0;background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:12px;
+      padding:9px 12px;border-radius:11px;
+    }
+    .quick-btn:hover{background:var(--brand);color:white}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center}
+    .about-image{border-radius:32px;overflow:hidden;height:560px;background:#edf2ef;box-shadow:var(--shadow-sm)}
+    .about-image img{width:100%;height:100%;object-fit:cover}
+    .about-copy h2{font-size:clamp(34px,4vw,52px);line-height:1.2;letter-spacing:-1.5px;margin-bottom:18px}
+    .about-copy>p{color:var(--muted);font-size:16px}
+    .check-list{display:grid;gap:13px;margin:28px 0 30px}
+    .check{display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:700}
+    .check i{
+      width:24px;height:24px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
+      display:grid;place-items:center;font-style:normal;font-size:13px;flex:0 0 auto;
+    }
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{
+      padding:28px;border:1px solid var(--line);border-radius:24px;background:white;transition:.25s;
+    }
+    .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+    .service-card h3{font-size:19px;margin:18px 0 7px}
+    .service-card p{color:var(--muted);font-size:13px;margin:0}
+
+    /* Routine */
+    .routine{
+      border-radius:34px;background:var(--brand-dark);color:white;padding:54px;overflow:hidden;position:relative;
+    }
+    .routine::after{
+      content:"";position:absolute;width:360px;height:360px;border-radius:50%;border:70px solid rgba(255,255,255,.04);
+      left:-100px;bottom:-180px;
+    }
+    .routine-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px;align-items:center;position:relative;z-index:2}
+    .routine h2{font-size:clamp(34px,4vw,50px);line-height:1.2;margin-bottom:15px}
+    .routine p{color:#cfe3d9}
+    .routine .btn-secondary{border-color:rgba(255,255,255,.15)}
+    .routine-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+    .routine-step{padding:19px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:18px}
+    .routine-step span{display:block;color:#9cd0b9;font:800 12px/1.2 "Manrope",sans-serif;margin-bottom:8px}
+    .routine-step strong{font-size:14px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{
+      border:1px solid var(--line);border-radius:23px;padding:24px;background:white;
+    }
+    .quote .stars{font-size:14px;margin-bottom:14px}
+    .quote p{font-size:14px;color:#445049;min-height:96px}
+    .quote-person{display:flex;align-items:center;gap:12px;margin-top:18px}
+    .quote-person img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+    .quote-person strong{display:block;font-size:13px}
+    .quote-person span{font-size:11px;color:var(--muted)}
+
+    /* FAQ */
+    .faq-wrap{max-width:850px;margin-inline:auto}
+    .faq{border-bottom:1px solid var(--line)}
+    .faq button{
+      width:100%;border:0;background:transparent;padding:20px 0;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;text-align:right;font-weight:800;color:var(--text);
+    }
+    .faq button i{
+      width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;
+      font-style:normal;transition:.25s;font-size:18px;
+    }
+    .faq.open button i{transform:rotate(45deg);background:var(--brand);border-color:var(--brand);color:white}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-answer p{color:var(--muted);font-size:14px;padding:0 0 20px;margin:0}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:24px}
+    .contact-card{
+      border-radius:28px;padding:34px;background:var(--surface);border:1px solid var(--line)
+    }
+    .contact-card h2{font-size:34px;line-height:1.25;margin-bottom:13px}
+    .contact-card>p{color:var(--muted)}
+    .contact-list{display:grid;gap:13px;margin-top:26px}
+    .contact-item{display:flex;align-items:center;gap:13px}
+    .contact-item strong{display:block;font-size:13px}
+    .contact-item span{color:var(--muted);font-size:12px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:12px;font-weight:800;color:#4f5c55}
+    input,textarea{
+      width:100%;border:1px solid var(--line);background:white;border-radius:14px;outline:none;
+      padding:13px 14px;color:var(--text);transition:.2s;
+    }
+    input:focus,textarea:focus{border-color:#93c4ad;box-shadow:0 0 0 4px rgba(29,115,82,.07)}
+    textarea{min-height:120px;resize:vertical}
+    form .btn{grid-column:1/-1}
+
+    /* Footer */
+    footer{background:#0e2e22;color:white;padding:56px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:34px}
+    footer .brand-copy span{color:#a9c3b6}
+    .footer-about{color:#a9c3b6;font-size:13px;max-width:370px;margin:18px 0 0}
+    .footer-col h4{font-size:13px;margin-bottom:16px}
+    .footer-col a{display:block;color:#a9c3b6;font-size:12px;margin:9px 0}
+    .footer-col a:hover{color:white}
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.09);margin-top:36px;padding-top:22px;
+      display:flex;justify-content:space-between;gap:18px;color:#88aa99;font-size:11px;
+    }
+
+
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;z-index:80;background:rgba(5,25,18,.5);backdrop-filter:blur(7px);
+      display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.25s;
+    }
+    .modal.show{opacity:1;visibility:visible}
+    .modal-card{
+      width:min(720px,100%);background:white;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:.92fr 1.08fr;
+      box-shadow:0 28px 80px rgba(0,0,0,.2);transform:translateY(15px);transition:.25s;
+    }
+    .modal.show .modal-card{transform:none}
+    .modal-img{min-height:420px;background:var(--surface)}
+    .modal-img img{width:100%;height:100%;object-fit:cover}
+    .modal-content{padding:30px;position:relative}
+    .modal-close{
+      position:absolute;left:18px;top:18px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+      background:white;font-size:20px;line-height:1;
+    }
+    .modal-content h3{font-size:25px;line-height:1.3;margin:31px 0 10px}
+    .modal-content p{font-size:13px;color:var(--muted)}
+    .modal-points{display:grid;gap:8px;margin:18px 0 24px}
+    .modal-points span{font-size:12px;font-weight:700}
+    .modal-price{font:800 22px/1.2 "Manrope",sans-serif;margin-bottom:20px}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:.6s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:1024px){
+      .nav-links{display:none}
+      .menu-btn{display:flex;flex-direction:column}
+      .nav-actions .btn-secondary{display:none}
+      .hero-grid,.about-grid,.routine-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:520px}
+      .hero-image{inset:0}
+      .hero-card{left:18px}
+      .category-grid{grid-template-columns:repeat(2,1fr)}
+      .brand-strip{grid-template-columns:repeat(3,1fr)}
+      .products-grid,.services-grid,.testimonials{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
+      .footer-grid .footer-col:last-child{grid-column:2/-1}
+      .mobile-menu{
+        position:fixed;top:110px;right:20px;left:20px;z-index:60;background:white;border:1px solid var(--line);
+        border-radius:20px;padding:18px;box-shadow:var(--shadow);display:grid;gap:3px;
+        opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s;
+      }
+      body.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none}
+      .mobile-menu a{padding:12px 10px;border-bottom:1px solid var(--line);font-size:14px;font-weight:700}
+      .mobile-menu a:last-child{border-bottom:0}
+    }
+    @media (min-width:1025px){.mobile-menu{display:none}}
+    @media (max-width:720px){
+      .container{width:min(calc(100% - 28px),var(--container))}
+      .section{padding:70px 0}
+      .topbar{font-size:11px}
+      .nav{height:68px}
+      .brand-mark{width:38px;height:38px}
+      .brand-copy strong{font-size:15px}
+      .nav-actions .btn-primary{display:none}
+      .hero{padding-top:34px}
+      .hero h1{font-size:43px;letter-spacing:-1.7px}
+      .hero .lead{font-size:15px}
+      .hero-visual{min-height:440px}
+      .hero-badge{right:10px;top:18px}
+      .hero-card{left:12px;bottom:18px;width:210px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .stat:nth-child(2){border-left:0}
+      .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .section-head{display:block}
+      .category-grid,.products-grid,.services-grid,.testimonials,.routine-steps{grid-template-columns:1fr}
+      .brand-strip{grid-template-columns:repeat(2,1fr)}
+      .product-image{height:330px}
+      .about-image{height:420px}
+      .routine{padding:34px 22px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-grid>div:first-child{grid-column:1/-1}
+      .footer-grid .footer-col:last-child{grid-column:auto}
+      .copyright{display:block}
+      form{grid-template-columns:1fr}
+      .field.full,form .btn{grid-column:auto}
+      .modal-card{grid-template-columns:1fr;max-height:92vh;overflow:auto}
+      .modal-img{min-height:260px;height:260px}
+      .modal-content{padding:24px}
+      .modal-content h3{margin-top:28px}
+    }
+    @media (max-width:450px){
+      .hero h1{font-size:37px}
+      .hero-visual{min-height:390px}
+      .hero-actions .btn{width:100%}
+      .stats{margin-top:28px}
+      .stat{padding:17px}
+      .stat strong{font-size:21px}
+      .product-image{height:290px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-grid .footer-col:last-child{grid-column:auto}
+      .whatsapp{width:52px;height:52px;left:16px;bottom:16px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">توصيل داخل القاهرة والجيزة • منتجات أصلية 100% • استشارة اختيار الروتين مجانًا</div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="NOVA Care Pharmacy">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>NOVA CARE</strong>
+          <span>PHARMACY & BEAUTY</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="#about">عن الصيدلية</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#products">منتجات مختارة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#reviews">آراء العملاء</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#products" class="btn btn-secondary">استكشف المنتجات</a>
+        <a href="#contact" class="btn btn-primary">اسأل الصيدلي</a>
+        <button class="menu-btn" aria-label="فتح القائمة"><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" aria-label="قائمة الموبايل">
+      <a href="#about">عن الصيدلية</a>
+      <a href="#categories">الأقسام</a>
+      <a href="#products">منتجات مختارة</a>
+      <a href="#services">الخدمات</a>
+      <a href="#reviews">آراء العملاء</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Dermocosmetics • Skincare • Beauty</span>
+            <h1>عناية يومية<br><span class="soft">مختارة بعناية.</span></h1>
+            <p class="lead">
+              في NOVA Care نساعدك تختاري منتجات الكوزميتكس والعناية المناسبة لبشرتك وشعرك من براندات موثوقة، مع ترشيحات عملية مبنية على احتياجك الحقيقي.
+            </p>
+            <div class="hero-actions">
+              <a href="#products" class="btn btn-primary">
+                تصفح الاختيارات
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">احجز استشارة روتين</a>
+            </div>
+            <div class="trust-row">
+              <div class="avatar-stack" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="">
+              </div>
+              <div class="rating">
+                <div class="stars">★★★★★</div>
+                <strong>4.9/5</strong> من تقييمات عملائنا
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-image">
+              <img src="https://imageproxy.wolt.com/assets/67335f248c35d92f799b8c3a" alt="مجموعة من منتجات العناية بالبشرة والكوزميتكس">
+            </div>
+            <div class="hero-badge">✓ منتجات أصلية وموثوقة</div>
+            <div class="hero-card">
+              <strong>اختيار المنتج أصبح أسهل</strong>
+              <p>قولي لنا نوع بشرتك ومشكلتك الأساسية ونساعدك في بناء روتين بسيط ومناسب.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><strong>6K+</strong><span>عميل سعيد</span></div>
+          <div class="stat"><strong>40+</strong><span>علامة موثوقة</span></div>
+          <div class="stat"><strong>1,200+</strong><span>منتج عناية وكوزميتكس</span></div>
+          <div class="stat"><strong>7 Days</strong><span>خدمة طوال الأسبوع</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Shop by concern</span>
+            <h2>كل احتياج له عناية مناسبة</h2>
+            <p>اختيارات منظمة لتسهيل الوصول للمنتجات المناسبة بدل التجربة العشوائية بين عشرات الخيارات.</p>
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3.5 4 6 6.8 6 10a6 6 0 1 1-12 0c0-3.2 2.5-6 6-10Z"/><path d="M9 14c.5 1.5 1.5 2.2 3 2.2"/></svg>
+            </div>
+            <h3>Skincare</h3>
+            <p>منظفات، سيرومات، مرطبات وعلاجات يومية للبشرة الجافة والدهنية والمختلطة والحساسة.</p>
+            <a class="link" href="#products" data-filter-link="skincare">عرض المنتجات ←</a>
+          </article>
+
+          <article class="category-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3c-1 4-3 7-3 11a7 7 0 0 0 14 0c0-4-2-7-3-11"/><path d="M9 9c2 1 4 1 6 0"/></svg>
+            </div>
+            <h3>Haircare</h3>
+            <p>روتين متكامل للشعر والتساقط والقشرة والجفاف، مع اختيارات مناسبة لفروة الرأس الحساسة.</p>
+            <a class="link" href="#products" data-filter-link="haircare">عرض المنتجات ←</a>
+          </article>
+
+          <article class="category-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M7 12h10"/></svg>
+            </div>
+            <h3>Sun Care</h3>
+            <p>واقيات شمس بخيارات مختلفة في القوام واللمسة النهائية للاستخدام اليومي وتحت المكياج.</p>
+            <a class="link" href="#products" data-filter-link="suncare">عرض المنتجات ←</a>
+          </article>
+
+          <article class="category-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M9 13v7M15 13v7M6 20h12"/></svg>
+            </div>
+            <h3>Body & Beauty</h3>
+            <p>عناية بالجسم، ترطيب، مزيلات عرق، منتجات شفاه واختيارات Beauty للاستخدام اليومي.</p>
+            <a class="link" href="#products" data-filter-link="bodycare">عرض المنتجات ←</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Trusted brands</span>
+            <h2>براندات نثق فيها</h2>
+            <p>تشكيلة منتقاة من أشهر علامات الـDermocosmetics والعناية اليومية.</p>
+          </div>
+        </div>
+        <div class="brand-strip reveal">
+          <div class="brand-logo">LA ROCHE-POSAY</div>
+          <div class="brand-logo">CeraVe</div>
+          <div class="brand-logo">BIODERMA</div>
+          <div class="brand-logo">VICHY</div>
+          <div class="brand-logo">EUCERIN</div>
+          <div class="brand-logo">THE ORDINARY.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Curated picks</span>
+            <h2>اختياراتنا المفضلة</h2>
+            <p>منتجات عملية نرشحها كثيرًا ضمن روتينات العناية اليومية حسب الاحتياج ونوع البشرة.</p>
+          </div>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="فلترة المنتجات">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="skincare">البشرة</button>
+          <button class="filter-btn" data-filter="haircare">الشعر</button>
+          <button class="filter-btn" data-filter="suncare">واقي الشمس</button>
+          <button class="filter-btn" data-filter="bodycare">الجسم والجمال</button>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card reveal" data-category="skincare">
+            <div class="product-image">
+              <img src="https://images.squarespace-cdn.com/content/v1/538960cde4b0ca8eeb94824f/d813f094-0d3e-4cee-82f5-bd8deafb223d/french%2Bpharmacies.jpeg" alt="منتجات ترطيب وعناية للبشرة">
+              <span class="tag">Hydration</span>
+            </div>
+            <div class="product-body">
+              <span class="product-kicker">SKINCARE</span>
+              <h3>Hydration Essentials</h3>
+              <p>مجموعة يومية للترطيب ودعم حاجز البشرة، مناسبة للاستخدام الصباحي والمساء.</p>
+              <div class="product-meta">
+                <span class="price">من 520 ج.م</span>
+                <button class="quick-btn" data-title="Hydration Essentials" data-price="من 520 ج.م" data-img="https://images.squarespace-cdn.com/content/v1/538960cde4b0ca8eeb94824f/d813f094-0d3e-4cee-82f5-bd8deafb223d/french%2Bpharmacies.jpeg" data-desc="مجموعة مناسبة للترطيب اليومي ودعم حاجز البشرة. اختيار المنتجات الدقيقة يعتمد على نوع البشرة ودرجة الحساسية." data-points="تنظيف لطيف|ترطيب طويل المدى|مناسبة للروتين اليومي">تفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-category="skincare">
+            <div class="product-image">
+              <img src="https://revivedskinclinic.com/cdn/shop/files/ProductsP2-87_1.jpg?v=1743358199&width=1500" alt="منتجات سيروم وتنظيف للبشرة">
+              <span class="tag">Dermocosmetics</span>
+            </div>
+            <div class="product-body">
+              <span class="product-kicker">SKINCARE</span>
+              <h3>Correct & Repair Routine</h3>
+              <p>اختيارات مركزة للبشرة التي تحتاج عناية بالملمس والمظهر العام مع روتين متوازن.</p>
+              <div class="product-meta">
+                <span class="price">من 690 ج.م</span>
+                <button class="quick-btn" data-title="Correct & Repair Routine" data-price="من 690 ج.م" data-img="https://revivedskinclinic.com/cdn/shop/files/ProductsP2-87_1.jpg?v=1743358199&width=1500" data-desc="روتين مرن يمكن تكوينه من منظف وسيروم ومرطب حسب المشكلة الرئيسية للبشرة." data-points="تركيبات مركزة|روتين بسيط|اختيار حسب نوع البشرة">تفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-category="suncare">
+            <div class="product-image">
+              <img src="https://thepharmacistlab.co.uk/cdn/shop/products/AILEFOTO3_a8d0927a-75f2-41a0-8e79-eea167d73244_1024x1024%402x.jpg?v=1673450171" alt="منتجات عناية وواقي شمس">
+              <span class="tag">SPF 50+</span>
+            </div>
+            <div class="product-body">
+              <span class="product-kicker">SUN CARE</span>
+              <h3>Daily UV Protection</h3>
+              <p>واقيات شمس للاستخدام اليومي بتركيبات مناسبة لمختلف أنواع البشرة والأنشطة الخارجية.</p>
+              <div class="product-meta">
+                <span class="price">من 580 ج.م</span>
+                <button class="quick-btn" data-title="Daily UV Protection" data-price="من 580 ج.م" data-img="https://thepharmacistlab.co.uk/cdn/shop/products/AILEFOTO3_a8d0927a-75f2-41a0-8e79-eea167d73244_1024x1024%402x.jpg?v=1673450171" data-desc="اختيارات للحماية اليومية من الشمس مع قوامات خفيفة ومناسبة للدمج داخل روتين الصباح." data-points="SPF مرتفع|قوامات متعددة|مناسب للاستخدام اليومي">تفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-category="bodycare">
+            <div class="product-image">
+              <img src="https://www.myluxurybeauty.com/storage/657397/conversions/how-to-choose-the-best-beauty-products-in-the-usa-a-guide-for-luxury-seekers-og.webp" alt="منتجات عناية وجمال فاخرة">
+              <span class="tag">Beauty</span>
+            </div>
+            <div class="product-body">
+              <span class="product-kicker">BEAUTY</span>
+              <h3>Daily Beauty Edit</h3>
+              <p>مجموعة منتقاة من أساسيات الجمال والعناية التي تضيف لمسة مرتبة للروتين اليومي.</p>
+              <div class="product-meta">
+                <span class="price">من 350 ج.م</span>
+                <button class="quick-btn" data-title="Daily Beauty Edit" data-price="من 350 ج.م" data-img="https://www.myluxurybeauty.com/storage/657397/conversions/how-to-choose-the-best-beauty-products-in-the-usa-a-guide-for-luxury-seekers-og.webp" data-desc="اختيارات Beauty وعناية يومية بتغليف أنيق واستخدام عملي ضمن الروتين الشخصي." data-points="اختيارات يومية|تنوع في الاستخدام|مناسبة للهدايا والروتين الشخصي">تفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-category="haircare">
+            <div class="product-image">
+              <img src="https://imageproxy.wolt.com/assets/67335f248c35d92f799b8c3a" alt="مجموعة منتجات للعناية بالبشرة والشعر">
+              <span class="tag">Hair Care</span>
+            </div>
+            <div class="product-body">
+              <span class="product-kicker">HAIRCARE</span>
+              <h3>Scalp & Hair Support</h3>
+              <p>شامبو وعناية مساعدة لفروة الرأس والشعر، مع خيارات للجفاف والقشرة والتساقط.</p>
+              <div class="product-meta">
+                <span class="price">من 430 ج.م</span>
+                <button class="quick-btn" data-title="Scalp & Hair Support" data-price="من 430 ج.م" data-img="https://imageproxy.wolt.com/assets/67335f248c35d92f799b8c3a" data-desc="اختيارات للعناية بفروة الرأس والشعر ضمن روتين بسيط يمكن الالتزام به." data-points="عناية بالفروة|ترطيب للشعر|خيارات للاستخدام المتكرر">تفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-category="bodycare">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=85" alt="منتجات عناية للجسم">
+              <span class="tag">Body Care</span>
+            </div>
+            <div class="product-body">
+              <span class="product-kicker">BODYCARE</span>
+              <h3>Soft Skin Collection</h3>
+              <p>ترطيب وعناية للجسم واليدين والشفاه بتركيبات مناسبة للاستخدام اليومي المتكرر.</p>
+              <div class="product-meta">
+                <span class="price">من 260 ج.م</span>
+                <button class="quick-btn" data-title="Soft Skin Collection" data-price="من 260 ج.م" data-img="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=85" data-desc="أساسيات ترطيب للجسم والمناطق الأكثر تعرضًا للجفاف، مناسبة للروتين اليومي." data-points="ترطيب يومي|خيارات للجسم واليدين|قوامات مريحة">تفاصيل</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://thepharmacistlab.co.uk/cdn/shop/products/AILEFOTO3_a8d0927a-75f2-41a0-8e79-eea167d73244_1024x1024%402x.jpg?v=1673450171" alt="منتجات عناية منظمة بأسلوب صيدلي احترافي">
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">About NOVA Care</span>
+          <h2>صيدلية تفهم إن اختيار المنتج جزء من العلاج اليومي.</h2>
+          <p>
+            تأسست NOVA Care في القاهرة عام 2019 بفكرة بسيطة: توفير منتجات عناية أصلية وموثوقة، مع مساعدة العميل على فهم احتياجه قبل الشراء. لذلك لا نركز فقط على بيع المنتج، بل على بناء روتين واضح يمكن الاستمرار عليه.
+          </p>
+          <div class="check-list">
+            <div class="check"><i>✓</i><span>ترشيحات مبنية على نوع البشرة أو الشعر والمشكلة الأساسية.</span></div>
+            <div class="check"><i>✓</i><span>مراجعة توافق المنتجات داخل الروتين لتقليل الاستخدام الخاطئ.</span></div>
+            <div class="check"><i>✓</i><span>منتجات من موردين موثوقين مع متابعة مستمرة لتاريخ الصلاحية والتخزين.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">تحدث مع الصيدلي</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">What we offer</span>
+            <h2>خدمات تتعدى بيع المنتج</h2>
+            <p>نحاول أن نجعل تجربة اختيار منتجات العناية أوضح وأسرع، خصوصًا مع كثرة المنتجات والمواد الفعالة.</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10v18H7z"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+            </div>
+            <h3>Skin Routine Review</h3>
+            <p>مراجعة روتينك الحالي وترتيب خطوات الاستخدام والتنبيه على التداخلات الشائعة بين المواد الفعالة.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <h3>Product Matching</h3>
+            <p>مقارنة بين البدائل المتاحة حسب نوع البشرة، الميزانية، القوام المفضل وطريقة الاستخدام.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v10H4z"/><path d="M8 7V5h8v2M9 12h6"/></svg>
+            </div>
+            <h3>Beauty Box Curation</h3>
+            <p>تجهيز Beauty Boxes وهدايا عناية مختارة حسب المناسبة والميزانية مع تنسيق أنيق للتغليف.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v12H3z"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Online Consultation</h3>
+            <p>استشارة سريعة أونلاين لاختيار منتجات روتين يومي من الخيارات المتوفرة بالصيدلية.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h13v11H3z"/><path d="M16 9h3l2 3v5h-5z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>توصيل يومي داخل القاهرة والجيزة مع تغليف يحافظ على المنتجات ويوصلها بشكل مرتب وآمن.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg>
+            </div>
+            <h3>Authenticity First</h3>
+            <p>نلتزم بتوفير منتجات أصلية من مصادر موثوقة لأن جودة المنتج وتخزينه جزء أساسي من فعاليته.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="routine reveal">
+          <div class="routine-grid">
+            <div>
+              <span class="eyebrow" style="border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#cce8da">Simple routine</span>
+              <h2>روتين أبسط.<br>نتيجة أوضح.</h2>
+              <p>مش لازم يكون عندك 10 منتجات. نبدأ بالأساسيات ونضيف فقط ما تحتاجه بشرتك فعلًا.</p>
+              <a href="#contact" class="btn btn-secondary">ابدأ استشارة روتين</a>
+            </div>
+            <div class="routine-steps">
+              <div class="routine-step"><span>01</span><strong>منظف مناسب</strong></div>
+              <div class="routine-step"><span>02</span><strong>علاج أو سيروم مستهدف</strong></div>
+              <div class="routine-step"><span>03</span><strong>مرطب يدعم حاجز البشرة</strong></div>
+              <div class="routine-step"><span>04</span><strong>واقي شمس صباحًا</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Customer stories</span>
+            <h2>كلام عملائنا عن التجربة</h2>
+            <p>أكثر ما يهمنا هو أن يخرج العميل باختيار مفهوم ومناسب، وليس بمجرد قائمة منتجات طويلة.</p>
+          </div>
+        </div>
+        <div class="testimonials">
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“كنت بغيّر منتجات كتير بدون نتيجة. بعد ما راجعنا الروتين خلتني على 3 منتجات فقط وطريقة الاستخدام بقت واضحة جدًا.”</p>
+            <div class="quote-person">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              <div><strong>مريم عادل</strong><span>عميلة Skincare</span></div>
+            </div>
+          </article>
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“التعامل محترم جدًا والترشيح كان حسب ميزانيتي مش أغلى حاجة موجودة. التوصيل كمان وصل في نفس اليوم.”</p>
+            <div class="quote-person">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              <div><strong>نورهان سامح</strong><span>عميلة Haircare</span></div>
+            </div>
+          </article>
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“أكثر شيء عجبني إنهم سألوني عن المنتجات اللي بستخدمها قبل ما يقترحوا أي حاجة جديدة، وده فرق معايا جدًا.”</p>
+            <div class="quote-person">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              <div><strong>سلمى خالد</strong><span>عميلة Beauty Care</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>أسئلة بنسمعها كثير</h2>
+          </div>
+        </div>
+        <div class="faq-wrap reveal">
+          <div class="faq open">
+            <button><span>هل أقدر أطلب ترشيح لروتين كامل؟</span><i>+</i></button>
+            <div class="faq-answer" style="max-height:160px"><p>نعم. بنبدأ بنوع البشرة، المشاكل الأساسية، المنتجات الحالية والميزانية، وبعدها نقترح روتين بسيط بخطوات واضحة.</p></div>
+          </div>
+          <div class="faq">
+            <button><span>هل المنتجات أصلية؟</span><i>+</i></button>
+            <div class="faq-answer"><p>نعم، نعمل مع موردين موثوقين ونراجع حالة العبوة وتاريخ الصلاحية وظروف التخزين قبل وصول المنتج للعميل.</p></div>
+          </div>
+          <div class="faq">
+            <button><span>هل كل مشاكل البشرة ينفع تتعالج بمنتجات OTC؟</span><i>+</i></button>
+            <div class="faq-answer"><p>لا. في الحالات الشديدة أو المستمرة أو المصحوبة بأعراض مقلقة، الأفضل التقييم لدى طبيب جلدية بدل الاعتماد على الكوزميتكس وحدها.</p></div>
+          </div>
+          <div class="faq">
+            <button><span>هل يوجد توصيل في نفس اليوم؟</span><i>+</i></button>
+            <div class="faq-answer"><p>متاح في مناطق عديدة داخل القاهرة والجيزة حسب وقت الطلب وتوفر المنتج. يتم تأكيد الموعد قبل الشحن.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <span class="eyebrow">Contact us</span>
+          <h2>جاهزة تبني روتين أبسط؟</h2>
+          <p>ابعتي لنا احتياجك، ونساعدك تختاري بداية مناسبة بدل شراء منتجات أكثر من اللازم.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
+              </div>
+              <div><strong>البريد الإلكتروني</strong><span>hello@novacarepharmacy.com</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              </div>
+              <div><strong>الفرع</strong><span>التجمع الخامس، القاهرة الجديدة</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </div>
+              <div><strong>مواعيد العمل</strong><span>يوميًا من 9 صباحًا حتى 12 منتصف الليل</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card reveal" style="background:white">
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">الاسم</label>
+              <input id="name" name="name" type="text" required placeholder="اكتب اسمك">
+            </div>
+            <div class="field">
+              <label for="phone">رقم الموبايل</label>
+              <input id="phone" name="phone" type="tel" required placeholder="رقم للتواصل">
+            </div>
+            <div class="field full">
+              <label for="topic">تحتاج مساعدة في</label>
+              <input id="topic" name="topic" type="text" required placeholder="مثال: روتين للبشرة الدهنية والحساسة">
+            </div>
+            <div class="field full">
+              <label for="message">تفاصيل إضافية</label>
+              <textarea id="message" name="message" placeholder="اكتب المنتجات الحالية أو المشكلة الأساسية"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" id="submitBtn">إرسال طلب الاستشارة</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="brand" style="display:inline-flex">
+            <span class="brand-mark"></span>
+            <span class="brand-copy">
+              <strong>NOVA CARE</strong>
+              <span>PHARMACY & BEAUTY</span>
+            </span>
+          </a>
+          <p class="footer-about">صيدلية متخصصة في منتجات العناية بالبشرة والشعر والجسم والكوزميتكس، مع اهتمام خاص باختيار روتين عملي وموثوق.</p>
+        </div>
+        <div class="footer-col">
+          <h4>استكشف</h4>
+          <a href="#about">عن NOVA Care</a>
+          <a href="#products">المنتجات</a>
+          <a href="#services">الخدمات</a>
+        </div>
+        <div class="footer-col">
+          <h4>الأقسام</h4>
+          <a href="#products">Skincare</a>
+          <a href="#products">Haircare</a>
+          <a href="#products">Sun Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>الدعم</h4>
+          <a href="#contact">استشارة روتين</a>
+          <a href="#reviews">آراء العملاء</a>
+          <a href="#contact">التوصيل</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© 2026 NOVA Care Pharmacy. All rights reserved.</span>
+        <span>Beauty made simpler, with care.</span>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="إغلاق">×</button>
+        <span class="eyebrow">Product details</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-points" id="modalPoints"></div>
+        <div class="modal-price" id="modalPrice"></div>
+        <a href="#contact" class="btn btn-primary modal-cta">اسأل عن التوفر</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    menuBtn?.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+    mobileLinks.forEach(link => link.addEventListener('click', () => document.body.classList.remove('menu-open')));
+
+    // Product filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    function setFilter(filter){
+      filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
+      productCards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    }
+
+    filterButtons.forEach(btn => btn.addEventListener('click', () => setFilter(btn.dataset.filter)));
+
+    document.querySelectorAll('[data-filter-link]').forEach(link => {
+      link.addEventListener('click', () => {
+        const filter = link.dataset.filterLink;
+        setTimeout(() => setFilter(filter), 250);
+      });
+    });
+
+    // FAQ
+    document.querySelectorAll('.faq button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const faq = btn.parentElement;
+        const answer = faq.querySelector('.faq-answer');
+        const isOpen = faq.classList.contains('open');
+
+        document.querySelectorAll('.faq').forEach(item => {
+          item.classList.remove('open');
+          item.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if(!isOpen){
+          faq.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Product modal
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalPoints = document.getElementById('modalPoints');
+
+    document.querySelectorAll('.quick-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modalImg.src = btn.dataset.img;
+        modalImg.alt = btn.dataset.title;
+        modalTitle.textContent = btn.dataset.title;
+        modalDesc.textContent = btn.dataset.desc;
+        modalPrice.textContent = btn.dataset.price;
+        modalPoints.innerHTML = btn.dataset.points.split('|').map(x => `<span>✓ ${x}</span>`).join('');
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal(){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelector('.modal-close').addEventListener('click', closeModal);
+    document.querySelector('.modal-cta').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+    // Contact form: prepares an email with the entered details
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const topic = document.getElementById('topic').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = `طلب استشارة — ${topic}`;
+      const body = `مرحبًا NOVA Care،\n\nأنا ${name}.\nرقم التواصل: ${phone}\nأحتاج مساعدة في: ${topic}\n${message ? `تفاصيل: ${message}` : ''}`;
+      window.location.href = `mailto:hello@novacarepharmacy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.1});
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
