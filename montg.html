@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOVA Care Pharmacy — صيدلية متخصصة في منتجات العناية بالبشرة والشعر والجسم ومنتجات الكوزميتكس الأصلية." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>NOVA Care Pharmacy | Beauty & Dermocosmetics</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --surface:#f7faf8;
+      --surface-2:#eef6f2;
+      --text:#17201c;
+      --muted:#68756e;
+      --line:#e2ebe6;
+      --brand:#1d7352;
+      --brand-dark:#12513a;
+      --brand-soft:#dff2e8;
+      --accent:#d59c63;
+      --white:#ffffff;
+      --shadow:0 22px 60px rgba(24, 62, 47, .10);
+      --shadow-sm:0 10px 28px rgba(24, 62, 47, .08);
+      --radius:28px;
+      --radius-md:20px;
+      --radius-sm:14px;
+      --container:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      font-family:"Cairo",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.75;
+      overflow-x:hidden;
+    }
+    body.menu-open{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    ::selection{background:var(--brand);color:white}
+    .container{width:min(calc(100% - 40px),var(--container));margin-inline:auto}
+    .section{padding:92px 0}
+    .section-soft{background:var(--surface)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:13px;font-weight:800;color:var(--brand);
+      padding:8px 13px;border:1px solid #cfe4da;border-radius:999px;background:#fbfdfc;
+      margin-bottom:18px;
+    }
+    .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand)}
+    h1,h2,h3,p{margin-top:0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:42px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.22;margin-bottom:10px;letter-spacing:-1.2px}
+    .section-head p{max-width:650px;margin:0;color:var(--muted);font-size:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:50px;padding:0 22px;border-radius:15px;border:1px solid transparent;
+      font-weight:800;transition:.25s ease;white-space:nowrap;
+    }
+    .btn-primary{background:var(--brand);color:white;box-shadow:0 12px 30px rgba(29,115,82,.23)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--brand-dark)}
+    .btn-secondary{background:white;border-color:var(--line);color:var(--text)}
+    .btn-secondary:hover{border-color:#b9d8c9;background:#f8fbf9}
+    .btn svg{width:18px;height:18px}
+    .icon{
+      width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+      background:var(--brand-soft);color:var(--brand);flex:0 0 auto;
+    }
+    .icon svg{width:21px;height:21px}
+
+    /* Header */
+    .topbar{
+      background:var(--brand-dark);color:#e9f6ef;
+      font-size:13px;text-align:center;padding:8px 14px;
+    }
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.90);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(226,235,230,.8);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .brand{display:flex;align-items:center;gap:12px;direction:ltr;flex:0 0 auto}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;background:var(--brand);position:relative;
+      display:grid;place-items:center;color:white;box-shadow:0 8px 22px rgba(29,115,82,.2);
+    }
+    .brand-mark::before,.brand-mark::after{content:"";position:absolute;background:white;border-radius:5px}
+    .brand-mark::before{width:20px;height:7px}
+    .brand-mark::after{width:7px;height:20px}
+    .brand-copy{line-height:1.1}
+    .brand-copy strong{display:block;font:800 17px/1.1 "Manrope",sans-serif;letter-spacing:.4px}
+    .brand-copy span{display:block;color:var(--muted);font-size:10px;font-weight:700;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:700}
+    .nav-links a{position:relative;color:#3d4943}
+    .nav-links a::after{
+      content:"";position:absolute;right:0;bottom:-8px;width:0;height:2px;border-radius:2px;background:var(--brand);
+      transition:.2s
+    }
+    .nav-links a:hover{color:var(--brand)}
+    .nav-links a:hover::after{width:100%}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-actions .btn{min-height:44px;padding-inline:18px;font-size:13px}
+    .menu-btn{
+      display:none;width:44px;height:44px;border-radius:13px;border:1px solid var(--line);
+      background:white;align-items:center;justify-content:center;
+    }
+    .menu-btn span,.menu-btn::before,.menu-btn::after{
+      content:"";display:block;width:19px;height:2px;background:var(--text);border-radius:5px;transition:.25s
+    }
+    .menu-btn span{margin:4px 0}
+    body.menu-open .menu-btn span{opacity:0}
+    body.menu-open .menu-btn::before{transform:translateY(6px) rotate(45deg)}
+    body.menu-open .menu-btn::after{transform:translateY(-6px) rotate(-45deg)}
+
+    /* Hero */
+    .hero{padding:52px 0 84px;position:relative;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,#deefe7 0%,rgba(222,239,231,0) 68%);
+      left:-160px;top:-180px;pointer-events:none;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+    .hero-copy{position:relative;z-index:2}
+    .hero h1{
+      font-size:clamp(44px,6vw,76px);line-height:1.08;letter-spacing:-2.7px;margin-bottom:22px;
+    }
+    .hero h1 .soft{color:var(--brand)}
+    .hero .lead{font-size:18px;color:var(--muted);max-width:660px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+    .trust-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .avatar-stack{display:flex;direction:ltr}
+    .avatar-stack img{
+      width:38px;height:38px;border-radius:50%;object-fit:cover;border:3px solid white;margin-left:-9px;
+    }
+    .avatar-stack img:first-child{margin-left:0}
+    .rating{font-size:13px;color:var(--muted)}
+    .rating strong{color:var(--text);font-size:15px}
+    .stars{color:#d79c54;letter-spacing:1px}
+    .hero-visual{position:relative;min-height:580px}
+    .hero-image{
+      position:absolute;inset:0 24px 0 0;border-radius:34px;overflow:hidden;background:#eef3f0;
+      box-shadow:var(--shadow);
+    }
+    .hero-image img{width:100%;height:100%;object-fit:cover}
+    .hero-image::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,44,30,.12),transparent 45%);
+    }
+    .hero-card{
+      position:absolute;left:-12px;bottom:34px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.9);border-radius:22px;padding:17px 18px;width:235px;
+      box-shadow:var(--shadow-sm);z-index:3;
+    }
+    .hero-card strong{display:block;font-size:14px;margin-bottom:4px}
+    .hero-card p{margin:0;color:var(--muted);font-size:12px}
+    .hero-badge{
+      position:absolute;right:0;top:34px;z-index:3;background:white;border:1px solid var(--line);
+      border-radius:18px;padding:12px 15px;box-shadow:var(--shadow-sm);font-size:12px;font-weight:800;
+      color:var(--brand);
+    }
+    .stats{
+      margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);
+      border:1px solid var(--line);border-radius:22px;overflow:hidden;background:white;
+    }
+    .stat{padding:20px 24px;border-left:1px solid var(--line)}
+    .stat:last-child{border-left:0}
+    .stat strong{display:block;font:800 25px/1.2 "Manrope",sans-serif}
+    .stat span{font-size:12px;color:var(--muted)}
+
+    /* Categories */
+    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .category-card{
+      background:white;border:1px solid var(--line);border-radius:22px;padding:23px;
+      transition:.25s ease;min-height:200px;display:flex;flex-direction:column;
+    }
+    .category-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:#c9ded4}
+    .category-card h3{font-size:19px;margin:19px 0 7px}
+    .category-card p{font-size:13px;color:var(--muted);margin:0}
+    .category-card .link{margin-top:auto;padding-top:16px;color:var(--brand);font-weight:800;font-size:13px}
+
+    /* Brands */
+    .brand-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .brand-logo{
+      min-height:90px;border:1px solid var(--line);border-radius:18px;background:white;
+      display:grid;place-items:center;padding:16px;text-align:center;
+      font:800 14px/1.3 "Manrope",sans-serif;color:#4c5752;transition:.2s;
+    }
+    .brand-logo:hover{border-color:#bdd7ca;transform:translateY(-2px);color:var(--brand)}
+
+    /* Products */
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+    .filter-btn{
+      border:1px solid var(--line);background:white;color:#526059;border-radius:999px;
+      padding:9px 16px;font-weight:800;font-size:13px;transition:.2s
+    }
+    .filter-btn.active,.filter-btn:hover{background:var(--brand);border-color:var(--brand);color:white}
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product-card{
+      border:1px solid var(--line);border-radius:24px;overflow:hidden;background:white;transition:.25s ease;
+    }
+    .product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+    .product-image{height:290px;background:var(--surface);position:relative;overflow:hidden}
+    .product-image img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
+    .product-card:hover .product-image img{transform:scale(1.04)}
+    .tag{
+      position:absolute;top:14px;right:14px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+      border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800;color:var(--brand);
+    }
+    .product-body{padding:20px}
+    .product-kicker{color:var(--brand);font:700 11px/1.3 "Manrope",sans-serif;text-transform:uppercase;letter-spacing:.7px}
+    .product-body h3{font-size:18px;margin:8px 0 7px}
+    .product-body p{color:var(--muted);font-size:13px;min-height:46px;margin-bottom:16px}
+    .product-meta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .price{font:800 17px/1.2 "Manrope",sans-serif}
+    .quick-btn{
+      border:0;background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:12px;
+      padding:9px 12px;border-radius:11px;
+    }
+    .quick-btn:hover{background:var(--brand);color:white}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center}
+    .about-image{border-radius:32px;overflow:hidden;height:560px;background:#edf2ef;box-shadow:var(--shadow-sm)}
+    .about-image img{width:100%;height:100%;object-fit:cover}
+    .about-copy h2{font-size:clamp(34px,4vw,52px);line-height:1.2;letter-spacing:-1.5px;margin-bottom:18px}
+    .about-copy>p{color:var(--muted);font-size:16px}
+    .check-list{display:grid;gap:13px;margin:28px 0 30px}
+    .check{display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:700}
+    .check i{
+      width:24px;height:24px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
+      display:grid;place-items:center;font-style:normal;font-size:13px;flex:0 0 auto;
+    }
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{
+      padding:28px;border:1px solid var(--line);border-radius:24px;background:white;transition:.25s;
+    }
+    .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+    .service-card h3{font-size:19px;margin:18px 0 7px}
+    .service-card p{color:var(--muted);font-size:13px;margin:0}
+
+    /* Routine */
+    .routine{
+      border-radius:34px;background:var(--brand-dark);color:white;padding:54px;overflow:hidden;position:relative;
+    }
+    .routine::after{
+      content:"";position:absolute;width:360px;height:360px;border-radius:50%;border:70px solid rgba(255,255,255,.04);
+      left:-100px;bottom:-180px;
+    }
+    .routine-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px;align-items:center;position:relative;z-index:2}
+    .routine h2{font-size:clamp(34px,4vw,50px);line-height:1.2;margin-bottom:15px}
+    .routine p{color:#cfe3d9}
+    .routine .btn-secondary{border-color:rgba(255,255,255,.15)}
+    .routine-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+    .routine-step{padding:19px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:18px}
+    .routine-step span{display:block;color:#9cd0b9;font:800 12px/1.2 "Manrope",sans-serif;margin-bottom:8px}
+    .routine-step strong{font-size:14px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{
+      border:1px solid var(--line);border-radius:23px;padding:24px;background:white;
+    }
+    .quote .stars{font-size:14px;margin-bottom:14px}
+    .quote p{font-size:14px;color:#445049;min-height:96px}
+    .quote-person{display:flex;align-items:center;gap:12px;margin-top:18px}
+    .quote-person img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+    .quote-person strong{display:block;font-size:13px}
+    .quote-person span{font-size:11px;color:var(--muted)}
+
+    /* FAQ */
+    .faq-wrap{max-width:850px;margin-inline:auto}
+    .faq{border-bottom:1px solid var(--line)}
+    .faq button{
+      width:100%;border:0;background:transparent;padding:20px 0;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;text-align:right;font-weight:800;color:var(--text);
+    }
+    .faq button i{
+      width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;
+      font-style:normal;transition:.25s;font-size:18px;
+    }
+    .faq.open button i{transform:rotate(45deg);background:var(--brand);border-color:var(--brand);color:white}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-answer p{color:var(--muted);font-size:14px;padding:0 0 20px;margin:0}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:24px}
+    .contact-card{
+      border-radius:28px;padding:34px;background:var(--surface);border:1px solid var(--line)
+    }
+    .contact-card h2{font-size:34px;line-height:1.25;margin-bottom:13px}
+    .contact-card>p{color:var(--muted)}
+    .contact-list{display:grid;gap:13px;margin-top:26px}
+    .contact-item{display:flex;align-items:center;gap:13px}
+    .contact-item strong{display:block;font-size:13px}
+    .contact-item span{color:var(--muted);font-size:12px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:12px;font-weight:800;color:#4f5c55}
+    input,textarea{
+      width:100%;border:1px solid var(--line);background:white;border-radius:14px;outline:none;
+      padding:13px 14px;color:var(--text);transition:.2s;
+    }
+    input:focus,textarea:focus{border-color:#93c4ad;box-shadow:0 0 0 4px rgba(29,115,82,.07)}
+    textarea{min-height:120px;resize:vertical}
+    form .btn{grid-column:1/-1}
+
+    /* Footer */
+    footer{background:#0e2e22;color:white;padding:56px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:34px}
+    footer .brand-copy span{color:#a9c3b6}
+    .footer-about{color:#a9c3b6;font-size:13px;max-width:370px;margin:18px 0 0}
+    .footer-col h4{font-size:13px;margin-bottom:16px}
+    .footer-col a{display:block;color:#a9c3b6;font-size:12px;margin:9px 0}
+    .footer-col a:hover{color:white}
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.09);margin-top:36px;padding-top:22px;
+      display:flex;justify-content:space-between;gap:18px;color:#88aa99;font-size:11px;
+    }
+
+
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;z-index:80;background:rgba(5,25,18,.5);backdrop-filter:blur(7px);
+      display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.25s;
+    }
+    .modal.show{opacity:1;visibility:visible}
+    .modal-card{
+      width:min(720px,100%);background:white;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:.92fr 1.08fr;
+      box-shadow:0 28px 80px rgba(0,0,0,.2);transform:translateY(15px);transition:.25s;
+    }
+    .modal.show .modal-card{transform:none}
+    .modal-img{min-height:420px;background:var(--surface)}
+    .modal-img img{width:100%;height:100%;object-fit:cover}
+    .modal-content{padding:30px;position:relative}
+    .modal-close{
+      position:absolute;left:18px;top:18px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+      background:white;font-size:20px;line-height:1;
+    }
+    .modal-content h3{font-size:25px;line-height:1.3;margin:31px 0 10px}
+    .modal-content p{font-size:13px;color:var(--muted)}
+    .modal-points{display:grid;gap:8px;margin:18px 0 24px}
+    .modal-points span{font-size:12px;font-weight:700}
+    .modal-price{font:800 22px/1.2 "Manrope",sans-serif;margin-bottom:20px}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:.6s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:1024px){
+      .nav-links{display:none}
+      .menu-btn{display:flex;flex-direction:column}
+      .nav-actions .btn-secondary{display:none}
+      .hero-grid,.about-grid,.routine-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:520px}
+      .hero-image{inset:0}
+      .hero-card{left:18px}
+      .category-grid{grid-template-columns:repeat(2,1fr)}
+      .brand-strip{grid-template-columns:repeat(3,1fr)}
+      .products-grid,.services-grid,.testimonials{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
+      .footer-grid .footer-col:last-child{grid-column:2/-1}
+      .mobile-menu{
+        position:fixed;top:110px;right:20px;left:20px;z-index:60;background:white;border:1px solid var(--line);
+        border-radius:20px;padding:18px;box-shadow:var(--shadow);display:grid;gap:3px;
+        opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s;
+      }
+      body.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none}
+      .mobile-menu a{padding:12px 10px;border-bottom:1px solid var(--line);font-size:14px;font-weight:700}
+      .mobile-menu a:last-child{border-bottom:0}
+    }
+    @media (min-width:1025px){.mobile-menu{display:none}}
+    @media (max-width:720px){
+      .container{width:min(calc(100% - 28px),var(--container))}
+      .section{padding:70px 0}
+      .topbar{font-size:11px}
+      .nav{height:68px}
+      .brand-mark{width:38px;height:38px}
+      .brand-copy strong{font-size:15px}
+      .nav-actions .btn-primary{display:none}
+      .hero{padding-top:34px}
+      .hero h1{font-size:43px;letter-spacing:-1.7px}
+      .hero .lead{font-size:15px}
+      .hero-visual{min-height:440px}
+      .hero-badge{right:10px;top:18px}
+      .hero-card{left:12px;bottom:18px;width:210px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .stat:nth-child(2){border-left:0}
+      .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .section-head{display:block}
+      .category-grid,.products-grid,.services-grid,.testimonials,.routine-steps{grid-template-columns:1fr}
+      .brand-strip{grid-template-columns:repeat(2,1fr)}
+      .product-image{height:330px}
+      .about-image{height:420px}
+      .routine{padding:34px 22px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-grid>div:first-child{grid-column:1/-1}
+      .footer-grid .footer-col:last-child{grid-column:auto}
+      .copyright{display:block}
+      form{grid-template-columns:1fr}
+      .field.full,form .btn{grid-column:auto}
+      .modal-card{grid-template-columns:1fr;max-height:92vh;overflow:auto}
+      .modal-img{min-height:260px;height:260px}
+      .modal-content{padding:24px}
+      .modal-content h3{margin-top:28px}
+    }
+    @media (max-width:450px){
+      .hero h1{font-size:37px}
+      .hero-visual{min-height:390px}
+      .hero-actions .btn{width:100%}
+      .stats{margin-top:28px}
+      .stat{padding:17px}
+      .stat strong{font-size:21px}
+      .product-image{height:290px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-grid .footer-col:last-child{grid-column:auto}
+      .whatsapp{width:52px;height:52px;left:16px;bottom:16px}
+    }
+
+    /* Package 3 — Supabase catalog & ordering */
+    .catalog-tools{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+    .catalog-tools .filters{margin-bottom:0}
+    .product-search{position:relative;min-width:min(100%,320px);flex:0 1 360px}
+    .product-search input{padding-right:44px;background:#fff}
+    .product-search svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:19px;height:19px;color:var(--muted)}
+    .catalog-state{grid-column:1/-1;text-align:center;padding:45px 18px;border:1px dashed #cfe0d7;border-radius:22px;color:var(--muted);background:#fff}
+    .load-more-wrap{text-align:center;margin-top:26px}
+    .order-btn{border:0;background:var(--brand);color:#fff;font-weight:800;font-size:12px;padding:9px 13px;border-radius:11px}
+    .order-btn:hover{background:var(--brand-dark)}
+    .product-actions{display:flex;gap:8px;align-items:center}
+    .order-modal-card{width:min(860px,100%);background:#fff;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:.75fr 1.25fr;box-shadow:0 28px 80px rgba(0,0,0,.2);transform:translateY(15px);transition:.25s;max-height:92vh}
+    .modal.show .order-modal-card{transform:none}
+    .order-summary{background:var(--surface);padding:28px;overflow:auto}
+    .order-summary img{width:100%;height:220px;object-fit:cover;border-radius:20px;background:#eef3f0;margin-bottom:18px}
+    .order-summary h3{font-size:20px;line-height:1.35;margin-bottom:8px}
+    .order-summary p{color:var(--muted);font-size:13px}
+    .order-form-wrap{padding:28px;overflow:auto;position:relative}
+    .order-form-wrap h3{font-size:25px;margin:28px 0 6px}
+    .order-form-wrap>p{font-size:13px;color:var(--muted);margin-bottom:22px}
+    .qty-control{display:flex;align-items:center;gap:8px}
+    .qty-control button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:800}
+    .qty-control input{width:70px;text-align:center;padding:8px}
+    .form-note{font-size:11px;color:var(--muted);margin-top:8px}
+    .toast{position:fixed;right:22px;bottom:22px;z-index:120;background:#12271f;color:#fff;padding:13px 16px;border-radius:14px;box-shadow:var(--shadow);font-size:13px;font-weight:700;opacity:0;visibility:hidden;transform:translateY(12px);transition:.25s;max-width:min(380px,calc(100% - 44px))}
+    .toast.show{opacity:1;visibility:visible;transform:none}
+    .toast.error{background:#8b2e2e}
+    .connection-note{display:none}
+    @media(max-width:720px){
+      .catalog-tools{display:block}.catalog-tools .filters{margin-bottom:14px}.product-search{min-width:100%}
+      .order-modal-card{grid-template-columns:1fr;overflow:auto}.order-summary{padding:20px}.order-summary img{height:180px}.order-form-wrap{padding:22px;overflow:visible}
+      .product-meta{align-items:flex-end}.product-actions{flex-direction:column;align-items:stretch}.quick-btn,.order-btn{width:100%}
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="topbar">توصيل داخل القاهرة والجيزة • منتجات أصلية 100% • استشارة اختيار الروتين مجانًا</div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="NOVA Care Pharmacy">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>NOVA CARE</strong>
+          <span>PHARMACY & BEAUTY</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="#about">عن الصيدلية</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#products">منتجات مختارة</a>
+        <a href="#services">الخدمات</a>
+        <a href="#reviews">آراء العملاء</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#products" class="btn btn-secondary">استكشف المنتجات</a>
+        <a href="#contact" class="btn btn-primary">اسأل الصيدلي</a>
+        <button class="menu-btn" aria-label="فتح القائمة"><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" aria-label="قائمة الموبايل">
+      <a href="#about">عن الصيدلية</a>
+      <a href="#categories">الأقسام</a>
+      <a href="#products">منتجات مختارة</a>
+      <a href="#services">الخدمات</a>
+      <a href="#reviews">آراء العملاء</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Dermocosmetics • Skincare • Beauty</span>
+            <h1>عناية يومية<br><span class="soft">مختارة بعناية.</span></h1>
+            <p class="lead">
+              في NOVA Care نساعدك تختاري منتجات الكوزميتكس والعناية المناسبة لبشرتك وشعرك من براندات موثوقة، مع ترشيحات عملية مبنية على احتياجك الحقيقي.
+            </p>
+            <div class="hero-actions">
+              <a href="#products" class="btn btn-primary">
+                تصفح الاختيارات
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">احجز استشارة روتين</a>
+            </div>
+            <div class="trust-row">
+              <div class="avatar-stack" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="">
+              </div>
+              <div class="rating">
+                <div class="stars">★★★★★</div>
+                <strong>4.9/5</strong> من تقييمات عملائنا
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-image">
+              <img src="https://imageproxy.wolt.com/assets/67335f248c35d92f799b8c3a" alt="مجموعة من منتجات العناية بالبشرة والكوزميتكس">
+            </div>
+            <div class="hero-badge">✓ منتجات أصلية وموثوقة</div>
+            <div class="hero-card">
+              <strong>اختيار المنتج أصبح أسهل</strong>
+              <p>قولي لنا نوع بشرتك ومشكلتك الأساسية ونساعدك في بناء روتين بسيط ومناسب.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><strong>6K+</strong><span>عميل سعيد</span></div>
+          <div class="stat"><strong>40+</strong><span>علامة موثوقة</span></div>
+          <div class="stat"><strong>1,200+</strong><span>منتج عناية وكوزميتكس</span></div>
+          <div class="stat"><strong>7 Days</strong><span>خدمة طوال الأسبوع</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Shop by concern</span>
+            <h2>كل احتياج له عناية مناسبة</h2>
+            <p>اختيارات منظمة لتسهيل الوصول للمنتجات المناسبة بدل التجربة العشوائية بين عشرات الخيارات.</p>
+          </div>
+        </div>
+
+        <div class="category-grid" id="categoriesGrid">
+          <div class="catalog-state">جاري تحميل الأقسام...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Trusted brands</span>
+            <h2>براندات نثق فيها</h2>
+            <p>تشكيلة منتقاة من أشهر علامات الـDermocosmetics والعناية اليومية.</p>
+          </div>
+        </div>
+        <div class="brand-strip reveal">
+          <div class="brand-logo">LA ROCHE-POSAY</div>
+          <div class="brand-logo">CeraVe</div>
+          <div class="brand-logo">BIODERMA</div>
+          <div class="brand-logo">VICHY</div>
+          <div class="brand-logo">EUCERIN</div>
+          <div class="brand-logo">THE ORDINARY.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Curated picks</span>
+            <h2>اختياراتنا المفضلة</h2>
+            <p>منتجات عملية نرشحها كثيرًا ضمن روتينات العناية اليومية حسب الاحتياج ونوع البشرة.</p>
+          </div>
+        </div>
+
+        <div class="catalog-tools reveal">
+          <div class="filters" id="productFilters" role="group" aria-label="فلترة المنتجات">
+            <button class="filter-btn active" data-category-id="all">الكل</button>
+          </div>
+          <div class="product-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+            <input id="productSearch" type="search" placeholder="ابحثي باسم المنتج..." aria-label="البحث في المنتجات">
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <div class="catalog-state">جاري تحميل المنتجات...</div>
+        </div>
+        <div class="load-more-wrap"><button class="btn btn-secondary" id="loadMoreBtn" type="button" hidden>تحميل منتجات أكثر</button></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://thepharmacistlab.co.uk/cdn/shop/products/AILEFOTO3_a8d0927a-75f2-41a0-8e79-eea167d73244_1024x1024%402x.jpg?v=1673450171" alt="منتجات عناية منظمة بأسلوب صيدلي احترافي">
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">About NOVA Care</span>
+          <h2>صيدلية تفهم إن اختيار المنتج جزء من العلاج اليومي.</h2>
+          <p>
+            تأسست NOVA Care في القاهرة عام 2019 بفكرة بسيطة: توفير منتجات عناية أصلية وموثوقة، مع مساعدة العميل على فهم احتياجه قبل الشراء. لذلك لا نركز فقط على بيع المنتج، بل على بناء روتين واضح يمكن الاستمرار عليه.
+          </p>
+          <div class="check-list">
+            <div class="check"><i>✓</i><span>ترشيحات مبنية على نوع البشرة أو الشعر والمشكلة الأساسية.</span></div>
+            <div class="check"><i>✓</i><span>مراجعة توافق المنتجات داخل الروتين لتقليل الاستخدام الخاطئ.</span></div>
+            <div class="check"><i>✓</i><span>منتجات من موردين موثوقين مع متابعة مستمرة لتاريخ الصلاحية والتخزين.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">تحدث مع الصيدلي</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">What we offer</span>
+            <h2>خدمات تتعدى بيع المنتج</h2>
+            <p>نحاول أن نجعل تجربة اختيار منتجات العناية أوضح وأسرع، خصوصًا مع كثرة المنتجات والمواد الفعالة.</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10v18H7z"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+            </div>
+            <h3>Skin Routine Review</h3>
+            <p>مراجعة روتينك الحالي وترتيب خطوات الاستخدام والتنبيه على التداخلات الشائعة بين المواد الفعالة.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <h3>Product Matching</h3>
+            <p>مقارنة بين البدائل المتاحة حسب نوع البشرة، الميزانية، القوام المفضل وطريقة الاستخدام.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v10H4z"/><path d="M8 7V5h8v2M9 12h6"/></svg>
+            </div>
+            <h3>Beauty Box Curation</h3>
+            <p>تجهيز Beauty Boxes وهدايا عناية مختارة حسب المناسبة والميزانية مع تنسيق أنيق للتغليف.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v12H3z"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Online Consultation</h3>
+            <p>استشارة سريعة أونلاين لاختيار منتجات روتين يومي من الخيارات المتوفرة بالصيدلية.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h13v11H3z"/><path d="M16 9h3l2 3v5h-5z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>توصيل يومي داخل القاهرة والجيزة مع تغليف يحافظ على المنتجات ويوصلها بشكل مرتب وآمن.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg>
+            </div>
+            <h3>Authenticity First</h3>
+            <p>نلتزم بتوفير منتجات أصلية من مصادر موثوقة لأن جودة المنتج وتخزينه جزء أساسي من فعاليته.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="routine reveal">
+          <div class="routine-grid">
+            <div>
+              <span class="eyebrow" style="border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#cce8da">Simple routine</span>
+              <h2>روتين أبسط.<br>نتيجة أوضح.</h2>
+              <p>مش لازم يكون عندك 10 منتجات. نبدأ بالأساسيات ونضيف فقط ما تحتاجه بشرتك فعلًا.</p>
+              <a href="#contact" class="btn btn-secondary">ابدأ استشارة روتين</a>
+            </div>
+            <div class="routine-steps">
+              <div class="routine-step"><span>01</span><strong>منظف مناسب</strong></div>
+              <div class="routine-step"><span>02</span><strong>علاج أو سيروم مستهدف</strong></div>
+              <div class="routine-step"><span>03</span><strong>مرطب يدعم حاجز البشرة</strong></div>
+              <div class="routine-step"><span>04</span><strong>واقي شمس صباحًا</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Customer stories</span>
+            <h2>كلام عملائنا عن التجربة</h2>
+            <p>أكثر ما يهمنا هو أن يخرج العميل باختيار مفهوم ومناسب، وليس بمجرد قائمة منتجات طويلة.</p>
+          </div>
+        </div>
+        <div class="testimonials">
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“كنت بغيّر منتجات كتير بدون نتيجة. بعد ما راجعنا الروتين خلتني على 3 منتجات فقط وطريقة الاستخدام بقت واضحة جدًا.”</p>
+            <div class="quote-person">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              <div><strong>مريم عادل</strong><span>عميلة Skincare</span></div>
+            </div>
+          </article>
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“التعامل محترم جدًا والترشيح كان حسب ميزانيتي مش أغلى حاجة موجودة. التوصيل كمان وصل في نفس اليوم.”</p>
+            <div class="quote-person">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              <div><strong>نورهان سامح</strong><span>عميلة Haircare</span></div>
+            </div>
+          </article>
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“أكثر شيء عجبني إنهم سألوني عن المنتجات اللي بستخدمها قبل ما يقترحوا أي حاجة جديدة، وده فرق معايا جدًا.”</p>
+            <div class="quote-person">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              <div><strong>سلمى خالد</strong><span>عميلة Beauty Care</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>أسئلة بنسمعها كثير</h2>
+          </div>
+        </div>
+        <div class="faq-wrap reveal">
+          <div class="faq open">
+            <button><span>هل أقدر أطلب ترشيح لروتين كامل؟</span><i>+</i></button>
+            <div class="faq-answer" style="max-height:160px"><p>نعم. بنبدأ بنوع البشرة، المشاكل الأساسية، المنتجات الحالية والميزانية، وبعدها نقترح روتين بسيط بخطوات واضحة.</p></div>
+          </div>
+          <div class="faq">
+            <button><span>هل المنتجات أصلية؟</span><i>+</i></button>
+            <div class="faq-answer"><p>نعم، نعمل مع موردين موثوقين ونراجع حالة العبوة وتاريخ الصلاحية وظروف التخزين قبل وصول المنتج للعميل.</p></div>
+          </div>
+          <div class="faq">
+            <button><span>هل كل مشاكل البشرة ينفع تتعالج بمنتجات OTC؟</span><i>+</i></button>
+            <div class="faq-answer"><p>لا. في الحالات الشديدة أو المستمرة أو المصحوبة بأعراض مقلقة، الأفضل التقييم لدى طبيب جلدية بدل الاعتماد على الكوزميتكس وحدها.</p></div>
+          </div>
+          <div class="faq">
+            <button><span>هل يوجد توصيل في نفس اليوم؟</span><i>+</i></button>
+            <div class="faq-answer"><p>متاح في مناطق عديدة داخل القاهرة والجيزة حسب وقت الطلب وتوفر المنتج. يتم تأكيد الموعد قبل الشحن.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <span class="eyebrow">Contact us</span>
+          <h2>جاهزة تبني روتين أبسط؟</h2>
+          <p>ابعتي لنا احتياجك، ونساعدك تختاري بداية مناسبة بدل شراء منتجات أكثر من اللازم.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
+              </div>
+              <div><strong>البريد الإلكتروني</strong><span>hello@novacarepharmacy.com</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              </div>
+              <div><strong>الفرع</strong><span>التجمع الخامس، القاهرة الجديدة</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </div>
+              <div><strong>مواعيد العمل</strong><span>يوميًا من 9 صباحًا حتى 12 منتصف الليل</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card reveal" style="background:white">
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">الاسم</label>
+              <input id="name" name="name" type="text" required placeholder="اكتب اسمك">
+            </div>
+            <div class="field">
+              <label for="phone">رقم الموبايل</label>
+              <input id="phone" name="phone" type="tel" required placeholder="رقم للتواصل">
+            </div>
+            <div class="field full">
+              <label for="topic">تحتاج مساعدة في</label>
+              <input id="topic" name="topic" type="text" required placeholder="مثال: روتين للبشرة الدهنية والحساسة">
+            </div>
+            <div class="field full">
+              <label for="message">تفاصيل إضافية</label>
+              <textarea id="message" name="message" placeholder="اكتب المنتجات الحالية أو المشكلة الأساسية"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" id="submitBtn">إرسال طلب الاستشارة</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="brand" style="display:inline-flex">
+            <span class="brand-mark"></span>
+            <span class="brand-copy">
+              <strong>NOVA CARE</strong>
+              <span>PHARMACY & BEAUTY</span>
+            </span>
+          </a>
+          <p class="footer-about">صيدلية متخصصة في منتجات العناية بالبشرة والشعر والجسم والكوزميتكس، مع اهتمام خاص باختيار روتين عملي وموثوق.</p>
+        </div>
+        <div class="footer-col">
+          <h4>استكشف</h4>
+          <a href="#about">عن NOVA Care</a>
+          <a href="#products">المنتجات</a>
+          <a href="#services">الخدمات</a>
+        </div>
+        <div class="footer-col">
+          <h4>الأقسام</h4>
+          <a href="#products">Skincare</a>
+          <a href="#products">Haircare</a>
+          <a href="#products">Sun Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>الدعم</h4>
+          <a href="#contact">استشارة روتين</a>
+          <a href="#reviews">آراء العملاء</a>
+          <a href="#contact">التوصيل</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© 2026 NOVA Care Pharmacy. All rights reserved.</span>
+        <span>Beauty made simpler, with care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+      <div class="modal-content">
+        <button class="modal-close" data-close="productModal" aria-label="إغلاق">×</button>
+        <span class="eyebrow">Product details</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-points" id="modalPoints"></div>
+        <div class="modal-price" id="modalPrice"></div>
+        <button class="btn btn-primary" id="modalOrderBtn" type="button">اطلب المنتج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="orderModal" aria-hidden="true">
+    <div class="order-modal-card">
+      <div class="order-summary">
+        <img id="orderProductImg" src="" alt="">
+        <span class="eyebrow">Your order</span>
+        <h3 id="orderProductName"></h3>
+        <p id="orderProductDesc"></p>
+        <div class="modal-price" id="orderUnitPrice"></div>
+      </div>
+      <div class="order-form-wrap">
+        <button class="modal-close" data-close="orderModal" aria-label="إغلاق">×</button>
+        <h3>إرسال الطلب</h3>
+        <p>اكتبي بيانات التواصل والتوصيل، والطلب هيوصل مباشرة لفريق المبيعات.</p>
+        <form id="orderForm">
+          <div class="field"><label for="orderName">الاسم</label><input id="orderName" required placeholder="الاسم بالكامل"></div>
+          <div class="field"><label for="orderPhone">رقم الموبايل</label><input id="orderPhone" type="tel" required placeholder="01xxxxxxxxx"></div>
+          <div class="field full"><label for="orderAddress">عنوان التوصيل</label><input id="orderAddress" required placeholder="المنطقة، الشارع، علامة مميزة"></div>
+          <div class="field"><label>الكمية</label><div class="qty-control"><button type="button" id="qtyMinus">−</button><input id="orderQty" type="number" min="1" value="1" required><button type="button" id="qtyPlus">+</button></div></div>
+          <div class="field"><label for="orderPreferredTime">وقت التواصل المفضل</label><input id="orderPreferredTime" placeholder="مثال: بعد 6 مساءً"></div>
+          <div class="field full"><label for="orderNotes">ملاحظات</label><textarea id="orderNotes" placeholder="أي تفاصيل إضافية للطلب"></textarea></div>
+          <button class="btn btn-primary" type="submit" id="orderSubmitBtn">تأكيد وإرسال الطلب</button>
+        </form>
+        <div class="form-note">لن يتم تحصيل أي مبلغ من خلال الموقع. فريق المبيعات سيتواصل لتأكيد الطلب والتوصيل.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    // ضع بيانات مشروع Supabase هنا
+    const SUPABASE_URL = 'https://qvrrvlgzvmjdxrfbkbtw.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_QQI_ZqNyFIDurla3FWB0gg_j8E3PtDE';
+    const isConfigured = !SUPABASE_URL.includes('YOUR_') && !SUPABASE_ANON_KEY.includes('YOUR_');
+    const supabase = isConfigured ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+    const $ = (s, root=document) => root.querySelector(s);
+    const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+    const money = value => new Intl.NumberFormat('ar-EG',{style:'currency',currency:'EGP',maximumFractionDigits:0}).format(Number(value || 0));
+    const escapeHTML = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));
+
+    const toast = $('#toast');
+    function showToast(message, type='success'){
+      toast.textContent = message;
+      toast.className = 'toast show' + (type === 'error' ? ' error' : '');
+      clearTimeout(showToast.t);
+      showToast.t = setTimeout(() => toast.className = 'toast', 4200);
+    }
+
+    // Mobile menu
+    const menuBtn = $('.menu-btn');
+    menuBtn?.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+    $$('.mobile-menu a').forEach(link => link.addEventListener('click', () => document.body.classList.remove('menu-open')));
+
+    // FAQ
+    $$('.faq button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const faq = btn.parentElement;
+        const answer = $('.faq-answer', faq);
+        const isOpen = faq.classList.contains('open');
+        $$('.faq').forEach(item => { item.classList.remove('open'); $('.faq-answer', item).style.maxHeight = null; });
+        if(!isOpen){ faq.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+      });
+    });
+
+    // Reveal
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), {threshold:.08});
+    $$('.reveal').forEach(el => observer.observe(el));
+
+    const FALLBACK_CATEGORIES = [
+      {id:'skincare',name_ar:'Skincare',slug:'skincare',description:'منظفات، سيرومات، مرطبات وعلاجات يومية للبشرة.',icon_name:'droplet'},
+      {id:'haircare',name_ar:'Haircare',slug:'haircare',description:'روتين للشعر والتساقط والقشرة والجفاف وفروة الرأس.',icon_name:'hair'},
+      {id:'suncare',name_ar:'Sun Care',slug:'suncare',description:'واقيات شمس بقوامات مختلفة للاستخدام اليومي.',icon_name:'sun'},
+      {id:'bodycare',name_ar:'Body & Beauty',slug:'bodycare',description:'عناية بالجسم والشفاه واختيارات Beauty يومية.',icon_name:'body'}
+    ];
+    const FALLBACK_PRODUCTS = [
+      {id:'p1',category_id:'skincare',name:'Hydration Essentials',description:'مجموعة يومية للترطيب ودعم حاجز البشرة، مناسبة للاستخدام الصباحي والمساء.',price:520,image_url:'https://images.squarespace-cdn.com/content/v1/538960cde4b0ca8eeb94824f/d813f094-0d3e-4cee-82f5-bd8deafb223d/french%2Bpharmacies.jpeg',badge:'Hydration',is_available:true},
+      {id:'p2',category_id:'skincare',name:'Correct & Repair Routine',description:'اختيارات مركزة للبشرة التي تحتاج عناية بالملمس والمظهر العام مع روتين متوازن.',price:690,image_url:'https://revivedskinclinic.com/cdn/shop/files/ProductsP2-87_1.jpg?v=1743358199&width=1500',badge:'Dermocosmetics',is_available:true},
+      {id:'p3',category_id:'suncare',name:'Daily UV Protection',description:'واقيات شمس للاستخدام اليومي بتركيبات مناسبة لمختلف أنواع البشرة.',price:580,image_url:'https://thepharmacistlab.co.uk/cdn/shop/products/AILEFOTO3_a8d0927a-75f2-41a0-8e79-eea167d73244_1024x1024%402x.jpg?v=1673450171',badge:'SPF 50+',is_available:true},
+      {id:'p4',category_id:'bodycare',name:'Daily Beauty Edit',description:'مجموعة منتقاة من أساسيات الجمال والعناية للاستخدام اليومي.',price:350,image_url:'https://www.myluxurybeauty.com/storage/657397/conversions/how-to-choose-the-best-beauty-products-in-the-usa-a-guide-for-luxury-seekers-og.webp',badge:'Beauty',is_available:true},
+      {id:'p5',category_id:'haircare',name:'Scalp & Hair Support',description:'شامبو وعناية مساعدة لفروة الرأس والشعر مع خيارات للجفاف والقشرة والتساقط.',price:430,image_url:'https://imageproxy.wolt.com/assets/67335f248c35d92f799b8c3a',badge:'Hair Care',is_available:true},
+      {id:'p6',category_id:'bodycare',name:'Soft Skin Collection',description:'ترطيب وعناية للجسم واليدين والشفاه بتركيبات مناسبة للاستخدام اليومي.',price:260,image_url:'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=85',badge:'Body Care',is_available:true}
+    ];
+
+    const iconMap = {
+      droplet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3.5 4 6 6.8 6 10a6 6 0 1 1-12 0c0-3.2 2.5-6 6-10Z"/></svg>',
+      hair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3c-1 4-3 7-3 11a7 7 0 0 0 14 0c0-4-2-7-3-11"/><path d="M9 9c2 1 4 1 6 0"/></svg>',
+      sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>',
+      body:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M9 13v7M15 13v7M6 20h12"/></svg>'
+    };
+
+    let categories = [];
+    let currentCategory = 'all';
+    let currentSearch = '';
+    let currentPage = 0;
+    let hasMore = false;
+    const PAGE_SIZE = 9;
+    let selectedProduct = null;
+
+    function renderCategories(items){
+      const grid = $('#categoriesGrid');
+      grid.innerHTML = items.map(c => `
+        <article class="category-card reveal visible">
+          <div class="icon">${iconMap[c.icon_name] || iconMap.droplet}</div>
+          <h3>${escapeHTML(c.name_ar)}</h3>
+          <p>${escapeHTML(c.description || 'منتجات مختارة بعناية ضمن هذا القسم.')}</p>
+          <a class="link category-jump" href="#products" data-category-id="${escapeHTML(c.id)}">عرض المنتجات ←</a>
+        </article>`).join('');
+
+      const filters = $('#productFilters');
+      filters.innerHTML = '<button class="filter-btn active" data-category-id="all">الكل</button>' + items.map(c =>
+        `<button class="filter-btn" data-category-id="${escapeHTML(c.id)}">${escapeHTML(c.name_ar)}</button>`
+      ).join('');
+      bindCategoryControls();
+    }
+
+    function bindCategoryControls(){
+      $$('#productFilters .filter-btn').forEach(btn => btn.addEventListener('click', () => {
+        currentCategory = btn.dataset.categoryId;
+        $$('#productFilters .filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+        loadProducts(true);
+      }));
+      $$('.category-jump').forEach(link => link.addEventListener('click', () => {
+        currentCategory = link.dataset.categoryId;
+        setTimeout(() => {
+          $$('#productFilters .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.categoryId === currentCategory));
+          loadProducts(true);
+        }, 120);
+      }));
+    }
+
+    function productCard(p){
+      const cat = categories.find(c => String(c.id) === String(p.category_id));
+      return `<article class="product-card reveal visible">
+        <div class="product-image">
+          <img src="${escapeHTML(p.image_url || 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=85')}" alt="${escapeHTML(p.name)}" loading="lazy">
+          ${p.badge ? `<span class="tag">${escapeHTML(p.badge)}</span>` : ''}
+        </div>
+        <div class="product-body">
+          <span class="product-kicker">${escapeHTML(cat?.name_ar || 'NOVA CARE')}</span>
+          <h3>${escapeHTML(p.name)}</h3>
+          <p>${escapeHTML(p.description || '')}</p>
+          <div class="product-meta">
+            <span class="price">${money(p.price)}</span>
+            <div class="product-actions">
+              <button class="quick-btn" data-action="details" data-id="${escapeHTML(p.id)}">تفاصيل</button>
+              <button class="order-btn" data-action="order" data-id="${escapeHTML(p.id)}" ${p.is_available === false ? 'disabled' : ''}>${p.is_available === false ? 'غير متوفر' : 'اطلب الآن'}</button>
+            </div>
+          </div>
+        </div>
+      </article>`;
+    }
+
+    async function loadCategories(){
+      if(!supabase){ categories = FALLBACK_CATEGORIES; renderCategories(categories); return; }
+      const {data,error} = await supabase.from('categories').select('*').eq('is_active',true).order('sort_order').order('id');
+      if(error){ console.error(error); categories = FALLBACK_CATEGORIES; showToast('تعذر تحميل الأقسام من قاعدة البيانات.', 'error'); }
+      else categories = data || [];
+      renderCategories(categories);
+    }
+
+    async function loadProducts(reset=false){
+      const grid = $('#productsGrid');
+      const loadMore = $('#loadMoreBtn');
+      if(reset){ currentPage = 0; grid.innerHTML = '<div class="catalog-state">جاري تحميل المنتجات...</div>'; }
+
+      let items=[];
+      if(!supabase){
+        items = FALLBACK_PRODUCTS.filter(p => (currentCategory==='all' || String(p.category_id)===String(currentCategory)) && (!currentSearch || p.name.toLowerCase().includes(currentSearch.toLowerCase())));
+        hasMore = false;
+      } else {
+        const from = currentPage * PAGE_SIZE;
+        const to = from + PAGE_SIZE - 1;
+        let q = supabase.from('products').select('*').eq('is_available',true).order('sort_order').order('created_at',{ascending:false}).range(from,to);
+        if(currentCategory !== 'all') q = q.eq('category_id', currentCategory);
+        if(currentSearch) q = q.ilike('name', `%${currentSearch}%`);
+        const {data,error} = await q;
+        if(error){ console.error(error); grid.innerHTML = '<div class="catalog-state">تعذر تحميل المنتجات حاليًا. حاولي مرة أخرى.</div>'; loadMore.hidden=true; return; }
+        items = data || [];
+        hasMore = items.length === PAGE_SIZE;
+      }
+
+      if(reset) grid.innerHTML='';
+      if(!items.length && currentPage===0){ grid.innerHTML='<div class="catalog-state">لا توجد منتجات مطابقة للبحث حاليًا.</div>'; }
+      else grid.insertAdjacentHTML('beforeend', items.map(productCard).join(''));
+      grid.dataset.loaded = JSON.stringify([...(reset?[]:JSON.parse(grid.dataset.loaded||'[]')), ...items]);
+      bindProductButtons();
+      loadMore.hidden = !hasMore;
+    }
+
+    function allLoadedProducts(){ try{return JSON.parse($('#productsGrid').dataset.loaded || '[]')}catch{return []} }
+    function findProduct(id){ return allLoadedProducts().find(p => String(p.id) === String(id)); }
+
+    function bindProductButtons(){
+      $$('#productsGrid [data-action]').forEach(btn => {
+        btn.onclick = () => {
+          const product = findProduct(btn.dataset.id);
+          if(!product) return;
+          btn.dataset.action === 'details' ? openProductModal(product) : openOrderModal(product);
+        };
+      });
+    }
+
+    $('#loadMoreBtn').addEventListener('click', () => { currentPage += 1; loadProducts(false); });
+    let searchTimer;
+    $('#productSearch').addEventListener('input', e => {
+      clearTimeout(searchTimer);
+      currentSearch = e.target.value.trim();
+      searchTimer = setTimeout(() => loadProducts(true), 350);
+    });
+
+    const productModal = $('#productModal');
+    const orderModal = $('#orderModal');
+    function showModal(el){ el.classList.add('show'); el.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function hideModal(el){ el.classList.remove('show'); el.setAttribute('aria-hidden','true'); if(!$('.modal.show')) document.body.style.overflow=''; }
+    $$('[data-close]').forEach(btn => btn.addEventListener('click', () => hideModal($('#'+btn.dataset.close))));
+    $$('.modal').forEach(m => m.addEventListener('click', e => { if(e.target===m) hideModal(m); }));
+    document.addEventListener('keydown',e => { if(e.key==='Escape') $$('.modal.show').forEach(hideModal); });
+
+    function openProductModal(p){
+      selectedProduct=p;
+      $('#modalImg').src=p.image_url||''; $('#modalImg').alt=p.name;
+      $('#modalTitle').textContent=p.name; $('#modalDesc').textContent=p.description||'';
+      $('#modalPrice').textContent=money(p.price);
+      $('#modalPoints').innerHTML=`<span>✓ ${p.is_available!==false?'متوفر للطلب':'غير متوفر حاليًا'}</span><span>✓ يتم تأكيد التوفر والتوصيل مع فريق المبيعات</span>`;
+      $('#modalOrderBtn').disabled = p.is_available===false;
+      showModal(productModal);
+    }
+    $('#modalOrderBtn').addEventListener('click',()=>{ if(selectedProduct){hideModal(productModal);openOrderModal(selectedProduct);} });
+
+    function openOrderModal(p){
+      selectedProduct=p;
+      $('#orderProductImg').src=p.image_url||''; $('#orderProductImg').alt=p.name;
+      $('#orderProductName').textContent=p.name; $('#orderProductDesc').textContent=p.description||'';
+      $('#orderUnitPrice').textContent=money(p.price);
+      $('#orderQty').value=1;
+      showModal(orderModal);
+    }
+    $('#qtyMinus').addEventListener('click',()=>$('#orderQty').value=Math.max(1,Number($('#orderQty').value||1)-1));
+    $('#qtyPlus').addEventListener('click',()=>$('#orderQty').value=Math.max(1,Number($('#orderQty').value||1)+1));
+
+    $('#orderForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      if(!selectedProduct) return;
+      if(!supabase){ showToast('اربط بيانات Supabase أولًا لإرسال الطلبات.', 'error'); return; }
+      const btn=$('#orderSubmitBtn'); btn.disabled=true; btn.textContent='جاري إرسال الطلب...';
+      const qty=Math.max(1,Number($('#orderQty').value||1));
+      const payload={
+        customer_name:$('#orderName').value.trim(), phone:$('#orderPhone').value.trim(), address:$('#orderAddress').value.trim(),
+        notes:[$('#orderPreferredTime').value.trim()?`وقت التواصل: ${$('#orderPreferredTime').value.trim()}`:'',$('#orderNotes').value.trim()].filter(Boolean).join(' | '),
+        items:[{product_id:selectedProduct.id,name:selectedProduct.name,price:Number(selectedProduct.price||0),quantity:qty,image_url:selectedProduct.image_url||''}],
+        total_amount:Number(selectedProduct.price||0)*qty
+      };
+      const {data,error}=await supabase.from('orders').insert(payload).select('order_code').single();
+      btn.disabled=false; btn.textContent='تأكيد وإرسال الطلب';
+      if(error){ console.error(error); showToast('حصل خطأ أثناء إرسال الطلب. حاولي مرة أخرى.', 'error'); return; }
+      hideModal(orderModal); e.target.reset();
+      showToast(`تم استلام طلبك بنجاح — رقم الطلب ${data.order_code}`);
+    });
+
+    // Consultation form -> dashboard inquiries
+    $('#contactForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      if(!supabase){ showToast('اربط بيانات Supabase أولًا لإرسال الاستشارة.', 'error'); return; }
+      const btn=$('#submitBtn'); btn.disabled=true; btn.textContent='جاري الإرسال...';
+      const payload={name:$('#name').value.trim(),phone:$('#phone').value.trim(),topic:$('#topic').value.trim(),message:$('#message').value.trim()};
+      const {error}=await supabase.from('inquiries').insert(payload);
+      btn.disabled=false; btn.textContent='إرسال طلب الاستشارة';
+      if(error){ console.error(error); showToast('تعذر إرسال الاستشارة حاليًا.', 'error'); return; }
+      e.target.reset(); showToast('تم إرسال طلب الاستشارة لفريق NOVA Care بنجاح.');
+    });
+
+    await loadCategories();
+    await loadProducts(true);
+
+    // Keep the open website in sync with catalog changes made from the Dashboard.
+    if(supabase){
+      supabase.channel('nova-public-catalog-live')
+        .on('postgres_changes',{event:'*',schema:'public',table:'products'},()=>loadProducts(true))
+        .on('postgres_changes',{event:'*',schema:'public',table:'categories'},async()=>{await loadCategories();await loadProducts(true)})
+        .subscribe();
+    }
+  </script>
+</body>
+</html>
