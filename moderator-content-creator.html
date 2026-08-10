@@ -327,8 +327,9 @@
     .credits a{text-decoration:underline;text-underline-offset:3px}
 
     /* reveal */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.show{opacity:1;transform:none}
+    .reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+    .js .reveal{opacity:0;transform:translateY(24px)}
+    .reveal.show{opacity:1!important;transform:none!important}
 
     @media (max-width: 980px){
       .nav-links{display:none}
@@ -861,12 +862,13 @@
   </footer>
 
   <script>
+    document.documentElement.classList.add('js');
     // Mobile nav
     const nav = document.getElementById('mainNav');
     const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventفهمer('click', () => nav.classList.toggle('open'));
+    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventفهمer('click', () => nav.classList.remove('open'));
+      a.addEventListener('click', () => nav.classList.remove('open'));
     });
 
     // Reveal on scroll
@@ -895,7 +897,7 @@
           const tick = now => {
             const progress = Math.min((now - start) / duration, 1);
             const value = Math.round(target * (1 - Math.pow(1 - progress, 3)));
-            el.textمحتوى = value + (target >= 20 ? '+' : '');
+            el.textContent = value + (target >= 20 ? '+' : '');
             if (progress < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
@@ -909,7 +911,7 @@
     const projects = document.querySelectorAll('.project');
 
     filterButtons.forEach(btn => {
-      btn.addEventفهمer('click', () => {
+      btn.addEventListener('click', () => {
         filterButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -923,7 +925,7 @@
     });
 
     // Add subtle scroll state to nav
-    window.addEventفهمer('scroll', () => {
+    window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 30
         ? '0 14px 36px rgba(64,35,25,.12)'
         : '0 10px 30px rgba(64,35,25,.08)';
