@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mariam Adel — Social Media Moderator & Content Creator. Community management, content planning, copywriting, short-form video, and social media campaigns." />
-  <title>Mariam Adel — Moderator & Content Creator</title>
+  <meta name="description" content="مريم عادل — مودريتور وصانعة محتوى. إدارة المجتمعات، تخطيط المحتوى، كتابة النصوص، الفيديوهات القصيرة، وحملات السوشيال ميديا." />
+  <title>مريم عادل — مودريتور وصانعة محتوى</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -367,6 +367,24 @@
       .contact-card{padding:30px 22px}
       .testimonial-main{padding:28px 22px}
     }
+  
+    body{direction:rtl;text-align:right}
+    .eyebrow::before{order:2}
+    .brand{direction:rtl}
+    .hero-grid,.about-grid,.moderation-grid,.contact-card,.testimonials{direction:rtl}
+    .portrait-caption{direction:rtl}
+    .float-top{left:0;right:auto}
+    .float-bottom{right:0;left:auto}
+    .service-icon{left:20px;right:auto}
+    .project-chip{right:18px;left:auto}
+    .contact-link:hover{transform:translateX(-3px)}
+    .quote{border-left:0;border-right:3px solid var(--accent);border-radius:18px 0 0 18px}
+    .avatar-stack span{margin-left:0;margin-right:-8px}
+    .avatar-stack span:first-child{margin-right:0}
+    @media (max-width:640px){
+      .portrait-card{inset:34px 28px 48px 12px}
+    }
+
   </style>
 </head>
 
@@ -382,7 +400,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
-        <a href="#moderation">Moderation</a>
+        <a href="#moderation">موديريشن</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -398,27 +416,25 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Moderator & Content Creator</span>
+          <span class="eyebrow">مودريتور وصانعة محتوى</span>
           <h1 class="hero-title">
-            Content that feels <span class="soft">human.</span><br>
-            Communities that feel heard.
+            محتوى <span class="soft">إنساني.</span><br>
+            ومجتمعات تشعر بأنها مسموعة.
           </h1>
           <p class="lead">
-            I help lifestyle, beauty, food and retail brands turn everyday social media
-            interactions into stronger relationships — through thoughtful content,
-            fast moderation and clear brand voice.
+            أساعد علامات اللايف ستايل والجمال والمطاعم والتجزئة على تحويل التفاعل اليومي على السوشيال ميديا إلى علاقات أقوى — من خلال محتوى مدروس، وردود سريعة، وصوت واضح للعلامة التجارية.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-dark" href="#work">Explore selected work <span>↗</span></a>
-            <a class="btn btn-light" href="#contact">Start a project</a>
+            <a class="btn btn-dark" href="#work">استعرض الأعمال <span>↗</span></a>
+            <a class="btn btn-light" href="#contact">ابدأ مشروعك</a>
           </div>
 
           <div class="mini-proof">
             <div class="avatar-stack" aria-hidden="true">
               <span>LU</span><span>NC</span><span>VH</span><span>MY</span>
             </div>
-            <span>Trusted across beauty, F&B, fashion and home brands</span>
+            <span>خبرة مع علامات في الجمال والمطاعم والأزياء والمنزل</span>
           </div>
         </div>
 
@@ -426,25 +442,25 @@
           <div class="portrait-card">
             <img
               src="https://images.pexels.com/photos/13929772/pexels-photo-13929772.jpeg?auto=compress&dpr=1&h=900&w=1000"
-              alt="Content creator working with a phone and laptop"
+              alt="محتوى creator working with a phone and laptop"
             >
             <div class="portrait-caption">
               <div>
                 <strong>Mariam Adel</strong>
-                <small>Cairo, Egypt · Available remotely</small>
+                <small>القاهرة، مصر · متاحة للعمل عن بُعد</small>
               </div>
-              <small>● Open for projects</small>
+              <small>● متاحة لمشاريع جديدة</small>
             </div>
           </div>
 
           <div class="floating-card float-top">
             <div class="big">24h</div>
-            <p>average moderation response coverage for active communities</p>
+            <p>متوسط تغطية الردود في المجتمعات النشطة</p>
           </div>
 
           <div class="floating-card float-bottom">
             <div class="status-line">
-              <span>Monthly engagement</span>
+              <span>التفاعل الشهري</span>
               <span>+38%</span>
             </div>
             <div class="bar"><i></i></div>
@@ -456,10 +472,10 @@
 
     <section class="stats-wrap">
       <div class="container stats reveal">
-        <div class="stat"><strong data-count="4">0</strong><span>Years in social media</span></div>
-        <div class="stat"><strong data-count="28">0</strong><span>Campaigns delivered</span></div>
-        <div class="stat"><strong data-count="12">0</strong><span>Brands supported</span></div>
-        <div class="stat"><strong data-count="6">0</strong><span>Content niches</span></div>
+        <div class="stat"><strong data-count="4">0</strong><span>سنوات في السوشيال ميديا</span></div>
+        <div class="stat"><strong data-count="28">0</strong><span>حملة تم تنفيذها</span></div>
+        <div class="stat"><strong data-count="12">0</strong><span>علامة تم دعمها</span></div>
+        <div class="stat"><strong data-count="6">0</strong><span>مجالات محتوى</span></div>
       </div>
     </section>
 
@@ -470,35 +486,30 @@
             src="https://images.pexels.com/photos/13929768/pexels-photo-13929768.jpeg?auto=compress&dpr=1&h=1000&w=900"
             alt="Creator recording social media content at a desk"
           >
-          <div class="tag">Strategy × Content × Community</div>
+          <div class="tag">Strategy × محتوى × Community</div>
         </div>
 
         <div class="about-copy reveal">
-          <span class="eyebrow">About me</span>
-          <h2>I make brands sound like people, not press releases.</h2>
+          <span class="eyebrow">نبذة عني</span>
+          <h2>أجعل العلامات التجارية تتحدث كأشخاص حقيقيين، لا كبيانات رسمية.</h2>
           <p>
-            I’m a social media moderator and content creator focused on building
-            consistent brand presence from both sides of the screen: the content people
-            see and the conversations that happen after they engage.
+            أنا مودريتور وصانعة محتوى أركز على بناء حضور ثابت ومقنع للعلامات التجارية من الجانبين: المحتوى الذي يراه الجمهور، والمحادثات التي تبدأ بعد التفاعل.
           </p>
           <p>
-            My work combines content calendars, copywriting, short-form content ideas,
-            publishing, comment and inbox moderation, FAQ handling and monthly insights.
-            I care about tone, timing and creating useful feedback loops between the audience
-            and the brand team.
+            يجمع عملي بين جداول المحتوى، وكتابة الكابشن والنصوص، وأفكار الفيديو القصير، والنشر، وإدارة التعليقات والرسائل، والرد على الأسئلة المتكررة، مع تقديم ملخصات شهرية. أهتم بنبرة الصوت، وسرعة الاستجابة، وتحويل ملاحظات الجمهور إلى معلومات مفيدة لفريق العلامة التجارية.
           </p>
 
           <div class="pill-row">
-            <span class="pill">Community Management</span>
-            <span class="pill">Content Planning</span>
-            <span class="pill">Copywriting</span>
-            <span class="pill">Reels & UGC Direction</span>
-            <span class="pill">Customer Care</span>
-            <span class="pill">Reporting</span>
+            <span class="pill">إدارة المجتمعات</span>
+            <span class="pill">تخطيط المحتوى</span>
+            <span class="pill">كتابة المحتوى</span>
+            <span class="pill">أفكار Reels وUGC</span>
+            <span class="pill">خدمة العملاء</span>
+            <span class="pill">التقارير</span>
           </div>
 
           <div class="quote">
-            “Good content gets attention. Good moderation turns that attention into trust.”
+            “المحتوى الجيد يجذب الانتباه، والموديريشن الجيد يحول هذا الانتباه إلى ثقة.”
           </div>
         </div>
       </div>
@@ -508,12 +519,11 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">What I do</span>
-            <h2>End-to-end social support.</h2>
+            <span class="eyebrow">ماذا أقدم</span>
+            <h2>دعم متكامل للسوشيال ميديا.</h2>
           </div>
           <p>
-            Flexible support for brands that need a stronger content rhythm,
-            a clearer voice and a reliable person behind the inbox.
+            دعم مرن للعلامات التي تحتاج إلى محتوى أكثر انتظامًا، وصوت أوضح، وشخص موثوق يدير الرسائل والتعليقات.
           </p>
         </div>
 
@@ -523,8 +533,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
             </div>
             <div class="num">01 / STRATEGY</div>
-            <h3>Content Planning</h3>
-            <p>Monthly calendars, campaign themes, content pillars, hooks and publishing rhythm aligned with business goals.</p>
+            <h3>تخطيط المحتوى</h3>
+            <p>خطط شهرية، أفكار حملات، محاور محتوى، Hooks، وجدول نشر متوافق مع أهداف النشاط.</p>
           </article>
 
           <article class="service reveal">
@@ -532,8 +542,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v10H8l-3 3V5Z"/></svg>
             </div>
             <div class="num">02 / COMMUNITY</div>
-            <h3>Social Moderation</h3>
-            <p>Comments, DMs, FAQs, complaint routing and friendly customer care while protecting the brand tone.</p>
+            <h3>إدارة التعليقات والرسائل</h3>
+            <p>إدارة التعليقات والرسائل الخاصة والأسئلة المتكررة والشكاوى، مع الحفاظ على نبرة العلامة التجارية.</p>
           </article>
 
           <article class="service reveal">
@@ -541,8 +551,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 16l8-8 2 2-8 8H7v-2Z"/></svg>
             </div>
             <div class="num">03 / WORDS</div>
-            <h3>Copywriting</h3>
-            <p>Captions, product copy, social scripts, launch messaging and CTAs tailored to each platform and audience.</p>
+            <h3>كتابة المحتوى</h3>
+            <p>كتابة الكابشن، ووصف المنتجات، وسكربتات السوشيال ميديا، ورسائل الإطلاق، وعبارات الحث على اتخاذ إجراء بما يناسب كل منصة وجمهور.</p>
           </article>
 
           <article class="service reveal">
@@ -550,8 +560,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m10 8 6 4-6 4V8Z"/></svg>
             </div>
             <div class="num">04 / VIDEO</div>
-            <h3>Short-form Content</h3>
-            <p>Reel and TikTok concepts, shot lists, hooks, voiceover scripts and creative direction for quick production.</p>
+            <h3>محتوى قصير</h3>
+            <p>أفكار Reels وTikTok، وخطط تصوير، وHooks، وسكربتات Voice Over، وتوجيه إبداعي سريع التنفيذ.</p>
           </article>
 
           <article class="service reveal">
@@ -559,8 +569,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19V9m7 10V5m7 14v-7"/></svg>
             </div>
             <div class="num">05 / INSIGHTS</div>
-            <h3>Monthly Reporting</h3>
-            <p>Clear summaries of engagement, audience behavior, FAQs, content performance and next-month actions.</p>
+            <h3>Monthly التقارير</h3>
+            <p>ملخصات واضحة للتفاعل، وسلوك الجمهور، والأسئلة المتكررة، وأداء المحتوى، وخطوات الشهر التالي.</p>
           </article>
 
           <article class="service reveal">
@@ -568,8 +578,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
             </div>
             <div class="num">06 / CAMPAIGNS</div>
-            <h3>Launch Support</h3>
-            <p>Pre-launch teasers, launch-day coverage, FAQs, response templates and post-launch community follow-up.</p>
+            <h3>دعم الإطلاقات</h3>
+            <p>تشويقات قبل الإطلاق، وتغطية يوم الإطلاق، وأسئلة متكررة، وقوالب ردود، ومتابعة الجمهور بعد الإطلاق.</p>
           </article>
         </div>
       </div>
@@ -579,17 +589,17 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Selected work</span>
-            <h2>Content with a job to do.</h2>
+            <span class="eyebrow">أعمال مختارة</span>
+            <h2>محتوى له هدف واضح.</h2>
           </div>
-          <p>Selected campaign and community work across product, lifestyle and service-based brands.</p>
+          <p>نماذج مختارة من حملات ومحتوى وإدارة مجتمعات لعلامات في المنتجات واللايف ستايل والخدمات.</p>
         </div>
 
         <div class="filters reveal">
-          <button class="filter-btn active" data-filter="all">All work</button>
-          <button class="filter-btn" data-filter="content">Content</button>
-          <button class="filter-btn" data-filter="moderation">Moderation</button>
-          <button class="filter-btn" data-filter="campaign">Campaigns</button>
+          <button class="filter-btn active" data-filter="all">كل الأعمال</button>
+          <button class="filter-btn" data-filter="content">محتوى</button>
+          <button class="filter-btn" data-filter="moderation">موديريشن</button>
+          <button class="filter-btn" data-filter="campaign">حملات</button>
         </div>
 
         <div class="projects-grid">
@@ -599,18 +609,17 @@
                 src="https://images.pexels.com/photos/9040539/pexels-photo-9040539.jpeg?auto=compress&dpr=1&h=750&w=1260"
                 alt="Video production setup for a content campaign"
               >
-              <div class="project-chip">Launch Campaign</div>
+              <div class="project-chip">حملة إطلاق</div>
             </div>
             <div class="project-info">
-              <h3>Luma Skincare — “Skin, Simplified”</h3>
+              <h3>Luma Skincare — “العناية ببساطة”</h3>
               <p>
-                Developed a 4-week launch narrative for a daily skincare set, combining educational reels,
-                product-first carousels, FAQ stories and real-time comment moderation.
+                تم إعداد خطة إطلاق لمدة 4 أسابيع لمجموعة عناية يومية بالبشرة، شملت Reels تعليمية، وCarousels للمنتجات، وStories للأسئلة المتكررة، وإدارة التعليقات بشكل مباشر.
               </p>
               <div class="metrics">
-                <span class="metric">+41% saves</span>
-                <span class="metric">3.2× story replies</span>
-                <span class="metric">92% positive sentiment</span>
+                <span class="metric">+41% حفظ</span>
+                <span class="metric">3.2× ردود على الستوري</span>
+                <span class="metric">92% تفاعل إيجابي</span>
               </div>
             </div>
           </article>
@@ -627,11 +636,11 @@
               </div>
             </div>
             <div class="project-info">
-              <h3>Velora — Summer Edit</h3>
-              <p>Fast-paced reel concepts, styling prompts and conversion-focused captions for a seasonal fashion drop.</p>
+              <h3>Velora — مجموعة الصيف</h3>
+              <p>أفكار Reels سريعة، وتوجيهات Styling، وكابشنات موجهة للتحويل لمجموعة أزياء موسمية.</p>
               <div class="metrics">
-                <span class="metric">18 short-form ideas</span>
-                <span class="metric">+29% reach</span>
+                <span class="metric">18 فكرة فيديو قصير</span>
+                <span class="metric">+29% وصول</span>
               </div>
             </div>
           </article>
@@ -642,17 +651,16 @@
                 src="https://images.unsplash.com/photo-1781606989379-5c62ed674c41?auto=format&fit=crop&fm=jpg&q=70&w=1400"
                 alt="Social media communication and moderation workflow"
               >
-              <div class="project-chip">Community Care</div>
+              <div class="project-chip">إدارة المجتمع</div>
             </div>
             <div class="project-info">
-              <h3>Noura Café — Community Reset</h3>
+              <h3>Noura Café — إعادة تنظيم المجتمع</h3>
               <p>
-                Reorganized inbox categories, built response templates and established escalation rules for orders,
-                delivery issues and customer feedback.
+                تم تنظيم الرسائل الواردة، وإنشاء قوالب ردود، ووضع قواعد تصعيد للطلبات ومشاكل التوصيل وملاحظات العملاء.
               </p>
               <div class="metrics">
-                <span class="metric">-46% response time</span>
-                <span class="metric">7 FAQ flows</span>
+                <span class="metric">-46% وقت الاستجابة</span>
+                <span class="metric">7 مسارات للأسئلة المتكررة</span>
               </div>
             </div>
           </article>
@@ -661,20 +669,19 @@
             <div class="project-media">
               <img
                 src="https://images.pexels.com/photos/13929768/pexels-photo-13929768.jpeg?auto=compress&dpr=1&h=750&w=1260"
-                alt="Content creator preparing recording and social media material"
+                alt="محتوى creator preparing recording and social media material"
               >
-              <div class="project-chip">Always-on Content</div>
+              <div class="project-chip">Always-on محتوى</div>
             </div>
             <div class="project-info">
-              <h3>Mysa Home — “Small Rituals”</h3>
+              <h3>Mysa Home — “تفاصيل يومية”</h3>
               <p>
-                Built an evergreen content system around home rituals: styling tips, creator-led product moments,
-                care guides and soft-selling educational posts.
+                تم بناء نظام محتوى دائم حول تفاصيل المنزل اليومية: نصائح Styling، ومحتوى بقيادة صناع المحتوى، وإرشادات استخدام، ومنشورات تعليمية ببيع ناعم.
               </p>
               <div class="metrics">
-                <span class="metric">24-post calendar</span>
-                <span class="metric">+33% profile actions</span>
-                <span class="metric">5 content pillars</span>
+                <span class="metric">خطة 24 منشور</span>
+                <span class="metric">+33% إجراءات على الحساب</span>
+                <span class="metric">5 محاور محتوى</span>
               </div>
             </div>
           </article>
@@ -687,43 +694,43 @@
         <div class="moderation reveal">
           <div class="moderation-grid">
             <div>
-              <span class="eyebrow">Community moderation</span>
-              <h2>A calm voice behind every notification.</h2>
+              <span class="eyebrow">إدارة المجتمع</span>
+              <h2>صوت هادئ واحترافي خلف كل إشعار.</h2>
               <p>
-                Moderation is more than replying fast. I build practical response systems
+                موديريشن is more than replying fast. I build practical response systems
                 that keep conversations helpful, consistent and easy to escalate when needed.
               </p>
 
               <div class="mod-kpis">
-                <div><strong>92%</strong><span>messages resolved without escalation</span></div>
-                <div><strong>&lt; 25m</strong><span>peak-hour first response target</span></div>
-                <div><strong>7 days</strong><span>weekly trend and FAQ tracking</span></div>
+                <div><strong>92%</strong><span>من الرسائل تم حلها بدون تصعيد</span></div>
+                <div><strong>&lt; 25m</strong><span>هدف أول رد في أوقات الذروة</span></div>
+                <div><strong>7 days</strong><span>متابعة أسبوعية للاتجاهات والأسئلة</span></div>
               </div>
             </div>
 
             <div class="inbox">
               <div class="inbox-head">
-                <strong>Community Inbox</strong>
-                <div class="live-dot">Live coverage</div>
+                <strong>صندوق رسائل المجتمع</strong>
+                <div class="live-dot">تغطية مباشرة</div>
               </div>
               <div class="message">
                 <div class="m-avatar">SA</div>
-                <div><strong>Sara A.</strong><span>Is the rose shade back in stock?</span></div>
+                <div><strong>Sara A.</strong><span>هل درجة Rose رجعت متاحة؟</span></div>
                 <time>2m</time>
               </div>
               <div class="message">
                 <div class="m-avatar">MN</div>
-                <div><strong>Mona N.</strong><span>Thank you, the order arrived today 🤍</span></div>
+                <div><strong>Mona N.</strong><span>شكرًا، الطلب وصل النهارده 🤍</span></div>
                 <time>8m</time>
               </div>
               <div class="message">
                 <div class="m-avatar">RA</div>
-                <div><strong>Reem A.</strong><span>Can I change the delivery address?</span></div>
+                <div><strong>Reem A.</strong><span>ممكن أغير عنوان التوصيل؟</span></div>
                 <time>11m</time>
               </div>
               <div class="message">
                 <div class="m-avatar">YA</div>
-                <div><strong>Yara A.</strong><span>Which size would you recommend?</span></div>
+                <div><strong>Yara A.</strong><span>أي مقاس تنصحيني بيه؟</span></div>
                 <time>17m</time>
               </div>
             </div>
@@ -736,32 +743,32 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">My workflow</span>
-            <h2>Clear from brief to publish.</h2>
+            <span class="eyebrow">طريقة العمل</span>
+            <h2>خطوات واضحة من البداية للنشر.</h2>
           </div>
-          <p>A lightweight process that keeps content moving without endless back-and-forth.</p>
+          <p>عملية بسيطة ومنظمة تساعد على استمرار المحتوى بدون دوائر مراجعة طويلة.</p>
         </div>
 
         <div class="workflow">
           <div class="step reveal">
             <div class="step-no">01</div>
-            <h3>Listen</h3>
-            <p>Brand voice, audience, goals, current pain points and existing content performance.</p>
+            <h3>فهم</h3>
+            <p>فهم صوت العلامة، والجمهور، والأهداف، والتحديات الحالية، وأداء المحتوى.</p>
           </div>
           <div class="step reveal">
             <div class="step-no">02</div>
-            <h3>Plan</h3>
-            <p>Content pillars, calendar, response flows, scripts, creative direction and approval points.</p>
+            <h3>تخطيط</h3>
+            <p>محتوى pillars, calendar, response flows, scripts, creative direction and approval points.</p>
           </div>
           <div class="step reveal">
             <div class="step-no">03</div>
-            <h3>Create & Moderate</h3>
-            <p>Write, publish, coordinate visuals, respond, route issues and keep the community active.</p>
+            <h3>تنفيذ ومتابعة</h3>
+            <p>كتابة ونشر وتنسيق المواد البصرية والرد على الجمهور وتحويل المشكلات والحفاظ على نشاط المجتمع.</p>
           </div>
           <div class="step reveal">
             <div class="step-no">04</div>
-            <h3>Learn</h3>
-            <p>Review what worked, capture audience insights and adapt the next content cycle.</p>
+            <h3>تحسين</h3>
+            <p>مراجعة ما نجح، واستخلاص ملاحظات الجمهور، وتطوير دورة المحتوى التالية.</p>
           </div>
         </div>
       </div>
@@ -772,8 +779,7 @@
         <div class="testimonial-main reveal">
           <div class="stars">★★★★★</div>
           <blockquote>
-            “Mariam gave our social channels a much clearer voice. The content became more consistent,
-            and our inbox finally felt organized instead of reactive.”
+            “مريم أعطت حساباتنا صوتًا أوضح بكثير. المحتوى أصبح أكثر ثباتًا، وأخيرًا أصبح صندوق الرسائل منظمًا بدلًا من أن نعمل برد فعل.”
           </blockquote>
           <div class="client">
             <div class="client-avatar">LH</div>
@@ -784,8 +790,8 @@
         <div class="testimonial-side reveal">
           <div class="big-number">4.9</div>
           <div>
-            <h3>Built around reliability.</h3>
-            <p>Clear communication, organized handovers and content that stays aligned with the brand.</p>
+            <h3>الاعتمادية أولًا.</h3>
+            <p>تواصل واضح، وتسليمات منظمة، ومحتوى يظل متوافقًا مع هوية العلامة.</p>
           </div>
         </div>
       </div>
@@ -795,14 +801,14 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Tools I work with</span>
-            <h2>Comfortable across the content stack.</h2>
+            <span class="eyebrow">الأدوات التي أستخدمها</span>
+            <h2>أعمل براحة على أدوات المحتوى الأساسية.</h2>
           </div>
         </div>
 
         <div class="tools reveal">
           <span class="tool">Meta Business Suite</span>
-          <span class="tool">Instagram</span>
+          <span class="tool">إنستجرام</span>
           <span class="tool">TikTok</span>
           <span class="tool">Facebook</span>
           <span class="tool">Canva</span>
@@ -819,24 +825,23 @@
     <section class="section" id="contact">
       <div class="container contact-card reveal">
         <div>
-          <span class="eyebrow">Let’s work together</span>
-          <h2>Need a reliable voice behind your brand?</h2>
+          <span class="eyebrow">لنبدأ العمل</span>
+          <h2>تحتاجين صوتًا موثوقًا خلف علامتك؟</h2>
           <p>
-            Available for monthly retainers, campaign support and project-based content planning.
-            Tell me what you’re building and where your social media currently needs the most support.
+            متاحة للتعاون الشهري، ودعم الحملات، ومشاريع تخطيط المحتوى. شاركني بما تعمل عليه وأين تحتاج علامتك إلى أكبر دعم حاليًا على السوشيال ميديا.
           </p>
           <a class="btn btn-dark" href="mailto:hello@mariamadel.co">hello@mariamadel.co ↗</a>
         </div>
 
         <div class="contact-links">
           <a class="contact-link" href="mailto:hello@mariamadel.co">
-            <div><span>Email</span><strong>hello@mariamadel.co</strong></div><b>↗</b>
+            <div><span>البريد الإلكتروني</span><strong>hello@mariamadel.co</strong></div><b>↗</b>
           </a>
           <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-            <div><span>LinkedIn</span><strong>Mariam Adel</strong></div><b>↗</b>
+            <div><span>لينكدإن</span><strong>Mariam Adel</strong></div><b>↗</b>
           </a>
           <a class="contact-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-            <div><span>Instagram</span><strong>@mariam.creates</strong></div><b>↗</b>
+            <div><span>إنستجرام</span><strong>@mariam.creates</strong></div><b>↗</b>
           </a>
         </div>
       </div>
@@ -845,9 +850,9 @@
 
   <footer>
     <div class="container footer-row">
-      <span>© 2026 Mariam Adel. All rights reserved.</span>
+      <span>© 2026 Mariam Adel. جميع الحقوق محفوظة.</span>
       <span class="credits">
-        Selected imagery via
+        الصور المستخدمة من
         <a href="https://www.pexels.com/" target="_blank" rel="noreferrer">Pexels</a>
         &amp;
         <a href="https://unsplash.com/" target="_blank" rel="noreferrer">Unsplash</a>.
@@ -859,9 +864,9 @@
     // Mobile nav
     const nav = document.getElementById('mainNav');
     const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+    menuBtn.addEventفهمer('click', () => nav.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => nav.classList.remove('open'));
+      a.addEventفهمer('click', () => nav.classList.remove('open'));
     });
 
     // Reveal on scroll
@@ -890,7 +895,7 @@
           const tick = now => {
             const progress = Math.min((now - start) / duration, 1);
             const value = Math.round(target * (1 - Math.pow(1 - progress, 3)));
-            el.textContent = value + (target >= 20 ? '+' : '');
+            el.textمحتوى = value + (target >= 20 ? '+' : '');
             if (progress < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
@@ -904,7 +909,7 @@
     const projects = document.querySelectorAll('.project');
 
     filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventفهمer('click', () => {
         filterButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -918,7 +923,7 @@
     });
 
     // Add subtle scroll state to nav
-    window.addEventListener('scroll', () => {
+    window.addEventفهمer('scroll', () => {
       nav.style.boxShadow = window.scrollY > 30
         ? '0 14px 36px rgba(64,35,25,.12)'
         : '0 10px 30px rgba(64,35,25,.08)';
