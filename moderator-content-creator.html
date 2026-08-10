@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mariam Adel — Social Media Moderator & Content Creator. Community management, content planning, copywriting, short-form video, and social media campaigns." />
+  <title>Mariam Adel — Moderator & Content Creator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fffaf7;
+      --surface:#ffffff;
+      --surface-2:#f8f1ed;
+      --ink:#1f1d1c;
+      --muted:#746d68;
+      --line:#eadfd8;
+      --accent:#d8654e;
+      --accent-2:#f3b48c;
+      --accent-soft:#fff0e9;
+      --dark:#2a2421;
+      --shadow:0 18px 55px rgba(70,40,28,.10);
+      --radius:26px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 8%, rgba(243,180,140,.20), transparent 30%),
+        radial-gradient(circle at 100% 26%, rgba(216,101,78,.10), transparent 24%),
+        var(--bg);
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    .container{width:min(var(--max), calc(100% - 36px));margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;
+      color:var(--accent);
+    }
+    .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:99px}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:"Playfair Display",Georgia,serif;line-height:1.04}
+    h1{font-size:clamp(3.2rem,8vw,7.2rem);letter-spacing:-.045em;margin-bottom:24px}
+    h2{font-size:clamp(2.4rem,5vw,4.7rem);letter-spacing:-.035em;margin-bottom:18px}
+    h3{font-size:1.22rem;line-height:1.3}
+    .lead{font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--muted);max-width:680px}
+    .section{padding:110px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px}
+    .section-head p{max-width:510px;color:var(--muted);margin-bottom:4px}
+
+    /* nav */
+    .nav-shell{
+      position:fixed;z-index:100;top:18px;left:0;right:0;
+      pointer-events:none;
+    }
+    .nav{
+      pointer-events:auto;
+      width:min(1120px, calc(100% - 28px));
+      margin:auto;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 12px 10px 18px;
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(234,223,216,.9);
+      box-shadow:0 10px 30px rgba(64,35,25,.08);
+      backdrop-filter:blur(16px);
+      border-radius:999px;
+    }
+    .brand{font-weight:800;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}
+    .brand-mark{
+      width:34px;height:34px;border-radius:50%;
+      display:grid;place-items:center;color:white;
+      background:linear-gradient(135deg,var(--accent),#a73f31);
+      font-family:"Playfair Display";font-size:1.15rem;
+    }
+    .nav-links{display:flex;align-items:center;gap:6px}
+    .nav-links a{padding:10px 13px;border-radius:999px;color:#5f5752;font-size:.92rem}
+    .nav-links a:hover{background:var(--surface-2);color:var(--ink)}
+    .nav-cta,.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border:0;cursor:pointer;border-radius:999px;font-weight:700;transition:.25s ease;
+    }
+    .nav-cta{padding:11px 18px;background:var(--ink);color:#fff}
+    .nav-cta:hover,.btn-dark:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(31,29,28,.18)}
+    .menu-btn{display:none;border:0;background:transparent;width:44px;height:44px;border-radius:50%;cursor:pointer}
+    .menu-btn span,.menu-btn span::before,.menu-btn span::after{
+      display:block;width:19px;height:2px;border-radius:3px;background:var(--ink);position:relative;margin:auto
+    }
+    .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+    .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+
+    /* hero */
+    .hero{min-height:100svh;display:flex;align-items:center;padding:135px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:66px;align-items:center}
+    .hero-copy{position:relative;z-index:2}
+    .hero-title .soft{color:var(--accent)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 34px}
+    .btn{padding:14px 22px}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-light{background:#fff;border:1px solid var(--line)}
+    .btn-light:hover{background:var(--surface-2);transform:translateY(-2px)}
+    .mini-proof{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+    .avatar-stack{display:flex}
+    .avatar-stack span{
+      width:34px;height:34px;border-radius:50%;border:3px solid var(--bg);margin-left:-8px;
+      display:grid;place-items:center;color:white;font-size:.68rem;font-weight:700;
+    }
+    .avatar-stack span:first-child{margin-left:0}
+    .avatar-stack span:nth-child(1){background:#d68c70}
+    .avatar-stack span:nth-child(2){background:#7d9f90}
+    .avatar-stack span:nth-child(3){background:#c7a26b}
+    .avatar-stack span:nth-child(4){background:#8c7aa9}
+
+    .hero-visual{position:relative;min-height:650px}
+    .portrait-card{
+      position:absolute;inset:20px 24px 55px 52px;border-radius:38px;overflow:hidden;
+      background:#ddd;box-shadow:var(--shadow);
+    }
+    .portrait-card img{width:100%;height:100%;object-fit:cover}
+    .portrait-card::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(20,16,14,.42),transparent 45%);
+    }
+    .portrait-caption{
+      position:absolute;bottom:22px;left:24px;right:24px;color:#fff;z-index:2;
+      display:flex;justify-content:space-between;align-items:end;gap:20px;
+    }
+    .portrait-caption strong{display:block;font-size:1.25rem}
+    .portrait-caption small{opacity:.84}
+    .floating-card{
+      position:absolute;z-index:3;background:rgba(255,255,255,.93);border:1px solid rgba(255,255,255,.8);
+      box-shadow:0 16px 38px rgba(50,31,23,.13);backdrop-filter:blur(12px);border-radius:20px;
+    }
+    .float-top{top:0;right:0;padding:16px 18px;width:190px}
+    .float-top .big{font-size:1.8rem;font-weight:800;letter-spacing:-.04em}
+    .float-top p{font-size:.82rem;color:var(--muted);margin:0}
+    .float-bottom{bottom:0;left:0;padding:17px;width:226px}
+    .status-line{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;margin-bottom:10px}
+    .status-line span:last-child{font-weight:800;color:var(--accent)}
+    .bar{height:8px;background:#eee4df;border-radius:99px;overflow:hidden}
+    .bar i{display:block;height:100%;width:92%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:inherit}
+    .sparkles{position:absolute;right:-28px;bottom:88px;width:110px;height:110px;border-radius:50%;background:var(--accent-soft);z-index:-1}
+
+    /* stats */
+    .stats-wrap{padding-bottom:40px}
+    .stats{
+      display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:0 14px 45px rgba(77,43,29,.06);overflow:hidden;
+    }
+    .stat{padding:30px;border-right:1px solid var(--line)}
+    .stat:last-child{border-right:0}
+    .stat strong{display:block;font-size:2rem;letter-spacing:-.04em}
+    .stat span{color:var(--muted);font-size:.9rem}
+
+    /* about */
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:65px;align-items:start}
+    .about-photo{
+      position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow)
+    }
+    .about-photo img{width:100%;height:100%;object-fit:cover}
+    .about-photo .tag{
+      position:absolute;right:18px;bottom:18px;background:#fff;border-radius:999px;padding:12px 16px;
+      box-shadow:0 8px 25px rgba(0,0,0,.10);font-size:.85rem;font-weight:700
+    }
+    .about-copy p{color:var(--muted);font-size:1.03rem}
+    .pill-row{display:flex;gap:9px;flex-wrap:wrap;margin:28px 0}
+    .pill{padding:9px 13px;border:1px solid var(--line);background:#fff;border-radius:999px;font-size:.86rem;font-weight:600}
+    .quote{
+      margin-top:34px;padding:22px 24px;border-left:3px solid var(--accent);
+      background:var(--accent-soft);border-radius:0 18px 18px 0;font-family:"Playfair Display";font-size:1.23rem
+    }
+
+    /* services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{
+      min-height:260px;padding:28px;border:1px solid var(--line);background:rgba(255,255,255,.82);
+      border-radius:var(--radius-sm);transition:.25s ease;position:relative;overflow:hidden
+    }
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#dfcec4}
+    .service .num{font-size:.76rem;font-weight:800;color:var(--accent);margin-bottom:42px}
+    .service p{color:var(--muted);font-size:.94rem;margin-bottom:0}
+    .service-icon{
+      position:absolute;right:20px;top:20px;width:46px;height:46px;border-radius:14px;
+      display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)
+    }
+    .service-icon svg{width:21px;height:21px}
+
+    /* projects */
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+    .filter-btn{
+      border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 15px;cursor:pointer;
+      color:#655e59;font-weight:700;font-size:.86rem
+    }
+    .filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .projects-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .project{
+      border:1px solid var(--line);background:#fff;border-radius:28px;overflow:hidden;transition:.28s ease
+    }
+    .project:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .project.hidden{display:none}
+    .project.large{grid-column:span 7}
+    .project.small{grid-column:span 5}
+    .project-media{height:330px;position:relative;overflow:hidden;background:#ece3de}
+    .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .project:hover .project-media img{transform:scale(1.035)}
+    .project-chip{
+      position:absolute;left:18px;top:18px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+      padding:9px 12px;border-radius:999px;font-weight:700;font-size:.76rem
+    }
+    .project-info{padding:25px 26px 27px}
+    .project-info h3{font-size:1.45rem;margin-bottom:9px}
+    .project-info p{color:var(--muted);margin-bottom:18px}
+    .metrics{display:flex;gap:10px;flex-wrap:wrap}
+    .metric{background:var(--surface-2);border-radius:12px;padding:9px 11px;font-size:.78rem;font-weight:700}
+    .project-social{
+      height:330px;padding:25px;background:linear-gradient(145deg,#f7d9cc,#fff2ea 45%,#f2b9a2);
+      display:grid;place-items:center
+    }
+    .phone{
+      width:178px;height:286px;background:#151515;border-radius:29px;padding:8px;
+      box-shadow:0 22px 45px rgba(48,28,20,.22);transform:rotate(-5deg)
+    }
+    .phone-screen{
+      width:100%;height:100%;border-radius:22px;overflow:hidden;background:#fff;position:relative
+    }
+    .phone-screen img{width:100%;height:100%;object-fit:cover}
+    .phone-screen::after{
+      content:"NEW DROP\A SUMMER EDIT";white-space:pre;position:absolute;left:12px;right:12px;bottom:13px;
+      color:white;font-family:"Playfair Display";font-size:1rem;line-height:1.06;text-shadow:0 2px 10px rgba(0,0,0,.35)
+    }
+
+    /* moderation */
+    .moderation{
+      background:var(--dark);color:#fff;border-radius:36px;padding:48px;position:relative;overflow:hidden
+    }
+    .moderation::after{
+      content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+      background:radial-gradient(circle,rgba(243,180,140,.18),transparent 68%);right:-80px;top:-80px
+    }
+    .moderation-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center;position:relative;z-index:2}
+    .moderation .eyebrow{color:#f8b696}
+    .moderation p{color:#cfc5bf}
+    .inbox{
+      background:#fff;color:var(--ink);border-radius:24px;padding:18px;box-shadow:0 28px 55px rgba(0,0,0,.25)
+    }
+    .inbox-head{display:flex;justify-content:space-between;align-items:center;padding:4px 5px 15px}
+    .inbox-head strong{font-size:.95rem}
+    .live-dot{display:flex;align-items:center;gap:7px;color:#2f7b58;font-size:.78rem;font-weight:700}
+    .live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#43a373;box-shadow:0 0 0 4px #e6f5ed}
+    .message{
+      display:grid;grid-template-columns:38px 1fr auto;gap:11px;align-items:center;padding:11px 4px;border-top:1px solid #eee
+    }
+    .message .m-avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:white;font-weight:800;font-size:.72rem}
+    .message:nth-child(2) .m-avatar{background:#a8846e}
+    .message:nth-child(3) .m-avatar{background:#7f8fb0}
+    .message:nth-child(4) .m-avatar{background:#bf7d8d}
+    .message:nth-child(5) .m-avatar{background:#698e7b}
+    .message strong{display:block;font-size:.82rem}
+    .message span{display:block;color:#80766f;font-size:.73rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px}
+    .message time{font-size:.67rem;color:#9b918a}
+    .mod-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .mod-kpis div{padding:15px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04)}
+    .mod-kpis strong{display:block;font-size:1.4rem}
+    .mod-kpis span{font-size:.74rem;color:#bfb4ad}
+
+    /* workflow */
+    .workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{padding:25px 20px;border-top:1px solid var(--line)}
+    .step .step-no{font-family:"Playfair Display";font-size:2.1rem;color:var(--accent-2);margin-bottom:18px}
+    .step p{color:var(--muted);font-size:.9rem}
+
+    /* testimonials */
+    .testimonials{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+    .testimonial-main{
+      padding:38px;background:#fff;border:1px solid var(--line);border-radius:30px;min-height:330px;
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .stars{color:#d89543;letter-spacing:.15em}
+    .testimonial-main blockquote{
+      margin:22px 0;font-family:"Playfair Display";font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.28
+    }
+    .client{display:flex;align-items:center;gap:12px}
+    .client-avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-weight:800}
+    .client small{display:block;color:var(--muted)}
+    .testimonial-side{
+      background:linear-gradient(145deg,#f8d8c7,#fff6f0);border-radius:30px;padding:30px;
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .testimonial-side .big-number{font-family:"Playfair Display";font-size:5rem;line-height:.9;color:var(--accent)}
+    .testimonial-side p{color:#6d5e56}
+
+    /* tools */
+    .tools{display:flex;gap:10px;flex-wrap:wrap}
+    .tool{
+      padding:12px 15px;background:#fff;border:1px solid var(--line);border-radius:13px;font-weight:700;font-size:.88rem
+    }
+
+    /* contact */
+    .contact-card{
+      background:#fff;border:1px solid var(--line);border-radius:36px;padding:55px;box-shadow:var(--shadow);
+      display:grid;grid-template-columns:1.08fr .92fr;gap:45px;align-items:center
+    }
+    .contact-card h2{margin-bottom:16px}
+    .contact-card p{color:var(--muted)}
+    .contact-links{display:grid;gap:12px}
+    .contact-link{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:17px 18px;border:1px solid var(--line);border-radius:16px;transition:.2s ease
+    }
+    .contact-link:hover{border-color:#d7bdb0;background:var(--accent-soft);transform:translateX(3px)}
+    .contact-link span{color:var(--muted);font-size:.86rem}
+    .contact-link strong{display:block;color:var(--ink)}
+    footer{padding:38px 0 45px;color:var(--muted);font-size:.82rem}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .credits a{text-decoration:underline;text-underline-offset:3px}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .menu-btn{display:block}
+      .nav.open{border-radius:26px;align-items:flex-start;flex-wrap:wrap}
+      .nav.open .nav-links{
+        display:flex;order:3;width:100%;flex-direction:column;align-items:stretch;padding:10px 0 4px
+      }
+      .nav.open .nav-links a{padding:11px 14px}
+      .nav-cta{display:none}
+      .hero-grid,.about-grid,.moderation-grid,.contact-card,.testimonials{grid-template-columns:1fr}
+      .hero{padding-top:120px}
+      .hero-visual{min-height:590px;max-width:650px;width:100%;margin:auto}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .project.large,.project.small{grid-column:span 12}
+      .workflow{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width: 640px){
+      .section{padding:78px 0}
+      .section-head{display:block;margin-bottom:34px}
+      h1{font-size:3.6rem}
+      .hero-visual{min-height:490px}
+      .portrait-card{inset:34px 12px 48px 28px;border-radius:29px}
+      .float-top{width:160px;padding:13px}
+      .float-bottom{width:190px}
+      .services-grid,.workflow{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .stat{border-right:0;border-bottom:1px solid var(--line)!important}
+      .stat:last-child{border-bottom:0!important}
+      .project-media,.project-social{height:270px}
+      .moderation{padding:30px 20px;border-radius:28px}
+      .mod-kpis{grid-template-columns:1fr}
+      .contact-card{padding:30px 22px}
+      .testimonial-main{padding:28px 22px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav-shell">
+    <nav class="nav" id="mainNav">
+      <a class="brand" href="#home" aria-label="Mariam Adel home">
+        <span class="brand-mark">M</span>
+        Mariam Adel
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#moderation">Moderation</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="mailto:hello@mariamadel.co">Let's work together</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Moderator & Content Creator</span>
+          <h1 class="hero-title">
+            Content that feels <span class="soft">human.</span><br>
+            Communities that feel heard.
+          </h1>
+          <p class="lead">
+            I help lifestyle, beauty, food and retail brands turn everyday social media
+            interactions into stronger relationships — through thoughtful content,
+            fast moderation and clear brand voice.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#work">Explore selected work <span>↗</span></a>
+            <a class="btn btn-light" href="#contact">Start a project</a>
+          </div>
+
+          <div class="mini-proof">
+            <div class="avatar-stack" aria-hidden="true">
+              <span>LU</span><span>NC</span><span>VH</span><span>MY</span>
+            </div>
+            <span>Trusted across beauty, F&B, fashion and home brands</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="portrait-card">
+            <img
+              src="https://images.pexels.com/photos/13929772/pexels-photo-13929772.jpeg?auto=compress&dpr=1&h=900&w=1000"
+              alt="Content creator working with a phone and laptop"
+            >
+            <div class="portrait-caption">
+              <div>
+                <strong>Mariam Adel</strong>
+                <small>Cairo, Egypt · Available remotely</small>
+              </div>
+              <small>● Open for projects</small>
+            </div>
+          </div>
+
+          <div class="floating-card float-top">
+            <div class="big">24h</div>
+            <p>average moderation response coverage for active communities</p>
+          </div>
+
+          <div class="floating-card float-bottom">
+            <div class="status-line">
+              <span>Monthly engagement</span>
+              <span>+38%</span>
+            </div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="sparkles"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-wrap">
+      <div class="container stats reveal">
+        <div class="stat"><strong data-count="4">0</strong><span>Years in social media</span></div>
+        <div class="stat"><strong data-count="28">0</strong><span>Campaigns delivered</span></div>
+        <div class="stat"><strong data-count="12">0</strong><span>Brands supported</span></div>
+        <div class="stat"><strong data-count="6">0</strong><span>Content niches</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo reveal">
+          <img
+            src="https://images.pexels.com/photos/13929768/pexels-photo-13929768.jpeg?auto=compress&dpr=1&h=1000&w=900"
+            alt="Creator recording social media content at a desk"
+          >
+          <div class="tag">Strategy × Content × Community</div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">About me</span>
+          <h2>I make brands sound like people, not press releases.</h2>
+          <p>
+            I’m a social media moderator and content creator focused on building
+            consistent brand presence from both sides of the screen: the content people
+            see and the conversations that happen after they engage.
+          </p>
+          <p>
+            My work combines content calendars, copywriting, short-form content ideas,
+            publishing, comment and inbox moderation, FAQ handling and monthly insights.
+            I care about tone, timing and creating useful feedback loops between the audience
+            and the brand team.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">Community Management</span>
+            <span class="pill">Content Planning</span>
+            <span class="pill">Copywriting</span>
+            <span class="pill">Reels & UGC Direction</span>
+            <span class="pill">Customer Care</span>
+            <span class="pill">Reporting</span>
+          </div>
+
+          <div class="quote">
+            “Good content gets attention. Good moderation turns that attention into trust.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">What I do</span>
+            <h2>End-to-end social support.</h2>
+          </div>
+          <p>
+            Flexible support for brands that need a stronger content rhythm,
+            a clearer voice and a reliable person behind the inbox.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+            </div>
+            <div class="num">01 / STRATEGY</div>
+            <h3>Content Planning</h3>
+            <p>Monthly calendars, campaign themes, content pillars, hooks and publishing rhythm aligned with business goals.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v10H8l-3 3V5Z"/></svg>
+            </div>
+            <div class="num">02 / COMMUNITY</div>
+            <h3>Social Moderation</h3>
+            <p>Comments, DMs, FAQs, complaint routing and friendly customer care while protecting the brand tone.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 16l8-8 2 2-8 8H7v-2Z"/></svg>
+            </div>
+            <div class="num">03 / WORDS</div>
+            <h3>Copywriting</h3>
+            <p>Captions, product copy, social scripts, launch messaging and CTAs tailored to each platform and audience.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m10 8 6 4-6 4V8Z"/></svg>
+            </div>
+            <div class="num">04 / VIDEO</div>
+            <h3>Short-form Content</h3>
+            <p>Reel and TikTok concepts, shot lists, hooks, voiceover scripts and creative direction for quick production.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19V9m7 10V5m7 14v-7"/></svg>
+            </div>
+            <div class="num">05 / INSIGHTS</div>
+            <h3>Monthly Reporting</h3>
+            <p>Clear summaries of engagement, audience behavior, FAQs, content performance and next-month actions.</p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="num">06 / CAMPAIGNS</div>
+            <h3>Launch Support</h3>
+            <p>Pre-launch teasers, launch-day coverage, FAQs, response templates and post-launch community follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Selected work</span>
+            <h2>Content with a job to do.</h2>
+          </div>
+          <p>Selected campaign and community work across product, lifestyle and service-based brands.</p>
+        </div>
+
+        <div class="filters reveal">
+          <button class="filter-btn active" data-filter="all">All work</button>
+          <button class="filter-btn" data-filter="content">Content</button>
+          <button class="filter-btn" data-filter="moderation">Moderation</button>
+          <button class="filter-btn" data-filter="campaign">Campaigns</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project large reveal" data-category="campaign content">
+            <div class="project-media">
+              <img
+                src="https://images.pexels.com/photos/9040539/pexels-photo-9040539.jpeg?auto=compress&dpr=1&h=750&w=1260"
+                alt="Video production setup for a content campaign"
+              >
+              <div class="project-chip">Launch Campaign</div>
+            </div>
+            <div class="project-info">
+              <h3>Luma Skincare — “Skin, Simplified”</h3>
+              <p>
+                Developed a 4-week launch narrative for a daily skincare set, combining educational reels,
+                product-first carousels, FAQ stories and real-time comment moderation.
+              </p>
+              <div class="metrics">
+                <span class="metric">+41% saves</span>
+                <span class="metric">3.2× story replies</span>
+                <span class="metric">92% positive sentiment</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project small reveal" data-category="content">
+            <div class="project-social">
+              <div class="phone">
+                <div class="phone-screen">
+                  <img
+                    src="https://images.pexels.com/photos/13929772/pexels-photo-13929772.jpeg?auto=compress&dpr=1&h=750&w=600"
+                    alt="Mobile-first content concept"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Velora — Summer Edit</h3>
+              <p>Fast-paced reel concepts, styling prompts and conversion-focused captions for a seasonal fashion drop.</p>
+              <div class="metrics">
+                <span class="metric">18 short-form ideas</span>
+                <span class="metric">+29% reach</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project small reveal" data-category="moderation">
+            <div class="project-media">
+              <img
+                src="https://images.unsplash.com/photo-1781606989379-5c62ed674c41?auto=format&fit=crop&fm=jpg&q=70&w=1400"
+                alt="Social media communication and moderation workflow"
+              >
+              <div class="project-chip">Community Care</div>
+            </div>
+            <div class="project-info">
+              <h3>Noura Café — Community Reset</h3>
+              <p>
+                Reorganized inbox categories, built response templates and established escalation rules for orders,
+                delivery issues and customer feedback.
+              </p>
+              <div class="metrics">
+                <span class="metric">-46% response time</span>
+                <span class="metric">7 FAQ flows</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project large reveal" data-category="campaign content">
+            <div class="project-media">
+              <img
+                src="https://images.pexels.com/photos/13929768/pexels-photo-13929768.jpeg?auto=compress&dpr=1&h=750&w=1260"
+                alt="Content creator preparing recording and social media material"
+              >
+              <div class="project-chip">Always-on Content</div>
+            </div>
+            <div class="project-info">
+              <h3>Mysa Home — “Small Rituals”</h3>
+              <p>
+                Built an evergreen content system around home rituals: styling tips, creator-led product moments,
+                care guides and soft-selling educational posts.
+              </p>
+              <div class="metrics">
+                <span class="metric">24-post calendar</span>
+                <span class="metric">+33% profile actions</span>
+                <span class="metric">5 content pillars</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="moderation">
+      <div class="container">
+        <div class="moderation reveal">
+          <div class="moderation-grid">
+            <div>
+              <span class="eyebrow">Community moderation</span>
+              <h2>A calm voice behind every notification.</h2>
+              <p>
+                Moderation is more than replying fast. I build practical response systems
+                that keep conversations helpful, consistent and easy to escalate when needed.
+              </p>
+
+              <div class="mod-kpis">
+                <div><strong>92%</strong><span>messages resolved without escalation</span></div>
+                <div><strong>&lt; 25m</strong><span>peak-hour first response target</span></div>
+                <div><strong>7 days</strong><span>weekly trend and FAQ tracking</span></div>
+              </div>
+            </div>
+
+            <div class="inbox">
+              <div class="inbox-head">
+                <strong>Community Inbox</strong>
+                <div class="live-dot">Live coverage</div>
+              </div>
+              <div class="message">
+                <div class="m-avatar">SA</div>
+                <div><strong>Sara A.</strong><span>Is the rose shade back in stock?</span></div>
+                <time>2m</time>
+              </div>
+              <div class="message">
+                <div class="m-avatar">MN</div>
+                <div><strong>Mona N.</strong><span>Thank you, the order arrived today 🤍</span></div>
+                <time>8m</time>
+              </div>
+              <div class="message">
+                <div class="m-avatar">RA</div>
+                <div><strong>Reem A.</strong><span>Can I change the delivery address?</span></div>
+                <time>11m</time>
+              </div>
+              <div class="message">
+                <div class="m-avatar">YA</div>
+                <div><strong>Yara A.</strong><span>Which size would you recommend?</span></div>
+                <time>17m</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">My workflow</span>
+            <h2>Clear from brief to publish.</h2>
+          </div>
+          <p>A lightweight process that keeps content moving without endless back-and-forth.</p>
+        </div>
+
+        <div class="workflow">
+          <div class="step reveal">
+            <div class="step-no">01</div>
+            <h3>Listen</h3>
+            <p>Brand voice, audience, goals, current pain points and existing content performance.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-no">02</div>
+            <h3>Plan</h3>
+            <p>Content pillars, calendar, response flows, scripts, creative direction and approval points.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-no">03</div>
+            <h3>Create & Moderate</h3>
+            <p>Write, publish, coordinate visuals, respond, route issues and keep the community active.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-no">04</div>
+            <h3>Learn</h3>
+            <p>Review what worked, capture audience insights and adapt the next content cycle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container testimonials">
+        <div class="testimonial-main reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            “Mariam gave our social channels a much clearer voice. The content became more consistent,
+            and our inbox finally felt organized instead of reactive.”
+          </blockquote>
+          <div class="client">
+            <div class="client-avatar">LH</div>
+            <div><strong>Laila Hassan</strong><small>Brand Manager · Lifestyle Retail</small></div>
+          </div>
+        </div>
+
+        <div class="testimonial-side reveal">
+          <div class="big-number">4.9</div>
+          <div>
+            <h3>Built around reliability.</h3>
+            <p>Clear communication, organized handovers and content that stays aligned with the brand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Tools I work with</span>
+            <h2>Comfortable across the content stack.</h2>
+          </div>
+        </div>
+
+        <div class="tools reveal">
+          <span class="tool">Meta Business Suite</span>
+          <span class="tool">Instagram</span>
+          <span class="tool">TikTok</span>
+          <span class="tool">Facebook</span>
+          <span class="tool">Canva</span>
+          <span class="tool">CapCut</span>
+          <span class="tool">Notion</span>
+          <span class="tool">Google Workspace</span>
+          <span class="tool">Trello</span>
+          <span class="tool">ChatGPT</span>
+          <span class="tool">Google Sheets</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-card reveal">
+        <div>
+          <span class="eyebrow">Let’s work together</span>
+          <h2>Need a reliable voice behind your brand?</h2>
+          <p>
+            Available for monthly retainers, campaign support and project-based content planning.
+            Tell me what you’re building and where your social media currently needs the most support.
+          </p>
+          <a class="btn btn-dark" href="mailto:hello@mariamadel.co">hello@mariamadel.co ↗</a>
+        </div>
+
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:hello@mariamadel.co">
+            <div><span>Email</span><strong>hello@mariamadel.co</strong></div><b>↗</b>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            <div><span>LinkedIn</span><strong>Mariam Adel</strong></div><b>↗</b>
+          </a>
+          <a class="contact-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+            <div><span>Instagram</span><strong>@mariam.creates</strong></div><b>↗</b>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 Mariam Adel. All rights reserved.</span>
+      <span class="credits">
+        Selected imagery via
+        <a href="https://www.pexels.com/" target="_blank" rel="noreferrer">Pexels</a>
+        &amp;
+        <a href="https://unsplash.com/" target="_blank" rel="noreferrer">Unsplash</a>.
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const nav = document.getElementById('mainNav');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => nav.classList.remove('open'));
+    });
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    const statsEl = document.querySelector('.stats');
+    let counted = false;
+    const countObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting || counted) return;
+        counted = true;
+        document.querySelectorAll('[data-count]').forEach(el => {
+          const target = Number(el.dataset.count);
+          const duration = 900;
+          const start = performance.now();
+          const tick = now => {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+            el.textContent = value + (target >= 20 ? '+' : '');
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      });
+    }, { threshold: 0.35 });
+    if (statsEl) countObserver.observe(statsEl);
+
+    // Project filters
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        projects.forEach(project => {
+          const categories = project.dataset.category.split(' ');
+          const shouldShow = filter === 'all' || categories.includes(filter);
+          project.classList.toggle('hidden', !shouldShow);
+        });
+      });
+    });
+
+    // Add subtle scroll state to nav
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 30
+        ? '0 14px 36px rgba(64,35,25,.12)'
+        : '0 10px 30px rgba(64,35,25,.08)';
+    });
+  </script>
+</body>
+</html>
