@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="الموقع الشخصي للمهندس الطبي أحمد خالد — متخصص في إدارة وصيانة الأجهزة الطبية، أنظمة المستشفيات، الهندسة السريرية وضمان الجودة." />
+  <title>م. أحمد خالد | مهندس طبي</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --surface:#ffffff;
+      --surface-2:#eef5f8;
+      --text:#172033;
+      --muted:#6f7a8f;
+      --primary:#0a6f74;
+      --primary-dark:#07565a;
+      --accent:#2ba5a1;
+      --line:#e7ebf0;
+      --shadow:0 18px 45px rgba(24, 49, 73, .08);
+      --radius:22px;
+      --radius-sm:14px;
+      --container:min(1180px, calc(100% - 40px));
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Cairo",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.85;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+    section{scroll-margin-top:95px}
+
+    .container{width:var(--container);margin:auto}
+    .section{padding:90px 0}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary);
+      font-size:.88rem;
+      font-weight:800;
+      letter-spacing:.02em;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#e7f4f4;
+      margin-bottom:15px;
+    }
+
+    .section-title{
+      margin:0 0 12px;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.25;
+      letter-spacing:-.02em;
+    }
+
+    .section-subtitle{
+      margin:0;
+      color:var(--muted);
+      max-width:690px;
+      font-size:1.02rem;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:flex-end;
+      margin-bottom:38px;
+    }
+
+    /* NAV */
+    .nav-wrap{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(16px);
+      background:rgba(247,249,252,.88);
+      border-bottom:1px solid rgba(231,235,240,.85);
+    }
+
+    nav{
+      width:var(--container);
+      height:76px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      font-size:1.05rem;
+      white-space:nowrap;
+    }
+
+    .brand-mark{
+      width:43px;height:43px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      color:white;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:0 8px 20px rgba(10,111,116,.22);
+    }
+
+    .brand-mark svg{width:24px;height:24px}
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:#485269;
+      font-size:.94rem;
+      font-weight:600;
+    }
+
+    .nav-links a{transition:.2s ease}
+    .nav-links a:hover{color:var(--primary)}
+
+    .nav-cta,
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      border-radius:13px;
+      min-height:48px;
+      padding:0 20px;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.2s ease;
+      font-weight:700;
+    }
+
+    .nav-cta{
+      background:var(--primary);
+      color:white;
+      min-height:44px;
+      padding-inline:17px;
+      font-size:.92rem;
+    }
+
+    .nav-cta:hover,.btn-primary:hover{
+      background:var(--primary-dark);
+      transform:translateY(-1px);
+    }
+
+    .menu-btn{
+      display:none;
+      width:44px;height:44px;
+      align-items:center;
+      justify-content:center;
+      border:none;
+      background:var(--surface);
+      border-radius:12px;
+      box-shadow:0 6px 16px rgba(30,49,68,.08);
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      padding:72px 0 84px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:520px;height:520px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(43,165,161,.13), rgba(43,165,161,0) 68%);
+      left:-130px;top:-120px;
+      pointer-events:none;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:64px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:clamp(2.7rem,6vw,5.1rem);
+      line-height:1.12;
+      margin:0 0 18px;
+      letter-spacing:-.04em;
+    }
+
+    .hero h1 span{color:var(--primary)}
+    .hero p{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:690px;
+      margin:0;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn-primary{background:var(--primary);color:white}
+    .btn-secondary{
+      background:var(--surface);
+      color:var(--text);
+      border-color:var(--line);
+    }
+    .btn-secondary:hover{
+      border-color:#cbd5df;
+      transform:translateY(-1px);
+    }
+
+    .quick-facts{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:36px;
+      max-width:640px;
+    }
+
+    .fact{
+      padding:17px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius:16px;
+    }
+    .fact strong{display:block;font-size:1.18rem}
+    .fact span{color:var(--muted);font-size:.84rem}
+
+    .portrait-shell{
+      position:relative;
+      min-height:560px;
+    }
+
+    .portrait-card{
+      position:absolute;
+      inset:20px 0 0 35px;
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:#dfe9ec;
+    }
+
+    .portrait-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .portrait-overlay{
+      position:absolute;
+      left:28px;
+      right:28px;
+      bottom:26px;
+      padding:18px 20px;
+      border-radius:18px;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      box-shadow:0 12px 26px rgba(20,42,58,.12);
+    }
+
+    .portrait-overlay strong{display:block;font-size:1.05rem}
+    .portrait-overlay span{font-size:.86rem;color:var(--muted)}
+
+    .floating-badge{
+      position:absolute;
+      right:-25px;
+      top:55px;
+      width:145px;
+      padding:14px;
+      border-radius:18px;
+      background:var(--surface);
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+    .floating-badge b{display:block;color:var(--primary);font-size:1.3rem}
+    .floating-badge span{font-size:.8rem;color:var(--muted)}
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:46px;
+      align-items:start;
+    }
+
+    .about-photo{
+      border-radius:28px;
+      overflow:hidden;
+      min-height:490px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      min-height:490px;
+    }
+
+    .about-copy{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-copy p{color:var(--muted);margin-top:0}
+
+    .skill-chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .chip{
+      border-radius:999px;
+      background:#f3f6f8;
+      padding:8px 13px;
+      color:#455066;
+      font-size:.88rem;
+      font-weight:600;
+      border:1px solid #e8edf1;
+    }
+
+    /* SERVICES */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      transition:.25s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow);
+      border-color:#d9e4e8;
+    }
+
+    .icon-box{
+      width:50px;height:50px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      margin-bottom:20px;
+      background:#e7f4f4;
+      color:var(--primary);
+    }
+
+    .icon-box svg{width:25px;height:25px}
+    .service-card h3{margin:0 0 8px;font-size:1.1rem}
+    .service-card p{margin:0;color:var(--muted);font-size:.93rem}
+
+    /* PROJECTS */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+    }
+
+    .project-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 12px 35px rgba(25,51,74,.06);
+    }
+
+    .project-image{
+      height:285px;
+      overflow:hidden;
+      background:#e9eef1;
+    }
+
+    .project-image img{
+      width:100%;height:100%;
+      object-fit:cover;
+      transition:.35s ease;
+    }
+
+    .project-card:hover .project-image img{transform:scale(1.035)}
+
+    .project-body{padding:25px}
+    .project-meta{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary);
+      font-size:.82rem;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .project-card h3{margin:0 0 9px;font-size:1.24rem}
+    .project-card p{margin:0;color:var(--muted);font-size:.93rem}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:20px;
+    }
+    .metric{
+      background:#f6f8fa;
+      border-radius:14px;
+      padding:13px;
+      text-align:center;
+    }
+    .metric b{display:block;color:var(--text);font-size:.95rem}
+    .metric span{font-size:.76rem;color:var(--muted)}
+
+    /* EXPERIENCE */
+    .timeline{
+      position:relative;
+      margin-top:8px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      right:16px;
+      top:10px;
+      bottom:10px;
+      width:2px;
+      background:#dce6e8;
+    }
+
+    .timeline-item{
+      position:relative;
+      padding:0 50px 34px 0;
+    }
+
+    .timeline-item:last-child{padding-bottom:0}
+
+    .timeline-dot{
+      position:absolute;
+      right:6px;
+      top:7px;
+      width:21px;height:21px;
+      border-radius:50%;
+      background:var(--surface);
+      border:6px solid var(--primary);
+      box-shadow:0 0 0 5px #e8f2f3;
+    }
+
+    .timeline-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:23px;
+    }
+
+    .timeline-top{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:start;
+      margin-bottom:8px;
+    }
+
+    .timeline-card h3{margin:0;font-size:1.08rem}
+    .timeline-card .company{color:var(--primary);font-weight:700;font-size:.92rem}
+    .timeline-card .date{color:var(--muted);font-size:.82rem;white-space:nowrap}
+    .timeline-card p{margin:10px 0 0;color:var(--muted);font-size:.91rem}
+
+    /* CERTS */
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .cert{
+      padding:23px;
+      border-radius:19px;
+      background:var(--surface);
+      border:1px solid var(--line);
+    }
+    .cert small{color:var(--primary);font-weight:800}
+    .cert h3{margin:8px 0 6px;font-size:1rem}
+    .cert p{margin:0;color:var(--muted);font-size:.84rem}
+
+    /* CONTACT */
+    .contact-wrap{
+      background:linear-gradient(145deg,#0a6267,#0b767a);
+      border-radius:32px;
+      padding:46px;
+      color:white;
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:40px;
+      align-items:start;
+      box-shadow:0 24px 60px rgba(10,98,103,.18);
+    }
+
+    .contact-wrap .eyebrow{
+      background:rgba(255,255,255,.12);
+      color:white;
+    }
+
+    .contact-wrap p{color:rgba(255,255,255,.76)}
+
+    .contact-list{
+      display:grid;
+      gap:13px;
+      margin-top:25px;
+    }
+
+    .contact-item{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      color:white;
+    }
+
+    .contact-item .mini{
+      width:38px;height:38px;
+      border-radius:11px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.12);
+    }
+
+    .contact-form{
+      background:white;
+      border-radius:22px;
+      padding:22px;
+      color:var(--text);
+    }
+
+    .field{margin-bottom:13px}
+    .field label{
+      display:block;
+      font-size:.84rem;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .field input,.field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background:#fbfcfd;
+      border-radius:12px;
+      padding:12px 13px;
+      outline:none;
+      transition:.2s ease;
+    }
+    .field textarea{min-height:120px;resize:vertical}
+    .field input:focus,.field textarea:focus{border-color:#8ac8c7;box-shadow:0 0 0 3px rgba(43,165,161,.1)}
+
+    .form-note{
+      font-size:.8rem;
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    footer{
+      padding:28px 0 34px;
+      color:var(--muted);
+      font-size:.87rem;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .socials{display:flex;gap:10px}
+    .socials a{
+      width:38px;height:38px;
+      border-radius:11px;
+      display:grid;
+      place-items:center;
+      background:var(--surface);
+      border:1px solid var(--line);
+      font-weight:800;
+    }
+
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .nav-cta{display:none}
+      .menu-btn{display:flex}
+      .nav-links.open{
+        display:flex;
+        position:absolute;
+        top:76px;
+        right:20px;
+        left:20px;
+        padding:18px;
+        background:white;
+        border:1px solid var(--line);
+        border-radius:18px;
+        box-shadow:var(--shadow);
+        flex-direction:column;
+        align-items:stretch;
+        gap:6px;
+      }
+      .nav-links.open a{
+        padding:10px 12px;
+        border-radius:10px;
+      }
+      .nav-links.open a:hover{background:#f4f7f8}
+
+      .hero-grid,.about-grid,.contact-wrap{grid-template-columns:1fr}
+      .portrait-shell{min-height:520px;max-width:650px;width:100%;margin:auto}
+      .portrait-card{inset:0}
+      .floating-badge{right:15px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .cert-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width: 700px){
+      :root{--container:min(100% - 28px,1180px)}
+      .section{padding:68px 0}
+      .hero{padding-top:48px}
+      .hero h1{font-size:2.55rem}
+      .quick-facts{grid-template-columns:1fr}
+      .portrait-shell{min-height:440px}
+      .floating-badge{width:125px;padding:11px}
+      .portrait-overlay{left:16px;right:16px;bottom:16px}
+      .section-head{display:block}
+      .cards,.projects,.cert-grid{grid-template-columns:1fr}
+      .project-image{height:235px}
+      .metrics{grid-template-columns:1fr}
+      .timeline-top{display:block}
+      .timeline-card .date{display:block;margin-top:5px}
+      .contact-wrap{padding:28px 20px}
+      .about-copy{padding:24px}
+      .nav-wrap{position:sticky}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav-wrap">
+    <nav>
+      <a href="#home" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 12h4l2-5 4 10 2-5h6"/>
+            <path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+          </svg>
+        </span>
+        <span>أحمد خالد</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">نبذة عني</a>
+        <a href="#expertise">التخصصات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#experience">الخبرة</a>
+        <a href="#certificates">الشهادات</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">تواصل معي</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">الهندسة الطبية • Clinical Engineering</div>
+          <h1>أطوّر حلولًا هندسية تجعل <span>الرعاية الصحية</span> أكثر أمانًا وكفاءة.</h1>
+          <p>
+            أنا م. أحمد خالد، مهندس طبي متخصص في إدارة دورة حياة الأجهزة الطبية، الصيانة الوقائية والتصحيحية،
+            تقييم المخاطر، تجهيزات المستشفيات، ودعم فرق الرعاية الصحية لضمان أعلى مستويات الاعتمادية والسلامة.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">استعرض المشاريع</a>
+            <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+          </div>
+
+          <div class="quick-facts">
+            <div class="fact"><strong>6+ سنوات</strong><span>خبرة في الهندسة السريرية</span></div>
+            <div class="fact"><strong>180+</strong><span>جهازًا ضمن خطط الصيانة والمتابعة</span></div>
+            <div class="fact"><strong>98%</strong><span>التزام بخطط الصيانة الوقائية</span></div>
+          </div>
+        </div>
+
+        <div class="portrait-shell">
+          <div class="portrait-card">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1100&q=85" alt="مهندس طبي داخل بيئة عمل احترافية" />
+            <div class="portrait-overlay">
+              <strong>م. أحمد خالد محمود</strong>
+              <span>Biomedical Engineer • Clinical Engineering & Medical Equipment Management</span>
+            </div>
+          </div>
+          <div class="floating-badge">
+            <b>ISO 13485</b>
+            <span>معرفة تطبيقية بأنظمة الجودة للأجهزة الطبية</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1000&q=85" alt="بيئة عمل طبية وتجهيزات مستشفى" />
+          </div>
+
+          <div class="about-copy">
+            <div class="eyebrow">نبذة عني</div>
+            <h2 class="section-title">هندسة عملية تربط التقنية باحتياجات الفريق الطبي.</h2>
+            <p>
+              أعمل في مجال الهندسة الطبية السريرية مع تركيز على رفع جاهزية الأجهزة الطبية وتقليل فترات التوقف،
+              وتحسين إجراءات الصيانة والتوثيق الفني داخل المنشآت الصحية. شاركت في إعداد خطط صيانة دورية،
+              استلام واختبار أجهزة جديدة، ومراجعة سجلات الأعطال وقطع الغيار، بالإضافة إلى تدريب المستخدمين على
+              التشغيل الآمن للأجهزة.
+            </p>
+            <p>
+              أؤمن أن دور المهندس الطبي لا يقتصر على إصلاح الجهاز، بل يمتد إلى إدارة المخاطر، تحسين تجربة الطاقم
+              الطبي، وتحويل بيانات الأعطال والصيانة إلى قرارات واضحة تساعد المنشأة الصحية على العمل بكفاءة أعلى.
+            </p>
+
+            <div class="skill-chips">
+              <span class="chip">إدارة الأجهزة الطبية</span>
+              <span class="chip">الصيانة الوقائية</span>
+              <span class="chip">Troubleshooting</span>
+              <span class="chip">إدارة المخاطر</span>
+              <span class="chip">اختبارات السلامة الكهربائية</span>
+              <span class="chip">التوثيق الفني</span>
+              <span class="chip">تجهيز المستشفيات</span>
+              <span class="chip">تدريب المستخدمين</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">مجالات التخصص</div>
+            <h2 class="section-title">خبرة تغطي دورة حياة الجهاز الطبي بالكامل.</h2>
+          </div>
+          <p class="section-subtitle">من مرحلة التقييم والشراء إلى التشغيل والصيانة، مع التركيز على السلامة، الاعتمادية وتكلفة التشغيل.</p>
+        </div>
+
+        <div class="cards">
+          <article class="service-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="8"/></svg>
+            </div>
+            <h3>إدارة الأجهزة الطبية</h3>
+            <p>حصر وتصنيف الأصول الطبية، متابعة العمر التشغيلي، خطط الاستبدال، وسجلات الأداء والصيانة لكل جهاز.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-3 3-3-3 3-3z"/></svg>
+            </div>
+            <h3>الصيانة الوقائية والتصحيحية</h3>
+            <p>إنشاء جداول PM، فحص الأعطال، تحليل الأسباب الجذرية ومتابعة الإصلاح لضمان الحد الأدنى من التوقف.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 7v5c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V7l-8-4z"/><path d="m9 12 2 2 4-5"/></svg>
+            </div>
+            <h3>السلامة وإدارة المخاطر</h3>
+            <p>تقييم المخاطر الفنية، مراجعة إجراءات التشغيل الآمن، والتأكد من تطبيق متطلبات السلامة الكهربائية.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2"/></svg>
+            </div>
+            <h3>تحليل الأداء والبيانات</h3>
+            <p>تحليل معدلات الأعطال وMTTR وMTBF لاكتشاف نقاط الضعف وتحسين قرارات الصيانة والاستبدال.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+            </div>
+            <h3>تجهيز المستشفيات</h3>
+            <p>المشاركة في تحديد المواصفات الفنية، المفاضلة بين الأجهزة، الاستلام الفني والتنسيق مع الموردين.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 17V7h12v10"/><path d="M9 11h6M12 8v6"/></svg>
+            </div>
+            <h3>التدريب الفني</h3>
+            <p>تدريب المستخدمين على التشغيل السليم، إجراءات الفحص الأولي، والإبلاغ الصحيح عن الأعطال.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">مشاريع مختارة</div>
+            <h2 class="section-title">نتائج عملية داخل بيئات الرعاية الصحية.</h2>
+          </div>
+          <p class="section-subtitle">نماذج لمشاريع تحسين الجاهزية، إدارة الأصول، وتطوير إجراءات الصيانة والتشغيل.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=85" alt="أجهزة طبية داخل مستشفى" />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">إدارة أصول طبية • مستشفى تخصصي</div>
+              <h3>إعادة تنظيم برنامج الصيانة الوقائية لـ 180+ جهازًا</h3>
+              <p>إعادة تصنيف الأجهزة حسب درجة الخطورة ووضع خطة PM شهرية موحدة مع نماذج توثيق أدق وربط سجلات الأعطال بتاريخ كل جهاز.</p>
+              <div class="metrics">
+                <div class="metric"><b>98%</b><span>التزام بالخطة</span></div>
+                <div class="metric"><b>-24%</b><span>أعطال متكررة</span></div>
+                <div class="metric"><b>180+</b><span>جهازًا متابعًا</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=1200&q=85" alt="معدات غرفة رعاية مركزة" />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">ICU • تحليل أعطال</div>
+              <h3>تحسين جاهزية أجهزة المراقبة في وحدة العناية المركزة</h3>
+              <p>مراجعة نمط الأعطال المتكررة، تحديث إجراءات الفحص قبل التشغيل، وتحسين توفر قطع الغيار الحرجة للأجهزة الأكثر استخدامًا.</p>
+              <div class="metrics">
+                <div class="metric"><b>-31%</b><span>وقت التوقف</span></div>
+                <div class="metric"><b>14</b><span>جهاز Monitor</span></div>
+                <div class="metric"><b>3 أشهر</b><span>مدة المشروع</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85" alt="طبيب يستخدم أجهزة طبية حديثة" />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">تدريب مستخدمين • سلامة تشغيل</div>
+              <h3>برنامج تدريب للطاقم الطبي على التشغيل الآمن</h3>
+              <p>تطوير جلسات قصيرة للفِرق التمريضية حول الفحص قبل التشغيل، الإنذارات الأساسية، الاستخدام الصحيح، وآلية الإبلاغ عن الأعطال.</p>
+              <div class="metrics">
+                <div class="metric"><b>52</b><span>مشاركًا</span></div>
+                <div class="metric"><b>4</b><span>جلسات تدريب</span></div>
+                <div class="metric"><b>92%</b><span>رضا المشاركين</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=85" alt="فريق طبي يعمل داخل منشأة صحية" />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">Procurement • Commissioning</div>
+              <h3>استلام وتشغيل دفعة أجهزة طبية جديدة</h3>
+              <p>مراجعة المطابقة للمواصفات، فحص الملحقات، الاختبارات التشغيلية الأولية، وتوثيق محاضر الاستلام قبل التسليم للأقسام السريرية.</p>
+              <div class="metrics">
+                <div class="metric"><b>27</b><span>جهازًا</span></div>
+                <div class="metric"><b>6</b><span>تصنيفات طبية</span></div>
+                <div class="metric"><b>100%</b><span>توثيق استلام</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">الخبرة المهنية</div>
+            <h2 class="section-title">مسار مهني في الهندسة الطبية السريرية.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>Senior Biomedical Engineer</h3>
+                  <div class="company">مستشفى الحياة التخصصي — القاهرة</div>
+                </div>
+                <span class="date">2023 — حتى الآن</span>
+              </div>
+              <p>الإشراف على خطط الصيانة الوقائية، تحليل الأعطال المتكررة، متابعة عقود الموردين، الاستلام الفني للأجهزة الجديدة، وتقديم تقارير الأداء الدورية للإدارة.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>Biomedical Service Engineer</h3>
+                  <div class="company">MediTech Solutions — الجيزة</div>
+                </div>
+                <span class="date">2020 — 2023</span>
+              </div>
+              <p>صيانة ودعم أجهزة Patient Monitors وECG وInfusion Pumps وDefibrillators، وإعداد تقارير الخدمة ورفع كفاءة إجراءات Troubleshooting.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>Biomedical Engineer Intern</h3>
+                  <div class="company">المعهد القومي للقلب — القاهرة</div>
+                </div>
+                <span class="date">2019 — 2020</span>
+              </div>
+              <p>تدريب عملي على صيانة وفحص الأجهزة الطبية، إجراءات السلامة الكهربائية، والتعامل مع سجلات الصيانة داخل الأقسام السريرية.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certificates">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">التعليم والشهادات</div>
+            <h2 class="section-title">معرفة تقنية مدعومة بالتعلم المستمر.</h2>
+          </div>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert">
+            <small>بكالوريوس</small>
+            <h3>الهندسة الطبية والحيوية</h3>
+            <p>جامعة القاهرة — كلية الهندسة<br>دفعة 2019</p>
+          </article>
+          <article class="cert">
+            <small>Quality</small>
+            <h3>ISO 13485 Fundamentals</h3>
+            <p>Medical Devices Quality Management Systems</p>
+          </article>
+          <article class="cert">
+            <small>Safety</small>
+            <h3>Electrical Safety Testing</h3>
+            <p>أساسيات اختبارات السلامة الكهربائية للأجهزة الطبية</p>
+          </article>
+          <article class="cert">
+            <small>Clinical Engineering</small>
+            <h3>Medical Equipment Management</h3>
+            <p>إدارة دورة حياة الأجهزة، الصيانة والمخاطر التشغيلية</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <div>
+            <div class="eyebrow">تواصل معي</div>
+            <h2 class="section-title">هل لديك مشروع أو فرصة في مجال الأجهزة الطبية؟</h2>
+            <p>
+              متاح للتعاون في مشروعات تجهيز المنشآت الصحية، إدارة وصيانة الأجهزة الطبية،
+              مراجعة خطط الصيانة، والدعم الفني والتشغيلي.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="mini">✉</span>
+                <span>ahmed.khaled.biomed@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <span class="mini">☎</span>
+                <span>+20 10 2345 6789</span>
+              </div>
+              <div class="contact-item">
+                <span class="mini">⌖</span>
+                <span>القاهرة، مصر</span>
+              </div>
+              <div class="contact-item">
+                <span class="mini">in</span>
+                <span>linkedin.com/in/ahmed-khaled-biomed</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="name">الاسم</label>
+              <input id="name" type="text" placeholder="اكتب اسمك" required />
+            </div>
+            <div class="field">
+              <label for="email">البريد الإلكتروني</label>
+              <input id="email" type="email" placeholder="name@example.com" required />
+            </div>
+            <div class="field">
+              <label for="message">رسالتك</label>
+              <textarea id="message" placeholder="اكتب تفاصيل رسالتك أو المشروع..." required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" style="width:100%">إرسال الرسالة</button>
+            <div class="form-note" id="formNote">سيتم فتح تطبيق البريد لديك لإرسال الرسالة مباشرة.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> م. أحمد خالد محمود — جميع الحقوق محفوظة.</span>
+      <div class="socials">
+        <a href="mailto:ahmed.khaled.biomed@gmail.com" aria-label="البريد الإلكتروني">@</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="لينكدإن">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('رسالة جديدة من الموقع الشخصي - ' + name);
+      const body = encodeURIComponent(
+        'الاسم: ' + name + '\n' +
+        'البريد الإلكتروني: ' + email + '\n\n' +
+        'الرسالة:\n' + message
+      );
+
+      window.location.href = 'mailto:ahmed.khaled.biomed@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
