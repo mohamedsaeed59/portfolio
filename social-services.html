@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FRAME Social Studio — إدارة سوشيال ميديا، صناعة محتوى، تصوير احترافي، إنتاج فيديو وبودكاست للعلامات التجارية وصناع المحتوى." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>FRAME Social Studio | سوشيال ميديا، تصوير وبودكاست</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --surface:#f7f8fa;
+      --surface-2:#f1f3f6;
+      --text:#14171c;
+      --muted:#6c7380;
+      --line:#e8ebef;
+      --primary:#161b22;
+      --accent:#ff5a36;
+      --accent-soft:#fff0eb;
+      --green:#0d9f6e;
+      --shadow:0 18px 55px rgba(20,23,28,.08);
+      --radius:24px;
+      --container:min(1180px, calc(100% - 40px));
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Tajawal",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    ::selection{background:#ffd5ca;color:#111}
+
+    .container{width:var(--container);margin-inline:auto}
+    .section{padding:100px 0}
+    .section-soft{background:var(--surface)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:8px 13px;border:1px solid var(--line);
+      border-radius:999px;background:#fff;font-size:14px;font-weight:700;
+      color:#343a44;
+    }
+    .eyebrow::before{
+      content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);
+      box-shadow:0 0 0 5px var(--accent-soft);
+    }
+    .section-head{
+      display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:44px;
+    }
+    .section-head h2{
+      margin:14px 0 0;font-size:clamp(34px,5vw,58px);line-height:1.12;letter-spacing:-1.5px;
+    }
+    .section-head p{margin:0;max-width:570px;color:var(--muted);font-size:18px}
+    .accent-text{color:var(--accent)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 22px;border-radius:14px;border:1px solid var(--primary);
+      font-weight:800;transition:.25s ease;
+    }
+    .btn-dark{background:var(--primary);color:#fff}
+    .btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(22,27,34,.16)}
+    .btn-light{background:#fff;color:var(--primary);border-color:var(--line)}
+    .btn-light:hover{border-color:#cdd2d9;background:#fafafa}
+    .btn-accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn-accent:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,90,54,.25)}
+
+    /* Header */
+    header{
+      position:fixed;inset:0 0 auto;z-index:50;
+      background:rgba(255,255,255,.88);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(232,235,239,.85);
+    }
+    nav{
+      width:var(--container);margin:auto;height:76px;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800}
+    .brand-mark{
+      width:38px;height:38px;border-radius:12px;background:var(--primary);color:#fff;
+      display:grid;place-items:center;font-size:19px;position:relative;overflow:hidden;
+    }
+    .brand-mark::after{
+      content:"";position:absolute;width:18px;height:18px;border:3px solid var(--accent);
+      border-radius:6px;transform:rotate(12deg);
+    }
+    .brand-text{line-height:1.05}
+    .brand-text strong{display:block;font-size:16px;letter-spacing:.4px}
+    .brand-text span{display:block;color:var(--muted);font-size:11px;margin-top:4px;font-weight:600}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:700}
+    .nav-links a{color:#454b55;transition:.2s}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .menu-btn{
+      width:44px;height:44px;border:1px solid var(--line);border-radius:12px;
+      background:#fff;display:none;place-items:center;
+    }
+    .mobile-menu{
+      display:none;position:fixed;inset:76px 0 auto;background:#fff;
+      border-bottom:1px solid var(--line);padding:18px 20px 24px;z-index:45;
+      box-shadow:0 14px 30px rgba(20,23,28,.08);
+    }
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:13px 3px;border-bottom:1px solid var(--line);font-weight:700}
+    .mobile-menu .btn{margin-top:16px;width:100%}
+
+    /* Hero */
+    .hero{padding:132px 0 64px;position:relative}
+    .hero::before{
+      content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+      background:radial-gradient(circle,rgba(255,90,54,.12),rgba(255,90,54,0) 68%);
+      top:70px;left:-130px;pointer-events:none;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}
+    .hero h1{
+      margin:18px 0 22px;font-size:clamp(48px,7vw,83px);line-height:1.02;
+      letter-spacing:-3px;max-width:760px;
+    }
+    .hero h1 span{
+      display:inline-block;background:linear-gradient(90deg,var(--accent),#ff875f);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero-copy{color:var(--muted);font-size:20px;max-width:650px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-proof{
+      margin-top:36px;padding-top:25px;border-top:1px solid var(--line);
+      display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+    }
+    .proof-item strong{display:block;font-size:24px}
+    .proof-item span{font-size:13px;color:var(--muted)}
+    .proof-divider{width:1px;height:38px;background:var(--line)}
+
+    .hero-visual{position:relative;min-height:570px}
+    .hero-main{
+      width:84%;height:515px;border-radius:32px;overflow:hidden;margin-right:auto;
+      box-shadow:var(--shadow);position:relative;background:#ddd;
+    }
+    .hero-main img{width:100%;height:100%;object-fit:cover}
+    .hero-main::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,17,20,.28),transparent 45%);
+    }
+    .floating-card{
+      position:absolute;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+      border-radius:18px;padding:15px;z-index:2;
+    }
+    .float-top{top:48px;right:0;width:205px}
+    .float-bottom{bottom:23px;left:0;width:230px}
+    .float-label{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .float-value{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800}
+    .mini-bars{display:flex;align-items:end;gap:5px;height:42px;margin-top:12px}
+    .mini-bars i{display:block;flex:1;border-radius:6px;background:#f0b4a4}
+    .mini-bars i:nth-child(1){height:40%}
+    .mini-bars i:nth-child(2){height:70%}
+    .mini-bars i:nth-child(3){height:54%}
+    .mini-bars i:nth-child(4){height:90%;background:var(--accent)}
+    .mini-bars i:nth-child(5){height:78%}
+
+    /* Logos/strip */
+    .strip{
+      padding:24px 0;border-block:1px solid var(--line);background:#fff;
+    }
+    .strip-inner{
+      display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+      color:#656d78;font-size:14px;font-weight:700;
+    }
+    .industry-tags{display:flex;gap:9px;flex-wrap:wrap}
+    .industry-tags span{
+      padding:9px 13px;background:var(--surface);border:1px solid var(--line);border-radius:999px;
+    }
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{
+      padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;
+      transition:.28s ease;min-height:280px;display:flex;flex-direction:column;
+    }
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d9dde3}
+    .service-icon{
+      width:52px;height:52px;border-radius:15px;display:grid;place-items:center;
+      background:var(--accent-soft);color:var(--accent);margin-bottom:28px;
+    }
+    .service-card h3{font-size:23px;margin:0 0 10px}
+    .service-card p{margin:0;color:var(--muted)}
+    .service-meta{
+      margin-top:auto;padding-top:23px;display:flex;gap:7px;flex-wrap:wrap
+    }
+    .service-meta span{
+      font-size:12px;padding:7px 10px;border-radius:999px;background:var(--surface);color:#515864
+    }
+
+    /* Work */
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+    .filter-btn{
+      border:1px solid var(--line);background:#fff;padding:9px 15px;border-radius:999px;font-weight:700;
+      color:#616874;transition:.2s;
+    }
+    .filter-btn.active,.filter-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .work-card{
+      position:relative;border-radius:26px;overflow:hidden;min-height:360px;background:#ddd;
+      isolation:isolate;
+    }
+    .work-card:nth-child(1),.work-card:nth-child(4){grid-column:span 7}
+    .work-card:nth-child(2),.work-card:nth-child(3){grid-column:span 5}
+    .work-card:nth-child(5),.work-card:nth-child(6){grid-column:span 6}
+    .work-card.hidden{display:none}
+    .work-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:.5s ease}
+    .work-card::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,9,12,.82),rgba(7,9,12,.02) 65%);z-index:0;
+    }
+    .work-card:hover img{transform:scale(1.045)}
+    .work-content{position:absolute;inset:auto 0 0;padding:25px;color:#fff;z-index:2}
+    .work-tag{font-size:12px;opacity:.8;margin-bottom:7px}
+    .work-content h3{font-size:26px;margin:0 0 6px}
+    .work-content p{margin:0;opacity:.82;font-size:14px;max-width:500px}
+
+    /* Case study */
+    .case-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+    .case-panel{
+      background:var(--primary);border-radius:32px;padding:38px;color:#fff;position:relative;overflow:hidden;
+    }
+    .case-panel::after{
+      content:"";position:absolute;width:260px;height:260px;border-radius:50%;
+      background:rgba(255,90,54,.18);left:-90px;bottom:-130px;
+    }
+    .case-panel .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+    .case-panel h2{font-size:46px;line-height:1.15;margin:16px 0 14px}
+    .case-panel p{color:#cbd0d7;margin:0 0 28px;font-size:17px}
+    .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .metric{
+      padding:20px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);
+    }
+    .metric strong{display:block;font-size:31px;color:#fff}
+    .metric span{color:#adb4be;font-size:13px}
+    .case-image{height:590px;border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
+    .case-image img{width:100%;height:100%;object-fit:cover}
+
+    /* Process */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{
+      padding:28px 23px;border-top:2px solid var(--line);position:relative;
+    }
+    .step::before{
+      content:"";position:absolute;top:-6px;right:0;width:10px;height:10px;border-radius:50%;background:var(--accent)
+    }
+    .step b{font-size:12px;color:var(--accent);letter-spacing:1px}
+    .step h3{margin:12px 0 8px;font-size:21px}
+    .step p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Studio */
+    .studio-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+    .studio-main,.studio-side{border-radius:28px;overflow:hidden;position:relative}
+    .studio-main{height:570px}
+    .studio-side{height:275px}
+    .studio-stack{display:grid;gap:20px}
+    .studio-grid img{width:100%;height:100%;object-fit:cover}
+    .studio-caption{
+      position:absolute;right:20px;left:20px;bottom:20px;background:rgba(255,255,255,.91);
+      backdrop-filter:blur(10px);padding:17px 18px;border-radius:16px;
+    }
+    .studio-caption strong{display:block;margin-bottom:3px}
+    .studio-caption span{color:var(--muted);font-size:13px}
+
+    /* Testimonials */
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{
+      padding:30px;border:1px solid var(--line);border-radius:24px;background:#fff;
+    }
+    .stars{color:#ff9c2a;font-size:14px;letter-spacing:2px}
+    .quote p{font-size:17px;margin:15px 0 26px}
+    .client{display:flex;align-items:center;gap:11px}
+    .avatar{
+      width:44px;height:44px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-weight:800
+    }
+    .client strong{display:block;font-size:14px}
+    .client span{display:block;color:var(--muted);font-size:12px}
+
+    /* CTA */
+    .cta{
+      border-radius:34px;background:var(--accent);color:#fff;padding:58px;display:flex;
+      justify-content:space-between;align-items:center;gap:30px;overflow:hidden;position:relative;
+    }
+    .cta::after{
+      content:"";position:absolute;width:300px;height:300px;border:50px solid rgba(255,255,255,.1);
+      border-radius:50%;left:-80px;top:-100px;
+    }
+    .cta h2{font-size:clamp(34px,5vw,56px);line-height:1.12;margin:0 0 12px;max-width:650px}
+    .cta p{margin:0;color:#ffe3dc;max-width:650px}
+    .cta .btn{background:#fff;color:var(--accent);border-color:#fff;white-space:nowrap;z-index:2}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
+    .contact-copy h2{font-size:48px;line-height:1.15;margin:15px 0 15px}
+    .contact-copy p{color:var(--muted);font-size:17px}
+    .contact-list{margin-top:30px;display:grid;gap:15px}
+    .contact-item{display:flex;gap:12px;align-items:flex-start}
+    .contact-item i{
+      width:42px;height:42px;border-radius:12px;background:var(--surface);display:grid;place-items:center;
+      font-style:normal;font-weight:800;color:var(--accent);
+    }
+    .contact-item strong{display:block;font-size:14px}
+    .contact-item span{display:block;color:var(--muted);font-size:13px}
+    .form{
+      padding:30px;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);background:#fff;
+    }
+    .form-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .field{margin-bottom:14px}
+    .field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}
+    .field input,.field textarea{
+      width:100%;border:1px solid var(--line);border-radius:13px;background:#fafafa;
+      padding:14px 15px;outline:none;transition:.2s;color:var(--text);
+    }
+    .field input:focus,.field textarea:focus{border-color:#bfc5cd;background:#fff;box-shadow:0 0 0 4px #f3f4f6}
+    .field textarea{min-height:120px;resize:vertical}
+    .form .btn{width:100%}
+    .form-note{margin:10px 0 0;color:var(--muted);font-size:12px;text-align:center}
+    .success{
+      display:none;margin-top:13px;padding:12px 14px;border-radius:12px;background:#ecfbf5;color:#087453;font-weight:700;font-size:13px
+    }
+    .success.show{display:block}
+
+    footer{padding:30px 0;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner p{margin:0;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:18px;font-size:13px;font-weight:700;color:#555d67}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:980px){
+      .nav-links,.nav-actions .btn{display:none}
+      .menu-btn{display:grid}
+      .hero-grid,.case-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:120px}
+      .hero-grid{gap:36px}
+      .hero-visual{min-height:530px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .studio-grid{grid-template-columns:1fr}
+      .quotes{grid-template-columns:1fr 1fr}
+      .case-image{height:480px}
+    }
+
+    @media (max-width:720px){
+      :root{--container:min(100% - 28px, 1180px)}
+      .section{padding:76px 0}
+      nav{height:70px}
+      .mobile-menu{top:70px}
+      .hero{padding-top:108px}
+      .hero h1{font-size:50px;letter-spacing:-2px}
+      .hero-copy{font-size:17px}
+      .hero-main{width:91%;height:430px}
+      .hero-visual{min-height:475px}
+      .float-top{width:175px;top:24px}
+      .float-bottom{width:190px;bottom:8px}
+      .section-head{display:block}
+      .section-head p{margin-top:16px;font-size:16px}
+      .services-grid,.quotes{grid-template-columns:1fr}
+      .work-grid{display:grid;grid-template-columns:1fr}
+      .work-card,.work-card:nth-child(n){grid-column:1;min-height:330px}
+      .process-grid{grid-template-columns:1fr}
+      .studio-main{height:450px}
+      .studio-side{height:240px}
+      .cta{padding:38px 25px;display:block}
+      .cta .btn{margin-top:24px;width:100%}
+      .form-row{grid-template-columns:1fr}
+      .form{padding:22px}
+      .contact-copy h2{font-size:39px}
+      .case-panel{padding:28px}
+      .case-panel h2{font-size:38px}
+      .metrics{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width:470px){
+      .hero h1{font-size:42px}
+      .hero-main{height:390px}
+      .hero-visual{min-height:455px}
+      .float-bottom{left:-3px}
+      .hero-proof{gap:15px}
+      .proof-divider{display:none}
+      .metrics{grid-template-columns:1fr}
+      .case-image{height:400px}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav aria-label="التنقل الرئيسي">
+      <a href="#home" class="brand" aria-label="FRAME Social Studio">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="brand-text">
+          <strong>FRAME SOCIAL</strong>
+          <span>Creative Studio</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#work">أعمالنا</a>
+        <a href="#studio">الاستوديو</a>
+        <a href="#process">طريقة العمل</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-dark" href="#contact">ابدأ مشروعك</a>
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">الخدمات</a>
+      <a href="#work">أعمالنا</a>
+      <a href="#studio">الاستوديو</a>
+      <a href="#process">طريقة العمل</a>
+      <a href="#contact">تواصل معنا</a>
+      <a class="btn btn-dark" href="#contact">ابدأ مشروعك</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">شريكك الإبداعي من الفكرة إلى النشر</span>
+          <h1>نصنع محتوى يجعل <span>البراند يُرى ويُذكر.</span></h1>
+          <p class="hero-copy">
+            FRAME Social Studio شركة متخصصة في إدارة السوشيال ميديا، صناعة المحتوى، التصوير التجاري،
+            إنتاج الفيديو والبودكاست. نخطط، نصور، نصمم وننشر محتوى متكامل يخدم أهداف البراند ويظهره بصورة احترافية.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#work">شاهد أعمالنا</a>
+            <a class="btn btn-light" href="#services">استكشف الخدمات</a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-item">
+              <strong>120+</strong>
+              <span>مشروع محتوى وإنتاج</span>
+            </div>
+            <span class="proof-divider"></span>
+            <div class="proof-item">
+              <strong>4.8M+</strong>
+              <span>مشاهدة للمحتوى المنتج</span>
+            </div>
+            <span class="proof-divider"></span>
+            <div class="proof-item">
+              <strong>32</strong>
+              <span>علامة تجارية تمت خدمتها</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-main">
+            <img src="https://images.pexels.com/photos/24286930/pexels-photo-24286930/free-photo-of-men-recording-video-at-studio.jpeg?auto=compress&dpr=1&w=1400"
+                 alt="فريق إنتاج أثناء تصوير محتوى داخل الاستوديو">
+          </div>
+
+          <div class="floating-card float-top">
+            <div class="float-label">أداء المحتوى هذا الشهر</div>
+            <div class="float-value">
+              <span>+38%</span>
+              <span style="color:var(--green)">نمو</span>
+            </div>
+            <div class="mini-bars" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="floating-card float-bottom">
+            <div class="float-label">إنتاج متكامل</div>
+            <div class="float-value">
+              <span>Strategy → Shoot → Edit</span>
+            </div>
+            <div style="margin-top:9px;color:var(--muted);font-size:12px">من فكرة المحتوى حتى نشر النسخة النهائية</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="container strip-inner">
+        <span>نعمل مع البراندات في قطاعات مختلفة</span>
+        <div class="industry-tags">
+          <span>مطاعم وكافيهات</span>
+          <span>عيادات</span>
+          <span>أزياء</span>
+          <span>عقارات</span>
+          <span>منتجات</span>
+          <span>خبراء وصناع محتوى</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">خدماتنا</span>
+            <h2>كل ما يحتاجه حضورك <span class="accent-text">الرقمي</span> في مكان واحد.</h2>
+          </div>
+          <p>
+            فريق واحد يتولى الاستراتيجية، الكتابة، التصميم، التصوير والمونتاج حتى تحصل على محتوى متناسق
+            واحترافي بدل التعامل مع أكثر من جهة.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/>
+              </svg>
+            </div>
+            <h3>إدارة السوشيال ميديا</h3>
+            <p>استراتيجية شهرية، خطة محتوى، كتابة كابشن، تصميمات، جدولة ونشر ومتابعة الأداء.</p>
+            <div class="service-meta"><span>Strategy</span><span>Content Plan</span><span>Reporting</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="5" width="18" height="14" rx="3"/><path d="m9 9 6 3-6 3V9Z"/>
+              </svg>
+            </div>
+            <h3>Reels & Short Videos</h3>
+            <p>أفكار وسيناريو وتصوير ومونتاج ريلز وتيك توك ومحتوى قصير مبني على هدف واضح.</p>
+            <div class="service-meta"><span>Reels</span><span>TikTok</span><span>UGC Style</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M5 7h3l1.5-2h5L16 7h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>
+                <circle cx="12" cy="13" r="3"/>
+              </svg>
+            </div>
+            <h3>التصوير الفوتوغرافي</h3>
+            <p>تصوير منتجات، أطعمة، بورتريه، حملات وإعلانات بصور جاهزة للاستخدام الرقمي والمطبوع.</p>
+            <div class="service-meta"><span>Products</span><span>Food</span><span>Campaigns</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 6h11v12H4z"/><path d="m15 10 5-3v10l-5-3z"/>
+              </svg>
+            </div>
+            <h3>إنتاج الفيديو</h3>
+            <p>فيديوهات إعلانية، مقابلات، فيديوهات شركات وتغطيات مع تجهيز الإضاءة والصوت والمونتاج.</p>
+            <div class="service-meta"><span>Commercials</span><span>Interviews</span><span>Corporate</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="8" y="3" width="8" height="13" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/>
+              </svg>
+            </div>
+            <h3>بودكاست احترافي</h3>
+            <p>تسجيل صوت وصورة، تجهيز الاستوديو، تعدد كاميرات، مونتاج الحلقة واستخراج المقاطع القصيرة.</p>
+            <div class="service-meta"><span>Multi-Cam</span><span>Audio</span><span>Clips</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/>
+              </svg>
+            </div>
+            <h3>الهوية وتصميم المحتوى</h3>
+            <p>اتجاه بصري للبراند، قوالب سوشيال ميديا، حملات، أغلفة، كاروسيل وتصميمات إعلانية.</p>
+            <div class="service-meta"><span>Visual Direction</span><span>Design</span><span>Campaigns</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">أعمال مختارة</span>
+            <h2>مشاريع صُنعت لتجذب <span class="accent-text">الانتباه</span> وتخدم الهدف.</h2>
+          </div>
+          <p>نماذج من أعمالنا في المحتوى، التصوير، الفيديو والبودكاست لمجالات مختلفة.</p>
+        </div>
+
+        <div class="filters reveal" aria-label="تصفية الأعمال">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="social">سوشيال ميديا</button>
+          <button class="filter-btn" data-filter="photo">تصوير</button>
+          <button class="filter-btn" data-filter="video">فيديو</button>
+          <button class="filter-btn" data-filter="podcast">بودكاست</button>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal" data-category="video social">
+            <img src="https://images.pexels.com/photos/38097279/pexels-photo-38097279/free-photo-of-person-using-smartphone-and-camera-in-studio-setup.jpeg?auto=compress&dpr=1&w=1400"
+                 alt="إنتاج محتوى فيديو للسوشيال ميديا">
+            <div class="work-content">
+              <div class="work-tag">حملة محتوى قصيرة • F&B</div>
+              <h3>بيت البن — Reels Launch</h3>
+              <p>اتجاه بصري جديد وسلسلة فيديوهات قصيرة ركزت على تجربة المنتج والتفاصيل اليومية.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="podcast video">
+            <img src="https://images.pexels.com/photos/6883807/pexels-photo-6883807.jpeg?auto=compress&dpr=1&w=1200"
+                 alt="تسجيل بودكاست متعدد الكاميرات">
+            <div class="work-content">
+              <div class="work-tag">Podcast Production</div>
+              <h3>مساحة حوار</h3>
+              <p>إنتاج حلقات كاملة بتسجيل صوت احترافي، كاميرات متعددة ومقاطع قصيرة للنشر.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="social">
+            <img src="https://images.pexels.com/photos/6016365/pexels-photo-6016365.jpeg?auto=compress&dpr=1&w=1200"
+                 alt="تخطيط استراتيجية محتوى للسوشيال ميديا">
+            <div class="work-content">
+              <div class="work-tag">Social Media Strategy</div>
+              <h3>LAVENO — Content System</h3>
+              <p>نظام محتوى شهري يجمع بين التوعية، الثقة، المنتج والمحتوى البيعي.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="video">
+            <img src="https://images.pexels.com/photos/29043650/pexels-photo-29043650/free-photo-of-professional-video-camera-setup-in-studio-environment.jpeg?auto=compress&dpr=1&w=1400"
+                 alt="كاميرا سينمائية داخل الاستوديو">
+            <div class="work-content">
+              <div class="work-tag">Commercial Production</div>
+              <h3>ORBIT — Brand Film</h3>
+              <p>فيديو تعريفي قصير بهوية سينمائية للاستخدام في الإعلانات والموقع والسوشيال ميديا.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="photo">
+            <img src="https://images.pexels.com/photos/29538704/pexels-photo-29538704/free-photo-of-studio-setup-for-product-photo-with-driftwood.jpeg?auto=compress&dpr=1&w=1200"
+                 alt="جلسة تصوير منتج داخل الاستوديو">
+            <div class="work-content">
+              <div class="work-tag">Product Photography</div>
+              <h3>ÉLAN — Product Story</h3>
+              <p>تصوير منتج بأكثر من ستايل بصري لاستخدامه في المتجر الإلكتروني والإعلانات.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="podcast">
+            <img src="https://images.pexels.com/photos/33923596/pexels-photo-33923596/free-photo-of-podcast-recording-with-microphone-in-studio-setting.jpeg?auto=compress&dpr=1&w=1200"
+                 alt="ضيف يتحدث أمام ميكروفون بودكاست">
+            <div class="work-content">
+              <div class="work-tag">Podcast & Personal Brand</div>
+              <h3>حديث الخبرة</h3>
+              <p>بناء شكل ثابت للحلقات وإنتاج نسخ كاملة ومقاطع عمودية لكل منصة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container case-grid">
+        <div class="case-panel reveal">
+          <span class="eyebrow">Case Study</span>
+          <h2>من حساب غير منتظم إلى محتوى له نظام ونتائج.</h2>
+          <p>
+            لعلامة متخصصة في الأغذية والمشروبات، أعدنا بناء خطة المحتوى، وضبطنا الهوية البصرية،
+            وأنتجنا Reels مصورة داخل الموقع والاستوديو مع خطة نشر أسبوعية.
+          </p>
+          <div class="metrics">
+            <div class="metric"><strong>+61%</strong><span>زيادة الوصول خلال 90 يومًا</span></div>
+            <div class="metric"><strong>2.4x</strong><span>زيادة معدل حفظ المحتوى</span></div>
+            <div class="metric"><strong>+43%</strong><span>نمو زيارات الملف</span></div>
+            <div class="metric"><strong>18</strong><span>فيديو قصير خلال الحملة</span></div>
+          </div>
+        </div>
+
+        <div class="case-image reveal">
+          <img src="https://images.pexels.com/photos/24286930/pexels-photo-24286930/free-photo-of-men-recording-video-at-studio.jpeg?auto=compress&dpr=1&w=1500"
+               alt="إنتاج محتوى احترافي داخل استوديو">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">طريقة العمل</span>
+            <h2>عملية واضحة من أول <span class="accent-text">Brief</span> لحد النشر.</h2>
+          </div>
+          <p>كل مشروع يمر بمراحل محددة حتى يكون الناتج متسقًا مع البراند وسهل القياس والتطوير.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step reveal">
+            <b>01</b>
+            <h3>نفهم البراند</h3>
+            <p>الأهداف، الجمهور، المنافسون، شخصية البراند والمنصات الأساسية.</p>
+          </div>
+          <div class="step reveal">
+            <b>02</b>
+            <h3>نخطط المحتوى</h3>
+            <p>أفكار، Content Pillars، سكريبتات، Shot List وتقويم نشر واضح.</p>
+          </div>
+          <div class="step reveal">
+            <b>03</b>
+            <h3>نصور وننتج</h3>
+            <p>تنفيذ الجلسة، إضاءة وصوت، إخراج، مونتاج وتصحيح ألوان وصوت.</p>
+          </div>
+          <div class="step reveal">
+            <b>04</b>
+            <h3>ننشر ونطور</h3>
+            <p>تجهيز النسخ لكل منصة، النشر، قراءة النتائج وتطوير الدورة التالية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="studio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">الاستوديو</span>
+            <h2>مساحة مجهزة لـ <span class="accent-text">التصوير والبودكاست</span>.</h2>
+          </div>
+          <p>
+            إعدادات مرنة لتصوير المنتجات، المقابلات، الفيديوهات القصيرة والبودكاست،
+            مع تجهيزات إضاءة وصوت وخلفيات تناسب أكثر من اتجاه بصري.
+          </p>
+        </div>
+
+        <div class="studio-grid">
+          <div class="studio-main reveal">
+            <img src="https://images.pexels.com/photos/6883807/pexels-photo-6883807.jpeg?auto=compress&dpr=1&w=1500"
+                 alt="إعداد تصوير بودكاست داخل الاستوديو">
+            <div class="studio-caption">
+              <strong>Podcast Set</strong>
+              <span>تسجيل صوت وصورة • أكثر من زاوية • تجهيز كامل للحلقة والمقاطع القصيرة</span>
+            </div>
+          </div>
+
+          <div class="studio-stack">
+            <div class="studio-side reveal">
+              <img src="https://images.pexels.com/photos/29538704/pexels-photo-29538704/free-photo-of-studio-setup-for-product-photo-with-driftwood.jpeg?auto=compress&dpr=1&w=1000"
+                   alt="ستوديو تصوير منتجات">
+              <div class="studio-caption">
+                <strong>Product Set</strong>
+                <span>تصوير منتجات وحملات</span>
+              </div>
+            </div>
+            <div class="studio-side reveal">
+              <img src="https://images.pexels.com/photos/29043650/pexels-photo-29043650/free-photo-of-professional-video-camera-setup-in-studio-environment.jpeg?auto=compress&dpr=1&w=1000"
+                   alt="معدات تصوير فيديو احترافية">
+              <div class="studio-caption">
+                <strong>Video Production</strong>
+                <span>كاميرات وإضاءة وصوت للإنتاج الاحترافي</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">آراء العملاء</span>
+            <h2>نشتغل كجزء من <span class="accent-text">فريقك</span>، مش مجرد مورد خدمة.</h2>
+          </div>
+        </div>
+
+        <div class="quotes">
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“أهم فرق بالنسبة لنا كان إننا أخيرًا بقينا عارفين هننشر إيه وليه. المحتوى بقى ثابت بصريًا وأسهل في المتابعة.”</p>
+            <div class="client">
+              <div class="avatar">ن</div>
+              <div><strong>ندى شريف</strong><span>Co-founder — LAVENO</span></div>
+            </div>
+          </article>
+
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“تصوير المنتجات طلع أقرب بكثير للصورة اللي كنا متخيلينها، والأهم إننا استلمنا مواد كثيرة نقدر نستخدمها في أكثر من حملة.”</p>
+            <div class="client">
+              <div class="avatar">م</div>
+              <div><strong>مروان عز</strong><span>Marketing Manager — ÉLAN</span></div>
+            </div>
+          </article>
+
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“تجربة البودكاست كانت منظمة من أول تجهيز الحلقة لحد المونتاج والـShorts. وفرت علينا وقت كبير في الإنتاج.”</p>
+            <div class="client">
+              <div class="avatar">ر</div>
+              <div><strong>رامي خطاب</strong><span>Host — حديث الخبرة</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:30px">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>عندك براند محتاج محتوى أقوى؟ خلّينا نبنيه بشكل يليق بيه.</h2>
+            <p>احكِ لنا عن المشروع والهدف، وسنقترح عليك أنسب طريقة للعمل والتصوير والإنتاج.</p>
+          </div>
+          <a class="btn" href="#contact">اطلب مكالمة تعارف</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">تواصل معنا</span>
+          <h2>جاهزين نحول فكرتك إلى محتوى <span class="accent-text">جاهز للنشر.</span></h2>
+          <p>
+            أرسل لنا نبذة عن البراند والخدمة المطلوبة، وسيتم تجهيز تصور أولي لطريقة التنفيذ المناسبة.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <i>⌖</i>
+              <div><strong>الموقع</strong><span>القاهرة، مصر — متاحون للمشاريع داخل وخارج مصر</span></div>
+            </div>
+            <div class="contact-item">
+              <i>↗</i>
+              <div><strong>نطاق العمل</strong><span>Social Media • Studio • Video • Podcast • Photography</span></div>
+            </div>
+            <div class="contact-item">
+              <i>24</i>
+              <div><strong>الرد على الطلبات</strong><span>خلال يوم عمل واحد</span></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form reveal" id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">الاسم</label>
+              <input id="name" name="name" type="text" placeholder="اكتب اسمك" required>
+            </div>
+            <div class="field">
+              <label for="brand">اسم البراند / الشركة</label>
+              <input id="brand" name="brand" type="text" placeholder="اسم البراند" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="service">الخدمة المطلوبة</label>
+              <input id="service" name="service" type="text" placeholder="مثال: إدارة سوشيال ميديا + تصوير" required>
+            </div>
+            <div class="field">
+              <label for="budget">الميزانية المتوقعة</label>
+              <input id="budget" name="budget" type="text" placeholder="حدد النطاق التقريبي">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">نبذة عن المشروع</label>
+            <textarea id="message" name="message" placeholder="احكِ لنا عن النشاط، الجمهور والهدف من المشروع..." required></textarea>
+          </div>
+
+          <button class="btn btn-dark" type="submit">إرسال طلب المشروع</button>
+          <div class="success" id="successMsg">تم استلام بيانات المشروع بنجاح. سنعود إليك بالتفاصيل المطلوبة.</div>
+          <p class="form-note">لن يتم مشاركة بياناتك مع أي جهة خارجية.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="brand-text">
+          <strong>FRAME SOCIAL</strong>
+          <span>Creative Studio</span>
+        </span>
+      </a>
+      <p>© <span id="year"></span> FRAME Social Studio. جميع الحقوق محفوظة.</p>
+      <div class="footer-links">
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Portfolio filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const workCards = document.querySelectorAll('.work-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+        workCards.forEach(card => {
+          const categories = card.dataset.category.split(' ');
+          const show = filter === 'all' || categories.includes(filter);
+          card.classList.toggle('hidden', !show);
+        });
+      });
+    });
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Static contact form interaction
+    const contactForm = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      successMsg.classList.add('show');
+      contactForm.querySelector('button[type="submit"]').textContent = 'تم إرسال الطلب';
+      contactForm.querySelector('button[type="submit"]').disabled = true;
+
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.querySelector('button[type="submit"]').textContent = 'إرسال طلب المشروع';
+        contactForm.querySelector('button[type="submit"]').disabled = false;
+        successMsg.classList.remove('show');
+      }, 4500);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
