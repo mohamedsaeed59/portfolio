@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ميرا شريف — Fashion & Commercial Model. بورتفوليو احترافي للأزياء، الجمال، الإعلانات، الإيديتوريال والـRunway." />
+  <meta name="theme-color" content="#f7f4ef" />
+  <title>ميرا شريف | Fashion Model</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f4ef;
+      --surface:#ffffff;
+      --surface-2:#efebe4;
+      --text:#171614;
+      --muted:#746f68;
+      --line:#ded8cf;
+      --accent:#a57b51;
+      --dark:#161513;
+      --shadow:0 24px 70px rgba(35,28,21,.10);
+      --radius:26px;
+      --container:min(1220px, calc(100% - 40px));
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Tajawal",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+      overflow-x:hidden;
+    }
+
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    ::selection{background:#dfd1c1;color:#111}
+
+    .container{width:var(--container);margin-inline:auto}
+    .section{padding:100px 0}
+    .section-white{background:#fff}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+      color:#655c53;
+    }
+    .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+    .section-head{
+      display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px;
+    }
+    .section-head h2{
+      margin:10px 0 0;
+      font-family:"Playfair Display","Tajawal",serif;
+      font-size:clamp(40px,5vw,67px);
+      line-height:1.02;
+      letter-spacing:-1.5px;
+      max-width:760px;
+    }
+    .section-head p{margin:0;color:var(--muted);font-size:16px;max-width:520px}
+
+    .btn{
+      min-height:52px;padding:0 22px;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid transparent;font-weight:800;transition:.25s ease;
+    }
+    .btn-dark{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .btn-dark:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(22,21,19,.18)}
+    .btn-light{background:#fff;border-color:var(--line);color:var(--text)}
+    .btn-light:hover{border-color:#bbb2a7;transform:translateY(-2px)}
+
+    /* Header */
+    header{
+      position:fixed;inset:0 0 auto;z-index:80;
+      background:rgba(247,244,239,.86);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(222,216,207,.75);
+    }
+    nav{
+      width:var(--container);height:74px;margin:auto;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{
+      display:flex;align-items:baseline;gap:8px;font-weight:800;
+    }
+    .brand strong{
+      font-family:"Playfair Display","Tajawal",serif;font-size:21px;letter-spacing:.5px
+    }
+    .brand span{font-size:11px;color:var(--muted);font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:700;color:#5f5952}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .menu-btn{
+      width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+      background:#fff;display:none;place-items:center;
+    }
+    .mobile-menu{
+      display:none;position:fixed;top:74px;inset-inline:0;background:#fff;
+      z-index:75;padding:16px 20px 23px;border-bottom:1px solid var(--line);
+      box-shadow:0 16px 30px rgba(30,25,20,.08);
+    }
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:12px 3px;border-bottom:1px solid var(--line);font-weight:700}
+    .mobile-menu .btn{width:100%;margin-top:15px}
+
+    /* Hero */
+    .hero{padding:118px 0 62px;position:relative}
+    .hero-grid{
+      display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center;
+    }
+    .hero h1{
+      margin:14px 0 20px;
+      font-family:"Playfair Display","Tajawal",serif;
+      font-size:clamp(58px,8vw,100px);
+      line-height:.93;
+      letter-spacing:-3px;
+    }
+    .hero h1 span{display:block;color:var(--accent);font-size:.58em;margin-top:15px}
+    .hero-copy{
+      color:var(--muted);font-size:18px;max-width:600px;margin:0 0 28px;
+    }
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .quick-info{
+      display:flex;gap:21px;flex-wrap:wrap;margin-top:34px;padding-top:23px;border-top:1px solid var(--line);
+    }
+    .quick-info div strong{display:block;font-size:18px}
+    .quick-info div span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .quick-divider{width:1px;height:36px;background:var(--line)}
+
+    .hero-gallery{
+      position:relative;height:650px;
+    }
+    .hero-main{
+      width:72%;height:620px;margin-right:auto;border-radius:4px 90px 4px 4px;
+      overflow:hidden;box-shadow:var(--shadow);background:#ddd;
+    }
+    .hero-main img{width:100%;height:100%;object-fit:cover}
+    .hero-small{
+      position:absolute;width:38%;height:330px;right:0;bottom:0;
+      border:8px solid var(--bg);overflow:hidden;background:#ddd;
+      box-shadow:0 18px 50px rgba(30,25,20,.14);
+    }
+    .hero-small img{width:100%;height:100%;object-fit:cover}
+    .hero-badge{
+      position:absolute;left:0;top:35px;background:#fff;border:1px solid var(--line);
+      padding:15px 17px;box-shadow:var(--shadow);min-width:180px;
+    }
+    .hero-badge small{display:block;color:var(--muted);font-size:10px}
+    .hero-badge strong{display:block;font-size:14px;margin-top:3px}
+
+    /* Profile facts */
+    .facts{background:#fff;border-block:1px solid var(--line);padding:28px 0}
+    .facts-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+    .fact{text-align:center;border-left:1px solid var(--line);padding:4px 10px}
+    .fact:last-child{border-left:0}
+    .fact span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+    .fact strong{display:block;font-size:16px;margin-top:4px}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+    .about-image{height:620px;overflow:hidden;border-radius:2px}
+    .about-image img{width:100%;height:100%;object-fit:cover}
+    .about-copy h2{
+      font-family:"Playfair Display","Tajawal",serif;
+      font-size:clamp(42px,5vw,66px);line-height:1.04;margin:12px 0 20px;
+    }
+    .about-copy p{color:var(--muted);font-size:17px;margin:0 0 15px}
+    .specialties{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .specialties span{
+      padding:9px 13px;border:1px solid var(--line);background:#fff;border-radius:999px;font-size:12px;font-weight:700;
+    }
+
+    /* Gallery */
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+    .filter-btn{
+      padding:9px 14px;border:1px solid var(--line);border-radius:999px;
+      background:#fff;color:#655f58;font-weight:700;font-size:12px;transition:.2s;
+    }
+    .filter-btn:hover,.filter-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      grid-auto-rows:220px;
+      gap:16px;
+    }
+    .portfolio-card{
+      position:relative;overflow:hidden;background:#ddd;
+      cursor:zoom-in;
+    }
+    .portfolio-card:nth-child(1){grid-column:span 5;grid-row:span 3}
+    .portfolio-card:nth-child(2){grid-column:span 7;grid-row:span 2}
+    .portfolio-card:nth-child(3){grid-column:span 3;grid-row:span 2}
+    .portfolio-card:nth-child(4){grid-column:span 4;grid-row:span 2}
+    .portfolio-card:nth-child(5){grid-column:span 7;grid-row:span 2}
+    .portfolio-card:nth-child(6){grid-column:span 5;grid-row:span 2}
+    .portfolio-card.hidden{display:none}
+    .portfolio-card img{width:100%;height:100%;object-fit:cover;transition:.55s ease}
+    .portfolio-card:hover img{transform:scale(1.035)}
+    .portfolio-card::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,14,.62),transparent 45%);
+      opacity:.75;transition:.25s;pointer-events:none;
+    }
+    .portfolio-card:hover::after{opacity:1}
+    .portfolio-info{
+      position:absolute;right:18px;left:18px;bottom:16px;color:#fff;z-index:2;
+    }
+    .portfolio-info small{display:block;font-size:10px;opacity:.8;text-transform:uppercase}
+    .portfolio-info strong{display:block;font-size:17px;margin-top:2px}
+
+    /* Work types */
+    .work-types{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .work-type{
+      min-height:270px;padding:28px;background:#fff;border:1px solid var(--line);
+      display:flex;flex-direction:column;transition:.25s ease;
+    }
+    .work-type:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .work-type b{font-family:"Playfair Display",serif;font-size:44px;color:#d5c8ba;font-weight:500;line-height:1}
+    .work-type h3{font-size:21px;margin:26px 0 9px}
+    .work-type p{margin:0;color:var(--muted);font-size:13px}
+    .work-type span{margin-top:auto;padding-top:20px;color:var(--accent);font-size:11px;font-weight:800}
+
+    /* Campaign */
+    .campaign{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;
+    }
+    .campaign-copy h2{
+      margin:12px 0 17px;font-family:"Playfair Display","Tajawal",serif;
+      font-size:clamp(40px,5vw,65px);line-height:1.05;
+    }
+    .campaign-copy p{color:var(--muted);font-size:16px}
+    .campaign-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+    .campaign-meta div{padding:15px;border-top:1px solid var(--line)}
+    .campaign-meta span{display:block;color:var(--muted);font-size:10px}
+    .campaign-meta strong{display:block;font-size:13px;margin-top:3px}
+    .campaign-image{height:620px;overflow:hidden}
+    .campaign-image img{width:100%;height:100%;object-fit:cover}
+
+    /* Clients */
+    .clients-row{
+      display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+      padding:27px 0;border-block:1px solid var(--line);
+      color:#827970;font-weight:800;font-size:15px;
+    }
+
+    /* CTA */
+    .cta{
+      background:var(--dark);color:#fff;padding:55px;border-radius:2px;
+      display:flex;align-items:center;justify-content:space-between;gap:35px;
+    }
+    .cta h2{
+      font-family:"Playfair Display","Tajawal",serif;
+      font-size:clamp(38px,5vw,60px);line-height:1.05;margin:0 0 10px;max-width:700px;
+    }
+    .cta p{margin:0;color:#c7c0b9;max-width:650px}
+    .cta .btn{background:#fff;color:#171614;white-space:nowrap}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px}
+    .contact-copy h2{
+      font-family:"Playfair Display","Tajawal",serif;
+      font-size:clamp(42px,5vw,64px);line-height:1.05;margin:12px 0 17px;
+    }
+    .contact-copy p{color:var(--muted);font-size:16px}
+    .availability{
+      margin-top:28px;padding:17px 0;border-block:1px solid var(--line);
+      display:flex;align-items:center;justify-content:space-between;gap:15px;
+    }
+    .availability strong{font-size:13px}
+    .availability span{color:#37735d;font-size:12px;font-weight:800}
+    .availability span::before{
+      content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#429371;margin-left:7px;
+    }
+
+    .form{background:#fff;border:1px solid var(--line);padding:30px;box-shadow:var(--shadow)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .field{margin-bottom:13px}
+    .field label{display:block;font-size:11px;font-weight:800;margin-bottom:6px}
+    .field input,.field textarea{
+      width:100%;padding:13px 14px;border:1px solid var(--line);background:#faf8f5;
+      outline:none;color:var(--text);transition:.2s;
+    }
+    .field input:focus,.field textarea:focus{
+      border-color:#b9aa99;box-shadow:0 0 0 4px #f1ece5;background:#fff;
+    }
+    .field textarea{min-height:120px;resize:vertical}
+    .form .btn{width:100%;border-radius:0}
+    .form-note{text-align:center;color:var(--muted);font-size:10px;margin:9px 0 0}
+    .success{
+      display:none;margin-top:12px;padding:11px 13px;background:#edf7f2;color:#2d6d57;font-weight:800;font-size:12px;
+    }
+    .success.show{display:block}
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;inset:0;background:rgba(12,11,10,.94);z-index:200;
+      display:none;align-items:center;justify-content:center;padding:30px;
+    }
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:min(920px,92vw);max-height:88vh;object-fit:contain}
+    .lightbox-close{
+      position:absolute;top:20px;left:20px;width:46px;height:46px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:24px;
+    }
+    .lightbox-caption{
+      position:absolute;bottom:18px;right:50%;transform:translateX(50%);
+      color:#fff;font-size:12px;background:rgba(255,255,255,.08);padding:8px 13px;
+      backdrop-filter:blur(8px);
+    }
+
+    footer{padding:29px 0;background:#fff;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .footer-inner p{margin:0;color:var(--muted);font-size:11px}
+    .footer-links{display:flex;gap:17px;font-size:11px;font-weight:800}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:.72s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:1020px){
+      .nav-links,.nav-actions .btn{display:none}
+      .menu-btn{display:grid}
+      .hero-grid,.about-grid,.campaign,.contact-grid{grid-template-columns:1fr}
+      .hero-gallery{max-width:700px;margin-inline:auto;width:100%}
+      .facts-grid{grid-template-columns:repeat(4,1fr)}
+      .fact{border-bottom:1px solid var(--line)}
+      .work-types{grid-template-columns:repeat(2,1fr)}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:360px}
+      .portfolio-card:nth-child(n){grid-column:span 1;grid-row:span 1}
+      .portfolio-card:first-child{grid-row:span 2}
+    }
+
+    @media(max-width:720px){
+      :root{--container:min(100% - 28px,1220px)}
+      nav{height:68px}
+      .mobile-menu{top:68px}
+      .hero{padding-top:104px}
+      .hero h1{font-size:59px}
+      .hero-gallery{height:555px}
+      .hero-main{height:525px;width:78%}
+      .hero-small{width:41%;height:285px}
+      .hero-badge{top:20px;min-width:150px}
+      .section{padding:74px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .facts-grid{grid-template-columns:repeat(2,1fr)}
+      .about-image,.campaign-image{height:480px}
+      .work-types{grid-template-columns:1fr}
+      .portfolio-grid{grid-auto-rows:270px;gap:10px}
+      .portfolio-card:first-child{grid-row:span 2}
+      .campaign-meta{grid-template-columns:1fr}
+      .cta{display:block;padding:37px 25px}
+      .cta .btn{width:100%;margin-top:22px}
+      .form-row{grid-template-columns:1fr}
+    }
+
+    @media(max-width:470px){
+      .hero h1{font-size:50px}
+      .hero-gallery{height:485px}
+      .hero-main{height:450px;width:82%}
+      .hero-small{width:46%;height:245px}
+      .hero-badge{display:none}
+      .quick-divider{display:none}
+      .portfolio-grid{grid-template-columns:1fr;grid-auto-rows:430px}
+      .portfolio-card:first-child{grid-row:span 1}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="#home">
+        <strong>MIRA SHERIF</strong>
+        <span>MODEL</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">نبذة</a>
+        <a href="#portfolio">البورتفوليو</a>
+        <a href="#services">مجالات العمل</a>
+        <a href="#campaign">أعمال مختارة</a>
+        <a href="#contact">الحجوزات</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-dark" href="#contact">طلب حجز</a>
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">نبذة</a>
+      <a href="#portfolio">البورتفوليو</a>
+      <a href="#services">مجالات العمل</a>
+      <a href="#campaign">أعمال مختارة</a>
+      <a href="#contact">الحجوزات</a>
+      <a class="btn btn-dark" href="#contact">طلب حجز</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Fashion • Beauty • Commercial</span>
+          <h1>ميرا شريف <span>Fashion Model</span></h1>
+
+          <p class="hero-copy">
+            موديل محترفة مقرها القاهرة، أعمل في تصوير الأزياء والجمال والحملات التجارية
+            والإيديتوريال ومحتوى المتاجر الإلكترونية، مع خبرة أمام الكاميرا وفي جلسات التصوير
+            الداخلية والخارجية.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#portfolio">مشاهدة الـBook</a>
+            <a class="btn btn-light" href="#contact">الحجز والتعاون</a>
+          </div>
+
+          <div class="quick-info">
+            <div><strong>174 cm</strong><span>الطول</span></div>
+            <span class="quick-divider"></span>
+            <div><strong>Cairo</strong><span>الموقع</span></div>
+            <span class="quick-divider"></span>
+            <div><strong>Egypt / MENA</strong><span>متاحة للسفر</span></div>
+          </div>
+        </div>
+
+        <div class="hero-gallery reveal">
+          <div class="hero-main">
+            <img src="https://images.pexels.com/photos/33712650/pexels-photo-33712650/free-photo-of-fashion-model-posing-in-studio-with-shadow.jpeg?auto=compress&dpr=1&h=1100&w=900"
+                 alt="جلسة أزياء إيديتوريال داخل الاستوديو">
+          </div>
+
+          <div class="hero-small">
+            <img src="https://images.pexels.com/photos/8534696/pexels-photo-8534696.jpeg?auto=compress&dpr=1&h=900&w=700"
+                 alt="بورتريه جمال احترافي">
+          </div>
+
+          <div class="hero-badge">
+            <small>BOOKINGS</small>
+            <strong>متاحة لحملات 2026</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts">
+      <div class="container facts-grid">
+        <div class="fact"><span>Height</span><strong>174 cm</strong></div>
+        <div class="fact"><span>Bust</span><strong>84 cm</strong></div>
+        <div class="fact"><span>Waist</span><strong>62 cm</strong></div>
+        <div class="fact"><span>Hips</span><strong>91 cm</strong></div>
+        <div class="fact"><span>Shoe</span><strong>39 EU</strong></div>
+        <div class="fact"><span>Hair</span><strong>بني داكن</strong></div>
+        <div class="fact"><span>Eyes</span><strong>بني</strong></div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.pexels.com/photos/31321350/pexels-photo-31321350/free-photo-of-fashion-editorial-portrait-in-a-studio-setting.jpeg?auto=compress&dpr=1&h=1100&w=900"
+               alt="موديل في جلسة تصوير أزياء داخل استوديو أبيض">
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">About Me</span>
+          <h2>حضور أمام الكاميرا يتغير مع <span style="color:var(--accent)">شخصية كل براند.</span></h2>
+          <p>
+            أتعامل مع كل جلسة تصوير باعتبارها قصة لها اتجاه بصري واضح، من الـPose والحركة
+            إلى التعبير وطريقة تقديم القطعة أو المنتج. هدفي أن تبدو الصورة طبيعية، واثقة
+            ومتوافقة مع هوية العميل، سواء كانت الحملة Minimal أو Luxury أو Commercial.
+          </p>
+          <p>
+            أعمل مع مصوري الأزياء، المصممين، البراندات، وكالات الإعلان، خبراء التجميل
+            والمتاجر الإلكترونية، ومتاحـة للمشروعات داخل مصر والسفر حسب طبيعة الإنتاج.
+          </p>
+
+          <div class="specialties">
+            <span>Fashion</span>
+            <span>Beauty</span>
+            <span>Editorial</span>
+            <span>Commercial</span>
+            <span>E-commerce</span>
+            <span>Runway</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Selected Portfolio</span>
+            <h2>صور مختارة من الـBook.</h2>
+          </div>
+          <p>
+            Fashion، Beauty، Editorial وCommercial بإضاءة واستايلات مختلفة تناسب الحملات والمجلات والمنصات الرقمية.
+          </p>
+        </div>
+
+        <div class="filters reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="fashion">Fashion</button>
+          <button class="filter-btn" data-filter="beauty">Beauty</button>
+          <button class="filter-btn" data-filter="editorial">Editorial</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card reveal" data-category="fashion editorial"
+                   data-full="https://images.pexels.com/photos/33712650/pexels-photo-33712650/free-photo-of-fashion-model-posing-in-studio-with-shadow.jpeg?auto=compress&dpr=1&w=1600"
+                   data-caption="Studio Editorial — Shadow Series">
+            <img src="https://images.pexels.com/photos/33712650/pexels-photo-33712650/free-photo-of-fashion-model-posing-in-studio-with-shadow.jpeg?auto=compress&dpr=1&h=1200&w=900" alt="Studio Editorial">
+            <div class="portfolio-info"><small>Editorial</small><strong>Shadow Series</strong></div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="fashion editorial"
+                   data-full="https://images.pexels.com/photos/28899941/pexels-photo-28899941/free-photo-of-elegant-fashion-model-walking-in-paris-street.jpeg?auto=compress&dpr=1&w=1600"
+                   data-caption="Street Fashion — City Edit">
+            <img src="https://images.pexels.com/photos/28899941/pexels-photo-28899941/free-photo-of-elegant-fashion-model-walking-in-paris-street.jpeg?auto=compress&dpr=1&h=900&w=1400" alt="Street Fashion">
+            <div class="portfolio-info"><small>Fashion</small><strong>City Edit</strong></div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="beauty"
+                   data-full="https://images.pexels.com/photos/8534696/pexels-photo-8534696.jpeg?auto=compress&dpr=1&w=1600"
+                   data-caption="Beauty Portrait — Bronze">
+            <img src="https://images.pexels.com/photos/8534696/pexels-photo-8534696.jpeg?auto=compress&dpr=1&h=1000&w=800" alt="Beauty Portrait">
+            <div class="portfolio-info"><small>Beauty</small><strong>Bronze</strong></div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="commercial fashion"
+                   data-full="https://images.pexels.com/photos/38004203/pexels-photo-38004203/free-photo-of-elegant-fashion-portrait-of-a-confident-model.jpeg?auto=compress&dpr=1&w=1600"
+                   data-caption="Commercial Fashion — Evening Edit">
+            <img src="https://images.pexels.com/photos/38004203/pexels-photo-38004203/free-photo-of-elegant-fashion-portrait-of-a-confident-model.jpeg?auto=compress&dpr=1&h=1000&w=800" alt="Commercial Fashion Portrait">
+            <div class="portfolio-info"><small>Commercial</small><strong>Evening Edit</strong></div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="fashion editorial"
+                   data-full="https://images.pexels.com/photos/31321350/pexels-photo-31321350/free-photo-of-fashion-editorial-portrait-in-a-studio-setting.jpeg?auto=compress&dpr=1&w=1600"
+                   data-caption="Minimal Studio — Monochrome">
+            <img src="https://images.pexels.com/photos/31321350/pexels-photo-31321350/free-photo-of-fashion-editorial-portrait-in-a-studio-setting.jpeg?auto=compress&dpr=1&h=900&w=1400" alt="Minimal Studio Fashion">
+            <div class="portfolio-info"><small>Editorial</small><strong>Monochrome</strong></div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="beauty commercial"
+                   data-full="https://images.pexels.com/photos/32016948/pexels-photo-32016948/free-photo-of-professional-makeup-artist-enhancing-model-s-look.jpeg?auto=compress&dpr=1&w=1600"
+                   data-caption="Beauty Campaign — Behind the Scenes">
+            <img src="https://images.pexels.com/photos/32016948/pexels-photo-32016948/free-photo-of-professional-makeup-artist-enhancing-model-s-look.jpeg?auto=compress&dpr=1&h=1000&w=800" alt="Beauty Campaign Behind the Scenes">
+            <div class="portfolio-info"><small>Beauty</small><strong>Campaign BTS</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Modeling Work</span>
+            <h2>مجالات العمل.</h2>
+          </div>
+          <p>متاحة للحملات التجارية، جلسات الـEditorial، تصوير المنتجات والأزياء والمشروعات التي تحتاج حضورًا احترافيًا أمام الكاميرا.</p>
+        </div>
+
+        <div class="work-types">
+          <article class="work-type reveal">
+            <b>01</b>
+            <h3>Fashion & Editorial</h3>
+            <p>Lookbooks، مجلات، حملات أزياء، تصوير مفاهيمي وEditorials ذات اتجاه بصري واضح.</p>
+            <span>LOOKBOOK • MAGAZINE • CAMPAIGN</span>
+          </article>
+
+          <article class="work-type reveal">
+            <b>02</b>
+            <h3>Beauty & Cosmetics</h3>
+            <p>حملات مكياج وعناية بالبشرة والشعر، Close-ups وتصوير تفاصيل المنتجات الجمالية.</p>
+            <span>BEAUTY • SKIN • MAKEUP</span>
+          </article>
+
+          <article class="work-type reveal">
+            <b>03</b>
+            <h3>Commercial</h3>
+            <p>إعلانات رقمية، حملات Lifestyle ومحتوى براندات موجه للسوشيال ميديا والمنصات الإعلانية.</p>
+            <span>ADS • SOCIAL • LIFESTYLE</span>
+          </article>
+
+          <article class="work-type reveal">
+            <b>04</b>
+            <h3>E-commerce</h3>
+            <p>تصوير الملابس والإكسسوارات والمنتجات للمتاجر الإلكترونية وكتالوجات المواسم.</p>
+            <span>CATALOG • PRODUCT • STORE</span>
+          </article>
+
+          <article class="work-type reveal">
+            <b>05</b>
+            <h3>Runway</h3>
+            <p>عروض أزياء وإطلاق مجموعات جديدة مع حركة وحضور مناسبين لطبيعة الـCollection.</p>
+            <span>RUNWAY • FASHION SHOW</span>
+          </article>
+
+          <article class="work-type reveal">
+            <b>06</b>
+            <h3>Content Production</h3>
+            <p>صور وفيديوهات قصيرة للبراندات، Reels وB-roll وحملات رقمية تجمع بين الـModeling والمحتوى.</p>
+            <span>REELS • VIDEO • DIGITAL</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="campaign">
+      <div class="container campaign">
+        <div class="campaign-copy reveal">
+          <span class="eyebrow">Featured Work</span>
+          <h2>NOIR — Autumn Editorial</h2>
+          <p>
+            جلسة أزياء بتكوينات Minimal وإضاءة قوية تعتمد على الظل، صممت لتقديم المجموعة
+            بصورة عصرية وحادة مع التركيز على الـSilhouette والحركة والتعبير.
+          </p>
+
+          <div class="campaign-meta">
+            <div><span>TYPE</span><strong>Fashion Editorial</strong></div>
+            <div><span>ROLE</span><strong>Lead Model</strong></div>
+            <div><span>LOCATION</span><strong>Studio — Cairo</strong></div>
+            <div><span>DELIVERABLES</span><strong>Lookbook + Social Campaign</strong></div>
+          </div>
+        </div>
+
+        <div class="campaign-image reveal">
+          <img src="https://images.pexels.com/photos/38004203/pexels-photo-38004203/free-photo-of-elegant-fashion-portrait-of-a-confident-model.jpeg?auto=compress&dpr=1&h=1200&w=1000"
+               alt="حملة أزياء إيديتوريال">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Selected Collaborations</span>
+            <h2>تعاونات في الموضة والجمال.</h2>
+          </div>
+        </div>
+
+        <div class="clients-row reveal">
+          <span>NOIR Atelier</span>
+          <span>Maison Lune</span>
+          <span>AVA Beauty</span>
+          <span>Studio 11</span>
+          <span>ÉLAN Wear</span>
+          <span>Vera Cosmetics</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" style="padding-top:25px">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>تخطط لحملة أو جلسة تصوير جديدة؟</h2>
+            <p>أرسل تفاصيل المشروع والتاريخ والموقع وطبيعة الاستخدام للحصول على تأكيد التوفر وتفاصيل الحجز.</p>
+          </div>
+          <a class="btn" href="#contact">تحقق من التوفر</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Bookings</span>
+          <h2>للحجوزات والتعاون.</h2>
+          <p>
+            متاحة لجلسات التصوير، الحملات التجارية، الأزياء، الجمال والـRunway داخل القاهرة
+            وخارجها، مع إمكانية السفر للمشروعات المخطط لها مسبقًا.
+          </p>
+
+          <div class="availability">
+            <strong>حالة الحجوزات</strong>
+            <span>متاحة لمشروعات جديدة</span>
+          </div>
+        </div>
+
+        <form class="form reveal" id="bookingForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="client">الاسم / الشركة</label>
+              <input id="client" type="text" placeholder="اسم العميل أو البراند" required>
+            </div>
+            <div class="field">
+              <label for="project">نوع المشروع</label>
+              <input id="project" type="text" placeholder="Fashion / Beauty / Commercial" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="date">التاريخ المتوقع</label>
+              <input id="date" type="text" placeholder="اليوم / الشهر / السنة" required>
+            </div>
+            <div class="field">
+              <label for="location">الموقع</label>
+              <input id="location" type="text" placeholder="القاهرة / مدينة أخرى">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="details">تفاصيل المشروع</label>
+            <textarea id="details" placeholder="مدة التصوير، طبيعة الاستخدام، عدد الـLooks وأي تفاصيل مهمة..." required></textarea>
+          </div>
+
+          <button class="btn btn-dark" type="submit">إرسال طلب الحجز</button>
+          <div class="success" id="successMsg">تم استلام طلب الحجز وسيتم التواصل لتأكيد التفاصيل والتوفر.</div>
+          <p class="form-note">يتم الرد على طلبات الحجز خلال يوم عمل واحد.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+    <button class="lightbox-close" id="lightboxClose" aria-label="إغلاق">×</button>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        <strong>MIRA SHERIF</strong><span>MODEL</span>
+      </a>
+      <p>© <span id="year"></span> Mira Sherif. جميع الحقوق محفوظة.</p>
+      <div class="footer-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">Profile</a>
+        <a href="#contact">Bookings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Portfolio filter
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        portfolioCards.forEach(card => {
+          const categories = card.dataset.category.split(' ');
+          card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    portfolioCards.forEach(card => {
+      card.addEventListener('click', () => {
+        lightboxImage.src = card.dataset.full;
+        lightboxImage.alt = card.dataset.caption || 'صورة من البورتفوليو';
+        lightboxCaption.textContent = card.dataset.caption || '';
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeLightbox();
+    });
+
+    // Booking form interaction
+    const bookingForm = document.getElementById('bookingForm');
+    const successMsg = document.getElementById('successMsg');
+
+    bookingForm.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const submitButton = bookingForm.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'تم إرسال الطلب';
+      successMsg.classList.add('show');
+
+      setTimeout(() => {
+        bookingForm.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = 'إرسال طلب الحجز';
+        successMsg.classList.remove('show');
+      }, 4500);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
