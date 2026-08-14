@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lina Adel — UGC Creator producing high-converting short-form videos, product demos, lifestyle content, reviews, and ad creatives for beauty, wellness, food, fashion, and digital brands." />
+  <meta name="theme-color" content="#f7f3ea" />
+  <title>Lina Adel | UGC Creator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f3ea;
+      --paper:#fffdf8;
+      --white:#ffffff;
+      --ink:#111111;
+      --muted:#6e6b65;
+      --line:#dcd6ca;
+      --blue:#2857ff;
+      --blue-dark:#1740d8;
+      --yellow:#ffd84d;
+      --pink:#ff8c9d;
+      --soft-blue:#e9eeff;
+      --shadow:0 22px 70px rgba(34,42,80,.10);
+      --radius:24px;
+      --container:min(1220px, calc(100% - 40px));
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    img,video{display:block;width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    ::selection{background:var(--yellow);color:#000}
+
+    .container{width:var(--container);margin-inline:auto}
+    .section{padding:96px 0}
+    .white{background:#fff}
+    .paper{background:var(--paper)}
+    .blue-section{background:var(--blue);color:#fff}
+    .reveal{opacity:0;transform:translateY(24px);transition:.72s cubic-bezier(.2,.7,.2,1)}
+    .reveal.show{opacity:1;transform:none}
+
+    .kicker{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    }
+    .kicker::before{
+      content:"";width:30px;height:3px;background:var(--blue);border-radius:99px;
+    }
+    .blue-section .kicker::before{background:var(--yellow)}
+
+    .section-head{
+      display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:40px;
+    }
+    .section-head h2{
+      margin:10px 0 0;
+      font-family:"DM Serif Display",serif;
+      font-size:clamp(42px,5vw,68px);
+      line-height:.98;
+      letter-spacing:-1.3px;
+      max-width:760px;
+      font-weight:400;
+    }
+    .section-head p{
+      margin:0;max-width:520px;color:var(--muted);font-size:16px;
+    }
+    .blue-section .section-head p{color:#d9e0ff}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:52px;padding:0 22px;border-radius:999px;border:2px solid transparent;
+      font-weight:800;transition:.25s ease;
+    }
+    .btn-black{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .btn-black:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.15)}
+    .btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+    .btn-outline:hover{background:var(--ink);color:#fff}
+    .btn-white{background:#fff;color:var(--blue);border-color:#fff}
+
+    /* Header */
+    header{
+      position:fixed;inset:0 0 auto;z-index:100;
+      background:rgba(247,243,234,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(220,214,202,.86);
+    }
+    nav{
+      width:var(--container);height:76px;margin:auto;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-mark{
+      width:42px;height:42px;border-radius:12px;background:var(--blue);color:#fff;
+      display:grid;place-items:center;font-weight:800;font-size:15px;transform:rotate(-3deg);
+    }
+    .brand-copy strong{display:block;font-size:14px;line-height:1.1}
+    .brand-copy span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+    .nav-links{display:flex;gap:24px;align-items:center;font-size:13px;font-weight:700}
+    .nav-links a:hover{color:var(--blue)}
+    .nav-actions{display:flex;gap:10px;align-items:center}
+    .menu-btn{
+      display:none;width:44px;height:44px;border-radius:50%;
+      border:1px solid var(--line);background:#fff;place-items:center;
+    }
+    .mobile-menu{
+      display:none;position:fixed;top:76px;inset-inline:0;background:#fff;
+      border-bottom:1px solid var(--line);padding:15px 20px 22px;z-index:95;
+      box-shadow:0 15px 35px rgba(20,20,20,.08);
+    }
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:12px 3px;border-bottom:1px solid var(--line);font-weight:700}
+    .mobile-menu .btn{width:100%;margin-top:14px}
+
+    /* Hero */
+    .hero{padding:126px 0 74px;position:relative;overflow:hidden}
+    .hero::after{
+      content:"";position:absolute;width:370px;height:370px;border-radius:50%;
+      background:var(--yellow);right:-190px;top:120px;opacity:.7;z-index:-1;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:50px;align-items:center}
+    .hero h1{
+      margin:14px 0 20px;
+      font-family:"DM Serif Display",serif;
+      font-size:clamp(56px,8vw,98px);
+      line-height:.88;
+      font-weight:400;
+      letter-spacing:-3px;
+      max-width:760px;
+    }
+    .hero h1 em{color:var(--blue);font-style:italic}
+    .hero-copy{font-size:18px;color:var(--muted);max-width:650px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .hero-stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+      margin-top:33px;
+    }
+    .hero-stat{
+      border-top:2px solid var(--ink);padding-top:12px;
+    }
+    .hero-stat strong{display:block;font-size:22px}
+    .hero-stat span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+
+    .hero-visual{position:relative;min-height:650px}
+    .hero-photo{
+      width:78%;height:610px;margin-left:auto;overflow:hidden;
+      border-radius:4px 80px 4px 4px;background:#ddd;box-shadow:var(--shadow);
+    }
+    .hero-photo img{height:100%;object-fit:cover}
+    .hero-phone{
+      position:absolute;left:0;bottom:20px;width:220px;height:390px;
+      border:7px solid var(--paper);border-radius:30px;overflow:hidden;background:#111;
+      box-shadow:0 24px 60px rgba(22,33,88,.20);z-index:2;
+    }
+    .hero-phone video{height:100%;object-fit:cover}
+    .sticker{
+      position:absolute;right:3px;top:32px;background:var(--yellow);color:#000;
+      padding:12px 16px;border:2px solid #000;box-shadow:6px 6px 0 #000;
+      font-weight:800;font-size:12px;transform:rotate(3deg);z-index:3;
+    }
+    .blue-note{
+      position:absolute;left:145px;top:50px;background:var(--blue);color:#fff;
+      padding:13px 16px;border-radius:16px;font-size:12px;font-weight:700;
+      box-shadow:var(--shadow);
+    }
+
+    /* video controls */
+    .video-wrap{position:relative}
+    .video-control{
+      position:absolute;right:13px;top:13px;z-index:8;
+      width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.35);
+      background:rgba(12,12,12,.72);color:#fff;
+      backdrop-filter:blur(9px);display:grid;place-items:center;padding:0;
+      transition:.2s ease;
+    }
+    .video-control:hover{transform:scale(1.06);background:rgba(12,12,12,.9)}
+    .video-control svg{width:18px;height:18px;fill:currentColor;pointer-events:none}
+    .video-control .play{display:none}
+    .video-control.paused .play{display:block}
+    .video-control.paused .pause{display:none}
+
+    /* niche bar */
+    .niche-bar{background:var(--ink);color:#fff;padding:17px 0}
+    .niche-inner{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .niche-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#bdbdbd;font-weight:800}
+    .niches{display:flex;gap:9px;flex-wrap:wrap}
+    .niches span{padding:8px 12px;border:1px solid #353535;border-radius:999px;font-size:11px;font-weight:700}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+    .about-collage{position:relative;min-height:580px}
+    .about-img-main{width:74%;height:520px;overflow:hidden;border-radius:80px 4px 4px 4px}
+    .about-img-main img{height:100%;object-fit:cover}
+    .about-img-small{
+      position:absolute;right:0;bottom:0;width:42%;height:300px;overflow:hidden;
+      border:7px solid #fff;background:#ddd;
+    }
+    .about-img-small img{height:100%;object-fit:cover}
+    .about-copy h2{
+      margin:10px 0 18px;font-family:"DM Serif Display",serif;
+      font-size:clamp(42px,5vw,67px);line-height:1;font-weight:400;
+    }
+    .about-copy p{color:var(--muted);font-size:16px;margin:0 0 15px}
+    .traits{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:24px}
+    .trait{
+      padding:16px;border:1px solid var(--line);background:#fff;border-radius:16px;
+    }
+    .trait strong{display:block;font-size:13px}
+    .trait span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{
+      min-height:270px;padding:26px;background:#fff;border:2px solid var(--ink);
+      border-radius:20px;display:flex;flex-direction:column;transition:.25s ease;
+    }
+    .service:nth-child(2),.service:nth-child(5){background:var(--soft-blue)}
+    .service:nth-child(3){background:#fff6c9}
+    .service:hover{transform:translateY(-5px);box-shadow:7px 7px 0 var(--ink)}
+    .service-num{font-family:"DM Serif Display",serif;font-size:36px;color:var(--blue);line-height:1}
+    .service h3{font-size:20px;margin:22px 0 9px}
+    .service p{margin:0;color:var(--muted);font-size:13px}
+    .service-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:20px}
+    .service-tags span{font-size:10px;font-weight:700;padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:#fff}
+
+    /* Portfolio */
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+    .filter{
+      padding:9px 14px;border-radius:999px;border:1px solid var(--line);
+      background:#fff;color:#5f5b54;font-weight:700;font-size:12px;
+    }
+    .filter.active,.filter:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .portfolio-grid{
+      display:grid;grid-template-columns:repeat(12,1fr);gap:15px;
+    }
+    .ugc-card{
+      position:relative;overflow:hidden;background:#ddd;border-radius:22px;
+      min-height:430px;
+    }
+    .ugc-card:nth-child(1),.ugc-card:nth-child(4){grid-column:span 3}
+    .ugc-card:nth-child(2),.ugc-card:nth-child(5){grid-column:span 3}
+    .ugc-card:nth-child(3),.ugc-card:nth-child(6){grid-column:span 3}
+    .ugc-card:nth-child(7),.ugc-card:nth-child(8){grid-column:span 3}
+    .ugc-card.hidden{display:none}
+    .ugc-card img,.ugc-card video{height:100%;object-fit:cover;position:absolute;inset:0}
+    .ugc-card::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.74),transparent 50%);
+      pointer-events:none;z-index:2;
+    }
+    .ugc-info{
+      position:absolute;left:16px;right:16px;bottom:15px;color:#fff;z-index:4;
+    }
+    .ugc-info small{display:block;font-size:10px;opacity:.82;text-transform:uppercase;letter-spacing:.06em}
+    .ugc-info strong{display:block;font-size:16px;line-height:1.35;margin-top:2px}
+    .ugc-info span{display:block;font-size:10px;opacity:.75;margin-top:2px}
+
+    /* Creative system */
+    .blue-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;
+    }
+    .blue-copy h2{
+      font-family:"DM Serif Display",serif;font-size:clamp(44px,5vw,68px);
+      line-height:.98;margin:10px 0 17px;font-weight:400;
+    }
+    .blue-copy p{color:#dce2ff;font-size:16px;max-width:560px}
+    .framework{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .frame{
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+      padding:20px;border-radius:18px;
+    }
+    .frame b{display:block;font-size:25px;color:var(--yellow);margin-bottom:5px}
+    .frame strong{display:block;font-size:13px}
+    .frame span{display:block;color:#cbd4ff;font-size:11px;margin-top:4px}
+
+    /* Process */
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{
+      padding:23px 18px 0;border-top:3px solid var(--ink);position:relative;
+    }
+    .step::before{
+      content:"";position:absolute;left:0;top:-7px;width:12px;height:12px;border-radius:50%;background:var(--blue);
+    }
+    .step b{font-size:11px;color:var(--blue)}
+    .step h3{font-size:18px;margin:10px 0 6px}
+    .step p{margin:0;color:var(--muted);font-size:12px}
+
+    /* testimonials */
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .quote{
+      border:1px solid var(--line);background:#fff;border-radius:20px;padding:24px;
+    }
+    .quote:nth-child(2){background:#fff6c9}
+    .quote-mark{font-family:"DM Serif Display",serif;font-size:48px;color:var(--blue);line-height:.7}
+    .quote p{font-size:15px;margin:13px 0 22px}
+    .quote strong{display:block;font-size:12px}
+    .quote span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+
+    /* CTA */
+    .cta{
+      background:var(--yellow);border:2px solid var(--ink);padding:50px;border-radius:26px;
+      display:flex;align-items:center;justify-content:space-between;gap:30px;
+      box-shadow:9px 9px 0 var(--ink);
+    }
+    .cta h2{
+      font-family:"DM Serif Display",serif;
+      font-size:clamp(40px,5vw,62px);line-height:.98;margin:0 0 10px;font-weight:400;
+      max-width:720px;
+    }
+    .cta p{margin:0;color:#4e493d;max-width:620px}
+    .cta .btn{white-space:nowrap}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px}
+    .contact-copy h2{
+      font-family:"DM Serif Display",serif;font-size:clamp(44px,5vw,67px);
+      line-height:.98;margin:10px 0 18px;font-weight:400;
+    }
+    .contact-copy p{color:var(--muted);font-size:15px}
+    .contact-meta{display:grid;gap:10px;margin-top:25px}
+    .contact-item{
+      display:flex;justify-content:space-between;gap:15px;
+      border-bottom:1px solid var(--line);padding:11px 0;
+    }
+    .contact-item strong{font-size:12px}
+    .contact-item span{font-size:11px;color:var(--muted)}
+    form{
+      background:#fff;border:2px solid var(--ink);padding:28px;border-radius:20px;
+      box-shadow:8px 8px 0 var(--ink);
+    }
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{margin-bottom:12px}
+    .field label{display:block;font-size:11px;font-weight:800;margin-bottom:6px}
+    .field input,.field textarea{
+      width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;
+      background:#fbfaf6;outline:none;transition:.2s;
+    }
+    .field input:focus,.field textarea:focus{
+      border-color:var(--blue);box-shadow:0 0 0 4px var(--soft-blue);background:#fff;
+    }
+    .field textarea{min-height:115px;resize:vertical}
+    form .btn{width:100%;border-radius:12px}
+    .success{
+      display:none;margin-top:11px;padding:11px 13px;border-radius:11px;background:#eef8f1;color:#236344;
+      font-weight:700;font-size:12px;
+    }
+    .success.show{display:block}
+
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .footer-inner p{margin:0;font-size:11px;color:var(--muted)}
+    .footer-links{display:flex;gap:16px;font-size:11px;font-weight:700}
+
+    @media(max-width:1020px){
+      .nav-links,.nav-actions .btn{display:none}
+      .menu-btn{display:grid}
+      .hero-grid,.about-grid,.blue-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-visual{max-width:680px;margin:auto;width:100%}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .ugc-card:nth-child(n){grid-column:auto}
+      .process{grid-template-columns:repeat(2,1fr)}
+      .quotes{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:720px){
+      :root{--container:min(100% - 28px,1220px)}
+      nav{height:68px}
+      .mobile-menu{top:68px}
+      .hero{padding-top:103px}
+      .hero h1{font-size:58px}
+      .hero-visual{min-height:555px}
+      .hero-photo{height:520px;width:82%}
+      .hero-phone{width:180px;height:320px}
+      .blue-note{display:none}
+      .section{padding:72px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .about-collage{min-height:500px}
+      .about-img-main{height:450px}
+      .about-img-small{height:245px}
+      .services{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr}
+      .framework{grid-template-columns:1fr}
+      .quotes{grid-template-columns:1fr}
+      .cta{display:block;padding:36px 24px}
+      .cta .btn{width:100%;margin-top:22px}
+      .row{grid-template-columns:1fr}
+    }
+
+    @media(max-width:470px){
+      .hero h1{font-size:48px}
+      .hero-stats{grid-template-columns:1fr 1fr}
+      .hero-visual{min-height:490px}
+      .hero-photo{height:450px;width:84%}
+      .hero-phone{width:155px;height:275px}
+      .sticker{font-size:10px;right:0}
+      .portfolio-grid{grid-template-columns:1fr}
+      .ugc-card{min-height:560px}
+      .traits{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="#home">
+        <span class="brand-mark">LA</span>
+        <span class="brand-copy">
+          <strong>Lina Adel</strong>
+          <span>UGC CREATOR / CONTENT PRODUCER</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-blue" href="#contact">Book a Project</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-blue" href="#contact">Book a Project</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="kicker">UGC Creator • Cairo, Egypt</span>
+          <h1>Content that feels <em>real</em> and sells naturally.</h1>
+          <p class="hero-copy">
+            I’m Lina Adel, a UGC Creator and content producer helping beauty, wellness, food,
+            fashion, and digital brands create short-form content that feels native to social media
+            while still being built for attention, trust, and conversion.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-black" href="#work">View My Work</a>
+            <a class="btn btn-outline" href="#contact">Work With Me</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>90+</strong><span>UGC videos delivered</span></div>
+            <div class="hero-stat"><strong>24</strong><span>Brands collaborated with</span></div>
+            <div class="hero-stat"><strong>AR / EN</strong><span>Bilingual content</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-photo">
+            <img src="https://images.pexels.com/photos/8154666/pexels-photo-8154666.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="UGC creator filming lifestyle content">
+          </div>
+
+          <div class="hero-phone video-wrap">
+            <video class="smart" autoplay muted loop playsinline preload="metadata"
+                   poster="https://images.pexels.com/photos/8154652/pexels-photo-8154652.jpeg?auto=compress&cs=tinysrgb&w=700">
+              <source src="https://videos.pexels.com/video-files/8154851/8154851-uhd_2160_4096_25fps.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="sticker">AVAILABLE FOR Q3 ✦</div>
+          <div class="blue-note">Native content. Better attention.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="niche-bar">
+      <div class="container niche-inner">
+        <span class="niche-title">Content Niches</span>
+        <div class="niches">
+          <span>Beauty</span>
+          <span>Wellness</span>
+          <span>Food & Drinks</span>
+          <span>Fashion</span>
+          <span>Apps</span>
+          <span>Lifestyle</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="about">
+      <div class="container about-grid">
+        <div class="about-collage reveal">
+          <div class="about-img-main">
+            <img src="https://images.pexels.com/photos/7320740/pexels-photo-7320740.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                 alt="Creator producing beauty and lifestyle content">
+          </div>
+          <div class="about-img-small">
+            <img src="https://images.pexels.com/photos/12432832/pexels-photo-12432832.jpeg?auto=compress&cs=tinysrgb&w=700"
+                 alt="Behind the scenes creator setup">
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="kicker">About Me</span>
+          <h2>I make brand content feel less like an ad.</h2>
+          <p>
+            My approach combines natural delivery, clean visuals, real-life scenarios, and direct
+            messaging. The goal is simple: make the viewer feel like they are discovering a product
+            through someone they trust.
+          </p>
+          <p>
+            I handle concepting, scripting, filming, editing, captions, B-roll, and final delivery,
+            with versions optimized for organic posting or paid social campaigns.
+          </p>
+
+          <div class="traits">
+            <div class="trait"><strong>Natural Delivery</strong><span>Conversational, non-scripted feel</span></div>
+            <div class="trait"><strong>Performance-Minded</strong><span>Hooks, proof, benefits, CTA</span></div>
+            <div class="trait"><strong>Platform Native</strong><span>Made for Reels, TikTok, Shorts</span></div>
+            <div class="trait"><strong>Brand Flexible</strong><span>Minimal, fun, premium, lifestyle</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Services</span>
+            <h2>Creative built for the way people watch.</h2>
+          </div>
+          <p>
+            From a single hero video to a monthly batch of ad creatives, each concept is shaped around
+            the product, audience, platform, and campaign objective.
+          </p>
+        </div>
+
+        <div class="services">
+          <article class="service reveal">
+            <span class="service-num">01</span>
+            <h3>Product Demo</h3>
+            <p>Show the product in use while highlighting what makes it useful, different, and easy to understand.</p>
+            <div class="service-tags"><span>Demo</span><span>Benefits</span><span>How-To</span></div>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">02</span>
+            <h3>Review & Testimonial</h3>
+            <p>A personal, relatable review format designed to feel like a recommendation rather than a polished ad.</p>
+            <div class="service-tags"><span>Review</span><span>Trust</span><span>Social Proof</span></div>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">03</span>
+            <h3>Problem / Solution</h3>
+            <p>Start with a familiar pain point and position the product as the most natural next step.</p>
+            <div class="service-tags"><span>Hook</span><span>Pain Point</span><span>CTA</span></div>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">04</span>
+            <h3>Lifestyle UGC</h3>
+            <p>Place the product inside a realistic routine, occasion, or everyday moment that fits the brand.</p>
+            <div class="service-tags"><span>Routine</span><span>B-roll</span><span>Voiceover</span></div>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">05</span>
+            <h3>Unboxing</h3>
+            <p>Capture packaging, first impressions, product details, texture, and the excitement of the reveal.</p>
+            <div class="service-tags"><span>Unboxing</span><span>First Look</span></div>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">06</span>
+            <h3>UGC Photography</h3>
+            <p>Lifestyle and product-in-use images for social media, ads, landing pages, and e-commerce.</p>
+            <div class="service-tags"><span>Photos</span><span>Product-in-Use</span><span>Social</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Selected Work</span>
+            <h2>Scroll-stopping without looking overproduced.</h2>
+          </div>
+          <p>
+            A mix of beauty, lifestyle, fashion, food, and creator-led formats designed to feel natural in-feed.
+          </p>
+        </div>
+
+        <div class="filters reveal">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="beauty">Beauty</button>
+          <button class="filter" data-filter="fashion">Fashion</button>
+          <button class="filter" data-filter="lifestyle">Lifestyle</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="ugc-card video-wrap reveal" data-category="beauty">
+            <video class="smart" muted loop playsinline preload="metadata">
+              <source src="https://videos.pexels.com/video-files/8154851/8154851-uhd_2160_4096_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="ugc-info"><small>Beauty • Review</small><strong>On-Camera Skincare Review</strong><span>Talking Head + Demo</span></div>
+          </article>
+
+          <article class="ugc-card video-wrap reveal" data-category="beauty lifestyle">
+            <video class="smart" muted loop playsinline preload="metadata">
+              <source src="https://videos.pexels.com/video-files/7306686/7306686-uhd_2160_4096_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="ugc-info"><small>Beauty • Routine</small><strong>Everyday Beauty Routine</strong><span>Voiceover + B-roll</span></div>
+          </article>
+
+          <article class="ugc-card video-wrap reveal" data-category="fashion lifestyle">
+            <video class="smart" muted loop playsinline preload="metadata">
+              <source src="https://videos.pexels.com/video-files/7951321/7951321-hd_1080_1920_30fps.mp4" type="video/mp4">
+            </video>
+            <div class="ugc-info"><small>Fashion • Try-On</small><strong>Try-On & Styling Video</strong><span>Native Social Format</span></div>
+          </article>
+
+          <article class="ugc-card video-wrap reveal" data-category="fashion lifestyle">
+            <video class="smart" muted loop playsinline preload="metadata">
+              <source src="https://videos.pexels.com/video-files/8992292/8992292-uhd_2160_3840_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="ugc-info"><small>Fashion • Lifestyle</small><strong>Everyday Accessories Edit</strong><span>Mirror Shot + B-roll</span></div>
+          </article>
+
+          <article class="ugc-card reveal" data-category="beauty">
+            <img src="https://images.pexels.com/photos/7320788/pexels-photo-7320788.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beauty product lifestyle photo">
+            <div class="ugc-info"><small>Beauty • Photography</small><strong>Product-in-Use Photography</strong><span>Organic Social Asset</span></div>
+          </article>
+
+          <article class="ugc-card reveal" data-category="lifestyle beauty">
+            <img src="https://images.pexels.com/photos/7320740/pexels-photo-7320740.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lifestyle self care content">
+            <div class="ugc-info"><small>Lifestyle • Self Care</small><strong>Routine-Based Content</strong><span>Warm Lifestyle Direction</span></div>
+          </article>
+
+          <article class="ugc-card reveal" data-category="lifestyle">
+            <img src="https://images.pexels.com/photos/12432832/pexels-photo-12432832.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Creator behind the scenes">
+            <div class="ugc-info"><small>Creator • BTS</small><strong>Behind the Scenes</strong><span>Creator Setup</span></div>
+          </article>
+
+          <article class="ugc-card reveal" data-category="lifestyle">
+            <img src="https://images.pexels.com/photos/8154666/pexels-photo-8154666.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Organic creator lifestyle content">
+            <div class="ugc-info"><small>Lifestyle • Organic</small><strong>Native Lifestyle Creative</strong><span>Day-in-the-Life Style</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blue-section">
+      <div class="container blue-grid">
+        <div class="blue-copy reveal">
+          <span class="kicker">Creative System</span>
+          <h2>Good UGC has structure behind the “casual” look.</h2>
+          <p>
+            Every performance-oriented piece is built around attention, relevance, proof, and a clear next step.
+            The content still feels natural, but the structure is intentional.
+          </p>
+        </div>
+
+        <div class="framework reveal">
+          <div class="frame"><b>01</b><strong>Hook</strong><span>Earn attention in the first seconds.</span></div>
+          <div class="frame"><b>02</b><strong>Context</strong><span>Make the situation feel familiar.</span></div>
+          <div class="frame"><b>03</b><strong>Proof</strong><span>Show why the product is worth caring about.</span></div>
+          <div class="frame"><b>04</b><strong>CTA</strong><span>Give the viewer a clear next step.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Process</span>
+            <h2>Simple process. Clear deliverables.</h2>
+          </div>
+        </div>
+
+        <div class="process">
+          <div class="step reveal"><b>01</b><h3>Brief</h3><p>Product, audience, offer, objective, platform, and key messages.</p></div>
+          <div class="step reveal"><b>02</b><h3>Concept</h3><p>Hook, script, shot list, style direction, and CTA.</p></div>
+          <div class="step reveal"><b>03</b><h3>Production</h3><p>Filming, lighting, B-roll, editing, captions, and pacing.</p></div>
+          <div class="step reveal"><b>04</b><h3>Delivery</h3><p>Final files in the agreed format with revision rounds included.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Client Feedback</span>
+            <h2>Easy to work with. Easy to use.</h2>
+          </div>
+        </div>
+
+        <div class="quotes">
+          <article class="quote reveal">
+            <div class="quote-mark">“</div>
+            <p>The final videos felt much more natural than our previous ad creatives, and the hooks gave us several directions to test.</p>
+            <strong>Nadine Saleh</strong>
+            <span>Brand Lead — Faye Skin</span>
+          </article>
+
+          <article class="quote reveal">
+            <div class="quote-mark">“</div>
+            <p>Lina understood the tone immediately. The content looked premium without becoming too polished or losing the UGC feel.</p>
+            <strong>Omar Khalil</strong>
+            <span>Growth Manager — Noma</span>
+          </article>
+
+          <article class="quote reveal">
+            <div class="quote-mark">“</div>
+            <p>We received organized files, multiple versions, and content that was genuinely ready for both organic and paid use.</p>
+            <strong>Farah Tarek</strong>
+            <span>Co-founder — Mirae</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" style="padding-top:20px">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>Have a product that needs better creative?</h2>
+            <p>Send me the brand, product, campaign goal, and content requirements. I’ll recommend the right UGC format for the project.</p>
+          </div>
+          <a class="btn btn-black" href="#contact">Start a Project</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="kicker">Let’s Work Together</span>
+          <h2>Ready to create something people actually want to watch?</h2>
+          <p>
+            Available for one-off UGC videos, monthly content batches, lifestyle photography,
+            and paid social creative packages.
+          </p>
+
+          <div class="contact-meta">
+            <div class="contact-item"><strong>Location</strong><span>Cairo, Egypt</span></div>
+            <div class="contact-item"><strong>Languages</strong><span>Arabic • English</span></div>
+            <div class="contact-item"><strong>Typical Turnaround</strong><span>5–7 Business Days</span></div>
+            <div class="contact-item"><strong>Availability</strong><span>Open for new collaborations</span></div>
+          </div>
+        </div>
+
+        <form class="reveal" id="contactForm">
+          <div class="row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="brand">Brand Name</label>
+              <input id="brand" required placeholder="Brand name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="type">Content Type</label>
+              <input id="type" required placeholder="UGC Video / Photos / Package">
+            </div>
+            <div class="field">
+              <label for="platform">Platform</label>
+              <input id="platform" placeholder="Instagram / TikTok / Ads">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="details">Project Details</label>
+            <textarea id="details" required placeholder="Tell me about the product, campaign goal, number of assets, and expected timeline..."></textarea>
+          </div>
+
+          <button class="btn btn-blue" type="submit">Send Collaboration Request</button>
+          <div class="success" id="success">Your request has been received. I’ll get back to you with the collaboration details.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark">LA</span>
+        <span class="brand-copy"><strong>Lina Adel</strong><span>UGC CREATOR</span></span>
+      </a>
+      <p>© <span id="year"></span> Lina Adel. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#work">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Portfolio filters
+    document.querySelectorAll('.filter').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll('.ugc-card').forEach(card => {
+          const categories = (card.dataset.category || '').split(' ');
+          card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
+        });
+      });
+    });
+
+    // Custom Play / Pause
+    const playIcon = `
+      <svg class="play" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 5.5v13L18 12 8 5.5Z"></path>
+      </svg>`;
+
+    const pauseIcon = `
+      <svg class="pause" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 5h4v14H7zM13 5h4v14h-4z"></path>
+      </svg>`;
+
+    document.querySelectorAll('video').forEach((video, index) => {
+      const parent = video.parentElement;
+      if(!parent) return;
+
+      if(!parent.classList.contains('video-wrap')){
+        parent.classList.add('video-wrap');
+      }
+
+      if(!video.id) video.id = `ugc-video-${index + 1}`;
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'video-control';
+      button.innerHTML = playIcon + pauseIcon;
+      button.setAttribute('aria-controls', video.id);
+      parent.appendChild(button);
+
+      const sync = () => {
+        button.classList.toggle('paused', video.paused);
+        button.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+      };
+
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if(video.paused){
+          video.dataset.manual = '0';
+          const promise = video.play();
+          if(promise && typeof promise.catch === 'function') promise.catch(() => {});
+        }else{
+          video.dataset.manual = '1';
+          video.pause();
+        }
+      });
+
+      video.addEventListener('play', sync);
+      video.addEventListener('pause', sync);
+      sync();
+    });
+
+    // Pause off-screen videos; respect manual pause
+    const videoObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if(entry.isIntersecting){
+          if(video.dataset.manual !== '1'){
+            const promise = video.play();
+            if(promise && typeof promise.catch === 'function') promise.catch(() => {});
+          }
+        }else{
+          video.pause();
+        }
+      });
+    }, { threshold: .3 });
+
+    document.querySelectorAll('.smart').forEach(video => videoObserver.observe(video));
+
+    // Contact form interaction
+    const contactForm = document.getElementById('contactForm');
+    const success = document.getElementById('success');
+
+    contactForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const button = contactForm.querySelector('button[type="submit"]');
+
+      success.classList.add('show');
+      button.disabled = true;
+      button.textContent = 'Request Sent';
+
+      setTimeout(() => {
+        contactForm.reset();
+        success.classList.remove('show');
+        button.disabled = false;
+        button.textContent = 'Send Collaboration Request';
+      }, 4200);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
