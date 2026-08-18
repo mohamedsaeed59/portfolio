@@ -208,7 +208,18 @@
       transition:.24s ease
     }
     .template-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}
-    .template-preview{padding:14px;background:#eef2f7}
+    .template-preview{
+      padding:14px;background:#eef2f7;cursor:zoom-in;position:relative
+    }
+    .template-preview::after{
+      content:"تكبير";
+      position:absolute;left:12px;bottom:12px;
+      background:rgba(17,24,39,.86);color:#fff;
+      padding:6px 10px;border-radius:999px;
+      font-size:9px;font-weight:800;
+      opacity:0;transform:translateY(4px);transition:.2s ease
+    }
+    .template-preview:hover::after{opacity:1;transform:none}
     .paper{
       background:#fff;aspect-ratio:.707/1;border-radius:5px;box-shadow:0 12px 28px rgba(16,24,40,.10);
       overflow:hidden;display:grid;grid-template-columns:31% 69%;font-family:"Inter",sans-serif
@@ -340,6 +351,37 @@
     .selected-template strong{font-size:13px}
     .modal-box h3{font-size:22px;margin:4px 0 6px}
     .modal-box p{font-size:12px;color:var(--muted);margin:0}
+
+
+    .cv-preview-modal{
+      position:fixed;inset:0;z-index:230;background:rgba(16,24,40,.84);
+      display:none;align-items:center;justify-content:center;padding:20px
+    }
+    .cv-preview-modal.open{display:flex}
+    .cv-preview-box{
+      width:min(760px,96vw);max-height:92vh;overflow:auto;
+      background:#fff;border-radius:24px;padding:22px;
+      box-shadow:0 30px 80px rgba(0,0,0,.26);position:relative
+    }
+    .cv-preview-close{
+      position:absolute;left:18px;top:18px;width:40px;height:40px;
+      border-radius:12px;border:1px solid var(--line);background:#fff;
+      font-size:22px;display:grid;place-items:center;z-index:3
+    }
+    .cv-preview-head{padding-left:54px;margin-bottom:18px}
+    .cv-preview-head h3{font-size:22px;margin:5px 0 4px}
+    .cv-preview-head p{font-size:12px;color:var(--muted);margin:0}
+    .cv-preview-stage{
+      background:#eef2f7;border-radius:18px;padding:24px;
+      display:flex;align-items:center;justify-content:center
+    }
+    .cv-preview-stage .paper{
+      width:min(430px,82vw);
+      aspect-ratio:.707/1;
+      box-shadow:0 24px 60px rgba(16,24,40,.20)
+    }
+    .cv-preview-actions{display:flex;gap:10px;margin-top:18px}
+    .cv-preview-actions .btn{flex:1}
 
     .reveal{opacity:0;transform:translateY(20px);transition:.7s cubic-bezier(.2,.7,.2,1)}
     .reveal.visible{opacity:1;transform:none}
@@ -498,7 +540,7 @@
           </div>
 
           <div class="floating-card float-1">
-            <small>20 CV TEMPLATES</small>
+            <small>8 CV TEMPLATES</small>
             <strong>اختر التصميم الأنسب لمجالك</strong>
             <div style="margin-top:10px;font-size:11px;color:var(--primary);font-weight:800">PDF • DOCX • ATS Ready</div>
           </div>
@@ -581,7 +623,7 @@
           <article class="step reveal">
             <b>02</b>
             <h3>اختر النموذج</h3>
-            <p>اختر من بين 20 نموذج CV، وسيتم تسجيل اختيارك تلقائيًا داخل طلبك.</p>
+            <p>اختر من بين 8 نماذج CV، وسيتم تسجيل اختيارك تلقائيًا داخل طلبك.</p>
           </article>
           <article class="step reveal">
             <b>03</b>
@@ -603,7 +645,7 @@
         <div class="section-head reveal">
           <div>
             <span class="eyebrow">CV Templates</span>
-            <h2>20 نموذج CV، اختر الأقرب لشخصيتك ومجالك.</h2>
+            <h2>8 نماذج CV، اختر الأقرب لشخصيتك ومجالك.</h2>
           </div>
           <p>كل نموذج يتم تخصيصه بالكامل بمحتواك وألوانك وخبرتك، مع الحفاظ على وضوح القراءة والتوافق مع أنظمة ATS.</p>
         </div>
@@ -616,7 +658,7 @@
             <button class="filter-btn" data-filter="modern">Modern</button>
             <button class="filter-btn" data-filter="creative">Creative</button>
           </div>
-          <div class="template-count" id="templateCount">20 نموذج متاح</div>
+          <div class="template-count" id="templateCount">8 نماذج متاحة</div>
         </div>
 
         <div class="templates-grid" id="templatesGrid"></div>
@@ -685,7 +727,7 @@
             <p>لمن لديه محتوى جاهز ويحتاج تصميمًا احترافيًا.</p>
             <div class="amount">650 <small>EGP</small></div>
             <ul class="features">
-              <li>اختيار من 20 Template</li>
+              <li>اختيار من 8 Templates</li>
               <li>تنسيق وترتيب المحتوى</li>
               <li>نسخة PDF عالية الجودة</li>
               <li>تعديلان بعد التسليم الأول</li>
@@ -840,6 +882,27 @@
     </div>
   </footer>
 
+
+  <!-- Large CV Template Preview -->
+  <div class="cv-preview-modal" id="cvPreviewModal" role="dialog" aria-modal="true" aria-labelledby="cvPreviewTitle">
+    <div class="cv-preview-box">
+      <button class="cv-preview-close" id="cvPreviewClose" aria-label="إغلاق">×</button>
+
+      <div class="cv-preview-head">
+        <span class="eyebrow">CV Preview</span>
+        <h3 id="cvPreviewTitle">معاينة النموذج</h3>
+        <p id="cvPreviewDesc"></p>
+      </div>
+
+      <div class="cv-preview-stage" id="cvPreviewStage"></div>
+
+      <div class="cv-preview-actions">
+        <button class="btn btn-primary" id="choosePreviewTemplate">اختيار هذا النموذج</button>
+        <button class="btn btn-light" id="cvPreviewCloseBottom">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Selection modal -->
   <div class="modal" id="templateModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-box">
@@ -910,18 +973,6 @@
       {id:'CV-06',name:'Studio',type:'creative',desc:'مناسب للمصممين وصنّاع المحتوى.'},
       {id:'CV-07',name:'Prime',type:'executive',desc:'تنسيق رسمي أنيق للوظائف القيادية.'},
       {id:'CV-08',name:'Focus',type:'ats',desc:'يركز على الخبرات والإنجازات بدون عناصر مشتتة.'},
-      {id:'CV-09',name:'Edge',type:'modern',desc:'أسلوب عصري مناسب للتسويق والمبيعات.'},
-      {id:'CV-10',name:'Portfolio CV',type:'creative',desc:'يجمع المهارات مع روابط الأعمال والبورتفوليو.'},
-      {id:'CV-11',name:'Cobalt',type:'modern',desc:'مظهر تقني مناسب للـDevelopers والـProduct.'},
-      {id:'CV-12',name:'Senior',type:'executive',desc:'يوضح القيادة، المسؤوليات والنتائج بشكل قوي.'},
-      {id:'CV-13',name:'One Page',type:'ats',desc:'صفحة واحدة مركزة للخبرات المتوسطة والحديثة.'},
-      {id:'CV-14',name:'Grid',type:'creative',desc:'تقسيم بصري مناسب للتخصصات الإبداعية.'},
-      {id:'CV-15',name:'Slate',type:'modern',desc:'تصميم مهني متوازن بين الشكل والوضوح.'},
-      {id:'CV-16',name:'Legal',type:'executive',desc:'مناسب للمحامين والمجالات الرسمية والاستشارية.'},
-      {id:'CV-17',name:'Clean ATS',type:'ats',desc:'أعلى بساطة ووضوح لقراءة أنظمة التوظيف.'},
-      {id:'CV-18',name:'Creator',type:'creative',desc:'مناسب للمحتوى، الجرافيك، الفيديو والـUGC.'},
-      {id:'CV-19',name:'Metric',type:'modern',desc:'يعرض الأرقام والإنجازات بصورة أوضح.'},
-      {id:'CV-20',name:'Boardroom',type:'executive',desc:'ملائم للمناصب العليا والاستشارات والإدارة.'}
     ];
 
     const templatesGrid = document.getElementById('templatesGrid');
@@ -957,7 +1008,7 @@
       const visible = templates.filter(t => filter === 'all' || t.type === filter);
       templatesGrid.innerHTML = visible.map((t, index) => `
         <article class="template-card reveal visible" data-type="${t.type}">
-          <div class="template-preview">${paperMarkup(index)}</div>
+          <div class="template-preview" data-template="${t.id} — ${t.name}" data-description="${t.desc}" title="اضغط لتكبير النموذج">${paperMarkup(index)}</div>
           <div class="template-meta">
             <div class="template-meta-top">
               <h3>${t.id} — ${t.name}</h3>
@@ -1006,7 +1057,46 @@
       document.querySelectorAll('.template-select').forEach(btn => {
         btn.addEventListener('click', () => openModal(btn.dataset.template));
       });
+
+      document.querySelectorAll('.template-preview').forEach(preview => {
+        preview.addEventListener('click', () => openCvPreview(preview));
+      });
     }
+
+    const cvPreviewModal = document.getElementById('cvPreviewModal');
+    const cvPreviewClose = document.getElementById('cvPreviewClose');
+    const cvPreviewCloseBottom = document.getElementById('cvPreviewCloseBottom');
+    const cvPreviewTitle = document.getElementById('cvPreviewTitle');
+    const cvPreviewDesc = document.getElementById('cvPreviewDesc');
+    const cvPreviewStage = document.getElementById('cvPreviewStage');
+    const choosePreviewTemplate = document.getElementById('choosePreviewTemplate');
+    let previewTemplateSelection = '';
+
+    function openCvPreview(preview){
+      previewTemplateSelection = preview.dataset.template;
+      cvPreviewTitle.textContent = preview.dataset.template;
+      cvPreviewDesc.textContent = preview.dataset.description || '';
+      cvPreviewStage.innerHTML = preview.innerHTML;
+      cvPreviewModal.classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeCvPreview(){
+      cvPreviewModal.classList.remove('open');
+      document.body.classList.remove('modal-open');
+    }
+
+    cvPreviewClose.addEventListener('click', closeCvPreview);
+    cvPreviewCloseBottom.addEventListener('click', closeCvPreview);
+    cvPreviewModal.addEventListener('click', e => {
+      if(e.target === cvPreviewModal) closeCvPreview();
+    });
+
+    choosePreviewTemplate.addEventListener('click', () => {
+      const selected = previewTemplateSelection;
+      closeCvPreview();
+      openModal(selected);
+    });
 
     document.querySelectorAll('.package-select').forEach(btn => {
       btn.addEventListener('click', () => openModal(btn.dataset.template));
@@ -1014,7 +1104,7 @@
 
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') { closeCvPreview(); closeModal(); } });
 
     document.getElementById('continueBtn').addEventListener('click', () => {
       selectedTemplateInput.value = currentSelection;
