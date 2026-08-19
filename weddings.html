@@ -33,7 +33,7 @@
 
     .featured{display:grid;grid-template-columns:1.08fr .92fr;gap:46px;align-items:center}.featured-media{position:relative}.featured-media img{width:100%;height:640px;object-fit:cover;border-radius:28px}.badge{position:absolute;left:21px;top:21px;background:rgba(255,253,249,.93);padding:9px 13px;border-radius:999px;font-size:9px;font-weight:900}.featured-copy h2{font-size:clamp(36px,5vw,57px);line-height:1.15;font-weight:500;margin:12px 0 14px}.featured-copy>p{font-size:14px;color:var(--muted);margin:0}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:27px 0}.fact{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:15px}.fact strong{display:block;font-size:13px}.fact span{font-size:9.5px;color:var(--muted)}.chips{display:flex;gap:7px;flex-wrap:wrap}.chips span{padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:8.5px;color:#665f57}
 
-    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.package{background:var(--white);border:1px solid var(--line);border-radius:25px;padding:28px;transition:.3s var(--ease)}.package:hover{transform:translateY(-5px);box-shadow:var(--soft-shadow)}.package.featured{background:var(--charcoal);color:#fff;border-color:var(--gold);box-shadow:0 18px 44px rgba(58,48,36,.13);position:relative;overflow:hidden}.package.featured:before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--gold-deep),var(--champagne),var(--gold-deep))}.package.featured:hover{transform:translateY(-5px)}.package-tag{display:inline-flex;padding:5px 9px;border-radius:999px;background:#efe4d5;color:var(--gold-deep);font-size:8.5px;font-weight:900}.package.featured .package-tag{background:#e4c28e;color:#261f17}.package h3{font-size:23px;margin:16px 0 4px}.package>p{font-size:11px;color:var(--muted);margin:0}.package.featured>p{color:#cbc4bb}.package-price{margin:22px 0;color:var(--gold-deep);font-size:11px;font-weight:900}.package.featured .package-price{color:#edc995}.package ul{list-style:none;padding:0;margin:0 0 24px}.package li{font-size:10.5px;padding:9px 0;border-bottom:1px solid var(--line)}.package.featured li{border-color:#48423b}.package li:before{content:"✓";color:var(--gold-deep);font-weight:900;margin-left:7px}.package.featured li:before{color:#e4c28e}.package .btn{width:100%}
+    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.package{background:var(--white);border:1px solid var(--line);border-radius:25px;padding:28px;transition:.3s var(--ease)}.package:hover{transform:translateY(-5px);box-shadow:var(--soft-shadow)}.package.featured{background:var(--warm-white);color:var(--charcoal);border:2px solid var(--gold);box-shadow:0 16px 36px rgba(58,48,36,.10)}.package.featured:hover{transform:translateY(-5px)}.package-tag{display:inline-flex;padding:5px 9px;border-radius:999px;background:#efe4d5;color:var(--gold-deep);font-size:8.5px;font-weight:900}.package h3{font-size:23px;margin:16px 0 4px}.package>p{font-size:11px;color:var(--muted);margin:0}.package.featured>p{color:#cbc4bb}.package-price{margin:22px 0;color:var(--gold-deep);font-size:11px;font-weight:900}.package ul{list-style:none;padding:0;margin:0 0 24px}.package li{font-size:10.5px;padding:9px 0;border-bottom:1px solid var(--line)}.package.featured li{border-color:#48423b}.package li:before{content:"✓";color:var(--gold-deep);font-weight:900;margin-left:7px}.package.featured li:before{color:#e4c28e}.package .btn{width:100%;margin-top:auto}
 
     .why{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}.why img{width:100%;height:610px;object-fit:cover;border-radius:28px}.why h2{font-size:clamp(36px,5vw,57px);font-weight:500;line-height:1.15;margin:12px 0 17px}.why>div>p{font-size:13px;color:var(--muted);margin:0 0 24px}.why-list{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.why-item{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px}.why-item b{display:block;font-size:11px;margin-bottom:4px}.why-item span{font-size:9.5px;color:var(--muted);line-height:1.65}
 
@@ -112,26 +112,26 @@
 <article class="package reveal" data-package-card="Essential">
   <span class="package-tag">للمناسبات الصغيرة</span><h3>Essential</h3>
   <p>لمن لديه رؤية واضحة ويحتاج فريقًا يساعده على تنسيق التنفيذ.</p>
-  <div class="package-price"><strong style="font-size:26px;color:var(--charcoal)">18,000 جنيه</strong><br><span>يبدأ من</span></div>
+  <div class="package-price"><strong style="font-size:26px;color:var(--charcoal)">18,000 جنيه</strong></div>
   <ul><li>استشارة وتخطيط أساسي</li><li>اقتراحات للموردين</li><li>Timeline للمناسبة</li><li>تنسيق الديكور الأساسي</li><li>إدارة يوم المناسبة</li></ul>
   <button type="button" class="btn btn-outline package-select" data-package="Essential">اختيار باقة Essential</button>
 </article>
 <article class="package featured reveal" data-package-card="Signature">
   <span class="package-tag">الأكثر طلبًا</span><h3>Signature</h3>
   <p>تخطيط وتنظيم متكامل منذ الفكرة وحتى نهاية المناسبة.</p>
-  <div class="package-price"><strong style="font-size:26px;color:#f0c98f">35,000 جنيه</strong><br><span>يبدأ من</span></div>
+  <div class="package-price"><strong style="font-size:26px;color:var(--charcoal)">35,000 جنيه</strong></div>
   <ul><li>Full Event Planning</li><li>تصميم Concept كامل</li><li>إدارة الميزانية والموردين</li><li>ديكور، زهور، إضاءة وصوت</li><li>تنسيق تجربة الضيوف</li><li>فريق كامل في يوم الحدث</li></ul>
-  <button type="button" class="btn btn-gold package-select" data-package="Signature">اختيار باقة Signature</button>
+  <button type="button" class="btn btn-outline package-select" data-package="Signature">اختيار باقة Signature</button>
 </article>
 <article class="package reveal" data-package-card="Luxury">
   <span class="package-tag">للتجارب الفاخرة</span><h3>Luxury</h3>
   <p>تنفيذ مخصص للفعاليات الكبيرة أو التجارب التي تحتاج مستوى أعلى من التفاصيل.</p>
-  <div class="package-price"><strong style="font-size:26px;color:var(--charcoal)">65,000 جنيه</strong><br><span>يبدأ من</span></div>
+  <div class="package-price"><strong style="font-size:26px;color:var(--charcoal)">65,000 جنيه</strong></div>
   <ul><li>Creative Direction مخصص</li><li>تصميم وتنفيذ كامل للمكان</li><li>إدارة Premium للموردين</li><li>Guest Experience تفصيلي</li><li>إنتاج وإضاءة متقدمة</li><li>إشراف موسع قبل وأثناء الحدث</li></ul>
   <button type="button" class="btn btn-outline package-select" data-package="Luxury">اختيار باقة Luxury</button>
 </article>
 </div>
-<p class="small-note" style="margin-top:16px">الأسعار الموضحة أسعار بداية للتخطيط والإدارة، ويُحدد العرض النهائي حسب نوع المناسبة وعدد الضيوف والمكان ونطاق التجهيزات.</p>
+<p class="small-note" style="margin-top:16px">الأسعار الموضحة للتخطيط والإدارة، ويُحدد العرض النهائي حسب نوع المناسبة وعدد الضيوف والمكان ونطاق التجهيزات.</p>
 </div></section>
 
   <section class="section white"><div class="container why"><img class="reveal" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=84" alt="تنسيق قاعة مناسبة فاخرة" loading="lazy"><div class="reveal"><span class="kicker">لماذا لُمى؟</span><h2>فريق واحد مسؤول عن الصورة الكاملة.</h2><p>بدلًا من إدارة عشرات التفاصيل والموردين بنفسكم، يصبح لديكم فريق واحد يراجع الجودة، الوقت والميزانية ويتعامل مع أي تغيير قبل أن يصل إليكم.</p><div class="why-list"><div class="why-item"><b>إدارة كاملة للمناسبة</b><span>من الجدول الزمني حتى آخر تفصيلة في التنفيذ.</span></div><div class="why-item"><b>شبكة موردين موثوقة</b><span>موردون مجربون في الديكور، الإضاءة، الصوت والتصوير.</span></div><div class="why-item"><b>متابعة دقيقة للميزانية</b><span>أولويات واضحة وبدائل عملية قبل اتخاذ أي قرار.</span></div><div class="why-item"><b>تصميم مخصص</b><span>لا نكرر نفس الثيم؛ نبني الشكل حول ذوقكم والمكان.</span></div><div class="why-item"><b>فريق ميداني متخصص</b><span>منسقون في الموقع لضمان سير اليوم كما هو مخطط.</span></div><div class="why-item"><b>اهتمام بالتفاصيل</b><span>من بطاقة الاسم على الطاولة حتى توقيت دخول العروسين.</span></div></div></div></div></section>
@@ -148,16 +148,18 @@
   <strong id="selectedPackageText" style="font-size:15px;color:var(--gold-deep)">Signature</strong>
 </div>
 <div class="form-grid">
-  <div class="field full">
+  <div class="field full" id="packageFieldWrap" style="display:none">
     <label for="package">الباقة المطلوبة *</label>
     <select id="package">
       <option value="">اختر الباقة</option>
-      <option value="Essential">Essential — يبدأ من 18,000 جنيه</option>
-      <option value="Signature">Signature — يبدأ من 35,000 جنيه</option>
-      <option value="Luxury">Luxury — يبدأ من 65,000 جنيه</option>
+      <option value="Essential">Essential — 18,000 جنيه</option>
+      <option value="Signature">Signature — 35,000 جنيه</option>
+      <option value="Luxury">Luxury — 65,000 جنيه</option>
     </select>
     <div class="error-text">اختر الباقة المطلوبة.</div>
-  </div><div class="field"><label for="name">الاسم *</label><input id="name" type="text" placeholder="الاسم الكامل"><div class="error-text">من فضلك اكتب الاسم.</div></div><div class="field"><label for="phone">رقم الهاتف *</label><input id="phone" type="tel" placeholder="+20 10 0000 0000"><div class="error-text">من فضلك اكتب رقم هاتف صحيح.</div></div><div class="field"><label for="email">البريد الإلكتروني *</label><input id="email" type="email" placeholder="name@email.com"><div class="error-text">من فضلك اكتب بريدًا إلكترونيًا صحيحًا.</div></div><div class="field"><label for="eventType">نوع المناسبة *</label><select id="eventType"><option value="">اختر نوع المناسبة</option><option>حفل زفاف</option><option>حفل خطوبة</option><option>فعالية شركة</option><option>عيد ميلاد</option><option>حفل تخرج</option><option>مناسبة خاصة</option><option>Outdoor Event</option></select><div class="error-text">اختر نوع المناسبة.</div></div><div class="field"><label for="eventDate">تاريخ المناسبة *</label><input id="eventDate" type="date"><div class="error-text">اختر تاريخ المناسبة.</div></div><div class="field"><label for="guests">عدد الضيوف المتوقع *</label><input id="guests" type="number" min="1" max="5000" placeholder="مثال: 180"><div class="error-text">اكتب عددًا صحيحًا للضيوف.</div></div><div class="field"><label for="city">المدينة *</label><input id="city" type="text" placeholder="مثال: القاهرة الجديدة"><div class="error-text">اكتب المدينة أو المنطقة.</div></div><div class="field"><label for="budget">الميزانية التقريبية</label><select id="budget"><option value="">اختر نطاقًا تقريبيًا</option><option>أقل من 100,000 جنيه</option><option>100,000 – 250,000 جنيه</option><option>250,000 – 500,000 جنيه</option><option>500,000 – 1,000,000 جنيه</option><option>أكثر من 1,000,000 جنيه</option><option>أفضل مناقشتها في الاستشارة</option></select></div><div class="field full"><label for="details">تفاصيل إضافية</label><textarea id="details" placeholder="احكوا لنا عن المكان، الثيم، الخدمات المطلوبة، أو أي تفاصيل مهمة..."></textarea></div></div><button class="btn btn-primary" type="submit">إرسال طلب عرض السعر</button><div class="success" id="success">تم استلام طلبكم بنجاح. سيقوم فريق لُمى بمراجعة التفاصيل والتواصل معكم خلال يوم عمل.</div></form></div></div></section>
+  </div><div class="field"><label for="name">الاسم *</label><input id="name" type="text" placeholder="الاسم الكامل"><div class="error-text">من فضلك اكتب الاسم.</div></div><div class="field"><label for="phone">رقم الهاتف *</label><input id="phone" type="tel" placeholder="+20 10 0000 0000"><div class="error-text">من فضلك اكتب رقم هاتف صحيح.</div></div><div class="field"><label for="email">البريد الإلكتروني *</label><input id="email" type="email" placeholder="name@email.com"><div class="error-text">من فضلك اكتب بريدًا إلكترونيًا صحيحًا.</div></div><div class="field"><label for="eventType">نوع المناسبة *</label><select id="eventType"><option value="">اختر نوع المناسبة</option><option>حفل زفاف</option><option>حفل خطوبة</option><option>فعالية شركة</option><option>عيد ميلاد</option><option>حفل تخرج</option><option>مناسبة خاصة</option><option>Outdoor Event</option></select><div class="error-text">اختر نوع المناسبة.</div></div><div class="field"><label for="eventDate">تاريخ المناسبة *</label><input id="eventDate" type="date"><div class="error-text">اختر تاريخ المناسبة.</div></div><div class="field"><label for="guests">عدد الضيوف المتوقع *</label><input id="guests" type="number" min="1" max="5000" placeholder="مثال: 180"><div class="error-text">اكتب عددًا صحيحًا للضيوف.</div></div><div class="field"><label for="city">المدينة *</label><input id="city" type="text" placeholder="مثال: القاهرة الجديدة"><div class="error-text">اكتب المدينة أو المنطقة.</div></div><div class="field" id="budgetFieldWrap">
+                <label for="budget">الميزانية التقريبية</label>
+                <select id="budget" name="budget"><option value="">اختر نطاقًا تقريبيًا</option><option>أقل من 100,000 جنيه</option><option>100,000 – 250,000 جنيه</option><option>250,000 – 500,000 جنيه</option><option>500,000 – 1,000,000 جنيه</option><option>أكثر من 1,000,000 جنيه</option><option>أفضل مناقشتها في الاستشارة</option></select></div><div class="field full"><label for="details">تفاصيل إضافية</label><textarea id="details" placeholder="احكوا لنا عن المكان، الثيم، الخدمات المطلوبة، أو أي تفاصيل مهمة..."></textarea></div></div><button class="btn btn-primary" type="submit">إرسال طلب عرض السعر</button><div class="success" id="success">تم استلام طلبكم بنجاح. سيقوم فريق لُمى بمراجعة التفاصيل والتواصل معكم خلال يوم عمل.</div></form></div></div></section>
 </main>
 
 <footer><div class="container"><div class="footer-grid"><div class="footer-about"><a class="brand" href="#home"><span class="brand-mark" style="border-color:#4a433b;color:#dfc08e">L</span><span class="brand-copy"><strong>لُمى إيفنتس</strong><small style="color:#8f8880">LUMA EVENTS</small></span></a><p>تخطيط وتصميم وتنفيذ متكامل للأفراح والمناسبات الخاصة وفعاليات الشركات، من الفكرة وحتى نهاية الحدث.</p></div><div class="footer-col"><h4>روابط سريعة</h4><a href="#about">من نحن</a><a href="#services">خدماتنا</a><a href="#portfolio">أعمالنا</a><a href="#packages">الباقات</a></div><div class="footer-col"><h4>تواصل</h4><span>+20 100 555 8421</span><span>WhatsApp متاح</span><span>hello@lumaevents.co</span><span>القاهرة الجديدة، مصر</span></div><div class="footer-col"><h4>Instagram</h4><span>@luma.events</span><span>Weddings • Events • Styling</span><a href="#contact">اطلب عرض سعر</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> LUMA Events. جميع الحقوق محفوظة.</span><span>Event Planning • Styling • Coordination</span></div></div></footer>
@@ -197,6 +199,8 @@
   document.querySelectorAll('.faq-item').forEach(item=>{const q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a');q.addEventListener('click',()=>{const was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null});if(!was){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});
 
   const packageField=document.getElementById('package');
+  const packageFieldWrap=document.getElementById('packageFieldWrap');
+  const budgetFieldWrap=document.getElementById('budgetFieldWrap');
   const selectedPackageNotice=document.getElementById('selectedPackageNotice');
   const selectedPackageText=document.getElementById('selectedPackageText');
 
@@ -204,6 +208,8 @@
     packageField.value=packageName;
     selectedPackageText.textContent=packageName;
     selectedPackageNotice.style.display='block';
+    packageFieldWrap.style.display='block';
+    budgetFieldWrap.style.display='none';
 
     document.querySelectorAll('[data-package-card]').forEach(card=>{
       const selected=card.dataset.packageCard===packageName;
@@ -223,13 +229,17 @@
     if(packageField.value){
       selectedPackageText.textContent=packageField.value;
       selectedPackageNotice.style.display='block';
+      packageFieldWrap.style.display='block';
+      budgetFieldWrap.style.display='none';
     }else{
       selectedPackageNotice.style.display='none';
+      packageFieldWrap.style.display='none';
+      budgetFieldWrap.style.display='block';
     }
   });
 
-  const form=document.getElementById('quoteForm'),success=document.getElementById('success'),validators={package:v=>v!=='',name:v=>v.trim().length>=2,phone:v=>/^[+0-9\s()-]{8,20}$/.test(v.trim()),email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),eventType:v=>v!=='',eventDate:v=>v!=='',guests:v=>Number(v)>0&&Number(v)<=5000,city:v=>v.trim().length>=2};
-  function validField(id){const el=document.getElementById(id),ok=validators[id](el.value);el.closest('.field').classList.toggle('error',!ok);return ok}Object.keys(validators).forEach(id=>{const el=document.getElementById(id);el.addEventListener('blur',()=>validField(id));el.addEventListener('input',()=>{if(el.closest('.field').classList.contains('error'))validField(id)})});form.addEventListener('submit',e=>{e.preventDefault();success.classList.remove('show');if(!Object.keys(validators).map(validField).every(Boolean)){const e=form.querySelector('.field.error input,.field.error select');if(e)e.focus();return}const b=form.querySelector('button[type="submit"]'),t=b.textContent;b.disabled=true;b.textContent='تم إرسال الطلب';success.classList.add('show');setTimeout(()=>{form.reset();selectedPackageNotice.style.display='none';document.querySelectorAll('[data-package-card]').forEach(card=>{card.style.outline='';card.style.outlineOffset=''});b.disabled=false;b.textContent=t;form.querySelectorAll('.field').forEach(f=>f.classList.remove('error'))},1400)});
+  const form=document.getElementById('quoteForm'),success=document.getElementById('success'),validators={name:v=>v.trim().length>=2,phone:v=>/^[+0-9\s()-]{8,20}$/.test(v.trim()),email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),eventType:v=>v!=='',eventDate:v=>v!=='',guests:v=>Number(v)>0&&Number(v)<=5000,city:v=>v.trim().length>=2};
+  function validField(id){const el=document.getElementById(id),ok=validators[id](el.value);el.closest('.field').classList.toggle('error',!ok);return ok}Object.keys(validators).forEach(id=>{const el=document.getElementById(id);el.addEventListener('blur',()=>validField(id));el.addEventListener('input',()=>{if(el.closest('.field').classList.contains('error'))validField(id)})});form.addEventListener('submit',e=>{e.preventDefault();success.classList.remove('show');if(!Object.keys(validators).map(validField).every(Boolean)){const e=form.querySelector('.field.error input,.field.error select');if(e)e.focus();return}const b=form.querySelector('button[type="submit"]'),t=b.textContent;b.disabled=true;b.textContent='تم إرسال الطلب';success.classList.add('show');setTimeout(()=>{form.reset();selectedPackageNotice.style.display='none';packageFieldWrap.style.display='none';budgetFieldWrap.style.display='block';document.querySelectorAll('[data-package-card]').forEach(card=>{card.style.outline='';card.style.outlineOffset=''});b.disabled=false;b.textContent=t;form.querySelectorAll('.field').forEach(f=>f.classList.remove('error'))},1400)});
   const d=new Date(),date=document.getElementById('eventDate');date.min=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');document.getElementById('year').textContent=d.getFullYear();
 </script>
 </body>
