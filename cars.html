@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0d" />
+
+  <title>كريم الشناوي | خبير ورائد أعمال في سوق السيارات</title>
+  <meta name="description" content="الموقع الرسمي لكريم الشناوي، خبير ورائد أعمال في سوق السيارات بخبرة تتجاوز 10 سنوات في المبيعات، التقييم، إدارة الأعمال، وبناء علاقات طويلة المدى مع العملاء والشركاء." />
+  <meta name="keywords" content="كريم الشناوي, خبير سيارات, سوق السيارات, مستشار سيارات, رجل أعمال, مبيعات السيارات, تقييم السيارات, Personal Brand" />
+  <meta name="author" content="Karim El Shenawy" />
+
+  <meta property="og:title" content="كريم الشناوي | خبرة وثقة في عالم السيارات" />
+  <meta property="og:description" content="رحلة مهنية في عالم السيارات بدأت بالشغف وتحولت إلى خبرة، علاقات، وثقة ممتدة مع العملاء والشركاء." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_EG" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=1600&q=85" />
+
+  <style>
+    :root{
+      --bg:#08090b;
+      --bg-soft:#101115;
+      --panel:#14161b;
+      --panel-2:#1a1c22;
+      --text:#f5f5f2;
+      --muted:#a7aab2;
+      --line:rgba(255,255,255,.10);
+      --accent:#c6a15b;
+      --accent-2:#e0c182;
+      --white:#fff;
+      --success:#28c76f;
+      --radius:22px;
+      --radius-sm:14px;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --max:1220px;
+      --nav-h:78px;
+      --transition:.28s ease;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+      overflow-x:hidden;
+      text-rendering:optimizeLegibility;
+    }
+    body.modal-open{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    ul{list-style:none}
+    section{scroll-margin-top:calc(var(--nav-h) + 20px)}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .section{padding:110px 0;position:relative}
+    .section.alt{background:var(--bg-soft)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      color:var(--accent-2);font-size:.82rem;font-weight:800;
+      letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px
+    }
+    .eyebrow::before{content:"";width:30px;height:1px;background:var(--accent)}
+    .section-title{font-size:clamp(2rem,4vw,3.6rem);line-height:1.18;margin-bottom:18px;max-width:850px}
+    .section-subtitle{color:var(--muted);max-width:760px;font-size:1.04rem}
+    .section-head{margin-bottom:54px}
+    .accent{color:var(--accent-2)}
+    .btn{
+      min-height:50px;padding:0 24px;border-radius:999px;border:1px solid transparent;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      transition:var(--transition);font-weight:800
+    }
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-outline{border-color:var(--line);background:rgba(255,255,255,.025);color:var(--white)}
+    .btn-outline:hover{border-color:rgba(198,161,91,.75);background:rgba(198,161,91,.08);transform:translateY(-2px)}
+    .icon{width:20px;height:20px;display:inline-block;flex:0 0 auto}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease, transform .75s ease}
+    .reveal.in-view{opacity:1;transform:none}
+
+    /* Navbar */
+    .navbar{
+      height:var(--nav-h);position:fixed;top:0;left:0;right:0;z-index:1000;
+      transition:background .28s ease,border-color .28s ease,backdrop-filter .28s ease;
+      border-bottom:1px solid transparent
+    }
+    .navbar.scrolled{
+      background:rgba(8,9,11,.88);backdrop-filter:blur(18px);
+      border-bottom-color:var(--line)
+    }
+    .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;white-space:nowrap}
+    .brand-mark{
+      width:42px;height:42px;border:1px solid rgba(198,161,91,.6);
+      border-radius:50%;display:grid;place-items:center;color:var(--accent-2);
+      font-family:Georgia,serif;font-size:1.06rem;letter-spacing:-.03em
+    }
+    .brand-text{line-height:1.15}
+    .brand-text small{display:block;color:var(--muted);font-size:.64rem;font-weight:600;letter-spacing:.08em;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{
+      display:block;padding:10px 12px;color:#d8d8dc;font-size:.9rem;
+      border-radius:10px;transition:var(--transition)
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.055)}
+    .nav-links a.active{box-shadow:inset 0 -2px var(--accent)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-cta{min-height:42px;padding:0 18px;font-size:.88rem}
+    .menu-btn{
+      width:44px;height:44px;border-radius:12px;border:1px solid var(--line);
+      color:#fff;background:rgba(255,255,255,.03);display:none;place-items:center
+    }
+    .menu-btn span,.menu-btn span::before,.menu-btn span::after{
+      width:19px;height:2px;background:#fff;display:block;position:relative;border-radius:5px
+    }
+    .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;right:0}
+    .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+
+    /* Hero */
+    .hero{
+      min-height:100svh;display:flex;align-items:flex-end;position:relative;isolation:isolate;
+      padding-top:var(--nav-h);overflow:hidden
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-3;
+      background:
+        linear-gradient(90deg,rgba(8,9,11,.99) 0%,rgba(8,9,11,.84) 38%,rgba(8,9,11,.26) 72%,rgba(8,9,11,.15) 100%),
+        linear-gradient(0deg,var(--bg) 0%,transparent 28%),
+        url("https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=2000&q=88") center 28%/cover no-repeat;
+      transform:scale(1.01)
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-2;opacity:.18;
+      background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                 linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:55px 55px;
+      mask-image:linear-gradient(90deg,#000,transparent 74%)
+    }
+    .hero-content{padding:135px 0 74px;max-width:780px}
+    .hero-kicker{
+      display:inline-flex;align-items:center;gap:10px;padding:8px 13px;
+      border:1px solid var(--line);border-radius:999px;background:rgba(0,0,0,.2);
+      color:#dedfe3;font-size:.82rem;margin-bottom:24px
+    }
+    .hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(198,161,91,.13)}
+    .hero h1{font-size:clamp(2.65rem,6.2vw,6.4rem);line-height:1.02;letter-spacing:-.045em;margin-bottom:24px}
+    .hero h1 span{display:block;color:var(--accent-2)}
+    .hero p{color:#c3c5ca;font-size:clamp(1rem,1.7vw,1.18rem);max-width:660px;margin-bottom:30px}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:42px}
+    .hero-meta{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+    .hero-meta-item strong{font-size:1.2rem;color:#fff}.hero-meta-item span{color:var(--muted);font-size:.82rem;display:block}
+    .hero-socials{margin-right:auto;display:flex;gap:9px}
+    .social-circle{
+      width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+      border:1px solid var(--line);color:#ddd;background:rgba(0,0,0,.18);transition:var(--transition)
+    }
+    .social-circle:hover{border-color:var(--accent);color:var(--accent-2);transform:translateY(-3px)}
+    .scroll-cue{position:absolute;left:34px;bottom:26px;color:#aaa;font-size:.74rem;letter-spacing:.08em;writing-mode:vertical-rl}
+    .scroll-cue::after{content:"";display:inline-block;width:1px;height:45px;background:linear-gradient(var(--accent),transparent);margin-top:10px}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:center}
+    .portrait-wrap{position:relative}
+    .portrait{
+      border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);
+      border:1px solid var(--line)
+    }
+    .portrait img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(1.03)}
+    .portrait-note{
+      position:absolute;left:-24px;bottom:34px;width:min(285px,72%);
+      background:rgba(17,18,22,.92);backdrop-filter:blur(16px);
+      border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)
+    }
+    .portrait-note strong{font-size:1.8rem;color:var(--accent-2);display:block}
+    .portrait-note p{color:var(--muted);font-size:.86rem}
+    .about-copy p{color:#b9bbc2;margin-bottom:18px}
+    .quote{
+      margin:30px 0;border-right:2px solid var(--accent);padding:4px 18px 4px 0;
+      color:#eee;font-size:1.14rem;font-weight:700
+    }
+    .pill-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+    .pill{border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:#cfd0d4;background:#111216;font-size:.82rem}
+
+    /* Story timeline */
+    .story-timeline{position:relative;display:grid;gap:18px}
+    .story-timeline::before{
+      content:"";position:absolute;right:21px;top:20px;bottom:20px;width:1px;background:linear-gradient(var(--accent),var(--line))
+    }
+    .story-item{display:grid;grid-template-columns:44px 1fr;gap:22px;position:relative}
+    .story-dot{
+      width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+      border:1px solid rgba(198,161,91,.55);background:#111216;z-index:2;color:var(--accent-2);font-weight:900
+    }
+    .story-card{
+      padding:26px;border:1px solid var(--line);border-radius:var(--radius-sm);
+      background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+      transition:var(--transition)
+    }
+    .story-card:hover{transform:translateX(-4px);border-color:rgba(198,161,91,.34)}
+    .story-card span{color:var(--accent-2);font-size:.79rem;font-weight:800}
+    .story-card h3{font-size:1.2rem;margin:4px 0 8px}
+    .story-card p{color:var(--muted);font-size:.94rem}
+
+    /* Expertise */
+    .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .expert-card{
+      min-height:220px;padding:25px;border-radius:18px;background:var(--panel);
+      border:1px solid var(--line);transition:var(--transition);position:relative;overflow:hidden
+    }
+    .expert-card::after{
+      content:"";position:absolute;width:90px;height:90px;border-radius:50%;
+      left:-35px;bottom:-40px;background:radial-gradient(circle,rgba(198,161,91,.16),transparent 70%)
+    }
+    .expert-card:hover{transform:translateY(-5px);border-color:rgba(198,161,91,.42);background:#17191f}
+    .expert-icon{
+      width:46px;height:46px;border-radius:13px;background:rgba(198,161,91,.1);
+      color:var(--accent-2);display:grid;place-items:center;margin-bottom:21px
+    }
+    .expert-card h3{font-size:1rem;margin-bottom:8px}.expert-card p{color:var(--muted);font-size:.87rem}
+
+    /* Stats */
+    .stats-section{
+      background:
+        linear-gradient(90deg,rgba(9,10,12,.94),rgba(9,10,12,.76)),
+        url("https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1900&q=85") center/cover fixed;
+      border-block:1px solid var(--line)
+    }
+    .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+    .stat{padding:34px 20px;text-align:center;background:rgba(10,11,13,.76);backdrop-filter:blur(9px)}
+    .stat .number{font-size:clamp(2rem,4vw,3.4rem);font-weight:900;letter-spacing:-.04em;color:var(--accent-2)}
+    .stat p{color:#c5c6ca;font-size:.87rem}
+
+    /* Career */
+    .career-grid{display:grid;grid-template-columns:.68fr 1.32fr;gap:54px}
+    .career-sticky{position:sticky;top:calc(var(--nav-h) + 28px);align-self:start}
+    .career-sticky p{color:var(--muted);margin-top:16px}
+    .career-list{display:grid;gap:14px}
+    .career-item{
+      display:grid;grid-template-columns:110px 1fr;gap:24px;padding:28px;
+      border:1px solid var(--line);border-radius:18px;background:#101115;transition:var(--transition)
+    }
+    .career-item:hover{border-color:rgba(198,161,91,.42);transform:translateY(-3px)}
+    .career-year{font-size:1.5rem;color:var(--accent-2);font-weight:900}
+    .career-item h3{margin-bottom:7px}.career-item p{color:var(--muted);font-size:.92rem}
+    .career-win{margin-top:12px;font-size:.83rem;color:#d9d9dc;display:flex;gap:8px}
+    .career-win::before{content:"↗";color:var(--accent)}
+
+    /* Business Presence */
+    .presence{
+      display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);
+      border-radius:28px;overflow:hidden;background:var(--panel)
+    }
+    .presence-media{min-height:560px}
+    .presence-media img{width:100%;height:100%;object-fit:cover}
+    .presence-copy{padding:60px;display:flex;flex-direction:column;justify-content:center}
+    .presence-copy p{color:var(--muted);margin:17px 0 25px}
+    .presence-points{display:grid;gap:14px}
+    .presence-point{display:flex;align-items:flex-start;gap:12px;color:#d8d8dc}
+    .presence-point b{width:26px;height:26px;border-radius:50%;background:rgba(198,161,91,.12);color:var(--accent-2);display:grid;place-items:center;flex:0 0 auto;font-size:.78rem}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:115px;gap:12px}
+    .gallery-item{
+      border:0;padding:0;background:none;border-radius:18px;overflow:hidden;position:relative;
+      cursor:pointer;border:1px solid var(--line)
+    }
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease,filter .35s ease}
+    .gallery-item::after{
+      content:"عرض الصورة";position:absolute;inset:0;display:grid;place-items:center;
+      color:#fff;font-weight:800;font-size:.88rem;background:rgba(0,0,0,.48);
+      opacity:0;transition:var(--transition)
+    }
+    .gallery-item:hover img{transform:scale(1.05);filter:brightness(.75)}
+    .gallery-item:hover::after{opacity:1}
+    .gallery-item:nth-child(1){grid-column:span 5;grid-row:span 3}
+    .gallery-item:nth-child(2){grid-column:span 4;grid-row:span 2}
+    .gallery-item:nth-child(3){grid-column:span 3;grid-row:span 2}
+    .gallery-item:nth-child(4){grid-column:span 3;grid-row:span 3}
+    .gallery-item:nth-child(5){grid-column:span 4;grid-row:span 2}
+    .gallery-item:nth-child(6){grid-column:span 5;grid-row:span 3}
+    .gallery-item:nth-child(7){grid-column:span 3;grid-row:span 2}
+    .gallery-item:nth-child(8){grid-column:span 4;grid-row:span 2}
+
+    /* Videos */
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .video-card{
+      border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel);transition:var(--transition)
+    }
+    .video-card:hover{transform:translateY(-5px);border-color:rgba(198,161,91,.35)}
+    .video-thumb{position:relative;aspect-ratio:16/10;overflow:hidden}
+    .video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+    .video-card:hover .video-thumb img{transform:scale(1.05)}
+    .play{
+      position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.34);background:rgba(0,0,0,.48);backdrop-filter:blur(8px);
+      color:#fff;display:grid;place-items:center;transition:var(--transition)
+    }
+    .video-card:hover .play{background:var(--accent);color:#111;transform:scale(1.08)}
+    .video-info{padding:19px}.video-info small{color:var(--accent-2)}.video-info h3{font-size:1rem;margin-top:3px}
+
+    /* Testimonials */
+    .testimonial-shell{position:relative}
+    .testimonial-viewport{overflow:hidden}
+    .testimonial-track{display:flex;transition:transform .5s ease}
+    .testimonial-card{min-width:100%;padding:2px}
+    .review{
+      min-height:345px;border:1px solid var(--line);border-radius:26px;background:var(--panel);
+      padding:42px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:start
+    }
+    .quote-mark{font-family:Georgia,serif;font-size:5rem;color:rgba(198,161,91,.3);line-height:.7}
+    .review-text{font-size:clamp(1.2rem,2.4vw,1.7rem);line-height:1.7;max-width:850px}
+    .review-author{display:flex;align-items:center;gap:13px;margin-top:28px}
+    .review-author img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+    .review-author strong{display:block}.review-author span{color:var(--muted);font-size:.82rem}
+    .slider-controls{display:flex;gap:9px;margin-top:18px}
+    .slider-btn{
+      width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+      background:#111216;color:#fff;transition:var(--transition)
+    }
+    .slider-btn:hover{border-color:var(--accent);color:var(--accent-2)}
+
+    /* Social */
+    .social-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .social-card{
+      min-height:190px;padding:24px;border:1px solid var(--line);border-radius:18px;
+      background:linear-gradient(145deg,#17181d,#111216);display:flex;flex-direction:column;
+      justify-content:space-between;transition:var(--transition)
+    }
+    .social-card:hover{transform:translateY(-4px);border-color:rgba(198,161,91,.4)}
+    .social-card .social-name{font-size:1.04rem;font-weight:800}.social-card .handle{color:var(--muted);font-size:.82rem}
+    .social-card .arrow{align-self:flex-end;color:var(--accent-2);font-size:1.25rem}
+    .social-card svg{width:30px;height:30px}
+
+    /* Trust */
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .trust-card{padding:28px;border:1px solid var(--line);border-radius:18px;background:#111216}
+    .trust-number{color:var(--accent-2);font-weight:900;font-size:.78rem;margin-bottom:26px}
+    .trust-card h3{margin-bottom:8px}.trust-card p{color:var(--muted);font-size:.9rem}
+
+    /* Contact */
+    .contact-wrap{
+      display:grid;grid-template-columns:.8fr 1.2fr;gap:16px;
+      background:linear-gradient(135deg,#14161b,#0f1013);border:1px solid var(--line);
+      border-radius:28px;padding:18px
+    }
+    .contact-info{
+      padding:42px;border-radius:20px;
+      background:
+        linear-gradient(160deg,rgba(198,161,91,.19),rgba(198,161,91,.02)),
+        #111216;
+      border:1px solid rgba(198,161,91,.18)
+    }
+    .contact-info p{color:var(--muted);margin:14px 0 30px}
+    .contact-list{display:grid;gap:16px}
+    .contact-item{display:flex;gap:12px;align-items:center;color:#e0e0e3}
+    .contact-item .contact-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.05);display:grid;place-items:center;color:var(--accent-2)}
+    .contact-form{padding:40px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.84rem;color:#c9c9cd}
+    .field input,.field select,.field textarea{
+      width:100%;border:1px solid var(--line);background:#0e0f12;color:#fff;
+      border-radius:12px;padding:13px 14px;outline:none;transition:var(--transition)
+    }
+    .field input,.field select{height:50px}
+    .field textarea{min-height:130px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(198,161,91,.6);box-shadow:0 0 0 3px rgba(198,161,91,.08)}
+    .error-text{font-size:.74rem;color:#ff7b7b;min-height:18px}
+    .form-footer{display:flex;align-items:center;gap:15px;margin-top:18px;flex-wrap:wrap}
+    .success-message{display:none;color:#8ce8af;font-size:.88rem}
+    .success-message.show{display:block}
+
+    /* Footer */
+    footer{padding:58px 0 22px;border-top:1px solid var(--line);background:#07080a}
+    .footer-grid{display:grid;grid-template-columns:1.25fr .7fr .8fr .9fr;gap:34px;padding-bottom:34px}
+    .footer-about p{color:var(--muted);max-width:400px;margin-top:16px;font-size:.9rem}
+    .footer-title{font-size:.88rem;margin-bottom:14px;color:#f0f0f2}
+    .footer-links{display:grid;gap:8px}.footer-links a{color:var(--muted);font-size:.87rem;transition:var(--transition)}
+    .footer-links a:hover{color:var(--accent-2)}
+    .footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:15px;color:#7f8189;font-size:.79rem}
+
+    /* Modals */
+    .modal{
+      position:fixed;inset:0;background:rgba(0,0,0,.86);z-index:2000;
+      display:none;align-items:center;justify-content:center;padding:26px;backdrop-filter:blur(10px)
+    }
+    .modal.show{display:flex}
+    .modal-close{
+      position:fixed;top:24px;left:24px;width:46px;height:46px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.6);color:#fff;font-size:1.5rem;z-index:2
+    }
+    .lightbox-img{max-height:84vh;max-width:min(1120px,88vw);border-radius:14px;box-shadow:0 25px 80px rgba(0,0,0,.5)}
+    .modal-nav{
+      position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.48);color:#fff;font-size:1.4rem
+    }
+    .modal-prev{right:22px}.modal-next{left:22px}
+    .video-modal-inner{width:min(980px,92vw);background:#000;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+    .video-modal-inner iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+
+    /* WhatsApp + back top */
+    .whatsapp{
+      position:fixed;left:22px;bottom:22px;width:58px;height:58px;border-radius:50%;
+      background:#25D366;color:white;display:grid;place-items:center;z-index:900;
+      box-shadow:0 14px 32px rgba(37,211,102,.25);transition:var(--transition)
+    }
+    .whatsapp:hover{transform:translateY(-4px) scale(1.04)}
+    .whatsapp svg{width:28px;height:28px}
+    .back-top{
+      position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+      border:1px solid var(--line);background:#131419;color:#fff;z-index:900;
+      opacity:0;pointer-events:none;transform:translateY(10px);transition:var(--transition)
+    }
+    .back-top.show{opacity:1;pointer-events:auto;transform:none}
+
+    /* Responsive */
+    @media (max-width:1100px){
+      .nav-links{display:none}
+      .menu-btn{display:grid}
+      .cards-grid{grid-template-columns:repeat(2,1fr)}
+      .stats-grid{grid-template-columns:repeat(5,1fr)}
+      .social-grid{grid-template-columns:repeat(3,1fr)}
+      .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
+      .footer-grid>div:last-child{grid-column:2/4}
+      .about-grid{gap:42px}
+    }
+
+    @media (max-width:900px){
+      .section{padding:82px 0}
+      .about-grid,.career-grid,.presence,.contact-wrap{grid-template-columns:1fr}
+      .career-sticky{position:static}
+      .presence-media{min-height:420px}
+      .presence-copy{padding:38px}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat:last-child{grid-column:1/-1}
+      .video-grid,.trust-grid{grid-template-columns:1fr 1fr}
+      .gallery{grid-auto-rows:100px}
+      .gallery-item:nth-child(n){grid-column:span 6;grid-row:span 2}
+      .gallery-item:nth-child(1),.gallery-item:nth-child(6){grid-row:span 3}
+      .portrait-note{left:14px}
+      .hero::before{
+        background:
+          linear-gradient(0deg,rgba(8,9,11,.98) 0%,rgba(8,9,11,.74) 48%,rgba(8,9,11,.30) 100%),
+          url("https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1600&q=88") 62% center/cover no-repeat;
+      }
+      .hero-content{padding-top:220px}
+    }
+
+    @media (max-width:760px){
+      :root{--nav-h:70px}
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .nav-cta{display:none}
+      .hero{min-height:100svh}
+      .hero-content{padding:190px 0 55px}
+      .hero h1{font-size:clamp(2.55rem,13vw,4.25rem)}
+      .hero-meta{gap:18px}
+      .hero-socials{width:100%;margin-right:0}
+      .scroll-cue{display:none}
+      .about-grid{gap:28px}
+      .portrait-note{bottom:16px}
+      .cards-grid,.video-grid,.trust-grid,.social-grid{grid-template-columns:1fr}
+      .career-item{grid-template-columns:1fr;gap:9px}
+      .review{grid-template-columns:1fr;padding:28px;min-height:400px}
+      .quote-mark{display:none}
+      .form-grid{grid-template-columns:1fr}
+      .contact-info,.contact-form{padding:28px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-grid>div:first-child{grid-column:1/-1}
+      .footer-grid>div:last-child{grid-column:auto}
+      .footer-bottom{flex-direction:column}
+      .whatsapp{width:54px;height:54px;left:14px;bottom:14px}
+      .back-top{right:14px;bottom:18px}
+      .modal-nav{width:42px;height:42px}
+      .modal-prev{right:10px}.modal-next{left:10px}
+    }
+
+    @media (max-width:520px){
+      .brand-text{font-size:.92rem}.brand-text small{font-size:.57rem}
+      .section-head{margin-bottom:36px}
+      .hero-buttons .btn{width:100%}
+      .hero-meta-item strong{font-size:1.05rem}
+      .hero-socials{margin-top:5px}
+      .portrait-note{position:relative;left:auto;bottom:auto;width:calc(100% - 24px);margin:-46px auto 0}
+      .gallery{grid-template-columns:1fr;grid-auto-rows:250px}
+      .gallery-item:nth-child(n){grid-column:1;grid-row:auto}
+      .stats-grid{grid-template-columns:1fr}
+      .stat:last-child{grid-column:auto}
+      .presence-copy{padding:28px}
+      .review-text{font-size:1.08rem}
+      .footer-grid{grid-template-columns:1fr}
+    }
+
+    /* Mobile drawer */
+    .mobile-drawer{
+      position:fixed;inset:var(--nav-h) 0 auto 0;background:rgba(9,10,12,.98);z-index:990;
+      border-bottom:1px solid var(--line);padding:16px 20px 22px;display:none;backdrop-filter:blur(14px)
+    }
+    .mobile-drawer.open{display:block}
+    .mobile-drawer a{display:block;padding:13px 10px;border-bottom:1px solid rgba(255,255,255,.05);color:#ddd}
+    .mobile-drawer a:last-child{border:0}
+  </style>
+</head>
+
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="العودة للرئيسية">
+        <span class="brand-mark">KE</span>
+        <span class="brand-text">كريم الشناوي<small>AUTOMOTIVE ENTREPRENEUR</small></span>
+      </a>
+
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="#home" class="active">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#story">رحلتي</a>
+        <a href="#achievements">الإنجازات</a>
+        <a href="#media">الصور والفيديو</a>
+        <a href="#testimonials">آراء العملاء</a>
+        <a href="#contact">تواصل معي</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary nav-cta">تواصل معي</a>
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#home">الرئيسية</a>
+    <a href="#about">عني</a>
+    <a href="#story">رحلتي</a>
+    <a href="#expertise">الخبرة</a>
+    <a href="#achievements">الإنجازات</a>
+    <a href="#journey">المسيرة</a>
+    <a href="#media">الصور والفيديو</a>
+    <a href="#testimonials">آراء العملاء</a>
+    <a href="#contact">تواصل معي</a>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="hero-kicker"><i></i> القاهرة · مصر — خبرة منذ 2014</div>
+          <h1>رحلة في عالم السيارات <span>بُنيت على الثقة.</span></h1>
+          <p>
+            أنا كريم الشناوي، رائد أعمال وخبير في سوق السيارات. أعمل على تحويل خبرة السوق والعلاقات القوية إلى قرارات أوضح، صفقات أكثر ثقة، وتجربة احترافية تضع مصلحة العميل أولًا.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#story">اكتشف رحلتي <span aria-hidden="true">←</span></a>
+            <a class="btn btn-outline" href="#contact">تواصل معي</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item"><strong>+10</strong><span>سنوات خبرة</span></div>
+            <div class="hero-meta-item"><strong>+1,200</strong><span>عميل</span></div>
+            <div class="hero-meta-item"><strong>+900</strong><span>صفقة ناجحة</span></div>
+
+            <div class="hero-socials" aria-label="حسابات التواصل الاجتماعي">
+              <a class="social-circle" href="https://instagram.com/karim.elshenawy.auto" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+              <a class="social-circle" href="https://www.linkedin.com/in/karim-elshenawy" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+              <a class="social-circle" href="https://www.youtube.com/@karimelshenawyauto" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">SCROLL</div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="portrait-wrap reveal">
+          <div class="portrait">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1100&q=88" alt="رجل أعمال محترف في بيئة عمل" />
+          </div>
+          <div class="portrait-note">
+            <strong>الثقة أولًا</strong>
+            <p>كل تعامل ناجح يبدأ بمعلومة واضحة، التزام حقيقي، وقرار يخدم العميل على المدى الطويل.</p>
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-title">أكثر من بيع سيارة… <span class="accent">أنا أبني علاقة.</span></h2>
+          <p>
+            بدأت علاقتي بعالم السيارات من شغف حقيقي بالتفاصيل: كيف تختلف كل سيارة، وكيف تتغير احتياجات الناس، وكيف يصنع القرار الصحيح فرقًا كبيرًا في تجربة العميل. مع الوقت، تحوّل هذا الشغف إلى مهنة ومسؤولية.
+          </p>
+          <p>
+            عملت في المبيعات والتقييم وإدارة فرق العمل، وبنيت شبكة علاقات قوية مع موردين وشركاء وعملاء داخل السوق المصري. اليوم أدير نشاطي التجاري في قطاع السيارات، وأركز على تقديم تجربة مبنية على الشفافية، الفهم، والمتابعة.
+          </p>
+          <div class="quote">“الصفقة الناجحة بالنسبة لي ليست التي تنتهي بالتوقيع، بل التي يبدأ بعدها العميل في ترشيحك بثقة.”</div>
+          <div class="pill-row">
+            <span class="pill">Automotive Sales</span>
+            <span class="pill">Business Management</span>
+            <span class="pill">Vehicle Evaluation</span>
+            <span class="pill">Customer Relations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="story">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">My Story</span>
+          <h2 class="section-title">من أول شغف… إلى اسم يعرفه <span class="accent">السوق.</span></h2>
+          <p class="section-subtitle">محطات متتالية صنعت خبرة عملية ورؤية أوضح لطبيعة السوق واحتياجات العملاء.</p>
+        </div>
+
+        <div class="story-timeline">
+          <article class="story-item reveal">
+            <div class="story-dot">01</div>
+            <div class="story-card"><span>البداية</span><h3>شغف مبكر بعالم السيارات</h3><p>بدأ الاهتمام من متابعة التفاصيل الفنية، الأسعار، اختلاف الفئات، وتجربة السيارات، قبل أن يتحول الشغف إلى مسار مهني حقيقي.</p></div>
+          </article>
+          <article class="story-item reveal">
+            <div class="story-dot">02</div>
+            <div class="story-card"><span>الدخول للسوق</span><h3>أول تجربة مباشرة مع العملاء</h3><p>العمل في المبيعات علّمني أن السيارة ليست منتجًا فقط؛ هي قرار مالي وشخصي مهم يحتاج إلى فهم حقيقي للعميل قبل أي توصية.</p></div>
+          </article>
+          <article class="story-item reveal">
+            <div class="story-dot">03</div>
+            <div class="story-card"><span>بناء الخبرة</span><h3>التقييم، التفاوض، وفهم حركة السوق</h3><p>سنوات من التعامل مع سيارات جديدة ومستعملة، ومواقف تفاوض مختلفة، ساعدتني على تطوير تقييم أكثر دقة للمخاطر والفرص.</p></div>
+          </article>
+          <article class="story-item reveal">
+            <div class="story-dot">04</div>
+            <div class="story-card"><span>التوسع</span><h3>شبكة علاقات مبنية على الثقة</h3><p>مع الوقت توسعت شبكة الموردين والشركاء والعملاء، وأصبح ترشيح العملاء السابقين واحدًا من أهم مصادر النمو المستمر.</p></div>
+          </article>
+          <article class="story-item reveal">
+            <div class="story-dot">05</div>
+            <div class="story-card"><span>الريادة</span><h3>إدارة معرض ونشاط تجاري متكامل</h3><p>انتقلت من إدارة عمليات البيع إلى إدارة فريق ونشاط متكامل يركز على جودة التجربة، وضوح المعلومات، وسرعة اتخاذ القرار.</p></div>
+          </article>
+          <article class="story-item reveal">
+            <div class="story-dot">06</div>
+            <div class="story-card"><span>اليوم</span><h3>بناء Personal Brand مؤثر في المجال</h3><p>أشارك خبرتي ونصائحي وأتابع السوق بشكل مستمر لبناء حضور شخصي يجمع بين الخبرة العملية، المصداقية، والتواصل المباشر.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Experience</span>
+          <h2 class="section-title">خبرة عملية تغطي أهم جوانب <span class="accent">سوق السيارات.</span></h2>
+        </div>
+
+        <div class="cards-grid">
+          <article class="expert-card reveal"><div class="expert-icon">01</div><h3>Automotive Sales</h3><p>فهم احتياجات العميل، تقديم الخيارات المناسبة، وإدارة رحلة البيع باحتراف من أول تواصل حتى التسليم.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">02</div><h3>Luxury Cars</h3><p>خبرة في التعامل مع فئات السيارات الراقية ومتطلبات العملاء الذين يبحثون عن تجربة شراء أكثر خصوصية.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">03</div><h3>Used Cars Market</h3><p>قراءة دقيقة للسوق، مقارنة الحالات والأسعار، وفهم العوامل التي تؤثر على القيمة الحقيقية للسيارة.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">04</div><h3>Negotiation</h3><p>إدارة مفاوضات متوازنة تحفظ قيمة الصفقة وتصل إلى اتفاق واضح وعادل لجميع الأطراف.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">05</div><h3>Vehicle Evaluation</h3><p>تقييم شامل للحالة، تاريخ الاستخدام، عوامل السوق، ومؤشرات القيمة قبل اتخاذ قرار الشراء أو البيع.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">06</div><h3>Automotive Consulting</h3><p>استشارات عملية للأفراد والشركات عند الاختيار، البيع، الاستبدال، أو دراسة صفقة قبل التنفيذ.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">07</div><h3>Customer Relations</h3><p>بناء علاقات طويلة المدى عبر التواصل الواضح، المتابعة، وحل المشكلات باحترافية.</p></article>
+          <article class="expert-card reveal"><div class="expert-icon">08</div><h3>Business Management</h3><p>إدارة العمليات اليومية، فرق المبيعات، العلاقات التجارية، ومتابعة مؤشرات الأداء والنمو.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats-section" id="achievements">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Achievements & Numbers</span>
+          <h2 class="section-title">الأرقام لا تحكي كل شيء… لكنها تعكس <span class="accent">رحلة ثابتة.</span></h2>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat"><div class="number" data-count="10" data-prefix="+">0</div><p>سنوات خبرة</p></div>
+          <div class="stat"><div class="number" data-count="1200" data-prefix="+">0</div><p>عميل تعاملت معه</p></div>
+          <div class="stat"><div class="number" data-count="900" data-prefix="+">0</div><p>صفقة ناجحة</p></div>
+          <div class="stat"><div class="number" data-count="25" data-prefix="+">0</div><p>شريكًا في السوق</p></div>
+          <div class="stat"><div class="number" data-count="95" data-prefix="+" data-suffix="%">0</div><p>معدل رضا العملاء</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="journey">
+      <div class="container career-grid">
+        <div class="career-sticky reveal">
+          <span class="eyebrow">Career Journey</span>
+          <h2 class="section-title">محطات صنعت <span class="accent">الخبرة.</span></h2>
+          <p>كل مرحلة أضافت مسؤولية جديدة وفهمًا أعمق للسوق، من المبيعات الفردية إلى إدارة نشاط متكامل وبناء حضور شخصي مؤثر.</p>
+        </div>
+
+        <div class="career-list">
+          <article class="career-item reveal">
+            <div class="career-year">2014</div>
+            <div><h3>بداية العمل في قطاع السيارات</h3><p>بدء المسار المهني في المبيعات وخدمة العملاء، مع التركيز على التعلم المباشر من السوق والتعامل اليومي.</p><div class="career-win">بناء أول قاعدة عملاء متكررين</div></div>
+          </article>
+          <article class="career-item reveal">
+            <div class="career-year">2017</div>
+            <div><h3>التخصص في تقييم السيارات المستعملة</h3><p>تطوير خبرة أكبر في دراسة الحالة، مقارنة الأسعار، وتقدير عوامل القيمة والمخاطر.</p><div class="career-win">رفع دقة التقييم وتقليل مخاطر الصفقات</div></div>
+          </article>
+          <article class="career-item reveal">
+            <div class="career-year">2018</div>
+            <div><h3>إدارة فريق مبيعات</h3><p>الانتقال من التنفيذ الفردي إلى الإشراف على فريق، متابعة الأداء، وتطوير تجربة العميل.</p><div class="career-win">تحسين معدل التحويل وإعادة الشراء</div></div>
+          </article>
+          <article class="career-item reveal">
+            <div class="career-year">2021</div>
+            <div><h3>تطوير شبكة علاقات واسعة في السوق</h3><p>توسيع دائرة الشركاء والموردين وربط الخبرة التشغيلية بعلاقات موثوقة تدعم سرعة وجودة القرار.</p><div class="career-win">شراكات مستقرة مع أكثر من 25 جهة</div></div>
+          </article>
+          <article class="career-item reveal">
+            <div class="career-year">2024</div>
+            <div><h3>توسيع النشاط وبناء حضور شخصي قوي</h3><p>تطوير النشاط التجاري بالتوازي مع بناء محتوى وحضور رقمي يشارك المعرفة والخبرة مع الجمهور.</p><div class="career-win">توسيع قاعدة العملاء والترشيحات</div></div>
+          </article>
+          <article class="career-item reveal">
+            <div class="career-year">2026</div>
+            <div><h3>تطوير تجربة أكثر احترافية للعملاء والشركاء</h3><p>التركيز على الاستشارات، جودة المتابعة، والهوية الشخصية كجزء أساسي من الثقة في أي تعامل.</p><div class="career-win">Personal Brand قائم على الخبرة لا على الظهور فقط</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="presence">
+      <div class="container">
+        <div class="presence reveal">
+          <div class="presence-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1562141961-b5d3a6f15765?auto=format&fit=crop&w=1200&q=88" alt="معرض سيارات فاخر يعبر عن النشاط المهني" />
+          </div>
+          <div class="presence-copy">
+            <span class="eyebrow">Automotive Presence</span>
+            <h2 class="section-title">نشاط تجاري يدعم <span class="accent">خبرة شخصية.</span></h2>
+            <p>
+              أدير حاليًا نشاطًا متخصصًا في قطاع السيارات بالقاهرة، ويُعد المعرض جزءًا من رحلتي المهنية وليس محور هويتي الشخصية. دوري الأساسي هو قيادة تجربة العميل، بناء العلاقات، وتطوير الشراكات والفرص داخل السوق.
+            </p>
+            <div class="presence-points">
+              <div class="presence-point"><b>✓</b><span>إدارة عمليات المبيعات وعلاقات العملاء.</span></div>
+              <div class="presence-point"><b>✓</b><span>تطوير شراكات مع موردين وتجار وخبراء في السوق.</span></div>
+              <div class="presence-point"><b>✓</b><span>استشارات اختيار وتقييم قبل اتخاذ القرار.</span></div>
+              <div class="presence-point"><b>✓</b><span>متابعة تجربة العميل بعد إتمام التعامل.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="media">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Photo Gallery</span>
+          <h2 class="section-title">من السوق، الاجتماعات، والفعاليات… <span class="accent">لحظات من الرحلة.</span></h2>
+        </div>
+
+        <div class="gallery">
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة شخصية احترافية">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=82" alt="صورة شخصية لرجل أعمال" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة سيارة فاخرة">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=82" alt="سيارة رياضية فاخرة ضمن بيئة احترافية" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة اجتماع عمل">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=900&q=82" alt="اجتماع أعمال وشراكة مهنية" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة تفاصيل سيارة">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=82" alt="تفاصيل سيارة وتقييم احترافي" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة فريق عمل">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=82" alt="فريق عمل خلال مناقشة مهنية" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة سيارة فاخرة">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=82" alt="سيارة فاخرة ضمن هوية عالم السيارات" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة لقاء مهني">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=82" alt="لقاء عمل مع شركاء" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1700&q=92" aria-label="فتح صورة سيارة">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=82" alt="سيارة فاخرة بتصوير احترافي" />
+          </button>
+        </div>
+
+        <div class="section-head reveal" style="margin-top:88px">
+          <span class="eyebrow">Video Presence</span>
+          <h2 class="section-title">محتوى يشارك المعرفة… ويقرّبني من <span class="accent">الجمهور.</span></h2>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <button class="video-thumb open-video" data-video="https://www.youtube.com/embed/4AT-iwliGmo?autoplay=1" aria-label="تشغيل الفيديو">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=900&q=84" alt="فيديو نصائح قبل شراء سيارة" />
+              <span class="play">▶</span>
+            </button>
+            <div class="video-info"><small>نصائح عملية</small><h3>5 نقاط أراجعها قبل اتخاذ قرار شراء أي سيارة</h3></div>
+          </article>
+
+          <article class="video-card reveal">
+            <button class="video-thumb open-video" data-video="https://www.youtube.com/embed/VlwkYCkgeG8?autoplay=1" aria-label="تشغيل الفيديو">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=84" alt="فيديو من فعالية سيارات" />
+              <span class="play">▶</span>
+            </button>
+            <div class="video-info"><small>فعاليات</small><h3>من قلب فعالية سيارات: كيف أقرأ اتجاهات السوق؟</h3></div>
+          </article>
+
+          <article class="video-card reveal">
+            <button class="video-thumb open-video" data-video="https://www.youtube.com/embed/Fbaxvh40R-M?autoplay=1" aria-label="تشغيل الفيديو">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=84" alt="فيديو خلف الكواليس في بيئة سيارات" />
+              <span class="play">▶</span>
+            </button>
+            <div class="video-info"><small>خلف الكواليس</small><h3>يوم عمل: من أول مقابلة عميل حتى مراجعة الصفقة</h3></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h2 class="section-title">الثقة الحقيقية تظهر في <span class="accent">كلام الناس.</span></h2>
+        </div>
+
+        <div class="testimonial-shell reveal">
+          <div class="testimonial-viewport">
+            <div class="testimonial-track" id="testimonialTrack">
+              <div class="testimonial-card">
+                <article class="review">
+                  <div>
+                    <p class="review-text">تعاملت مع كريم أكثر من مرة، وفي كل مرة كان واضح جدًا في التفاصيل وماحاولش يضغط عليّ في القرار. أهم شيء بالنسبة لي أنه يقولك بصراحة لو العربية أو الصفقة مش مناسبة ليك حتى لو ده ضد مصلحته في البيع.</p>
+                    <div class="review-author">
+                      <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80" alt="أحمد منصور" />
+                      <div><strong>أحمد منصور</strong><span>عميل تعامل أكثر من مرة</span></div>
+                    </div>
+                  </div>
+                  <div class="quote-mark">“</div>
+                </article>
+              </div>
+
+              <div class="testimonial-card">
+                <article class="review">
+                  <div>
+                    <p class="review-text">كريم من الأشخاص اللي تقدر تبني معاهم شراكة على المدى الطويل. محترف في التفاوض، سريع في التواصل، وبيفهم السوق من زاوية تشغيلية مش مجرد بيع وشراء. ده فرق كبير في أي تعامل تجاري.</p>
+                    <div class="review-author">
+                      <img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=160&q=80" alt="محمود سامي" />
+                      <div><strong>محمود سامي</strong><span>شريك تجاري</span></div>
+                    </div>
+                  </div>
+                  <div class="quote-mark">“</div>
+                </article>
+              </div>
+
+              <div class="testimonial-card">
+                <article class="review">
+                  <div>
+                    <p class="review-text">كنت محتار بين أكتر من اختيار، وكريم ساعدني أفهم فرق الاستخدام والقيمة وقت إعادة البيع بدل ما يركز على الشكل أو السعر بس. التجربة كانت منظمة وواضحة من أول مكالمة لحد بعد استلام العربية.</p>
+                    <div class="review-author">
+                      <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&q=80" alt="عمر حسين" />
+                      <div><strong>عمر حسين</strong><span>عميل شراء سيارة</span></div>
+                    </div>
+                  </div>
+                  <div class="quote-mark">“</div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" id="testimonialPrev" aria-label="الرأي السابق">→</button>
+            <button class="slider-btn" id="testimonialNext" aria-label="الرأي التالي">←</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="social">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Media & Social Presence</span>
+          <h2 class="section-title">خبرة على أرض الواقع… وحضور <span class="accent">رقمي مستمر.</span></h2>
+          <p class="section-subtitle">أشارك محتوى من السوق، نصائح، لقطات من الفعاليات، ومواقف عملية تساعد الجمهور على اتخاذ قرارات أفضل.</p>
+        </div>
+
+        <div class="social-grid">
+          <a class="social-card reveal" href="https://instagram.com/karim.elshenawy.auto" target="_blank" rel="noopener">
+            <div><div class="social-name">Instagram</div><div class="handle">@karim.elshenawy.auto</div></div><span class="arrow">↗</span>
+          </a>
+          <a class="social-card reveal" href="https://facebook.com/karim.elshenawy.auto" target="_blank" rel="noopener">
+            <div><div class="social-name">Facebook</div><div class="handle">Karim El Shenawy Auto</div></div><span class="arrow">↗</span>
+          </a>
+          <a class="social-card reveal" href="https://tiktok.com/@karim.elshenawy.auto" target="_blank" rel="noopener">
+            <div><div class="social-name">TikTok</div><div class="handle">@karim.elshenawy.auto</div></div><span class="arrow">↗</span>
+          </a>
+          <a class="social-card reveal" href="https://linkedin.com/in/karim-elshenawy" target="_blank" rel="noopener">
+            <div><div class="social-name">LinkedIn</div><div class="handle">Karim El Shenawy</div></div><span class="arrow">↗</span>
+          </a>
+          <a class="social-card reveal" href="https://youtube.com/@karimelshenawyauto" target="_blank" rel="noopener">
+            <div><div class="social-name">YouTube</div><div class="handle">@karimelshenawyauto</div></div><span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why People Trust Me</span>
+          <h2 class="section-title">الثقة ليست جملة تسويقية… هي <span class="accent">طريقة عمل.</span></h2>
+        </div>
+
+        <div class="trust-grid">
+          <article class="trust-card reveal"><div class="trust-number">01</div><h3>خبرة طويلة في السوق</h3><p>معرفة متراكمة بحركة الأسعار، سلوك العملاء، وطبيعة الصفقات المختلفة.</p></article>
+          <article class="trust-card reveal"><div class="trust-number">02</div><h3>شفافية في التعامل</h3><p>معلومات واضحة ومباشرة تساعد العميل على اتخاذ قرار واعٍ بدون ضغط.</p></article>
+          <article class="trust-card reveal"><div class="trust-number">03</div><h3>شبكة علاقات قوية</h3><p>علاقات مهنية مستقرة مع شركاء وموردين وخبراء تدعم جودة وسرعة القرار.</p></article>
+          <article class="trust-card reveal"><div class="trust-number">04</div><h3>فهم احتياجات العميل</h3><p>الاختيار المناسب يبدأ من الاستخدام والميزانية والأولويات، وليس من السيارة فقط.</p></article>
+          <article class="trust-card reveal"><div class="trust-number">05</div><h3>متابعة بعد التعامل</h3><p>العلاقة لا تنتهي عند إتمام الصفقة؛ المتابعة جزء أساسي من التجربة.</p></article>
+          <article class="trust-card reveal"><div class="trust-number">06</div><h3>سمعة مبنية على الترشيحات</h3><p>جزء كبير من العملاء الجدد يصلون من ترشيحات عملاء وشركاء سابقين.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div class="contact-info">
+            <span class="eyebrow">Contact</span>
+            <h2 class="section-title">عندك سؤال أو فرصة تعاون؟ <span class="accent">تواصل معي.</span></h2>
+            <p>سواء كان استفسارًا، استشارة في قرار شراء أو بيع، فرصة شراكة، أو دعوة لفعالية—يسعدني التواصل.</p>
+
+            <div class="contact-list">
+              <a class="contact-item" href="tel:+201055552481"><span class="contact-icon">☎</span><span>+20 10 5555 2481</span></a>
+              <a class="contact-item" href="https://wa.me/201055552481" target="_blank" rel="noopener"><span class="contact-icon">WA</span><span>WhatsApp مباشر</span></a>
+              <a class="contact-item" href="mailto:hello@karimelshenawy.com"><span class="contact-icon">@</span><span>hello@karimelshenawy.com</span></a>
+              <div class="contact-item"><span class="contact-icon">⌖</span><span>القاهرة، مصر</span></div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">الاسم</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="اكتب اسمك" />
+                <span class="error-text" data-error="name"></span>
+              </div>
+
+              <div class="field">
+                <label for="phone">رقم الهاتف</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="01xxxxxxxxx" inputmode="tel" />
+                <span class="error-text" data-error="phone"></span>
+              </div>
+
+              <div class="field full">
+                <label for="reason">سبب التواصل</label>
+                <select id="reason" name="reason">
+                  <option value="">اختر سبب التواصل</option>
+                  <option>استشارة في سوق السيارات</option>
+                  <option>فرصة شراكة</option>
+                  <option>دعوة لفعالية أو لقاء</option>
+                  <option>تعاون إعلامي أو محتوى</option>
+                  <option>استفسار عام</option>
+                </select>
+                <span class="error-text" data-error="reason"></span>
+              </div>
+
+              <div class="field full">
+                <label for="message">الرسالة</label>
+                <textarea id="message" name="message" placeholder="اكتب رسالتك باختصار"></textarea>
+                <span class="error-text" data-error="message"></span>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button class="btn btn-primary" type="submit">إرسال</button>
+              <span class="success-message" id="successMessage">تم استلام رسالتك بنجاح. سيتم التواصل معك قريبًا.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="#home">
+            <span class="brand-mark">KE</span>
+            <span class="brand-text">كريم الشناوي<small>AUTOMOTIVE ENTREPRENEUR</small></span>
+          </a>
+          <p>رائد أعمال وخبير في سوق السيارات، أؤمن بأن أفضل صفقة هي التي تبدأ بالمعلومة الصحيحة وتنتهي بعلاقة ثقة مستمرة.</p>
+        </div>
+
+        <div>
+          <div class="footer-title">روابط سريعة</div>
+          <div class="footer-links">
+            <a href="#about">عني</a><a href="#story">رحلتي</a><a href="#expertise">الخبرة</a><a href="#journey">المسيرة</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">المحتوى</div>
+          <div class="footer-links">
+            <a href="#media">الصور والفيديو</a><a href="#testimonials">آراء العملاء</a><a href="#social">السوشيال ميديا</a><a href="#trust">أسباب الثقة</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">تواصل</div>
+          <div class="footer-links">
+            <a href="tel:+201055552481">+20 10 5555 2481</a>
+            <a href="mailto:hello@karimelshenawy.com">hello@karimelshenawy.com</a>
+            <a href="https://wa.me/201055552481" target="_blank" rel="noopener">WhatsApp</a>
+            <span style="color:var(--muted);font-size:.87rem">القاهرة، مصر</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 كريم الشناوي. جميع الحقوق محفوظة.</span>
+        <span>Personal Brand · Automotive Expertise · Business</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/201055552481?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%A3.%20%D9%83%D8%B1%D9%8A%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83." target="_blank" rel="noopener" aria-label="التواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2A9.84 9.84 0 0 0 3.6 16.9L2 22l5.24-1.54A9.95 9.95 0 1 0 12.04 2Zm5.81 14.05c-.24.68-1.42 1.3-1.98 1.38-.5.08-1.14.12-1.83-.1-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.95-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.2-.14.32-.29.49-.14.17-.3.38-.43.51-.14.14-.29.3-.12.59.17.29.76 1.25 1.64 2.03 1.13 1.01 2.08 1.32 2.37 1.47.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.66.78 1.94.93.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
+  </a>
+
+  <button class="back-top" id="backTop" aria-label="العودة إلى أعلى">↑</button>
+
+  <div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="معرض الصور">
+    <button class="modal-close" data-close="lightbox" aria-label="إغلاق">×</button>
+    <button class="modal-nav modal-prev" id="lightPrev" aria-label="الصورة السابقة">→</button>
+    <img class="lightbox-img" id="lightboxImg" alt="صورة من المعرض" />
+    <button class="modal-nav modal-next" id="lightNext" aria-label="الصورة التالية">←</button>
+  </div>
+
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="مشاهدة الفيديو">
+    <button class="modal-close" data-close="videoModal" aria-label="إغلاق">×</button>
+    <div class="video-modal-inner">
+      <iframe id="videoFrame" src="" title="فيديو كريم الشناوي" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const navbar = document.getElementById("navbar");
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      const backTop = document.getElementById("backTop");
+      const navLinks = [...document.querySelectorAll(".nav-links a")];
+      const allSectionLinks = [...document.querySelectorAll('a[href^="#"]')];
+
+      // Sticky navbar + back to top
+      const handleScrollUI = () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 18);
+        backTop.classList.toggle("show", window.scrollY > 650);
+      };
+      handleScrollUI();
+      window.addEventListener("scroll", handleScrollUI, { passive: true });
+
+      // Mobile menu
+      menuBtn.addEventListener("click", () => {
+        const open = mobileDrawer.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+      });
+
+      document.querySelectorAll(".mobile-drawer a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileDrawer.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Smooth scroll with fixed-navbar offset
+      allSectionLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (!href || href === "#") return;
+        link.addEventListener("click", e => {
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.scrollY - (navbar.offsetHeight - 2);
+          window.scrollTo({ top: y, behavior: "smooth" });
+        });
+      });
+
+      // Reveal
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+      // Counters
+      const counters = document.querySelectorAll("[data-count]");
+      let countersStarted = false;
+
+      const formatNumber = n => new Intl.NumberFormat("ar-EG").format(n);
+      const startCounters = () => {
+        if (countersStarted) return;
+        countersStarted = true;
+
+        counters.forEach(el => {
+          const target = Number(el.dataset.count || 0);
+          const prefix = el.dataset.prefix || "";
+          const suffix = el.dataset.suffix || "";
+          const duration = 1400;
+          const start = performance.now();
+
+          const animate = now => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(target * eased);
+            el.textContent = prefix + formatNumber(current) + suffix;
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        });
+      };
+
+      const statsSection = document.getElementById("achievements");
+      const statsObserver = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          startCounters();
+          statsObserver.disconnect();
+        }
+      }, { threshold: 0.35 });
+      statsObserver.observe(statsSection);
+
+      // Active nav on scroll
+      const sections = [...document.querySelectorAll("main section[id]")];
+      const activeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id));
+        });
+      }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+      sections.forEach(section => activeObserver.observe(section));
+
+      // Lightbox
+      const galleryItems = [...document.querySelectorAll(".gallery-item")];
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      let currentImage = 0;
+
+      const openLightbox = index => {
+        currentImage = index;
+        lightboxImg.src = galleryItems[index].dataset.full;
+        lightbox.classList.add("show");
+        document.body.classList.add("modal-open");
+      };
+
+      const changeImage = direction => {
+        currentImage = (currentImage + direction + galleryItems.length) % galleryItems.length;
+        lightboxImg.src = galleryItems[currentImage].dataset.full;
+      };
+
+      galleryItems.forEach((item, index) => item.addEventListener("click", () => openLightbox(index)));
+      document.getElementById("lightPrev").addEventListener("click", () => changeImage(-1));
+      document.getElementById("lightNext").addEventListener("click", () => changeImage(1));
+
+      // Video modal
+      const videoModal = document.getElementById("videoModal");
+      const videoFrame = document.getElementById("videoFrame");
+      document.querySelectorAll(".open-video").forEach(btn => {
+        btn.addEventListener("click", () => {
+          videoFrame.src = btn.dataset.video;
+          videoModal.classList.add("show");
+          document.body.classList.add("modal-open");
+        });
+      });
+
+      const closeModal = modal => {
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+        if (modal.id === "videoModal") videoFrame.src = "";
+      };
+
+      document.querySelectorAll("[data-close]").forEach(btn => {
+        btn.addEventListener("click", () => closeModal(document.getElementById(btn.dataset.close)));
+      });
+
+      [lightbox, videoModal].forEach(modal => {
+        modal.addEventListener("click", e => {
+          if (e.target === modal) closeModal(modal);
+        });
+      });
+
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape") {
+          if (lightbox.classList.contains("show")) closeModal(lightbox);
+          if (videoModal.classList.contains("show")) closeModal(videoModal);
+        }
+        if (lightbox.classList.contains("show")) {
+          if (e.key === "ArrowRight") changeImage(-1);
+          if (e.key === "ArrowLeft") changeImage(1);
+        }
+      });
+
+      // Testimonials slider
+      const track = document.getElementById("testimonialTrack");
+      const slides = [...track.children];
+      let slideIndex = 0;
+      const renderSlide = () => {
+        track.style.transform = `translateX(${slideIndex * 100}%)`;
+      };
+      document.getElementById("testimonialNext").addEventListener("click", () => {
+        slideIndex = (slideIndex + 1) % slides.length;
+        renderSlide();
+      });
+      document.getElementById("testimonialPrev").addEventListener("click", () => {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        renderSlide();
+      });
+      let autoSlide = setInterval(() => {
+        slideIndex = (slideIndex + 1) % slides.length;
+        renderSlide();
+      }, 6500);
+      document.querySelector(".testimonial-shell").addEventListener("mouseenter", () => clearInterval(autoSlide), { once: true });
+
+      // Contact form validation
+      const form = document.getElementById("contactForm");
+      const success = document.getElementById("successMessage");
+      const error = (field, message) => {
+        document.querySelector(`[data-error="${field}"]`).textContent = message;
+      };
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        success.classList.remove("show");
+
+        const data = {
+          name: form.name.value.trim(),
+          phone: form.phone.value.trim(),
+          reason: form.reason.value.trim(),
+          message: form.message.value.trim()
+        };
+
+        ["name","phone","reason","message"].forEach(key => error(key, ""));
+        let valid = true;
+
+        if (data.name.length < 2) { error("name", "من فضلك اكتب اسمك."); valid = false; }
+        if (!/^[0-9+\s()-]{8,18}$/.test(data.phone)) { error("phone", "من فضلك اكتب رقم هاتف صحيح."); valid = false; }
+        if (!data.reason) { error("reason", "اختر سبب التواصل."); valid = false; }
+        if (data.message.length < 10) { error("message", "اكتب رسالة من 10 أحرف على الأقل."); valid = false; }
+
+        if (!valid) return;
+
+        success.classList.add("show");
+        form.reset();
+      });
+
+      // Back to top
+      backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+      // Close drawer on resize
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1100) {
+          mobileDrawer.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
