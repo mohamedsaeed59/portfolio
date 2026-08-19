@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BrandMyProfile Demo - CV writing, LinkedIn makeover and career services for GCC professionals." />
+  <title>BrandMyProfile | CV Writing & Career Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0a1739;
+      --navy-2:#101f48;
+      --blue:#2d5bff;
+      --blue-2:#5c7dff;
+      --cyan:#1cc8d1;
+      --green:#16b67a;
+      --ink:#17213c;
+      --muted:#667085;
+      --line:#e7eaf1;
+      --soft:#f7f9fc;
+      --soft-blue:#eef3ff;
+      --white:#ffffff;
+      --shadow:0 18px 50px rgba(17,32,74,.11);
+      --shadow-sm:0 10px 30px rgba(17,32,74,.08);
+      --radius:20px;
+      --container:min(1180px, calc(100% - 36px));
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    img{max-width:100%;display:block}
+    .container{width:var(--container);margin:auto}
+    .section{padding:92px 0}
+    .section.soft{background:var(--soft)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:26px;height:2px;border-radius:2px;background:currentColor}
+    .section-title{font-size:clamp(34px,4.5vw,54px);line-height:1.12;letter-spacing:-1.8px;margin:12px 0 15px;color:var(--navy);font-weight:800}
+    .section-lead{max-width:680px;margin:0;color:var(--muted);font-size:16px}
+    .center{text-align:center}.center .section-lead{margin-inline:auto}.center .eyebrow:before{display:none}
+
+    .btn{min-height:48px;border:1px solid transparent;border-radius:10px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:14px;transition:.22s ease;white-space:nowrap}
+    .btn-primary{color:#fff;background:var(--blue);box-shadow:0 9px 22px rgba(45,91,255,.24)}
+    .btn-primary:hover{background:#224eea;transform:translateY(-2px)}
+    .btn-dark{color:#fff;background:var(--navy)}
+    .btn-dark:hover{background:#152759;transform:translateY(-2px)}
+    .btn-outline{border-color:#d9deea;background:#fff;color:var(--navy)}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+    .btn-white{background:#fff;color:var(--blue)}
+
+    .topbar{background:var(--navy);color:#dfe7ff;font-size:12px}
+    .topbar-inner{width:var(--container);height:38px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .topbar strong{color:#fff}
+    .topbar-right{display:flex;gap:18px;align-items:center}
+
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,234,241,.88)}
+    .nav{width:var(--container);height:74px;margin:auto;display:flex;align-items:center;gap:26px}
+    .brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:max-content}
+    .brand-mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan));font-weight:900;font-size:19px;box-shadow:0 8px 18px rgba(45,91,255,.24)}
+    .brand-text{font-weight:800;font-size:19px;letter-spacing:-.6px;color:var(--navy)}
+    .brand-country{font-size:9px;color:var(--muted);font-weight:700;display:block;margin-top:-4px;letter-spacing:.04em}
+    .nav-links{display:flex;align-items:center;gap:21px;font-size:13px;font-weight:600;color:#35405a}
+    .nav-links a{padding:28px 0;position:relative}
+    .nav-links a:after{content:"";position:absolute;height:2px;background:var(--blue);left:0;right:100%;bottom:17px;transition:.2s}
+    .nav-links a:hover{color:var(--blue)}.nav-links a:hover:after,.nav-links a.active:after{right:0}
+    .country-select{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 10px;color:#34405c;font-size:12px;font-weight:700}
+    .menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:10px;place-items:center}
+    .mobile-menu{display:none;position:fixed;inset:112px 0 auto;background:#fff;z-index:90;padding:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:flex;padding:13px 3px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .mobile-menu .btn{width:100%;margin-top:14px}
+
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#f8faff 0%,#f6f8ff 42%,#eef4ff 100%);padding:82px 0 66px}
+    .hero:before{content:"";position:absolute;width:530px;height:530px;border-radius:50%;right:-200px;top:-240px;background:radial-gradient(circle,rgba(45,91,255,.16),rgba(45,91,255,0) 68%)}
+    .hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;left:-170px;bottom:-260px;background:radial-gradient(circle,rgba(28,200,209,.13),rgba(28,200,209,0) 68%)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#eaf0ff;color:var(--blue);border:1px solid #dbe5ff;padding:7px 11px;border-radius:999px;font-size:11px;font-weight:800}
+    .hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(22,182,122,.10)}
+    .hero h1{font-size:clamp(42px,5vw,66px);line-height:1.05;letter-spacing:-2.8px;margin:18px 0;color:var(--navy);font-weight:800}
+    .hero h1 span{color:var(--blue)}
+    .hero p{font-size:18px;color:#5e6880;max-width:670px;margin:0}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}
+    .mini-points{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:#536079;font-size:12px;font-weight:600}
+    .mini-points span{display:flex;align-items:center;gap:7px}.mini-points span:before{content:"✓";width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:#e6f8f1;color:var(--green);font-size:11px;font-weight:900}
+
+    .hero-visual{position:relative;min-height:525px}
+    .visual-bg{position:absolute;inset:25px 0 20px 35px;border-radius:30px;background:linear-gradient(145deg,var(--navy),#1f3b8d);box-shadow:0 28px 70px rgba(10,23,57,.22);overflow:hidden}
+    .visual-bg:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:-130px;top:-125px;background:rgba(91,124,255,.22)}
+    .visual-bg:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;left:-70px;bottom:-80px;background:rgba(28,200,209,.14)}
+    .cv-sheet{position:absolute;z-index:2;width:310px;height:405px;left:42px;top:70px;background:#fff;border-radius:16px;box-shadow:0 24px 48px rgba(8,20,55,.28);padding:24px;transform:rotate(-2deg)}
+    .cv-top{display:grid;grid-template-columns:58px 1fr;gap:15px;align-items:center}.avatar{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#cfd8ed,#f1f4fa)}
+    .line{height:7px;background:#dfe4ee;border-radius:5px;margin:8px 0}.line.dark{background:#53607a}.line.blue{background:#9fb2ff}.line.sm{width:55%}.line.md{width:75%}.line.lg{width:100%}
+    .cv-section{margin-top:23px}.cv-section-title{height:8px;width:90px;background:var(--blue);border-radius:4px;margin-bottom:12px}.cv-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+    .ats-card{position:absolute;z-index:3;right:-4px;top:46px;width:198px;background:#fff;border-radius:16px;padding:17px;box-shadow:var(--shadow);border:1px solid #edf0f6}
+    .ats-top{display:flex;align-items:center;justify-content:space-between}.ats-title{font-size:11px;font-weight:800;color:var(--navy)}.ats-score{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) 0 92%,#edf1f6 92% 100%);position:relative}.ats-score:before{content:"";position:absolute;inset:6px;background:#fff;border-radius:50%}.ats-score strong{z-index:1;font-size:11px;color:var(--green)}
+    .linkedin-card{position:absolute;z-index:4;right:17px;bottom:26px;width:230px;background:#fff;border-radius:16px;padding:17px;box-shadow:var(--shadow);border:1px solid #edf0f6}
+    .linkedin-head{display:flex;gap:11px;align-items:center}.li-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#d8e2f5,#f3f5f9)}.li-logo{margin-left:auto;width:29px;height:29px;border-radius:6px;background:#0a66c2;color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px}
+    .floating-rating{position:absolute;z-index:5;left:0;bottom:10px;background:#fff;border:1px solid #edf0f6;border-radius:14px;padding:13px 16px;box-shadow:var(--shadow-sm);display:flex;gap:10px;align-items:center}.rating-icon{width:34px;height:34px;border-radius:10px;background:#fff3dd;display:grid;place-items:center;color:#ef9d22}.floating-rating strong{display:block;font-size:13px;color:var(--navy)}.floating-rating small{font-size:10px;color:var(--muted)}
+
+    .trust{border-bottom:1px solid var(--line);background:#fff}.trust-inner{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:20px}.trust-copy{font-size:12px;color:var(--muted);font-weight:600;max-width:170px}.trust-logos{flex:1;display:flex;align-items:center;justify-content:space-around;gap:18px;flex-wrap:wrap}.trust-logo{font-size:14px;font-weight:800;color:#7b8497;letter-spacing:.03em}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;box-shadow:0 9px 22px rgba(19,37,86,.04)}.stat strong{font-size:31px;color:var(--navy);display:block;letter-spacing:-1.2px}.stat span{font-size:11px;color:var(--muted);font-weight:600}
+
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}.service-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 10px 28px rgba(15,30,70,.05);transition:.24s}.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm);border-color:#d8e1ff}.service-icon{width:47px;height:47px;border-radius:13px;background:var(--soft-blue);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}.service-card h3{font-size:17px;color:var(--navy);margin:0 0 8px}.service-card p{font-size:13px;color:var(--muted);margin:0 0 17px}.service-link{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:12px;font-weight:800}.service-link:hover{gap:10px}
+
+    .why-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:68px;align-items:center}.why-visual{min-height:560px;position:relative}.why-panel{position:absolute;inset:0 70px 0 0;border-radius:27px;background:linear-gradient(145deg,#101d43,#29488f);overflow:hidden;box-shadow:var(--shadow)}
+    .why-panel:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(77,110,255,.25);right:-100px;top:-90px}.why-panel:after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(28,200,209,.18);left:-70px;bottom:-80px}.mock-window{position:absolute;z-index:2;width:78%;left:45px;top:55px;background:#fff;border-radius:17px;box-shadow:0 24px 55px rgba(0,0,0,.25);overflow:hidden}.mock-bar{height:39px;background:#f4f6fa;border-bottom:1px solid #e9edf4;display:flex;align-items:center;gap:5px;padding:0 13px}.mock-dot{width:7px;height:7px;border-radius:50%;background:#cdd3df}.mock-body{padding:23px}.mock-chip{height:23px;width:100px;border-radius:999px;background:#eaf0ff}.mock-h{height:13px;width:75%;background:#283e7e;border-radius:4px;margin:16px 0 9px}.mock-p{height:7px;background:#dfe4ee;border-radius:5px;margin:7px 0}.mock-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}.mock-card{height:90px;border:1px solid #e7ebf3;border-radius:12px;background:#fbfcff}.why-badge{position:absolute;z-index:3;right:10px;bottom:35px;background:#fff;border:1px solid #eef0f5;border-radius:14px;padding:15px;box-shadow:var(--shadow-sm);width:195px}.why-badge strong{display:block;font-size:13px;color:var(--navy)}.why-badge span{font-size:10px;color:var(--muted)}
+    .why-list{display:grid;gap:12px;margin-top:28px}.why-item{display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start}.why-check{width:42px;height:42px;border-radius:12px;background:#eaf8f2;color:var(--green);display:grid;place-items:center;font-weight:900}.why-item h4{margin:0 0 4px;color:var(--navy);font-size:14px}.why-item p{margin:0;color:var(--muted);font-size:12px}
+
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:40px;align-items:stretch}.price-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;display:flex;flex-direction:column;box-shadow:0 10px 27px rgba(19,37,86,.05)}.price-card.popular{border:2px solid var(--blue);transform:translateY(-7px);box-shadow:0 22px 50px rgba(45,91,255,.14)}.popular-tag{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;border-radius:999px;padding:6px 12px;font-size:9px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.price-card h3{font-size:20px;color:var(--navy);margin:0}.price-desc{color:var(--muted);font-size:12px;margin:7px 0 20px;min-height:40px}.price{display:flex;align-items:end;gap:6px;margin-bottom:20px}.price strong{font-size:43px;line-height:1;color:var(--navy);letter-spacing:-2px}.price span{font-size:13px;color:var(--muted);padding-bottom:3px;font-weight:700}.features{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:11px;flex:1}.features li{font-size:12px;color:#48556f;display:flex;gap:9px;align-items:flex-start}.features li:before{content:"✓";width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:#e8f8f2;color:var(--green);font-size:10px;font-weight:900;flex:none}.price-card .btn{width:100%}
+
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px;position:relative}.process-grid:before{content:"";position:absolute;top:29px;left:12%;right:12%;height:1px;background:#dbe2f0}.process-card{position:relative;z-index:1;text-align:center}.step-num{width:58px;height:58px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;background:#fff;border:2px solid #dbe3f8;color:var(--blue);font-weight:800;box-shadow:0 7px 16px rgba(18,36,84,.05)}.process-card h3{font-size:14px;color:var(--navy);margin:0 0 7px}.process-card p{font-size:11px;color:var(--muted);margin:0}
+
+    .success-wrap{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:28px;padding:50px}.success-wrap:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(70,103,255,.24);right:-120px;top:-150px}.success-wrap:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(28,200,209,.13);left:-80px;bottom:-120px}.success-inner{position:relative;z-index:1;display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:center}.success-wrap .eyebrow{color:#8da5ff}.success-wrap .section-title{color:#fff}.success-wrap .section-lead{color:#bfc9df}.quote-card{background:#fff;color:var(--ink);border-radius:20px;padding:27px}.quote-stars{color:#ffb349;letter-spacing:.12em;font-size:16px}.quote-card blockquote{margin:14px 0 22px;font-size:16px;color:#38445e;line-height:1.7}.quote-person{display:flex;align-items:center;gap:12px}.quote-avatar{width:43px;height:43px;border-radius:50%;background:linear-gradient(135deg,#d7e0f1,#f3f5f9)}.quote-person strong{display:block;color:var(--navy);font-size:13px}.quote-person span{font-size:10px;color:var(--muted)}
+    .quote-controls{display:flex;gap:8px;margin-top:20px}.quote-controls button{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--navy)}
+
+    .jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:34px}.job-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:21px;transition:.22s}.job-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}.job-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.job-tag{font-size:9px;font-weight:800;color:var(--blue);background:#edf2ff;border-radius:999px;padding:5px 8px}.job-card h3{font-size:15px;color:var(--navy);margin:16px 0 4px}.job-company{font-size:11px;color:#5c6881;font-weight:600}.job-meta{display:flex;gap:11px;flex-wrap:wrap;margin-top:16px;font-size:10px;color:var(--muted)}
+
+    .faq-wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:start}.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;border:0;background:none;padding:19px 0;display:flex;justify-content:space-between;align-items:center;text-align:left;color:var(--navy);font-weight:700;font-size:14px}.faq-icon{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;transition:.2s}.faq-item.open .faq-icon{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-a p{font-size:12px;color:var(--muted);margin:0;padding:0 42px 18px 0}
+
+    .cta{background:linear-gradient(135deg,#2d5bff,#2147cb);border-radius:28px;padding:48px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:34px;position:relative;overflow:hidden}.cta:before{content:"";position:absolute;width:310px;height:310px;border-radius:50%;right:-90px;top:-160px;background:rgba(255,255,255,.10)}.cta h2{font-size:clamp(29px,4vw,44px);letter-spacing:-1.4px;margin:0 0 8px;line-height:1.12}.cta p{margin:0;color:#dce4ff;max-width:650px;font-size:13px}.cta .btn{position:relative;z-index:2;flex:none}
+
+    footer{background:#09142f;color:#fff;padding:62px 0 25px;margin-top:92px}.footer-grid{display:grid;grid-template-columns:1.35fr repeat(3,.75fr);gap:44px}.footer-brand .brand-text{color:#fff}.footer-brand p{max-width:400px;font-size:12px;color:#9eabc6;margin:16px 0 20px}.socials{display:flex;gap:8px}.social{width:35px;height:35px;border:1px solid #26365b;border-radius:9px;display:grid;place-items:center;color:#c7d1e8;font-size:11px}.footer-col h4{font-size:12px;color:#fff;margin:0 0 14px}.footer-col a,.footer-col span{display:block;font-size:11px;color:#9eabc6;padding:4px 0}.footer-col a:hover{color:#fff}.regions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.region{padding:5px 7px;border:1px solid #26365b;border-radius:7px;font-size:9px;color:#c5cee1}.footer-bottom{border-top:1px solid #1f2d4f;margin-top:42px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;color:#74819e;font-size:10px}
+
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:120;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.31);transition:.2s}.whatsapp:hover{transform:translateY(-3px) scale(1.03)}
+    .back-top{position:fixed;left:20px;bottom:20px;z-index:119;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:var(--shadow-sm);opacity:0;visibility:hidden;transform:translateY(7px);transition:.2s}.back-top.show{opacity:1;visibility:visible;transform:none}
+
+    .modal{position:fixed;inset:0;z-index:300;background:rgba(8,17,41,.66);display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal-card{width:min(560px,100%);background:#fff;border-radius:20px;padding:28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.30)}.modal-close{position:absolute;right:16px;top:16px;width:36px;height:36px;border:1px solid var(--line);background:#fff;border-radius:9px;font-size:20px}.modal-card h3{margin:0 0 7px;color:var(--navy);font-size:23px}.modal-card>p{margin:0 0 20px;color:var(--muted);font-size:12px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{margin-bottom:11px}.field.full{grid-column:1/-1}.field label{display:block;font-size:10px;font-weight:700;color:#46516b;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fbfcfe;border-radius:10px;padding:11px 12px;outline:none;color:var(--ink)}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{background:#fff;border-color:#8fa7ff;box-shadow:0 0 0 3px rgba(45,91,255,.10)}.error-msg{display:none;color:#c24646;font-size:9px;margin-top:4px}.field.error .error-msg{display:block}.field.error input,.field.error select{border-color:#d76565}.form-success{display:none;margin-top:12px;background:#eaf8f2;color:#287e5b;padding:10px 12px;border-radius:9px;font-size:10px;font-weight:700}.form-success.show{display:block}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.22,.75,.25,1)}.reveal.visible{opacity:1;transform:none}
+
+
+    /* Real photography */
+    .hero-photo-wrap{position:absolute;inset:25px 0 18px 30px;border-radius:30px;overflow:hidden;box-shadow:0 28px 70px rgba(10,23,57,.22);background:#dfe6f5}
+    .hero-photo{width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-photo-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,23,57,.02),rgba(10,23,57,.23))}
+    .photo-stat{display:block;text-align:left;right:-3px;top:50px}
+    .photo-stat span,.photo-stat small{display:block;font-size:10px;color:var(--muted)}
+    .photo-stat strong{display:block;font-size:31px;line-height:1.05;color:var(--green);margin:6px 0}
+    .photo-note{display:flex;align-items:center;gap:12px;bottom:30px}
+    .photo-note strong{display:block;font-size:12px;color:var(--navy)}
+    .photo-note small{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+    .service-photo{width:calc(100% + 44px);height:150px;object-fit:cover;margin:-22px -22px 18px;border-radius:17px 17px 0 0}
+    .why-photo-shell{position:absolute;inset:0 55px 0 0;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:#e9edf5}
+    .why-photo{width:100%;height:100%;object-fit:cover}
+    .why-photo-shell:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,23,57,.28),rgba(10,23,57,.02) 55%)}
+
+    @media(max-width:1100px){
+      .nav-links{gap:14px}.nav-links a:nth-child(4),.nav-links a:nth-child(5){display:none}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .jobs-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:920px){
+      .topbar{display:none}.nav{height:72px}.nav-links,.country-select,.nav>.btn{display:none}.menu-btn{display:grid;margin-left:auto}.brand{margin-right:0}
+      .mobile-menu{inset:72px 0 auto}
+      .hero-grid,.why-grid,.success-inner,.faq-wrap{grid-template-columns:1fr}.hero{padding-top:55px}.hero-visual{max-width:620px;width:100%;margin:auto}.why-grid{gap:40px}.why-visual{max-width:650px;width:100%;margin:auto}.success-inner{gap:25px}.faq-wrap{gap:30px}
+      .pricing-grid{grid-template-columns:1fr;max-width:650px;margin:40px auto 0}.price-card.popular{transform:none}
+      .process-grid{grid-template-columns:repeat(2,1fr);gap:26px 15px}.process-grid:before{display:none}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+    }
+    @media(max-width:650px){
+      :root{--container:min(100% - 26px,1180px)}.section{padding:72px 0}.hero h1{font-size:42px}.hero p{font-size:15px}.hero-actions .btn{flex:1}.hero-visual{min-height:480px}.hero-photo-wrap{inset:25px 0 20px 20px}.ats-card{width:170px;right:-3px}.linkedin-card{width:205px;right:9px}.floating-rating{left:1px}.trust-inner{padding:20px 0;display:block}.trust-copy{text-align:center;max-width:none;margin-bottom:16px}.services-grid,.jobs-grid{grid-template-columns:1fr}.why-visual{min-height:485px}.why-photo-shell{right:20px}.why-badge{right:0}.process-grid{grid-template-columns:1fr 1fr}.success-wrap{padding:30px 20px}.cta{padding:34px 24px;display:block}.cta .btn{margin-top:20px;width:100%}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:7px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+    }
+    @media(max-width:420px){
+      .hero-actions{display:grid}.hero-actions .btn{width:100%}.stats{grid-template-columns:1fr 1fr}.stat{padding:18px 10px}.stat strong{font-size:26px}.hero-visual{min-height:430px}.hero-photo-wrap{inset:18px 0 16px 10px}.ats-card{width:150px;padding:13px}.linkedin-card{width:185px;padding:13px}.floating-rating{display:none}.process-grid{grid-template-columns:1fr}.why-visual{min-height:440px}.why-photo-shell{inset:0 12px 0 0}.why-badge{width:170px}.modal-card{padding:24px 18px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div>Career services built for professionals across <strong>Kuwait & the GCC</strong></div>
+    <div class="topbar-right"><span>✉ hello@brandprofile-demo.com</span><span>☎ +965 5000 0000</span></div>
+  </div>
+</div>
+
+<header id="header">
+  <nav class="nav">
+    <a class="brand" href="#home" aria-label="BrandMyProfile home">
+      <span class="brand-mark">B</span>
+      <span><span class="brand-text">BrandMyProfile</span><span class="brand-country">KUWAIT</span></span>
+    </a>
+    <div class="nav-links" id="desktopNav">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#jobs">Jobs</a>
+      <a href="#blog">Blog</a>
+      <a href="#success">Success Stories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <select class="country-select" aria-label="Country"><option>🇰🇼 Kuwait</option><option>🇦🇪 UAE</option><option>🇸🇦 Saudi Arabia</option><option>🇶🇦 Qatar</option><option>🇮🇳 India</option></select>
+    <button class="btn btn-primary" data-open-consultation>Book Consultation</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#jobs">Jobs</a><a href="#blog">Blog</a><a href="#success">Success Stories</a><a href="#about">About</a><a href="#contact">Contact</a>
+  <button class="btn btn-primary" data-open-consultation>Book Consultation</button>
+</div>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="hero-badge"><i></i> Trusted Career Support for Kuwait & GCC</span>
+        <h1>Build a CV that gets you <span>noticed.</span></h1>
+        <p>ATS-focused CV writing, LinkedIn profile improvement and practical career guidance designed for professionals applying across Kuwait and the GCC.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-open-consultation>Get a Free CV Review →</button>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
+        <div class="mini-points"><span>ATS-ready structure</span><span>GCC-focused positioning</span><span>Professional delivery</span></div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Professional career consultation">
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=88" alt="Career consultant discussing a professional CV with a client" fetchpriority="high">
+        </div>
+        <div class="ats-card photo-stat">
+          <span>ATS-ready CV</span>
+          <strong>92%</strong>
+          <small>Example profile match</small>
+        </div>
+        <div class="linkedin-card photo-note">
+          <div class="li-logo">in</div>
+          <div><strong>LinkedIn Makeover</strong><small>Headline, About & experience optimization</small></div>
+        </div>
+        <div class="floating-rating"><div class="rating-icon">★</div><div><strong>Career-ready profile</strong><small>Designed to stand out</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container trust-inner">
+      <div class="trust-copy">Helping professionals target leading GCC employers</div>
+      <div class="trust-logos"><span class="trust-logo">NBK</span><span class="trust-logo">ZAIN</span><span class="trust-logo">KOC</span><span class="trust-logo">KUWAIT AIRWAYS</span><span class="trust-logo">AGILITY</span></div>
+    </div>
+  </div>
+
+  <section class="section soft" id="about">
+    <div class="container center reveal">
+      <span class="eyebrow">Career Support That Works</span>
+      <h2 class="section-title">Professional positioning for the GCC job market.</h2>
+      <p class="section-lead">Your CV and LinkedIn profile should communicate impact quickly. BrandMyProfile helps turn experience into a clear, recruiter-friendly professional story.</p>
+      <div class="stats">
+        <div class="stat"><strong>500+</strong><span>Professionals Supported</span></div>
+        <div class="stat"><strong>GCC</strong><span>Market-Focused Writing</span></div>
+        <div class="stat"><strong>ATS</strong><span>Optimized CV Structure</span></div>
+        <div class="stat"><strong>1:1</strong><span>Personalized Career Support</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Our Services</span><h2 class="section-title">Everything you need to present your career professionally.</h2><p class="section-lead">Choose a focused service or combine them to build a complete personal brand for your next opportunity.</p></div>
+      <div class="services-grid">
+        <article class="service-card reveal"><img class="service-photo" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=900&q=82" alt="Professional reviewing a CV document" loading="lazy"><div class="service-icon">📄</div><h3>CV Writing</h3><p>Professional CV writing with clear achievements, role-relevant keywords and ATS-friendly formatting.</p><a class="service-link" href="#pricing">View service →</a></article>
+        <article class="service-card reveal"><img class="service-photo" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82" alt="Professional working on a laptop in a modern office" loading="lazy"><div class="service-icon">in</div><h3>LinkedIn Makeover</h3><p>Strengthen your headline, About section, experience and profile positioning for better recruiter visibility.</p><a class="service-link" href="#pricing">View service →</a></article>
+        <article class="service-card reveal"><img class="service-photo" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=82" alt="Professional career training session" loading="lazy"><div class="service-icon">▶</div><h3>Masterclass</h3><p>Practical guidance on profile optimization, networking, outreach and smarter job-search habits.</p><a class="service-link" href="#pricing">View service →</a></article>
+        <article class="service-card reveal"><img class="service-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=82" alt="Career coaching and professional discussion" loading="lazy"><div class="service-icon">◎</div><h3>Career Guidance</h3><p>Focused career support to clarify your positioning, target roles and strengthen your application strategy.</p><a class="service-link" href="#contact">Talk to us →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container why-grid">
+      <div class="why-visual reveal">
+        <div class="why-photo-shell">
+          <img class="why-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=86" alt="Professional team collaborating in an office" loading="lazy">
+        </div>
+        <div class="why-badge"><strong>Built around your experience</strong><span>No generic one-size-fits-all profile.</span></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Why BrandMyProfile</span>
+        <h2 class="section-title">A stronger profile starts with better positioning.</h2>
+        <p class="section-lead">We focus on clarity, relevance and the information recruiters need to understand your value quickly.</p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-check">✓</div><div><h4>ATS-friendly structure</h4><p>Clean formatting and role-relevant wording designed for modern recruitment workflows.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>GCC-aware approach</h4><p>Professional positioning tailored to the expectations of employers across Kuwait and the wider GCC.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Achievement-led writing</h4><p>Your profile focuses on outcomes and impact rather than simply listing responsibilities.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Human review and refinement</h4><p>Your final profile is refined for readability, credibility and a confident professional tone.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Simple Pricing</span><h2 class="section-title">Choose the level of support you need.</h2><p class="section-lead">Straightforward packages for professionals who want a stronger CV, LinkedIn profile and career positioning.</p></div>
+      <div class="pricing-grid">
+        <article class="price-card reveal"><h3>Basic</h3><p class="price-desc">Essential support for a polished, ATS-ready professional CV.</p><div class="price"><strong>4</strong><span>KWD</span></div><ul class="features"><li>Professional CV writing</li><li>ATS-optimized format</li><li>1 revision round</li><li>LinkedIn headline optimization</li><li>PDF & Word formats</li></ul><button class="btn btn-outline select-plan" data-plan="Basic – 4 KWD">Get Started</button></article>
+        <article class="price-card popular reveal"><span class="popular-tag">Most Popular</span><h3>Pro</h3><p class="price-desc">A complete profile package for stronger visibility and applications.</p><div class="price"><strong>7</strong><span>KWD</span></div><ul class="features"><li>Everything in Basic</li><li>Full LinkedIn profile makeover</li><li>Professional cover letter</li><li>2 revision rounds</li><li>Career masterclass access</li><li>Networking tips guide</li></ul><button class="btn btn-primary select-plan" data-plan="Pro – 7 KWD">Get Started</button></article>
+        <article class="price-card reveal"><h3>Executive</h3><p class="price-desc">Advanced personal branding for senior and leadership-level professionals.</p><div class="price"><strong>10</strong><span>KWD</span></div><ul class="features"><li>Everything in Pro</li><li>Executive CV format</li><li>Personal branding strategy</li><li>Senior-profile positioning</li><li>Priority review</li><li>Enhanced career guidance</li></ul><button class="btn btn-outline select-plan" data-plan="Executive – 10 KWD">Get Started</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">How It Works</span><h2 class="section-title">From current CV to stronger professional profile.</h2><p class="section-lead">A simple process that keeps the service clear and easy from the first review to final delivery.</p></div>
+      <div class="process-grid">
+        <div class="process-card reveal"><div class="step-num">01</div><h3>Share Your Current CV</h3><p>Send your CV and the roles or markets you are targeting.</p></div>
+        <div class="process-card reveal"><div class="step-num">02</div><h3>Profile Review</h3><p>We assess structure, positioning, keywords and missing information.</p></div>
+        <div class="process-card reveal"><div class="step-num">03</div><h3>Writing & Optimization</h3><p>Your new CV and selected career assets are prepared and refined.</p></div>
+        <div class="process-card reveal"><div class="step-num">04</div><h3>Review & Delivery</h3><p>Receive the final documents and request revisions based on your package.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="success">
+    <div class="container success-wrap reveal">
+      <div class="success-inner">
+        <div><span class="eyebrow">Success Stories</span><h2 class="section-title">A profile that gives recruiters a reason to call.</h2><p class="section-lead">Professionals use BrandMyProfile to communicate their value more clearly and approach their job search with stronger positioning.</p></div>
+        <div>
+          <div class="quote-card" id="quoteCard"><div class="quote-stars">★★★★★</div><blockquote id="quoteText">“The new CV was much clearer and more focused. It helped me present my experience in a way that made more sense for GCC roles.”</blockquote><div class="quote-person"><div class="quote-avatar"></div><div><strong id="quoteName">Ahmed M.</strong><span id="quoteRole">Finance Professional — Kuwait</span></div></div></div>
+          <div class="quote-controls"><button id="prevQuote" aria-label="Previous testimonial">←</button><button id="nextQuote" aria-label="Next testimonial">→</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="jobs">
+    <div class="container">
+      <div class="section-head reveal" style="display:flex;justify-content:space-between;gap:30px;align-items:end"><div><span class="eyebrow">Latest Opportunities</span><h2 class="section-title" style="margin-bottom:0">Jobs in Kuwait.</h2></div><a href="#contact" class="btn btn-outline">Get Career Help</a></div>
+      <div class="jobs-grid">
+        <article class="job-card reveal"><div class="job-top"><span class="job-tag">Full-time</span><span style="font-size:10px;color:var(--muted)">Kuwait City</span></div><h3>Senior Software Engineer</h3><div class="job-company">Digital Solutions Company</div><div class="job-meta"><span>5+ years</span><span>Tech</span><span>1,200–1,800 KWD</span></div></article>
+        <article class="job-card reveal"><div class="job-top"><span class="job-tag">Full-time</span><span style="font-size:10px;color:var(--muted)">Salmiya</span></div><h3>Marketing Manager</h3><div class="job-company">Gulf Consumer Brand</div><div class="job-meta"><span>4+ years</span><span>Marketing</span><span>900–1,300 KWD</span></div></article>
+        <article class="job-card reveal"><div class="job-top"><span class="job-tag">Full-time</span><span style="font-size:10px;color:var(--muted)">Hawally</span></div><h3>HR Manager</h3><div class="job-company">Regional Group</div><div class="job-meta"><span>5+ years</span><span>Human Resources</span><span>1,000–1,500 KWD</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+    <div class="container faq-wrap">
+      <div class="reveal"><span class="eyebrow">Quick Answers</span><h2 class="section-title">Questions before you start?</h2><p class="section-lead">Here are a few common questions professionals ask before choosing a CV or LinkedIn service.</p></div>
+      <div class="faq-list reveal">
+        <div class="faq-item"><button class="faq-q"><span>What does ATS-friendly mean?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>An ATS-friendly CV uses a clear structure, readable formatting and job-relevant keywords so recruitment systems can process it reliably.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Can you improve my existing CV instead of starting from scratch?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. Your existing CV can be used as a starting point, then restructured and rewritten based on your target roles and experience.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Do you work with professionals outside Kuwait?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. The services are positioned for professionals across GCC markets as well as India.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Can I request revisions?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. Revision availability depends on the package you choose, with higher packages including additional review rounds.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="contact">
+    <div class="cta reveal"><div><h2>Ready to strengthen your career profile?</h2><p>Send your current CV for an initial review and find the right service for your next move in Kuwait or the GCC.</p></div><button class="btn btn-white" data-open-consultation>Book a Free Consultation →</button></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark">B</span><span><span class="brand-text">BrandMyProfile</span><span class="brand-country" style="color:#7886a5">KUWAIT</span></span></a><p>Expert CV writing, LinkedIn makeovers and career guidance tailored for professionals across the GCC and India.</p><div class="socials"><a class="social" href="#">in</a><a class="social" href="#">ig</a><a class="social" href="#">f</a></div></div>
+      <div class="footer-col"><h4>Services</h4><a href="#services">CV Writing</a><a href="#services">LinkedIn Makeover</a><a href="#services">Masterclass</a><a href="#services">Career Guidance</a></div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="#pricing">Pricing</a><a href="#jobs">Jobs</a><a href="#success">Success Stories</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+      <div class="footer-col"><h4>Contact Us</h4><span>hello@brandprofile-demo.com</span><span>+965 5000 0000</span><span>Kuwait City — Demo Office</span><div class="regions"><span class="region">🇦🇪 UAE</span><span class="region">🇸🇦 KSA</span><span class="region">🇶🇦 Qatar</span><span class="region">🇰🇼 Kuwait</span><span class="region">🇮🇳 India</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> BrandMyProfile. All rights reserved.</span><span>Demo contact details · Privacy Policy · Terms of Service</span></div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="#contact" aria-label="Contact us" title="Demo contact">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20l.9-4.6A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.4 8.2c.2-.5.5-.5.8-.5h.4c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.1.4 0 .6.5.9 1.3 1.6 2.2 2 .3.1.5.1.7-.1l.8-1c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.1-.5 1.5-.4.4-1.1.8-1.9.8-1.4 0-3.4-.7-5.2-2.4-1.5-1.4-2.8-3.5-2.8-5 0-.7.2-1.2.4-1.6Z"/></svg>
+</a>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<div class="modal" id="consultationModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <h3>Book a Free Consultation</h3>
+    <p>Tell us what you need and we’ll help you choose the right career service.</p>
+    <form id="consultationForm" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="fullName">Full Name *</label><input id="fullName" type="text" placeholder="Your name"><div class="error-msg">Please enter your name.</div></div>
+        <div class="field"><label for="phone">Phone / WhatsApp *</label><input id="phone" type="tel" placeholder="+965 5000 0000"><div class="error-msg">Please enter a valid phone number.</div></div>
+        <div class="field"><label for="email">Email *</label><input id="email" type="email" placeholder="name@email.com"><div class="error-msg">Please enter a valid email.</div></div>
+        <div class="field"><label for="service">Service *</label><select id="service"><option value="">Choose a service</option><option>CV Writing</option><option>LinkedIn Makeover</option><option>CV + LinkedIn</option><option>Career Guidance</option><option>Masterclass</option><option>Basic – 4 KWD</option><option>Pro – 7 KWD</option><option>Executive – 10 KWD</option></select><div class="error-msg">Please choose a service.</div></div>
+        <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your target role or what you want to improve..."></textarea></div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Submit Request</button>
+      <div class="form-success" id="formSuccess">Thank you. Your request has been received.</div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    document.body.classList.toggle('menu-open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded','false');
+  }));
+
+  const modal = document.getElementById('consultationModal');
+  const closeModal = () => {modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('menu-open')};
+  const openModal = () => {modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('menu-open')};
+  document.querySelectorAll('[data-open-consultation]').forEach(btn => btn.addEventListener('click', () => {mobileMenu.classList.remove('open'); openModal()}));
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {if(e.target === modal) closeModal()});
+  document.addEventListener('keydown', e => {if(e.key === 'Escape') closeModal()});
+
+  document.querySelectorAll('.select-plan').forEach(btn => btn.addEventListener('click', () => {
+    document.getElementById('service').value = btn.dataset.plan;
+    openModal();
+  }));
+
+  document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null});
+    if(!wasOpen){item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'}
+  }));
+
+  const testimonials = [
+    {text:'“The new CV was much clearer and more focused. It helped me present my experience in a way that made more sense for GCC roles.”',name:'Ahmed M.',role:'Finance Professional — Kuwait'},
+    {text:'“The LinkedIn makeover gave my profile a more professional structure and made it easier to explain my strengths to recruiters.”',name:'Sara K.',role:'Marketing Professional — Kuwait'},
+    {text:'“I liked that the service focused on my actual achievements instead of using generic wording. The result felt much more personal.”',name:'Omar R.',role:'Operations Professional — GCC'}
+  ];
+  let quoteIndex = 0;
+  function renderQuote(){const q=testimonials[quoteIndex];document.getElementById('quoteText').textContent=q.text;document.getElementById('quoteName').textContent=q.name;document.getElementById('quoteRole').textContent=q.role}
+  document.getElementById('prevQuote').addEventListener('click',()=>{quoteIndex=(quoteIndex-1+testimonials.length)%testimonials.length;renderQuote()});
+  document.getElementById('nextQuote').addEventListener('click',()=>{quoteIndex=(quoteIndex+1)%testimonials.length;renderQuote()});
+
+  const form = document.getElementById('consultationForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    const rules = [
+      ['fullName', v => v.trim().length >= 2],
+      ['phone', v => v.replace(/\D/g,'').length >= 7],
+      ['email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)],
+      ['service', v => v.trim() !== '']
+    ];
+    rules.forEach(([id, fn]) => {const el=document.getElementById(id);const field=el.closest('.field');const ok=fn(el.value);field.classList.toggle('error',!ok);if(!ok) valid=false});
+    if(valid){document.getElementById('formSuccess').classList.add('show');setTimeout(()=>{form.reset();document.getElementById('formSuccess').classList.remove('show')},2600)}
+  });
+  form.querySelectorAll('input,select').forEach(el => el.addEventListener('input',()=>el.closest('.field').classList.remove('error')));
+
+  const revealObs = new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');revealObs.unobserve(entry.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const navLinks = [...document.querySelectorAll('#desktopNav a')];
+  const navObs = new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))}}),{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  sections.forEach(s=>navObs.observe(s));
+
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll',()=>backTop.classList.toggle('show',window.scrollY>650));
+  backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
