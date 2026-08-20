@@ -3,847 +3,443 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>كريم محمود | Graphic Designer Portfolio</title>
-  <meta name="description" content="بورتفوليو كريم محمود، مصمم جرافيك متخصص في الهوية البصرية، السوشيال ميديا، التغليف، والإعلانات الرقمية." />
-
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem("karimPortfolioTheme");
-      const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", savedTheme || preferredTheme);
-    })();
-  </script>
-
+  <meta name="theme-color" content="#111111" />
+  <title>Karim Mansour — Graphic Designer</title>
+  <meta name="description" content="Portfolio of Karim Mansour — Graphic Designer & Visual Identity Specialist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #060816;
-      --surface: #10162d;
-      --surface-2: #151d3a;
-      --primary: #7c3aed;
-      --secondary: #2563eb;
-      --accent: #22c55e;
-      --text: #f8fafc;
-      --muted: #aab3c5;
-      --soft: #dbeafe;
-      --border: rgba(255,255,255,.12);
-      --glass: rgba(255,255,255,.07);
-      --shadow: 0 30px 90px rgba(0,0,0,.42);
-      --radius: 28px;
-      --container: min(1180px, 92%);
-      --transition: 260ms ease;
+    :root{
+      --bg:#f4f1ea;
+      --paper:#fbfaf6;
+      --ink:#111111;
+      --muted:#6b685f;
+      --line:rgba(17,17,17,.14);
+      --accent:#2557ff;
+      --accent-soft:#dfe7ff;
+      --radius:24px;
+      --shadow:0 24px 60px rgba(17,17,17,.08);
+      --max:1240px;
     }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic',sans-serif;line-height:1.75;overflow-x:hidden}
+    body.no-scroll{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    .en{font-family:'Manrope',sans-serif;letter-spacing:-.02em}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+    .section{padding:118px 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:64px;align-items:end;margin-bottom:54px}
+    .section-head h2{margin:12px 0 0;font-size:clamp(38px,5vw,74px);line-height:1.05;letter-spacing:-.055em;font-family:'Manrope',sans-serif}
+    .section-head p{margin:0;color:var(--muted);max-width:650px;font-size:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--ink);padding:14px 18px;border-radius:999px;font-weight:700;background:transparent;transition:.25s ease}
+    .btn:hover{transform:translateY(-2px);background:var(--ink);color:white}
+    .btn.primary{background:var(--ink);color:#fff}.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+    .btn.ghost{border-color:var(--line)}
 
-    html[data-theme="light"] {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface-2: #eef2ff;
-      --primary: #6d28d9;
-      --secondary: #2563eb;
-      --accent: #16a34a;
-      --text: #0f172a;
-      --muted: #475569;
-      --soft: #1e293b;
-      --border: rgba(15,23,42,.12);
-      --glass: rgba(255,255,255,.72);
-      --shadow: 0 24px 70px rgba(15,23,42,.12);
-    }
+    /* NAV */
+    .nav-wrap{position:fixed;inset:18px 0 auto;z-index:50;pointer-events:none}
+    nav{pointer-events:auto;width:min(var(--max),calc(100% - 40px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 18px;border:1px solid rgba(17,17,17,.12);border-radius:999px;background:rgba(251,250,246,.78);backdrop-filter:blur(16px);box-shadow:0 10px 30px rgba(17,17,17,.05)}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-family:'Manrope',sans-serif}
+    .brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-size:12px}
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:600}
+    .nav-links a{position:relative}.nav-links a::after{content:"";position:absolute;right:0;bottom:-5px;width:0;height:1px;background:var(--ink);transition:.2s}.nav-links a:hover::after{width:100%}
+    .menu-btn{display:none;border:0;background:none;width:42px;height:42px;border-radius:50%}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      direction: rtl;
-      text-align: right;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 82% 0%, rgba(124,58,237,.24), transparent 34%),
-        radial-gradient(circle at 10% 18%, rgba(37,99,235,.20), transparent 30%),
-        radial-gradient(circle at 70% 85%, rgba(34,197,94,.12), transparent 30%),
-        var(--bg);
-      line-height: 1.8;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, input, select, textarea { font-family: inherit; }
-    .container { width: var(--container); margin: auto; }
-    .section { padding: 96px 0; position: relative; }
-    .section-head { max-width: 780px; margin-bottom: 44px; }
-    h1, h2, h3 { line-height: 1.2; letter-spacing: -.03em; }
-    h1 { font-size: clamp(42px, 7vw, 84px); }
-    h2 { font-size: clamp(32px, 5vw, 58px); }
-    h3 { font-size: 24px; }
-    p { color: var(--muted); }
-    .lead { color: var(--soft); font-size: 18px; max-width: 760px; }
-    .gradient-text {
-      background: linear-gradient(135deg, #fff 0%, #c4b5fd 42%, #60a5fa 72%, #86efac 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    html[data-theme="light"] .gradient-text {
-      background: linear-gradient(135deg, #111827 0%, #6d28d9 42%, #2563eb 72%, #16a34a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(124,58,237,.38);
-      background: rgba(124,58,237,.13);
-      color: #ddd6fe;
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 18px var(--accent);
-    }
-    html[data-theme="light"] .eyebrow { color: #5b21b6; background: rgba(124,58,237,.08); }
+    /* HERO */
+    .hero{min-height:100svh;padding:150px 0 64px;display:flex;align-items:flex-end}
+    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:44px;align-items:end;width:100%}
+    .hero-copy{padding-bottom:18px}
+    .hero h1{margin:18px 0 26px;font-family:'Manrope',sans-serif;font-size:clamp(58px,8.3vw,132px);line-height:.88;letter-spacing:-.07em;font-weight:800}
+    .hero h1 .accent{color:var(--accent)}
+    .hero-sub{display:flex;gap:28px;align-items:flex-start;max-width:760px;color:var(--muted);font-size:18px}
+    .hero-sub strong{color:var(--ink)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .hero-visual{position:relative;aspect-ratio:.82;border-radius:32px;overflow:hidden;background:#ddd;box-shadow:var(--shadow)}
+    .hero-visual img{filter:saturate(.82) contrast(.97)}
+    .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.55),transparent 55%)}
+    .hero-badge{position:absolute;bottom:22px;left:22px;right:22px;z-index:2;color:white;display:flex;align-items:end;justify-content:space-between;gap:12px}
+    .hero-badge strong{font-size:24px;line-height:1.25}.hero-badge span{font-size:12px;opacity:.75}
+    .availability{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.9);padding:10px 13px;border-radius:999px;font-size:12px;font-weight:700;z-index:2;display:flex;gap:8px;align-items:center;color:#111}
+    .availability::before{content:"";width:8px;height:8px;border-radius:50%;background:#20b15a;box-shadow:0 0 0 5px rgba(32,177,90,.12)}
 
-    .btn {
-      min-height: 54px;
-      padding: 0 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-weight: 900;
-      cursor: pointer;
-      transition: var(--transition);
-      gap: 10px;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff;
-      border-color: transparent;
-      box-shadow: 0 20px 50px rgba(124,58,237,.34);
-    }
-    .btn-secondary { background: rgba(255,255,255,.06); color: var(--soft); backdrop-filter: blur(16px); }
-    .btn:hover { transform: translateY(-3px); }
-    .glass {
-      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-    html[data-theme="light"] .glass { background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,255,255,.58)); }
+    /* MARQUEE */
+    .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--paper)}
+    .marquee-track{display:flex;width:max-content;gap:44px;padding:18px 0;animation:marquee 24s linear infinite;font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase}
+    .marquee-track span{display:flex;align-items:center;gap:44px}.marquee-track span::after{content:"✦";color:var(--accent)}
+    @keyframes marquee{to{transform:translateX(50%)}}
 
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(6,8,22,.78);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-    }
-    html[data-theme="light"] .navbar { background: rgba(255,255,255,.82); }
-    .nav-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .logo { display: flex; align-items: center; gap: 12px; font-weight: 900; }
-    .logo-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      direction: ltr;
-      background: conic-gradient(from 180deg, var(--primary), var(--secondary), var(--accent), var(--primary));
-      color: #fff;
-      box-shadow: 0 16px 36px rgba(124,58,237,.28);
-    }
-    .nav-links { display: none; align-items: center; gap: 22px; color: var(--muted); font-size: 14px; font-weight: 800; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-    .nav-cta { display: none; }
-    .theme-toggle {
-      min-width: 46px;
-      height: 46px;
-      padding: 0 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,.07);
-      color: var(--soft);
-      cursor: pointer;
-      font-weight: 900;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: var(--transition);
-    }
-    .theme-toggle:hover { transform: translateY(-2px); }
-    .theme-toggle-text { display: none; font-size: 13px; }
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start}
+    .about-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:34px;position:sticky;top:110px}
+    .about-card h3{font-size:29px;margin:0 0 10px}.about-card p{color:var(--muted);margin:0 0 26px}
+    .quick-list{display:grid;gap:0;border-top:1px solid var(--line)}
+    .quick-row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px}.quick-row span:first-child{color:var(--muted)}
+    .about-copy h2{font-size:clamp(42px,5.8vw,86px);line-height:1.1;margin:0 0 30px;letter-spacing:-.04em}
+    .about-copy p{font-size:19px;color:var(--muted);max-width:760px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .stat{padding:24px 8px 24px 0;border-left:1px solid var(--line)}.stat:last-child{border-left:0}.stat b{font-family:'Manrope';font-size:42px;display:block;letter-spacing:-.05em}.stat span{color:var(--muted);font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{padding:9px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;background:rgba(255,255,255,.35)}
 
-    .hero {
-      min-height: calc(100vh - 78px);
-      display: grid;
-      align-items: center;
-      padding: 92px 0 74px;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 76px 76px;
-      mask-image: radial-gradient(circle at center, #000, transparent 74%);
-      pointer-events: none;
-    }
-    .hero-grid { position: relative; z-index: 2; display: grid; gap: 46px; align-items: center; }
-    .hero-title { margin-bottom: 22px; max-width: 920px; }
-    .hero-desc { margin-bottom: 32px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; max-width: 720px; }
-    .hero-tags span {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--border);
-      color: var(--soft);
-      font-size: 14px;
-      font-weight: 800;
-    }
+    /* SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .service{min-height:310px;border:1px solid var(--line);background:var(--paper);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-index{font-family:'Manrope';font-size:12px;color:var(--muted)}
+    .service-icon{width:48px;height:48px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;font-size:20px}
+    .service h3{font-size:24px;margin:0 0 8px}.service p{margin:0;color:var(--muted);font-size:14px}
 
-    .profile-board { padding: 18px; position: relative; overflow: hidden; transform: rotate(-1deg); }
-    .profile-grid { display: grid; grid-template-columns: 1fr .82fr; gap: 14px; position: relative; z-index: 2; }
-    .photo-card { border-radius: 24px; overflow: hidden; border: 1px solid var(--border); position: relative; background: var(--surface); min-height: 210px; }
-    .photo-card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-    .photo-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.68)); }
-    .profile-main { min-height: 430px; }
-    .profile-name {
-      position: absolute;
-      z-index: 3;
-      right: 24px;
-      bottom: 24px;
-      left: 24px;
-    }
-    .profile-name h2 { font-size: 42px; color: #fff; margin-bottom: 4px; }
-    .profile-name p { color: rgba(255,255,255,.82); }
-    .floating-label {
-      position: absolute;
-      z-index: 4;
-      right: 28px;
-      top: 28px;
-      padding: 13px 16px;
-      border-radius: 999px;
-      background: rgba(5,8,22,.74);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-      color: #fff;
-      font-weight: 900;
-    }
+    /* WORK */
+    .work-section{padding:82px 0;border-top:1px solid var(--line)}
+    .work-header{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+    .work-header h3{font-family:'Manrope';font-size:clamp(34px,5vw,64px);margin:0;letter-spacing:-.05em;line-height:1}.work-header span{font-size:13px;color:var(--muted)}
+    .projects{display:grid;gap:36px}
+    .project{display:grid;grid-template-columns:1.28fr .72fr;gap:28px;padding:26px;background:var(--paper);border:1px solid var(--line);border-radius:30px}
+    .slider{position:relative;overflow:hidden;border-radius:22px;aspect-ratio:1.38;background:#e7e2d7}
+    .slides{display:flex;height:100%;direction:ltr;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+    .slide{min-width:100%;height:100%;position:relative;overflow:hidden}
+    .slide img{transition:transform .7s ease}.project:hover .slide.active img{transform:scale(1.02)}
+    .slide-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:24px;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 50%);color:white}.slide-overlay small{font-size:12px;opacity:.8}
+    .slider-controls{position:absolute;left:16px;bottom:16px;z-index:3;display:flex;gap:8px;direction:ltr}
+    .slider-btn{border:0;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:18px;transition:.2s}.slider-btn:hover{background:#fff;transform:scale(1.05)}
+    .dots{position:absolute;right:16px;bottom:18px;z-index:3;display:flex;gap:6px}.dot{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.55);transition:.25s}.dot.active{width:22px;background:#fff}
+    .project-info{display:flex;flex-direction:column;justify-content:space-between;padding:4px 4px 4px 0}
+    .project-topline{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px;text-transform:uppercase;font-family:'Manrope'}
+    .project-info h4{font-family:'Manrope';font-size:clamp(34px,3vw,52px);line-height:1;margin:18px 0;letter-spacing:-.05em}
+    .project-info p{margin:0;color:var(--muted)}
+    .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.project-tags span{font-size:11px;padding:7px 10px;border:1px solid var(--line);border-radius:999px}
+    .case-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-weight:700;font-size:13px}.case-link b{font-size:18px;transition:.2s}.case-link:hover b{transform:translateX(-4px)}
 
-    .about-grid, .contact-grid { display: grid; gap: 28px; align-items: start; }
-    .about-card, .contact-copy { padding: 34px; }
-    .about-card p + p { margin-top: 16px; }
-    .about-image { min-height: 520px; overflow: hidden; position: relative; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-    .about-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(0,0,0,.55)); }
-    .about-caption {
-      position: absolute;
-      z-index: 2;
-      right: 24px;
-      left: 24px;
-      bottom: 24px;
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(0,0,0,.42);
-      color: #fff;
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,.15);
-    }
-    .about-stats { display: grid; gap: 16px; margin-top: 28px; }
-    .stat-box { padding: 22px; border-radius: 22px; background: rgba(255,255,255,.055); border: 1px solid var(--border); }
-    .stat-box strong { display: block; font-size: 38px; color: var(--accent); line-height: 1; direction: ltr; text-align: right; margin-bottom: 8px; }
+    /* EXPERIENCE */
+    .experience{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px}.experience-intro{position:sticky;top:120px;height:max-content}.experience-intro h2{font-family:'Manrope';font-size:58px;line-height:1;letter-spacing:-.05em;margin:12px 0 18px}.experience-intro p{color:var(--muted)}
+    .timeline{border-top:1px solid var(--line)}.job{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}.job .year{font-family:'Manrope';color:var(--muted);font-size:13px}.job h3{margin:0 0 6px;font-size:24px}.job h4{margin:0 0 10px;color:var(--accent);font-size:14px}.job p{margin:0;color:var(--muted)}
 
-    .services-grid, .process-grid, .testimonials-grid { display: grid; gap: 18px; }
-    .service-card, .process-card, .testimonial, .faq-item, .project-showcase, .brand-card {
-      background: rgba(255,255,255,.052);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: var(--transition);
-    }
-    html[data-theme="light"] .service-card,
-    html[data-theme="light"] .process-card,
-    html[data-theme="light"] .testimonial,
-    html[data-theme="light"] .faq-item,
-    html[data-theme="light"] .project-showcase,
-    html[data-theme="light"] .brand-card,
-    html[data-theme="light"] .hero-tags span { background: rgba(255,255,255,.72); }
-    .service-card { padding: 28px; min-height: 250px; position: relative; overflow: hidden; }
-    .service-card:hover, .process-card:hover, .project-showcase:hover, .brand-card:hover { transform: translateY(-7px); border-color: rgba(124,58,237,.48); }
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: rgba(37,99,235,.16);
-      color: #93c5fd;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    .service-card h3, .process-card h3 { margin-bottom: 12px; }
+    /* CLIENTS & TESTIMONIALS */
+    .clients{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-right:1px solid var(--line)}
+    .client{min-height:120px;display:grid;place-items:center;border-left:1px solid var(--line);border-bottom:1px solid var(--line);font-family:'Manrope';font-size:16px;font-weight:800;letter-spacing:-.03em;text-align:center;padding:16px;background:rgba(255,255,255,.14)}
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}.quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px}.quote p{font-size:17px;margin:0 0 28px}.person{display:flex;align-items:center;gap:12px}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);font-family:'Manrope';font-weight:800;color:var(--accent)}.person strong{display:block;font-size:13px}.person span{color:var(--muted);font-size:12px}
 
-    .featured-grid { display: grid; gap: 22px; }
-    .project-showcase { overflow: hidden; background: var(--surface); }
-    .project-thumb { min-height: 380px; position: relative; overflow: hidden; }
-    .project-thumb img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: 400ms ease; }
-    .project-showcase:hover .project-thumb img { transform: scale(1.06); }
-    .project-thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,.78)); }
-    .project-thumb h3 { position: absolute; z-index: 2; right: 26px; left: 26px; bottom: 26px; font-size: 36px; color: #fff; max-width: 520px; }
-    .project-info { padding: 26px; }
-    .project-info span, .gallery-info span { color: var(--accent); font-weight: 900; font-size: 14px; }
-    .project-info h3 { margin: 10px 0; font-size: 28px; }
+    /* CONTACT */
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.contact-copy h2{font-family:'Manrope';font-size:clamp(52px,7vw,100px);line-height:.95;letter-spacing:-.06em;margin:12px 0 24px}.contact-copy p{font-size:18px;color:var(--muted);max-width:520px}.contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+    .contact-form{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:28px}.field{display:grid;gap:8px;margin-bottom:16px}.field label{font-size:12px;font-weight:700}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;outline:none;transition:.2s}.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(37,87,255,.08)}.field textarea{min-height:140px;resize:vertical}
+    footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
 
-    .gallery-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
-    .filter-btn {
-      padding: 11px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      color: var(--soft);
-      font-weight: 900;
-      cursor: pointer;
-      transition: var(--transition);
+    /* CV MODAL */
+    .modal{position:fixed;inset:0;z-index:80;background:rgba(17,17,17,.56);backdrop-filter:blur(8px);display:none;padding:22px;overflow:auto}.modal.open{display:grid;place-items:center}.cv{width:min(900px,100%);background:#fff;color:#111;border-radius:26px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.25)}.cv-head{display:flex;align-items:start;justify-content:space-between;gap:20px;padding:28px;border-bottom:1px solid #ddd}.cv-head h2{font-family:'Manrope';font-size:38px;letter-spacing:-.04em;margin:0}.cv-actions{display:flex;gap:8px}.icon-btn{border:1px solid #ddd;background:#fff;border-radius:999px;padding:10px 14px;font-size:12px;font-weight:700}.cv-body{padding:30px;display:grid;grid-template-columns:.75fr 1.25fr;gap:34px}.cv-block{margin-bottom:26px}.cv-block h3{font-family:'Manrope';font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;color:#555}.cv-block p,.cv-block li{font-size:13px;color:#333}.cv-block ul{margin:0;padding-right:18px}.cv-item{padding:12px 0;border-bottom:1px solid #eee}.cv-item:last-child{border:0}.cv-item strong{display:block;font-size:14px}.cv-item span{font-size:12px;color:#666}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+
+    @media (max-width: 980px){
+      .section{padding:86px 0}.section-head{grid-template-columns:1fr;gap:24px}.hero{min-height:auto;padding-top:130px}.hero-grid{grid-template-columns:1fr}.hero-visual{aspect-ratio:1.15}.about-grid,.experience,.contact-wrap{grid-template-columns:1fr;gap:42px}.about-card,.experience-intro{position:static}.services-grid{grid-template-columns:repeat(2,1fr)}.project{grid-template-columns:1fr}.project-info{padding-top:6px}.clients{grid-template-columns:repeat(3,1fr)}.testimonials{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:block}.nav-links.open{display:flex;position:absolute;top:64px;right:20px;left:20px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}
     }
-    .filter-btn.active, .filter-btn:hover { background: linear-gradient(135deg, var(--primary), var(--secondary)); border-color: transparent; color: #fff; }
-    .masonry { columns: 1; column-gap: 18px; }
-    .gallery-item { break-inside: avoid; margin-bottom: 18px; border-radius: 26px; overflow: hidden; background: var(--surface); border: 1px solid var(--border); transition: var(--transition); cursor: pointer; }
-    .gallery-item.hide { display: none; }
-    .gallery-item:hover { transform: translateY(-6px); border-color: rgba(124,58,237,.45); }
-    .gallery-art { min-height: 280px; position: relative; overflow: hidden; }
-    .gallery-art.tall { min-height: 410px; }
-    .gallery-art.short { min-height: 230px; }
-    .gallery-art img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: 400ms ease; }
-    .gallery-item:hover img { transform: scale(1.06); }
-    .gallery-info { padding: 20px; }
-    .gallery-info h3 { font-size: 22px; margin-top: 6px; }
+    @media (max-width: 640px){
+      .container{width:min(100% - 24px,var(--max))}.nav-wrap nav{width:calc(100% - 24px)}.hero{padding-top:118px}.hero h1{font-size:clamp(54px,18vw,92px)}.hero-sub{flex-direction:column;gap:10px}.hero-visual{aspect-ratio:.86}.services-grid{grid-template-columns:1fr}.service{min-height:230px}.project{padding:12px;border-radius:22px}.slider{aspect-ratio:.92;border-radius:16px}.project-info{padding:10px 4px 8px}.stats{grid-template-columns:1fr}.stat{border-left:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.clients{grid-template-columns:repeat(2,1fr)}.job{grid-template-columns:1fr;gap:8px}.cv-body{grid-template-columns:1fr}.cv-head{flex-direction:column}.footer-row{flex-direction:column;align-items:flex-start}.section-head h2{font-size:42px}.work-header{align-items:flex-start;flex-direction:column}.contact-copy h2{font-size:58px}}
 
-    .brands-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .brand-card { min-height: 120px; display: grid; place-items: center; padding: 20px; color: var(--soft); font-size: 22px; font-weight: 900; text-align: center; }
-    .process-card { padding: 28px; counter-increment: step; }
-    .process-grid { counter-reset: step; }
-    .process-card::before {
-      content: "0" counter(step);
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff;
-      font-weight: 900;
-      direction: ltr;
-      margin-bottom: 20px;
-    }
-    .testimonial { padding: 30px; }
-    .testimonial p { font-size: 18px; color: var(--soft); margin-bottom: 22px; }
-    .testimonial strong { display: block; color: var(--text); }
-    .testimonial span { color: var(--muted); font-size: 14px; }
-
-    .faq-list { max-width: 900px; display: grid; gap: 14px; }
-    .faq-item { overflow: hidden; }
-    .faq-question {
-      width: 100%;
-      padding: 22px;
-      border: 0;
-      background: transparent;
-      color: var(--text);
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      text-align: right;
-      cursor: pointer;
-      font-size: 17px;
-      font-weight: 900;
-    }
-    .faq-question span { color: var(--accent); font-size: 22px; line-height: 1; }
-    .faq-answer { max-height: 0; overflow: hidden; color: var(--muted); padding: 0 22px; transition: 300ms ease; }
-    .faq-item.active .faq-answer { max-height: 240px; padding: 0 22px 22px; }
-
-    .contact-points { display: grid; gap: 12px; margin-top: 24px; }
-    .contact-points div { padding: 15px; border-radius: 18px; background: rgba(255,255,255,.052); border: 1px solid var(--border); color: var(--soft); }
-    form { padding: 28px; display: grid; gap: 15px; }
-    .form-group { display: grid; gap: 8px; }
-    label { color: var(--soft); font-size: 14px; font-weight: 900; }
-    input, select, textarea {
-      width: 100%;
-      padding: 15px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(5,8,22,.68);
-      color: #fff;
-      outline: none;
-      font-size: 15px;
-      direction: rtl;
-      text-align: right;
-      transition: var(--transition);
-    }
-    html[data-theme="light"] input,
-    html[data-theme="light"] select,
-    html[data-theme="light"] textarea { background: rgba(255,255,255,.88); color: var(--text); }
-    textarea { min-height: 140px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { border-color: rgba(124,58,237,.72); box-shadow: 0 0 0 4px rgba(124,58,237,.13); }
-    .submit-btn {
-      min-height: 56px;
-      border: 0;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), #86efac);
-      color: #04110a;
-      font-weight: 900;
-      font-size: 16px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(34,197,94,.25); }
-    .footer { padding: 36px 0; text-align: center; color: var(--muted); border-top: 1px solid var(--border); background: rgba(0,0,0,.22); }
-
-    .lightbox { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.82); display: none; align-items: center; justify-content: center; padding: 22px; backdrop-filter: blur(14px); }
-    .lightbox.active { display: flex; }
-    .lightbox-content { width: min(900px, 100%); border-radius: 30px; overflow: hidden; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); position: relative; }
-    .lightbox-art { min-height: 480px; position: relative; overflow: hidden; }
-    .lightbox-art img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-    .lightbox-info { padding: 24px; }
-    .lightbox-close { position: absolute; top: 16px; left: 16px; z-index: 3; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border); background: rgba(5,8,22,.76); color: #fff; font-size: 24px; cursor: pointer; }
-
-    .reveal { opacity: 0; transform: translateY(28px); transition: 750ms ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (min-width: 700px) {
-      .nav-links, .nav-cta { display: flex; }
-      .theme-toggle-text { display: inline; }
-      .hero-grid { grid-template-columns: 1fr .95fr; }
-      .about-grid { grid-template-columns: 1fr .85fr; }
-      .about-stats { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: repeat(3, 1fr); }
-      .featured-grid { grid-template-columns: repeat(3, 1fr); }
-      .project-showcase:first-child { grid-column: span 2; }
-      .masonry { columns: 3; }
-      .brands-grid { grid-template-columns: repeat(4, 1fr); }
-      .process-grid { grid-template-columns: repeat(4, 1fr); }
-      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
-      .contact-grid { grid-template-columns: .9fr 1.1fr; }
-    }
-    @media (max-width: 620px) {
-      .section { padding: 72px 0; }
-      .hero { padding: 78px 0 64px; }
-      .hero-actions .btn { width: 100%; }
-      .profile-grid { grid-template-columns: 1fr; }
-      .profile-board { transform: none; }
-      .profile-main { min-height: 360px; }
-      .about-card, .contact-copy, form { padding: 22px; }
-      .project-thumb { min-height: 310px; }
+    @media print{
+      body *{visibility:hidden!important}
+      .modal,.modal *{visibility:visible!important}
+      .modal{position:static!important;background:#fff!important;display:block!important;padding:0!important}
+      .cv{width:100%!important;border-radius:0!important;box-shadow:none!important}
+      .cv-actions{display:none!important}
     }
   </style>
 </head>
-
 <body>
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="logo" aria-label="العودة إلى بداية الصفحة">
-        <span class="logo-mark">KM</span>
-        <span>كريم محمود</span>
-      </a>
-
-      <nav class="nav-links" aria-label="القائمة الرئيسية">
-        <a href="#about">نبذة</a>
-        <a href="#services">الخدمات</a>
-        <a href="#projects">المشاريع</a>
-        <a href="#gallery">المعرض</a>
-        <a href="#contact">تواصل</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="تبديل الوضع الليلي والنهاري">
-          <span id="themeToggleIcon">☀️</span>
-          <span class="theme-toggle-text" id="themeToggleText">الوضع النهاري</span>
-        </button>
-        <a href="#contact" class="btn btn-primary nav-cta">احجز مشروعك</a>
+  <div class="nav-wrap">
+    <nav>
+      <a class="brand" href="#top"><span class="brand-mark">KM</span><span>Karim Mansour</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">عنّي</a><a href="#work">الأعمال</a><a href="#experience">الخبرة</a><a href="#clients">العملاء</a><a href="#contact">تواصل</a>
       </div>
-    </div>
-  </header>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+    </nav>
+  </div>
 
-  <main>
-    <section class="hero" id="home">
+  <main id="top">
+    <section class="hero">
       <div class="container hero-grid">
-        <div class="reveal">
-          <div class="eyebrow">Graphic Designer & Brand Identity Designer</div>
-          <h1 class="hero-title">
-            أنا كريم محمود، أصمم هويات وإعلانات
-            <span class="gradient-text">تبيع الفكرة قبل المنتج.</span>
-          </h1>
-          <p class="lead hero-desc">
-            أعمل مع أصحاب المشاريع، المتاجر، والبراندات الناشئة لبناء شكل بصري واضح واحترافي: هوية، سوشيال ميديا، تغليف، وإعلانات جاهزة للاستخدام على المنصات الرقمية والطباعة.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">شاهد أعمالي</a>
-            <a href="#contact" class="btn btn-secondary">اطلب عرض سعر</a>
+        <div class="hero-copy reveal">
+          <span class="eyebrow en">Independent Graphic Designer — Cairo</span>
+          <h1 class="en">Design with<br><span class="accent">clarity.</span><br>Built to last.</h1>
+          <div class="hero-sub">
+            <strong>مصمم جرافيك متخصص في بناء الهويات البصرية والحملات والعبوات.</strong>
+            <span>أحوّل الأفكار إلى أنظمة بصرية متماسكة تساعد العلامات على الظهور بثقة، من أول شعار وحتى كل نقطة تواصل مع الجمهور.</span>
           </div>
-          <div class="hero-tags">
-            <span>Brand Identity</span>
-            <span>Social Media Design</span>
-            <span>Packaging</span>
-            <span>Ads Design</span>
-            <span>Print Design</span>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">استكشف الأعمال <span>↙</span></a>
+            <button class="btn" data-open-cv>عرض الـ CV</button>
           </div>
         </div>
-
-        <aside class="profile-board glass reveal">
-          <div class="floating-label">متاح لمشاريع جديدة</div>
-          <div class="profile-grid">
-            <div class="photo-card profile-main">
-              <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=85" alt="مكتب مصمم جرافيك" />
-              <div class="profile-name">
-                <h2>كريم محمود</h2>
-                <p>مصمم جرافيك متخصص في بناء الهويات والتصميمات التسويقية.</p>
-              </div>
-            </div>
-            <div style="display:grid; gap:14px;">
-              <div class="photo-card">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="تصميم واجهات ومواقع" />
-              </div>
-              <div class="photo-card">
-                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=700&q=85" alt="تصميم بصري وهندسي" />
-              </div>
-            </div>
-          </div>
-        </aside>
+        <div class="hero-visual reveal">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1400&q=88" alt="مساحة عمل مصمم جرافيك" loading="eager">
+          <div class="availability">متاح لمشاريع مختارة — Q4 2026</div>
+          <div class="hero-badge"><strong class="en">Selected work<br>2022—2026</strong><span>Brand / Campaign / Packaging</span></div>
+        </div>
       </div>
     </section>
 
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Brand Identity</span><span>Art Direction</span><span>Social Campaigns</span><span>Packaging</span><span>Editorial</span><span>Print Design</span><span>Brand Identity</span><span>Art Direction</span><span>Social Campaigns</span><span>Packaging</span></div></div>
+
     <section class="section" id="about">
       <div class="container about-grid">
-        <div class="about-card glass reveal">
-          <div class="eyebrow">نبذة عني</div>
-          <h2>أتعامل مع التصميم كقرار تجاري، وليس مجرد شكل جميل.</h2>
-          <p>
-            اسمي كريم محمود، مصمم جرافيك أساعد المشاريع على الظهور بصورة أكثر ثقة وتنظيمًا. أركز على أن يكون التصميم واضحًا، جذابًا، وقابلًا للاستخدام الحقيقي في الإعلانات والمحتوى اليومي.
-          </p>
-          <p>
-            خلال آخر 4 سنوات عملت على مشاريع في المطاعم، المنتجات الطبيعية، التعليم، المتاجر الإلكترونية، والخدمات الرقمية. هدفي دائمًا أن يحصل العميل على نظام بصري يمكنه الاعتماد عليه، وليس تصميمًا منفصلًا ينتهي بعد نشره.
-          </p>
-
-          <div class="about-stats">
-            <div class="stat-box"><strong>4+</strong><p>سنوات خبرة عملية في التصميم التجاري</p></div>
-            <div class="stat-box"><strong>68+</strong><p>مشروع سوشيال ميديا وهوية بصرية</p></div>
-            <div class="stat-box"><strong>22</strong><p>براند تم تطوير شكله البصري</p></div>
-            <div class="stat-box"><strong>48h</strong><p>متوسط تسليم أول تصور للمشروع</p></div>
+        <aside class="about-card reveal">
+          <span class="eyebrow en">Profile / CV</span>
+          <h3>كريم منصور</h3>
+          <p>Graphic Designer & Visual Identity Specialist</p>
+          <div class="quick-list">
+            <div class="quick-row"><span>الموقع</span><strong>القاهرة، مصر</strong></div>
+            <div class="quick-row"><span>الخبرة</span><strong>7 سنوات</strong></div>
+            <div class="quick-row"><span>التخصص</span><strong>Branding & Art Direction</strong></div>
+            <div class="quick-row"><span>العمل</span><strong>Freelance / Remote</strong></div>
+            <div class="quick-row"><span>اللغات</span><strong>العربية / English</strong></div>
           </div>
-        </div>
-
-        <div class="about-image glass reveal">
-          <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=900&q=85" alt="اجتماع عمل لمناقشة مشروع تصميم" />
-          <div class="about-caption">
-            أبدأ كل مشروع بفهم الهدف والجمهور والمنافسين، ثم أحول ذلك إلى اتجاه بصري واضح وقابل للتنفيذ.
+          <div class="hero-actions"><button class="btn primary" data-open-cv>عرض السيرة الذاتية</button><a class="btn ghost" id="downloadCvQuick" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxODI1Cj4+CnN0cmVhbQpHYXUwRDlpTCgzJkFAWmNxRD5UJV87ZkddXTlgdUMwVVc2LywrNVBybHBdUSFVOz05Q1o1YmMscXI+LnM0MF1EODEsQ21UT1s8MUtdJSshclQ1OSg4aGNCRDM4Y15SLG5HXlEzYkQsZm8vRCJpTDUoUlslQXNiYzIiYFg1Y1E9bl9gKWYva3VFQGYiRltjImFJPVNGQWFabFMlWT9zam4kaG1bIWJfRz9lWz9uJ2xtWFBmck0pPFA6NnJfJ1QmbyJoRFRmVT4wL2xDVCFjXGBwbkg5alw5a1k/MXBvWnNfKDkkP3VmKlpEJlROTis4O0otOSFYJUJ1RVFaJDQ1bEwsIyVKSUtaZChCVDZvIUZdWkx1XFY6WmQ2MmJfXW9wMSU9UyxpTzU4V1guJzc1VTNGWiFWZDJgPHVaQFAtP3UqZVZXSU9HK2gqYkNWZjAnVDRxXCFJQ1xgT2E4Lz4mSVVbaWhFcyNiXlFLJ01TTTkqXypgZjRVTHBAVT9mLVJ0Qmg3TEAmXEokLV5bJ2JPcyhGKnQ2MnRYTUA+ZWcyK05NLFY9VksqUWRzUW1WNGlqRlo5JW5ITSIuP102PTQ+Plgnc1JKY0ldbkxdW0EyamhrcVA9Wz9oXXJmXjlzLiVXKFNQVXFZb1tZL2N0KioqYC5kQHRqL1U4YXQ+LCYnZyFZRyk3Xk0mc2M6UjNZb0QxaE1tWUFEZSY4cmtOPE8ncTdQPFsiJjtybjAkKE8hQC87ai11LyNzX29MIW9bNSpqcCRKMiY4VSQoTF04YltZWGlSLUowI2RbPWVhXmg5JCo5ZWctYW9nT0I+LF0zPCtGamlCLXVHKnVTMl5cWENFNE4uS25OKUdCSSJIWyQpMFJCNWIuOTtGTGoxIWlpIytUPl1pY042MkQ0MVJnbG8oIUghLGZkLERFQllhXERsYk4ucElwJy07alJXITVcPDFPNEA3cFVlPSg2JyxEZEVfNEtwPDJQZnFrV0NqQD5wREcvPk9ENUwsZV5YblFMcDdcLl1dVC51KjtHOTQiXUVoREwrYW5VSShaV1VDYkNmJyVTJVE3OyY6XnNeWG4+WShBY2lGN0AkVUhrSmxMND8sJFlVJlYjPmphaWJDR05ROXJdSWgnNCFDIUdmQWRKKCFVJnI0Z18uYFtaa04+SlchZnBYYi1fcmM5RWVlTVU7MDZWYy89Rzo3cjNjSWsrOFc/NkI6cUdVdXFUUE1oQUdZZ01nRz5ZY2k4Zl5TXXVnMzRwOGNocEoqNShjNGU3OjQnYTNVYXIqWCg9U2RjQz9XTC0pWiVKS0pmOGUkKVBqNE9ST15bPFU8M1BvZkFbWlpYX2xlW3EsR11CckhMXiM+PGwrW3JlLUhFUTk6USM2UzVcXD1iKUEtO0g7MTRuLl0+NDchcV9KInNlcy07ZS1JW0ZhNUZOLDJtXmxyXWwqUiNfcUtrRkFGZyZeZy1AQTpFMStIRVpjW2ZPXDU7LlVhLk9ORHEzaSFALjZqSm4hNUZUaEBYW0Y6RS5yRkFkakkya3BZUz0+J21hcC81Qjs6QDNmTzorQ0hQPlFvMyptY1A6bD5UVC9EJDNjM2xZSjwuMiFYQVtAcD9LPWY+ckQuPFdFOnJYbjh1JiZCWVFRN3BLWlRMdW4kb1Q2b0VmQlFcQSFObW5iYTVOKjZlUnI+QChAUSorSExWJC4lIigmV3FgLyxkXy0jVVszSlwzRXE/OzBrXCxKLjxHLGNjMDZZOmwnNko5Il1qPV4/NT02MDlAXjFcWkMkTSNGcitdWnFSLl9WIkhVX3NBWGI3ZDJhRyFmNGhoLzBaVl9WdF9OJzNNPk1xYEg8bEBHUGBWcCFpJk5JI2ZHdVFYcVU9YFVVbUxnUXUicEo7YEYiVSgoQConS3VNIStTaCUsITRUYVVsZUtXcjZGMW9wNGFCYjZgRWZmMyRLbSozNWZoMixOcCE0LyVHMy5HSiFuQHFtPVxLNUwoRGJyRkM9K2cyYFlkYicyOjd1cTY8b0YxKEkuW2JVV050Sz1ZVF4tZWxoayw0PXFzcENTckdMam9ZQlg0UnJJJSJXcTA9ZmVPNy1zXlRRal9UP25SRDMhQSZrM1NtdGQ9bExNJWtvUjokMEpjTXNXLkNwJEhHcDQsUmM+V29CNktQdFZSczIicGY7WGpSKk5lIz9fRlpfVUxSMF1gVFVfT2U3Q11mLHAwTzQ/Il5ePU9oRikjZldocnUwQzpzQUhKZFdRW3BNPFJeTVRIOSxHN1EjV3FqNTJwVjBSQis1cks/NytpRUstKiJ1QVVWM1VGRTtUdF9fPjZPOS4lNztNRzMwLmlIRlwpX28qLidqJFk7Xz8wbjk4Kz47XFhKIUxXQSRfNENTLkgtdG4zUSE0ZWxjKktXLGdwaEN1ZCNxcnMiZV9HXF1yck4lNVkuNH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4NTMgMDAwMDAgbiAKMDAwMDAwMDkxMiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4NDJlZjVmMDhhZmY3Y2U0ZDc0NzEzMzc1NWFhODRjZT48ODQyZWY1ZjA4YWZmN2NlNGQ3NDcxMzM3NTVhYTg0Y2U+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI4MjgKJSVFT0YK" download="Karim-Mansour-CV.pdf">تحميل CV</a></div>
+        </aside>
+        <div class="about-copy reveal">
+          <span class="eyebrow en">About Me</span>
+          <h2>أصمم هوية لها شخصية، وليس مجرد شكل جميل.</h2>
+          <p>خلال السنوات الماضية عملت مع علامات ناشئة وشركات في قطاعات الأغذية، الضيافة، العقارات، التجارة الإلكترونية والخدمات المهنية. أبدأ كل مشروع بفهم السوق والعميل، ثم أبني لغة بصرية عملية يمكنها التوسع من الشعار إلى المحتوى والحملات والمطبوعات والتغليف.</p>
+          <p>أهتم بالتفاصيل التي تبدو صغيرة لكنها تصنع فارقًا في الانطباع النهائي: نظام الخطوط، الإيقاع، المساحات، اختيار الصور، قواعد الاستخدام، وطريقة ظهور العلامة في الواقع وليس فقط على شاشة العرض.</p>
+          <div class="stats">
+            <div class="stat"><b>68+</b><span>مشروعًا مكتملًا</span></div>
+            <div class="stat"><b>14</b><span>قطاعًا مختلفًا</span></div>
+            <div class="stat"><b>9</b><span>أسواق عربية ودولية</span></div>
           </div>
+          <div class="skills"><span class="chip">Adobe Illustrator</span><span class="chip">Photoshop</span><span class="chip">InDesign</span><span class="chip">After Effects</span><span class="chip">Figma</span><span class="chip">Brand Strategy</span><span class="chip">Typography</span><span class="chip">Creative Direction</span></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="services">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">خدماتي</div>
-          <h2>خدمات تصميم مناسبة للمشاريع التي تريد شكلًا احترافيًا بسرعة ووضوح.</h2>
-          <p class="lead">كل خدمة يتم تنفيذها بناءً على هدفك التجاري، الجمهور المستهدف، وطريقة استخدام التصميم.</p>
-        </div>
-
+        <div class="section-head reveal"><div><span class="eyebrow en">Services</span><h2>What I do.</h2></div><p>خدمات مصممة لتغطية رحلة العلامة بصريًا من الفكرة الأولى وحتى التطبيق اليومي، مع نظام مرن يمكن الحفاظ عليه وتطويره بعد تسليم المشروع.</p></div>
         <div class="services-grid">
-          <article class="service-card reveal"><div class="service-icon">◆</div><h3>هوية بصرية</h3><p>شعار، ألوان، خطوط، نمط بصري، وتطبيقات أساسية تساعد البراند يظهر بشكل ثابت واحترافي.</p></article>
-          <article class="service-card reveal"><div class="service-icon">▣</div><h3>سوشيال ميديا</h3><p>تصميم بوستات، ستوري، قوالب شهرية، وحملات محتوى متناسقة مع شخصية المشروع.</p></article>
-          <article class="service-card reveal"><div class="service-icon">⬢</div><h3>تغليف ومنتجات</h3><p>تصميم عبوات وليبلز ومظهر بصري للمنتج يساعده يبان أقوى على الرف أو داخل المتجر.</p></article>
-          <article class="service-card reveal"><div class="service-icon">✦</div><h3>إعلانات ممولة</h3><p>تصميمات إعلانية مباشرة وواضحة تصلح لفيسبوك، إنستجرام، وتيك توك مع Hook قوي.</p></article>
-          <article class="service-card reveal"><div class="service-icon">◈</div><h3>واجهات بسيطة</h3><p>تصميم واجهات Landing Pages وبروفايلات رقمية بشكل نظيف وسهل للزوار.</p></article>
-          <article class="service-card reveal"><div class="service-icon">▧</div><h3>مطبوعات</h3><p>فلاير، بروشور، كارت شخصي، منيو، وبروفايل شركة جاهز للطباعة والاستخدام.</p></article>
+          <article class="service reveal"><span class="service-index en">01 / Brand</span><div class="service-icon">◐</div><div><h3>الهوية البصرية</h3><p>الشعار، الألوان، الخطوط، الأنماط، التطبيقات، ودليل استخدام متكامل.</p></div></article>
+          <article class="service reveal"><span class="service-index en">02 / Campaign</span><div class="service-icon">✦</div><div><h3>الحملات الإعلانية</h3><p>Key Visual، إعلانات السوشيال، المواد الرقمية، وتوحيد الاتجاه الإبداعي للحملة.</p></div></article>
+          <article class="service reveal"><span class="service-index en">03 / Packaging</span><div class="service-icon">◇</div><div><h3>تصميم العبوات</h3><p>تغليف منتجات يوازن بين وضوح المعلومات، شخصية العلامة وتجربة الرف.</p></div></article>
+          <article class="service reveal"><span class="service-index en">04 / Editorial</span><div class="service-icon">▤</div><div><h3>المطبوعات والتحرير</h3><p>بروفايلات الشركات، الكتالوجات، التقارير، البروشورات والمواد المطبوعة.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section" id="work">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">مشاريع مختارة</div>
-          <h2>مختارات من مشاريع نفذتها لعلامات تجارية في مجالات مختلفة.</h2>
-        </div>
+        <div class="section-head reveal"><div><span class="eyebrow en">Selected Work</span><h2>Projects, not thumbnails.</h2></div><p>كل مشروع أدناه معروض كسلسلة صور مستقلة توضح كيف تتحول الفكرة إلى نظام بصري متكامل عبر أكثر من نقطة تواصل، وليس مجرد لقطة واحدة.</p></div>
+      </div>
 
-        <div class="featured-grid">
-          <article class="project-showcase reveal">
-            <div class="project-thumb">
-              <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=85" alt="مشروع هوية بصرية" />
-              <h3>هوية بصرية لمطعم قهوة مختصة</h3>
-            </div>
-            <div class="project-info">
-              <span>Brand Identity</span>
-              <h3>نظام بصري دافئ يناسب تجربة الكافيه.</h3>
-              <p>تم تطوير الشعار، لوحة الألوان، طريقة استخدام الصور، وقوالب السوشيال ميديا لتظهر العلامة بشكل موحد.</p>
-            </div>
+      <div class="work-section"><div class="container">
+        <div class="work-header reveal"><div><span class="en">01 / Branding</span><h3>Brand Identity</h3></div><span>2 selected projects</span></div>
+        <div class="projects">
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1400&q=86" alt="هوية Noura Coffee"><div class="slide-overlay"><small>Identity system / primary composition</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=86" alt="تطبيقات هوية Noura Coffee"><div class="slide-overlay"><small>Retail touchpoints / coffee experience</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1400&q=86" alt="تجربة Noura Coffee"><div class="slide-overlay"><small>Packaging & in-store direction</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev" aria-label="السابق">←</button><button class="slider-btn next" aria-label="التالي">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Noura Coffee Roasters</span><span>2026</span></div><h4>NOURA</h4><p>إعادة بناء هوية محمصة قهوة متخصصة بطابع هادئ ودافئ، مع نظام بصري مرن للعبوات، الأكواب، القوائم والمحتوى الرقمي.</p><div class="project-tags"><span>Strategy</span><span>Identity</span><span>Packaging</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
           </article>
 
-          <article class="project-showcase reveal">
-            <div class="project-thumb">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=85" alt="تصميم حملة سوشيال ميديا" />
-              <h3>حملة إطلاق خدمة رقمية</h3>
-            </div>
-            <div class="project-info">
-              <span>Social Media</span>
-              <h3>تصميمات إعلان ومنشورات تعريفية.</h3>
-              <p>تنفيذ مجموعة تصميمات واضحة تساعد الجمهور يفهم الخدمة بسرعة ويطلب التفاصيل.</p>
-            </div>
-          </article>
-
-          <article class="project-showcase reveal">
-            <div class="project-thumb">
-              <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85" alt="تصميم تغليف منتج" />
-              <h3>تغليف منتج طبيعي</h3>
-            </div>
-            <div class="project-info">
-              <span>Packaging</span>
-              <h3>تصميم بسيط يبرز جودة المنتج.</h3>
-              <p>اختيار ألوان طبيعية ومساحات نظيفة تجعل العبوة أسهل في القراءة وأكثر ثقة.</p>
-            </div>
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=86" alt="هوية Northline"><div class="slide-overlay"><small>Corporate identity / brand system</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=86" alt="تطبيق هوية Northline"><div class="slide-overlay"><small>Internal communication & brand culture</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=86" alt="مكتب Northline"><div class="slide-overlay"><small>Environmental branding</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Northline Advisory</span><span>2025</span></div><h4>NORTHLINE</h4><p>هوية مؤسسية لشركة استشارات أعمال، بنيت على فكرة الاتجاه والوضوح مع لغة بصرية حادة ومهنية تصلح للعروض والتقارير والمساحات المكتبية.</p><div class="project-tags"><span>Branding</span><span>Corporate</span><span>Guidelines</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
           </article>
         </div>
+      </div></div>
+
+      <div class="work-section"><div class="container">
+        <div class="work-header reveal"><div><span class="en">02 / Social</span><h3>Social Campaigns</h3></div><span>2 selected projects</span></div>
+        <div class="projects">
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=86" alt="حملة Riva"><div class="slide-overlay"><small>Launch campaign / key visual</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=86" alt="جلسة تخطيط حملة Riva"><div class="slide-overlay"><small>Campaign system / content planning</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=86" alt="محتوى رقمي لحملة Riva"><div class="slide-overlay"><small>Performance-ready digital assets</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Riva Fitness</span><span>2026</span></div><h4>MOVE / 30</h4><p>اتجاه إبداعي لحملة إطلاق برنامج تدريبي لمدة 30 يومًا، يجمع بين لغة قصيرة وواضحة ونظام محتوى مرن للإعلانات والقصص والمنشورات.</p><div class="project-tags"><span>Art Direction</span><span>Campaign</span><span>Social</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+          </article>
+
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=86" alt="حملة متجر Lenzo"><div class="slide-overlay"><small>Sale campaign / retail communication</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1400&q=86" alt="تسوق إلكتروني Lenzo"><div class="slide-overlay"><small>Digital commerce creative direction</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1400&q=86" alt="واجهة متجر Lenzo"><div class="slide-overlay"><small>Retail rollout / storefront language</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Lenzo Market</span><span>2025</span></div><h4>WEEK / END</h4><p>سلسلة حملات تجارية موسمية لمتجر إلكتروني، مع قالب بصري يحافظ على سرعة إنتاج المحتوى ويمنح العروض حضورًا واضحًا دون تشويش.</p><div class="project-tags"><span>Retail</span><span>Social Ads</span><span>Campaign System</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+          </article>
+        </div>
+      </div></div>
+
+      <div class="work-section"><div class="container">
+        <div class="work-header reveal"><div><span class="en">03 / Packaging</span><h3>Packaging Design</h3></div><span>2 selected projects</span></div>
+        <div class="projects">
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1400&q=86" alt="تغليف شاي Bayt Noon"><div class="slide-overlay"><small>Product family / shelf presence</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1400&q=86" alt="تشكيلة شاي Bayt Noon"><div class="slide-overlay"><small>Flavor coding & category system</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1400&q=86" alt="تجربة شاي Bayt Noon"><div class="slide-overlay"><small>Brand ritual / serving experience</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Bayt Noon Tea</span><span>2024</span></div><h4>BAYT NOON</h4><p>نظام تغليف لعلامة شاي عربية معاصرة؛ يعتمد على ترميز واضح للنكهات، خامات هادئة، وتفاصيل مستوحاة من طقوس الشاي في المنطقة.</p><div class="project-tags"><span>Packaging</span><span>Illustration</span><span>Retail</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+          </article>
+
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1400&q=86" alt="تغليف Sole Studio"><div class="slide-overlay"><small>Footwear packaging / unboxing</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=86" alt="هوية منتج Sole Studio"><div class="slide-overlay"><small>Product-led visual language</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1400&q=86" alt="منتج Sole Studio"><div class="slide-overlay"><small>Campaign-ready packaging system</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Sole Studio</span><span>2024</span></div><h4>SOLE / 01</h4><p>تطوير عبوات وعناصر تجربة فتح المنتج لعلامة أحذية مستقلة، مع لغة جرافيكية رياضية بسيطة تضع المنتج في المقدمة.</p><div class="project-tags"><span>Packaging</span><span>Unboxing</span><span>Brand System</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+          </article>
+        </div>
+      </div></div>
+
+      <div class="work-section"><div class="container">
+        <div class="work-header reveal"><div><span class="en">04 / Print</span><h3>Print & Editorial</h3></div><span>2 selected projects</span></div>
+        <div class="projects">
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1400&q=86" alt="كتاب Qamar Journal"><div class="slide-overlay"><small>Editorial system / opening spread</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1400&q=86" alt="صفحات Qamar Journal"><div class="slide-overlay"><small>Typography & reading rhythm</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1400&q=86" alt="إصدار Qamar Journal"><div class="slide-overlay"><small>Printed object / cultural context</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Qamar Journal</span><span>2023</span></div><h4>ISSUE 07</h4><p>تصميم عدد خاص من مجلة ثقافية مستقلة، مع شبكة تحريرية مرنة تتعامل مع المقالات الطويلة والتصوير والاقتباسات دون فقدان الإيقاع.</p><div class="project-tags"><span>Editorial</span><span>Typography</span><span>Print</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+          </article>
+
+          <article class="project reveal" data-slider>
+            <div class="slider"><div class="slides">
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=86" alt="ملف شركة Atelier Nine"><div class="slide-overlay"><small>Studio profile / editorial direction</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=86" alt="مساحات Atelier Nine"><div class="slide-overlay"><small>Architecture-led visual story</small></div></figure>
+              <figure class="slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=86" alt="هوية Atelier Nine"><div class="slide-overlay"><small>Case study presentation</small></div></figure>
+            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+            <div class="project-info"><div><div class="project-topline"><span>Atelier Nine</span><span>2023</span></div><h4>STUDIO PROFILE</h4><p>ملف تعريفي لاستوديو تصميم داخلي يجمع بين النصوص المختصرة والصور الكبيرة ودراسات المشاريع في نظام تحريري هادئ وسهل التصفح.</p><div class="project-tags"><span>Company Profile</span><span>Editorial</span><span>Layout</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+          </article>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container experience">
+        <div class="experience-intro reveal"><span class="eyebrow en">Experience</span><h2>7 years,<br>still curious.</h2><p>خبرة بين العمل داخل استوديوهات التصميم، الفرق التسويقية، والمشاريع المستقلة لعملاء في مصر والخليج.</p></div>
+        <div class="timeline reveal">
+          <div class="job"><div class="year en">2024 — NOW</div><div><h3>Independent Graphic Designer</h3><h4>Freelance / Cairo</h4><p>إدارة مشاريع هوية وحملات وتغليف من مرحلة الاكتشاف وحتى التسليم، والعمل مباشرة مع المؤسسين ومديري التسويق.</p></div></div>
+          <div class="job"><div class="year en">2022 — 2024</div><div><h3>Senior Graphic Designer</h3><h4>Gridline Creative Studio</h4><p>قيادة الاتجاه البصري لحسابات في قطاع الأغذية والضيافة والتجزئة، ومراجعة جودة المخرجات اليومية لفريق التصميم.</p></div></div>
+          <div class="job"><div class="year en">2020 — 2022</div><div><h3>Graphic Designer</h3><h4>North House Agency</h4><p>تصميم حملات رقمية، هويات مصغرة، مواد مطبوعة وعروض تقديمية لعلامات محلية وإقليمية.</p></div></div>
+          <div class="job"><div class="year en">2019 — 2020</div><div><h3>Junior Visual Designer</h3><h4>Studio 31</h4><p>إعداد تطبيقات الهوية، تجهيز ملفات الطباعة، بناء موكابس واقعية وتطوير مهارات التايبوجرافي والإخراج.</p></div></div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="gallery">
+    <section class="section" id="clients">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">معرض الأعمال</div>
-          <h2>مختارات من أعمالي في الهوية والسوشيال والتغليف والواجهات.</h2>
-          <p class="lead">مجموعة من الأعمال التي تعكس أسلوبي في بناء الهوية، الحملات، التغليف، والواجهات الرقمية.</p>
-        </div>
-
-        <div class="gallery-filters reveal">
-          <button class="filter-btn active" data-filter="all">الكل</button>
-          <button class="filter-btn" data-filter="branding">هوية</button>
-          <button class="filter-btn" data-filter="social">سوشيال</button>
-          <button class="filter-btn" data-filter="packaging">تغليف</button>
-          <button class="filter-btn" data-filter="ui">واجهات</button>
-          <button class="filter-btn" data-filter="ads">إعلانات</button>
-        </div>
-
-        <div class="masonry reveal">
-          <article class="gallery-item" data-category="branding" data-title="هوية مطعم قهوة مختصة" data-type="هوية بصرية" data-img="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art tall"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=800&q=85" alt="هوية بصرية" /></div><div class="gallery-info"><span>هوية بصرية</span><h3>هوية مطعم قهوة مختصة</h3></div></article>
-          <article class="gallery-item" data-category="social" data-title="قوالب محتوى لبراند تعليمي" data-type="سوشيال ميديا" data-img="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=85" alt="تصميم سوشيال ميديا" /></div><div class="gallery-info"><span>سوشيال ميديا</span><h3>قوالب محتوى لبراند تعليمي</h3></div></article>
-          <article class="gallery-item" data-category="packaging" data-title="تغليف منتج طبيعي" data-type="تصميم تغليف" data-img="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art short"><img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=85" alt="تصميم تغليف" /></div><div class="gallery-info"><span>تصميم تغليف</span><h3>تغليف منتج طبيعي</h3></div></article>
-          <article class="gallery-item" data-category="ui" data-title="واجهة Landing Page لخدمة رقمية" data-type="واجهة مستخدم" data-img="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art tall"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="واجهة موقع" /></div><div class="gallery-info"><span>واجهات</span><h3>واجهة Landing Page لخدمة رقمية</h3></div></article>
-          <article class="gallery-item" data-category="ads" data-title="إعلان إطلاق منتج" data-type="تصميم إعلاني" data-img="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art"><img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=85" alt="تصميم إعلان" /></div><div class="gallery-info"><span>إعلانات</span><h3>إعلان إطلاق منتج</h3></div></article>
-          <article class="gallery-item" data-category="branding" data-title="Moodboard لبراند تقني" data-type="هوية بصرية" data-img="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=85" alt="مود بورد" /></div><div class="gallery-info"><span>هوية بصرية</span><h3>Moodboard لبراند تقني</h3></div></article>
-          <article class="gallery-item" data-category="social" data-title="حملة منشورات موسمية" data-type="سوشيال ميديا" data-img="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art short"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=85" alt="حملة سوشيال" /></div><div class="gallery-info"><span>سوشيال ميديا</span><h3>حملة منشورات موسمية</h3></div></article>
-          <article class="gallery-item" data-category="ads" data-title="إعلان لمتجر إلكتروني" data-type="تصميم إعلاني" data-img="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85"><div class="gallery-art tall"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=85" alt="إعلان متجر إلكتروني" /></div><div class="gallery-info"><span>إعلانات</span><h3>إعلان لمتجر إلكتروني</h3></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="brands">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">عملاء ومجالات</div>
-          <h2>علامات ومشاريع تعاونت معها في مجالات مختلفة.</h2>
-        </div>
-        <div class="brands-grid reveal">
-          <div class="brand-card">Nita Furniture</div>
-          <div class="brand-card">Elhana Service</div>
-          <div class="brand-card">Luma Café</div>
-          <div class="brand-card">Vita Honey</div>
-          <div class="brand-card">Nova Tech</div>
-          <div class="brand-card">Atlas Gym</div>
-          <div class="brand-card">Mira Academy</div>
-          <div class="brand-card">Orbit Store</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">طريقة العمل</div>
-          <h2>خطوات واضحة من أول رسالة حتى التسليم النهائي.</h2>
-        </div>
-        <div class="process-grid">
-          <article class="process-card reveal"><h3>تحليل سريع</h3><p>أفهم نشاطك، الجمهور، المنافسين، والهدف من التصميم.</p></article>
-          <article class="process-card reveal"><h3>اتجاه بصري</h3><p>أجهز Moodboard وأقترح ألوان وخطوط واتجاه مناسب.</p></article>
-          <article class="process-card reveal"><h3>تنفيذ وتجربة</h3><p>أصمم نسخة أولى قابلة للمراجعة مع مراعاة الاستخدام الحقيقي.</p></article>
-          <article class="process-card reveal"><h3>تسليم منظم</h3><p>تسليم ملفات PNG/JPG/PDF ومعها المقاسات المطلوبة.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="testimonials">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">آراء العملاء</div>
-          <h2>تجارب عملاء وثقوا في أسلوبي في التصميم والتنفيذ.</h2>
-        </div>
-        <div class="testimonials-grid">
-          <article class="testimonial reveal"><p>“كريم فهم البراند بسرعة وطلع لنا شكل موحد بدل التصميمات العشوائية اللي كنا بننشرها.”</p><strong>أحمد سامي</strong><span>صاحب كافيه</span></article>
-          <article class="testimonial reveal"><p>“التسليم كان منظم، وكل المقاسات جاهزة للنشر. وفر علينا وقت كبير في المحتوى.”</p><strong>منة عادل</strong><span>مديرة تسويق</span></article>
-          <article class="testimonial reveal"><p>“أكثر حاجة عجبتني إنه كان بيسأل عن الهدف قبل ما يصمم، مش مجرد شكل وخلاص.”</p><strong>سارة مصطفى</strong><span>صاحبة مشروع تعليمي</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">أسئلة شائعة</div>
-          <h2>قبل ما نبدأ، دي أهم التفاصيل.</h2>
-        </div>
-        <div class="faq-list reveal">
-          <div class="faq-item"><button class="faq-question" type="button">هل يمكن تنفيذ تصميمات شهر كامل؟ <span>+</span></button><div class="faq-answer">نعم، يمكن تجهيز باقة شهرية تشمل قوالب ومنشورات وستوري حسب خطة المحتوى.</div></div>
-          <div class="faq-item"><button class="faq-question" type="button">هل أحتاج أجهز المحتوى قبل البدء؟ <span>+</span></button><div class="faq-answer">يفضل تجهيز النصوص والصور، ويمكنني مساعدتك في ترتيب المحتوى بصريًا إذا كانت الأفكار موجودة.</div></div>
-          <div class="faq-item"><button class="faq-question" type="button">هل يتم تسليم ملفات مفتوحة؟ <span>+</span></button><div class="faq-answer">يمكن الاتفاق على الملفات المفتوحة حسب نوع المشروع ونطاق العمل.</div></div>
-          <div class="faq-item"><button class="faq-question" type="button">ما مدة التنفيذ؟ <span>+</span></button><div class="faq-answer">تختلف حسب حجم المشروع، لكن أغلب التصميمات الفردية تبدأ من 24 إلى 48 ساعة.</div></div>
+        <div class="section-head reveal"><div><span class="eyebrow en">Clients & Words</span><h2>Built together.</h2></div><p>أفضل المشاريع تأتي عندما تكون العلاقة واضحة: أهداف محددة، مساحة للنقاش، وقرارات تصميم مرتبطة بالعلامة لا بالذوق الشخصي فقط.</p></div>
+        <div class="clients reveal"><div class="client">NOURA</div><div class="client">NORTHLINE</div><div class="client">RIVA</div><div class="client">LENZO</div><div class="client">BAYT NOON</div><div class="client">ATELIER NINE</div><div class="client">MIRA FOODS</div><div class="client">SOLA</div><div class="client">FORM.</div><div class="client">PALM 24</div><div class="client">MINT LAB</div><div class="client">DAR 17</div></div>
+        <div class="testimonials">
+          <article class="quote reveal"><p>“كريم لم يبدأ برسم الشعار، بدأ بفهم المنتج والسوق. النتيجة كانت هوية نعرف كيف نستخدمها فعليًا كل يوم.”</p><div class="person"><div class="avatar">NA</div><div><strong>نور عادل</strong><span>Founder — Noura Coffee</span></div></div></article>
+          <article class="quote reveal"><p>“أكثر شيء فرق معنا هو النظام. الفريق أصبح ينتج المحتوى أسرع، وكل شيء يبدو تابعًا لنفس العلامة حتى مع اختلاف الحملات.”</p><div class="person"><div class="avatar">OS</div><div><strong>عمر سامح</strong><span>Marketing Lead — Lenzo</span></div></div></article>
+          <article class="quote reveal"><p>“تعامل احترافي جدًا، المواعيد واضحة، العرض منظم، والتعديلات لها منطق. الهوية الجديدة رفعت مستوى عروضنا أمام العملاء.”</p><div class="person"><div class="avatar">RM</div><div><strong>ريم مجدي</strong><span>Managing Partner — Northline</span></div></div></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy glass reveal">
-          <div class="eyebrow">تواصل معي</div>
-          <h2>جاهز نبدأ في شكل بصري أقوى لمشروعك؟</h2>
-          <p>املأ البيانات، وسيتم تجهيز رسالة منظمة تلقائيًا على واتساب فيها تفاصيل مشروعك.</p>
-          <div class="contact-points">
-            <div>✓ مناسب للبراندات الناشئة والمتاجر والخدمات.</div>
-            <div>✓ نموذج واتساب سريع بدل الرسائل المتقطعة.</div>
-            <div>✓ تصميم متجاوب ومناسب للموبايل والكمبيوتر.</div>
-          </div>
-        </div>
-
-        <form id="whatsappForm" class="glass reveal">
-          <div class="form-group"><label for="name">الاسم</label><input type="text" id="name" placeholder="اكتب اسمك" required /></div>
-          <div class="form-group"><label for="phone">رقم الهاتف</label><input type="tel" id="phone" placeholder="اكتب رقم الهاتف" required /></div>
-          <div class="form-group"><label for="email">البريد الإلكتروني</label><input type="email" id="email" placeholder="اكتب البريد الإلكتروني" required /></div>
-          <div class="form-group"><label for="service">الخدمة المطلوبة</label><select id="service" required><option value="">اختر الخدمة</option><option value="هوية بصرية">هوية بصرية</option><option value="تصميمات سوشيال ميديا">تصميمات سوشيال ميديا</option><option value="تصميم تغليف">تصميم تغليف</option><option value="تصميم إعلانات">تصميم إعلانات</option><option value="مطبوعات">مطبوعات</option><option value="مشروع شامل">مشروع شامل</option></select></div>
-          <div class="form-group"><label for="projectType">نوع المشروع</label><select id="projectType" required><option value="">اختر نوع المشروع</option><option value="مشروع جديد">مشروع جديد</option><option value="تطوير شكل حالي">تطوير شكل حالي</option><option value="حملة تسويقية">حملة تسويقية</option><option value="منتج أو تغليف">منتج أو تغليف</option><option value="مشروع آخر">مشروع آخر</option></select></div>
-          <div class="form-group"><label for="timeline">موعد التسليم المتوقع</label><select id="timeline" required><option value="">اختر المدة</option><option value="خلال 48 ساعة">خلال 48 ساعة</option><option value="خلال أسبوع">خلال أسبوع</option><option value="من أسبوع إلى أسبوعين">من أسبوع إلى أسبوعين</option><option value="لا يوجد موعد محدد">لا يوجد موعد محدد</option></select></div>
-          <div class="form-group"><label for="message">تفاصيل المشروع</label><textarea id="message" placeholder="اكتب نبذة عن المشروع، نوع التصميم، المقاسات، وهل لديك محتوى أو صور جاهزة..." required></textarea></div>
-          <button type="submit" class="submit-btn">إرسال الطلب عبر واتساب</button>
+      <div class="container contact-wrap">
+        <div class="contact-copy reveal"><span class="eyebrow en">Contact</span><h2>Have a project?<br>Let’s talk.</h2><p>إذا لديك علامة جديدة، إعادة تصميم لهوية موجودة، حملة أو مشروع يحتاج اتجاهًا بصريًا واضحًا، أرسل لي نبذة قصيرة عن المشروع والموعد المتوقع للبدء.</p><div class="contact-links"><a class="btn" href="mailto:hello@karimmansour.design">Email</a><a class="btn" href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a><a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field"><label for="name">الاسم</label><input id="name" required></div>
+          <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" type="email" required></div>
+          <div class="field"><label for="type">نوع المشروع</label><input id="type" required></div>
+          <div class="field"><label for="message">نبذة عن المشروع</label><textarea id="message" required></textarea></div>
+          <button class="btn primary" type="submit">إرسال الطلب عبر البريد</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">© 2026 كريم محمود — Graphic Designer Portfolio</div>
-  </footer>
+  <footer><div class="container footer-row"><span>© 2026 Karim Mansour. All rights reserved.</span><span class="en">Graphic Design / Brand Identity / Art Direction</span></div></footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-content">
-      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="إغلاق">×</button>
-      <div class="lightbox-art" id="lightboxArt"></div>
-      <div class="lightbox-info">
-        <div class="eyebrow" id="lightboxType">نوع المشروع</div>
-        <h3 id="lightboxTitle">عنوان المشروع</h3>
-        <p>مشروع من أعمال كريم محمود، تم تنفيذه مع التركيز على وضوح الرسالة، تناسق الهوية، وتجربة بصرية مناسبة لاستخدامات العميل.</p>
+  <div class="modal" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvTitle">
+    <article class="cv">
+      <div class="cv-head"><div><span class="eyebrow en">Curriculum Vitae</span><h2 id="cvTitle">Karim Mansour</h2><p style="margin:5px 0 0;color:#666">Graphic Designer & Visual Identity Specialist — Cairo, Egypt</p></div><div class="cv-actions"><a class="icon-btn" id="downloadCv" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxODI1Cj4+CnN0cmVhbQpHYXUwRDlpTCgzJkFAWmNxRD5UJV87ZkddXTlgdUMwVVc2LywrNVBybHBdUSFVOz05Q1o1YmMscXI+LnM0MF1EODEsQ21UT1s8MUtdJSshclQ1OSg4aGNCRDM4Y15SLG5HXlEzYkQsZm8vRCJpTDUoUlslQXNiYzIiYFg1Y1E9bl9gKWYva3VFQGYiRltjImFJPVNGQWFabFMlWT9zam4kaG1bIWJfRz9lWz9uJ2xtWFBmck0pPFA6NnJfJ1QmbyJoRFRmVT4wL2xDVCFjXGBwbkg5alw5a1k/MXBvWnNfKDkkP3VmKlpEJlROTis4O0otOSFYJUJ1RVFaJDQ1bEwsIyVKSUtaZChCVDZvIUZdWkx1XFY6WmQ2MmJfXW9wMSU9UyxpTzU4V1guJzc1VTNGWiFWZDJgPHVaQFAtP3UqZVZXSU9HK2gqYkNWZjAnVDRxXCFJQ1xgT2E4Lz4mSVVbaWhFcyNiXlFLJ01TTTkqXypgZjRVTHBAVT9mLVJ0Qmg3TEAmXEokLV5bJ2JPcyhGKnQ2MnRYTUA+ZWcyK05NLFY9VksqUWRzUW1WNGlqRlo5JW5ITSIuP102PTQ+Plgnc1JKY0ldbkxdW0EyamhrcVA9Wz9oXXJmXjlzLiVXKFNQVXFZb1tZL2N0KioqYC5kQHRqL1U4YXQ+LCYnZyFZRyk3Xk0mc2M6UjNZb0QxaE1tWUFEZSY4cmtOPE8ncTdQPFsiJjtybjAkKE8hQC87ai11LyNzX29MIW9bNSpqcCRKMiY4VSQoTF04YltZWGlSLUowI2RbPWVhXmg5JCo5ZWctYW9nT0I+LF0zPCtGamlCLXVHKnVTMl5cWENFNE4uS25OKUdCSSJIWyQpMFJCNWIuOTtGTGoxIWlpIytUPl1pY042MkQ0MVJnbG8oIUghLGZkLERFQllhXERsYk4ucElwJy07alJXITVcPDFPNEA3cFVlPSg2JyxEZEVfNEtwPDJQZnFrV0NqQD5wREcvPk9ENUwsZV5YblFMcDdcLl1dVC51KjtHOTQiXUVoREwrYW5VSShaV1VDYkNmJyVTJVE3OyY6XnNeWG4+WShBY2lGN0AkVUhrSmxMND8sJFlVJlYjPmphaWJDR05ROXJdSWgnNCFDIUdmQWRKKCFVJnI0Z18uYFtaa04+SlchZnBYYi1fcmM5RWVlTVU7MDZWYy89Rzo3cjNjSWsrOFc/NkI6cUdVdXFUUE1oQUdZZ01nRz5ZY2k4Zl5TXXVnMzRwOGNocEoqNShjNGU3OjQnYTNVYXIqWCg9U2RjQz9XTC0pWiVKS0pmOGUkKVBqNE9ST15bPFU8M1BvZkFbWlpYX2xlW3EsR11CckhMXiM+PGwrW3JlLUhFUTk6USM2UzVcXD1iKUEtO0g7MTRuLl0+NDchcV9KInNlcy07ZS1JW0ZhNUZOLDJtXmxyXWwqUiNfcUtrRkFGZyZeZy1AQTpFMStIRVpjW2ZPXDU7LlVhLk9ORHEzaSFALjZqSm4hNUZUaEBYW0Y6RS5yRkFkakkya3BZUz0+J21hcC81Qjs6QDNmTzorQ0hQPlFvMyptY1A6bD5UVC9EJDNjM2xZSjwuMiFYQVtAcD9LPWY+ckQuPFdFOnJYbjh1JiZCWVFRN3BLWlRMdW4kb1Q2b0VmQlFcQSFObW5iYTVOKjZlUnI+QChAUSorSExWJC4lIigmV3FgLyxkXy0jVVszSlwzRXE/OzBrXCxKLjxHLGNjMDZZOmwnNko5Il1qPV4/NT02MDlAXjFcWkMkTSNGcitdWnFSLl9WIkhVX3NBWGI3ZDJhRyFmNGhoLzBaVl9WdF9OJzNNPk1xYEg8bEBHUGBWcCFpJk5JI2ZHdVFYcVU9YFVVbUxnUXUicEo7YEYiVSgoQConS3VNIStTaCUsITRUYVVsZUtXcjZGMW9wNGFCYjZgRWZmMyRLbSozNWZoMixOcCE0LyVHMy5HSiFuQHFtPVxLNUwoRGJyRkM9K2cyYFlkYicyOjd1cTY8b0YxKEkuW2JVV050Sz1ZVF4tZWxoayw0PXFzcENTckdMam9ZQlg0UnJJJSJXcTA9ZmVPNy1zXlRRal9UP25SRDMhQSZrM1NtdGQ9bExNJWtvUjokMEpjTXNXLkNwJEhHcDQsUmM+V29CNktQdFZSczIicGY7WGpSKk5lIz9fRlpfVUxSMF1gVFVfT2U3Q11mLHAwTzQ/Il5ePU9oRikjZldocnUwQzpzQUhKZFdRW3BNPFJeTVRIOSxHN1EjV3FqNTJwVjBSQis1cks/NytpRUstKiJ1QVVWM1VGRTtUdF9fPjZPOS4lNztNRzMwLmlIRlwpX28qLidqJFk7Xz8wbjk4Kz47XFhKIUxXQSRfNENTLkgtdG4zUSE0ZWxjKktXLGdwaEN1ZCNxcnMiZV9HXF1yck4lNVkuNH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4NTMgMDAwMDAgbiAKMDAwMDAwMDkxMiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4NDJlZjVmMDhhZmY3Y2U0ZDc0NzEzMzc1NWFhODRjZT48ODQyZWY1ZjA4YWZmN2NlNGQ3NDcxMzM3NTVhYTg0Y2U+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI4MjgKJSVFT0YK" download="Karim-Mansour-CV.pdf">تحميل PDF</a><button class="icon-btn" id="closeCv">إغلاق ×</button></div></div>
+      <div class="cv-body">
+        <aside>
+          <div class="cv-block"><h3>Contact</h3><p>hello@karimmansour.design<br>+20 100 555 0148<br>Cairo, Egypt<br>behance.net/karim-mansour</p></div>
+          <div class="cv-block"><h3>Core Skills</h3><ul><li>Brand Identity Design</li><li>Art Direction</li><li>Packaging Design</li><li>Social Media Campaigns</li><li>Editorial & Print Design</li><li>Typography Systems</li></ul></div>
+          <div class="cv-block"><h3>Tools</h3><p>Adobe Illustrator — Advanced<br>Adobe Photoshop — Advanced<br>Adobe InDesign — Advanced<br>After Effects — Intermediate<br>Figma — Advanced</p></div>
+          <div class="cv-block"><h3>Languages</h3><p>Arabic — Native<br>English — Professional working proficiency</p></div>
+        </aside>
+        <div>
+          <div class="cv-block"><h3>Profile</h3><p>Graphic Designer with 7 years of experience building visual identities, campaigns, packaging and editorial systems for brands across Egypt and the GCC. Strong focus on brand consistency, practical design systems and clear visual communication.</p></div>
+          <div class="cv-block"><h3>Experience</h3>
+            <div class="cv-item"><strong>Independent Graphic Designer</strong><span>Freelance — Cairo | 2024–Present</span><p>Lead branding, packaging and campaign projects from discovery to final rollout, working directly with founders and marketing teams.</p></div>
+            <div class="cv-item"><strong>Senior Graphic Designer</strong><span>Gridline Creative Studio | 2022–2024</span><p>Led visual direction for hospitality, F&B and retail accounts; reviewed daily creative output and developed scalable campaign systems.</p></div>
+            <div class="cv-item"><strong>Graphic Designer</strong><span>North House Agency | 2020–2022</span><p>Produced digital campaigns, visual identities, print collateral and corporate presentations for local and regional clients.</p></div>
+            <div class="cv-item"><strong>Junior Visual Designer</strong><span>Studio 31 | 2019–2020</span><p>Supported identity rollouts, print production, mockup creation and presentation design.</p></div>
+          </div>
+          <div class="cv-block"><h3>Education</h3><div class="cv-item"><strong>B.A. in Applied Arts — Graphic Design</strong><span>Helwan University | 2015–2019</span></div></div>
+          <div class="cv-block"><h3>Selected Clients</h3><p>Noura Coffee, Northline Advisory, Riva Fitness, Lenzo Market, Bayt Noon Tea, Atelier Nine, Mira Foods, Dar 17.</p></div>
+        </div>
       </div>
-    </div>
+    </article>
   </div>
 
   <script>
-    const revealElements = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.12 });
-    revealElements.forEach((element) => revealObserver.observe(element));
+    // Mobile navigation
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-        const filter = button.getAttribute("data-filter");
-        galleryItems.forEach((item) => {
-          const category = item.getAttribute("data-category");
-          item.classList.toggle("hide", !(filter === "all" || filter === category));
-        });
-      });
+    // Individual project sliders
+    document.querySelectorAll('[data-slider]').forEach(project=>{
+      const track=project.querySelector('.slides');
+      const slides=[...project.querySelectorAll('.slide')];
+      const dotsWrap=project.querySelector('.dots');
+      let index=0;
+      slides.forEach((_,i)=>{const d=document.createElement('span');d.className='dot'+(i===0?' active':'');d.addEventListener('click',()=>go(i));dotsWrap.appendChild(d)});
+      const dots=[...dotsWrap.children];
+      function go(i){index=(i+slides.length)%slides.length;track.style.transform=`translateX(${-index*100}%)`;slides.forEach((s,n)=>s.classList.toggle('active',n===index));dots.forEach((d,n)=>d.classList.toggle('active',n===index))}
+      project.querySelector('.prev').addEventListener('click',()=>go(index-1));
+      project.querySelector('.next').addEventListener('click',()=>go(index+1));
+      slides[0].classList.add('active');
+      let startX=0;
+      track.addEventListener('pointerdown',e=>startX=e.clientX);
+      track.addEventListener('pointerup',e=>{const diff=e.clientX-startX;if(Math.abs(diff)>60) go(index+(diff<0?1:-1))});
     });
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxClose = document.getElementById("lightboxClose");
-    const lightboxArt = document.getElementById("lightboxArt");
-    const lightboxTitle = document.getElementById("lightboxTitle");
-    const lightboxType = document.getElementById("lightboxType");
+    // CV modal
+    const cvModal=document.getElementById('cvModal');
+    const openCv=()=>{cvModal.classList.add('open');document.body.classList.add('no-scroll')};
+    const closeCv=()=>{cvModal.classList.remove('open');document.body.classList.remove('no-scroll')};
+    document.querySelectorAll('[data-open-cv]').forEach(btn=>btn.addEventListener('click',openCv));
+    document.getElementById('closeCv').addEventListener('click',closeCv);
+    cvModal.addEventListener('click',e=>{if(e.target===cvModal)closeCv()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCv()});
 
-    galleryItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        lightboxTitle.textContent = item.getAttribute("data-title");
-        lightboxType.textContent = item.getAttribute("data-type");
-        const img = item.getAttribute("data-img");
-        lightboxArt.innerHTML = `<img src="${img}" alt="${item.getAttribute("data-title")}" />`;
-        lightbox.classList.add("active");
-        lightbox.setAttribute("aria-hidden", "false");
-      });
+    // Contact form -> mail client
+    document.getElementById('contactForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const type=document.getElementById('type').value.trim();
+      const message=document.getElementById('message').value.trim();
+      const subject=encodeURIComponent(`New project inquiry — ${type}`);
+      const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nProject type: ${type}\n\nProject brief:\n${message}`);
+      window.location.href=`mailto:hello@karimmansour.design?subject=${subject}&body=${body}`;
     });
 
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-      lightbox.setAttribute("aria-hidden", "true");
-      lightboxArt.innerHTML = "";
-    }
-    lightboxClose.addEventListener("click", closeLightbox);
-    lightbox.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
-    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeLightbox(); });
-
-    document.querySelectorAll(".faq-item").forEach((item) => {
-      const question = item.querySelector(".faq-question");
-      const icon = question.querySelector("span");
-      question.addEventListener("click", () => {
-        item.classList.toggle("active");
-        icon.textContent = item.classList.contains("active") ? "−" : "+";
-      });
-    });
-
-    const themeToggle = document.getElementById("themeToggle");
-    const themeToggleIcon = document.getElementById("themeToggleIcon");
-    const themeToggleText = document.getElementById("themeToggleText");
-    function updateThemeButton(theme) {
-      const isLight = theme === "light";
-      themeToggleIcon.textContent = isLight ? "🌙" : "☀️";
-      themeToggleText.textContent = isLight ? "الوضع الليلي" : "الوضع النهاري";
-    }
-    updateThemeButton(document.documentElement.getAttribute("data-theme") || "dark");
-    themeToggle.addEventListener("click", () => {
-      const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
-      const nextTheme = activeTheme === "light" ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", nextTheme);
-      localStorage.setItem("karimPortfolioTheme", nextTheme);
-      updateThemeButton(nextTheme);
-    });
-
-    document.getElementById("whatsappForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const whatsappNumber = "201015365340";
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const service = document.getElementById("service").value;
-      const projectType = document.getElementById("projectType").value;
-      const timeline = document.getElementById("timeline").value;
-      const message = document.getElementById("message").value.trim();
-      const whatsappMessage = `طلب جديد من بورتفوليو كريم محمود\n\nالاسم: ${name}\nرقم الهاتف: ${phone}\nالبريد الإلكتروني: ${email}\n\nالخدمة المطلوبة: ${service}\nنوع المشروع: ${projectType}\nموعد التسليم المتوقع: ${timeline}\n\nتفاصيل المشروع:\n${message}`;
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
-    });
+    // Reveal animation
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>
