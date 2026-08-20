@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0a" />
+  <title>Omar Nasser — Photographer & Visual Storyteller</title>
+  <meta name="description" content="Editorial, wedding, portrait, architecture and travel photography by Omar Nasser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0a;
+      --bg-2:#11110f;
+      --surface:#171714;
+      --surface-2:#1e1e1a;
+      --text:#f3efe6;
+      --muted:#aaa69d;
+      --line:rgba(255,255,255,.12);
+      --accent:#d5c2a0;
+      --accent-dark:#8f7c5d;
+      --max:1380px;
+      --pad:clamp(20px,4vw,64px);
+      --radius:26px;
+      --shadow:0 18px 70px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Manrope",sans-serif;
+      overflow-x:hidden;
+    }
+    img,video{display:block;width:100%;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(var(--max),calc(100% - 2*var(--pad)));margin-inline:auto;min-width:0}
+    .section{padding:clamp(84px,10vw,150px) 0}
+    .eyebrow{
+      display:flex;align-items:center;gap:12px;
+      text-transform:uppercase;letter-spacing:.16em;
+      font-size:12px;color:var(--muted);font-weight:600;
+    }
+    .eyebrow:before{content:"";width:38px;height:1px;background:var(--accent)}
+    .display{
+      margin:18px 0 0;
+      font-family:"Playfair Display",serif;
+      font-size:clamp(52px,7vw,112px);
+      line-height:.94;
+      letter-spacing:-.035em;
+      font-weight:500;
+      max-width:12ch;
+      overflow-wrap:anywhere;
+    }
+    .display em{font-weight:500;color:var(--accent)}
+    .section-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(42px,5vw,76px);
+      line-height:1;
+      letter-spacing:-.035em;
+      margin:16px 0 0;
+      max-width:11ch;
+    }
+    .section-copy{
+      color:var(--muted);font-size:clamp(16px,1.5vw,20px);line-height:1.8;
+      max-width:650px;
+    }
+
+    /* Header */
+    .header{
+      position:fixed;inset:0 0 auto 0;z-index:100;
+      transition:.35s ease;
+    }
+    .header.scrolled{
+      background:rgba(11,11,10,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.04em;white-space:nowrap;
+    }
+    .brand-mark{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-family:"Playfair Display",serif;color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;color:#d8d4cb}
+    .nav-links a{position:relative}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--accent);transition:.25s}
+    .nav-links a:hover:after{width:100%}
+    .nav-cta{border:1px solid var(--line);border-radius:999px;padding:11px 18px}
+    .menu-toggle{display:none;background:none;border:0;color:var(--text);font-size:22px}
+
+    /* Hero */
+    .hero{
+      min-height:100svh;
+      display:flex;align-items:flex-end;
+      padding:120px 0 54px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+      gap:clamp(36px,6vw,96px);
+      align-items:end;
+      width:100%;
+    }
+    .hero-copy{min-width:0;padding-bottom:18px}
+    .hero-sub{
+      margin:34px 0 0;
+      display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;
+      border-top:1px solid var(--line);padding-top:24px;max-width:760px;
+    }
+    .hero-sub p{margin:0;color:var(--muted);line-height:1.75;max-width:520px}
+    .scroll-cue{
+      width:52px;height:52px;border:1px solid var(--line);border-radius:50%;
+      display:grid;place-items:center;color:var(--accent);font-size:20px;
+    }
+    .hero-media{position:relative;min-width:0}
+    .hero-image{
+      aspect-ratio:4/5;object-fit:cover;
+      border-radius:260px 260px 24px 24px;
+      filter:saturate(.78) contrast(1.02);
+      box-shadow:var(--shadow);
+    }
+    .hero-stamp{
+      position:absolute;left:-28px;bottom:42px;
+      width:116px;height:116px;border-radius:50%;
+      background:var(--accent);color:#12110e;
+      display:grid;place-items:center;text-align:center;
+      font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.14em;font-weight:700;
+      transform:rotate(-9deg);
+    }
+    .hero-index{
+      position:absolute;top:20px;right:-24px;
+      writing-mode:vertical-rl;
+      font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    }
+
+    /* Marquee */
+    .marquee{overflow:hidden;border-block:1px solid var(--line);background:#0f0f0d}
+    .marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite}
+    .marquee-item{
+      padding:22px 28px;display:flex;align-items:center;gap:28px;
+      white-space:nowrap;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#c9c3b7
+    }
+    .marquee-item span{color:var(--accent)}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+
+    /* About */
+    .about-grid{
+      display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(40px,7vw,110px);align-items:center;
+    }
+    .about-collage{position:relative;min-width:0}
+    .about-main{width:78%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+    .about-small{
+      position:absolute;width:46%;aspect-ratio:1/1;object-fit:cover;
+      right:0;bottom:-42px;border:10px solid var(--bg);border-radius:20px;
+    }
+    .about-copy .section-copy{margin-top:30px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:42px}
+    .stat{padding-top:20px;border-top:1px solid var(--line)}
+    .stat strong{display:block;font-family:"Playfair Display",serif;font-size:42px;font-weight:500}
+    .stat span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+    .quote{margin:32px 0 0;padding:24px 0 0;border-top:1px solid var(--line);font-family:"Playfair Display",serif;font-style:italic;font-size:25px;line-height:1.45;color:#ddd6c8}
+
+    /* Services */
+    .services-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:54px}
+    .services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+    .service{
+      padding:34px 26px 42px;border-right:1px solid var(--line);position:relative;min-height:250px;
+      transition:.3s ease;
+    }
+    .service:first-child{border-left:1px solid var(--line)}
+    .service:hover{background:var(--surface)}
+    .service-num{color:var(--accent);font-size:12px;letter-spacing:.16em}
+    .service h3{font-family:"Playfair Display",serif;font-weight:500;font-size:30px;margin:48px 0 14px}
+    .service p{color:var(--muted);line-height:1.7;font-size:14px;margin:0}
+    .service-arrow{position:absolute;right:24px;top:26px;font-size:22px;color:var(--muted)}
+
+    /* Featured */
+    .featured{background:#d8d0c1;color:#15130f}
+    .featured .eyebrow{color:#625d54}
+    .featured .eyebrow:before{background:#5c5549}
+    .featured-top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:52px}
+    .featured .section-title{max-width:9ch}
+    .featured-note{max-width:460px;color:#5b564e;line-height:1.8}
+    .featured-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+    .feature-big,.feature-small{position:relative;overflow:hidden;border-radius:18px}
+    .feature-big{min-height:640px}
+    .feature-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+    .feature-small{min-height:310px}
+    .featured img{height:100%;object-fit:cover;transition:transform .65s ease}
+    .feature-big:hover img,.feature-small:hover img{transform:scale(1.025)}
+    .feature-label{
+      position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:end;gap:20px;
+      color:white;text-shadow:0 2px 18px rgba(0,0,0,.35)
+    }
+    .feature-label h3{font-family:"Playfair Display",serif;font-size:34px;margin:0;font-weight:500}
+    .feature-label span{font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+
+    /* Portfolio */
+    .portfolio-head{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:34px}
+    .filters{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end}
+    .filter{
+      border:1px solid var(--line);color:#c8c3b8;background:transparent;
+      padding:10px 15px;border-radius:999px;font-size:12px;
+    }
+    .filter.active,.filter:hover{background:var(--text);color:#111;border-color:var(--text)}
+    .projects{border-top:1px solid var(--line)}
+    .project{
+      display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);
+      gap:clamp(30px,5vw,74px);padding:70px 0;border-bottom:1px solid var(--line);
+    }
+    .project[hidden]{display:none}
+    .project-meta{display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+    .project-index{font-size:12px;color:var(--accent);letter-spacing:.15em}
+    .project h3{
+      font-family:"Playfair Display",serif;font-size:clamp(38px,4vw,62px);
+      line-height:1.02;margin:18px 0 12px;font-weight:500;letter-spacing:-.025em;
+    }
+    .project-category{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    .project-desc{color:var(--muted);line-height:1.8;max-width:520px;margin:24px 0}
+    .project-info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;margin-top:28px}
+    .project-info div{padding-top:12px;border-top:1px solid var(--line)}
+    .project-info span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.11em}
+    .project-info strong{display:block;font-weight:500;font-size:14px;margin-top:7px}
+
+    /* Sliders */
+    .slider{position:relative;overflow:hidden;border-radius:22px;background:var(--surface);min-width:0}
+    .slides{display:flex;transition:transform .55s cubic-bezier(.22,.72,.2,1);will-change:transform}
+    .slide{min-width:100%;aspect-ratio:4/3}
+    .slide img{height:100%;object-fit:cover}
+    .slider-controls{
+      position:absolute;right:16px;bottom:16px;display:flex;gap:8px;
+    }
+    .slider-btn{
+      width:44px;height:44px;border:0;border-radius:50%;
+      background:rgba(10,10,9,.74);backdrop-filter:blur(8px);color:white;
+      display:grid;place-items:center;font-size:18px;
+    }
+    .slider-count{
+      position:absolute;left:16px;bottom:16px;
+      padding:9px 12px;border-radius:999px;background:rgba(10,10,9,.68);
+      backdrop-filter:blur(8px);font-size:11px;letter-spacing:.08em;
+    }
+
+    /* Film */
+    .film-wrap{
+      display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:clamp(30px,6vw,90px);align-items:center;
+    }
+    .film-card{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/10;background:#151515}
+    .film-card img{height:100%;object-fit:cover;filter:brightness(.72)}
+    .play{
+      position:absolute;inset:0;display:grid;place-items:center;
+    }
+    .play a{
+      width:94px;height:94px;border-radius:50%;background:rgba(243,239,230,.95);color:#111;
+      display:grid;place-items:center;font-size:25px;box-shadow:0 10px 50px rgba(0,0,0,.25);transition:.3s;
+    }
+    .play a:hover{transform:scale(1.06)}
+    .film-copy h2{font-family:"Playfair Display",serif;font-size:clamp(44px,5vw,72px);line-height:1;margin:15px 0 24px;font-weight:500}
+    .film-copy p{color:var(--muted);line-height:1.8}
+    .film-link{display:inline-flex;gap:12px;align-items:center;margin-top:24px;border-bottom:1px solid var(--accent);padding-bottom:6px;color:var(--accent)}
+
+    /* Experience */
+    .experience-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(40px,7vw,110px)}
+    .timeline{border-top:1px solid var(--line)}
+    .role{
+      display:grid;grid-template-columns:130px 1fr;gap:22px;padding:28px 0;border-bottom:1px solid var(--line)
+    }
+    .role-year{color:var(--accent);font-size:13px}
+    .role h3{margin:0 0 8px;font-size:18px;font-weight:500}
+    .role p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+
+    /* Testimonials */
+    .testimonials{background:var(--surface)}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:54px}
+    .testimonial{
+      background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:30px;
+    }
+    .testimonial p{font-family:"Playfair Display",serif;font-size:22px;line-height:1.5;margin:0 0 30px}
+    .client{display:flex;align-items:center;gap:12px}
+    .client img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+    .client strong{display:block;font-size:14px}
+    .client span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,8vw,120px)}
+    .contact-large{
+      font-family:"Playfair Display",serif;font-size:clamp(54px,7vw,104px);
+      line-height:.95;letter-spacing:-.04em;margin:14px 0 28px;
+    }
+    .contact-large em{color:var(--accent)}
+    .contact-details{display:grid;gap:12px;color:var(--muted)}
+    .contact-details a:hover{color:var(--text)}
+    .form{display:grid;gap:18px}
+    .field{display:grid;gap:8px}
+    .field label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    .field input,.field textarea{
+      width:100%;background:transparent;color:var(--text);
+      border:0;border-bottom:1px solid var(--line);padding:13px 0;outline:none;
+    }
+    .field textarea{min-height:120px;resize:vertical}
+    .field input:focus,.field textarea:focus{border-color:var(--accent)}
+    .submit{
+      justify-self:start;margin-top:10px;border:0;border-radius:999px;
+      background:var(--text);color:#111;padding:14px 24px;font-weight:600;
+    }
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:30px 0 38px}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;color:var(--muted);font-size:12px}
+    .socials{display:flex;gap:18px;flex-wrap:wrap}
+    .socials a:hover{color:var(--text)}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:.75s cubic-bezier(.22,.72,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    /* Responsive */
+    @media (max-width:1100px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .service:nth-child(3){border-left:1px solid var(--line)}
+      .service:nth-child(n+3){border-top:1px solid var(--line)}
+      .project{grid-template-columns:1fr}
+      .project-meta{display:block}
+      .testimonial-grid{grid-template-columns:1fr 1fr}
+      .testimonial:last-child{grid-column:1/-1}
+    }
+    @media (max-width:860px){
+      .nav-links{
+        display:none;position:absolute;top:82px;left:var(--pad);right:var(--pad);
+        flex-direction:column;align-items:stretch;background:#11110f;border:1px solid var(--line);
+        padding:18px;border-radius:18px;box-shadow:var(--shadow);
+      }
+      .nav-links.open{display:flex}
+      .menu-toggle{display:block}
+      .hero{padding-top:118px}
+      .hero-grid,.about-grid,.featured-grid,.film-wrap,.experience-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-copy{order:2}
+      .hero-media{order:1;width:min(92%,620px);margin-inline:auto}
+      .hero-image{aspect-ratio:4/5}
+      .hero-stamp{left:-4px;bottom:24px;width:96px;height:96px}
+      .hero-index{right:-8px}
+      .display{max-width:10ch}
+      .about-collage{margin-bottom:55px}
+      .about-main{width:82%}
+      .featured-top,.portfolio-head,.services-head{align-items:flex-start;flex-direction:column}
+      .filters{justify-content:flex-start}
+      .feature-big{min-height:520px}
+      .feature-side{grid-template-columns:1fr 1fr;grid-template-rows:none}
+      .feature-small{min-height:270px}
+      .testimonial-grid{grid-template-columns:1fr}
+      .testimonial:last-child{grid-column:auto}
+    }
+    @media (max-width:620px){
+      :root{--pad:18px}
+      .nav{min-height:74px}
+      .nav-links{top:74px}
+      .brand{font-size:14px}
+      .brand-mark{width:30px;height:30px}
+      .hero{min-height:auto;padding:104px 0 44px}
+      .hero-grid{gap:28px}
+      .hero-media{width:100%}
+      .hero-image{border-radius:180px 180px 18px 18px}
+      .hero-stamp{width:84px;height:84px;font-size:9px}
+      .hero-index{display:none}
+      .hero-sub{grid-template-columns:1fr}
+      .scroll-cue{display:none}
+      .display{font-size:clamp(48px,15vw,70px);max-width:100%}
+      .section{padding:80px 0}
+      .stats{grid-template-columns:1fr 1fr}
+      .stats .stat:last-child{grid-column:1/-1}
+      .services-grid{grid-template-columns:1fr}
+      .service,.service:first-child,.service:nth-child(3){border-left:1px solid var(--line);border-right:1px solid var(--line)}
+      .service:nth-child(n+2){border-top:1px solid var(--line)}
+      .feature-big{min-height:420px}
+      .feature-side{grid-template-columns:1fr}
+      .feature-small{min-height:330px}
+      .project{padding:52px 0}
+      .project-info{grid-template-columns:1fr 1fr}
+      .slide{aspect-ratio:4/5}
+      .film-card{aspect-ratio:4/5}
+      .role{grid-template-columns:1fr;gap:8px}
+      .footer-grid{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Omar Nasser home">
+      <span class="brand-mark">O</span>
+      <span>OMAR NASSER</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav-cta">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Photographer · Cairo / Dubai</div>
+        <h1 class="display">Stories, shaped by <em>light.</em></h1>
+        <div class="hero-sub">
+          <p>I photograph people, places and brands with a cinematic eye — balancing honest moments, refined composition and a quiet editorial sensibility.</p>
+          <a href="#portfolio" class="scroll-cue" aria-label="View portfolio">↓</a>
+        </div>
+      </div>
+
+      <div class="hero-media reveal">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=88" alt="Editorial portrait photographed in natural light">
+        <div class="hero-stamp">Selected<br>Work<br>2023—2026</div>
+        <div class="hero-index">Portrait · Editorial · Campaign</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-item">Editorial Portraits <span>✦</span> Weddings <span>✦</span> Architecture <span>✦</span> Food & Hospitality <span>✦</span> Travel Stories <span>✦</span> Campaigns <span>✦</span></div>
+      <div class="marquee-item">Editorial Portraits <span>✦</span> Weddings <span>✦</span> Architecture <span>✦</span> Food & Hospitality <span>✦</span> Travel Stories <span>✦</span> Campaigns <span>✦</span></div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-collage reveal">
+        <img class="about-main" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1100&q=86" alt="Photographer portrait">
+        <img class="about-small" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=84" alt="Landscape photograph at golden hour">
+      </div>
+
+      <div class="about-copy reveal">
+        <div class="eyebrow">About me</div>
+        <h2 class="section-title">Images that feel lived, not staged.</h2>
+        <p class="section-copy">
+          I’m Omar Nasser, an independent photographer and visual storyteller working between Cairo and Dubai. My work sits between documentary honesty and editorial precision — from intimate portraits and weddings to hospitality, architecture and destination stories.
+        </p>
+        <p class="section-copy">
+          I’m most interested in the small details that make a frame memorable: the way a hand rests, the quiet before a room fills, late-afternoon light moving across a wall, or the expression that happens just after the posed photograph.
+        </p>
+
+        <div class="stats">
+          <div class="stat"><strong>9+</strong><span>Years photographing professionally</span></div>
+          <div class="stat"><strong>180</strong><span>Commissioned projects delivered</span></div>
+          <div class="stat"><strong>14</strong><span>Cities photographed across MENA & Europe</span></div>
+        </div>
+
+        <p class="quote">“The goal is never simply a beautiful frame. It is a frame that still feels honest years later.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="services-head reveal">
+        <div>
+          <div class="eyebrow">Photography services</div>
+          <h2 class="section-title">Built around the story.</h2>
+        </div>
+        <p class="section-copy">Available for editorial commissions, brand campaigns, private celebrations, hospitality launches and destination assignments.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        <article class="service">
+          <span class="service-num">01</span><span class="service-arrow">↗</span>
+          <h3>Editorial & Portraits</h3>
+          <p>Portrait sessions, magazine editorials, artist profiles and personal branding with art direction when needed.</p>
+        </article>
+        <article class="service">
+          <span class="service-num">02</span><span class="service-arrow">↗</span>
+          <h3>Weddings & Events</h3>
+          <p>Story-driven wedding coverage with understated direction, candid moments and refined editorial portraits.</p>
+        </article>
+        <article class="service">
+          <span class="service-num">03</span><span class="service-arrow">↗</span>
+          <h3>Architecture & Hospitality</h3>
+          <p>Interior, exterior and lifestyle imagery for hotels, restaurants, studios, architects and property brands.</p>
+        </article>
+        <article class="service">
+          <span class="service-num">04</span><span class="service-arrow">↗</span>
+          <h3>Brand Campaigns</h3>
+          <p>Commercial stills, food, fashion and location-based campaigns designed for digital, print and social rollouts.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section featured">
+    <div class="container">
+      <div class="featured-top reveal">
+        <div>
+          <div class="eyebrow">Featured work</div>
+          <h2 class="section-title">Recent frames.</h2>
+        </div>
+        <p class="featured-note">A rotating selection from recent commissions and personal work — photographed across Cairo, Siwa, Dubai and the Red Sea coast.</p>
+      </div>
+
+      <div class="featured-grid reveal">
+        <figure class="feature-big">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=88" alt="Fashion editorial">
+          <figcaption class="feature-label">
+            <div><span>Editorial</span><h3>After Hours</h3></div><span>2026</span>
+          </figcaption>
+        </figure>
+
+        <div class="feature-side">
+          <figure class="feature-small">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1100&q=86" alt="Modern architecture exterior">
+            <figcaption class="feature-label">
+              <div><span>Architecture</span><h3>House 17</h3></div><span>2025</span>
+            </figcaption>
+          </figure>
+          <figure class="feature-small">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1100&q=86" alt="Food table photographed for restaurant campaign">
+            <figcaption class="feature-label">
+              <div><span>Hospitality</span><h3>Table No. 8</h3></div><span>2025</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="portfolio-head reveal">
+        <div>
+          <div class="eyebrow">Selected projects</div>
+          <h2 class="section-title">Stories in full.</h2>
+        </div>
+        <div class="filters" aria-label="Project filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="editorial">Editorial</button>
+          <button class="filter" data-filter="weddings">Weddings</button>
+          <button class="filter" data-filter="architecture">Architecture</button>
+          <button class="filter" data-filter="hospitality">Hospitality</button>
+          <button class="filter" data-filter="travel">Travel</button>
+        </div>
+      </div>
+
+      <div class="projects">
+
+        <article class="project reveal" data-category="editorial">
+          <div class="project-meta">
+            <div>
+              <span class="project-index">PROJECT 01</span>
+              <div class="project-category">Editorial · Fashion</div>
+              <h3>After Hours</h3>
+              <p class="project-desc">A dusk-to-night editorial photographed around Downtown Cairo, built around reflective surfaces, street light and understated styling. The visual direction was intentionally restrained, letting movement and city texture carry the series.</p>
+            </div>
+            <div class="project-info">
+              <div><span>Year</span><strong>2026</strong></div>
+              <div><span>Location</span><strong>Cairo, Egypt</strong></div>
+              <div><span>Deliverables</span><strong>28 edited frames</strong></div>
+              <div><span>Use</span><strong>Editorial / Social</strong></div>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=88" alt="After Hours fashion editorial image one"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=88" alt="After Hours fashion editorial image two"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=88" alt="After Hours fashion editorial image three"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1400&q=88" alt="After Hours fashion editorial image four"></div>
+            </div>
+            <div class="slider-count"><span class="current">01</span> / 04</div>
+            <div class="slider-controls">
+              <button class="slider-btn prev" aria-label="Previous image">←</button>
+              <button class="slider-btn next" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-category="weddings">
+          <div class="project-meta">
+            <div>
+              <span class="project-index">PROJECT 02</span>
+              <div class="project-category">Wedding · Documentary</div>
+              <h3>Mariam & Karim</h3>
+              <p class="project-desc">An intimate garden wedding photographed from the quiet preparation hours through the evening dinner. The coverage combined natural observation with short, lightly directed portrait sessions so the final gallery felt cohesive without losing spontaneity.</p>
+            </div>
+            <div class="project-info">
+              <div><span>Year</span><strong>2025</strong></div>
+              <div><span>Location</span><strong>Alexandria, Egypt</strong></div>
+              <div><span>Coverage</span><strong>10 hours</strong></div>
+              <div><span>Gallery</span><strong>520 final images</strong></div>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=88" alt="Wedding celebration portrait"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=88" alt="Wedding couple moment"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1400&q=88" alt="Wedding ceremony detail"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1400&q=88" alt="Bride portrait in natural light"></div>
+            </div>
+            <div class="slider-count"><span class="current">01</span> / 04</div>
+            <div class="slider-controls">
+              <button class="slider-btn prev" aria-label="Previous image">←</button>
+              <button class="slider-btn next" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-category="architecture">
+          <div class="project-meta">
+            <div>
+              <span class="project-index">PROJECT 03</span>
+              <div class="project-category">Architecture · Interiors</div>
+              <h3>House 17</h3>
+              <p class="project-desc">A residential architecture commission focused on material, proportion and the changing character of the rooms across the day. The final set paired clean wide frames with tactile close-ups and lived-in details.</p>
+            </div>
+            <div class="project-info">
+              <div><span>Year</span><strong>2025</strong></div>
+              <div><span>Location</span><strong>New Cairo, Egypt</strong></div>
+              <div><span>Client</span><strong>Atelier North</strong></div>
+              <div><span>Use</span><strong>Website / Publication</strong></div>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1400&q=88" alt="House 17 architecture exterior"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=88" alt="House 17 interior space"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=88" alt="House 17 interior details"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=88" alt="House 17 architectural detail"></div>
+            </div>
+            <div class="slider-count"><span class="current">01</span> / 04</div>
+            <div class="slider-controls">
+              <button class="slider-btn prev" aria-label="Previous image">←</button>
+              <button class="slider-btn next" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-category="hospitality">
+          <div class="project-meta">
+            <div>
+              <span class="project-index">PROJECT 04</span>
+              <div class="project-category">Food · Hospitality</div>
+              <h3>Table No. 8</h3>
+              <p class="project-desc">A launch campaign for a contemporary Mediterranean restaurant. The shoot covered signature plates, table moments, interiors and service details with warm directional light and a relaxed late-lunch atmosphere.</p>
+            </div>
+            <div class="project-info">
+              <div><span>Year</span><strong>2025</strong></div>
+              <div><span>Location</span><strong>Dubai, UAE</strong></div>
+              <div><span>Client</span><strong>Table No. 8</strong></div>
+              <div><span>Deliverables</span><strong>62 stills + 9 reels</strong></div>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=88" alt="Mediterranean food spread"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1400&q=88" alt="Fresh restaurant dish"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1400&q=88" alt="Pasta photographed for restaurant campaign"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1400&q=88" alt="Restaurant food photography"></div>
+            </div>
+            <div class="slider-count"><span class="current">01</span> / 04</div>
+            <div class="slider-controls">
+              <button class="slider-btn prev" aria-label="Previous image">←</button>
+              <button class="slider-btn next" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-category="travel">
+          <div class="project-meta">
+            <div>
+              <span class="project-index">PROJECT 05</span>
+              <div class="project-category">Travel · Personal Series</div>
+              <h3>Edge of Silence</h3>
+              <p class="project-desc">A three-day personal study of desert scale, early light and human presence around Siwa. Shot with a deliberately limited visual language — warm earth, long shadow and negative space — to preserve the quietness of the landscape.</p>
+            </div>
+            <div class="project-info">
+              <div><span>Year</span><strong>2024</strong></div>
+              <div><span>Location</span><strong>Siwa, Egypt</strong></div>
+              <div><span>Format</span><strong>Digital / 35mm-inspired</strong></div>
+              <div><span>Series</span><strong>36 final frames</strong></div>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><img src="https://images.unsplash.com/photo-1621172739173-68def01e5889?auto=format&fit=crop&w=1400&q=88" alt="Traveler walking through desert dunes"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=88" alt="Open landscape at golden hour"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=88" alt="Distant mountains in soft light"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1400&q=88" alt="Travel landscape story"></div>
+            </div>
+            <div class="slider-count"><span class="current">01</span> / 04</div>
+            <div class="slider-controls">
+              <button class="slider-btn prev" aria-label="Previous image">←</button>
+              <button class="slider-btn next" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-category="editorial">
+          <div class="project-meta">
+            <div>
+              <span class="project-index">PROJECT 06</span>
+              <div class="project-category">Portrait · Artist Profile</div>
+              <h3>Soft Focus</h3>
+              <p class="project-desc">A restrained portrait series for an independent musician, photographed in window light with neutral wardrobe and minimal set styling. The final images were designed to work across press, streaming platforms and tour material.</p>
+            </div>
+            <div class="project-info">
+              <div><span>Year</span><strong>2024</strong></div>
+              <div><span>Location</span><strong>Giza, Egypt</strong></div>
+              <div><span>Session</span><strong>Half day</strong></div>
+              <div><span>Use</span><strong>Press / Album / Social</strong></div>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1400&q=88" alt="Artist portrait in soft natural light"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=88" alt="Soft focus editorial portrait"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1400&q=88" alt="Editorial profile portrait"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1400&q=88" alt="Portrait study in natural light"></div>
+            </div>
+            <div class="slider-count"><span class="current">01</span> / 04</div>
+            <div class="slider-controls">
+              <button class="slider-btn prev" aria-label="Previous image">←</button>
+              <button class="slider-btn next" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container film-wrap">
+      <div class="film-card reveal">
+        <img src="https://images.unsplash.com/photo-1621172739173-68def01e5889?auto=format&fit=crop&w=1500&q=88" alt="Cinematic desert film still">
+        <div class="play">
+          <a href="https://www.pexels.com/video/stunning-cinematic-aerial-view-of-desert-ridge-32305781/" target="_blank" rel="noopener" aria-label="Watch motion journal">▶</a>
+        </div>
+      </div>
+      <div class="film-copy reveal">
+        <div class="eyebrow">Motion journal</div>
+        <h2>Stillness, with movement.</h2>
+        <p>Alongside still photography, I create short atmospheric films for hospitality, travel and campaign work — simple motion pieces built around light, space and detail rather than fast-cut trends.</p>
+        <a class="film-link" href="https://www.pexels.com/video/stunning-cinematic-aerial-view-of-desert-ridge-32305781/" target="_blank" rel="noopener">Watch selected film <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container experience-grid">
+      <div class="reveal">
+        <div class="eyebrow">Experience</div>
+        <h2 class="section-title">Nine years behind the camera.</h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="role">
+          <div class="role-year">2022 — NOW</div>
+          <div>
+            <h3>Independent Photographer · Cairo / Dubai</h3>
+            <p>Editorial, weddings, hospitality, architecture and campaign work for private clients, creative studios and regional brands.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="role-year">2019 — 2022</div>
+          <div>
+            <h3>Senior Photographer · North Studio</h3>
+            <p>Led still photography for hospitality and lifestyle accounts, from pre-production and shot lists through on-set direction and final image delivery.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="role-year">2017 — 2019</div>
+          <div>
+            <h3>Photographer & Retoucher · Framehouse</h3>
+            <p>Produced commercial product, portrait and event work while developing a natural-light portrait style and a clean, film-inspired color workflow.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="role-year">2016 — 2017</div>
+          <div>
+            <h3>Assistant Photographer</h3>
+            <p>Assisted on editorial and advertising productions, managing lighting setups, digital capture, location prep and image backup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Client notes</div>
+        <h2 class="section-title">Good work starts with trust.</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <article class="testimonial reveal">
+          <p>“Omar gave us a visual language that felt calm, premium and completely true to the space. We used the final images everywhere — website, press and launch campaign.”</p>
+          <div class="client">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=180&q=80" alt="Client portrait">
+            <div><strong>Salma El-Hady</strong><span>Creative Director · Atelier North</span></div>
+          </div>
+        </article>
+
+        <article class="testimonial reveal">
+          <p>“The wedding photos feel like us. Nothing looks forced, and there are so many small moments we didn’t even realize were happening.”</p>
+          <div class="client">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=180&q=80" alt="Client portrait">
+            <div><strong>Mariam K.</strong><span>Private Client · Alexandria</span></div>
+          </div>
+        </article>
+
+        <article class="testimonial reveal">
+          <p>“He understood the brand immediately — the styling, pace and type of light we needed. The whole shoot felt efficient without ever feeling rushed.”</p>
+          <div class="client">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=180&q=80" alt="Client portrait">
+            <div><strong>Youssef Amr</strong><span>Founder · Table No. 8</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="eyebrow">Contact</div>
+        <h2 class="contact-large">Let’s make something <em>worth keeping.</em></h2>
+        <div class="contact-details">
+          <a href="mailto:hello@omarnasser.photo">hello@omarnasser.photo</a>
+          <a href="tel:+201001234567">+20 100 123 4567</a>
+          <span>Cairo, Egypt · Available worldwide</span>
+        </div>
+      </div>
+
+      <form class="form reveal" id="contactForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="type">Project type</label>
+          <input id="type" name="type" type="text" placeholder="Wedding, editorial, campaign, hospitality...">
+        </div>
+        <div class="field">
+          <label for="message">Tell me about the project</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="submit" type="submit">Send inquiry ↗</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <span>© 2026 Omar Nasser Photography. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.vimeo.com/" target="_blank" rel="noopener">Vimeo</a>
+      <a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 24);
+  });
+
+  // Mobile navigation
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuToggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Project sliders
+  document.querySelectorAll('[data-slider]').forEach(slider => {
+    const track = slider.querySelector('.slides');
+    const slides = [...slider.querySelectorAll('.slide')];
+    const currentEl = slider.querySelector('.current');
+    const nextBtn = slider.querySelector('.next');
+    const prevBtn = slider.querySelector('.prev');
+    let index = 0;
+    let startX = null;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      currentEl.textContent = String(index + 1).padStart(2, '0');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      update();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    });
+
+    slider.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', e => {
+      if (startX === null) return;
+      const delta = e.changedTouches[0].clientX - startX;
+      if (Math.abs(delta) > 45) {
+        index = delta < 0 ? (index + 1) % slides.length : (index - 1 + slides.length) % slides.length;
+        update();
+      }
+      startX = null;
+    }, { passive: true });
+  });
+
+  // Project filtering
+  const filters = [...document.querySelectorAll('.filter')];
+  const projects = [...document.querySelectorAll('.project')];
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      filters.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+
+      projects.forEach(project => {
+        project.hidden = !(filter === 'all' || project.dataset.category === filter);
+      });
+    });
+  });
+
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.submit');
+    const original = btn.textContent;
+    btn.textContent = 'Inquiry ready ✓';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.disabled = false;
+      contactForm.reset();
+    }, 2200);
+  });
+</script>
+</body>
+</html>
