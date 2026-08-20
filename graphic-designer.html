@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#111111" />
-  <title>Karim Mansour — Graphic Designer</title>
-  <meta name="description" content="Portfolio of Karim Mansour — Graphic Designer & Visual Identity Specialist." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#111111" name="theme-color"/>
+<title>كريم منصور — مصمم جرافيك ومتخصص هويات بصرية</title>
+<meta content="بورتفوليو كريم منصور، مصمم جرافيك متخصص في الهوية البصرية والحملات والتغليف والمطبوعات." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root{
       --bg:#f4f1ea;
       --paper:#fbfaf6;
@@ -149,250 +150,264 @@
       .cv{width:100%!important;border-radius:0!important;box-shadow:none!important}
       .cv-actions{display:none!important}
     }
-  </style>
+  
+    /* Arabic layout and overflow fixes */
+    .en{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0;text-transform:none}
+    .container,.hero-grid,.hero-copy,.hero-visual,.section-head>*,.about-grid>*,.project>*,.contact-wrap>*{min-width:0}
+    .hero{overflow:hidden}
+    .hero-grid{width:100%;max-width:100%}
+    .hero-copy{width:100%;max-width:100%;overflow:hidden}
+    .hero h1{font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(52px,7.2vw,104px);line-height:1.05;letter-spacing:-.045em;max-width:780px;width:100%;overflow-wrap:normal;word-break:normal}
+    .section-head h2,.work-header h3,.project-info h4,.year,.stat b{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:-.025em}
+    .hero-sub{width:100%;max-width:720px}
+    .hero-sub>*{min-width:0}
+    .marquee{padding-inline:0}
+    .marquee-container{overflow:hidden}
+    .marquee-track{font-family:'IBM Plex Sans Arabic',sans-serif;text-transform:none;direction:rtl}
+    .project-topline{font-family:'IBM Plex Sans Arabic',sans-serif;text-transform:none}
+    .brand{font-family:'IBM Plex Sans Arabic',sans-serif}
+    .brand-mark{font-family:'IBM Plex Sans Arabic',sans-serif}
+    h1,h2,h3,h4,p,span,strong,a,button,label,input,textarea{overflow-wrap:break-word}
+    @media (max-width: 760px){
+      .container,nav{width:min(100% - 28px,var(--max))}
+      .hero{padding-top:125px;padding-bottom:42px;min-height:auto}
+      .hero h1{font-size:clamp(46px,14vw,72px);line-height:1.08;letter-spacing:-.035em;margin:14px 0 22px}
+      .hero-sub{display:grid;gap:10px;font-size:16px}
+      .hero-actions{gap:9px;margin-top:24px}
+      .hero-actions .btn{flex:1 1 auto}
+      .marquee-container{width:100%;padding-inline:14px}
+      .availability{max-width:calc(100% - 32px);white-space:normal}
+    }
+    @media (max-width: 420px){
+      .container,nav{width:calc(100% - 20px)}
+      .hero h1{font-size:44px}
+      .hero-copy{padding-inline:0}
+    }
+</style>
 </head>
 <body>
-  <div class="nav-wrap">
-    <nav>
-      <a class="brand" href="#top"><span class="brand-mark">KM</span><span>Karim Mansour</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">عنّي</a><a href="#work">الأعمال</a><a href="#experience">الخبرة</a><a href="#clients">العملاء</a><a href="#contact">تواصل</a>
-      </div>
-      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
-    </nav>
-  </div>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow en">Independent Graphic Designer — Cairo</span>
-          <h1 class="en">Design with<br><span class="accent">clarity.</span><br>Built to last.</h1>
-          <div class="hero-sub">
-            <strong>مصمم جرافيك متخصص في بناء الهويات البصرية والحملات والعبوات.</strong>
-            <span>أحوّل الأفكار إلى أنظمة بصرية متماسكة تساعد العلامات على الظهور بثقة، من أول شعار وحتى كل نقطة تواصل مع الجمهور.</span>
-          </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="#work">استكشف الأعمال <span>↙</span></a>
-            <button class="btn" data-open-cv>عرض الـ CV</button>
-          </div>
-        </div>
-        <div class="hero-visual reveal">
-          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1400&q=88" alt="مساحة عمل مصمم جرافيك" loading="eager">
-          <div class="availability">متاح لمشاريع مختارة — Q4 2026</div>
-          <div class="hero-badge"><strong class="en">Selected work<br>2022—2026</strong><span>Brand / Campaign / Packaging</span></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Brand Identity</span><span>Art Direction</span><span>Social Campaigns</span><span>Packaging</span><span>Editorial</span><span>Print Design</span><span>Brand Identity</span><span>Art Direction</span><span>Social Campaigns</span><span>Packaging</span></div></div>
-
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <aside class="about-card reveal">
-          <span class="eyebrow en">Profile / CV</span>
-          <h3>كريم منصور</h3>
-          <p>Graphic Designer & Visual Identity Specialist</p>
-          <div class="quick-list">
-            <div class="quick-row"><span>الموقع</span><strong>القاهرة، مصر</strong></div>
-            <div class="quick-row"><span>الخبرة</span><strong>7 سنوات</strong></div>
-            <div class="quick-row"><span>التخصص</span><strong>Branding & Art Direction</strong></div>
-            <div class="quick-row"><span>العمل</span><strong>Freelance / Remote</strong></div>
-            <div class="quick-row"><span>اللغات</span><strong>العربية / English</strong></div>
-          </div>
-          <div class="hero-actions"><button class="btn primary" data-open-cv>عرض السيرة الذاتية</button><a class="btn ghost" id="downloadCvQuick" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxODI1Cj4+CnN0cmVhbQpHYXUwRDlpTCgzJkFAWmNxRD5UJV87ZkddXTlgdUMwVVc2LywrNVBybHBdUSFVOz05Q1o1YmMscXI+LnM0MF1EODEsQ21UT1s8MUtdJSshclQ1OSg4aGNCRDM4Y15SLG5HXlEzYkQsZm8vRCJpTDUoUlslQXNiYzIiYFg1Y1E9bl9gKWYva3VFQGYiRltjImFJPVNGQWFabFMlWT9zam4kaG1bIWJfRz9lWz9uJ2xtWFBmck0pPFA6NnJfJ1QmbyJoRFRmVT4wL2xDVCFjXGBwbkg5alw5a1k/MXBvWnNfKDkkP3VmKlpEJlROTis4O0otOSFYJUJ1RVFaJDQ1bEwsIyVKSUtaZChCVDZvIUZdWkx1XFY6WmQ2MmJfXW9wMSU9UyxpTzU4V1guJzc1VTNGWiFWZDJgPHVaQFAtP3UqZVZXSU9HK2gqYkNWZjAnVDRxXCFJQ1xgT2E4Lz4mSVVbaWhFcyNiXlFLJ01TTTkqXypgZjRVTHBAVT9mLVJ0Qmg3TEAmXEokLV5bJ2JPcyhGKnQ2MnRYTUA+ZWcyK05NLFY9VksqUWRzUW1WNGlqRlo5JW5ITSIuP102PTQ+Plgnc1JKY0ldbkxdW0EyamhrcVA9Wz9oXXJmXjlzLiVXKFNQVXFZb1tZL2N0KioqYC5kQHRqL1U4YXQ+LCYnZyFZRyk3Xk0mc2M6UjNZb0QxaE1tWUFEZSY4cmtOPE8ncTdQPFsiJjtybjAkKE8hQC87ai11LyNzX29MIW9bNSpqcCRKMiY4VSQoTF04YltZWGlSLUowI2RbPWVhXmg5JCo5ZWctYW9nT0I+LF0zPCtGamlCLXVHKnVTMl5cWENFNE4uS25OKUdCSSJIWyQpMFJCNWIuOTtGTGoxIWlpIytUPl1pY042MkQ0MVJnbG8oIUghLGZkLERFQllhXERsYk4ucElwJy07alJXITVcPDFPNEA3cFVlPSg2JyxEZEVfNEtwPDJQZnFrV0NqQD5wREcvPk9ENUwsZV5YblFMcDdcLl1dVC51KjtHOTQiXUVoREwrYW5VSShaV1VDYkNmJyVTJVE3OyY6XnNeWG4+WShBY2lGN0AkVUhrSmxMND8sJFlVJlYjPmphaWJDR05ROXJdSWgnNCFDIUdmQWRKKCFVJnI0Z18uYFtaa04+SlchZnBYYi1fcmM5RWVlTVU7MDZWYy89Rzo3cjNjSWsrOFc/NkI6cUdVdXFUUE1oQUdZZ01nRz5ZY2k4Zl5TXXVnMzRwOGNocEoqNShjNGU3OjQnYTNVYXIqWCg9U2RjQz9XTC0pWiVKS0pmOGUkKVBqNE9ST15bPFU8M1BvZkFbWlpYX2xlW3EsR11CckhMXiM+PGwrW3JlLUhFUTk6USM2UzVcXD1iKUEtO0g7MTRuLl0+NDchcV9KInNlcy07ZS1JW0ZhNUZOLDJtXmxyXWwqUiNfcUtrRkFGZyZeZy1AQTpFMStIRVpjW2ZPXDU7LlVhLk9ORHEzaSFALjZqSm4hNUZUaEBYW0Y6RS5yRkFkakkya3BZUz0+J21hcC81Qjs6QDNmTzorQ0hQPlFvMyptY1A6bD5UVC9EJDNjM2xZSjwuMiFYQVtAcD9LPWY+ckQuPFdFOnJYbjh1JiZCWVFRN3BLWlRMdW4kb1Q2b0VmQlFcQSFObW5iYTVOKjZlUnI+QChAUSorSExWJC4lIigmV3FgLyxkXy0jVVszSlwzRXE/OzBrXCxKLjxHLGNjMDZZOmwnNko5Il1qPV4/NT02MDlAXjFcWkMkTSNGcitdWnFSLl9WIkhVX3NBWGI3ZDJhRyFmNGhoLzBaVl9WdF9OJzNNPk1xYEg8bEBHUGBWcCFpJk5JI2ZHdVFYcVU9YFVVbUxnUXUicEo7YEYiVSgoQConS3VNIStTaCUsITRUYVVsZUtXcjZGMW9wNGFCYjZgRWZmMyRLbSozNWZoMixOcCE0LyVHMy5HSiFuQHFtPVxLNUwoRGJyRkM9K2cyYFlkYicyOjd1cTY8b0YxKEkuW2JVV050Sz1ZVF4tZWxoayw0PXFzcENTckdMam9ZQlg0UnJJJSJXcTA9ZmVPNy1zXlRRal9UP25SRDMhQSZrM1NtdGQ9bExNJWtvUjokMEpjTXNXLkNwJEhHcDQsUmM+V29CNktQdFZSczIicGY7WGpSKk5lIz9fRlpfVUxSMF1gVFVfT2U3Q11mLHAwTzQ/Il5ePU9oRikjZldocnUwQzpzQUhKZFdRW3BNPFJeTVRIOSxHN1EjV3FqNTJwVjBSQis1cks/NytpRUstKiJ1QVVWM1VGRTtUdF9fPjZPOS4lNztNRzMwLmlIRlwpX28qLidqJFk7Xz8wbjk4Kz47XFhKIUxXQSRfNENTLkgtdG4zUSE0ZWxjKktXLGdwaEN1ZCNxcnMiZV9HXF1yck4lNVkuNH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4NTMgMDAwMDAgbiAKMDAwMDAwMDkxMiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4NDJlZjVmMDhhZmY3Y2U0ZDc0NzEzMzc1NWFhODRjZT48ODQyZWY1ZjA4YWZmN2NlNGQ3NDcxMzM3NTVhYTg0Y2U+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI4MjgKJSVFT0YK" download="Karim-Mansour-CV.pdf">تحميل CV</a></div>
-        </aside>
-        <div class="about-copy reveal">
-          <span class="eyebrow en">About Me</span>
-          <h2>أصمم هوية لها شخصية، وليس مجرد شكل جميل.</h2>
-          <p>خلال السنوات الماضية عملت مع علامات ناشئة وشركات في قطاعات الأغذية، الضيافة، العقارات، التجارة الإلكترونية والخدمات المهنية. أبدأ كل مشروع بفهم السوق والعميل، ثم أبني لغة بصرية عملية يمكنها التوسع من الشعار إلى المحتوى والحملات والمطبوعات والتغليف.</p>
-          <p>أهتم بالتفاصيل التي تبدو صغيرة لكنها تصنع فارقًا في الانطباع النهائي: نظام الخطوط، الإيقاع، المساحات، اختيار الصور، قواعد الاستخدام، وطريقة ظهور العلامة في الواقع وليس فقط على شاشة العرض.</p>
-          <div class="stats">
-            <div class="stat"><b>68+</b><span>مشروعًا مكتملًا</span></div>
-            <div class="stat"><b>14</b><span>قطاعًا مختلفًا</span></div>
-            <div class="stat"><b>9</b><span>أسواق عربية ودولية</span></div>
-          </div>
-          <div class="skills"><span class="chip">Adobe Illustrator</span><span class="chip">Photoshop</span><span class="chip">InDesign</span><span class="chip">After Effects</span><span class="chip">Figma</span><span class="chip">Brand Strategy</span><span class="chip">Typography</span><span class="chip">Creative Direction</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-head reveal"><div><span class="eyebrow en">Services</span><h2>What I do.</h2></div><p>خدمات مصممة لتغطية رحلة العلامة بصريًا من الفكرة الأولى وحتى التطبيق اليومي، مع نظام مرن يمكن الحفاظ عليه وتطويره بعد تسليم المشروع.</p></div>
-        <div class="services-grid">
-          <article class="service reveal"><span class="service-index en">01 / Brand</span><div class="service-icon">◐</div><div><h3>الهوية البصرية</h3><p>الشعار، الألوان، الخطوط، الأنماط، التطبيقات، ودليل استخدام متكامل.</p></div></article>
-          <article class="service reveal"><span class="service-index en">02 / Campaign</span><div class="service-icon">✦</div><div><h3>الحملات الإعلانية</h3><p>Key Visual، إعلانات السوشيال، المواد الرقمية، وتوحيد الاتجاه الإبداعي للحملة.</p></div></article>
-          <article class="service reveal"><span class="service-index en">03 / Packaging</span><div class="service-icon">◇</div><div><h3>تصميم العبوات</h3><p>تغليف منتجات يوازن بين وضوح المعلومات، شخصية العلامة وتجربة الرف.</p></div></article>
-          <article class="service reveal"><span class="service-index en">04 / Editorial</span><div class="service-icon">▤</div><div><h3>المطبوعات والتحرير</h3><p>بروفايلات الشركات، الكتالوجات، التقارير، البروشورات والمواد المطبوعة.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section-head reveal"><div><span class="eyebrow en">Selected Work</span><h2>Projects, not thumbnails.</h2></div><p>كل مشروع أدناه معروض كسلسلة صور مستقلة توضح كيف تتحول الفكرة إلى نظام بصري متكامل عبر أكثر من نقطة تواصل، وليس مجرد لقطة واحدة.</p></div>
-      </div>
-
-      <div class="work-section"><div class="container">
-        <div class="work-header reveal"><div><span class="en">01 / Branding</span><h3>Brand Identity</h3></div><span>2 selected projects</span></div>
-        <div class="projects">
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1400&q=86" alt="هوية Noura Coffee"><div class="slide-overlay"><small>Identity system / primary composition</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=86" alt="تطبيقات هوية Noura Coffee"><div class="slide-overlay"><small>Retail touchpoints / coffee experience</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1400&q=86" alt="تجربة Noura Coffee"><div class="slide-overlay"><small>Packaging & in-store direction</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev" aria-label="السابق">←</button><button class="slider-btn next" aria-label="التالي">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Noura Coffee Roasters</span><span>2026</span></div><h4>NOURA</h4><p>إعادة بناء هوية محمصة قهوة متخصصة بطابع هادئ ودافئ، مع نظام بصري مرن للعبوات، الأكواب، القوائم والمحتوى الرقمي.</p><div class="project-tags"><span>Strategy</span><span>Identity</span><span>Packaging</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=86" alt="هوية Northline"><div class="slide-overlay"><small>Corporate identity / brand system</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=86" alt="تطبيق هوية Northline"><div class="slide-overlay"><small>Internal communication & brand culture</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=86" alt="مكتب Northline"><div class="slide-overlay"><small>Environmental branding</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Northline Advisory</span><span>2025</span></div><h4>NORTHLINE</h4><p>هوية مؤسسية لشركة استشارات أعمال، بنيت على فكرة الاتجاه والوضوح مع لغة بصرية حادة ومهنية تصلح للعروض والتقارير والمساحات المكتبية.</p><div class="project-tags"><span>Branding</span><span>Corporate</span><span>Guidelines</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-        </div>
-      </div></div>
-
-      <div class="work-section"><div class="container">
-        <div class="work-header reveal"><div><span class="en">02 / Social</span><h3>Social Campaigns</h3></div><span>2 selected projects</span></div>
-        <div class="projects">
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=86" alt="حملة Riva"><div class="slide-overlay"><small>Launch campaign / key visual</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=86" alt="جلسة تخطيط حملة Riva"><div class="slide-overlay"><small>Campaign system / content planning</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=86" alt="محتوى رقمي لحملة Riva"><div class="slide-overlay"><small>Performance-ready digital assets</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Riva Fitness</span><span>2026</span></div><h4>MOVE / 30</h4><p>اتجاه إبداعي لحملة إطلاق برنامج تدريبي لمدة 30 يومًا، يجمع بين لغة قصيرة وواضحة ونظام محتوى مرن للإعلانات والقصص والمنشورات.</p><div class="project-tags"><span>Art Direction</span><span>Campaign</span><span>Social</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=86" alt="حملة متجر Lenzo"><div class="slide-overlay"><small>Sale campaign / retail communication</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1400&q=86" alt="تسوق إلكتروني Lenzo"><div class="slide-overlay"><small>Digital commerce creative direction</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1400&q=86" alt="واجهة متجر Lenzo"><div class="slide-overlay"><small>Retail rollout / storefront language</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Lenzo Market</span><span>2025</span></div><h4>WEEK / END</h4><p>سلسلة حملات تجارية موسمية لمتجر إلكتروني، مع قالب بصري يحافظ على سرعة إنتاج المحتوى ويمنح العروض حضورًا واضحًا دون تشويش.</p><div class="project-tags"><span>Retail</span><span>Social Ads</span><span>Campaign System</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-        </div>
-      </div></div>
-
-      <div class="work-section"><div class="container">
-        <div class="work-header reveal"><div><span class="en">03 / Packaging</span><h3>Packaging Design</h3></div><span>2 selected projects</span></div>
-        <div class="projects">
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1400&q=86" alt="تغليف شاي Bayt Noon"><div class="slide-overlay"><small>Product family / shelf presence</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1400&q=86" alt="تشكيلة شاي Bayt Noon"><div class="slide-overlay"><small>Flavor coding & category system</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1400&q=86" alt="تجربة شاي Bayt Noon"><div class="slide-overlay"><small>Brand ritual / serving experience</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Bayt Noon Tea</span><span>2024</span></div><h4>BAYT NOON</h4><p>نظام تغليف لعلامة شاي عربية معاصرة؛ يعتمد على ترميز واضح للنكهات، خامات هادئة، وتفاصيل مستوحاة من طقوس الشاي في المنطقة.</p><div class="project-tags"><span>Packaging</span><span>Illustration</span><span>Retail</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1400&q=86" alt="تغليف Sole Studio"><div class="slide-overlay"><small>Footwear packaging / unboxing</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=86" alt="هوية منتج Sole Studio"><div class="slide-overlay"><small>Product-led visual language</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1400&q=86" alt="منتج Sole Studio"><div class="slide-overlay"><small>Campaign-ready packaging system</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Sole Studio</span><span>2024</span></div><h4>SOLE / 01</h4><p>تطوير عبوات وعناصر تجربة فتح المنتج لعلامة أحذية مستقلة، مع لغة جرافيكية رياضية بسيطة تضع المنتج في المقدمة.</p><div class="project-tags"><span>Packaging</span><span>Unboxing</span><span>Brand System</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-        </div>
-      </div></div>
-
-      <div class="work-section"><div class="container">
-        <div class="work-header reveal"><div><span class="en">04 / Print</span><h3>Print & Editorial</h3></div><span>2 selected projects</span></div>
-        <div class="projects">
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1400&q=86" alt="كتاب Qamar Journal"><div class="slide-overlay"><small>Editorial system / opening spread</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1400&q=86" alt="صفحات Qamar Journal"><div class="slide-overlay"><small>Typography & reading rhythm</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1400&q=86" alt="إصدار Qamar Journal"><div class="slide-overlay"><small>Printed object / cultural context</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Qamar Journal</span><span>2023</span></div><h4>ISSUE 07</h4><p>تصميم عدد خاص من مجلة ثقافية مستقلة، مع شبكة تحريرية مرنة تتعامل مع المقالات الطويلة والتصوير والاقتباسات دون فقدان الإيقاع.</p><div class="project-tags"><span>Editorial</span><span>Typography</span><span>Print</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-
-          <article class="project reveal" data-slider>
-            <div class="slider"><div class="slides">
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=86" alt="ملف شركة Atelier Nine"><div class="slide-overlay"><small>Studio profile / editorial direction</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=86" alt="مساحات Atelier Nine"><div class="slide-overlay"><small>Architecture-led visual story</small></div></figure>
-              <figure class="slide"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=86" alt="هوية Atelier Nine"><div class="slide-overlay"><small>Case study presentation</small></div></figure>
-            </div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
-            <div class="project-info"><div><div class="project-topline"><span>Atelier Nine</span><span>2023</span></div><h4>STUDIO PROFILE</h4><p>ملف تعريفي لاستوديو تصميم داخلي يجمع بين النصوص المختصرة والصور الكبيرة ودراسات المشاريع في نظام تحريري هادئ وسهل التصفح.</p><div class="project-tags"><span>Company Profile</span><span>Editorial</span><span>Layout</span></div></div><a href="#contact" class="case-link">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
-          </article>
-        </div>
-      </div></div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container experience">
-        <div class="experience-intro reveal"><span class="eyebrow en">Experience</span><h2>7 years,<br>still curious.</h2><p>خبرة بين العمل داخل استوديوهات التصميم، الفرق التسويقية، والمشاريع المستقلة لعملاء في مصر والخليج.</p></div>
-        <div class="timeline reveal">
-          <div class="job"><div class="year en">2024 — NOW</div><div><h3>Independent Graphic Designer</h3><h4>Freelance / Cairo</h4><p>إدارة مشاريع هوية وحملات وتغليف من مرحلة الاكتشاف وحتى التسليم، والعمل مباشرة مع المؤسسين ومديري التسويق.</p></div></div>
-          <div class="job"><div class="year en">2022 — 2024</div><div><h3>Senior Graphic Designer</h3><h4>Gridline Creative Studio</h4><p>قيادة الاتجاه البصري لحسابات في قطاع الأغذية والضيافة والتجزئة، ومراجعة جودة المخرجات اليومية لفريق التصميم.</p></div></div>
-          <div class="job"><div class="year en">2020 — 2022</div><div><h3>Graphic Designer</h3><h4>North House Agency</h4><p>تصميم حملات رقمية، هويات مصغرة، مواد مطبوعة وعروض تقديمية لعلامات محلية وإقليمية.</p></div></div>
-          <div class="job"><div class="year en">2019 — 2020</div><div><h3>Junior Visual Designer</h3><h4>Studio 31</h4><p>إعداد تطبيقات الهوية، تجهيز ملفات الطباعة، بناء موكابس واقعية وتطوير مهارات التايبوجرافي والإخراج.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="clients">
-      <div class="container">
-        <div class="section-head reveal"><div><span class="eyebrow en">Clients & Words</span><h2>Built together.</h2></div><p>أفضل المشاريع تأتي عندما تكون العلاقة واضحة: أهداف محددة، مساحة للنقاش، وقرارات تصميم مرتبطة بالعلامة لا بالذوق الشخصي فقط.</p></div>
-        <div class="clients reveal"><div class="client">NOURA</div><div class="client">NORTHLINE</div><div class="client">RIVA</div><div class="client">LENZO</div><div class="client">BAYT NOON</div><div class="client">ATELIER NINE</div><div class="client">MIRA FOODS</div><div class="client">SOLA</div><div class="client">FORM.</div><div class="client">PALM 24</div><div class="client">MINT LAB</div><div class="client">DAR 17</div></div>
-        <div class="testimonials">
-          <article class="quote reveal"><p>“كريم لم يبدأ برسم الشعار، بدأ بفهم المنتج والسوق. النتيجة كانت هوية نعرف كيف نستخدمها فعليًا كل يوم.”</p><div class="person"><div class="avatar">NA</div><div><strong>نور عادل</strong><span>Founder — Noura Coffee</span></div></div></article>
-          <article class="quote reveal"><p>“أكثر شيء فرق معنا هو النظام. الفريق أصبح ينتج المحتوى أسرع، وكل شيء يبدو تابعًا لنفس العلامة حتى مع اختلاف الحملات.”</p><div class="person"><div class="avatar">OS</div><div><strong>عمر سامح</strong><span>Marketing Lead — Lenzo</span></div></div></article>
-          <article class="quote reveal"><p>“تعامل احترافي جدًا، المواعيد واضحة، العرض منظم، والتعديلات لها منطق. الهوية الجديدة رفعت مستوى عروضنا أمام العملاء.”</p><div class="person"><div class="avatar">RM</div><div><strong>ريم مجدي</strong><span>Managing Partner — Northline</span></div></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container contact-wrap">
-        <div class="contact-copy reveal"><span class="eyebrow en">Contact</span><h2>Have a project?<br>Let’s talk.</h2><p>إذا لديك علامة جديدة، إعادة تصميم لهوية موجودة، حملة أو مشروع يحتاج اتجاهًا بصريًا واضحًا، أرسل لي نبذة قصيرة عن المشروع والموعد المتوقع للبدء.</p><div class="contact-links"><a class="btn" href="mailto:hello@karimmansour.design">Email</a><a class="btn" href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a><a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></div></div>
-        <form class="contact-form reveal" id="contactForm">
-          <div class="field"><label for="name">الاسم</label><input id="name" required></div>
-          <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" type="email" required></div>
-          <div class="field"><label for="type">نوع المشروع</label><input id="type" required></div>
-          <div class="field"><label for="message">نبذة عن المشروع</label><textarea id="message" required></textarea></div>
-          <button class="btn primary" type="submit">إرسال الطلب عبر البريد</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer><div class="container footer-row"><span>© 2026 Karim Mansour. All rights reserved.</span><span class="en">Graphic Design / Brand Identity / Art Direction</span></div></footer>
-
-  <div class="modal" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvTitle">
-    <article class="cv">
-      <div class="cv-head"><div><span class="eyebrow en">Curriculum Vitae</span><h2 id="cvTitle">Karim Mansour</h2><p style="margin:5px 0 0;color:#666">Graphic Designer & Visual Identity Specialist — Cairo, Egypt</p></div><div class="cv-actions"><a class="icon-btn" id="downloadCv" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxODI1Cj4+CnN0cmVhbQpHYXUwRDlpTCgzJkFAWmNxRD5UJV87ZkddXTlgdUMwVVc2LywrNVBybHBdUSFVOz05Q1o1YmMscXI+LnM0MF1EODEsQ21UT1s8MUtdJSshclQ1OSg4aGNCRDM4Y15SLG5HXlEzYkQsZm8vRCJpTDUoUlslQXNiYzIiYFg1Y1E9bl9gKWYva3VFQGYiRltjImFJPVNGQWFabFMlWT9zam4kaG1bIWJfRz9lWz9uJ2xtWFBmck0pPFA6NnJfJ1QmbyJoRFRmVT4wL2xDVCFjXGBwbkg5alw5a1k/MXBvWnNfKDkkP3VmKlpEJlROTis4O0otOSFYJUJ1RVFaJDQ1bEwsIyVKSUtaZChCVDZvIUZdWkx1XFY6WmQ2MmJfXW9wMSU9UyxpTzU4V1guJzc1VTNGWiFWZDJgPHVaQFAtP3UqZVZXSU9HK2gqYkNWZjAnVDRxXCFJQ1xgT2E4Lz4mSVVbaWhFcyNiXlFLJ01TTTkqXypgZjRVTHBAVT9mLVJ0Qmg3TEAmXEokLV5bJ2JPcyhGKnQ2MnRYTUA+ZWcyK05NLFY9VksqUWRzUW1WNGlqRlo5JW5ITSIuP102PTQ+Plgnc1JKY0ldbkxdW0EyamhrcVA9Wz9oXXJmXjlzLiVXKFNQVXFZb1tZL2N0KioqYC5kQHRqL1U4YXQ+LCYnZyFZRyk3Xk0mc2M6UjNZb0QxaE1tWUFEZSY4cmtOPE8ncTdQPFsiJjtybjAkKE8hQC87ai11LyNzX29MIW9bNSpqcCRKMiY4VSQoTF04YltZWGlSLUowI2RbPWVhXmg5JCo5ZWctYW9nT0I+LF0zPCtGamlCLXVHKnVTMl5cWENFNE4uS25OKUdCSSJIWyQpMFJCNWIuOTtGTGoxIWlpIytUPl1pY042MkQ0MVJnbG8oIUghLGZkLERFQllhXERsYk4ucElwJy07alJXITVcPDFPNEA3cFVlPSg2JyxEZEVfNEtwPDJQZnFrV0NqQD5wREcvPk9ENUwsZV5YblFMcDdcLl1dVC51KjtHOTQiXUVoREwrYW5VSShaV1VDYkNmJyVTJVE3OyY6XnNeWG4+WShBY2lGN0AkVUhrSmxMND8sJFlVJlYjPmphaWJDR05ROXJdSWgnNCFDIUdmQWRKKCFVJnI0Z18uYFtaa04+SlchZnBYYi1fcmM5RWVlTVU7MDZWYy89Rzo3cjNjSWsrOFc/NkI6cUdVdXFUUE1oQUdZZ01nRz5ZY2k4Zl5TXXVnMzRwOGNocEoqNShjNGU3OjQnYTNVYXIqWCg9U2RjQz9XTC0pWiVKS0pmOGUkKVBqNE9ST15bPFU8M1BvZkFbWlpYX2xlW3EsR11CckhMXiM+PGwrW3JlLUhFUTk6USM2UzVcXD1iKUEtO0g7MTRuLl0+NDchcV9KInNlcy07ZS1JW0ZhNUZOLDJtXmxyXWwqUiNfcUtrRkFGZyZeZy1AQTpFMStIRVpjW2ZPXDU7LlVhLk9ORHEzaSFALjZqSm4hNUZUaEBYW0Y6RS5yRkFkakkya3BZUz0+J21hcC81Qjs6QDNmTzorQ0hQPlFvMyptY1A6bD5UVC9EJDNjM2xZSjwuMiFYQVtAcD9LPWY+ckQuPFdFOnJYbjh1JiZCWVFRN3BLWlRMdW4kb1Q2b0VmQlFcQSFObW5iYTVOKjZlUnI+QChAUSorSExWJC4lIigmV3FgLyxkXy0jVVszSlwzRXE/OzBrXCxKLjxHLGNjMDZZOmwnNko5Il1qPV4/NT02MDlAXjFcWkMkTSNGcitdWnFSLl9WIkhVX3NBWGI3ZDJhRyFmNGhoLzBaVl9WdF9OJzNNPk1xYEg8bEBHUGBWcCFpJk5JI2ZHdVFYcVU9YFVVbUxnUXUicEo7YEYiVSgoQConS3VNIStTaCUsITRUYVVsZUtXcjZGMW9wNGFCYjZgRWZmMyRLbSozNWZoMixOcCE0LyVHMy5HSiFuQHFtPVxLNUwoRGJyRkM9K2cyYFlkYicyOjd1cTY8b0YxKEkuW2JVV050Sz1ZVF4tZWxoayw0PXFzcENTckdMam9ZQlg0UnJJJSJXcTA9ZmVPNy1zXlRRal9UP25SRDMhQSZrM1NtdGQ9bExNJWtvUjokMEpjTXNXLkNwJEhHcDQsUmM+V29CNktQdFZSczIicGY7WGpSKk5lIz9fRlpfVUxSMF1gVFVfT2U3Q11mLHAwTzQ/Il5ePU9oRikjZldocnUwQzpzQUhKZFdRW3BNPFJeTVRIOSxHN1EjV3FqNTJwVjBSQis1cks/NytpRUstKiJ1QVVWM1VGRTtUdF9fPjZPOS4lNztNRzMwLmlIRlwpX28qLidqJFk7Xz8wbjk4Kz47XFhKIUxXQSRfNENTLkgtdG4zUSE0ZWxjKktXLGdwaEN1ZCNxcnMiZV9HXF1yck4lNVkuNH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4NTMgMDAwMDAgbiAKMDAwMDAwMDkxMiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4NDJlZjVmMDhhZmY3Y2U0ZDc0NzEzMzc1NWFhODRjZT48ODQyZWY1ZjA4YWZmN2NlNGQ3NDcxMzM3NTVhYTg0Y2U+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI4MjgKJSVFT0YK" download="Karim-Mansour-CV.pdf">تحميل PDF</a><button class="icon-btn" id="closeCv">إغلاق ×</button></div></div>
-      <div class="cv-body">
-        <aside>
-          <div class="cv-block"><h3>Contact</h3><p>hello@karimmansour.design<br>+20 100 555 0148<br>Cairo, Egypt<br>behance.net/karim-mansour</p></div>
-          <div class="cv-block"><h3>Core Skills</h3><ul><li>Brand Identity Design</li><li>Art Direction</li><li>Packaging Design</li><li>Social Media Campaigns</li><li>Editorial & Print Design</li><li>Typography Systems</li></ul></div>
-          <div class="cv-block"><h3>Tools</h3><p>Adobe Illustrator — Advanced<br>Adobe Photoshop — Advanced<br>Adobe InDesign — Advanced<br>After Effects — Intermediate<br>Figma — Advanced</p></div>
-          <div class="cv-block"><h3>Languages</h3><p>Arabic — Native<br>English — Professional working proficiency</p></div>
-        </aside>
-        <div>
-          <div class="cv-block"><h3>Profile</h3><p>Graphic Designer with 7 years of experience building visual identities, campaigns, packaging and editorial systems for brands across Egypt and the GCC. Strong focus on brand consistency, practical design systems and clear visual communication.</p></div>
-          <div class="cv-block"><h3>Experience</h3>
-            <div class="cv-item"><strong>Independent Graphic Designer</strong><span>Freelance — Cairo | 2024–Present</span><p>Lead branding, packaging and campaign projects from discovery to final rollout, working directly with founders and marketing teams.</p></div>
-            <div class="cv-item"><strong>Senior Graphic Designer</strong><span>Gridline Creative Studio | 2022–2024</span><p>Led visual direction for hospitality, F&B and retail accounts; reviewed daily creative output and developed scalable campaign systems.</p></div>
-            <div class="cv-item"><strong>Graphic Designer</strong><span>North House Agency | 2020–2022</span><p>Produced digital campaigns, visual identities, print collateral and corporate presentations for local and regional clients.</p></div>
-            <div class="cv-item"><strong>Junior Visual Designer</strong><span>Studio 31 | 2019–2020</span><p>Supported identity rollouts, print production, mockup creation and presentation design.</p></div>
-          </div>
-          <div class="cv-block"><h3>Education</h3><div class="cv-item"><strong>B.A. in Applied Arts — Graphic Design</strong><span>Helwan University | 2015–2019</span></div></div>
-          <div class="cv-block"><h3>Selected Clients</h3><p>Noura Coffee, Northline Advisory, Riva Fitness, Lenzo Market, Bayt Noon Tea, Atelier Nine, Mira Foods, Dar 17.</p></div>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <script>
+<div class="nav-wrap">
+<nav>
+<a class="brand" href="#top"><span class="brand-mark">ك م</span><span>كريم منصور</span></a>
+<div class="nav-links" id="navLinks">
+<a href="#about">عنّي</a><a href="#work">الأعمال</a><a href="#experience">الخبرة</a><a href="#clients">العملاء</a><a href="#contact">تواصل</a>
+</div>
+<button aria-label="فتح القائمة" class="menu-btn" id="menuBtn">☰</button>
+</nav>
+</div>
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-copy reveal">
+<span class="eyebrow en">مصمم جرافيك مستقل — القاهرة</span>
+<h1 class="en">أصمّم بهوية<br/><span class="accent">واضحة،</span><br/>تعيش أطول.</h1>
+<div class="hero-sub">
+<strong>مصمم جرافيك متخصص في بناء الهويات البصرية والحملات والعبوات.</strong>
+<span>أحوّل الأفكار إلى أنظمة بصرية متماسكة تساعد العلامات على الظهور بثقة، من أول شعار وحتى كل نقطة تواصل مع الجمهور.</span>
+</div>
+<div class="hero-actions">
+<a class="btn primary" href="#work">استكشف الأعمال <span>↙</span></a>
+<button class="btn" data-open-cv="">عرض السيرة الذاتية</button>
+</div>
+</div>
+<div class="hero-visual reveal">
+<img alt="مساحة عمل مصمم جرافيك" loading="eager" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&amp;fit=crop&amp;w=1400&amp;q=88"/>
+<div class="availability">متاح لمشاريع مختارة — الربع الرابع ٢٠٢٦</div>
+<div class="hero-badge"><strong class="en">أعمال مختارة<br/>٢٠٢٢—٢٠٢٦</strong><span>هوية / حملات / تغليف</span></div>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="marquee"><div class="container marquee-container"><div class="marquee-track"><span>الهوية البصرية</span><span>الإخراج الفني</span><span>حملات السوشيال ميديا</span><span>التغليف</span><span>التصميم التحريري</span><span>تصميم المطبوعات</span><span>الهوية البصرية</span><span>الإخراج الفني</span><span>حملات السوشيال ميديا</span><span>التغليف</span></div></div></div>
+<section class="section" id="about">
+<div class="container about-grid">
+<aside class="about-card reveal">
+<span class="eyebrow en">الملف الشخصي / السيرة الذاتية</span>
+<h3>كريم منصور</h3>
+<p>مصمم جرافيك ومتخصص في الهوية البصرية</p>
+<div class="quick-list">
+<div class="quick-row"><span>الموقع</span><strong>القاهرة، مصر</strong></div>
+<div class="quick-row"><span>الخبرة</span><strong>7 سنوات</strong></div>
+<div class="quick-row"><span>التخصص</span><strong>الهوية البصرية والإخراج الفني</strong></div>
+<div class="quick-row"><span>العمل</span><strong>عمل حر / عن بُعد</strong></div>
+<div class="quick-row"><span>اللغات</span><strong>العربية / الإنجليزية</strong></div>
+</div>
+<div class="hero-actions"><button class="btn primary" data-open-cv="">عرض السيرة الذاتية</button><a class="btn ghost" download="Karim-Mansour-CV.pdf" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxODI1Cj4+CnN0cmVhbQpHYXUwRDlpTCgzJkFAWmNxRD5UJV87ZkddXTlgdUMwVVc2LywrNVBybHBdUSFVOz05Q1o1YmMscXI+LnM0MF1EODEsQ21UT1s8MUtdJSshclQ1OSg4aGNCRDM4Y15SLG5HXlEzYkQsZm8vRCJpTDUoUlslQXNiYzIiYFg1Y1E9bl9gKWYva3VFQGYiRltjImFJPVNGQWFabFMlWT9zam4kaG1bIWJfRz9lWz9uJ2xtWFBmck0pPFA6NnJfJ1QmbyJoRFRmVT4wL2xDVCFjXGBwbkg5alw5a1k/MXBvWnNfKDkkP3VmKlpEJlROTis4O0otOSFYJUJ1RVFaJDQ1bEwsIyVKSUtaZChCVDZvIUZdWkx1XFY6WmQ2MmJfXW9wMSU9UyxpTzU4V1guJzc1VTNGWiFWZDJgPHVaQFAtP3UqZVZXSU9HK2gqYkNWZjAnVDRxXCFJQ1xgT2E4Lz4mSVVbaWhFcyNiXlFLJ01TTTkqXypgZjRVTHBAVT9mLVJ0Qmg3TEAmXEokLV5bJ2JPcyhGKnQ2MnRYTUA+ZWcyK05NLFY9VksqUWRzUW1WNGlqRlo5JW5ITSIuP102PTQ+Plgnc1JKY0ldbkxdW0EyamhrcVA9Wz9oXXJmXjlzLiVXKFNQVXFZb1tZL2N0KioqYC5kQHRqL1U4YXQ+LCYnZyFZRyk3Xk0mc2M6UjNZb0QxaE1tWUFEZSY4cmtOPE8ncTdQPFsiJjtybjAkKE8hQC87ai11LyNzX29MIW9bNSpqcCRKMiY4VSQoTF04YltZWGlSLUowI2RbPWVhXmg5JCo5ZWctYW9nT0I+LF0zPCtGamlCLXVHKnVTMl5cWENFNE4uS25OKUdCSSJIWyQpMFJCNWIuOTtGTGoxIWlpIytUPl1pY042MkQ0MVJnbG8oIUghLGZkLERFQllhXERsYk4ucElwJy07alJXITVcPDFPNEA3cFVlPSg2JyxEZEVfNEtwPDJQZnFrV0NqQD5wREcvPk9ENUwsZV5YblFMcDdcLl1dVC51KjtHOTQiXUVoREwrYW5VSShaV1VDYkNmJyVTJVE3OyY6XnNeWG4+WShBY2lGN0AkVUhrSmxMND8sJFlVJlYjPmphaWJDR05ROXJdSWgnNCFDIUdmQWRKKCFVJnI0Z18uYFtaa04+SlchZnBYYi1fcmM5RWVlTVU7MDZWYy89Rzo3cjNjSWsrOFc/NkI6cUdVdXFUUE1oQUdZZ01nRz5ZY2k4Zl5TXXVnMzRwOGNocEoqNShjNGU3OjQnYTNVYXIqWCg9U2RjQz9XTC0pWiVKS0pmOGUkKVBqNE9ST15bPFU8M1BvZkFbWlpYX2xlW3EsR11CckhMXiM+PGwrW3JlLUhFUTk6USM2UzVcXD1iKUEtO0g7MTRuLl0+NDchcV9KInNlcy07ZS1JW0ZhNUZOLDJtXmxyXWwqUiNfcUtrRkFGZyZeZy1AQTpFMStIRVpjW2ZPXDU7LlVhLk9ORHEzaSFALjZqSm4hNUZUaEBYW0Y6RS5yRkFkakkya3BZUz0+J21hcC81Qjs6QDNmTzorQ0hQPlFvMyptY1A6bD5UVC9EJDNjM2xZSjwuMiFYQVtAcD9LPWY+ckQuPFdFOnJYbjh1JiZCWVFRN3BLWlRMdW4kb1Q2b0VmQlFcQSFObW5iYTVOKjZlUnI+QChAUSorSExWJC4lIigmV3FgLyxkXy0jVVszSlwzRXE/OzBrXCxKLjxHLGNjMDZZOmwnNko5Il1qPV4/NT02MDlAXjFcWkMkTSNGcitdWnFSLl9WIkhVX3NBWGI3ZDJhRyFmNGhoLzBaVl9WdF9OJzNNPk1xYEg8bEBHUGBWcCFpJk5JI2ZHdVFYcVU9YFVVbUxnUXUicEo7YEYiVSgoQConS3VNIStTaCUsITRUYVVsZUtXcjZGMW9wNGFCYjZgRWZmMyRLbSozNWZoMixOcCE0LyVHMy5HSiFuQHFtPVxLNUwoRGJyRkM9K2cyYFlkYicyOjd1cTY8b0YxKEkuW2JVV050Sz1ZVF4tZWxoayw0PXFzcENTckdMam9ZQlg0UnJJJSJXcTA9ZmVPNy1zXlRRal9UP25SRDMhQSZrM1NtdGQ9bExNJWtvUjokMEpjTXNXLkNwJEhHcDQsUmM+V29CNktQdFZSczIicGY7WGpSKk5lIz9fRlpfVUxSMF1gVFVfT2U3Q11mLHAwTzQ/Il5ePU9oRikjZldocnUwQzpzQUhKZFdRW3BNPFJeTVRIOSxHN1EjV3FqNTJwVjBSQis1cks/NytpRUstKiJ1QVVWM1VGRTtUdF9fPjZPOS4lNztNRzMwLmlIRlwpX28qLidqJFk7Xz8wbjk4Kz47XFhKIUxXQSRfNENTLkgtdG4zUSE0ZWxjKktXLGdwaEN1ZCNxcnMiZV9HXF1yck4lNVkuNH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4NTMgMDAwMDAgbiAKMDAwMDAwMDkxMiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4NDJlZjVmMDhhZmY3Y2U0ZDc0NzEzMzc1NWFhODRjZT48ODQyZWY1ZjA4YWZmN2NlNGQ3NDcxMzM3NTVhYTg0Y2U+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI4MjgKJSVFT0YK" id="downloadCvQuick">تحميل السيرة الذاتية</a></div>
+</aside>
+<div class="about-copy reveal">
+<span class="eyebrow en">تعرّف عليّ</span>
+<h2>أصمم هوية لها شخصية، وليس مجرد شكل جميل.</h2>
+<p>خلال السنوات الماضية عملت مع علامات ناشئة وشركات في قطاعات الأغذية، الضيافة، العقارات، التجارة الإلكترونية والخدمات المهنية. أبدأ كل مشروع بفهم السوق والعميل، ثم أبني لغة بصرية عملية يمكنها التوسع من الشعار إلى المحتوى والحملات والمطبوعات والتغليف.</p>
+<p>أهتم بالتفاصيل التي تبدو صغيرة لكنها تصنع فارقًا في الانطباع النهائي: نظام الخطوط، الإيقاع، المساحات، اختيار الصور، قواعد الاستخدام، وطريقة ظهور العلامة في الواقع وليس فقط على شاشة العرض.</p>
+<div class="stats">
+<div class="stat"><b>68+</b><span>مشروعًا مكتملًا</span></div>
+<div class="stat"><b>14</b><span>قطاعًا مختلفًا</span></div>
+<div class="stat"><b>9</b><span>أسواق عربية ودولية</span></div>
+</div>
+<div class="skills"><span class="chip">أدوبي إليستريتور</span><span class="chip">أدوبي فوتوشوب</span><span class="chip">أدوبي إنديزاين</span><span class="chip">أدوبي أفتر إفكتس</span><span class="chip">فيجما</span><span class="chip">استراتيجية العلامة</span><span class="chip">تصميم الخطوط</span><span class="chip">التوجيه الإبداعي</span></div>
+</div>
+</div>
+</section>
+<section class="section" id="services">
+<div class="container">
+<div class="section-head reveal"><div><span class="eyebrow en">الخدمات</span><h2>ما الذي أقدمه؟</h2></div><p>خدمات مصممة لتغطية رحلة العلامة بصريًا من الفكرة الأولى وحتى التطبيق اليومي، مع نظام مرن يمكن الحفاظ عليه وتطويره بعد تسليم المشروع.</p></div>
+<div class="services-grid">
+<article class="service reveal"><span class="service-index en">٠١ / الهوية</span><div class="service-icon">◐</div><div><h3>الهوية البصرية</h3><p>الشعار، الألوان، الخطوط، الأنماط، التطبيقات، ودليل استخدام متكامل.</p></div></article>
+<article class="service reveal"><span class="service-index en">٠٢ / الحملات</span><div class="service-icon">✦</div><div><h3>الحملات الإعلانية</h3><p>التصور البصري الرئيسي، إعلانات السوشيال ميديا، المواد الرقمية، وتوحيد الاتجاه الإبداعي للحملة.</p></div></article>
+<article class="service reveal"><span class="service-index en">٠٣ / التغليف</span><div class="service-icon">◇</div><div><h3>تصميم العبوات</h3><p>تغليف منتجات يوازن بين وضوح المعلومات، شخصية العلامة وتجربة الرف.</p></div></article>
+<article class="service reveal"><span class="service-index en">٠٤ / المطبوعات</span><div class="service-icon">▤</div><div><h3>المطبوعات والتحرير</h3><p>بروفايلات الشركات، الكتالوجات، التقارير، البروشورات والمواد المطبوعة.</p></div></article>
+</div>
+</div>
+</section>
+<section class="section" id="work">
+<div class="container">
+<div class="section-head reveal"><div><span class="eyebrow en">أعمال مختارة</span><h2>مشاريع كاملة، لا مجرد صور مصغّرة.</h2></div><p>كل مشروع أدناه معروض كسلسلة صور مستقلة توضح كيف تتحول الفكرة إلى نظام بصري متكامل عبر أكثر من نقطة تواصل، وليس مجرد لقطة واحدة.</p></div>
+</div>
+<div class="work-section"><div class="container">
+<div class="work-header reveal"><div><span class="en">٠١ / الهوية البصرية</span><h3>الهوية البصرية</h3></div><span>مشروعان مختاران</span></div>
+<div class="projects">
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="هوية Noura Coffee" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>نظام الهوية / التكوين الرئيسي</small></div></figure>
+<figure class="slide"><img alt="تطبيقات هوية Noura Coffee" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>تطبيقات البيع / تجربة القهوة</small></div></figure>
+<figure class="slide"><img alt="تجربة Noura Coffee" src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>التغليف / الاتجاه البصري داخل المتجر</small></div></figure>
+</div><div class="slider-controls"><button aria-label="السابق" class="slider-btn prev">←</button><button aria-label="التالي" class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>محمصة نورة للقهوة</span><span>٢٠٢٦</span></div><h4>نورة</h4><p>إعادة بناء هوية محمصة قهوة متخصصة بطابع هادئ ودافئ، مع نظام بصري مرن للعبوات، الأكواب، القوائم والمحتوى الرقمي.</p><div class="project-tags"><span>استراتيجية</span><span>هوية</span><span>التغليف</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="هوية Northline" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>هوية مؤسسية / نظام العلامة</small></div></figure>
+<figure class="slide"><img alt="تطبيق هوية Northline" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>التواصل الداخلي / ثقافة العلامة</small></div></figure>
+<figure class="slide"><img alt="مكتب Northline" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>تطبيقات الهوية في المكان</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>نورث لاين للاستشارات</span><span>٢٠٢٥</span></div><h4>نورث لاين</h4><p>هوية مؤسسية لشركة استشارات أعمال، بنيت على فكرة الاتجاه والوضوح مع لغة بصرية حادة ومهنية تصلح للعروض والتقارير والمساحات المكتبية.</p><div class="project-tags"><span>هوية بصرية</span><span>مؤسسي</span><span>دليل الهوية</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+</div>
+</div></div>
+<div class="work-section"><div class="container">
+<div class="work-header reveal"><div><span class="en">٠٢ / السوشيال ميديا</span><h3>حملات السوشيال ميديا</h3></div><span>مشروعان مختاران</span></div>
+<div class="projects">
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="حملة Riva" src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>حملة إطلاق / التصور البصري الرئيسي</small></div></figure>
+<figure class="slide"><img alt="جلسة تخطيط حملة Riva" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>نظام الحملة / تخطيط المحتوى</small></div></figure>
+<figure class="slide"><img alt="محتوى رقمي لحملة Riva" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>مواد رقمية جاهزة للإعلانات</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>ريفا للياقة</span><span>٢٠٢٦</span></div><h4>تحرّك / ٣٠</h4><p>اتجاه إبداعي لحملة إطلاق برنامج تدريبي لمدة 30 يومًا، يجمع بين لغة قصيرة وواضحة ونظام محتوى مرن للإعلانات والقصص والمنشورات.</p><div class="project-tags"><span>الإخراج الفني</span><span>حملة</span><span>سوشيال ميديا</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="حملة متجر Lenzo" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>حملة تخفيضات / تواصل تجاري</small></div></figure>
+<figure class="slide"><img alt="تسوق إلكتروني Lenzo" src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>اتجاه إبداعي للتجارة الرقمية</small></div></figure>
+<figure class="slide"><img alt="واجهة متجر Lenzo" src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>تطبيقات المتجر / اللغة البصرية</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>لينزو ماركت</span><span>٢٠٢٥</span></div><h4>نهاية الأسبوع</h4><p>سلسلة حملات تجارية موسمية لمتجر إلكتروني، مع قالب بصري يحافظ على سرعة إنتاج المحتوى ويمنح العروض حضورًا واضحًا دون تشويش.</p><div class="project-tags"><span>تجزئة</span><span>إعلانات سوشيال</span><span>نظام الحملة</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+</div>
+</div></div>
+<div class="work-section"><div class="container">
+<div class="work-header reveal"><div><span class="en">٠٣ / التغليف</span><h3>تصميم التغليف</h3></div><span>مشروعان مختاران</span></div>
+<div class="projects">
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="تغليف شاي Bayt Noon" src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>عائلة المنتجات / حضور الرف</small></div></figure>
+<figure class="slide"><img alt="تشكيلة شاي Bayt Noon" src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>ترميز النكهات / نظام الفئات</small></div></figure>
+<figure class="slide"><img alt="تجربة شاي Bayt Noon" src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>طقوس العلامة / تجربة التقديم</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>بيت نون للشاي</span><span>2024</span></div><h4>بيت نون</h4><p>نظام تغليف لعلامة شاي عربية معاصرة؛ يعتمد على ترميز واضح للنكهات، خامات هادئة، وتفاصيل مستوحاة من طقوس الشاي في المنطقة.</p><div class="project-tags"><span>التغليف</span><span>رسوم توضيحية</span><span>تجزئة</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="تغليف Sole Studio" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>تغليف الأحذية / تجربة الفتح</small></div></figure>
+<figure class="slide"><img alt="هوية منتج Sole Studio" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>لغة بصرية تبرز المنتج</small></div></figure>
+<figure class="slide"><img alt="منتج Sole Studio" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>نظام تغليف جاهز للحملات</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>سول ستوديو</span><span>2024</span></div><h4>سول / ٠١</h4><p>تطوير عبوات وعناصر تجربة فتح المنتج لعلامة أحذية مستقلة، مع لغة جرافيكية رياضية بسيطة تضع المنتج في المقدمة.</p><div class="project-tags"><span>التغليف</span><span>تجربة فتح المنتج</span><span>نظام العلامة</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+</div>
+</div></div>
+<div class="work-section"><div class="container">
+<div class="work-header reveal"><div><span class="en">٠٤ / المطبوعات</span><h3>المطبوعات والتصميم التحريري</h3></div><span>مشروعان مختاران</span></div>
+<div class="projects">
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="كتاب Qamar Journal" src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>نظام تحريري / الافتتاحية</small></div></figure>
+<figure class="slide"><img alt="صفحات Qamar Journal" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>الخطوط / إيقاع القراءة</small></div></figure>
+<figure class="slide"><img alt="إصدار Qamar Journal" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>المنتج المطبوع / السياق الثقافي</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>مجلة قمر</span><span>2023</span></div><h4>العدد ٠٧</h4><p>تصميم عدد خاص من مجلة ثقافية مستقلة، مع شبكة تحريرية مرنة تتعامل مع المقالات الطويلة والتصوير والاقتباسات دون فقدان الإيقاع.</p><div class="project-tags"><span>التصميم التحريري</span><span>تصميم الخطوط</span><span>طباعة</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+<article class="project reveal" data-slider="">
+<div class="slider"><div class="slides">
+<figure class="slide"><img alt="ملف شركة Atelier Nine" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>بروفايل الاستوديو / الاتجاه التحريري</small></div></figure>
+<figure class="slide"><img alt="مساحات Atelier Nine" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>سرد بصري مستوحى من العمارة</small></div></figure>
+<figure class="slide"><img alt="هوية Atelier Nine" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1400&amp;q=86"/><div class="slide-overlay"><small>عرض دراسة حالة</small></div></figure>
+</div><div class="slider-controls"><button class="slider-btn prev">←</button><button class="slider-btn next">→</button></div><div class="dots"></div></div>
+<div class="project-info"><div><div class="project-topline"><span>أتيليه ناين</span><span>2023</span></div><h4>بروفايل الاستوديو</h4><p>ملف تعريفي لاستوديو تصميم داخلي يجمع بين النصوص المختصرة والصور الكبيرة ودراسات المشاريع في نظام تحريري هادئ وسهل التصفح.</p><div class="project-tags"><span>بروفايل شركة</span><span>التصميم التحريري</span><span>إخراج الصفحات</span></div></div><a class="case-link" href="#contact">مشروع مشابه؟ تواصل معي <b>↙</b></a></div>
+</article>
+</div>
+</div></div>
+</section>
+<section class="section" id="experience">
+<div class="container experience">
+<div class="experience-intro reveal"><span class="eyebrow en">الخبرة</span><h2>٧ سنوات،<br/>والشغف مستمر.</h2><p>خبرة بين العمل داخل استوديوهات التصميم، الفرق التسويقية، والمشاريع المستقلة لعملاء في مصر والخليج.</p></div>
+<div class="timeline reveal">
+<div class="job"><div class="year en">٢٠٢٤ — الآن</div><div><h3>مصمم جرافيك مستقل</h3><h4>عمل حر / القاهرة</h4><p>إدارة مشاريع هوية وحملات وتغليف من مرحلة الاكتشاف وحتى التسليم، والعمل مباشرة مع المؤسسين ومديري التسويق.</p></div></div>
+<div class="job"><div class="year en">2022 — 2024</div><div><h3>مصمم جرافيك أول</h3><h4>استوديو جريدلاين الإبداعي</h4><p>قيادة الاتجاه البصري لحسابات في قطاع الأغذية والضيافة والتجزئة، ومراجعة جودة المخرجات اليومية لفريق التصميم.</p></div></div>
+<div class="job"><div class="year en">2020 — 2022</div><div><h3>مصمم جرافيك</h3><h4>وكالة نورث هاوس</h4><p>تصميم حملات رقمية، هويات مصغرة، مواد مطبوعة وعروض تقديمية لعلامات محلية وإقليمية.</p></div></div>
+<div class="job"><div class="year en">2019 — 2020</div><div><h3>مصمم بصري مبتدئ</h3><h4>استوديو ٣١</h4><p>إعداد تطبيقات الهوية، تجهيز ملفات الطباعة، بناء موكابس واقعية وتطوير مهارات التايبوجرافي والإخراج.</p></div></div>
+</div>
+</div>
+</section>
+<section class="section" id="clients">
+<div class="container">
+<div class="section-head reveal"><div><span class="eyebrow en">العملاء وآراؤهم</span><h2>نجاحات صنعناها معًا.</h2></div><p>أفضل المشاريع تأتي عندما تكون العلاقة واضحة: أهداف محددة، مساحة للنقاش، وقرارات تصميم مرتبطة بالعلامة لا بالذوق الشخصي فقط.</p></div>
+<div class="clients reveal"><div class="client">نورة</div><div class="client">نورث لاين</div><div class="client">ريفا</div><div class="client">لينزو</div><div class="client">بيت نون</div><div class="client">أتيليه ناين</div><div class="client">ميرا فودز</div><div class="client">سولا</div><div class="client">فورم</div><div class="client">بالم ٢٤</div><div class="client">مينت لاب</div><div class="client">دار ١٧</div></div>
+<div class="testimonials">
+<article class="quote reveal"><p>“كريم لم يبدأ برسم الشعار، بدأ بفهم المنتج والسوق. النتيجة كانت هوية نعرف كيف نستخدمها فعليًا كل يوم.”</p><div class="person"><div class="avatar">ن ع</div><div><strong>نور عادل</strong><span>المؤسسة — نورة للقهوة</span></div></div></article>
+<article class="quote reveal"><p>“أكثر شيء فرق معنا هو النظام. الفريق أصبح ينتج المحتوى أسرع، وكل شيء يبدو تابعًا لنفس العلامة حتى مع اختلاف الحملات.”</p><div class="person"><div class="avatar">ع س</div><div><strong>عمر سامح</strong><span>مدير التسويق — لينزو</span></div></div></article>
+<article class="quote reveal"><p>“تعامل احترافي جدًا، المواعيد واضحة، العرض منظم، والتعديلات لها منطق. الهوية الجديدة رفعت مستوى عروضنا أمام العملاء.”</p><div class="person"><div class="avatar">ر م</div><div><strong>ريم مجدي</strong><span>الشريك الإداري — نورث لاين</span></div></div></article>
+</div>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="container contact-wrap">
+<div class="contact-copy reveal"><span class="eyebrow en">تواصل</span><h2>لديك مشروع؟<br/>دعنا نتحدث.</h2><p>إذا لديك علامة جديدة، إعادة تصميم لهوية موجودة، حملة أو مشروع يحتاج اتجاهًا بصريًا واضحًا، أرسل لي نبذة قصيرة عن المشروع والموعد المتوقع للبدء.</p><div class="contact-links"><a class="btn" href="mailto:hello@karimmansour.design">البريد الإلكتروني</a><a class="btn" href="https://www.behance.net/" rel="noopener" target="_blank">بيهانس</a><a class="btn" href="https://www.instagram.com/" rel="noopener" target="_blank">إنستجرام</a><a class="btn" href="https://www.linkedin.com/" rel="noopener" target="_blank">لينكدإن</a></div></div>
+<form class="contact-form reveal" id="contactForm">
+<div class="field"><label for="name">الاسم</label><input id="name" required=""/></div>
+<div class="field"><label for="email">البريد الإلكتروني</label><input id="email" required="" type="email"/></div>
+<div class="field"><label for="type">نوع المشروع</label><input id="type" required=""/></div>
+<div class="field"><label for="message">نبذة عن المشروع</label><textarea id="message" required=""></textarea></div>
+<button class="btn primary" type="submit">إرسال الطلب عبر البريد</button>
+</form>
+</div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>© ٢٠٢٦ كريم منصور. جميع الحقوق محفوظة.</span><span class="en">تصميم جرافيك / هوية بصرية / إخراج فني</span></div></footer>
+<div aria-labelledby="cvTitle" aria-modal="true" class="modal" id="cvModal" role="dialog">
+<article class="cv">
+<div class="cv-head"><div><span class="eyebrow en">السيرة الذاتية</span><h2 id="cvTitle">كريم منصور</h2><p style="margin:5px 0 0;color:#666">مصمم جرافيك ومتخصص هوية بصرية — القاهرة، مصر</p></div><div class="cv-actions"><a class="icon-btn" download="Karim-Mansour-CV.pdf" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwODIwMDc1NTEzKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKHVudGl0bGVkKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA0IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxODI1Cj4+CnN0cmVhbQpHYXUwRDlpTCgzJkFAWmNxRD5UJV87ZkddXTlgdUMwVVc2LywrNVBybHBdUSFVOz05Q1o1YmMscXI+LnM0MF1EODEsQ21UT1s8MUtdJSshclQ1OSg4aGNCRDM4Y15SLG5HXlEzYkQsZm8vRCJpTDUoUlslQXNiYzIiYFg1Y1E9bl9gKWYva3VFQGYiRltjImFJPVNGQWFabFMlWT9zam4kaG1bIWJfRz9lWz9uJ2xtWFBmck0pPFA6NnJfJ1QmbyJoRFRmVT4wL2xDVCFjXGBwbkg5alw5a1k/MXBvWnNfKDkkP3VmKlpEJlROTis4O0otOSFYJUJ1RVFaJDQ1bEwsIyVKSUtaZChCVDZvIUZdWkx1XFY6WmQ2MmJfXW9wMSU9UyxpTzU4V1guJzc1VTNGWiFWZDJgPHVaQFAtP3UqZVZXSU9HK2gqYkNWZjAnVDRxXCFJQ1xgT2E4Lz4mSVVbaWhFcyNiXlFLJ01TTTkqXypgZjRVTHBAVT9mLVJ0Qmg3TEAmXEokLV5bJ2JPcyhGKnQ2MnRYTUA+ZWcyK05NLFY9VksqUWRzUW1WNGlqRlo5JW5ITSIuP102PTQ+Plgnc1JKY0ldbkxdW0EyamhrcVA9Wz9oXXJmXjlzLiVXKFNQVXFZb1tZL2N0KioqYC5kQHRqL1U4YXQ+LCYnZyFZRyk3Xk0mc2M6UjNZb0QxaE1tWUFEZSY4cmtOPE8ncTdQPFsiJjtybjAkKE8hQC87ai11LyNzX29MIW9bNSpqcCRKMiY4VSQoTF04YltZWGlSLUowI2RbPWVhXmg5JCo5ZWctYW9nT0I+LF0zPCtGamlCLXVHKnVTMl5cWENFNE4uS25OKUdCSSJIWyQpMFJCNWIuOTtGTGoxIWlpIytUPl1pY042MkQ0MVJnbG8oIUghLGZkLERFQllhXERsYk4ucElwJy07alJXITVcPDFPNEA3cFVlPSg2JyxEZEVfNEtwPDJQZnFrV0NqQD5wREcvPk9ENUwsZV5YblFMcDdcLl1dVC51KjtHOTQiXUVoREwrYW5VSShaV1VDYkNmJyVTJVE3OyY6XnNeWG4+WShBY2lGN0AkVUhrSmxMND8sJFlVJlYjPmphaWJDR05ROXJdSWgnNCFDIUdmQWRKKCFVJnI0Z18uYFtaa04+SlchZnBYYi1fcmM5RWVlTVU7MDZWYy89Rzo3cjNjSWsrOFc/NkI6cUdVdXFUUE1oQUdZZ01nRz5ZY2k4Zl5TXXVnMzRwOGNocEoqNShjNGU3OjQnYTNVYXIqWCg9U2RjQz9XTC0pWiVKS0pmOGUkKVBqNE9ST15bPFU8M1BvZkFbWlpYX2xlW3EsR11CckhMXiM+PGwrW3JlLUhFUTk6USM2UzVcXD1iKUEtO0g7MTRuLl0+NDchcV9KInNlcy07ZS1JW0ZhNUZOLDJtXmxyXWwqUiNfcUtrRkFGZyZeZy1AQTpFMStIRVpjW2ZPXDU7LlVhLk9ORHEzaSFALjZqSm4hNUZUaEBYW0Y6RS5yRkFkakkya3BZUz0+J21hcC81Qjs6QDNmTzorQ0hQPlFvMyptY1A6bD5UVC9EJDNjM2xZSjwuMiFYQVtAcD9LPWY+ckQuPFdFOnJYbjh1JiZCWVFRN3BLWlRMdW4kb1Q2b0VmQlFcQSFObW5iYTVOKjZlUnI+QChAUSorSExWJC4lIigmV3FgLyxkXy0jVVszSlwzRXE/OzBrXCxKLjxHLGNjMDZZOmwnNko5Il1qPV4/NT02MDlAXjFcWkMkTSNGcitdWnFSLl9WIkhVX3NBWGI3ZDJhRyFmNGhoLzBaVl9WdF9OJzNNPk1xYEg8bEBHUGBWcCFpJk5JI2ZHdVFYcVU9YFVVbUxnUXUicEo7YEYiVSgoQConS3VNIStTaCUsITRUYVVsZUtXcjZGMW9wNGFCYjZgRWZmMyRLbSozNWZoMixOcCE0LyVHMy5HSiFuQHFtPVxLNUwoRGJyRkM9K2cyYFlkYicyOjd1cTY8b0YxKEkuW2JVV050Sz1ZVF4tZWxoayw0PXFzcENTckdMam9ZQlg0UnJJJSJXcTA9ZmVPNy1zXlRRal9UP25SRDMhQSZrM1NtdGQ9bExNJWtvUjokMEpjTXNXLkNwJEhHcDQsUmM+V29CNktQdFZSczIicGY7WGpSKk5lIz9fRlpfVUxSMF1gVFVfT2U3Q11mLHAwTzQ/Il5ePU9oRikjZldocnUwQzpzQUhKZFdRW3BNPFJeTVRIOSxHN1EjV3FqNTJwVjBSQis1cks/NytpRUstKiJ1QVVWM1VGRTtUdF9fPjZPOS4lNztNRzMwLmlIRlwpX28qLidqJFk7Xz8wbjk4Kz47XFhKIUxXQSRfNENTLkgtdG4zUSE0ZWxjKktXLGdwaEN1ZCNxcnMiZV9HXF1yck4lNVkuNH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4NTMgMDAwMDAgbiAKMDAwMDAwMDkxMiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw4NDJlZjVmMDhhZmY3Y2U0ZDc0NzEzMzc1NWFhODRjZT48ODQyZWY1ZjA4YWZmN2NlNGQ3NDcxMzM3NTVhYTg0Y2U+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI4MjgKJSVFT0YK" id="downloadCv">تحميل ملف السيرة الذاتية</a><button class="icon-btn" id="closeCv">إغلاق ×</button></div></div>
+<div class="cv-body">
+<aside>
+<div class="cv-block"><h3>تواصل</h3><p>hello@karimmansour.design<br/>+20 100 555 0148<br/>القاهرة، مصر<br/>بيهانس / كريم منصور</p></div>
+<div class="cv-block"><h3>المهارات الأساسية</h3><ul><li>تصميم الهوية البصرية</li><li>الإخراج الفني</li><li>تصميم التغليف</li><li>حملات السوشيال ميديا</li><li>التصميم التحريري والمطبوعات</li><li>أنظمة الخطوط</li></ul></div>
+<div class="cv-block"><h3>الأدوات</h3><p>أدوبي إليستريتور — متقدم<br/>أدوبي فوتوشوب — متقدم<br/>أدوبي إنديزاين — متقدم<br/>أدوبي أفتر إفكتس — متوسط<br/>فيجما — متقدم</p></div>
+<div class="cv-block"><h3>اللغات</h3><p>العربية — اللغة الأم<br/>الإنجليزية — مستوى مهني</p></div>
+</aside>
+<div>
+<div class="cv-block"><h3>نبذة شخصية</h3><p>مصمم جرافيك بخبرة ٧ سنوات في بناء الهويات البصرية والحملات والتغليف والأنظمة التحريرية لعلامات في مصر ودول الخليج. أركز على اتساق العلامة، وبناء أنظمة تصميم عملية، وتقديم تواصل بصري واضح وقابل للتطبيق.</p></div>
+<div class="cv-block"><h3>الخبرة</h3>
+<div class="cv-item"><strong>مصمم جرافيك مستقل</strong><span>عمل حر — القاهرة | ٢٠٢٤–الآن</span><p>أقود مشاريع الهوية والتغليف والحملات من مرحلة اكتشاف الاحتياج حتى الإطلاق النهائي، مع العمل مباشرة مع المؤسسين وفرق التسويق.</p></div>
+<div class="cv-item"><strong>مصمم جرافيك أول</strong><span>استوديو جريدلاين الإبداعي | ٢٠٢٢–٢٠٢٤</span><p>قدت الاتجاه البصري لحسابات في الضيافة والأغذية والمشروبات والتجزئة، وراجعت المخرجات الإبداعية اليومية وطورت أنظمة حملات قابلة للتوسع.</p></div>
+<div class="cv-item"><strong>مصمم جرافيك</strong><span>وكالة نورث هاوس | ٢٠٢٠–٢٠٢٢</span><p>صممت حملات رقمية وهويات بصرية ومواد مطبوعة وعروضًا تقديمية لعملاء محليين وإقليميين.</p></div>
+<div class="cv-item"><strong>مصمم بصري مبتدئ</strong><span>استوديو ٣١ | ٢٠١٩–٢٠٢٠</span><p>شاركت في تطبيقات الهويات، وتجهيز ملفات الطباعة، وصناعة الموكابس، وتصميم العروض التقديمية.</p></div>
+</div>
+<div class="cv-block"><h3>التعليم</h3><div class="cv-item"><strong>بكالوريوس الفنون التطبيقية — تصميم جرافيك</strong><span>جامعة حلوان | ٢٠١٥–٢٠١٩</span></div></div>
+<div class="cv-block"><h3>عملاء مختارون</h3><p>نورة للقهوة، نورث لاين للاستشارات، ريفا للياقة، لينزو ماركت، بيت نون للشاي، أتيليه ناين، ميرا فودز، دار ١٧.</p></div>
+</div>
+</div>
+</article>
+</div>
+<script>
     // Mobile navigation
     const menuBtn=document.getElementById('menuBtn');
     const navLinks=document.getElementById('navLinks');
