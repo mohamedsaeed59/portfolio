@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adrian Vale — editorial, portrait, travel and hospitality photographer working across Europe and the Middle East." />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>Adrian Vale — Photographer</title>
+  <style>
+    :root{
+      --ink:#101010;
+      --paper:#f3f0e9;
+      --paper-2:#e8e3da;
+      --white:#fff;
+      --muted:#78736a;
+      --line:rgba(16,16,16,.14);
+      --dark-line:rgba(255,255,255,.16);
+      --accent:#b89567;
+      --radius:22px;
+      --pad:clamp(20px,4vw,64px);
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+      --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    img,video{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    ::selection{background:var(--ink);color:var(--paper)}
+    .shell{width:min(1500px,100%);margin:auto;padding-inline:var(--pad)}
+    .eyebrow{
+      font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+      display:flex;gap:10px;align-items:center;color:inherit;
+    }
+    .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.55}
+    .serif{font-family:var(--serif);font-weight:400}
+    .muted{color:var(--muted)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+
+    /* nav */
+    .nav{
+      position:fixed;z-index:50;left:0;right:0;top:0;
+      height:78px;display:flex;align-items:center;
+      color:#fff;transition:.35s ease;
+    }
+    .nav.scrolled{
+      background:rgba(11,11,11,.88);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--dark-line);
+    }
+    .nav-inner{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+    .nav-links{display:flex;gap:28px;align-items:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .nav-links a{opacity:.84;transition:.25s}
+    .nav-links a:hover{opacity:1}
+    .menu-btn{display:none;border:0;background:none;color:#fff;padding:7px}
+    .menu-btn span{display:block;width:24px;height:1px;background:currentColor;margin:6px 0}
+
+    /* hero */
+    .hero{
+      min-height:100svh;position:relative;background:#121212;color:#fff;overflow:hidden;
+      display:flex;align-items:flex-end;
+    }
+    .hero-media{position:absolute;inset:0}
+    .hero-media img{
+      width:100%;height:100%;object-fit:cover;object-position:center 42%;
+      filter:saturate(.82) contrast(1.04) brightness(.77);
+      transform:scale(1.02);
+    }
+    .hero-media::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.12) 12%,rgba(0,0,0,.06) 45%,rgba(0,0,0,.76) 100%);
+    }
+    .hero-content{position:relative;z-index:2;width:100%;padding:150px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.45fr);gap:40px;align-items:end}
+    .hero h1{
+      margin:12px 0 0;max-width:980px;
+      font-family:var(--serif);font-size:clamp(64px,9vw,148px);
+      font-weight:400;line-height:.83;letter-spacing:-.055em;
+    }
+    .hero h1 em{font-weight:400;color:#d3b38d}
+    .hero-side{padding-bottom:8px}
+    .hero-side p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.78);margin:0 0 28px;max-width:360px}
+    .text-link{
+      display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+      border-bottom:1px solid currentColor;padding-bottom:7px;
+    }
+    .scroll-note{
+      margin-top:65px;display:flex;justify-content:space-between;align-items:center;
+      font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.58)
+    }
+    .scroll-line{display:flex;align-items:center;gap:12px}
+    .scroll-line i{width:55px;height:1px;background:rgba(255,255,255,.44)}
+
+    /* intro */
+    .intro{padding:120px 0 125px}
+    .intro-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:70px}
+    .intro-copy h2{font-size:clamp(42px,5.2vw,84px);line-height:1.02;letter-spacing:-.035em;margin:0;max-width:1040px}
+    .intro-copy p{font-size:17px;line-height:1.75;max-width:760px;margin:36px 0 0;color:#57534d}
+
+    /* selected work */
+    .work-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+    .work-head h2{font-size:clamp(46px,6vw,90px);line-height:.95;letter-spacing:-.045em;margin:8px 0 0}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .filter{
+      border:1px solid var(--line);background:transparent;padding:10px 14px;border-radius:999px;
+      font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.2s;
+    }
+    .filter:hover,.filter.active{background:var(--ink);color:var(--paper)}
+    .projects{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .project{
+      position:relative;overflow:hidden;background:#d7d0c6;min-height:480px;
+      cursor:pointer;
+    }
+    .project[data-span="7"]{grid-column:span 7}
+    .project[data-span="5"]{grid-column:span 5}
+    .project[data-span="4"]{grid-column:span 4}
+    .project[data-span="8"]{grid-column:span 8}
+    .project img{height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.65,.2,1),filter .4s}
+    .project::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.72));
+      opacity:.86;transition:.35s;
+    }
+    .project:hover img{transform:scale(1.035)}
+    .project:hover::after{opacity:1}
+    .project-meta{
+      position:absolute;z-index:2;left:24px;right:24px;bottom:22px;color:#fff;
+      display:flex;align-items:end;justify-content:space-between;gap:20px
+    }
+    .project-title{font-family:var(--serif);font-size:clamp(28px,2.6vw,48px);line-height:1;margin:0 0 5px}
+    .project-kicker{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+    .project-index{font-size:10px;letter-spacing:.15em;color:rgba(255,255,255,.7)}
+
+    /* statement */
+    .statement{padding:160px 0}
+    .statement blockquote{
+      margin:0;max-width:1180px;
+      font-family:var(--serif);font-size:clamp(45px,6.8vw,103px);line-height:.98;letter-spacing:-.04em;
+    }
+    .statement blockquote span{color:#9f978b}
+
+    /* motion */
+    .motion{background:#0b0b0b;color:#fff;padding:38px 0 120px}
+    .motion-top{
+      border-top:1px solid var(--dark-line);padding-top:28px;margin-bottom:38px;
+      display:flex;justify-content:space-between;align-items:center;gap:25px
+    }
+    .motion h2{font-size:clamp(45px,6.5vw,98px);line-height:.95;letter-spacing:-.045em;margin:9px 0 0}
+    .motion-copy{max-width:410px;color:rgba(255,255,255,.62);line-height:1.7;font-size:14px}
+    .video-wrap{
+      position:relative;overflow:hidden;border-radius:2px;aspect-ratio:16/8.5;background:#202020;
+    }
+    .video-wrap video{height:100%;object-fit:cover;filter:saturate(.8) contrast(1.05)}
+    .video-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.34));pointer-events:none}
+    .video-caption{
+      position:absolute;left:26px;right:26px;bottom:24px;z-index:2;display:flex;justify-content:space-between;gap:20px;align-items:end
+    }
+    .video-caption h3{font-family:var(--serif);font-size:36px;font-weight:400;margin:0}
+    .video-caption span{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.68)}
+    .sound-btn{
+      position:absolute;right:22px;top:20px;z-index:3;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.18);
+      color:#fff;border-radius:999px;padding:10px 13px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+      backdrop-filter:blur(8px);cursor:pointer;
+    }
+
+    /* about */
+    .about{padding:130px 0}
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .about-photo{position:relative}
+    .about-photo img{aspect-ratio:4/5;object-fit:cover;filter:saturate(.78)}
+    .about-note{
+      position:absolute;right:-22px;bottom:30px;background:var(--paper);padding:18px 20px;
+      border:1px solid var(--line);width:min(270px,72%);font-size:12px;line-height:1.55;
+    }
+    .about-copy h2{font-size:clamp(48px,6vw,92px);line-height:.94;letter-spacing:-.045em;margin:10px 0 30px}
+    .about-copy p{font-size:16px;line-height:1.82;color:#56514a;max-width:640px}
+    .facts{margin-top:42px;border-top:1px solid var(--line)}
+    .fact{
+      display:grid;grid-template-columns:155px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px
+    }
+    .fact span:first-child{text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:var(--muted)}
+
+    /* clients */
+    .clients{padding:20px 0 125px}
+    .client-row{
+      display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .client{padding:28px 18px;border-right:1px solid var(--line);text-align:center;font-family:var(--serif);font-size:20px}
+    .client:last-child{border-right:0}
+
+    /* contact */
+    .contact{background:#c9ab86;padding:115px 0 55px}
+    .contact-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:end}
+    .contact h2{font-size:clamp(65px,10vw,150px);line-height:.82;letter-spacing:-.055em;margin:0;font-weight:400}
+    .contact-side p{line-height:1.75;max-width:430px;margin:0 0 28px}
+    .contact-email{font-family:var(--serif);font-size:clamp(26px,3vw,42px);border-bottom:1px solid currentColor;padding-bottom:4px}
+    .footer{
+      margin-top:105px;padding-top:23px;border-top:1px solid rgba(16,16,16,.22);
+      display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px;text-transform:uppercase;letter-spacing:.12em
+    }
+    .socials{display:flex;gap:18px}
+
+    /* lightbox */
+    .lightbox{
+      position:fixed;inset:0;z-index:100;background:rgba(7,7,7,.96);display:none;color:#fff;
+      align-items:center;justify-content:center;padding:74px 24px 24px
+    }
+    .lightbox.open{display:flex}
+    .lightbox-inner{width:min(1300px,100%);height:100%;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:30px;align-items:center}
+    .lightbox-stage{height:min(82vh,900px);display:flex;align-items:center;justify-content:center}
+    .lightbox-stage img{height:100%;width:100%;object-fit:contain}
+    .lightbox-info{align-self:end;padding-bottom:25px}
+    .lightbox-info h3{font-family:var(--serif);font-size:44px;font-weight:400;margin:0 0 12px}
+    .lightbox-info p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.62)}
+    .lb-btn{
+      position:absolute;top:22px;border:0;background:none;color:#fff;cursor:pointer;font-size:11px;text-transform:uppercase;letter-spacing:.14em
+    }
+    .lb-close{right:26px}
+    .lb-prev{left:26px}
+    .lb-next{left:98px}
+
+    @media (max-width: 920px){
+      .nav-links{display:none}
+      .menu-btn{display:block}
+      .nav.open .nav-links{
+        display:flex;position:absolute;top:78px;left:0;right:0;background:#0b0b0b;
+        flex-direction:column;align-items:flex-start;padding:26px var(--pad) 34px;border-top:1px solid var(--dark-line)
+      }
+      .hero-grid,.intro-grid,.about-grid,.contact-grid,.motion-top{grid-template-columns:1fr}
+      .hero-grid{gap:28px}.hero h1{max-width:800px}
+      .intro-grid{gap:26px}
+      .work-head{align-items:flex-start;flex-direction:column}
+      .filters{justify-content:flex-start}
+      .projects{grid-template-columns:1fr 1fr}
+      .project[data-span]{grid-column:span 1;min-height:430px}
+      .about-photo{width:min(720px,93%)}
+      .client-row{grid-template-columns:repeat(3,1fr)}
+      .client:nth-child(3){border-right:0}
+      .client:nth-child(-n+3){border-bottom:1px solid var(--line)}
+      .lightbox-inner{grid-template-columns:1fr;gap:10px}
+      .lightbox-stage{height:65vh}
+      .lightbox-info{align-self:start}
+    }
+    @media (max-width: 620px){
+      .nav{height:68px}.brand{font-size:21px}
+      .hero-content{padding-bottom:30px}.hero-side p{font-size:14px}
+      .scroll-note{margin-top:42px}
+      .intro,.about{padding:90px 0}
+      .statement{padding:110px 0}
+      .motion{padding-bottom:90px}
+      .projects{grid-template-columns:1fr}
+      .project[data-span]{min-height:62vh}
+      .filters{gap:7px}
+      .filter{font-size:10px;padding:9px 11px}
+      .video-wrap{aspect-ratio:9/11}
+      .video-caption{left:18px;right:18px}
+      .video-caption h3{font-size:28px}
+      .client-row{grid-template-columns:repeat(2,1fr)}
+      .client:nth-child(n){border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+      .client:nth-child(2n){border-right:0}
+      .client:nth-last-child(-n+2){border-bottom:0}
+      .about-note{right:-10px}
+      .fact{grid-template-columns:115px 1fr}
+      .footer{align-items:flex-start;flex-direction:column}
+      .lightbox{padding:72px 16px 18px}
+      .lightbox-stage{height:55vh}
+      .lightbox-info h3{font-size:34px}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .project img{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Visual reference for portrait/fashion art direction: https://www.sarahraymond.com/
+       Demo presentation only. Replace remote reference imagery with the photographer's licensed/original work before production use. -->
+  <header class="nav" id="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">Adrian Vale</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Selected Work</a>
+        <a href="#motion">Motion</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2400&q=90" alt="" />
+      </div>
+      <div class="hero-content">
+        <div class="shell">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">Photographer · London / Lisbon / Dubai</div>
+              <h1>Stories in <em>light,</em><br>people & place.</h1>
+            </div>
+            <div class="hero-side">
+              <p>Fashion, portrait, editorial and lifestyle photography for thoughtful brands, independent publications and people with a story worth keeping.</p>
+              <a href="#work" class="text-link">View selected work <span>↘</span></a>
+            </div>
+          </div>
+          <div class="scroll-note">
+            <div class="scroll-line"><i></i><span>Scroll to explore</span></div>
+            <span>Available for commissions worldwide</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="shell intro-grid reveal">
+        <div>
+          <div class="eyebrow">Practice</div>
+        </div>
+        <div class="intro-copy">
+          <h2 class="serif">Quietly cinematic photographs, made with instinct and intention.</h2>
+          <p>I work between documentary observation and considered direction, building images that feel lived-in rather than staged. My commissions range from intimate portraits and fashion editorials to destination stories, architecture and hospitality campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="shell">
+      <div class="work-head reveal">
+        <div>
+          <div class="eyebrow">Selected work · 2024–2026</div>
+          <h2 class="serif">Recent stories</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="editorial">Editorial</button>
+          <button class="filter" data-filter="portrait">Portrait</button>
+          <button class="filter" data-filter="travel">Travel</button>
+          <button class="filter" data-filter="hospitality">Hospitality</button>
+        </div>
+      </div>
+
+      <div class="projects" id="projects">
+        <article class="project reveal" data-span="7" data-category="editorial portrait"
+          data-title="Soft Focus" data-caption="Fashion portrait study · London · 2026"
+          data-image="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=88" alt="Editorial portrait in soft natural light" />
+          <div class="project-meta"><div><div class="project-kicker">Fashion · London</div><h3 class="project-title">Soft Focus</h3></div><span class="project-index">01</span></div>
+        </article>
+
+        <article class="project reveal" data-span="5" data-category="travel"
+          data-title="Blue Hour, Cyclades" data-caption="Travel journal · Cyclades, Greece · 2025"
+          data-image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=86" alt="Aegean sea at dusk" />
+          <div class="project-meta"><div><div class="project-kicker">Travel · Greece</div><h3 class="project-title">Blue Hour, Cyclades</h3></div><span class="project-index">02</span></div>
+        </article>
+
+        <article class="project reveal" data-span="4" data-category="hospitality"
+          data-title="Casa Maré" data-caption="Hospitality campaign · Comporta, Portugal · 2025"
+          data-image="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=86" alt="Warm minimalist hotel interior" />
+          <div class="project-meta"><div><div class="project-kicker">Hospitality · Portugal</div><h3 class="project-title">Casa Maré</h3></div><span class="project-index">03</span></div>
+        </article>
+
+        <article class="project reveal" data-span="8" data-category="editorial"
+          data-title="The Long Table" data-caption="Food & culture story · Lisbon · 2026"
+          data-image="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=86" alt="Editorial dining table and food scene" />
+          <div class="project-meta"><div><div class="project-kicker">Editorial · Lisbon</div><h3 class="project-title">The Long Table</h3></div><span class="project-index">04</span></div>
+        </article>
+
+        <article class="project reveal" data-span="7" data-category="portrait editorial"
+          data-title="Mara / Studio Notes" data-caption="Artist portrait series · Paris · 2025"
+          data-image="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=1600&q=88" alt="Artist portrait in editorial style" />
+          <div class="project-meta"><div><div class="project-kicker">Portrait · Paris</div><h3 class="project-title">Mara / Studio Notes</h3></div><span class="project-index">05</span></div>
+        </article>
+
+        <article class="project reveal" data-span="5" data-category="hospitality travel"
+          data-title="Desert Stillness" data-caption="Destination hospitality · AlUla · 2024"
+          data-image="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1500&q=86" alt="Desert landscape at golden hour" />
+          <div class="project-meta"><div><div class="project-kicker">Travel · AlUla</div><h3 class="project-title">Desert Stillness</h3></div><span class="project-index">06</span></div>
+        </article>
+
+        <article class="project reveal" data-span="5" data-category="travel editorial"
+          data-title="Northbound" data-caption="Road story · Scottish Highlands · 2025"
+          data-image="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1500&q=86" alt="Road through a dramatic northern landscape" />
+          <div class="project-meta"><div><div class="project-kicker">Travel · Scotland</div><h3 class="project-title">Northbound</h3></div><span class="project-index">07</span></div>
+        </article>
+
+        <article class="project reveal" data-span="7" data-category="hospitality editorial"
+          data-title="Morning Service" data-caption="Restaurant campaign · Copenhagen · 2026"
+          data-image="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=90">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=86" alt="Restaurant table prepared for service" />
+          <div class="project-meta"><div><div class="project-kicker">Hospitality · Copenhagen</div><h3 class="project-title">Morning Service</h3></div><span class="project-index">08</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="shell reveal">
+        <div class="eyebrow" style="margin-bottom:26px">Approach</div>
+        <blockquote>“The best frame is rarely the loudest one. I’m looking for the moment that feels <span>unrepeatable.</span>”</blockquote>
+      </div>
+    </section>
+
+    <section id="motion" class="motion">
+      <div class="shell">
+        <div class="motion-top reveal">
+          <div>
+            <div class="eyebrow">Motion studies</div>
+            <h2 class="serif">Field Notes</h2>
+          </div>
+          <p class="motion-copy">Short-form motion is an extension of the still work: natural movement, ambient sound, restrained pacing and the same attention to atmosphere.</p>
+        </div>
+        <div class="video-wrap reveal">
+          <video id="reel" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2000&q=88">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          </video>
+          <div class="video-shade"></div>
+          <button class="sound-btn" id="soundBtn" type="button">Sound off</button>
+          <div class="video-caption">
+            <div>
+              <span>Motion study 01</span>
+              <h3>Botanical Light</h3>
+            </div>
+            <span>00:30 · Natural light</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="shell about-grid">
+        <div class="about-photo reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=88" alt="Portrait of photographer Adrian Vale" />
+          <div class="about-note">Photographed on assignment in Lisbon, spring 2026.</div>
+        </div>
+        <div class="about-copy reveal">
+          <div class="eyebrow">About Adrian</div>
+          <h2 class="serif">Observant by nature. Precise by practice.</h2>
+          <p>Adrian Vale is a British-Portuguese photographer working across editorial, portrait, travel and hospitality commissions. His visual language is grounded in available light, quiet gestures and a strong sense of place.</p>
+          <p>He works with compact crews and a calm, collaborative approach—equally comfortable directing a campaign, documenting a journey, or building a portrait session around one honest expression.</p>
+          <div class="facts">
+            <div class="fact"><span>Based</span><strong>London & Lisbon</strong></div>
+            <div class="fact"><span>Available</span><strong>Europe, Middle East & worldwide</strong></div>
+            <div class="fact"><span>Services</span><strong>Fashion, e-commerce, campaigns, portraits, editorial, lifestyle, motion</strong></div>
+            <div class="fact"><span>Representation</span><strong>Independent</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clients shell reveal" aria-label="Selected clients">
+      <div class="eyebrow" style="margin-bottom:24px">Selected clients & publications</div>
+      <div class="client-row">
+        <div class="client">Kinfolk</div>
+        <div class="client">Monocle</div>
+        <div class="client">Aesop</div>
+        <div class="client">Soho House</div>
+        <div class="client">Condé Nast</div>
+        <div class="client">The Hoxton</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="shell">
+        <div class="contact-grid reveal">
+          <div>
+            <div class="eyebrow">New commissions</div>
+            <h2 class="serif">Let’s make<br>something lasting.</h2>
+          </div>
+          <div class="contact-side">
+            <p>For commissions, editorial assignments, licensing and collaborations, send a short note with your location, timing and scope.</p>
+            <a class="contact-email" href="mailto:studio@adrianvale.photo">studio@adrianvale.photo</a>
+          </div>
+        </div>
+        <footer class="footer">
+          <span>© <span id="year"></span> Adrian Vale Photography</span>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Vimeo">Vimeo</a>
+            <a href="#" aria-label="Pinterest">Pinterest</a>
+          </div>
+          <a href="#top">Back to top ↑</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer">
+    <button class="lb-btn lb-prev" id="lbPrev">Prev</button>
+    <button class="lb-btn lb-next" id="lbNext">Next</button>
+    <button class="lb-btn lb-close" id="lbClose">Close ×</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-stage"><img id="lbImage" alt="" /></div>
+      <div class="lightbox-info">
+        <div class="eyebrow">Selected work</div>
+        <h3 id="lbTitle"></h3>
+        <p id="lbCaption"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Navigation
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 28));
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Portfolio filtering
+    const filters = [...document.querySelectorAll('.filter')];
+    const projectEls = [...document.querySelectorAll('.project')];
+    filters.forEach(btn => btn.addEventListener('click', () => {
+      filters.forEach(x => x.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      projectEls.forEach(project => {
+        const show = filter === 'all' || project.dataset.category.split(' ').includes(filter);
+        project.style.display = show ? '' : 'none';
+      });
+    }));
+
+    // Project lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImage = document.getElementById('lbImage');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbCaption = document.getElementById('lbCaption');
+    let currentIndex = 0;
+
+    function visibleProjects(){
+      return projectEls.filter(p => p.style.display !== 'none');
+    }
+    function openProject(project){
+      const list = visibleProjects();
+      currentIndex = Math.max(0, list.indexOf(project));
+      renderLightbox();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function renderLightbox(){
+      const list = visibleProjects();
+      const p = list[currentIndex];
+      if(!p) return;
+      lbImage.src = p.dataset.image;
+      lbImage.alt = p.querySelector('img').alt;
+      lbTitle.textContent = p.dataset.title;
+      lbCaption.textContent = p.dataset.caption;
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function moveLightbox(step){
+      const list = visibleProjects();
+      currentIndex = (currentIndex + step + list.length) % list.length;
+      renderLightbox();
+    }
+    projectEls.forEach(project => project.addEventListener('click', () => openProject(project)));
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => moveLightbox(-1));
+    document.getElementById('lbNext').addEventListener('click', () => moveLightbox(1));
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'Escape') closeLightbox();
+      if(e.key === 'ArrowLeft') moveLightbox(-1);
+      if(e.key === 'ArrowRight') moveLightbox(1);
+    });
+
+    // Motion sound control
+    const reel = document.getElementById('reel');
+    const soundBtn = document.getElementById('soundBtn');
+    soundBtn.addEventListener('click', () => {
+      reel.muted = !reel.muted;
+      soundBtn.textContent = reel.muted ? 'Sound off' : 'Sound on';
+    });
+
+    // Copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
